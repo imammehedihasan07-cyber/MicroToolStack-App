@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Character Counter - Count Characters & Limits Online | MicroToolStack</title>
+  <meta name="description" content="Count total characters with and without spaces for social media limits like Twitter, LinkedIn, and Meta tags.">
+  
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/tools.css">
+</head>
+<body>
+  <div id="header-container"></div>
+
+  <main class="container">
+    <nav class="breadcrumb-container" aria-label="Breadcrumb">
+      <ol class="breadcrumb-list">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/#text">Text Tools</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Character Counter</li>
+      </ol>
+    </nav>
+
+    <header style="margin-bottom: 1.5rem;">
+      <h1>Character Counter</h1>
+      <p>Instantly check exact character counts, space counts, and track character limits for popular social platforms.</p>
+    </header>
+
+    <div class="tool-layout">
+      <div class="tool-container">
+        <textarea id="text-input" class="tool-textarea" placeholder="Paste your text or post content here..." aria-label="Character count input"></textarea>
+
+        <div class="tool-controls">
+          <button class="btn btn-primary" data-copy-target="text-input">📋 Copy Text</button>
+          <button class="btn btn-secondary" id="clear-btn">🗑️ Clear</button>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-value" id="stat-total-chars">0</div>
+            <div class="stat-label">Total Chars</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="stat-no-spaces">0</div>
+            <div class="stat-label">Without Spaces</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="stat-spaces">0</div>
+            <div class="stat-label">Spaces Only</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="stat-twitter">280</div>
+            <div class="stat-label">X/Twitter Remaining</div>
+          </div>
+        </div>
+      </div>
+
+      <aside>
+        <div class="card">
+          <h3>📌 Social Limits</h3>
+          <ul style="font-size: 0.875rem; color: var(--text-secondary); padding-left: 1.25rem; margin-top: 0.5rem; line-height: 1.7;">
+            <li><strong>X (Twitter):</strong> 280 chars</li>
+            <li><strong>SEO Meta Title:</strong> ~60 chars</li>
+            <li><strong>SEO Meta Desc:</strong> ~160 chars</li>
+            <li><strong>LinkedIn Post:</strong> 3,000 chars</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js"></script>
+  <script src="/assets/js/app.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const input = document.getElementById('text-input');
+      const clearBtn = document.getElementById('clear-btn');
+
+      const elTotal = document.getElementById('stat-total-chars');
+      const elNoSpaces = document.getElementById('stat-no-spaces');
+      const elSpaces = document.getElementById('stat-spaces');
+      const elTwitter = document.getElementById('stat-twitter');
+
+      function updateCounts() {
+        const val = input.value;
+        const total = val.length;
+        const noSpaces = val.replace(/\s/g, '').length;
+        const spaces = total - noSpaces;
+        const twitterLeft = 280 - total;
+
+        elTotal.textContent = total.toLocaleString();
+        elNoSpaces.textContent = noSpaces.toLocaleString();
+        elSpaces.textContent = spaces.toLocaleString();
+        elTwitter.textContent = twitterLeft;
+        elTwitter.style.color = twitterLeft < 0 ? 'var(--danger)' : 'var(--accent-primary)';
+      }
+
+      input.addEventListener('input', updateCounts);
+      clearBtn.addEventListener('click', () => {
+        input.value = '';
+        updateCounts();
+        input.focus();
+      });
+    });
+  </script>
+</body>
+</html>

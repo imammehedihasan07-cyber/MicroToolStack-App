@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Case Converter - UPPER, lower, Title Case | MicroToolStack</title>
+  <meta name="description" content="Convert text to UPPERCASE, lowercase, Title Case, Sentence case, camelCase, and slug format.">
+  
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/tools.css">
+</head>
+<body>
+  <div id="header-container"></div>
+
+  <main class="container">
+    <nav class="breadcrumb-container" aria-label="Breadcrumb">
+      <ol class="breadcrumb-list">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/#text">Text Tools</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Case Converter</li>
+      </ol>
+    </nav>
+
+    <header style="margin-bottom: 1.5rem;">
+      <h1>Case Converter</h1>
+      <p>Convert any text into UPPERCASE, lowercase, Title Case, Sentence case, and programming casing formats.</p>
+    </header>
+
+    <div class="tool-layout">
+      <div class="tool-container">
+        <textarea id="text-input" class="tool-textarea" placeholder="Enter your text here..." aria-label="Text to transform case"></textarea>
+
+        <div class="tool-controls">
+          <button class="btn btn-secondary" id="btn-upper">UPPERCASE</button>
+          <button class="btn btn-secondary" id="btn-lower">lowercase</button>
+          <button class="btn btn-secondary" id="btn-title">Title Case</button>
+          <button class="btn btn-secondary" id="btn-sentence">Sentence case</button>
+          <button class="btn btn-secondary" id="btn-camel">camelCase</button>
+          <button class="btn btn-primary" data-copy-target="text-input">📋 Copy</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js"></script>
+  <script src="/assets/js/app.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const input = document.getElementById('text-input');
+
+      document.getElementById('btn-upper').addEventListener('click', () => {
+        input.value = input.value.toUpperCase();
+      });
+
+      document.getElementById('btn-lower').addEventListener('click', () => {
+        input.value = input.value.toLowerCase();
+      });
+
+      document.getElementById('btn-title').addEventListener('click', () => {
+        input.value = input.value.toLowerCase().replace(/(?:^|\s)\w/g, match => match.toUpperCase());
+      });
+
+      document.getElementById('btn-sentence').addEventListener('click', () => {
+        input.value = input.value.toLowerCase().replace(/(^\w|\.\s+\w)/gm, match => match.toUpperCase());
+      });
+
+      document.getElementById('btn-camel').addEventListener('click', () => {
+        input.value = input.value
+          .toLowerCase()
+          .replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => chr.toUpperCase());
+      });
+    });
+  </script>
+</body>
+</html>

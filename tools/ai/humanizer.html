@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Text Humanizer | MicroToolStack</title>
+  <meta name="description" content="Rewrite AI-generated text into clear, natural, human-like sentences.">
+  
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/tools.css">
+</head>
+<body>
+  <div id="header-container"></div>
+
+  <main class="container">
+    <nav class="breadcrumb-container" aria-label="Breadcrumb">
+      <ol class="breadcrumb-list">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/#ai">AI Tools</a></li>
+        <li class="breadcrumb-item active" aria-current="page">AI Text Humanizer</li>
+      </ol>
+    </nav>
+
+    <header style="margin-bottom: 1.5rem;">
+      <h1>AI Text Humanizer</h1>
+      <p>Transform robotic or generic AI content into natural, engaging human writing.</p>
+    </header>
+
+    <div class="tool-layout">
+      <div class="tool-container">
+        <label style="font-weight: 600; display: block; margin-bottom: 0.5rem;">Paste Robotic AI Content:</label>
+        <textarea id="ai-input" class="tool-textarea" placeholder="Paste robotic or complex draft text here..."></textarea>
+
+        <div class="tool-controls">
+          <button class="btn btn-primary" id="btn-generate">🧠 Humanize Content</button>
+        </div>
+
+        <label style="font-weight: 600; display: block; margin-top: 1.5rem; margin-bottom: 0.5rem;">Humanized Output:</label>
+        <textarea id="ai-output" class="tool-textarea" readonly placeholder="Humanized text will appear here..."></textarea>
+
+        <div class="tool-controls" style="margin-top: 1rem;">
+          <button class="btn btn-primary" data-copy-target="ai-output">📋 Copy Result</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js"></script>
+  <script src="/assets/js/app.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const input = document.getElementById('ai-input');
+      const output = document.getElementById('ai-output');
+      const btn = document.getElementById('btn-generate');
+
+      btn.addEventListener('click', async () => {
+        if (!input.value.trim()) return;
+
+        btn.disabled = true;
+        btn.textContent = '⏳ Humanizing...';
+
+        try {
+          const prompt = `Rewrite the following content to make it sound natural, conversational, well-written, and human: "${input.value}"`;
+          const res = await fetch('/api/generate', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ prompt, type: 'humanizer' })
+          });
+
+          const data = await res.json();
+          output.value = res.ok ? data.result : 'Error: ' + data.error;
+        } catch (err) {
+          output.value = 'Failed to connect to API.';
+        } finally {
+          btn.disabled = false;
+          btn.textContent = '🧠 Humanize Content';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

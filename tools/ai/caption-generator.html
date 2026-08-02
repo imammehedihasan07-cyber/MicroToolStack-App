@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Social Media Caption Generator | MicroToolStack</title>
+  <meta name="description" content="Generate engaging captions for Instagram, Facebook, and Twitter using AI.">
+  
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/tools.css">
+</head>
+<body>
+  <div id="header-container"></div>
+
+  <main class="container">
+    <nav class="breadcrumb-container" aria-label="Breadcrumb">
+      <ol class="breadcrumb-list">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/#ai">AI Tools</a></li>
+        <li class="breadcrumb-item active" aria-current="page">AI Caption Generator</li>
+      </ol>
+    </nav>
+
+    <header style="margin-bottom: 1.5rem;">
+      <h1>AI Caption Generator</h1>
+      <p>Generate creative and engaging social media captions powered by Gemini AI.</p>
+    </header>
+
+    <div class="tool-layout">
+      <div class="tool-container">
+        <label style="font-weight: 600; display: block; margin-bottom: 0.5rem;">Describe your photo/post topic:</label>
+        <textarea id="ai-input" class="tool-textarea" style="min-height: 100px;" placeholder="e.g. Sunset view from a mountain peak during my weekend hiking trip..."></textarea>
+
+        <div class="tool-controls">
+          <button class="btn btn-primary" id="btn-generate">✨ Generate Captions</button>
+        </div>
+
+        <label style="font-weight: 600; display: block; margin-top: 1.5rem; margin-bottom: 0.5rem;">Generated Captions:</label>
+        <textarea id="ai-output" class="tool-textarea" style="min-height: 180px;" readonly placeholder="Your AI generated captions will appear here..."></textarea>
+
+        <div class="tool-controls" style="margin-top: 1rem;">
+          <button class="btn btn-primary" data-copy-target="ai-output">📋 Copy Captions</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js"></script>
+  <script src="/assets/js/app.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const input = document.getElementById('ai-input');
+      const output = document.getElementById('ai-output');
+      const btn = document.getElementById('btn-generate');
+
+      btn.addEventListener('click', async () => {
+        if (!input.value.trim()) {
+          showToast('Please enter a topic or photo description.', 'danger');
+          return;
+        }
+
+        btn.disabled = true;
+        btn.textContent = '⏳ Generating...';
+        output.value = 'Generating captions with Gemini AI...';
+
+        try {
+          const prompt = `Generate 5 engaging social media captions with emojis and popular hashtags for this post topic: "${input.value}"`;
+          const res = await fetch('/api/generate', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ prompt, type: 'caption' })
+          });
+
+          const data = await res.json();
+          if (res.ok) {
+            output.value = data.result;
+          } else {
+            output.value = 'Error: ' + (data.error || 'Failed to generate');
+          }
+        } catch (err) {
+          output.value = 'Failed to connect to API server.';
+        } finally {
+          btn.disabled = false;
+          btn.textContent = '✨ Generate Captions';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

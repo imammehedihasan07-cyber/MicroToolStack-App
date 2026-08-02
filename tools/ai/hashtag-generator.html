@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Hashtag Generator | MicroToolStack</title>
+  <meta name="description" content="Generate high-reach relevant hashtags for Instagram, TikTok, and YouTube.">
+  
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/tools.css">
+</head>
+<body>
+  <div id="header-container"></div>
+
+  <main class="container">
+    <nav class="breadcrumb-container" aria-label="Breadcrumb">
+      <ol class="breadcrumb-list">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/#ai">AI Tools</a></li>
+        <li class="breadcrumb-item active" aria-current="page">AI Hashtag Generator</li>
+      </ol>
+    </nav>
+
+    <header style="margin-bottom: 1.5rem;">
+      <h1>AI Hashtag Generator</h1>
+      <p>Find top-performing niche hashtags for your social media posts.</p>
+    </header>
+
+    <div class="tool-layout">
+      <div class="tool-container">
+        <label style="font-weight: 600; display: block; margin-bottom: 0.5rem;">Enter Keyword or Niche:</label>
+        <input type="text" id="ai-input" class="search-input" placeholder="e.g. Digital Marketing, Web Development, Fitness Motivation" style="margin-bottom: 1rem;">
+
+        <div class="tool-controls">
+          <button class="btn btn-primary" id="btn-generate">✨ Generate Hashtags</button>
+        </div>
+
+        <label style="font-weight: 600; display: block; margin-top: 1.5rem; margin-bottom: 0.5rem;">Hashtags Output:</label>
+        <textarea id="ai-output" class="tool-textarea" readonly placeholder="Hashtags will appear here..."></textarea>
+
+        <div class="tool-controls" style="margin-top: 1rem;">
+          <button class="btn btn-primary" data-copy-target="ai-output">📋 Copy Hashtags</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js"></script>
+  <script src="/assets/js/app.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const input = document.getElementById('ai-input');
+      const output = document.getElementById('ai-output');
+      const btn = document.getElementById('btn-generate');
+
+      btn.addEventListener('click', async () => {
+        if (!input.value.trim()) return;
+
+        btn.disabled = true;
+        btn.textContent = '⏳ Generating...';
+        output.value = 'Finding best hashtags...';
+
+        try {
+          const prompt = `Generate 30 relevant, trending hashtags for the niche/topic: "${input.value}". Return them separated by spaces.`;
+          const res = await fetch('/api/generate', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ prompt, type: 'hashtag' })
+          });
+
+          const data = await res.json();
+          output.value = res.ok ? data.result : 'Error: ' + data.error;
+        } catch (err) {
+          output.value = 'Failed to connect to API.';
+        } finally {
+          btn.disabled = false;
+          btn.textContent = '✨ Generate Hashtags';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

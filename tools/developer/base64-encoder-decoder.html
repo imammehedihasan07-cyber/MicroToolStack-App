@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Base64 Encoder / Decoder | MicroToolStack</title>
+  <meta name="description" content="Encode text strings into Base64 format or decode Base64 back into human-readable text online.">
+  
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/tools.css">
+</head>
+<body>
+  <div id="header-container"></div>
+
+  <main class="container">
+    <nav class="breadcrumb-container" aria-label="Breadcrumb">
+      <ol class="breadcrumb-list">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/#developer">Developer Tools</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Base64 Encoder / Decoder</li>
+      </ol>
+    </nav>
+
+    <header style="margin-bottom: 1.5rem;">
+      <h1>Base64 Encoder / Decoder</h1>
+      <p>Easily encode text values to Base64 output or decode string values safely in your browser.</p>
+    </header>
+
+    <div class="tool-layout">
+      <div class="tool-container">
+        <textarea id="base64-input" class="tool-textarea" placeholder="Type text or Base64 string here..." aria-label="Base64 input"></textarea>
+
+        <div class="tool-controls">
+          <button class="btn btn-primary" id="btn-encode">🔒 Encode to Base64</button>
+          <button class="btn btn-secondary" id="btn-decode">🔓 Decode Base64</button>
+          <button class="btn btn-primary" data-copy-target="base64-input">📋 Copy</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js"></script>
+  <script src="/assets/js/app.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const input = document.getElementById('base64-input');
+
+      document.getElementById('btn-encode').addEventListener('click', () => {
+        try {
+          input.value = btoa(unescape(encodeURIComponent(input.value)));
+          showToast('Encoded to Base64!');
+        } catch (err) {
+          showToast('Encoding Failed: ' + err.message, 'danger');
+        }
+      });
+
+      document.getElementById('btn-decode').addEventListener('click', () => {
+        try {
+          input.value = decodeURIComponent(escape(atob(input.value)));
+          showToast('Decoded Base64!');
+        } catch (err) {
+          showToast('Invalid Base64 string', 'danger');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

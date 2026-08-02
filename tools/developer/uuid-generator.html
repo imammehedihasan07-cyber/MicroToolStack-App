@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bulk UUID Generator (v4) | MicroToolStack</title>
+  <meta name="description" content="Generate cryptographically secure Version-4 UUIDs online in bulk for database keys and testing.">
+  
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/tools.css">
+</head>
+<body>
+  <div id="header-container"></div>
+
+  <main class="container">
+    <nav class="breadcrumb-container" aria-label="Breadcrumb">
+      <ol class="breadcrumb-list">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/#developer">Developer Tools</a></li>
+        <li class="breadcrumb-item active" aria-current="page">UUID Generator</li>
+      </ol>
+    </nav>
+
+    <header style="margin-bottom: 1.5rem;">
+      <h1>UUID Generator (v4)</h1>
+      <p>Generate random Version-4 Universally Unique Identifiers (UUIDs) for database primary keys.</p>
+    </header>
+
+    <div class="tool-layout">
+      <div class="tool-container">
+        <div style="display: flex; gap: 1rem; align-items: center; margin-bottom: 1rem;">
+          <label style="font-weight: 600;">Quantity:</label>
+          <input type="number" id="uuid-count" class="search-input" value="5" min="1" max="50" style="width: 100px;">
+          <button class="btn btn-primary" id="btn-generate">🎲 Generate</button>
+        </div>
+
+        <textarea id="uuid-output" class="tool-textarea" readonly style="font-family: var(--font-mono); font-size: 0.875rem;" aria-label="Generated UUIDs"></textarea>
+
+        <div class="tool-controls" style="margin-top: 1rem;">
+          <button class="btn btn-primary" data-copy-target="uuid-output">📋 Copy All UUIDs</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js"></script>
+  <script src="/assets/js/app.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const countInput = document.getElementById('uuid-count');
+      const output = document.getElementById('uuid-output');
+
+      function generateUUIDv4() {
+        return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
+          (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+        );
+      }
+
+      function runGenerate() {
+        const count = parseInt(countInput.value) || 1;
+        const uuids = Array.from({ length: Math.min(count, 50) }, () => generateUUIDv4());
+        output.value = uuids.join('\n');
+      }
+
+      document.getElementById('btn-generate').addEventListener('click', runGenerate);
+      runGenerate();
+    });
+  </script>
+</body>
+</html>

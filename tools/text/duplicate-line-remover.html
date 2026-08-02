@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Duplicate Line Remover - Clean Unique Lists | MicroToolStack</title>
+  <meta name="description" content="Remove repeat and duplicate lines from email lists, text files, and datasets instantly.">
+  
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/tools.css">
+</head>
+<body>
+  <div id="header-container"></div>
+
+  <main class="container">
+    <nav class="breadcrumb-container" aria-label="Breadcrumb">
+      <ol class="breadcrumb-list">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/#text">Text Tools</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Duplicate Line Remover</li>
+      </ol>
+    </nav>
+
+    <header style="margin-bottom: 1.5rem;">
+      <h1>Duplicate Line Remover</h1>
+      <p>Clean duplicate lines from email lists, keyword data, or document files instantly.</p>
+    </header>
+
+    <div class="tool-layout">
+      <div class="tool-container">
+        <textarea id="text-input" class="tool-textarea" placeholder="Paste text list here..." aria-label="Text to deduct duplicates"></textarea>
+
+        <div class="tool-controls">
+          <button class="btn btn-primary" id="btn-remove-dup">🧹 Remove Duplicates</button>
+          <button class="btn btn-primary" data-copy-target="text-input">📋 Copy Result</button>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-value" id="stat-original">0</div>
+            <div class="stat-label">Original Lines</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="stat-unique">0</div>
+            <div class="stat-label">Unique Lines</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="stat-removed">0</div>
+            <div class="stat-label">Duplicates Removed</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js"></script>
+  <script src="/assets/js/app.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const input = document.getElementById('text-input');
+
+      document.getElementById('btn-remove-dup').addEventListener('click', () => {
+        const lines = input.value.split('\n');
+        const unique = Array.from(new Set(lines));
+        
+        document.getElementById('stat-original').textContent = lines.length;
+        document.getElementById('stat-unique').textContent = unique.length;
+        document.getElementById('stat-removed').textContent = lines.length - unique.length;
+
+        input.value = unique.join('\n');
+        showToast('Duplicate lines removed!');
+      });
+    });
+  </script>
+</body>
+</html>

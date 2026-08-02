@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMI Health Calculator | MicroToolStack</title>
+  <meta name="description" content="Calculate your Body Mass Index (BMI) and health category based on height and weight.">
+  
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/tools.css">
+</head>
+<body>
+  <div id="header-container"></div>
+
+  <main class="container">
+    <nav class="breadcrumb-container" aria-label="Breadcrumb">
+      <ol class="breadcrumb-list">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/#calculator">Calculators</a></li>
+        <li class="breadcrumb-item active" aria-current="page">BMI Calculator</li>
+      </ol>
+    </nav>
+
+    <header style="margin-bottom: 1.5rem;">
+      <h1>BMI Calculator</h1>
+      <p>Check your Body Mass Index (BMI) to understand your healthy weight range.</p>
+    </header>
+
+    <div class="tool-layout">
+      <div class="tool-container">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
+          <div>
+            <label style="font-weight: 600; display: block; margin-bottom: 0.5rem;">Height (cm):</label>
+            <input type="number" id="height-cm" class="search-input" value="175">
+          </div>
+          <div>
+            <label style="font-weight: 600; display: block; margin-bottom: 0.5rem;">Weight (kg):</label>
+            <input type="number" id="weight-kg" class="search-input" value="70">
+          </div>
+        </div>
+
+        <button class="btn btn-primary" id="btn-calc-bmi" style="width: 100%;">⚖️ Calculate BMI</button>
+
+        <div class="stats-grid" style="margin-top: 1.5rem;">
+          <div class="stat-card">
+            <div class="stat-value" id="res-bmi">22.9</div>
+            <div class="stat-label">BMI Score</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="res-status" style="color: var(--success);">Normal Weight</div>
+            <div class="stat-label">Category</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js"></script>
+  <script src="/assets/js/app.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      function calcBMI() {
+        const h = parseFloat(document.getElementById('height-cm').value) / 100;
+        const w = parseFloat(document.getElementById('weight-kg').value);
+
+        if (!h || !w) return;
+
+        const bmi = (w / (h * h)).toFixed(1);
+        let status = 'Normal Weight';
+        let color = 'var(--success)';
+
+        if (bmi < 18.5) { status = 'Underweight'; color = 'var(--warning)'; }
+        else if (bmi >= 25 && bmi < 29.9) { status = 'Overweight'; color = 'var(--warning)'; }
+        else if (bmi >= 30) { status = 'Obese'; color = 'var(--danger)'; }
+
+        document.getElementById('res-bmi').textContent = bmi;
+        const statusEl = document.getElementById('res-status');
+        statusEl.textContent = status;
+        statusEl.style.color = color;
+      }
+
+      document.getElementById('btn-calc-bmi').addEventListener('click', calcBMI);
+      calcBMI();
+    });
+  </script>
+</body>
+</html>

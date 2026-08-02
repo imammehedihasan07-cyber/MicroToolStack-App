@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Text Sorter - Alphabetical & Numerical Sort | MicroToolStack</title>
+  <meta name="description" content="Sort text lists alphabetically (A-Z, Z-A), numerically, or by line length online.">
+  
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/tools.css">
+</head>
+<body>
+  <div id="header-container"></div>
+
+  <main class="container">
+    <nav class="breadcrumb-container" aria-label="Breadcrumb">
+      <ol class="breadcrumb-list">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/#text">Text Tools</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Text Sorter</li>
+      </ol>
+    </nav>
+
+    <header style="margin-bottom: 1.5rem;">
+      <h1>Text Sorter</h1>
+      <p>Sort list items line-by-line alphabetically, numerically, or by character length.</p>
+    </header>
+
+    <div class="tool-layout">
+      <div class="tool-container">
+        <textarea id="text-input" class="tool-textarea" placeholder="Paste items line-by-line to sort..." aria-label="Lines to sort"></textarea>
+
+        <div class="tool-controls">
+          <button class="btn btn-secondary" id="btn-sort-az">🔤 Sort A → Z</button>
+          <button class="btn btn-secondary" id="btn-sort-za">🔤 Sort Z → A</button>
+          <button class="btn btn-secondary" id="btn-sort-len">📏 Sort by Length</button>
+          <button class="btn btn-primary" data-copy-target="text-input">📋 Copy</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js"></script>
+  <script src="/assets/js/app.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const input = document.getElementById('text-input');
+
+      function getLines() {
+        return input.value.split('\n');
+      }
+
+      document.getElementById('btn-sort-az').addEventListener('click', () => {
+        input.value = getLines().sort((a, b) => a.localeCompare(b)).join('\n');
+      });
+
+      document.getElementById('btn-sort-za').addEventListener('click', () => {
+        input.value = getLines().sort((a, b) => b.localeCompare(a)).join('\n');
+      });
+
+      document.getElementById('btn-sort-len').addEventListener('click', () => {
+        input.value = getLines().sort((a, b) => a.length - b.length).join('\n');
+      });
+    });
+  </script>
+</body>
+</html>

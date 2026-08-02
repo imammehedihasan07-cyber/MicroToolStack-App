@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Percentage Calculator Online | MicroToolStack</title>
+  <meta name="description" content="Calculate percentages, percentage change, increases, and fraction values easily.">
+  
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/tools.css">
+</head>
+<body>
+  <div id="header-container"></div>
+
+  <main class="container">
+    <nav class="breadcrumb-container" aria-label="Breadcrumb">
+      <ol class="breadcrumb-list">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/#calculator">Calculators</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Percentage Calculator</li>
+      </ol>
+    </nav>
+
+    <header style="margin-bottom: 1.5rem;">
+      <h1>Percentage Calculator</h1>
+      <p>Quickly calculate basic percentages and percentage increases or decreases.</p>
+    </header>
+
+    <div class="tool-layout">
+      <div class="tool-container">
+        <!-- Calc 1 -->
+        <div class="card" style="margin-bottom: 1.5rem;">
+          <h3>What is <input type="number" id="p1-percent" class="search-input" style="width: 80px; display: inline-block;" value="10">% of <input type="number" id="p1-value" class="search-input" style="width: 120px; display: inline-block;" value="200"> ?</h3>
+          <div style="font-size: 1.25rem; font-weight: 700; color: var(--accent-primary); margin-top: 0.5rem;" id="p1-res">Result: 20</div>
+        </div>
+
+        <!-- Calc 2 -->
+        <div class="card">
+          <h3><input type="number" id="p2-v1" class="search-input" style="width: 100px; display: inline-block;" value="25"> is what % of <input type="number" id="p2-v2" class="search-input" style="width: 100px; display: inline-block;" value="100"> ?</h3>
+          <div style="font-size: 1.25rem; font-weight: 700; color: var(--accent-primary); margin-top: 0.5rem;" id="p2-res">Result: 25%</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js"></script>
+  <script src="/assets/js/app.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const p1Percent = document.getElementById('p1-percent');
+      const p1Value = document.getElementById('p1-value');
+      const p1Res = document.getElementById('p1-res');
+
+      function calc1() {
+        const pct = parseFloat(p1Percent.value) || 0;
+        const val = parseFloat(p1Value.value) || 0;
+        p1Res.textContent = `Result: ${(val * (pct / 100)).toFixed(2)}`;
+      }
+
+      p1Percent.addEventListener('input', calc1);
+      p1Value.addEventListener('input', calc1);
+
+      const p2V1 = document.getElementById('p2-v1');
+      const p2V2 = document.getElementById('p2-v2');
+      const p2Res = document.getElementById('p2-res');
+
+      function calc2() {
+        const v1 = parseFloat(p2V1.value) || 0;
+        const v2 = parseFloat(p2V2.value) || 1;
+        p2Res.textContent = `Result: ${((v1 / v2) * 100).toFixed(2)}%`;
+      }
+
+      p2V1.addEventListener('input', calc2);
+      p2V2.addEventListener('input', calc2);
+    });
+  </script>
+</body>
+</html>

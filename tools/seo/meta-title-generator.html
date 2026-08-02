@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SEO Meta Title Generator & Preview Tool | MicroToolStack</title>
+  <meta name="description" content="Optimize meta title length, character limits, and pixel width for Google Search results preview.">
+  
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/tools.css">
+  <style>
+    .google-preview {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      margin-top: 1rem;
+      font-family: arial, sans-serif;
+    }
+    [data-theme="dark"] .google-preview {
+      background: #202124;
+    }
+    .preview-url { font-size: 0.8rem; color: #202124; margin-bottom: 2px; }
+    [data-theme="dark"] .preview-url { color: #bdc1c6; }
+    .preview-title { font-size: 1.25rem; color: #1a0dab; text-decoration: none; word-break: break-word; }
+    [data-theme="dark"] .preview-title { color: #8ab4f8; }
+  </style>
+</head>
+<body>
+  <div id="header-container"></div>
+
+  <main class="container">
+    <nav class="breadcrumb-container" aria-label="Breadcrumb">
+      <ol class="breadcrumb-list">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/#seo">SEO Tools</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Meta Title Generator</li>
+      </ol>
+    </nav>
+
+    <header style="margin-bottom: 1.5rem;">
+      <h1>Meta Title Generator</h1>
+      <p>Craft pixel-perfect Google Search title tags with real-time length checking.</p>
+    </header>
+
+    <div class="tool-layout">
+      <div class="tool-container">
+        <label for="title-input" style="font-weight: 600; display: block; margin-bottom: 0.5rem;">Enter Meta Title:</label>
+        <input type="text" id="title-input" class="search-input" placeholder="e.g., Best Online SEO Tools 2026 | Free & Fast" style="margin-bottom: 1rem;">
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-value" id="stat-length">0</div>
+            <div class="stat-label">Characters (Max 60)</div>
+          </div>
+        </div>
+
+        <h3 style="margin-top: 1.5rem;">Google SERP Preview</h3>
+        <div class="google-preview">
+          <div class="preview-url">https://example.com › blog</div>
+          <div class="preview-title" id="serp-title">Your Page Title Will Appear Here</div>
+        </div>
+
+        <div class="tool-controls" style="margin-top: 1rem;">
+          <button class="btn btn-primary" id="copy-btn">📋 Copy HTML Title Tag</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js"></script>
+  <script src="/assets/js/app.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const input = document.getElementById('title-input');
+      const statLength = document.getElementById('stat-length');
+      const serpTitle = document.getElementById('serp-title');
+
+      input.addEventListener('input', () => {
+        const val = input.value;
+        const len = val.length;
+        statLength.textContent = `${len}/60`;
+        statLength.style.color = len > 60 ? 'var(--danger)' : 'var(--accent-primary)';
+        serpTitle.textContent = val || 'Your Page Title Will Appear Here';
+      });
+
+      document.getElementById('copy-btn').addEventListener('click', () => {
+        const code = `<title>${input.value}</title>`;
+        copyToClipboard(code);
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Age Calculator - Calculate Exact Age Online | MicroToolStack</title>
+  <meta name="description" content="Calculate your exact age in years, months, weeks, days, hours, and minutes from your birth date.">
+  
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/tools.css">
+</head>
+<body>
+  <div id="header-container"></div>
+
+  <main class="container">
+    <nav class="breadcrumb-container" aria-label="Breadcrumb">
+      <ol class="breadcrumb-list">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/#calculator">Calculators</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Age Calculator</li>
+      </ol>
+    </nav>
+
+    <header style="margin-bottom: 1.5rem;">
+      <h1>Age Calculator</h1>
+      <p>Find your exact age breakdown in years, months, days, and total hours instantly.</p>
+    </header>
+
+    <div class="tool-layout">
+      <div class="tool-container">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
+          <div>
+            <label style="font-weight: 600; display: block; margin-bottom: 0.5rem;">Date of Birth:</label>
+            <input type="date" id="dob" class="search-input">
+          </div>
+          <div>
+            <label style="font-weight: 600; display: block; margin-bottom: 0.5rem;">Age at Date:</label>
+            <input type="date" id="target-date" class="search-input">
+          </div>
+        </div>
+
+        <button class="btn btn-primary" id="btn-calc" style="width: 100%;">🎂 Calculate Age</button>
+
+        <div class="stats-grid" style="margin-top: 1.5rem;">
+          <div class="stat-card">
+            <div class="stat-value" id="res-years">0</div>
+            <div class="stat-label">Years</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="res-months">0</div>
+            <div class="stat-label">Months</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="res-days">0</div>
+            <div class="stat-label">Days</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="res-total-days">0</div>
+            <div class="stat-label">Total Days</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js"></script>
+  <script src="/assets/js/app.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const dobInput = document.getElementById('dob');
+      const targetInput = document.getElementById('target-date');
+      
+      // Set default target date as today
+      targetInput.valueAsDate = new Date();
+
+      document.getElementById('btn-calc').addEventListener('click', () => {
+        if (!dobInput.value) {
+          showToast('Please select a Date of Birth', 'danger');
+          return;
+        }
+
+        const dob = new Date(dobInput.value);
+        const target = new Date(targetInput.value);
+
+        if (dob > target) {
+          showToast('Birth date cannot be in the future!', 'danger');
+          return;
+        }
+
+        let years = target.getFullYear() - dob.getFullYear();
+        let months = target.getMonth() - dob.getMonth();
+        let days = target.getDate() - dob.getDate();
+
+        if (days < 0) {
+          months--;
+          const prevMonth = new Date(target.getFullYear(), target.getMonth(), 0);
+          days += prevMonth.getDate();
+        }
+
+        if (months < 0) {
+          years--;
+          months += 12;
+        }
+
+        const totalDiffTime = Math.abs(target - dob);
+        const totalDays = Math.floor(totalDiffTime / (1000 * 60 * 60 * 24));
+
+        document.getElementById('res-years').textContent = years;
+        document.getElementById('res-months').textContent = months;
+        document.getElementById('res-days').textContent = days;
+        document.getElementById('res-total-days').textContent = totalDays.toLocaleString();
+      });
+    });
+  </script>
+</body>
+</html>

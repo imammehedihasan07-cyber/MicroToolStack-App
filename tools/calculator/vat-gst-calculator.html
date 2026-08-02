@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GST & VAT Tax Calculator | MicroToolStack</title>
+  <meta name="description" content="Add or remove GST/VAT tax amounts from total prices effortlessly.">
+  
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/tools.css">
+</head>
+<body>
+  <div id="header-container"></div>
+
+  <main class="container">
+    <nav class="breadcrumb-container" aria-label="Breadcrumb">
+      <ol class="breadcrumb-list">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/#calculator">Calculators</a></li>
+        <li class="breadcrumb-item active" aria-current="page">GST / VAT Calculator</li>
+      </ol>
+    </nav>
+
+    <header style="margin-bottom: 1.5rem;">
+      <h1>GST / VAT Tax Calculator</h1>
+      <p>Add tax to a net price or extract tax from an inclusive gross amount.</p>
+    </header>
+
+    <div class="tool-layout">
+      <div class="tool-container">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
+          <div>
+            <label style="font-weight: 600; display: block; margin-bottom: 0.5rem;">Amount ($):</label>
+            <input type="number" id="amount" class="search-input" value="1000">
+          </div>
+          <div>
+            <label style="font-weight: 600; display: block; margin-bottom: 0.5rem;">GST / VAT Rate (%):</label>
+            <input type="number" id="rate" class="search-input" value="15">
+          </div>
+        </div>
+
+        <div class="tool-controls" style="margin-bottom: 1.5rem;">
+          <button class="btn btn-primary" id="btn-add">➕ Add Tax (Exclusive)</button>
+          <button class="btn btn-secondary" id="btn-remove">➖ Remove Tax (Inclusive)</button>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-value" id="res-net">$1,000.00</div>
+            <div class="stat-label">Net Amount</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="res-tax">$150.00</div>
+            <div class="stat-label">Tax Amount</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="res-gross">$1,150.00</div>
+            <div class="stat-label">Gross Amount</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js"></script>
+  <script src="/assets/js/app.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const amountEl = document.getElementById('amount');
+      const rateEl = document.getElementById('rate');
+
+      function calculate(isAdding) {
+        const amt = parseFloat(amountEl.value) || 0;
+        const rate = parseFloat(rateEl.value) || 0;
+
+        let net, tax, gross;
+
+        if (isAdding) {
+          net = amt;
+          tax = amt * (rate / 100);
+          gross = net + tax;
+        } else {
+          gross = amt;
+          net = amt / (1 + (rate / 100));
+          tax = gross - net;
+        }
+
+        document.getElementById('res-net').textContent = `$${net.toFixed(2)}`;
+        document.getElementById('res-tax').textContent = `$${tax.toFixed(2)}`;
+        document.getElementById('res-gross').textContent = `$${gross.toFixed(2)}`;
+      }
+
+      document.getElementById('btn-add').addEventListener('click', () => calculate(true));
+      document.getElementById('btn-remove').addEventListener('click', () => calculate(false));
+    });
+  </script>
+</body>
+</html>

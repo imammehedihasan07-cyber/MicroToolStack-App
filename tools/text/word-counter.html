@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Online Word Counter - Count Words, Characters & Sentences | MicroToolStack</title>
+  <meta name="description" content="Free online word counter tool. Count words, characters, characters without spaces, sentences, paragraphs, and reading time in real time.">
+  
+  <!-- Global Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/tools.css">
+</head>
+<body>
+
+  <!-- Dynamic Header / Navbar Placeholder -->
+  <div id="header-container"></div>
+
+  <main class="container">
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb-container" aria-label="Breadcrumb">
+      <ol class="breadcrumb-list">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/#text">Text Tools</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Word Counter</li>
+      </ol>
+    </nav>
+
+    <!-- Tool Title & Description -->
+    <header style="margin-bottom: 1.5rem;">
+      <h1>Word Counter</h1>
+      <p>Analyze your text in real-time. Track total words, characters, sentences, paragraphs, and reading time effortlessly.</p>
+    </header>
+
+    <!-- Main Tool Interface -->
+    <div class="tool-layout">
+      <div class="tool-container">
+        <!-- Text Area Input -->
+        <textarea id="text-input" class="tool-textarea" placeholder="Type or paste your text here..." aria-label="Text to count"></textarea>
+
+        <!-- Controls -->
+        <div class="tool-controls">
+          <button class="btn btn-primary" id="copy-btn" data-copy-target="text-input">
+            📋 Copy Text
+          </button>
+          <button class="btn btn-secondary" id="clear-btn">
+            🗑️ Clear
+          </button>
+        </div>
+
+        <!-- Real-time Live Statistics -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-value" id="stat-words">0</div>
+            <div class="stat-label">Words</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="stat-chars">0</div>
+            <div class="stat-label">Characters</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="stat-chars-no-spaces">0</div>
+            <div class="stat-label">No Spaces</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="stat-sentences">0</div>
+            <div class="stat-label">Sentences</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="stat-paragraphs">0</div>
+            <div class="stat-label">Paragraphs</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="stat-reading-time">0m</div>
+            <div class="stat-label">Reading Time</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar / Additional Info -->
+      <aside>
+        <div class="card">
+          <h3>💡 Pro Tips</h3>
+          <ul style="font-size: 0.875rem; color: var(--text-secondary); padding-left: 1.25rem; margin-top: 0.5rem; line-height: 1.7;">
+            <li>Standard reading speed is estimated at <strong>200 words per minute</strong>.</li>
+            <li>Social posts have character limits (e.g., Twitter/X: 280, LinkedIn: 3,000).</li>
+            <li>Use this tool to keep your SEO meta descriptions under 160 characters.</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Dynamic Footer Placeholder -->
+  <div id="footer-container"></div>
+
+  <!-- Core Scripts -->
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js"></script>
+  <script src="/assets/js/app.js"></script>
+
+  <!-- Tool Specific Script Logic -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const input = document.getElementById('text-input');
+      const clearBtn = document.getElementById('clear-btn');
+
+      // Stat elements
+      const elWords = document.getElementById('stat-words');
+      const elChars = document.getElementById('stat-chars');
+      const elCharsNoSpaces = document.getElementById('stat-chars-no-spaces');
+      const elSentences = document.getElementById('stat-sentences');
+      const elParagraphs = document.getElementById('stat-paragraphs');
+      const elReadingTime = document.getElementById('stat-reading-time');
+
+      function calculateStats() {
+        const text = input.value;
+
+        // Characters
+        const charCount = text.length;
+        const charNoSpacesCount = text.replace(/\s/g, '').length;
+
+        // Words
+        const trimmedText = text.trim();
+        const wordCount = trimmedText === '' ? 0 : trimmedText.split(/\s+/).length;
+
+        // Sentences
+        const sentenceCount = trimmedText === '' ? 0 : (text.match(/[^.!?]+[.!?]+/g) || [text]).length;
+
+        // Paragraphs
+        const paragraphCount = trimmedText === '' ? 0 : text.split(/\n+/).filter(p => p.trim() !== '').length;
+
+        // Reading time (approx 200 words per min)
+        const readingMinutes = Math.ceil(wordCount / 200);
+
+        // Update DOM
+        elWords.textContent = wordCount.toLocaleString();
+        elChars.textContent = charCount.toLocaleString();
+        elCharsNoSpaces.textContent = charNoSpacesCount.toLocaleString();
+        elSentences.textContent = sentenceCount.toLocaleString();
+        elParagraphs.textContent = paragraphCount.toLocaleString();
+        elReadingTime.textContent = wordCount === 0 ? '0m' : `${readingMinutes}m`;
+      }
+
+      // Input Event Listener
+      input.addEventListener('input', calculateStats);
+
+      // Clear Button Logic
+      clearBtn.addEventListener('click', () => {
+        input.value = '';
+        calculateStats();
+        input.focus();
+      });
+    });
+  </script>
+</body>
+</html>

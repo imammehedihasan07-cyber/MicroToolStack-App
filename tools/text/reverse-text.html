@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reverse Text Generator - Flip Text & Words | MicroToolStack</title>
+  <meta name="description" content="Flip text upside down, reverse words, reverse letters, or reverse lines online.">
+  
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/tools.css">
+</head>
+<body>
+  <div id="header-container"></div>
+
+  <main class="container">
+    <nav class="breadcrumb-container" aria-label="Breadcrumb">
+      <ol class="breadcrumb-list">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/#text">Text Tools</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Reverse Text</li>
+      </ol>
+    </nav>
+
+    <header style="margin-bottom: 1.5rem;">
+      <h1>Reverse Text</h1>
+      <p>Reverse full text strings, reverse word order, or flip letters backwards easily.</p>
+    </header>
+
+    <div class="tool-layout">
+      <div class="tool-container">
+        <textarea id="text-input" class="tool-textarea" placeholder="Type text to reverse..." aria-label="Text to reverse"></textarea>
+
+        <div class="tool-controls">
+          <button class="btn btn-secondary" id="btn-reverse-letters">🔄 Reverse Letters</button>
+          <button class="btn btn-secondary" id="btn-reverse-words">🔀 Reverse Words</button>
+          <button class="btn btn-secondary" id="btn-reverse-lines">↕️ Reverse Lines</button>
+          <button class="btn btn-primary" data-copy-target="text-input">📋 Copy</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js"></script>
+  <script src="/assets/js/app.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const input = document.getElementById('text-input');
+
+      document.getElementById('btn-reverse-letters').addEventListener('click', () => {
+        input.value = input.value.split('').reverse().join('');
+      });
+
+      document.getElementById('btn-reverse-words').addEventListener('click', () => {
+        input.value = input.value.split(' ').reverse().join(' ');
+      });
+
+      document.getElementById('btn-reverse-lines').addEventListener('click', () => {
+        input.value = input.value.split('\n').reverse().join('\n');
+      });
+    });
+  </script>
+</body>
+</html>

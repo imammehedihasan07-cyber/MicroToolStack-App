@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSON Formatter & Validator | MicroToolStack</title>
+  <meta name="description" content="Format, validate, prettify, and minify raw JSON string data directly in your browser.">
+  
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/tools.css">
+</head>
+<body>
+  <div id="header-container"></div>
+
+  <main class="container">
+    <nav class="breadcrumb-container" aria-label="Breadcrumb">
+      <ol class="breadcrumb-list">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/#developer">Developer Tools</a></li>
+        <li class="breadcrumb-item active" aria-current="page">JSON Formatter</li>
+      </ol>
+    </nav>
+
+    <header style="margin-bottom: 1.5rem;">
+      <h1>JSON Formatter</h1>
+      <p>Validate, prettify, and format messy JSON data with clear syntax error checks.</p>
+    </header>
+
+    <div class="tool-layout">
+      <div class="tool-container">
+        <textarea id="json-input" class="tool-textarea" style="font-family: var(--font-mono); font-size: 0.875rem; min-height: 250px;" placeholder='{"name":"MicroToolStack","active":true}'></textarea>
+
+        <div class="tool-controls">
+          <button class="btn btn-primary" id="btn-format">✨ Prettify (Format)</button>
+          <button class="btn btn-secondary" id="btn-minify">⚡ Minify</button>
+          <button class="btn btn-primary" data-copy-target="json-input">📋 Copy</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js"></script>
+  <script src="/assets/js/app.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const input = document.getElementById('json-input');
+
+      document.getElementById('btn-format').addEventListener('click', () => {
+        try {
+          if (!input.value.trim()) return;
+          const parsed = JSON.parse(input.value);
+          input.value = JSON.stringify(parsed, null, 2);
+          showToast('JSON Formatted Successfully!');
+        } catch (err) {
+          showToast('Invalid JSON: ' + err.message, 'danger');
+        }
+      });
+
+      document.getElementById('btn-minify').addEventListener('click', () => {
+        try {
+          if (!input.value.trim()) return;
+          const parsed = JSON.parse(input.value);
+          input.value = JSON.stringify(parsed);
+          showToast('JSON Minified!');
+        } catch (err) {
+          showToast('Invalid JSON: ' + err.message, 'danger');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

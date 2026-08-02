@@ -1,0 +1,44 @@
+[
+  {
+    "id": "text",
+    "name": "Text Tools",
+    "description": "Essential utilities for content writers, editors, and students.",
+    "icon": "📝",
+    "count": 7
+  },
+  {
+    "id": "seo",
+    "name": "SEO Tools",
+    "description": "Optimize metadata, schemas, and structure for search engines.",
+    "icon": "🚀",
+    "count": 6
+  },
+  {
+    "id": "developer",
+    "name": "Developer Tools",
+    "description": "Handy tools for format conversion, encoding, and data generation.",
+    "icon": "💻",
+    "count": 6
+  },
+  {
+    "id": "calculator",
+    "name": "Calculators",
+    "description": "Fast financial, health, and everyday unit/math calculators.",
+    "icon": "🧮",
+    "count": 5
+  },
+  {
+    "id": "media",
+    "name": "Media Tools",
+    "description": "Client-side image conversion, compression, and media editing.",
+    "icon": "🖼️",
+    "count": 1
+  },
+  {
+    "id": "ai",
+    "name": "AI Tools",
+    "description": "Smart AI-powered generators to boost social media and content workflows.",
+    "icon": "🤖",
+    "count": 5
+  }
+]

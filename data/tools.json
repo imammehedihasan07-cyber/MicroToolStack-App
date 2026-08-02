@@ -1,0 +1,302 @@
+[
+  {
+    "id": "word-counter",
+    "name": "Word Counter",
+    "category": "text",
+    "url": "/tools/text/word-counter.html",
+    "description": "Count words, characters, sentences, and estimated reading time instantly.",
+    "icon": "📊",
+    "isPopular": true,
+    "isNew": false
+  },
+  {
+    "id": "character-counter",
+    "name": "Character Counter",
+    "category": "text",
+    "url": "/tools/text/character-counter.html",
+    "description": "Count exact characters with and without spaces for post limits.",
+    "icon": "🔤",
+    "isPopular": false,
+    "isNew": false
+  },
+  {
+    "id": "remove-extra-spaces",
+    "name": "Remove Extra Spaces",
+    "category": "text",
+    "url": "/tools/text/remove-extra-spaces.html",
+    "description": "Clean up multiple spaces, line breaks, and messy text formatting.",
+    "icon": "✂️",
+    "isPopular": true,
+    "isNew": false
+  },
+  {
+    "id": "case-converter",
+    "name": "Case Converter",
+    "category": "text",
+    "url": "/tools/text/case-converter.html",
+    "description": "Convert text to UPPERCASE, lowercase, Title Case, camelCase, and more.",
+    "icon": "🔠",
+    "isPopular": false,
+    "isNew": false
+  },
+  {
+    "id": "reverse-text",
+    "name": "Reverse Text",
+    "category": "text",
+    "url": "/tools/text/reverse-text.html",
+    "description": "Flip text, reverse words, or reverse letters easily.",
+    "icon": "🔄",
+    "isPopular": false,
+    "isNew": false
+  },
+  {
+    "id": "text-sorter",
+    "name": "Text Sorter",
+    "category": "text",
+    "url": "/tools/text/text-sorter.html",
+    "description": "Sort text lines alphabetically, numerically, or in reverse order.",
+    "icon": "📶",
+    "isPopular": false,
+    "isNew": false
+  },
+  {
+    "id": "duplicate-line-remover",
+    "name": "Duplicate Line Remover",
+    "category": "text",
+    "url": "/tools/text/duplicate-line-remover.html",
+    "description": "Find and remove duplicate lines from lists or data files.",
+    "icon": "🧹",
+    "isPopular": true,
+    "isNew": false
+  },
+  {
+    "id": "meta-title-generator",
+    "name": "Meta Title Generator",
+    "category": "seo",
+    "url": "/tools/seo/meta-title-generator.html",
+    "description": "Create pixel-perfect Google search title tags.",
+    "icon": "🏷️",
+    "isPopular": true,
+    "isNew": false
+  },
+  {
+    "id": "meta-description-generator",
+    "name": "Meta Description Generator",
+    "category": "seo",
+    "url": "/tools/seo/meta-description-generator.html",
+    "description": "Generate click-worthy SEO meta descriptions within length limits.",
+    "icon": "📄",
+    "isPopular": false,
+    "isNew": false
+  },
+  {
+    "id": "slug-generator",
+    "name": "URL Slug Generator",
+    "category": "seo",
+    "url": "/tools/seo/slug-generator.html",
+    "description": "Convert headlines and titles into SEO-friendly, clean URL slugs.",
+    "icon": "🔗",
+    "isPopular": true,
+    "isNew": false
+  },
+  {
+    "id": "robots-txt-generator",
+    "name": "Robots.txt Generator",
+    "category": "seo",
+    "url": "/tools/seo/robots-txt-generator.html",
+    "description": "Generate valid robots.txt files to instruct search engine crawlers.",
+    "icon": "🤖",
+    "isPopular": false,
+    "isNew": false
+  },
+  {
+    "id": "faq-schema-generator",
+    "name": "FAQ Schema Generator",
+    "category": "seo",
+    "url": "/tools/seo/faq-schema-generator.html",
+    "description": "Build JSON-LD FAQ Schema markup for rich snippet Search Results.",
+    "icon": "⚙️",
+    "isPopular": false,
+    "isNew": false
+  },
+  {
+    "id": "open-graph-generator",
+    "name": "Open Graph Preview",
+    "category": "seo",
+    "url": "/tools/seo/open-graph-generator.html",
+    "description": "Generate Social Media OG Meta Tags and preview Facebook/Twitter cards.",
+    "icon": "🌐",
+    "isPopular": true,
+    "isNew": true
+  },
+  {
+    "id": "json-formatter",
+    "name": "JSON Formatter",
+    "category": "developer",
+    "url": "/tools/developer/json-formatter.html",
+    "description": "Validate, prettify, and format raw JSON data seamlessly.",
+    "icon": "📦",
+    "isPopular": true,
+    "isNew": false
+  },
+  {
+    "id": "uuid-generator",
+    "name": "UUID Generator",
+    "category": "developer",
+    "url": "/tools/developer/uuid-generator.html",
+    "description": "Generate secure v4 UUIDs for developer testing and database keys.",
+    "icon": "🔑",
+    "isPopular": false,
+    "isNew": false
+  },
+  {
+    "id": "base64-encoder-decoder",
+    "name": "Base64 Encoder / Decoder",
+    "category": "developer",
+    "url": "/tools/developer/base64-encoder-decoder.html",
+    "description": "Encode string values to Base64 format or decode them back to plain text.",
+    "icon": "🔐",
+    "isPopular": false,
+    "isNew": false
+  },
+  {
+    "id": "password-hash-generator",
+    "name": "Password & Hash Generator",
+    "category": "developer",
+    "url": "/tools/developer/password-hash-generator.html",
+    "description": "Generate secure passwords and calculate MD5 / SHA-256 hashes.",
+    "icon": "🛡️",
+    "isPopular": true,
+    "isNew": true
+  },
+  {
+    "id": "lorem-ipsum-generator",
+    "name": "Lorem Ipsum Generator",
+    "category": "developer",
+    "url": "/tools/developer/lorem-ipsum-generator.html",
+    "description": "Generate custom placeholder dummy text and paragraphs for designs.",
+    "icon": "📜",
+    "isPopular": false,
+    "isNew": true
+  },
+  {
+    "id": "color-picker",
+    "name": "Color Picker & Palette",
+    "category": "developer",
+    "url": "/tools/developer/color-picker.html",
+    "description": "Pick colors, convert HEX to RGB, and create matching color palettes.",
+    "icon": "🎨",
+    "isPopular": true,
+    "isNew": true
+  },
+  {
+    "id": "image-converter",
+    "name": "Image Converter & Compressor",
+    "category": "media",
+    "url": "/tools/media/image-converter.html",
+    "description": "Convert JPG/PNG to WebP and compress image sizes 100% in browser.",
+    "icon": "🖼️",
+    "isPopular": true,
+    "isNew": true
+  },
+  {
+    "id": "age-calculator",
+    "name": "Age Calculator",
+    "category": "calculator",
+    "url": "/tools/calculator/age-calculator.html",
+    "description": "Calculate exact age in years, months, weeks, and days from birth date.",
+    "icon": "🎂",
+    "isPopular": true,
+    "isNew": true
+  },
+  {
+    "id": "percentage-calculator",
+    "name": "Percentage Calculator",
+    "category": "calculator",
+    "url": "/tools/calculator/percentage-calculator.html",
+    "description": "Calculate percentage differences, increases, and fraction values.",
+    "icon": "🔢",
+    "isPopular": false,
+    "isNew": true
+  },
+  {
+    "id": "vat-gst-calculator",
+    "name": "GST / VAT Calculator",
+    "category": "calculator",
+    "url": "/tools/calculator/vat-gst-calculator.html",
+    "description": "Add or remove GST and VAT tax amounts from total prices.",
+    "icon": "💰",
+    "isPopular": false,
+    "isNew": true
+  },
+  {
+    "id": "emi-calculator",
+    "name": "EMI Calculator",
+    "category": "calculator",
+    "url": "/tools/calculator/emi-calculator.html",
+    "description": "Calculate monthly loan EMI repayments and interest totals.",
+    "icon": "🏦",
+    "isPopular": true,
+    "isNew": true
+  },
+  {
+    "id": "bmi-calculator",
+    "name": "BMI Calculator",
+    "category": "calculator",
+    "url": "/tools/calculator/bmi-calculator.html",
+    "description": "Calculate Body Mass Index (BMI) and health weight ranges.",
+    "icon": "⚖️",
+    "isPopular": false,
+    "isNew": true
+  },
+  {
+    "id": "caption-generator",
+    "name": "AI Caption Generator",
+    "category": "ai",
+    "url": "/tools/ai/caption-generator.html",
+    "description": "Generate engaging social media captions powered by AI.",
+    "icon": "✨",
+    "isPopular": true,
+    "isNew": false
+  },
+  {
+    "id": "hashtag-generator",
+    "name": "AI Hashtag Generator",
+    "category": "ai",
+    "url": "/tools/ai/hashtag-generator.html",
+    "description": "Discover high-ranking relevant hashtags for your posts.",
+    "icon": "#️⃣",
+    "isPopular": false,
+    "isNew": false
+  },
+  {
+    "id": "bio-generator",
+    "name": "AI Bio Generator",
+    "category": "ai",
+    "url": "/tools/ai/bio-generator.html",
+    "description": "Create professional social media profiles and bios instantly.",
+    "icon": "👤",
+    "isPopular": false,
+    "isNew": false
+  },
+  {
+    "id": "humanizer",
+    "name": "AI Text Humanizer",
+    "category": "ai",
+    "url": "/tools/ai/humanizer.html",
+    "description": "Rewrite AI-generated content into natural human-sounding phrasing.",
+    "icon": "🧠",
+    "isPopular": true,
+    "isNew": false
+  },
+  {
+    "id": "youtube-title-generator",
+    "name": "AI YouTube Title & Description",
+    "category": "ai",
+    "url": "/tools/ai/youtube-title-generator.html",
+    "description": "Generate viral YouTube title ideas and full video descriptions with AI.",
+    "icon": "🎬",
+    "isPopular": true,
+    "isNew": true
+  }
+]

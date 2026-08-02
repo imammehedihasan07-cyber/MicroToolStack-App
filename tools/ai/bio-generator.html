@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Bio Generator | MicroToolStack</title>
+  <meta name="description" content="Generate professional social media profile bios for Twitter, Instagram, and LinkedIn.">
+  
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/tools.css">
+</head>
+<body>
+  <div id="header-container"></div>
+
+  <main class="container">
+    <nav class="breadcrumb-container" aria-label="Breadcrumb">
+      <ol class="breadcrumb-list">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/#ai">AI Tools</a></li>
+        <li class="breadcrumb-item active" aria-current="page">AI Bio Generator</li>
+      </ol>
+    </nav>
+
+    <header style="margin-bottom: 1.5rem;">
+      <h1>AI Bio Generator</h1>
+      <p>Craft concise, catchy bio profiles for Twitter, Instagram, or LinkedIn.</p>
+    </header>
+
+    <div class="tool-layout">
+      <div class="tool-container">
+        <label style="font-weight: 600; display: block; margin-bottom: 0.5rem;">Tell us about yourself or business:</label>
+        <textarea id="ai-input" class="tool-textarea" style="min-height: 80px;" placeholder="e.g. Frontend Web Developer, building open source tools, loves JavaScript and design..."></textarea>
+
+        <div class="tool-controls">
+          <button class="btn btn-primary" id="btn-generate">✨ Generate Bios</button>
+        </div>
+
+        <label style="font-weight: 600; display: block; margin-top: 1.5rem; margin-bottom: 0.5rem;">Suggested Bios:</label>
+        <textarea id="ai-output" class="tool-textarea" style="min-height: 180px;" readonly placeholder="Bios will appear here..."></textarea>
+
+        <div class="tool-controls" style="margin-top: 1rem;">
+          <button class="btn btn-primary" data-copy-target="ai-output">📋 Copy Bio</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js"></script>
+  <script src="/assets/js/app.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const input = document.getElementById('ai-input');
+      const output = document.getElementById('ai-output');
+      const btn = document.getElementById('btn-generate');
+
+      btn.addEventListener('click', async () => {
+        if (!input.value.trim()) return;
+
+        btn.disabled = true;
+        btn.textContent = '⏳ Generating...';
+
+        try {
+          const prompt = `Generate 4 distinct social media bio variations (1 Professional, 1 Creative, 1 Short & Punchy, 1 Minimalist) based on this details: "${input.value}"`;
+          const res = await fetch('/api/generate', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ prompt, type: 'bio' })
+          });
+
+          const data = await res.json();
+          output.value = res.ok ? data.result : 'Error: ' + data.error;
+        } catch (err) {
+          output.value = 'Failed to connect to API.';
+        } finally {
+          btn.disabled = false;
+          btn.textContent = '✨ Generate Bios';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

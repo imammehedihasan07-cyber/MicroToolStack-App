@@ -1,0 +1,18 @@
+[
+  {
+    "question": "Are all tools on MicroToolStack free to use?",
+    "answer": "Yes, 100% free! Every tool on MicroToolStack is accessible without registration, subscriptions, or hidden charges."
+  },
+  {
+    "question": "Is my data stored or tracked on your servers?",
+    "answer": "No. Most of our text, SEO, and developer utilities run client-side directly in your browser. Your text stays entirely private."
+  },
+  {
+    "question": "Do I need to create an account to use the tools?",
+    "answer": "No sign-up is required. You can jump straight to any tool and start processing your data instantly."
+  },
+  {
+    "question": "How fast are the tools?",
+    "answer": "Because client-side tools run in your own web browser using lightweight modern JS, processing speed is nearly instant."
+  }
+]

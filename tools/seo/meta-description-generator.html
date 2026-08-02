@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SEO Meta Description Generator | MicroToolStack</title>
+  <meta name="description" content="Generate high-CTR meta descriptions within Google's 160-character snippet limit.">
+  
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/tools.css">
+  <style>
+    .google-preview {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      margin-top: 1rem;
+      font-family: arial, sans-serif;
+    }
+    [data-theme="dark"] .google-preview { background: #202124; }
+    .preview-desc { font-size: 0.875rem; color: #4d5156; line-height: 1.4; }
+    [data-theme="dark"] .preview-desc { color: #bdc1c6; }
+  </style>
+</head>
+<body>
+  <div id="header-container"></div>
+
+  <main class="container">
+    <nav class="breadcrumb-container" aria-label="Breadcrumb">
+      <ol class="breadcrumb-list">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/#seo">SEO Tools</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Meta Description Generator</li>
+      </ol>
+    </nav>
+
+    <header style="margin-bottom: 1.5rem;">
+      <h1>Meta Description Generator</h1>
+      <p>Draft concise, engaging meta descriptions kept optimal within 150-160 characters.</p>
+    </header>
+
+    <div class="tool-layout">
+      <div class="tool-container">
+        <textarea id="desc-input" class="tool-textarea" placeholder="Type your meta description here..."></textarea>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-value" id="stat-length">0</div>
+            <div class="stat-label">Characters (Recommended: 155)</div>
+          </div>
+        </div>
+
+        <h3 style="margin-top: 1.5rem;">Google Snippet Preview</h3>
+        <div class="google-preview">
+          <div style="font-size: 1.1rem; color: #1a0dab; margin-bottom: 2px;">Example Page Title</div>
+          <div class="preview-desc" id="serp-desc">Your page meta description snippet will appear here in Google search results...</div>
+        </div>
+
+        <div class="tool-controls" style="margin-top: 1rem;">
+          <button class="btn btn-primary" id="copy-btn">📋 Copy Tag</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js"></script>
+  <script src="/assets/js/app.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const input = document.getElementById('desc-input');
+      const statLength = document.getElementById('stat-length');
+      const serpDesc = document.getElementById('serp-desc');
+
+      input.addEventListener('input', () => {
+        const val = input.value;
+        const len = val.length;
+        statLength.textContent = `${len}/160`;
+        statLength.style.color = (len < 120 || len > 160) ? 'var(--warning)' : 'var(--success)';
+        serpDesc.textContent = val || 'Your page meta description snippet will appear here in Google search results...';
+      });
+
+      document.getElementById('copy-btn').addEventListener('click', () => {
+        const code = `<meta name="description" content="${input.value}">`;
+        copyToClipboard(code);
+      });
+    });
+  </script>
+</body>
+</html>

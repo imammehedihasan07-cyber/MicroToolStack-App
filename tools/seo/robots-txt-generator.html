@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Robots.txt Generator Tool | MicroToolStack</title>
+  <meta name="description" content="Generate customizable robots.txt files for Google, Bing, and search crawlers easily.">
+  
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/tools.css">
+</head>
+<body>
+  <div id="header-container"></div>
+
+  <main class="container">
+    <nav class="breadcrumb-container" aria-label="Breadcrumb">
+      <ol class="breadcrumb-list">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/#seo">SEO Tools</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Robots.txt Generator</li>
+      </ol>
+    </nav>
+
+    <header style="margin-bottom: 1.5rem;">
+      <h1>Robots.txt Generator</h1>
+      <p>Create standard directives to instruct search engine crawlers which paths to index.</p>
+    </header>
+
+    <div class="tool-layout">
+      <div class="tool-container">
+        <div style="margin-bottom: 1rem;">
+          <label style="font-weight: 600; display: block; margin-bottom: 0.5rem;">Sitemap URL (Optional):</label>
+          <input type="url" id="sitemap-url" class="search-input" placeholder="https://example.com/sitemap.xml">
+        </div>
+
+        <div style="margin-bottom: 1rem;">
+          <label style="font-weight: 600; display: block; margin-bottom: 0.5rem;">Disallow Directories (One per line):</label>
+          <textarea id="disallow-paths" class="tool-textarea" style="min-height: 80px;" placeholder="/admin/&#10;/private/"></textarea>
+        </div>
+
+        <label style="font-weight: 600; display: block; margin-bottom: 0.5rem;">Generated robots.txt File:</label>
+        <textarea id="robots-output" class="tool-textarea" readonly></textarea>
+
+        <div class="tool-controls" style="margin-top: 1rem;">
+          <button class="btn btn-primary" data-copy-target="robots-output">📋 Copy robots.txt</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js"></script>
+  <script src="/assets/js/app.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const sitemapInput = document.getElementById('sitemap-url');
+      const disallowInput = document.getElementById('disallow-paths');
+      const output = document.getElementById('robots-output');
+
+      function generateRobots() {
+        let content = "User-agent: *\nAllow: /\n";
+        const paths = disallowInput.value.split('\n').filter(p => p.trim() !== '');
+        
+        paths.forEach(p => {
+          content += `Disallow: ${p.trim()}\n`;
+        });
+
+        if (sitemapInput.value.trim() !== '') {
+          content += `\nSitemap: ${sitemapInput.value.trim()}\n`;
+        }
+
+        output.value = content;
+      }
+
+      sitemapInput.addEventListener('input', generateRobots);
+      disallowInput.addEventListener('input', generateRobots);
+      generateRobots();
+    });
+  </script>
+</body>
+</html>

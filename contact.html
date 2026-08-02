@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - MicroToolStack</title>
+  <meta name="description" content="Get in touch with the MicroToolStack team for suggestions, feedback, or support.">
+  
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+</head>
+<body>
+  <div id="header-container"></div>
+
+  <main class="container" style="max-width: 650px; padding-top: 3rem; padding-bottom: 3rem;">
+    <h1>Contact Us</h1>
+    <p>Have questions, feature requests, or bug reports? We'd love to hear from you.</p>
+
+    <div class="card" style="margin-top: 1.5rem;">
+      <form onsubmit="event.preventDefault(); showToast('Message sent! We will respond shortly.');">
+        <div style="margin-bottom: 1rem;">
+          <label style="font-weight: 600; display: block; margin-bottom: 0.5rem;">Your Name:</label>
+          <input type="text" class="search-input" required placeholder="John Doe">
+        </div>
+
+        <div style="margin-bottom: 1rem;">
+          <label style="font-weight: 600; display: block; margin-bottom: 0.5rem;">Your Email:</label>
+          <input type="email" class="search-input" required placeholder="john@example.com">
+        </div>
+
+        <div style="margin-bottom: 1.5rem;">
+          <label style="font-weight: 600; display: block; margin-bottom: 0.5rem;">Message:</label>
+          <textarea class="tool-textarea" style="min-height: 120px;" required placeholder="How can we help?"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+      </form>
+    </div>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js"></script>
+  <script src="/assets/js/app.js"></script>
+</body>
+</html>

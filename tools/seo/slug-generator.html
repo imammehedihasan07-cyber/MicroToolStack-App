@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SEO URL Slug Generator | MicroToolStack</title>
+  <meta name="description" content="Convert post titles and headlines into readable, lowercased, hypenated URL slugs.">
+  
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/tools.css">
+</head>
+<body>
+  <div id="header-container"></div>
+
+  <main class="container">
+    <nav class="breadcrumb-container" aria-label="Breadcrumb">
+      <ol class="breadcrumb-list">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/#seo">SEO Tools</a></li>
+        <li class="breadcrumb-item active" aria-current="page">URL Slug Generator</li>
+      </ol>
+    </nav>
+
+    <header style="margin-bottom: 1.5rem;">
+      <h1>URL Slug Generator</h1>
+      <p>Transform article titles into clean, SEO-friendly, hyphen-separated URL paths.</p>
+    </header>
+
+    <div class="tool-layout">
+      <div class="tool-container">
+        <label for="title-input" style="font-weight: 600; display: block; margin-bottom: 0.5rem;">Enter Headline or Title:</label>
+        <input type="text" id="title-input" class="search-input" placeholder="e.g. 10 Tips for Better Web Performance in 2026!" style="margin-bottom: 1rem;">
+
+        <label for="slug-output" style="font-weight: 600; display: block; margin-bottom: 0.5rem;">Generated URL Slug:</label>
+        <input type="text" id="slug-output" class="search-input" readonly style="background-color: var(--bg-secondary); margin-bottom: 1rem;">
+
+        <div class="tool-controls">
+          <button class="btn btn-primary" data-copy-target="slug-output">📋 Copy Slug</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js"></script>
+  <script src="/assets/js/app.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const input = document.getElementById('title-input');
+      const output = document.getElementById('slug-output');
+
+      input.addEventListener('input', () => {
+        const str = input.value;
+        const slug = str
+          .toLowerCase()
+          .trim()
+          .replace(/[^\w\s-]/g, '')
+          .replace(/[\s_-]+/g, '-')
+          .replace(/^-+|-+$/g, '');
+        
+        output.value = slug;
+      });
+    });
+  </script>
+</body>
+</html>

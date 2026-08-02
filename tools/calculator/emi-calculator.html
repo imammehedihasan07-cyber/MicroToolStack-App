@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loan EMI Calculator | MicroToolStack</title>
+  <meta name="description" content="Calculate monthly loan repayments, total interest payable, and payback schedules.">
+  
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/tools.css">
+</head>
+<body>
+  <div id="header-container"></div>
+
+  <main class="container">
+    <nav class="breadcrumb-container" aria-label="Breadcrumb">
+      <ol class="breadcrumb-list">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/#calculator">Calculators</a></li>
+        <li class="breadcrumb-item active" aria-current="page">EMI Calculator</li>
+      </ol>
+    </nav>
+
+    <header style="margin-bottom: 1.5rem;">
+      <h1>Loan EMI Calculator</h1>
+      <p>Calculate your monthly loan repayments and total interest payable instantly.</p>
+    </header>
+
+    <div class="tool-layout">
+      <div class="tool-container">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
+          <div>
+            <label style="font-weight: 600; display: block; margin-bottom: 0.5rem;">Loan Amount ($):</label>
+            <input type="number" id="loan-amount" class="search-input" value="10000">
+          </div>
+          <div>
+            <label style="font-weight: 600; display: block; margin-bottom: 0.5rem;">Interest Rate (% p.a):</label>
+            <input type="number" id="interest-rate" class="search-input" value="8.5" step="0.1">
+          </div>
+          <div>
+            <label style="font-weight: 600; display: block; margin-bottom: 0.5rem;">Tenure (Months):</label>
+            <input type="number" id="tenure-months" class="search-input" value="24">
+          </div>
+        </div>
+
+        <button class="btn btn-primary" id="btn-calc-emi" style="width: 100%;">🧮 Calculate EMI</button>
+
+        <div class="stats-grid" style="margin-top: 1.5rem;">
+          <div class="stat-card">
+            <div class="stat-value" id="res-emi">$454.56</div>
+            <div class="stat-label">Monthly EMI</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="res-interest">$909.48</div>
+            <div class="stat-label">Total Interest</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" id="res-total-pay">$10,909.48</div>
+            <div class="stat-label">Total Payment</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js"></script>
+  <script src="/assets/js/app.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      function calcEMI() {
+        const p = parseFloat(document.getElementById('loan-amount').value) || 0;
+        const r = (parseFloat(document.getElementById('interest-rate').value) || 0) / 12 / 100;
+        const n = parseFloat(document.getElementById('tenure-months').value) || 1;
+
+        if (p <= 0 || r <= 0) return;
+
+        const emi = (p * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+        const totalPayment = emi * n;
+        const totalInterest = totalPayment - p;
+
+        document.getElementById('res-emi').textContent = `$${emi.toFixed(2)}`;
+        document.getElementById('res-interest').textContent = `$${totalInterest.toFixed(2)}`;
+        document.getElementById('res-total-pay').textContent = `$${totalPayment.toFixed(2)}`;
+      }
+
+      document.getElementById('btn-calc-emi').addEventListener('click', calcEMI);
+      calcEMI();
+    });
+  </script>
+</body>
+</html>

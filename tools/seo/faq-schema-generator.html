@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ Schema JSON-LD Generator | MicroToolStack</title>
+  <meta name="description" content="Generate Google valid JSON-LD FAQ Schema structured markup code.">
+  
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/tools.css">
+</head>
+<body>
+  <div id="header-container"></div>
+
+  <main class="container">
+    <nav class="breadcrumb-container" aria-label="Breadcrumb">
+      <ol class="breadcrumb-list">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/#seo">SEO Tools</a></li>
+        <li class="breadcrumb-item active" aria-current="page">FAQ Schema Generator</li>
+      </ol>
+    </nav>
+
+    <header style="margin-bottom: 1.5rem;">
+      <h1>FAQ Schema Generator</h1>
+      <p>Generate JSON-LD structured data markup for FAQ rich snippets in Google Search.</p>
+    </header>
+
+    <div class="tool-layout">
+      <div class="tool-container">
+        <div style="margin-bottom: 1rem;">
+          <label style="font-weight: 600; display: block; margin-bottom: 0.25rem;">Question 1:</label>
+          <input type="text" id="q1" class="search-input" placeholder="What is MicroToolStack?" style="margin-bottom: 0.5rem;">
+          <textarea id="a1" class="tool-textarea" style="min-height: 70px;" placeholder="MicroToolStack is a suite of free web developer and text tools."></textarea>
+        </div>
+
+        <label style="font-weight: 600; display: block; margin-bottom: 0.5rem;">Generated JSON-LD Code:</label>
+        <textarea id="json-output" class="tool-textarea" readonly style="font-family: var(--font-mono); font-size: 0.85rem;"></textarea>
+
+        <div class="tool-controls" style="margin-top: 1rem;">
+          <button class="btn btn-primary" data-copy-target="json-output">📋 Copy JSON-LD Code</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js"></script>
+  <script src="/assets/js/app.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const q1 = document.getElementById('q1');
+      const a1 = document.getElementById('a1');
+      const output = document.getElementById('json-output');
+
+      function updateSchema() {
+        const schemaData = {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [{
+            "@type": "Question",
+            "name": q1.value || "Question Example",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": a1.value || "Answer Example"
+            }
+          }]
+        };
+
+        output.value = `<script type="application/ld+json">\n${JSON.stringify(schemaData, null, 2)}\n<\/script>`;
+      }
+
+      q1.addEventListener('input', updateSchema);
+      a1.addEventListener('input', updateSchema);
+      updateSchema();
+    });
+  </script>
+</body>
+</html>

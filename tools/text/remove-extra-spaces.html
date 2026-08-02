@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Remove Extra Spaces - Clean Up Messy Text | MicroToolStack</title>
+  <meta name="description" content="Clean up multiple spaces, line breaks, leading/trailing whitespace, and format raw text easily.">
+  
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/tools.css">
+</head>
+<body>
+  <div id="header-container"></div>
+
+  <main class="container">
+    <nav class="breadcrumb-container" aria-label="Breadcrumb">
+      <ol class="breadcrumb-list">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/#text">Text Tools</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Remove Extra Spaces</li>
+      </ol>
+    </nav>
+
+    <header style="margin-bottom: 1.5rem;">
+      <h1>Remove Extra Spaces</h1>
+      <p>Clean up double spaces, tab spaces, unnecessary blank lines, and trailing whitespace instantly.</p>
+    </header>
+
+    <div class="tool-layout">
+      <div class="tool-container">
+        <textarea id="text-input" class="tool-textarea" placeholder="Paste messy text here..." aria-label="Text space cleanup"></textarea>
+
+        <div class="tool-controls">
+          <button class="btn btn-primary" id="btn-clean-spaces">✂️ Single Space Only</button>
+          <button class="btn btn-secondary" id="btn-clean-lines">🧹 Remove Extra Lines</button>
+          <button class="btn btn-secondary" id="btn-trim">📐 Trim Edges</button>
+          <button class="btn btn-primary" data-copy-target="text-input">📋 Copy Clean Text</button>
+        </div>
+      </div>
+
+      <aside>
+        <div class="card">
+          <h3>ℹ️ How it Works</h3>
+          <p style="font-size: 0.875rem; color: var(--text-secondary);">
+            - <strong>Single Space:</strong> Replaces consecutive spaces with a single space.<br>
+            - <strong>Remove Extra Lines:</strong> Deletes empty lines.<br>
+            - <strong>Trim Edges:</strong> Removes leading and trailing whitespace.
+          </p>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js"></script>
+  <script src="/assets/js/app.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const input = document.getElementById('text-input');
+
+      document.getElementById('btn-clean-spaces').addEventListener('click', () => {
+        input.value = input.value.replace(/[ \t]+/g, ' ');
+        showToast('Cleaned double spaces!');
+      });
+
+      document.getElementById('btn-clean-lines').addEventListener('click', () => {
+        input.value = input.value.replace(/^\s*[\r\n]/gm, '');
+        showToast('Removed empty lines!');
+      });
+
+      document.getElementById('btn-trim').addEventListener('click', () => {
+        input.value = input.value.trim();
+        showToast('Trimmed leading/trailing spaces!');
+      });
+    });
+  </script>
+</body>
+</html>
