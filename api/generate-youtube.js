@@ -20,10 +20,9 @@ export default async function handler(req, res) {
       "description": "Write a 150-word SEO video description here with timestamps placeholder and key points...",
       "hashtags": "#tag1 #tag2 #tag3 #tag4 #tag5"
     }`;
-
-    // Updated API Endpoint using gemini-2.5-flash for stability
+// Updated API Endpoint using gemini-2.5-flash-lite
     const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`,
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent?key=${apiKey}`,
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
