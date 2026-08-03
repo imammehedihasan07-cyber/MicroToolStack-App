@@ -14,28 +14,22 @@ export default async function handler(req, res) {
   }
 
   try {
-    const promptText = `You are a YouTube SEO Expert. Generate YouTube metadata for the topic: "${topic}".
-Provide the output strictly in valid JSON format (without Markdown backticks) with the following exact keys:
-1. "titles": Provide 5 catchy, high-CTR YouTube video titles (numbered 1 to 5).
-2. "description": Write an engaging, SEO-rich YouTube description (around 150-200 words) with call-to-actions, timestamps placeholders, and main key takeaways.
-3. "hashtags": Provide 10 to 15 relevant viral hashtags separated by spaces (e.g. #YouTube #Topic).
+    const promptText = `Generate YouTube SEO metadata for topic: "${topic}".
+Return ONLY a valid JSON object without markdown syntax or formatting:
+{
+  "titles": "1. Title 1\\n2. Title 2\\n3. Title 3\\n4. Title 4\\n5. Title 5",
+  "description": "Write a 150-word SEO video description here with timestamps placeholder and key points...",
+  "hashtags": "#tag1 #tag2 #tag3 #tag4 #tag5"
+}`;
 
-Return ONLY the JSON string. Do not wrap in \`\`\`json.`;
-
-    // Direct REST API Call (Gemini 2.5 Flash / 1.5 Flash Support)
+    // Updated API Endpoint using gemini-2.5-flash
     const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`,
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`,
       {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          contents: [
-            {
-              parts: [{ text: promptText }]
-            }
-          ]
+          contents: [{ parts: [{ text: promptText }] }]
         })
       }
     );
@@ -43,23 +37,19 @@ Return ONLY the JSON string. Do not wrap in \`\`\`json.`;
     const data = await response.json();
 
     if (data.error) {
-      return res.status(500).json({ error: data.error.message });
+      return res.status(500).json({ error: 'Google API Error: ' + data.error.message });
     }
 
-    let textResponse = data.candidates[0].content.parts[0].text.trim();
+    let rawText = data.candidates?.[0]?.content?.parts?.[0]?.text || '';
+    
+    // Clean markdown syntax if Gemini wraps response in ```json ... ```
+    rawText = rawText.replace(/```json/gi, '').replace(/```/g, '').trim();
 
-    // Clean JSON markdown blocks if model returns them
-    if (textResponse.startsWith('```json')) {
-      textResponse = textResponse.replace(/^```json/, '').replace(/```$/, '').trim();
-    } else if (textResponse.startsWith('```')) {
-      textResponse = textResponse.replace(/^```/, '').replace(/```$/, '').trim();
-    }
-
-    const parsedData = JSON.parse(textResponse);
+    const parsedData = JSON.parse(rawText);
     return res.status(200).json(parsedData);
 
   } catch (error) {
     console.error('Gemini API Error:', error);
-    return res.status(500).json({ error: 'Failed to generate YouTube content. ' + error.message });
+    return res.status(500).json({ error: 'Server Error: ' + error.message });
   }
 }
