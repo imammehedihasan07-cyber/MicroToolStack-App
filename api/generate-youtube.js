@@ -14,17 +14,16 @@ export default async function handler(req, res) {
   }
 
   try {
-    const promptText = `Generate YouTube SEO metadata for topic: "${topic}".
-Return ONLY a valid JSON object without markdown syntax or formatting:
-{
-  "titles": "1. Title 1\\n2. Title 2\\n3. Title 3\\n4. Title 4\\n5. Title 5",
-  "description": "Write a 150-word SEO video description here with timestamps placeholder and key points...",
-  "hashtags": "#tag1 #tag2 #tag3 #tag4 #tag5"
-}`;
-    // Updated API Endpoint using gemini-2.0-flash
+    const promptText = `Generate YouTube SEO metadata for topic: "${topic}". Return ONLY a valid JSON object without markdown syntax or formatting:
+    {
+      "titles": ["1. Title 1", "2. Title 2", "3. Title 3", "4. Title 4", "5. Title 5"],
+      "description": "Write a 150-word SEO video description here with timestamps placeholder and key points...",
+      "hashtags": "#tag1 #tag2 #tag3 #tag4 #tag5"
+    }`;
+
+    // Updated API Endpoint using gemini-2.5-flash for stability
     const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
-      
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`,
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -41,7 +40,7 @@ Return ONLY a valid JSON object without markdown syntax or formatting:
     }
 
     let rawText = data.candidates?.[0]?.content?.parts?.[0]?.text || '';
-    
+
     // Clean markdown syntax if Gemini wraps response in ```json ... ```
     rawText = rawText.replace(/```json/gi, '').replace(/```/g, '').trim();
 
