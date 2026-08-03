@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lorem Ipsum Generator | MicroToolStack</title>
+  <meta name="description" content="Generate dummy placeholder text and paragraphs for UI designs and mockups.">
+  
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/tools.css">
+</head>
+<body>
+  <div id="header-container"></div>
+
+  <main class="container">
+    <nav class="breadcrumb-container" aria-label="Breadcrumb">
+      <ol class="breadcrumb-list">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/#developer">Developer Tools</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Lorem Ipsum Generator</li>
+      </ol>
+    </nav>
+
+    <header style="margin-bottom: 1.5rem;">
+      <h1>Lorem Ipsum Generator</h1>
+      <p>Generate standard placeholder text paragraphs for website designs and layouts.</p>
+    </header>
+
+    <div class="tool-layout">
+      <div class="tool-container">
+        <div style="display: flex; gap: 1rem; align-items: center; margin-bottom: 1rem;">
+          <label style="font-weight: 600;">Paragraphs:</label>
+          <input type="number" id="para-count" class="search-input" value="3" min="1" max="20" style="width: 80px;">
+          <button class="btn btn-primary" id="btn-gen-lorem">📜 Generate Text</button>
+        </div>
+
+        <textarea id="lorem-output" class="tool-textarea" style="min-height: 220px;" readonly></textarea>
+
+        <div class="tool-controls" style="margin-top: 1rem;">
+          <button class="btn btn-primary" data-copy-target="lorem-output">📋 Copy Text</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js"></script>
+  <script src="/assets/js/app.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const output = document.getElementById('lorem-output');
+      const countInput = document.getElementById('para-count');
+
+      const loremBase = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+
+      function generateLorem() {
+        const count = parseInt(countInput.value) || 1;
+        const result = Array.from({ length: Math.min(count, 20) }, () => loremBase).join('\n\n');
+        output.value = result;
+      }
+
+      document.getElementById('btn-gen-lorem').addEventListener('click', generateLorem);
+      generateLorem();
+    });
+  </script>
+</body>
+</html>
