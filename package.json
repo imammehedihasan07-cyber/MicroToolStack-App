@@ -1,0 +1,15 @@
+{
+  "name": "microtoolstack",
+  "version": "1.0.0",
+  "description": "Free online web utility tools for text, SEO, developers, calculators, and AI generators.",
+  "main": "index.html",
+  "scripts": {
+    "start": "echo 'Static Site'"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
