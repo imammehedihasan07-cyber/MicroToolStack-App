@@ -14,7 +14,7 @@ export default async function handler(req, res) {
   if (!apiKey) {
     return res.status(500).json({ error: 'GEMINI_API_KEY environment variable is not set' });
   }
-
+const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
   try {
     const genAI = new GoogleGenerativeAI(apiKey);
     const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
