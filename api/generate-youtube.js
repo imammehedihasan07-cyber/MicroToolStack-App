@@ -8,46 +8,60 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'Topic is required' });
   }
 
-  const apiKey = process.env.GEMINI_API_KEY;
+  // Vercel Environment Variables থেকে GROQ_API_KEY নেওয়া হচ্ছে
+  const apiKey = process.env.GROQ_API_KEY;
   if (!apiKey) {
-    return res.status(500).json({ error: 'GEMINI_API_KEY environment variable is not set' });
+    return res.status(500).json({ error: 'GROQ_API_KEY environment variable is missing' });
   }
 
   try {
-    const promptText = `Generate YouTube SEO metadata for topic: "${topic}". Return ONLY a valid JSON object without markdown syntax or formatting:
-    {
-      "titles": ["1. Title 1", "2. Title 2", "3. Title 3", "4. Title 4", "5. Title 5"],
-      "description": "Write a 150-word SEO video description here with timestamps placeholder and key points...",
-      "hashtags": "#tag1 #tag2 #tag3 #tag4 #tag5"
-    }`;
-// Official Stable Endpoint for Free Tier
-    const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
-      {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          contents: [{ parts: [{ text: promptText }] }]
-        })
-      }
-    );
+    const promptText = `Generate YouTube SEO metadata for topic: "${topic}" in strictly valid JSON format like this:
+{
+  "titles": ["1. Title 1", "2. Title 2", "3. Title 3", "4. Title 4", "5. Title 5"],
+  "description": "Write a 150-word SEO video description here with target keywords.",
+  "hashtags": "#tag1 #tag2 #tag3 #tag4 #tag5"
+}`;
+
+    // Groq API Endpoint Direct Call
+    const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${apiKey}`
+      },
+      body: JSON.stringify({
+        model: 'llama-3.3-70b-versatile',
+        messages: [
+          {
+            role: 'system',
+            content: 'You are an expert YouTube SEO generator. Always output raw JSON only, without any markdown codeblock formatting.'
+          },
+          {
+            role: 'user',
+            content: promptText
+          }
+        ],
+        temperature: 0.7,
+        response_format: { type: "json_object" }
+      })
+    });
 
     const data = await response.json();
 
     if (data.error) {
-      return res.status(500).json({ error: 'Google API Error: ' + data.error.message });
+      return res.status(500).json({ error: 'Groq API Error: ' + data.error.message });
     }
 
-    let rawText = data.candidates?.[0]?.content?.parts?.[0]?.text || '';
+    let rawText = data.choices?.[0]?.message?.content || '';
 
-    // Clean markdown syntax if Gemini wraps response in ```json ... ```
+    // Clean JSON string if enclosed in markdown blocks
     rawText = rawText.replace(/```json/gi, '').replace(/```/g, '').trim();
 
     const parsedData = JSON.parse(rawText);
     return res.status(200).json(parsedData);
 
   } catch (error) {
-    console.error('Gemini API Error:', error);
+    console.error('Groq API Error:', error);
     return res.status(500).json({ error: 'Server Error: ' + error.message });
   }
 }
