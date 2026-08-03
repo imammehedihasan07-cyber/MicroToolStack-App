@@ -1,87 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI YouTube Title Generator | MicroToolStack</title>
-  <meta name="description" content="Generate high-CTR viral YouTube video title ideas with AI.">
-  
-  <link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="stylesheet" href="/assets/css/components.css">
-  <link rel="stylesheet" href="/assets/css/tools.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI YouTube Metadata Generator - Title, Description & Hashtags</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 800px; margin: 20px auto; padding: 20px; background: #f9fafb; color: #1f2937; }
+        .card { background: white; padding: 24px; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+        h1 { margin-top: 0; color: #ff0000; font-size: 1.8rem; }
+        label { font-weight: bold; display: block; margin-bottom: 8px; }
+        input[type="text"] { width: 100%; padding: 12px; border: 1px solid #d1d5db; border-radius: 8px; box-sizing: border-box; margin-bottom: 16px; }
+        button { background: #ff0000; color: white; border: none; padding: 12px 24px; font-weight: bold; border-radius: 8px; cursor: pointer; transition: 0.2s; }
+        button:hover { background: #cc0000; }
+        button:disabled { background: #9ca3af; cursor: not-allowed; }
+        .output-box { margin-top: 24px; display: none; }
+        .section { background: #f3f4f6; padding: 16px; border-radius: 8px; margin-bottom: 16px; position: relative; }
+        .section h3 { margin-top: 0; color: #374151; font-size: 1.1rem; }
+        pre { white-space: pre-wrap; font-family: inherit; margin: 0; }
+        .copy-btn { position: absolute; top: 12px; right: 12px; background: #3b82f6; color: white; border: none; padding: 6px 12px; border-radius: 6px; font-size: 0.8rem; cursor: pointer; }
+        .copy-btn:hover { background: #2563eb; }
+    </style>
 </head>
 <body>
-  <div id="header-container"></div>
 
-  <main class="container">
-    <nav class="breadcrumb-container" aria-label="Breadcrumb">
-      <ol class="breadcrumb-list">
-        <li class="breadcrumb-item"><a href="/">Home</a></li>
-        <li class="breadcrumb-item"><a href="/#ai">AI Tools</a></li>
-        <li class="breadcrumb-item active" aria-current="page">YouTube Title Generator</li>
-      </ol>
-    </nav>
+<div class="card">
+    <h1>🎬 AI YouTube Metadata Generator</h1>
+    <p>Get SEO-optimized Titles, Descriptions, and Hashtags in one click!</p>
+    
+    <label for="topic">Video Topic / Main Keyword:</label>
+    <input type="text" id="topic" placeholder="e.g., How to build a web app with Vercel and Gemini AI">
+    
+    <button id="genBtn" onclick="generateYouTubeMetadata()">Generate Metadata</button>
 
-    <header style="margin-bottom: 1.5rem;">
-      <h1>AI YouTube Title Generator</h1>
-      <p>Generate high-click-through-rate (CTR) video titles designed for YouTube growth.</p>
-    </header>
-
-    <div class="tool-layout">
-      <div class="tool-container">
-        <label style="font-weight: 600; display: block; margin-bottom: 0.5rem;">What is your video topic about?</label>
-        <input type="text" id="ai-input" class="search-input" placeholder="e.g. How to learn JavaScript fast in 2026 for beginners" style="margin-bottom: 1rem;">
-
-        <div class="tool-controls">
-          <button class="btn btn-primary" id="btn-generate">🎬 Generate Titles</button>
+    <div id="output" class="output-box">
+        <!-- Titles Section -->
+        <div class="section">
+            <h3>📌 Catchy Titles</h3>
+            <button class="copy-btn" onclick="copyText('titlesOutput')">Copy</button>
+            <pre id="titlesOutput"></pre>
         </div>
 
-        <label style="font-weight: 600; display: block; margin-top: 1.5rem; margin-bottom: 0.5rem;">Clickable Title Ideas:</label>
-        <textarea id="ai-output" class="tool-textarea" style="min-height: 180px;" readonly placeholder="Title ideas will appear here..."></textarea>
-
-        <div class="tool-controls" style="margin-top: 1rem;">
-          <button class="btn btn-primary" data-copy-target="ai-output">📋 Copy Titles</button>
+        <!-- Description Section -->
+        <div class="section">
+            <h3>📝 SEO Description</h3>
+            <button class="copy-btn" onclick="copyText('descOutput')">Copy</button>
+            <pre id="descOutput"></pre>
         </div>
-      </div>
+
+        <!-- Hashtags Section -->
+        <div class="section">
+            <h3>🏷️ Viral Hashtags</h3>
+            <button class="copy-btn" onclick="copyText('tagsOutput')">Copy</button>
+            <pre id="tagsOutput"></pre>
+        </div>
     </div>
-  </main>
+</div>
 
-  <div id="footer-container"></div>
+<script>
+async function generateYouTubeMetadata() {
+    const topic = document.getElementById('topic').value.trim();
+    const btn = document.getElementById('genBtn');
+    const outputBox = document.getElementById('output');
 
-  <script src="/assets/js/theme.js"></script>
-  <script src="/assets/js/utils.js"></script>
-  <script src="/assets/js/app.js"></script>
+    if (!topic) {
+        alert('Please enter a topic!');
+        return;
+    }
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const input = document.getElementById('ai-input');
-      const output = document.getElementById('ai-output');
-      const btn = document.getElementById('btn-generate');
+    btn.disabled = true;
+    btn.innerText = 'Generating with AI...';
+    outputBox.style.display = 'none';
 
-      btn.addEventListener('click', async () => {
-        if (!input.value.trim()) return;
-
-        btn.disabled = true;
-        btn.textContent = '⏳ Generating...';
-
-        try {
-          const prompt = `Generate 10 high CTR viral YouTube video title ideas for this topic: "${input.value}". Make them catchy and action-oriented.`;
-          const res = await fetch('/api/generate', {
+    try {
+        const response = await fetch('/api/generate-youtube', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ prompt, type: 'youtube' })
-          });
+            body: JSON.stringify({ topic: topic })
+        });
 
-          const data = await res.json();
-          output.value = res.ok ? data.result : 'Error: ' + data.error;
-        } catch (err) {
-          output.value = 'Failed to connect to API.';
-        } finally {
-          btn.disabled = false;
-          btn.textContent = '🎬 Generate Titles';
+        const data = await response.json();
+
+        if (data.error) {
+            alert('Error: ' + data.error);
+        } else {
+            document.getElementById('titlesOutput').innerText = data.titles || 'N/A';
+            document.getElementById('descOutput').innerText = data.description || 'N/A';
+            document.getElementById('tagsOutput').innerText = data.hashtags || 'N/A';
+            outputBox.style.display = 'block';
         }
-      });
-    });
-  </script>
+    } catch (err) {
+        alert('Something went wrong. Please check your API key setup in Vercel.');
+    } finally {
+        btn.disabled = false;
+        btn.innerText = 'Generate Metadata';
+    }
+}
+
+function copyText(elementId) {
+    const text = document.getElementById(elementId).innerText;
+    navigator.clipboard.writeText(text);
+    alert('Copied to clipboard!');
+}
+</script>
+
 </body>
 </html>
