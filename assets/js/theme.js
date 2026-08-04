@@ -1,44 +1,45 @@
-/**
- * Theme Manager Module
- * Handles Light/Dark theme switching and persistent storage.
- */
-const ThemeManager = {
-  STORAGE_KEY: 'microtoolstack_theme',
+// Theme Toggle & Dynamic Navbar Renderer
+document.addEventListener('DOMContentLoaded', () => {
+    renderNavbar();
+    initThemeToggle();
+});
 
-  init() {
-    const savedTheme = localStorage.getItem(this.STORAGE_KEY);
-    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
-    const theme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
-    this.setTheme(theme);
+function renderNavbar() {
+    const headerContainer = document.getElementById('header-container');
+    if (!headerContainer) return;
 
-    // Watch for OS preference changes
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-      if (!localStorage.getItem(this.STORAGE_KEY)) {
-        this.setTheme(e.matches ? 'dark' : 'light');
-      }
-    });
-  },
+    headerContainer.innerHTML = `
+        <header class="navbar">
+            <div class="nav-container">
+                <a href="/" class="logo">
+                    <span class="logo-icon">⚡</span>
+                    <span class="logo-text">MicroToolStack</span>
+                </a>
+                <nav class="nav-links">
+                    <a href="/#categories">Categories</a>
+                    <a href="/about.html">About</a>
+                    <a href="/contact.html">Contact</a>
+                </nav>
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">🌙</button>
+            </div>
+        </header>
+    `;
+    initThemeToggle();
+}
 
-  setTheme(theme) {
-    document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem(this.STORAGE_KEY, theme);
-    this.updateToggleButtons(theme);
-  },
+function initThemeToggle() {
+    const toggleBtn = document.getElementById('theme-toggle');
+    const currentTheme = localStorage.getItem('theme') || 'dark';
 
-  toggleTheme() {
-    const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
-    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-    this.setTheme(newTheme);
-  },
-
-  updateToggleButtons(theme) {
-    const buttons = document.querySelectorAll('.theme-toggle-btn');
-    buttons.forEach(btn => {
-      btn.setAttribute('aria-label', `Switch to ${theme === 'light' ? 'dark' : 'light'} mode`);
-      btn.innerHTML = theme === 'light' ? '🌙' : '☀️';
-    });
-  }
-};
-
-document.addEventListener('DOMContentLoaded', () => ThemeManager.init());
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    if (toggleBtn) {
+        toggleBtn.innerText = currentTheme === 'light' ? '☀️' : '🌙';
+        toggleBtn.onclick = () => {
+            let theme = document.documentElement.getAttribute('data-theme');
+            let newTheme = theme === 'light' ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            toggleBtn.innerText = newTheme === 'light' ? '☀️' : '🌙';
+        };
+    }
+}
