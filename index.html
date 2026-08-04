@@ -4,21 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MicroToolStack - Free, Fast & Privacy-First Web Utilities</title>
-  <meta name="description" content="Discover free online utilities for text processing, SEO optimization, developer tasks, and AI content generation. No sign-up required.">
-<meta name="google-site-verification" content="HfvzuzUidPVymGZ1FNVjpxBDwjctgAXU0-YsFBmFJqo" />
+  <meta name="description" content="Discover free online utilities for text processing, SEO optimization, developer tasks, and AI content generation. No signup required.">
+  <meta name="google-site-verification" content="HfvzuzUidPVymGZ1FNVjpxBDwjctgAXU0-YsFBmFJqo" />
+  
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-F3WWR9KGB4');
+  </script>
 
-  gtag('config', 'G-F3WWR9KGB4');
-</script>
   <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="/assets/css/style.css">
   <link rel="stylesheet" href="/assets/css/components.css">
-  
+
   <style>
     /* Homepage Specific Layout Styles */
     .hero {
@@ -62,9 +63,13 @@
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
       gap: 1.25rem;
-      margin-bottom: 3.5rem;
     }
     .tool-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
       display: flex;
       flex-direction: column;
       height: 100%;
@@ -103,22 +108,22 @@
   </style>
 </head>
 <body>
-<header class="navbar">
+
+  <!-- Clean Single Navbar -->
+  <header class="navbar">
     <div class="nav-container">
-        <a href="/" class="logo">
-            <span class="logo-icon">⚡</span>
-            <span class="logo-text">MicroToolStack</span>
-        </a>
-        <nav class="nav-links">
-            <a href="/#categories">Categories</a>
-            <a href="/about.html">About</a>
-            <a href="/contact.html">Contact</a>
-        </nav>
-        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">🌙</button>
+      <a href="/" class="logo">
+        <span class="logo-icon">⚡</span>
+        <span class="logo-text">MicroToolStack</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/#categories">Categories</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+      <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">🌙</button>
     </div>
-</header>
-  <!-- Dynamic Header / Navbar Placeholder -->
-  <div id="header-container"></div>
+  </header>
 
   <main class="container">
     <!-- Hero Section -->
@@ -129,147 +134,59 @@
 
       <!-- Search Input Container -->
       <div class="search-wrapper">
-        <input type="text" id="home-search" class="search-input" placeholder="Search 20+ tools (e.g. Word Counter, JSON, Slug)..." aria-label="Search tools">
+        <input type="text" id="home-search" class="search-input" placeholder="Search 20+ tools (e.g. Word Counter, JSON, Slug)...">
         <div id="search-results-dropdown"></div>
       </div>
     </section>
 
     <!-- Popular Tools Section -->
-    <section>
+    <section style="margin-bottom: 4rem;">
       <div class="section-title">
         <h2>🔥 Popular Tools</h2>
       </div>
       <div class="grid-4" id="popular-tools-grid">
-        <!-- Loaded dynamically via JS -->
+        <!-- JS-loaded dynamic popular tools -->
       </div>
     </section>
-<script async="async" data-cfasync="false" src="https://pl30663883.effectivecpmnetwork.com/01f7e2c555fd77bf09a5196e83a070ae/invoke.js"></script>
-<div id="container-01f7e2c555fd77bf09a5196e83a070ae"></div>
-    
+
     <!-- Categories Section -->
-    <section id="categories">
+    <section id="categories" style="margin-bottom: 4rem;">
       <div class="section-title">
-        <h2>📂 Explore Categories</h2>
+        <h2>📂 Browse by Category</h2>
       </div>
       <div class="grid-4" id="categories-grid">
-        <!-- Loaded dynamically via JS -->
+        <!-- JS-loaded dynamic categories -->
       </div>
     </section>
-    <!-- Category Tools Display Section -->
-    <section id="category-tools-section" style="display: none; margin-bottom: 3rem;">
-      <div class="section-title">
-        <h2 id="category-title">Tools</h2>
-      </div>
-      <div class="grid-4" id="category-tools-grid">
-        <!-- Loaded dynamically on category click -->
-      </div>
-    </section>
+
     <!-- FAQ Section -->
     <section style="margin-bottom: 4rem;">
       <div class="section-title">
         <h2>❓ Frequently Asked Questions</h2>
       </div>
-      <div id="faq-container">
-        <!-- Loaded dynamically via JS -->
+      <div id="faqs-list">
+        <!-- JS-loaded dynamic FAQs -->
       </div>
     </section>
   </main>
 
-  <!-- Dynamic Footer Placeholder -->
-  <div id="footer-container"></div>
-
-  <!-- Core Scripts -->
-  <script src="/assets/js/theme.js"></script>
-  <script src="/assets/js/utils.js"></script>
-  <script src="/assets/js/app.js"></script>
-
-  <!-- Homepage Loader Logic -->
-  <script>
-    document.addEventListener('DOMContentLoaded', async () => {
-      try {
-        // Fetch Tools & FAQs
-        const [toolsRes, catRes, faqRes] = await Promise.all([
-          fetch('/data/tools.json'),
-          fetch('/data/categories.json'),
-          fetch('/data/faqs.json')
-        ]);
-
-        const tools = await toolsRes.json();
-        const categories = await catRes.json();
-        const faqs = await faqRes.json();
-
-        // Render Popular Tools
-        const popularGrid = document.getElementById('popular-tools-grid');
-        const popularTools = tools.filter(t => t.isPopular);
-        popularGrid.innerHTML = popularTools.map(tool => `
-          <a href="${tool.url}" class="card card-interactive tool-card">
-            <div class="tool-card-icon">${tool.icon}</div>
-            <h3>${tool.name}</h3>
-            <p>${tool.description}</p>
-          </a>
-        `).join('');
-
-        // Render Categories
-        const catGrid = document.getElementById('categories-grid');
-        catGrid.innerHTML = categories.map(cat => `
-          <div class="card card-interactive tool-card" onclick="filterCategory('${cat.id}', '${cat.name}')" style="cursor: pointer;">
-            <div class="tool-card-icon">${cat.icon}</div>
-            <h3>${cat.name}</h3>
-            <p>${cat.description}</p>
-            <span style="font-size: 0.75rem; color: var(--accent-primary); font-weight: 600; margin-top: 0.75rem; display: block;">View ${cat.count} Tools →</span>
-          </div>
-        `).join('');
-
-        // Global function to filter tools by category
-        window.filterCategory = function(catId, catName) {
-          const catSection = document.getElementById('category-tools-section');
-          const catTitle = document.getElementById('category-title');
-          const catToolsGrid = document.getElementById('category-tools-grid');
-
-          const filteredTools = tools.filter(t => t.category === catId);
-
-          catTitle.textContent = `${catName} (${filteredTools.length})`;
-          catToolsGrid.innerHTML = filteredTools.map(tool => `
-            <a href="${tool.url}" class="card card-interactive tool-card">
-              <div class="tool-card-icon">${tool.icon}</div>
-              <h3>${tool.name}</h3>
-              <p>${tool.description}</p>
-            </a>
-          `).join('');
-
-          catSection.style.display = 'block';
-          catSection.scrollIntoView({ behavior: 'smooth' });
-        };
-
-        // Render FAQs
-        const faqGrid = document.getElementById('faq-container');
-        faqGrid.innerHTML = faqs.map(faq => `
-          <div class="faq-item">
-            <h3>${faq.question}</h3>
-            <p>${faq.answer}</p>
-          </div>
-        `).join('');
-
-      } catch (err) {
-        console.error('Error loading homepage content:', err);
-      }
-    });
-  </script>
   <!-- Core Scripts -->
   <script src="/assets/js/theme.js"></script>
   <script src="/assets/js/utils.js"></script>
   <script src="/assets/js/search.js"></script>
   <script src="/assets/js/app.js"></script>
-<script src="https://pl30663884.effectivecpmnetwork.com/81/02/32/8102329c43de17d196371b4a3e3bed7f.js"></script>
-<!-- Buy Me a Coffee Button -->
-<div style="text-align: center; padding: 20px 0; background: var(--bg-card, #1e1e2e); border-top: 1px solid var(--border-color, #333);">
-  <p style="font-size: 14px; color: #a1a1aa; margin-bottom: 10px; font-family: sans-serif;">
-    Find these tools helpful? Support MicroToolStack ☕
-  </p>
-  <a href="https://www.buymeacoffee.com/microtoolstack" target="_blank" rel="noopener noreferrer" style="display: inline-block;">
-    <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 45px !important; width: 162px !important;" >
-  </a>
-</div>
   
+  <script src="https://p130663884.effectivecpmnetwork.com/81/02/32/8102329c43de17d196371b4a3e3bed7f.js"></script>
+
+  <!-- Buy Me A Coffee Footer -->
+  <div style="text-align: center; padding: 20px 0; background: var(--bg-card, #1e1e2e); border-top: 1px solid var(--border-color, #333);">
+    <p style="font-size: 14px; color: #a1a1aa; margin-bottom: 10px; font-family: sans-serif;">
+      Find these tools helpful? Support MicroToolStack ☕
+    </p>
+    <a href="https://www.buymeacoffee.com/microtoolstack" target="_blank" rel="noopener noreferrer" style="display: inline-block;">
+      <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 45px !important; width: 162px !important;">
+    </a>
+  </div>
+
 </body>
 </html>
