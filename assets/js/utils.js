@@ -16,7 +16,8 @@ async function loadHomepageContent() {
 
         // Load Popular Tools Grid
         if (popularGrid) {
-            const popularTools = toolsData.filter(tool => tool.popular);
+            // First 12 items as popular tools
+            const popularTools = toolsData.slice(0, 12);
             popularGrid.innerHTML = popularTools.map(tool => `
                 <a href="${tool.url}" class="tool-card">
                     <div class="tool-card-icon">${tool.icon || '🛠️'}</div>
