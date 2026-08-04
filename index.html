@@ -104,8 +104,21 @@
 </head>
 <body>
 
-  <!-- Dynamic Header Placeholder -->
-  <div id="header-container"></div>
+ <!-- Fixed Direct Navbar Header -->
+  <header class="navbar" style="background-color: var(--bg-card, #1e1e2e); border-bottom: 1px solid var(--border-color, #333); padding: 0.8rem 0; position: sticky; top: 0; z-index: 1000;">
+    <div class="nav-container" style="max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; align-items: center; justify-content: space-between;">
+      <a href="/" class="logo" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none; font-weight: 700; font-size: 1.2rem; color: var(--text-primary, #fff);">
+        <span class="logo-icon">⚡</span>
+        <span class="logo-text">MicroToolStack</span>
+      </a>
+      <nav class="nav-links" style="display: flex; gap: 1.5rem; align-items: center;">
+        <a href="/#categories" style="color: var(--text-secondary, #a1a1aa); text-decoration: none; font-weight: 500; font-size: 0.95rem;">Categories</a>
+        <a href="/about.html" style="color: var(--text-secondary, #a1a1aa); text-decoration: none; font-weight: 500; font-size: 0.95rem;">About</a>
+        <a href="/contact.html" style="color: var(--text-secondary, #a1a1aa); text-decoration: none; font-weight: 500; font-size: 0.95rem;">Contact</a>
+      </nav>
+      <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme" style="background: rgba(255, 255, 255, 0.08); border: 1px solid var(--border-color, #444); border-radius: 50%; padding: 6px 10px; cursor: pointer; font-size: 1.1rem; color: #fff;">🌙</button>
+    </div>
+  </header>
 
   <main class="container">
     <!-- Hero Section -->
