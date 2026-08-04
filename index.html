@@ -1,273 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-F3WWR9KGB4');
-  </script>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MicroToolStack - Free, Fast & Privacy-First Web Utilities</title>
-  <meta name="description" content="Discover free online utilities for text processing, SEO optimization, developer tasks, and AI content generation. No sign-up required.">
   
-  <!-- CSS Stylesheets -->
-  <link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="stylesheet" href="/assets/css/components.css">
-  
+  <!-- Force Fresh CSS Load -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=9.9">
+  <link rel="stylesheet" href="/assets/css/components.css?v=9.9">
+
   <style>
-    /* Homepage Specific Layout Styles */
-    .hero {
-      text-align: center;
-      padding: 4rem 1rem 3rem;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    .hero p {
-      font-size: 1.125rem;
-      margin-bottom: 2rem;
-    }
-    .search-wrapper {
-      max-width: 550px;
-      margin: 0 auto 3rem;
-      position: relative;
-    }
-    .search-input {
+    /* Direct Navbar Fallback Styling */
+    .custom-header {
       width: 100%;
-      padding: 0.875rem 1.25rem;
-      font-size: 1rem;
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-md);
-      background-color: var(--bg-card);
-      color: var(--text-primary);
-      box-shadow: var(--shadow-sm);
-      outline: none;
-      transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+      background-color: #111827;
+      border-bottom: 1px solid #374151;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 9999;
     }
-    .search-input:focus {
-      border-color: var(--accent-primary);
-      box-shadow: 0 0 0 3px var(--accent-light);
-    }
-    .section-title {
-      margin-bottom: 1.5rem;
+    .custom-logo {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #ffffff;
+      text-decoration: none;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      gap: 0.5rem;
     }
-    .grid-4 {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 1.25rem;
-      margin-bottom: 3.5rem;
-    }
-    .tool-card {
+    .custom-nav {
       display: flex;
-      flex-direction: column;
-      height: 100%;
+      gap: 1.5rem;
+      align-items: center;
+    }
+    .custom-nav a {
+      color: #d1d5db;
       text-decoration: none;
-      color: inherit;
+      font-weight: 500;
+      font-size: 0.95rem;
     }
-    .tool-card-icon {
-      font-size: 1.75rem;
-      margin-bottom: 0.75rem;
+    .custom-nav a:hover {
+      color: #ffffff;
     }
-    .tool-card h3 {
-      font-size: 1.1rem;
-      margin-bottom: 0.35rem;
-    }
-    .tool-card p {
-      font-size: 0.875rem;
-      color: var(--text-secondary);
-      margin-bottom: 0;
-      flex: 1;
-    }
-    .faq-item {
-      background-color: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-md);
-      padding: 1.25rem;
-      margin-bottom: 1rem;
-    }
-    .faq-item h3 {
+    .custom-theme-btn {
+      background: #1f2937;
+      border: 1px solid #4b5563;
+      color: #ffffff;
+      border-radius: 50%;
+      padding: 6px 12px;
+      cursor: pointer;
       font-size: 1rem;
-      margin-bottom: 0.5rem;
-    }
-    .faq-item p {
-      margin-bottom: 0;
-      font-size: 0.925rem;
     }
   </style>
 </head>
-<body>
+<body style="margin: 0; padding: 0;">
 
-<!-- Fixed Direct Navbar Header -->
-  <header class="navbar" style="background-color: #1e1e2e !important; border-bottom: 1px solid #333 !important; padding: 1rem 0 !important; width: 100% !important; position: relative !important; z-index: 99999 !important;">
-    <div class="nav-container" style="max-width: 1200px !important; margin: 0 auto !important; padding: 0 1.5rem !important; display: flex !important; align-items: center !important; justify-content: space-between !important;">
-      <a href="/" class="logo" style="display: flex !important; align-items: center !important; gap: 0.5rem !important; text-decoration: none !important; font-weight: 700 !important; font-size: 1.25rem !important; color: #ffffff !important;">
-        <span class="logo-icon">⚡</span>
-        <span class="logo-text">MicroToolStack</span>
-      </a>
-      <nav class="nav-links" style="display: flex !important; gap: 1.5rem !important; align-items: center !important;">
-        <a href="/#categories" style="color: #a1a1aa !important; text-decoration: none !important; font-weight: 500 !important; font-size: 0.95rem !important;">Categories</a>
-        <a href="/about.html" style="color: #a1a1aa !important; text-decoration: none !important; font-weight: 500 !important; font-size: 0.95rem !important;">About</a>
-        <a href="/contact.html" style="color: #a1a1aa !important; text-decoration: none !important; font-weight: 500 !important; font-size: 0.95rem !important;">Contact</a>
-      </nav>
-      <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme" style="background: rgba(255, 255, 255, 0.1) !important; border: 1px solid #444 !important; border-radius: 50% !important; padding: 6px 12px !important; cursor: pointer !important; font-size: 1.1rem !important; color: #ffffff !important;">🌙</button>
-    </div>
+  <!-- Bulletproof Header Structure -->
+  <header class="custom-header">
+    <a href="/" class="custom-logo">
+      <span>⚡</span> MicroToolStack
+    </a>
+    <nav class="custom-nav">
+      <a href="/#categories">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
+    </nav>
   </header>
-
-  <main class="container">
-    <!-- Hero Section -->
-    <section class="hero">
-      <span class="badge badge-primary" style="margin-bottom: 1rem;">100% Free & Fast</span>
-      <h1>Essential Micro-Tools for Digital Creators</h1>
-      <p>Clean, private, and ultra-fast web utilities for content, SEO, code, and AI generation.</p>
-
-      <!-- Search Input Container -->
-      <div class="search-wrapper">
-        <input type="text" id="home-search" class="search-input" placeholder="Search 20+ tools (e.g. Word Counter, JSON, Slug)..." aria-label="Search tools">
-        <div id="search-results-dropdown"></div>
-      </div>
-    </section>
-
-    <!-- Popular Tools Section -->
-    <section>
-      <div class="section-title">
-        <h2>🔥 Popular Tools</h2>
-      </div>
-      <div class="grid-4" id="popular-tools-grid">
-        <!-- Loaded dynamically via JS -->
-      </div>
-    </section>
-
-    <!-- Categories Section -->
-    <section id="categories">
-      <div class="section-title">
-        <h2>📂 Explore Categories</h2>
-      </div>
-      <div class="grid-4" id="categories-grid">
-        <!-- Loaded dynamically via JS -->
-      </div>
-    </section>
-
-    <!-- Category Tools Display Section -->
-    <section id="category-tools-section" style="display: none; margin-bottom: 3rem;">
-      <div class="section-title">
-        <h2 id="category-title">Tools</h2>
-      </div>
-      <div class="grid-4" id="category-tools-grid">
-        <!-- Loaded dynamically on category click -->
-      </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section style="margin-bottom: 4rem;">
-      <div class="section-title">
-        <h2>❓ Frequently Asked Questions</h2>
-      </div>
-      <div id="faq-container">
-        <!-- Loaded dynamically via JS -->
-      </div>
-    </section>
-  </main>
-
-  <!-- Dynamic Footer Placeholder -->
-  <div id="footer-container"></div>
-
-  <!-- Core Scripts -->
-  <script src="/assets/js/theme.js"></script>
-  <script src="/assets/js/utils.js"></script>
-  <script src="/assets/js/search.js"></script>
-  <script src="/assets/js/app.js"></script>
-
-  <!-- Homepage Loader Logic -->
-  <script>
-    document.addEventListener('DOMContentLoaded', async () => {
-      try {
-        const [toolsRes, catRes, faqRes] = await Promise.all([
-          fetch('/data/tools.json'),
-          fetch('/data/categories.json'),
-          fetch('/data/faqs.json')
-        ]);
-
-        const tools = await toolsRes.json();
-        const categories = await catRes.json();
-        const faqs = await faqRes.json();
-
-        // Render Popular Tools
-        const popularGrid = document.getElementById('popular-tools-grid');
-        if (popularGrid) {
-          const popularTools = tools.filter(t => t.isPopular || t.popular || tools.indexOf(t) < 12);
-          popularGrid.innerHTML = popularTools.map(tool => `
-            <a href="${tool.url}" class="card card-interactive tool-card">
-              <div class="tool-card-icon">${tool.icon || '🛠️'}</div>
-              <h3>${tool.name}</h3>
-              <p>${tool.description}</p>
-            </a>
-          `).join('');
-        }
-
-        // Render Categories
-        const catGrid = document.getElementById('categories-grid');
-        if (catGrid) {
-          catGrid.innerHTML = categories.map(cat => `
-            <div class="card card-interactive tool-card" onclick="filterCategory('${cat.id}', '${cat.name}')" style="cursor: pointer;">
-              <div class="tool-card-icon">${cat.icon || '📂'}</div>
-              <h3>${cat.name}</h3>
-              <p>${cat.description || ''}</p>
-              <span style="font-size: 0.85rem; color: var(--accent-primary); font-weight: 600; margin-top: 0.75rem; display: block;">View ${cat.count || 'Tools'} →</span>
-            </div>
-          `).join('');
-        }
-
-        // Global Category Filter
-        window.filterCategory = function(catId, catName) {
-          const catSection = document.getElementById('category-tools-section');
-          const catTitle = document.getElementById('category-title');
-          const catToolsGrid = document.getElementById('category-tools-grid');
-
-          const filteredTools = tools.filter(t => t.category === catId);
-
-          if (catTitle) catTitle.textContent = `${catName} (${filteredTools.length})`;
-          if (catToolsGrid) {
-            catToolsGrid.innerHTML = filteredTools.map(tool => `
-              <a href="${tool.url}" class="card card-interactive tool-card">
-                <div class="tool-card-icon">${tool.icon || '🛠️'}</div>
-                <h3>${tool.name}</h3>
-                <p>${tool.description}</p>
-              </a>
-            `).join('');
-          }
-
-          if (catSection) {
-            catSection.style.display = 'block';
-            catSection.scrollIntoView({ behavior: 'smooth' });
-          }
-        };
-
-        // Render FAQs
-        const faqGrid = document.getElementById('faq-container');
-        if (faqGrid) {
-          faqGrid.innerHTML = faqs.map(faq => `
-            <div class="faq-item">
-              <h3>${faq.question || faq.q}</h3>
-              <p>${faq.answer || faq.a}</p>
-            </div>
-          `).join('');
-        }
-
-      } catch (err) {
-        console.error('Error loading homepage content:', err);
-      }
-    });
-  </script>
-
-  <!-- Adsterra Banner Script -->
-  <script src="https://p130663884.effectivecpmnetwork.com/81/02/32/8102329c43de17d196371b4a3e3bed7f.js"></script>
-
-</body>
-</html>
