@@ -1,79 +1,66 @@
-/**
- * Application Entry Point & Dynamic Layout Component Loader
- */
-
-// Helper to inject HTML components dynamically
-async function loadComponent(elementId, filepath) {
-  const target = document.getElementById(elementId);
-  if (!target) return;
-
-  try {
-    const res = await fetch(filepath);
-    if (res.ok) {
-      target.innerHTML = await res.text();
-    }
-  } catch (err) {
-    console.error(`Failed to load component: ${filepath}`, err);
-  }
-}
-
-document.addEventListener('DOMContentLoaded', async () => {
-  // Load Layout Components
-  await loadComponent('header-container', '/components/header.html');
-  await loadComponent('navbar-container', '/components/navbar.html');
-  await loadComponent('footer-container', '/components/footer.html');
-
-  // Re-sync Theme Manager Buttons after Header Injection
-  if (window.ThemeManager) {
-    const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
-    window.ThemeManager.updateToggleButtons(currentTheme);
-  }
-
-  // Mobile Menu Toggle Event Listener
-  document.addEventListener('click', (e) => {
-    const menuBtn = e.target.closest('#mobile-menu-btn');
-    if (menuBtn) {
-      const navMenu = document.getElementById('nav-menu');
-      if (navMenu) {
-        navMenu.classList.toggle('active');
-      }
-    }
-  });
-
-  // Global Event Listener for Copy Buttons
-  document.addEventListener('click', (event) => {
-    const target = event.target.closest('[data-copy-target]');
-    if (target) {
-      const targetId = target.getAttribute('data-copy-target');
-      const element = document.getElementById(targetId);
-      if (element) {
-        const text = element.value || element.textContent;
-        copyToClipboard(text);
-      }
-    }
-  });
-});
-// Append Buy Me a Coffee Button to Tool Pages Dynamically
+// Dynamic Buy Me a Coffee & Share Button Script
 document.addEventListener("DOMContentLoaded", function() {
-    // Check if page has a card/tool form or is inside tools folder
-    const isToolPage = window.location.pathname.includes('/tools/') || document.querySelector('main') || document.querySelector('.card') || document.querySelector('form');
+    // Determine if the current page is a tool page
+    const isToolPage = window.location.pathname.includes('/tools/') || 
+                       document.querySelector('.card') || 
+                       document.querySelector('.calculator-card') || 
+                       document.querySelector('form');
     
-    // Check if coffee box already exists to avoid duplication
-    if (isToolPage && !document.querySelector('#dynamic-coffee-box')) {
-        const coffeeBox = document.createElement('div');
-        coffeeBox.id = 'dynamic-coffee-box';
-        coffeeBox.style.cssText = "text-align: center; margin: 30px auto; padding: 15px; background: rgba(255, 255, 255, 0.03); border-radius: 8px; border: 1px dashed var(--border-color, #333); max-width: 500px;";
+    if (isToolPage && !document.querySelector('#dynamic-widget-box')) {
+        const widgetContainer = document.createElement('div');
+        widgetContainer.id = 'dynamic-widget-box';
+        widgetContainer.style.cssText = "text-align: center; margin: 30px auto; padding: 20px; background: rgba(255, 255, 255, 0.03); border-radius: 12px; border: 1px dashed var(--border-color, #333); max-width: 550px;";
         
-        coffeeBox.innerHTML = `
-            <p style="font-size: 13px; color: var(--text-muted, #a1a1aa); margin-bottom: 8px; font-family: sans-serif;">
-                Did this tool save your time? Support MicroToolStack ☕
-            </p>
-            <a href="https://www.buymeacoffee.com/microtoolstack" target="_blank" rel="noopener noreferrer" style="display: inline-block;">
-                <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 38px !important; width: 140px !important;">
-            </a>
+        widgetContainer.innerHTML = `
+            <div style="margin-bottom: 15px;">
+                <p style="font-size: 13px; color: var(--text-muted, #a1a1aa); margin-bottom: 8px; font-family: sans-serif;">
+                    Did this tool save your time? Support MicroToolStack ☕
+                </p>
+                <a href="https://www.buymeacoffee.com/microtoolstack" target="_blank" rel="noopener noreferrer" style="display: inline-block;">
+                    <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 38px !important; width: 140px !important;">
+                </a>
+            </div>
+
+            <div style="border-top: 1px solid var(--border-color, #333); margin-top: 15px; padding-top: 15px;">
+                <button id="shareToolBtn" onclick="shareCurrentTool()" style="background: #3b82f6; color: #ffffff; border: none; padding: 9px 18px; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 14px; display: inline-flex; align-items: center; gap: 6px;">
+                    🔗 Share This Tool
+                </button>
+            </div>
         `;
 
-        const targetContainer = document.querySelector('main') || document.querySelector('.card')?.parentElement || document.body;
-        targetContainer.appendChild(coffeeBox);
+        const targetContainer = document.querySelector('main') || 
+                                document.querySelector('.calculator-card')?.parentElement || 
+                                document.querySelector('.card')?.parentElement || 
+                                document.body;
+        
+        targetContainer.appendChild(widgetContainer);
     }
 });
+
+// Share Functionality (Works on Mobile Native Share & Desktop Clipboard)
+function shareCurrentTool() {
+    const title = document.title || "Check out this useful tool!";
+    const url = window.location.href;
+
+    if (navigator.share) {
+        navigator.share({
+            title: title,
+            url: url
+        }).catch(function(err) {
+            // User cancelled share or encountered error
+        });
+    } else {
+        navigator.clipboard.writeText(url).then(function() {
+            alert("Tool link copied to clipboard! 📋");
+        }).catch(function() {
+            // Fallback for older browsers
+            const dummyInput = document.createElement('input');
+            document.body.appendChild(dummyInput);
+            dummyInput.value = url;
+            dummyInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(dummyInput);
+            alert("Tool link copied to clipboard! 📋");
+        });
+    }
+}
