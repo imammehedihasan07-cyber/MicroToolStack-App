@@ -1,15 +1,21 @@
 {
-  "short_name": "MicroToolStack",
-  "name": "MicroToolStack - Free Fast Web Tools",
+  "name": "MicroToolStack",
+  "short_name": "MicroTools",
+  "description": "Free online tools and calculators for developers, creators, and everyday use.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "/assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
     }
-  ],
-  "start_url": "/",
-  "background_color": "#ffffff",
-  "theme_color": "#0066ff",
-  "display": "standalone"
+  ]
 }
