@@ -1,9 +1,10 @@
-// Dynamic Widgets & Favorite Tools System
+// App Logic (Share, Coffee Widget, Favorites & Service Worker)
 document.addEventListener("DOMContentLoaded", function() {
     loadToolWidgets();
     initFavoriteButton();
     renderFavoriteToolsOnHome();
 
+    // Safe Service Worker Register
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('/sw.js').catch(() => {});
     }
