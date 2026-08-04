@@ -347,3 +347,29 @@
   color: var(--text-muted);
   text-align: center;
 }
+/* Fix input, select and option text contrast for dark theme */
+input, select, textarea, option {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid var(--border-color, #444) !important;
+}
+
+/* Fix dropdown menu option background and text color */
+select option {
+  background-color: #1e1e2e !important;
+  color: #ffffff !important;
+}
+
+/* Light Theme overrides */
+[data-theme="light"] input,
+[data-theme="light"] select,
+[data-theme="light"] textarea {
+  color: #0f172a !important;
+  background-color: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+}
+
+[data-theme="light"] select option {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+}
