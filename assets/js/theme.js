@@ -1,7 +1,7 @@
-// Theme Toggle & Dynamic Navbar System
+// Dynamic Navbar & Theme Toggle Logic
+
 document.addEventListener('DOMContentLoaded', () => {
     renderNavbar();
-    initThemeToggle();
 });
 
 function renderNavbar() {
@@ -24,6 +24,8 @@ function renderNavbar() {
             </div>
         </header>
     `;
+
+    // Initialize Theme Switcher after Header DOM is inserted
     initThemeToggle();
 }
 
@@ -32,8 +34,10 @@ function initThemeToggle() {
     const currentTheme = localStorage.getItem('theme') || 'dark';
 
     document.documentElement.setAttribute('data-theme', currentTheme);
+
     if (toggleBtn) {
         toggleBtn.innerText = currentTheme === 'light' ? '☀️' : '🌙';
+        
         toggleBtn.onclick = () => {
             let theme = document.documentElement.getAttribute('data-theme');
             let newTheme = theme === 'light' ? 'dark' : 'light';
