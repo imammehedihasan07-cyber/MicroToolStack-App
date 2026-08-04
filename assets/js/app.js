@@ -55,15 +55,17 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 // Append Buy Me a Coffee Button to Tool Pages Dynamically
 document.addEventListener("DOMContentLoaded", function() {
-    // Check if we are on a tool page (inside /tools/ or has a tool container)
-    const isToolPage = window.location.pathname.includes('/tools/') || document.querySelector('.tool-container') || document.querySelector('form');
+    // Check if page has a card/tool form or is inside tools folder
+    const isToolPage = window.location.pathname.includes('/tools/') || document.querySelector('main') || document.querySelector('.card') || document.querySelector('form');
     
-    if (isToolPage) {
+    // Check if coffee box already exists to avoid duplication
+    if (isToolPage && !document.querySelector('#dynamic-coffee-box')) {
         const coffeeBox = document.createElement('div');
+        coffeeBox.id = 'dynamic-coffee-box';
         coffeeBox.style.cssText = "text-align: center; margin: 30px auto; padding: 15px; background: rgba(255, 255, 255, 0.03); border-radius: 8px; border: 1px dashed var(--border-color, #333); max-width: 500px;";
         
         coffeeBox.innerHTML = `
-            <p style="font-size: 13px; color: #a1a1aa; margin-bottom: 8px; font-family: sans-serif;">
+            <p style="font-size: 13px; color: var(--text-muted, #a1a1aa); margin-bottom: 8px; font-family: sans-serif;">
                 Did this tool save your time? Support MicroToolStack ☕
             </p>
             <a href="https://www.buymeacoffee.com/microtoolstack" target="_blank" rel="noopener noreferrer" style="display: inline-block;">
@@ -71,8 +73,7 @@ document.addEventListener("DOMContentLoaded", function() {
             </a>
         `;
 
-        // Append after the main content/tool area
-        const targetContainer = document.querySelector('main') || document.body;
+        const targetContainer = document.querySelector('main') || document.querySelector('.card')?.parentElement || document.body;
         targetContainer.appendChild(coffeeBox);
     }
 });
