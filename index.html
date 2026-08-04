@@ -104,8 +104,21 @@
 </head>
 <body>
 
-  <!-- Dynamic Header Placeholder -->
-  <div id="header-container"></div>
+<!-- Fixed Direct Navbar Header -->
+  <header class="navbar" style="background-color: #1e1e2e !important; border-bottom: 1px solid #333 !important; padding: 1rem 0 !important; width: 100% !important; position: relative !important; z-index: 99999 !important;">
+    <div class="nav-container" style="max-width: 1200px !important; margin: 0 auto !important; padding: 0 1.5rem !important; display: flex !important; align-items: center !important; justify-content: space-between !important;">
+      <a href="/" class="logo" style="display: flex !important; align-items: center !important; gap: 0.5rem !important; text-decoration: none !important; font-weight: 700 !important; font-size: 1.25rem !important; color: #ffffff !important;">
+        <span class="logo-icon">⚡</span>
+        <span class="logo-text">MicroToolStack</span>
+      </a>
+      <nav class="nav-links" style="display: flex !important; gap: 1.5rem !important; align-items: center !important;">
+        <a href="/#categories" style="color: #a1a1aa !important; text-decoration: none !important; font-weight: 500 !important; font-size: 0.95rem !important;">Categories</a>
+        <a href="/about.html" style="color: #a1a1aa !important; text-decoration: none !important; font-weight: 500 !important; font-size: 0.95rem !important;">About</a>
+        <a href="/contact.html" style="color: #a1a1aa !important; text-decoration: none !important; font-weight: 500 !important; font-size: 0.95rem !important;">Contact</a>
+      </nav>
+      <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme" style="background: rgba(255, 255, 255, 0.1) !important; border: 1px solid #444 !important; border-radius: 50% !important; padding: 6px 12px !important; cursor: pointer !important; font-size: 1.1rem !important; color: #ffffff !important;">🌙</button>
+    </div>
+  </header>
 
   <main class="container">
     <!-- Hero Section -->
