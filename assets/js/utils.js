@@ -1,66 +1,67 @@
-/**
- * Core Utility Helper Functions
- */
+// Utility functions for MicroToolStack
 
-// Debounce function to limit rapid API/event execution
-function debounce(func, wait = 300) {
-  let timeout;
-  return function executedFunction(...args) {
-    const later = () => {
-      clearTimeout(timeout);
-      func(...args);
-    };
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-  };
-}
+document.addEventListener('DOMContentLoaded', () => {
+    loadHomepageContent();
+});
 
-// Copy text to clipboard safely
-async function copyToClipboard(text) {
-  try {
-    if (navigator.clipboard && window.isSecureContext) {
-      await navigator.clipboard.writeText(text);
-      showToast('Copied to clipboard!');
-      return true;
-    } else {
-      // Fallback for non-HTTPS or legacy browsers
-      const textArea = document.createElement('textarea');
-      textArea.value = text;
-      textArea.style.position = 'fixed';
-      textArea.style.left = '-999999px';
-      document.body.appendChild(textArea);
-      textArea.focus();
-      textArea.select();
-      document.execCommand('copy');
-      textArea.remove();
-      showToast('Copied to clipboard!');
-      return true;
+async function loadHomepageContent() {
+    const popularGrid = document.getElementById('popular-tools-grid');
+    const categoriesGrid = document.getElementById('categories-grid');
+    const faqsList = document.getElementById('faqs-list');
+
+    if (!popularGrid && !categoriesGrid && !faqsList) return;
+
+    try {
+        const response = await fetch('/data/tools.json');
+        if (!response.ok) throw new Error('Failed to fetch tools data');
+        const toolsData = await response.json();
+
+        // Load Popular Tools
+        if (popularGrid) {
+            const popularTools = toolsData.filter(tool => tool.popular);
+            popularGrid.innerHTML = popularTools.map(tool => `
+                <a href="${tool.url}" class="tool-card">
+                    <div class="tool-card-icon">${tool.icon || '🛠️'}</div>
+                    <h3>${tool.name}</h3>
+                    <p>${tool.description}</p>
+                </a>
+            `).join('');
+        }
+
+        // Load Categories
+        if (categoriesGrid) {
+            const categories = [
+                { name: 'Text Tools', icon: '📝', count: '5 Tools', url: '/#text-tools' },
+                { name: 'Developer Utilities', icon: '💻', count: '4 Tools', url: '/#dev-tools' },
+                { name: 'SEO & Content', icon: '🔍', count: '3 Tools', url: '/#seo-tools' },
+                { name: 'AI Generators', icon: '🤖', count: '4 Tools', url: '/#ai-tools' }
+            ];
+
+            categoriesGrid.innerHTML = categories.map(cat => `
+                <a href="${cat.url}" class="tool-card">
+                    <div class="tool-card-icon">${cat.icon}</div>
+                    <h3>${cat.name}</h3>
+                    <p>${cat.count}</p>
+                </a>
+            `).join('');
+        }
+
+        // Load FAQs
+        if (faqsList) {
+            const faqs = [
+                { q: "Are all tools free to use?", a: "Yes, 100% free with no registration required." },
+                { q: "Is my data safe?", a: "Your data stays in your browser. We do not store your inputs." }
+            ];
+
+            faqsList.innerHTML = faqs.map(faq => `
+                <div class="faq-item">
+                    <h3>${faq.q}</h3>
+                    <p>${faq.a}</p>
+                </div>
+            `).join('');
+        }
+
+    } catch (err) {
+        console.error('Error loading homepage content:', err);
     }
-  } catch (err) {
-    console.error('Copy failed:', err);
-    showToast('Failed to copy', 'danger');
-    return false;
-  }
-}
-
-// Show accessible toast notification
-function showToast(message, type = 'info') {
-  let container = document.getElementById('toast-container');
-  if (!container) {
-    container = document.createElement('div');
-    container.id = 'toast-container';
-    document.body.appendChild(container);
-  }
-
-  const toast = document.createElement('div');
-  toast.className = `toast toast-${type}`;
-  toast.textContent = message;
-  
-  container.appendChild(toast);
-
-  setTimeout(() => {
-    toast.style.opacity = '0';
-    toast.style.transition = 'opacity 200ms ease';
-    setTimeout(() => toast.remove(), 200);
-  }, 3000);
 }
