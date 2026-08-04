@@ -1,1 +1,58 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raw Dog Food Portion Calculator - MicroToolStack</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <style>
+    .calculator-card { max-width: 600px; margin: 2rem auto; padding: 2rem; background: var(--bg-card, #1e1e2e); border-radius: 12px; border: 1px solid var(--border-color, #333); }
+    .form-group { margin-bottom: 1.2rem; }
+    .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 600; }
+    .form-control { width: 100%; padding: 0.8rem; border-radius: 6px; border: 1px solid var(--border-color, #444); background: rgba(0,0,0,0.2); color: #fff; font-size: 1rem; box-sizing: border-box; }
+    .btn-calc { width: 100%; padding: 0.9rem; background: #38bdf8; color: #000; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 1rem; }
+    .result-box { margin-top: 1.5rem; padding: 1.2rem; border-radius: 8px; text-align: center; display: none; background: rgba(56, 189, 248, 0.1); border: 1px solid #38bdf8; }
+  </style>
+</head>
+<body>
+  <div id="header-container"></div>
+  <main class="container">
+    <div class="calculator-card">
+      <h1 style="text-align: center; margin-bottom: 1rem;">🥩 Raw Dog Food Portion Calculator</h1>
+      <div class="form-group">
+        <label for="dogWeightRaw">Dog's Weight (in kg):</label>
+        <input type="number" id="dogWeightRaw" class="form-control" placeholder="e.g. 15">
+      </div>
+      <div class="form-group">
+        <label for="activityLevel">Activity Level / Goal:</label>
+        <select id="activityLevel" class="form-control">
+          <option value="0.02">Weight Loss / Senior (2%)</option>
+          <option value="0.025" selected>Normal Adult / Moderate Activity (2.5%)</option>
+          <option value="0.03">Active Adult (3%)</option>
+          <option value="0.04">Working Dog / Very Active (4%)</option>
+          <option value="0.06">Puppy (6%)</option>
+        </select>
+      </div>
+      <button onclick="calculateRawFood()" class="btn-calc">Calculate Daily Food</button>
+      <div id="resultRaw" class="result-box">
+        <h3>Daily Portion: <span id="dailyGrams" style="color:#38bdf8;"></span> grams</h3>
+        <p style="margin-top: 8px; font-size: 0.9rem; color: #a1a1aa;">Recommendation (BARF Diet): 80% Meat, 10% Bone, 10% Organ Meat.</p>
+      </div>
+    </div>
+  </main>
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js"></script>
+  <script src="/assets/js/app.js"></script>
+  <script>
+    function calculateRawFood() {
+      const weight = parseFloat(document.getElementById('dogWeightRaw').value);
+      const ratio = parseFloat(document.getElementById('activityLevel').value);
+      if (!weight || weight <= 0) { alert("Please enter a valid weight."); return; }
+      const totalGrams = Math.round((weight * ratio) * 1000);
+      document.getElementById('dailyGrams').innerText = totalGrams;
+      document.getElementById('resultRaw').style.display = "block";
+    }
+  </script>
+</body>
+</html>
