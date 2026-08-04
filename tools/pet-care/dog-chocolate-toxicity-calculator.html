@@ -1,1 +1,80 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dog Chocolate Toxicity Calculator - MicroToolStack</title>
+  <meta name="description" content="Calculate toxicity risk level based on your dog's weight and chocolate type.">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <style>
+    .calculator-card { max-width: 600px; margin: 2rem auto; padding: 2rem; background: var(--bg-card, #1e1e2e); border-radius: 12px; border: 1px solid var(--border-color, #333); }
+    .form-group { margin-bottom: 1.2rem; }
+    .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 600; }
+    .form-control { width: 100%; padding: 0.8rem; border-radius: 6px; border: 1px solid var(--border-color, #444); background: rgba(0,0,0,0.2); color: #fff; font-size: 1rem; box-sizing: border-box; }
+    .btn-calc { width: 100%; padding: 0.9rem; background: #e63946; color: #fff; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 1rem; }
+    .result-box { margin-top: 1.5rem; padding: 1.2rem; border-radius: 8px; text-align: center; display: none; }
+    .status-safe { background: rgba(46, 204, 113, 0.2); border: 1px solid #2ecc71; color: #2ecc71; }
+    .status-warning { background: rgba(241, 196, 15, 0.2); border: 1px solid #f1c40f; color: #f1c40f; }
+    .status-danger { background: rgba(231, 76, 60, 0.2); border: 1px solid #e74c3c; color: #e74c3c; }
+  </style>
+</head>
+<body>
+  <div id="header-container"></div>
+  <main class="container">
+    <div class="calculator-card">
+      <h1 style="text-align: center; margin-bottom: 1rem;">🐶 Dog Chocolate Toxicity Calculator</h1>
+      <div class="form-group">
+        <label for="dogWeight">Dog's Weight (in kg):</label>
+        <input type="number" id="dogWeight" class="form-control" placeholder="e.g. 10">
+      </div>
+      <div class="form-group">
+        <label for="chocolateType">Type of Chocolate:</label>
+        <select id="chocolateType" class="form-control">
+          <option value="9">White Chocolate (Very Low)</option>
+          <option value="60">Milk Chocolate (Mild Risk)</option>
+          <option value="150">Dark Chocolate (High Risk)</option>
+          <option value="400">Baker's Chocolate / Cocoa (Extreme Risk)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="amountEaten">Amount Eaten (in grams):</label>
+        <input type="number" id="amountEaten" class="form-control" placeholder="e.g. 50">
+      </div>
+      <button onclick="calculateToxicity()" class="btn-calc">Check Toxicity Risk</button>
+      <div id="resultBox" class="result-box">
+        <h3 id="riskTitle"></h3>
+        <p id="riskDesc" style="margin-top: 8px;"></p>
+      </div>
+    </div>
+  </main>
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js"></script>
+  <script src="/assets/js/app.js"></script>
+  <script>
+    function calculateToxicity() {
+      const weight = parseFloat(document.getElementById('dogWeight').value);
+      const type = parseFloat(document.getElementById('chocolateType').value);
+      const amount = parseFloat(document.getElementById('amountEaten').value);
+      const resultBox = document.getElementById('resultBox');
+      if (!weight || !amount || weight <= 0 || amount <= 0) { alert("Please enter valid inputs."); return; }
+      const dose = (amount * type) / weight;
+      resultBox.style.display = "block";
+      resultBox.className = "result-box";
+      if (dose < 20) {
+        resultBox.classList.add('status-safe');
+        document.getElementById('riskTitle').innerText = "🟢 Low Risk / Safe";
+        document.getElementById('riskDesc').innerText = "Unlikely to cause severe toxicity. Monitor for mild stomach upset.";
+      } else if (dose < 40) {
+        resultBox.classList.add('status-warning');
+        document.getElementById('riskTitle').innerText = "🟡 Moderate Risk";
+        document.getElementById('riskDesc').innerText = "May cause vomiting or restlessness. Monitor closely or call a vet.";
+      } else {
+        resultBox.classList.add('status-danger');
+        document.getElementById('riskTitle').innerText = "🔴 SEVERE EMERGENCY";
+        document.getElementById('riskDesc').innerText = "Dangerous toxic level! Contact a vet immediately!";
+      }
+    }
+  </script>
+</body>
+</html>
