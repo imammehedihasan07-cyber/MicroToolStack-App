@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-F3WWR9KGB4');
+  </script>
 
-  gtag('config', 'G-F3WWR9KGB4');
-</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MicroToolStack - Free, Fast & Privacy-First Web Utilities</title>
@@ -104,7 +104,7 @@
 </head>
 <body>
 
-  <!-- Dynamic Header / Navbar Placeholder -->
+  <!-- Dynamic Header Placeholder -->
   <div id="header-container"></div>
 
   <main class="container">
@@ -140,6 +140,7 @@
         <!-- Loaded dynamically via JS -->
       </div>
     </section>
+
     <!-- Category Tools Display Section -->
     <section id="category-tools-section" style="display: none; margin-bottom: 3rem;">
       <div class="section-title">
@@ -149,6 +150,7 @@
         <!-- Loaded dynamically on category click -->
       </div>
     </section>
+
     <!-- FAQ Section -->
     <section style="margin-bottom: 4rem;">
       <div class="section-title">
@@ -166,13 +168,14 @@
   <!-- Core Scripts -->
   <script src="/assets/js/theme.js"></script>
   <script src="/assets/js/utils.js"></script>
+  <script src="/assets/js/search.js"></script>
   <script src="/assets/js/app.js"></script>
 
   <!-- Homepage Loader Logic -->
   <script>
     document.addEventListener('DOMContentLoaded', async () => {
       try {
-        // Fetch Tools & FAQs
+        // Fetch Tools, Categories & FAQs
         const [toolsRes, catRes, faqRes] = await Promise.all([
           fetch('/data/tools.json'),
           fetch('/data/categories.json'),
@@ -183,27 +186,32 @@
         const categories = await catRes.json();
         const faqs = await faqRes.json();
 
-        // Render Popular Tools
+        // Render Popular Tools (Fix: handles both isPopular and popular key)
         const popularGrid = document.getElementById('popular-tools-grid');
-        const popularTools = tools.filter(t => t.isPopular);
-        popularGrid.innerHTML = popularTools.map(tool => `
-          <a href="${tool.url}" class="card card-interactive tool-card">
-            <div class="tool-card-icon">${tool.icon}</div>
-            <h3>${tool.name}</h3>
-            <p>${tool.description}</p>
-          </a>
-        `).join('');
+        const popularTools = tools.filter(t => t.isPopular || t.popular || tools.indexOf(t) < 12);
+        
+        if (popularGrid) {
+          popularGrid.innerHTML = popularTools.map(tool => `
+            <a href="${tool.url}" class="card card-interactive tool-card">
+              <div class="tool-card-icon">${tool.icon || '🛠️'}</div>
+              <h3>${tool.name}</h3>
+              <p>${tool.description}</p>
+            </a>
+          `).join('');
+        }
 
         // Render Categories
         const catGrid = document.getElementById('categories-grid');
-        catGrid.innerHTML = categories.map(cat => `
-          <div class="card card-interactive tool-card" onclick="filterCategory('${cat.id}', '${cat.name}')" style="cursor: pointer;">
-            <div class="tool-card-icon">${cat.icon}</div>
-            <h3>${cat.name}</h3>
-            <p>${cat.description}</p>
-            <span style="font-size: 0.75rem; color: var(--accent-primary); font-weight: 600; margin-top: 0.75rem; display: block;">View ${cat.count} Tools →</span>
-          </div>
-        `).join('');
+        if (catGrid) {
+          catGrid.innerHTML = categories.map(cat => `
+            <div class="card card-interactive tool-card" onclick="filterCategory('${cat.id}', '${cat.name}')" style="cursor: pointer;">
+              <div class="tool-card-icon">${cat.icon || '📂'}</div>
+              <h3>${cat.name}</h3>
+              <p>${cat.description || ''}</p>
+              <span style="font-size: 0.85rem; color: var(--accent-primary); font-weight: 600; margin-top: 0.75rem; display: block;">View ${cat.count || 'Tools'} →</span>
+            </div>
+          `).join('');
+        }
 
         // Global function to filter tools by category
         window.filterCategory = function(catId, catName) {
@@ -213,37 +221,41 @@
 
           const filteredTools = tools.filter(t => t.category === catId);
 
-          catTitle.textContent = `${catName} (${filteredTools.length})`;
-          catToolsGrid.innerHTML = filteredTools.map(tool => `
-            <a href="${tool.url}" class="card card-interactive tool-card">
-              <div class="tool-card-icon">${tool.icon}</div>
-              <h3>${tool.name}</h3>
-              <p>${tool.description}</p>
-            </a>
-          `).join('');
+          if (catTitle) catTitle.textContent = `${catName} (${filteredTools.length})`;
+          if (catToolsGrid) {
+            catToolsGrid.innerHTML = filteredTools.map(tool => `
+              <a href="${tool.url}" class="card card-interactive tool-card">
+                <div class="tool-card-icon">${tool.icon || '🛠️'}</div>
+                <h3>${tool.name}</h3>
+                <p>${tool.description}</p>
+              </a>
+            `).join('');
+          }
 
-          catSection.style.display = 'block';
-          catSection.scrollIntoView({ behavior: 'smooth' });
+          if (catSection) {
+            catSection.style.display = 'block';
+            catSection.scrollIntoView({ behavior: 'smooth' });
+          }
         };
 
-        // Render FAQs
+        // Render FAQs (Fix: handles both question/answer and q/a keys)
         const faqGrid = document.getElementById('faq-container');
-        faqGrid.innerHTML = faqs.map(faq => `
-          <div class="faq-item">
-            <h3>${faq.question}</h3>
-            <p>${faq.answer}</p>
-          </div>
-        `).join('');
+        if (faqGrid) {
+          faqGrid.innerHTML = faqs.map(faq => `
+            <div class="faq-item">
+              <h3>${faq.question || faq.q}</h3>
+              <p>${faq.answer || faq.a}</p>
+            </div>
+          `).join('');
+        }
 
       } catch (err) {
         console.error('Error loading homepage content:', err);
       }
     });
   </script>
-  <!-- Core Scripts -->
-  <script src="/assets/js/theme.js"></script>
-  <script src="/assets/js/utils.js"></script>
-  <script src="/assets/js/search.js"></script>
-  <script src="/assets/js/app.js"></script>
+
+  <!-- Adsterra Script -->
+  <script src="https://p130663884.effectivecpmnetwork.com/81/02/32/8102329c43de17d196371b4a3e3bed7f.js"></script>
 </body>
 </html>
