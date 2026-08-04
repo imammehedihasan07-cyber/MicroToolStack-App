@@ -41,4 +41,9 @@
     "icon": "🤖",
     "count": 5
   }
-]
+,{
+    "id": "pet-care",
+    "name": "Pet Care & Calculators",
+    "icon": "🐾",
+    "count": 3
+  }]
