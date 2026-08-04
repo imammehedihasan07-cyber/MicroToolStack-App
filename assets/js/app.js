@@ -1,55 +1,15 @@
-// ==========================================
-// MicroToolStack - Main App Logic
-// ==========================================
-
+// Dynamic Widgets & Favorite Tools System
 document.addEventListener("DOMContentLoaded", function() {
-    // 1. Load Header dynamically
-    loadHeader();
-
-    // 2. Load Dynamic Widgets (Buy Me A Coffee & Share Tool)
     loadToolWidgets();
-
-    // 3. Initialize Favorite Button
     initFavoriteButton();
-
-    // 4. Render Favorite Tools on Homepage
     renderFavoriteToolsOnHome();
 
-    // 5. Register PWA Service Worker
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('/sw.js').catch(() => {});
     }
 });
 
-// Load Header Component
-function loadHeader() {
-    const headerContainer = document.getElementById('header-container');
-    if (!headerContainer) return;
-
-    headerContainer.innerHTML = `
-        <header class="navbar">
-            <div class="nav-container">
-                <a href="/" class="logo">
-                    <span class="logo-icon">⚡</span>
-                    <span class="logo-text">MicroToolStack</span>
-                </a>
-                <nav class="nav-links">
-                    <a href="/#categories">Categories</a>
-                    <a href="/about.html">About</a>
-                    <a href="/contact.html">Contact</a>
-                </nav>
-                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">🌙</button>
-            </div>
-        </header>
-    `;
-    
-    // Re-trigger theme listener if needed
-    if (typeof initTheme === 'function') {
-        initTheme();
-    }
-}
-
-// Load Dynamic Widgets (Coffee & Share)
+// Load Buy Me A Coffee & Share Button
 function loadToolWidgets() {
     const isToolPage = window.location.pathname.includes('/tools/') || 
                        document.querySelector('.calculator-card') || 
@@ -86,7 +46,7 @@ function loadToolWidgets() {
     }
 }
 
-// Share Tool Functionality
+// Share Tool Function
 function shareCurrentTool() {
     const title = document.title || "Check out this useful tool!";
     const url = window.location.href;
@@ -102,7 +62,7 @@ function shareCurrentTool() {
     }
 }
 
-// Favorite Tools System
+// Favorite Tools Logic
 function initFavoriteButton() {
     const isToolPage = window.location.pathname.includes('/tools/');
     if (!isToolPage) return;
