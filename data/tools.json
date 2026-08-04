@@ -299,4 +299,30 @@
     "isPopular": true,
     "isNew": true
   }
-]
+,{
+    "id": "dog-chocolate-toxicity-calculator",
+    "name": "Dog Chocolate Toxicity Calculator",
+    "description": "Calculate toxicity risk level based on your dog's weight and chocolate type.",
+    "category": "pet-care",
+    "url": "/tools/pet-care/dog-chocolate-toxicity-calculator.html",
+    "icon": "🐶",
+    "popular": true
+  },
+  {
+    "id": "raw-dog-food-calculator",
+    "name": "Raw Dog Food Portion Calculator",
+    "description": "Calculate daily raw food portions for dogs based on weight and activity level.",
+    "category": "pet-care",
+    "url": "/tools/pet-care/raw-dog-food-calculator.html",
+    "icon": "🥩",
+    "popular": false
+  },
+  {
+    "id": "cat-age-converter",
+    "name": "Cat Age to Human Age Converter",
+    "description": "Convert cat age to equivalent human years based on life stage.",
+    "category": "pet-care",
+    "url": "/tools/pet-care/cat-age-converter.html",
+    "icon": "🐱",
+    "popular": false
+  }]
