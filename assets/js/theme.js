@@ -1,4 +1,4 @@
-// Theme Toggle & Navbar Renderer
+// Theme Toggle & Dynamic Navbar System
 document.addEventListener('DOMContentLoaded', () => {
     renderNavbar();
     initThemeToggle();
@@ -24,6 +24,7 @@ function renderNavbar() {
             </div>
         </header>
     `;
+    initThemeToggle();
 }
 
 function initThemeToggle() {
@@ -33,7 +34,6 @@ function initThemeToggle() {
     document.documentElement.setAttribute('data-theme', currentTheme);
     if (toggleBtn) {
         toggleBtn.innerText = currentTheme === 'light' ? '☀️' : '🌙';
-        
         toggleBtn.onclick = () => {
             let theme = document.documentElement.getAttribute('data-theme');
             let newTheme = theme === 'light' ? 'dark' : 'light';
