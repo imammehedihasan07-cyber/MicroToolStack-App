@@ -1,45 +1,10 @@
-// Theme Toggle & Navbar Renderer
+// Pure Theme Toggle Logic
 document.addEventListener('DOMContentLoaded', () => {
-    renderNavbar();
-    initThemeToggle();
-});
-
-function renderNavbar() {
-    const headerContainer = document.getElementById('header-container');
-    
-    // If header-container doesn't exist on page, create it dynamically at the top of body
-    let target = headerContainer;
-    if (!target) {
-        target = document.createElement('div');
-        target.id = 'header-container';
-        document.body.insertBefore(target, document.body.firstChild);
-    }
-
-    target.innerHTML = `
-        <header class="navbar">
-            <div class="nav-container">
-                <a href="/" class="logo">
-                    <span class="logo-icon">⚡</span>
-                    <span class="logo-text">MicroToolStack</span>
-                </a>
-                <nav class="nav-links">
-                    <a href="/#categories">Categories</a>
-                    <a href="/about.html">About</a>
-                    <a href="/contact.html">Contact</a>
-                </nav>
-                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">🌙</button>
-            </div>
-        </header>
-    `;
-    
-    initThemeToggle();
-}
-
-function initThemeToggle() {
     const toggleBtn = document.getElementById('theme-toggle');
     const currentTheme = localStorage.getItem('theme') || 'dark';
 
     document.documentElement.setAttribute('data-theme', currentTheme);
+    
     if (toggleBtn) {
         toggleBtn.innerText = currentTheme === 'light' ? '☀️' : '🌙';
         
@@ -51,4 +16,4 @@ function initThemeToggle() {
             toggleBtn.innerText = newTheme === 'light' ? '☀️' : '🌙';
         };
     }
-}
+});
