@@ -24,6 +24,8 @@ function renderNavbar() {
             </div>
         </header>
     `;
+
+    // Re-bind click event to the newly rendered toggle button
     initThemeToggle();
 }
 
@@ -31,12 +33,16 @@ function initThemeToggle() {
     const toggleBtn = document.getElementById('theme-toggle');
     const currentTheme = localStorage.getItem('theme') || 'dark';
 
+    // Apply saved theme to HTML tag
     document.documentElement.setAttribute('data-theme', currentTheme);
+
     if (toggleBtn) {
         toggleBtn.innerText = currentTheme === 'light' ? '☀️' : '🌙';
+
         toggleBtn.onclick = () => {
-            let theme = document.documentElement.getAttribute('data-theme');
-            let newTheme = theme === 'light' ? 'dark' : 'light';
+            let activeTheme = document.documentElement.getAttribute('data-theme');
+            let newTheme = activeTheme === 'light' ? 'dark' : 'light';
+            
             document.documentElement.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
             toggleBtn.innerText = newTheme === 'light' ? '☀️' : '🌙';
