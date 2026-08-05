@@ -49,4 +49,12 @@
     "icon": "🐾",
     "count": 3
   }
+  {
+    "id": "youtube",
+    "name": "YouTube Tools",
+    "description": "Free YouTube utility tools to extract channel IDs, download HD thumbnails & generate embeds.",
+    "icon": "🎥",
+    "count": 5
+  }
 ]
+
