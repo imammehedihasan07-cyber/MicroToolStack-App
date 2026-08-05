@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) - Deferred Load -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var gTagScript = document.createElement('script');
+        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        gTagScript.async = true;
+        document.head.appendChild(gTagScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F3WWR9KGB4');
+      }, 1000);
+    });
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Images to PDF Converter - Free & Private | MicroToolStack</title>
+  <meta name="description" content="Convert JPG, PNG, and WebP images into a single PDF document online for free. 100% private, client-side browser conversion.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <style>
+    .upload-box {
+      border: 2px dashed var(--border-color);
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      border-radius: 12px;
+      cursor: pointer;
+      background: var(--bg-secondary);
+      transition: border-color 0.3s;
+      margin-bottom: 1.5rem;
+    }
+    .upload-box:hover {
+      border-color: var(--accent-primary);
+    }
+    .preview-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+      display: none;
+    }
+    .img-card {
+      position: relative;
+      background: var(--bg-primary);
+      padding: 0.5rem;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      text-align: center;
+    }
+    .img-card img {
+      width: 100%;
+      height: 90px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+    .remove-btn {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      background: #ff4d4d;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      font-size: 0.75rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Container -->
+  <div id="header-container"></div>
+
+  <main class="container" style="max-width: 800px; margin: 2rem auto; padding: 0 1rem;">
+    <!-- Breadcrumb Navigation -->
+    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary);">
+      <a href="/" style="color: var(--text-primary); text-decoration: none;">Home</a> / 
+      <a href="/tools/pdf/" style="color: var(--text-primary); text-decoration: none;">PDF Tools</a> / 
+      <span>Images to PDF</span>
+    </nav>
+
+    <!-- Tool Header -->
+    <header style="margin-bottom: 2rem; text-align: center;">
+      <h1 class="hero" style="font-size: 2.2rem; margin-bottom: 0.5rem;">Free Images to PDF Converter</h1>
+      <p style="color: var(--text-secondary); font-size: 1rem;">
+        Convert multiple JPG, PNG, or WebP photos into a single organized PDF document locally.
+      </p>
+    </header>
+
+    <!-- Tool Main Card -->
+    <div class="card" style="padding: 2rem; border-radius: 12px; background: var(--bg-secondary); border: 1px solid var(--border-color);">
+      
+      <!-- Upload Drop Zone -->
+      <div class="upload-box" id="dropZone" onclick="document.getElementById('imageInput').click()">
+        <span style="font-size: 2.5rem; display: block; margin-bottom: 0.5rem;">🖼️</span>
+        <p style="margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">Click or Drag & Drop Images Here</p>
+        <p style="font-size: 0.85rem; color: var(--text-secondary);">Supports JPG, PNG, WebP (100% Client-Side Privacy)</p>
+        <input type="file" id="imageInput" accept="image/*" multiple style="display: none;" onchange="handleFileSelect(event)">
+      </div>
+
+      <!-- Preview Grid -->
+      <div class="preview-grid" id="previewContainer"></div>
+
+      <div id="actionArea" style="text-align: center; margin-top: 1.5rem; display: none;">
+        <button id="convertBtn" class="btn btn-primary" style="padding: 0.8rem 2rem; font-size: 1rem; cursor: pointer;" onclick="convertToPDF()">
+          📄 Convert to PDF Document
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Content / FAQ Section -->
+    <section style="margin-top: 3rem; border-top: 1px solid var(--border-color); padding-top: 2rem;">
+      <h2 style="font-size: 1.4rem; margin-bottom: 1rem;">How to Convert Images to PDF</h2>
+      <ol style="color: var(--text-secondary); line-height: 1.8; padding-left: 1.2rem; margin-bottom: 2rem;">
+        <li>Select one or multiple images from your computer or phone.</li>
+        <li>Review your uploaded image thumbnails.</li>
+        <li>Click <strong>Convert to PDF Document</strong> to create and download your compiled PDF instantly.</li>
+      </ol>
+    </section>
+  </main>
+
+  <!-- Footer Container -->
+  <div id="footer-container"></div>
+
+  <!-- Core Scripts & jsPDF Library -->
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/search.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <!-- Script -->
+  <script>
+    let selectedImages = [];
+
+    function handleFileSelect(event) {
+      const files = Array.from(event.target.files);
+      files.forEach(file => {
+        if (file.type.startsWith('image/')) {
+          const reader = new FileReader();
+          reader.onload = (e) => {
+            selectedImages.push({ name: file.name, dataUrl: e.target.result });
+            renderPreviews();
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+    }
+
+    // Drag & Drop
+    const dropZone = document.getElementById('dropZone');
+    dropZone.addEventListener('dragover', (e) => { e.preventDefault(); dropZone.style.borderColor = 'var(--accent-primary)'; });
+    dropZone.addEventListener('dragleave', () => { dropZone.style.borderColor = 'var(--border-color)'; });
+    dropZone.addEventListener('drop', (e) => {
+      e.preventDefault();
+      dropZone.style.borderColor = 'var(--border-color)';
+      if (e.dataTransfer.files.length) {
+        handleFileSelect({ target: { files: e.dataTransfer.files } });
+      }
+    });
+
+    function renderPreviews() {
+      const container = document.getElementById('previewContainer');
+      const actionArea = document.getElementById('actionArea');
+      container.innerHTML = '';
+
+      if (selectedImages.length === 0) {
+        container.style.display = 'none';
+        actionArea.style.display = 'none';
+        return;
+      }
+
+      container.style.display = 'grid';
+      actionArea.style.display = 'block';
+
+      selectedImages.forEach((imgObj, idx) => {
+        const card = document.createElement('div');
+        card.className = 'img-card';
+        card.innerHTML = `
+          <img src="${imgObj.dataUrl}" alt="Preview">
+          <button class="remove-btn" onclick="removeImg(${idx})">✖</button>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function removeImg(idx) {
+      selectedImages.splice(idx, 1);
+      renderPreviews();
+    }
+
+    async function convertToPDF() {
+      if (selectedImages.length === 0) return;
+
+      const convertBtn = document.getElementById('convertBtn');
+      convertBtn.disabled = true;
+      convertBtn.innerText = '⏳ Creating PDF...';
+
+      const { jsPDF } = window.jspdf;
+      const pdf = new jsPDF('p', 'mm', 'a4');
+      const pdfWidth = pdf.internal.pageSize.getWidth();
+      const pdfHeight = pdf.internal.pageSize.getHeight();
+
+      for (let i = 0; i < selectedImages.length; i++) {
+        if (i > 0) pdf.addPage();
+        
+        const img = new Image();
+        img.src = selectedImages[i].dataUrl;
+        await new Promise(resolve => img.onload = resolve);
+
+        const imgRatio = img.width / img.height;
+        let w = pdfWidth - 20;
+        let h = w / imgRatio;
+
+        if (h > pdfHeight - 20) {
+          h = pdfHeight - 20;
+          w = h * imgRatio;
+        }
+
+        const x = (pdfWidth - w) / 2;
+        const y = (pdfHeight - h) / 2;
+
+        pdf.addImage(selectedImages[i].dataUrl, 'JPEG', x, y, w, h);
+      }
+
+      pdf.save('images-converted.pdf');
+      convertBtn.disabled = false;
+      convertBtn.innerText = '📄 Convert to PDF Document';
+    }
+  </script>
+</body>
+</html>
