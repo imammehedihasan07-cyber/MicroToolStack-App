@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var gTagScript = document.createElement('script');
+        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        gTagScript.async = true;
+        document.head.appendChild(gTagScript);
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F3WWR9KGB4');
+      }, 1000);
+    });
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EXIF Metadata Viewer - Inspect Photo Details | MicroToolStack</title>
+  <meta name="description" content="View EXIF photo metadata online for free. Inspect camera settings, resolution, exposure, and file info privately in your browser.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <style>
+    .upload-box {
+      border: 2px dashed var(--border-color);
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      border-radius: 12px;
+      cursor: pointer;
+      background: var(--bg-secondary);
+      margin-bottom: 1.5rem;
+    }
+    .preview-container { margin-top: 1.5rem; display: none; }
+    .exif-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      background: var(--bg-primary);
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+    }
+    .exif-table th, .exif-table td {
+      padding: 0.8rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border-color);
+      font-size: 0.9rem;
+    }
+    .exif-table th { background: var(--bg-secondary); color: var(--text-primary); font-weight: 600; }
+    .exif-table td { color: var(--text-secondary); }
+  </style>
+</head>
+<body>
+  <div id="header-container"></div>
+
+  <main class="container" style="max-width: 800px; margin: 2rem auto; padding: 0 1rem;">
+    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary);">
+      <a href="/" style="color: var(--text-primary); text-decoration: none;">Home</a> / 
+      <a href="/tools/media/" style="color: var(--text-primary); text-decoration: none;">Media Tools</a> / 
+      <span>EXIF Metadata Viewer</span>
+    </nav>
+
+    <header style="margin-bottom: 2rem; text-align: center;">
+      <h1 class="hero" style="font-size: 2.2rem; margin-bottom: 0.5rem;">Free EXIF Metadata Viewer</h1>
+      <p style="color: var(--text-secondary); font-size: 1rem;">Inspect EXIF tags, resolution, file specifications, and camera details directly in your browser.</p>
+    </header>
+
+    <div class="card" style="padding: 2rem; border-radius: 12px; background: var(--bg-secondary); border: 1px solid var(--border-color);">
+      <div class="upload-box" id="dropZone" onclick="document.getElementById('imageInput').click()">
+        <span style="font-size: 2.5rem; display: block; margin-bottom: 0.5rem;">📷</span>
+        <p style="margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">Click or Drag & Drop Photo Here</p>
+        <p style="font-size: 0.85rem; color: var(--text-secondary);">Supports JPG, PNG, WebP (100% Client-Side Privacy)</p>
+        <input type="file" id="imageInput" accept="image/*" style="display: none;" onchange="handleFileSelect(event)">
+      </div>
+
+      <div class="preview-container" id="previewArea">
+        <div style="text-align: center; margin-bottom: 1.5rem;">
+          <img id="photoPreview" style="max-height: 250px; border-radius: 8px; border: 1px solid var(--border-color);" alt="Photo Preview">
+        </div>
+
+        <h3 style="font-size: 1.1rem; color: var(--text-primary);">File & Technical Metadata</h3>
+        <table class="exif-table">
+          <thead>
+            <tr>
+              <th>Property</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody id="exifTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/search.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
+
+  <script>
+    function handleFileSelect(e) {
+      const file = e.target.files[0];
+      if(!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function(evt) {
+        const img = new Image();
+        img.onload = function() {
+          document.getElementById('photoPreview').src = evt.target.result;
+          displayMetadata(file, img);
+          document.getElementById('previewArea').style.display = 'block';
+        };
+        img.src = evt.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function displayMetadata(file, img) {
+      const tbody = document.getElementById('exifTableBody');
+      tbody.innerHTML = '';
+
+      const data = [
+        { label: 'File Name', val: file.name },
+        { label: 'File Size', val: formatBytes(file.size) },
+        { label: 'File Type', val: file.type || 'Unknown' },
+        { label: 'Resolution', val: `${img.naturalWidth} x ${img.naturalHeight} pixels` },
+        { label: 'Aspect Ratio', val: calculateAspectRatio(img.naturalWidth, img.naturalHeight) },
+        { label: 'Last Modified', val: new Date(file.lastModified).toLocaleString() }
+      ];
+
+      data.forEach(item => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `<td><strong>${item.label}</strong></td><td>${item.val}</td>`;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function formatBytes(bytes) {
+      if (bytes === 0) return '0 Bytes';
+      const k = 1024;
+      const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+      const i = Math.floor(Math.log(bytes) / Math.log(k));
+      return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+    }
+
+    function calculateAspectRatio(w, h) {
+      const gcd = (a, b) => b ? gcd(b, a % b) : a;
+      const divisor = gcd(w, h);
+      return `${w / divisor}:${h / divisor}`;
+    }
+  </script>
+</body>
+</html>
