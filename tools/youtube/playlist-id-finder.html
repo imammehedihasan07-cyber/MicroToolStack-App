@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) - Deferred Load -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var gTagScript = document.createElement('script');
+        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        gTagScript.async = true;
+        document.head.appendChild(gTagScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F3WWR9KGB4');
+      }, 1000);
+    });
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Playlist ID Finder - Extract Playlist IDs Instantly | MicroToolStack</title>
+  <meta name="description" content="Free YouTube Playlist ID Finder. Extract unique Playlist IDs (PL, UU, FL) from any YouTube playlist URL or shared link instantly.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <!-- Schema.org FAQ Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a YouTube Playlist ID?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A YouTube Playlist ID is a unique alphanumeric string (usually starting with PL, UU, or FL) assigned to a collection of videos on YouTube."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How to extract Playlist ID from a URL?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Paste any YouTube playlist link into our tool, and it automatically extracts the 'list=' parameter value from the URL query string."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- Header Container -->
+  <div id="header-container"></div>
+
+  <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
+    <!-- Breadcrumb Navigation -->
+    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary);">
+      <a href="/" style="color: var(--accent-primary); text-decoration: none;">Home</a> / 
+      <a href="/tools/youtube/" style="color: var(--accent-primary); text-decoration: none;">YouTube Tools</a> / 
+      <span>Playlist ID Finder</span>
+    </nav>
+
+    <!-- Tool Title & Description -->
+    <header style="margin-bottom: 2rem; text-align: center;">
+      <h1 class="hero" style="font-size: 2.2rem; margin-bottom: 0.5rem;">YouTube Playlist ID Finder</h1>
+      <p style="color: var(--text-secondary); font-size: 1.05rem; max-width: 650px; margin: 0 auto;">
+        Extract the unique Playlist ID string from any YouTube playlist URL or shared video link.
+      </p>
+    </header>
+
+    <!-- Tool App Box -->
+    <section class="card" style="padding: 2rem; border-radius: 12px; background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.08); margin-bottom: 3rem;">
+      <div style="display: flex; flex-direction: column; gap: 1rem;">
+        <label for="url-input" style="font-weight: 600; font-size: 1rem;">Paste YouTube Playlist URL:</label>
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <input type="text" id="url-input" placeholder="e.g., https://www.youtube.com/playlist?list=PL..." style="flex: 1; min-width: 280px; padding: 0.8rem 1rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.15); background: var(--bg-primary); color: #fff; font-size: 1rem;">
+          <button id="find-btn" style="padding: 0.8rem 1.5rem; border-radius: 6px; border: none; background: var(--accent-primary); color: #fff; font-weight: 600; cursor: pointer;">Find Playlist ID</button>
+        </div>
+      </div>
+
+      <!-- Result Display -->
+      <div id="result-box" style="display: none; margin-top: 1.5rem; padding: 1.2rem; border-radius: 8px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1);">
+        <p style="margin-bottom: 0.5rem; font-size: 0.9rem; color: var(--text-secondary);">Extracted Playlist ID:</p>
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 1rem;">
+          <code id="playlist-id-output" style="font-size: 1.2rem; color: #4ade80; font-family: monospace; word-break: break-all;">PL...</code>
+          <button id="copy-btn" style="padding: 0.4rem 0.8rem; border-radius: 4px; border: 1px solid rgba(255,255,255,0.2); background: transparent; color: #fff; cursor: pointer; font-size: 0.85rem;">Copy</button>
+        </div>
+      </div>
+
+      <div id="error-box" style="display: none; margin-top: 1rem; color: #ef4444; font-size: 0.95rem; text-align: center;"></div>
+    </section>
+
+    <!-- SEO Content Section -->
+    <article style="line-height: 1.7; color: var(--text-secondary); margin-bottom: 3rem;">
+      <h2 style="color: var(--text-primary); margin-bottom: 1rem;">What is a YouTube Playlist ID?</h2>
+      <p style="margin-bottom: 1.5rem;">
+        A <strong>YouTube Playlist ID</strong> is a unique code that specifies a aggregated collection of YouTube videos. Most standard user playlists begin with the prefix <code>PL</code>, while system-generated playlists may start with <code>UU</code> (uploads) or <code>FL</code> (favorites).
+      </p>
+
+      <h2 style="color: var(--text-primary); margin-bottom: 1rem;">Common Uses for Playlist IDs</h2>
+      <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+        <li style="margin-bottom: 0.5rem;"><strong>YouTube Data API v3:</strong> Fetching playlist items, video order, and meta information programmatically.</li>
+        <li style="margin-bottom: 0.5rem;"><strong>Website Embeds:</strong> Embedding an entire video playlist iframe into blog posts.</li>
+        <li style="margin-bottom: 0.5rem;"><strong>Third-Party Apps:</strong> Synchronizing music playlists and media players across mobile applications.</li>
+      </ul>
+    </article>
+
+    <!-- Internal Linking -->
+    <section style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem;">
+      <h3 style="color: var(--text-primary); margin-bottom: 1rem;">Explore Related YouTube Tools</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem;">
+        <a href="/tools/youtube/channel-id-finder.html" style="padding: 1rem; background: var(--bg-secondary); border-radius: 8px; text-decoration: none; border: 1px solid rgba(255,255,255,0.05); display: block;">
+          <h4 style="color: var(--text-primary); margin-bottom: 0.3rem;">Channel ID Finder</h4>
+          <p style="color: var(--text-secondary); font-size: 0.85rem;">Find unique 24-character Channel IDs.</p>
+        </a>
+        <a href="/tools/youtube/timestamp-generator.html" style="padding: 1rem; background: var(--bg-secondary); border-radius: 8px; text-decoration: none; border: 1px solid rgba(255,255,255,0.05); display: block;">
+          <h4 style="color: var(--text-primary); margin-bottom: 0.3rem;">Timestamp Generator</h4>
+          <p style="color: var(--text-secondary); font-size: 0.85rem;">Create jump-to-time video links easily.</p>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Container -->
+  <div id="footer-container"></div>
+
+  <!-- Core Scripts -->
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/search.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
+
+  <!-- Tool Logic Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const input = document.getElementById('url-input');
+      const findBtn = document.getElementById('find-btn');
+      const resultBox = document.getElementById('result-box');
+      const output = document.getElementById('playlist-id-output');
+      const copyBtn = document.getElementById('copy-btn');
+      const errorBox = document.getElementById('error-box');
+
+      findBtn.addEventListener('click', () => {
+        const query = input.value.trim();
+        resultBox.style.display = 'none';
+        errorBox.style.display = 'none';
+
+        if (!query) {
+          showError('Please paste a YouTube Playlist URL.');
+          return;
+        }
+
+        const playlistId = extractPlaylistID(query);
+        if (playlistId) {
+          output.innerText = playlistId;
+          resultBox.style.display = 'block';
+        } else {
+          showError('Could not find a valid Playlist ID. Please verify the URL syntax.');
+        }
+      });
+
+      function extractPlaylistID(url) {
+        const regExp = /[?&]list=([^#\&\?]+)/;
+        const match = url.match(regExp);
+        if (match && match[1]) {
+          return match[1];
+        }
+        // Direct ID Input Check
+        if (/^(PL|UU|FL|RD|CL)[\w-]{10,}$/.test(url)) {
+          return url;
+        }
+        return null;
+      }
+
+      function showError(msg) {
+        errorBox.innerText = msg;
+        errorBox.style.display = 'block';
+      }
+
+      copyBtn.addEventListener('click', () => {
+        navigator.clipboard.writeText(output.innerText);
+        copyBtn.innerText = 'Copied!';
+        setTimeout(() => copyBtn.innerText = 'Copy', 2000);
+      });
+    });
+  </script>
+</body>
+</html>
