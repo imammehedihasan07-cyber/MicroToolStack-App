@@ -204,9 +204,9 @@
 <script src="/assets/js/search.js" defer></script>
 <script src="/assets/js/app.js" defer></script>
 
-  <!-- Homepage Loader Logic -->
+<!-- Homepage Loader Logic -->
   <script>
-    document.addEventListener('DOMContentLoaded', async () => {
+    (async function loadData() {
       try {
         const [toolsRes, catRes, faqRes] = await Promise.all([
           fetch('/data/tools.json'),
@@ -279,13 +279,11 @@
             </div>
           `).join('');
         }
-
-      } catch (err) {
-        console.error('Error loading homepage content:', err);
-      }
-    });
-  </script>
-
+} catch (err) {
+      console.error('Failed to load homepage data:', err);
+    }
+  })();
+</script>
   <!-- Adsterra Banner Script -->
   <script src="https://p130663884.effectivecpmnetwork.com/81/02/32/8102329c43de17d196371b4a3e3bed7f.js"></script>
 
