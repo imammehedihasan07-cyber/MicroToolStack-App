@@ -31,4 +31,41 @@
   <url><loc>https://microtoolstack.vercel.app/tools/ai/bio-generator.html</loc><priority>0.8</priority></url>
   <url><loc>https://microtoolstack.vercel.app/tools/ai/humanizer.html</loc><priority>0.8</priority></url>
   <url><loc>https://microtoolstack.vercel.app/tools/ai/youtube-title-generator.html</loc><priority>0.8</priority></url>
+<!-- YouTube Tools Category & Tools -->
+  <url>
+    <loc>https://microtoolstack.vercel.app/tools/youtube/</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://microtoolstack.vercel.app/tools/youtube/channel-id-finder.html</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://microtoolstack.vercel.app/tools/youtube/thumbnail-downloader.html</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://microtoolstack.vercel.app/tools/youtube/embed-generator.html</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://microtoolstack.vercel.app/tools/youtube/timestamp-generator.html</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://microtoolstack.vercel.app/tools/youtube/playlist-id-finder.html</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
 </urlset>
