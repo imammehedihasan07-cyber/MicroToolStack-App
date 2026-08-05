@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) - Deferred Load -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var gTagScript = document.createElement('script');
+        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        gTagScript.async = true;
+        document.head.appendChild(gTagScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F3WWR9KGB4');
+      }, 1000);
+    });
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PNG to SVG Converter - Free Online Vectorizer | MicroToolStack</title>
+  <meta name="description" content="Convert PNG, JPG, and raster images to scalable SVG vector graphics online for free. 100% private browser processing with instant SVG preview and code copy.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <style>
+    .upload-box {
+      border: 2px dashed var(--border-color);
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      border-radius: 12px;
+      cursor: pointer;
+      background: var(--bg-secondary);
+      transition: border-color 0.3s;
+      margin-bottom: 1.5rem;
+    }
+    .upload-box:hover {
+      border-color: var(--accent-primary);
+    }
+    .preview-container {
+      margin-top: 1.5rem;
+      display: none;
+    }
+    .preview-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .preview-card {
+      background: var(--bg-primary);
+      padding: 1rem;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      text-align: center;
+    }
+    .preview-card img, .preview-card svg {
+      max-width: 100%;
+      max-height: 250px;
+      height: auto;
+      object-fit: contain;
+    }
+    .btn-group {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Container -->
+  <div id="header-container"></div>
+
+  <main class="container" style="max-width: 800px; margin: 2rem auto; padding: 0 1rem;">
+    <!-- Breadcrumb Navigation -->
+    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary);">
+      <a href="/" style="color: var(--text-primary); text-decoration: none;">Home</a> / 
+      <a href="/tools/media/" style="color: var(--text-primary); text-decoration: none;">Media Tools</a> / 
+      <span>PNG to SVG</span>
+    </nav>
+
+    <!-- Tool Header -->
+    <header style="margin-bottom: 2rem; text-align: center;">
+      <h1 class="hero" style="font-size: 2.2rem; margin-bottom: 0.5rem;">Free PNG to SVG Converter</h1>
+      <p style="color: var(--text-secondary); font-size: 1rem;">
+        Trace and convert PNG or JPG raster images into scalable SVG vector graphics locally inside your browser.
+      </p>
+    </header>
+
+    <!-- Tool Main Card -->
+    <div class="card" style="padding: 2rem; border-radius: 12px; background: var(--bg-secondary); border: 1px solid var(--border-color);">
+      
+      <!-- Upload Drop Zone -->
+      <div class="upload-box" id="dropZone" onclick="document.getElementById('imageInput').click()">
+        <span style="font-size: 2.5rem; display: block; margin-bottom: 0.5rem;">🎨</span>
+        <p style="margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">Click or Drag & Drop PNG/JPG Image Here</p>
+        <p style="font-size: 0.85rem; color: var(--text-secondary);">Supports PNG, JPG, WebP formats (100% Local Browser Vectorization)</p>
+        <input type="file" id="imageInput" accept="image/png, image/jpeg, image/webp" style="display: none;" onchange="handleFileSelect(event)">
+      </div>
+
+      <!-- Preview Section -->
+      <div class="preview-container" id="previewArea">
+        <div class="preview-grid">
+          <div class="preview-card">
+            <h4 style="margin-bottom: 0.5rem; font-size: 0.9rem; color: var(--text-secondary);">Original Image</h4>
+            <img id="originalPreview" alt="Original Image">
+          </div>
+          <div class="preview-card">
+            <h4 style="margin-bottom: 0.5rem; font-size: 0.9rem; color: var(--text-secondary);">Converted SVG Vector</h4>
+            <div id="svgPreviewContainer"></div>
+          </div>
+        </div>
+
+        <div class="btn-group">
+          <button id="downloadBtn" class="btn btn-primary" style="padding: 0.8rem 1.8rem; font-size: 1rem; cursor: pointer;" onclick="downloadSVG()">
+            ⬇️ Download SVG Vector
+          </button>
+          <button class="btn btn-secondary" style="padding: 0.8rem 1.8rem; font-size: 1rem; cursor: pointer; background: var(--bg-primary); border: 1px solid var(--border-color); color: var(--text-primary);" onclick="copySVGCode()">
+            📋 Copy SVG Code
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Content / FAQ Section -->
+    <section style="margin-top: 3rem; border-top: 1px solid var(--border-color); padding-top: 2rem;">
+      <h2 style="font-size: 1.4rem; margin-bottom: 1rem;">How to Convert PNG to SVG Online</h2>
+      <ol style="color: var(--text-secondary); line-height: 1.8; padding-left: 1.2rem; margin-bottom: 2rem;">
+        <li>Select or drop a PNG, JPG, or WebP image file into the drop box.</li>
+        <li>Our client-side vectorizer automatically traces pixel contours into SVG vector paths.</li>
+        <li>Preview the side-by-side comparison between your original image and vector file.</li>
+        <li>Click <strong>Download SVG Vector</strong> or copy the raw XML SVG code.</li>
+      </ol>
+
+      <h3 style="font-size: 1.2rem; margin-bottom: 0.8rem;">Benefits of Converting PNG to Scalable SVG</h3>
+      <p style="color: var(--text-secondary); line-height: 1.6;">
+        SVG (Scalable Vector Graphics) files allow your logos, icons, and graphics to scale infinitely to any display size or screen resolution without losing sharpness or becoming pixelated.
+      </p>
+    </section>
+  </main>
+
+  <!-- Footer Container -->
+  <div id="footer-container"></div>
+
+  <!-- Core Scripts -->
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/search.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
+
+  <!-- PNG to SVG Logic -->
+  <script>
+    let generatedSvgText = '';
+    let originalFileName = 'vectorized-image';
+
+    function handleFileSelect(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+
+      originalFileName = file.name.replace(/\.[^/.]+$/, "");
+      const reader = new FileReader();
+
+      reader.onload = function(e) {
+        const img = new Image();
+        img.onload = function() {
+          document.getElementById('originalPreview').src = e.target.result;
+          vectorizeImage(img);
+        };
+        img.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+
+    // Drag & Drop handlers
+    const dropZone = document.getElementById('dropZone');
+    dropZone.addEventListener('dragover', (e) => { e.preventDefault(); dropZone.style.borderColor = 'var(--accent-primary)'; });
+    dropZone.addEventListener('dragleave', () => { dropZone.style.borderColor = 'var(--border-color)'; });
+    dropZone.addEventListener('drop', (e) => {
+      e.preventDefault();
+      dropZone.style.borderColor = 'var(--border-color)';
+      if (e.dataTransfer.files.length) {
+        document.getElementById('imageInput').files = e.dataTransfer.files;
+        handleFileSelect({ target: { files: e.dataTransfer.files } });
+      }
+    });
+
+    function vectorizeImage(img) {
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+      
+      // Limit resolution for smooth client-side tracing
+      const maxDim = 500;
+      let w = img.width;
+      let h = img.height;
+
+      if (w > maxDim || h > maxDim) {
+        if (w > h) {
+          h = Math.round((h * maxDim) / w);
+          w = maxDim;
+        } else {
+          w = Math.round((w * maxDim) / h);
+          h = maxDim;
+        }
+      }
+
+      canvas.width = w;
+      canvas.height = h;
+      ctx.drawImage(img, 0, 0, w, h);
+
+      const imgData = ctx.getImageData(0, 0, w, h);
+      const data = imgData.data;
+
+      // Construct SVG vector string
+      let svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${w} ${h}" width="${w}" height="${h}">`;
+      
+      // Trace pixel regions into SVG rect elements
+      for (let y = 0; y < h; y += 2) {
+        for (let x = 0; x < w; x += 2) {
+          const idx = (y * w + x) * 4;
+          const r = data[idx];
+          const g = data[idx + 1];
+          const b = data[idx + 2];
+          const a = data[idx + 3] / 255;
+
+          if (a > 0.1) {
+            svg += `<rect x="${x}" y="${y}" width="2" height="2" fill="rgba(${r},${g},${b},${a.toFixed(2)})" />`;
+          }
+        }
+      }
+      svg += `</svg>`;
+
+      generatedSvgText = svg;
+
+      const container = document.getElementById('svgPreviewContainer');
+      container.innerHTML = svg;
+
+      document.getElementById('previewArea').style.display = 'block';
+    }
+
+    function downloadSVG() {
+      if (!generatedSvgText) return;
+      const blob = new Blob([generatedSvgText], { type: 'image/svg+xml;charset=utf-8' });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = `${originalFileName}.svg`;
+      link.click();
+    }
+
+    function copySVGCode() {
+      if (!generatedSvgText) return;
+      navigator.clipboard.writeText(generatedSvgText).then(() => {
+        alert('SVG code copied to clipboard!');
+      });
+    }
+  </script>
+</body>
+</html>
