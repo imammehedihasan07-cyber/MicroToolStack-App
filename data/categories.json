@@ -40,15 +40,14 @@
     "description": "Smart AI-powered generators to boost social media and content workflows.",
     "icon": "🤖",
     "count": 5
-  }
-,
+  },
   {
     "id": "pet-care",
     "name": "Pet Care & Calculators",
     "description": "Essential calculators and tools for dog and cat health, feeding, and care.",
     "icon": "🐾",
     "count": 3
-  }
+  },
   {
     "id": "youtube",
     "name": "YouTube Tools",
@@ -57,4 +56,3 @@
     "count": 5
   }
 ]
-
