@@ -1,4 +1,5 @@
 @import url('./variables.css');
+@import url('./components.css');
 
 /* Global Reset & Base Styles */
 *, *::before, *::after {
