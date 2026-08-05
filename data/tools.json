@@ -488,5 +488,38 @@
     "isPopular": false,
     "isNew": true,
     "tags": ["ico", "convert", "favicon", "shortcut", "icon"]
+  },
+  {
+    "id": "merge-pdf",
+    "name": "Merge PDF",
+    "category": "pdf",
+    "url": "/tools/pdf/merge-pdf.html",
+    "description": "Combine multiple PDF files into one single organized document easily.",
+    "icon": "🧩",
+    "isPopular": true,
+    "isNew": true,
+    "tags": ["pdf", "merge", "combine", "document"]
+  },
+  {
+    "id": "images-to-pdf",
+    "name": "Images to PDF",
+    "category": "pdf",
+    "url": "/tools/pdf/images-to-pdf.html",
+    "description": "Convert JPG, PNG, and WebP images into a high-quality PDF document.",
+    "icon": "🖼️",
+    "isPopular": true,
+    "isNew": true,
+    "tags": ["jpg to pdf", "png to pdf", "image to pdf", "convert"]
+  },
+  {
+    "id": "split-pdf",
+    "name": "Split PDF",
+    "category": "pdf",
+    "url": "/tools/pdf/split-pdf.html",
+    "description": "Extract specific pages or page ranges from your PDF document.",
+    "icon": "✂️",
+    "isPopular": false,
+    "isNew": true,
+    "tags": ["pdf", "split", "extract", "pages"]
   }
 ]
