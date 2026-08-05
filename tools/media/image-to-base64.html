@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var gTagScript = document.createElement('script');
+        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        gTagScript.async = true;
+        document.head.appendChild(gTagScript);
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F3WWR9KGB4');
+      }, 1000);
+    });
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image to Base64 Converter - Free Online Tool | MicroToolStack</title>
+  <meta name="description" content="Convert images (PNG, JPG, SVG, WebP) to Base64 data strings instantly online. Private, fast, browser-based conversion with one-click copy.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <style>
+    .upload-box {
+      border: 2px dashed var(--border-color);
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      border-radius: 12px;
+      cursor: pointer;
+      background: var(--bg-secondary);
+      margin-bottom: 1.5rem;
+    }
+    .preview-container { margin-top: 1.5rem; display: none; }
+    .base64-textarea {
+      width: 100%;
+      height: 160px;
+      padding: 0.8rem;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: monospace;
+      font-size: 0.85rem;
+      resize: vertical;
+      margin-bottom: 1rem;
+    }
+    .btn-group { display: flex; gap: 0.8rem; justify-content: center; flex-wrap: wrap; }
+  </style>
+</head>
+<body>
+  <div id="header-container"></div>
+
+  <main class="container" style="max-width: 800px; margin: 2rem auto; padding: 0 1rem;">
+    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary);">
+      <a href="/" style="color: var(--text-primary); text-decoration: none;">Home</a> / 
+      <a href="/tools/media/" style="color: var(--text-primary); text-decoration: none;">Media Tools</a> / 
+      <span>Image to Base64</span>
+    </nav>
+
+    <header style="margin-bottom: 2rem; text-align: center;">
+      <h1 class="hero" style="font-size: 2.2rem; margin-bottom: 0.5rem;">Free Image to Base64 Converter</h1>
+      <p style="color: var(--text-secondary); font-size: 1rem;">Convert image files directly into Base64 Data URI strings for HTML, CSS, and web embedding.</p>
+    </header>
+
+    <div class="card" style="padding: 2rem; border-radius: 12px; background: var(--bg-secondary); border: 1px solid var(--border-color);">
+      <div class="upload-box" id="dropZone" onclick="document.getElementById('imageInput').click()">
+        <span style="font-size: 2.5rem; display: block; margin-bottom: 0.5rem;">📄</span>
+        <p style="margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">Click or Drag & Drop Image Here</p>
+        <p style="font-size: 0.85rem; color: var(--text-secondary);">Supports PNG, JPG, WebP, SVG, GIF (100% Client-Side Processing)</p>
+        <input type="file" id="imageInput" accept="image/*" style="display: none;" onchange="handleFileSelect(event)">
+      </div>
+
+      <div class="preview-container" id="previewArea">
+        <div style="text-align: center; margin-bottom: 1rem;">
+          <img id="previewImg" style="max-height: 180px; border-radius: 8px; border: 1px solid var(--border-color);" alt="Image Preview">
+        </div>
+
+        <label style="display: block; font-size: 0.9rem; margin-bottom: 0.5rem; color: var(--text-secondary);">Base64 Output String:</label>
+        <textarea id="base64Output" class="base64-textarea" readonly></textarea>
+
+        <div class="btn-group">
+          <button class="btn btn-primary" style="padding: 0.8rem 1.8rem; font-size: 1rem; cursor: pointer;" onclick="copyBase64()">📋 Copy Base64 String</button>
+          <button class="btn btn-secondary" style="padding: 0.8rem 1.8rem; font-size: 1rem; cursor: pointer; background: var(--bg-primary); border: 1px solid var(--border-color); color: var(--text-primary);" onclick="copyHTMLImg()">🏷️ Copy HTML &lt;img&gt; Tag</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/search.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
+
+  <script>
+    let base64Result = '';
+
+    function handleFileSelect(e) {
+      const file = e.target.files[0];
+      if(!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function(evt) {
+        base64Result = evt.target.result;
+        document.getElementById('base64Output').value = base64Result;
+        document.getElementById('previewImg').src = base64Result;
+        document.getElementById('previewArea').style.display = 'block';
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function copyBase64() {
+      if(!base64Result) return;
+      navigator.clipboard.writeText(base64Result).then(() => {
+        alert('Base64 string copied to clipboard!');
+      });
+    }
+
+    function copyHTMLImg() {
+      if(!base64Result) return;
+      const htmlTag = `<img src="${base64Result}" alt="Embedded Image" />`;
+      navigator.clipboard.writeText(htmlTag).then(() => {
+        alert('HTML <img> tag copied to clipboard!');
+      });
+    }
+  </script>
+</body>
+</html>
