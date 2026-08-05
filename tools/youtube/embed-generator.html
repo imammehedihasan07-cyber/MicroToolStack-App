@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) - Deferred Load -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var gTagScript = document.createElement('script');
+        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        gTagScript.async = true;
+        document.head.appendChild(gTagScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F3WWR9KGB4');
+      }, 1000);
+    });
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Embed Code Generator - Responsive iFrames | MicroToolStack</title>
+  <meta name="description" content="Free YouTube Embed Code Generator. Create custom, responsive iframe embed codes with autoplay, custom start time, loop, and privacy-enhanced mode.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <!-- Schema.org FAQ Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I make an embedded YouTube video responsive?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our generator wraps the iframe in a responsive CSS container with a 16:9 aspect ratio, ensuring it scales perfectly on mobile screens, tablets, and desktops."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is YouTube Privacy-Enhanced Mode?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Privacy-enhanced mode uses the domain 'youtube-nocookie.com', preventing YouTube from storing tracking cookies about visitors until they click play."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- Header Container -->
+  <div id="header-container"></div>
+
+  <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
+    <!-- Breadcrumb Navigation -->
+    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary);">
+      <a href="/" style="color: var(--accent-primary); text-decoration: none;">Home</a> / 
+      <a href="/tools/youtube/" style="color: var(--accent-primary); text-decoration: none;">YouTube Tools</a> / 
+      <span>Embed Generator</span>
+    </nav>
+
+    <!-- Tool Title & Description -->
+    <header style="margin-bottom: 2rem; text-align: center;">
+      <h1 class="hero" style="font-size: 2.2rem; margin-bottom: 0.5rem;">YouTube Embed Code Generator</h1>
+      <p style="color: var(--text-secondary); font-size: 1.05rem; max-width: 650px; margin: 0 auto;">
+        Create customized, responsive YouTube embed codes with advanced parameters like privacy mode, start times, and loop.
+      </p>
+    </header>
+
+    <!-- Tool App Box -->
+    <section class="card" style="padding: 2rem; border-radius: 12px; background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.08); margin-bottom: 3rem;">
+      <div style="display: flex; flex-direction: column; gap: 1.2rem;">
+        <div>
+          <label for="url-input" style="font-weight: 600; font-size: 1rem; display: block; margin-bottom: 0.5rem;">YouTube Video URL:</label>
+          <input type="text" id="url-input" placeholder="e.g., https://www.youtube.com/watch?v=dQw4w9WgXcQ" style="width: 100%; padding: 0.8rem 1rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.15); background: var(--bg-primary); color: #fff; font-size: 1rem; box-sizing: border-box;">
+        </div>
+
+        <!-- Options Grid -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 0.5rem;">
+          <div>
+            <label for="start-time" style="font-size: 0.88rem; color: var(--text-secondary); display: block; margin-bottom: 0.3rem;">Start Time (seconds):</label>
+            <input type="number" id="start-time" placeholder="e.g. 30" min="0" style="width: 100%; padding: 0.6rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.15); background: var(--bg-primary); color: #fff; box-sizing: border-box;">
+          </div>
+          <div style="display: flex; align-items: center; gap: 0.5rem; margin-top: 1.2rem;">
+            <input type="checkbox" id="opt-privacy" checked style="width: 18px; height: 18px;">
+            <label for="opt-privacy" style="font-size: 0.9rem; cursor: pointer;">Privacy-Enhanced Mode</label>
+          </div>
+          <div style="display: flex; align-items: center; gap: 0.5rem; margin-top: 1.2rem;">
+            <input type="checkbox" id="opt-responsive" checked style="width: 18px; height: 18px;">
+            <label for="opt-responsive" style="font-size: 0.9rem; cursor: pointer;">Make Responsive (16:9)</label>
+          </div>
+          <div style="display: flex; align-items: center; gap: 0.5rem; margin-top: 1.2rem;">
+            <input type="checkbox" id="opt-autoplay" style="width: 18px; height: 18px;">
+            <label for="opt-autoplay" style="font-size: 0.9rem; cursor: pointer;">Autoplay (Muted)</label>
+          </div>
+        </div>
+
+        <button id="generate-btn" style="padding: 0.8rem 1.5rem; border-radius: 6px; border: none; background: var(--accent-primary); color: #fff; font-weight: 600; cursor: pointer; margin-top: 1rem;">Generate Embed Code</button>
+      </div>
+
+      <!-- Result Box -->
+      <div id="result-box" style="display: none; margin-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem;">
+        <h3 style="color: var(--text-primary); margin-bottom: 0.8rem; font-size: 1.1rem;">Generated Embed Code:</h3>
+        <div style="position: relative; margin-bottom: 1.5rem;">
+          <textarea id="code-output" readonly rows="5" style="width: 100%; padding: 1rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.15); background: rgba(0,0,0,0.4); color: #4ade80; font-family: monospace; font-size: 0.9rem; resize: vertical; box-sizing: border-box;"></textarea>
+          <button id="copy-btn" style="position: absolute; top: 10px; right: 10px; padding: 0.4rem 0.8rem; border-radius: 4px; border: 1px solid rgba(255,255,255,0.2); background: var(--bg-secondary); color: #fff; cursor: pointer; font-size: 0.8rem;">Copy Code</button>
+        </div>
+
+        <h3 style="color: var(--text-primary); margin-bottom: 0.8rem; font-size: 1.1rem;">Live Preview:</h3>
+        <div id="preview-container" style="background: rgba(0,0,0,0.5); padding: 1rem; border-radius: 8px;"></div>
+      </div>
+
+      <div id="error-box" style="display: none; margin-top: 1rem; color: #ef4444; font-size: 0.95rem; text-align: center;"></div>
+    </section>
+
+    <!-- SEO Content Section -->
+    <article style="line-height: 1.7; color: var(--text-secondary); margin-bottom: 3rem;">
+      <h2 style="color: var(--text-primary); margin-bottom: 1rem;">Why Use a Custom YouTube Embed Code Generator?</h2>
+      <p style="margin-bottom: 1.5rem;">
+        Default YouTube share embeds lack responsiveness and don't automatically adjust to mobile screen widths. Our <strong>YouTube Embed Code Generator</strong> creates fluid HTML/CSS containers that fit any blog layout (WordPress, Webflow, Blogger, or custom HTML) seamlessly while respecting user privacy standards.
+      </p>
+
+      <h2 style="color: var(--text-primary); margin-bottom: 1rem;">Key Features & Parameters</h2>
+      <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+        <li style="margin-bottom: 0.5rem;"><strong>100% Mobile Responsive:</strong> Wraps the iframe in aspect-ratio CSS to eliminate side-scrolling issues.</li>
+        <li style="margin-bottom: 0.5rem;"><strong>Privacy-Enhanced Mode (No-Cookie):</strong> Uses <code>youtube-nocookie.com</code> domain to improve GDPR compliance.</li>
+        <li style="margin-bottom: 0.5rem;"><strong>Custom Timestamp Start:</strong> Force videos to begin playing at a specific second mark automatically.</li>
+      </ul>
+    </article>
+
+    <!-- Internal Linking -->
+    <section style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem;">
+      <h3 style="color: var(--text-primary); margin-bottom: 1rem;">Explore Related YouTube Tools</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem;">
+        <a href="/tools/youtube/thumbnail-downloader.html" style="padding: 1rem; background: var(--bg-secondary); border-radius: 8px; text-decoration: none; border: 1px solid rgba(255,255,255,0.05); display: block;">
+          <h4 style="color: var(--text-primary); margin-bottom: 0.3rem;">Thumbnail Downloader</h4>
+          <p style="color: var(--text-secondary); font-size: 0.85rem;">Download HD thumbnails in 1-click.</p>
+        </a>
+        <a href="/tools/youtube/channel-id-finder.html" style="padding: 1rem; background: var(--bg-secondary); border-radius: 8px; text-decoration: none; border: 1px solid rgba(255,255,255,0.05); display: block;">
+          <h4 style="color: var(--text-primary); margin-bottom: 0.3rem;">Channel ID Finder</h4>
+          <p style="color: var(--text-secondary); font-size: 0.85rem;">Extract 24-character Channel IDs easily.</p>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Container -->
+  <div id="footer-container"></div>
+
+  <!-- Core Scripts -->
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/search.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
+
+  <!-- Tool Logic Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const input = document.getElementById('url-input');
+      const startTime = document.getElementById('start-time');
+      const optPrivacy = document.getElementById('opt-privacy');
+      const optResponsive = document.getElementById('opt-responsive');
+      const optAutoplay = document.getElementById('opt-autoplay');
+
+      const generateBtn = document.getElementById('generate-btn');
+      const resultBox = document.getElementById('result-box');
+      const codeOutput = document.getElementById('code-output');
+      const previewContainer = document.getElementById('preview-container');
+      const copyBtn = document.getElementById('copy-btn');
+      const errorBox = document.getElementById('error-box');
+
+      generateBtn.addEventListener('click', () => {
+        const url = input.value.trim();
+        resultBox.style.display = 'none';
+        errorBox.style.display = 'none';
+
+        if (!url) {
+          showError('Please paste a valid YouTube URL.');
+          return;
+        }
+
+        const videoId = extractVideoID(url);
+        if (!videoId) {
+          showError('Invalid YouTube URL. Please check and try again.');
+          return;
+        }
+
+        const domain = optPrivacy.checked ? 'www.youtube-nocookie.com' : 'www.youtube.com';
+        let src = `https://${domain}/embed/${videoId}`;
+
+        const params = [];
+        if (startTime.value && parseInt(startTime.value) > 0) {
+          params.push(`start=${parseInt(startTime.value)}`);
+        }
+        if (optAutoplay.checked) {
+          params.push('autoplay=1&mute=1');
+        }
+
+        if (params.length > 0) {
+          src += '?' + params.join('&');
+        }
+
+        let embedCode = '';
+        if (optResponsive.checked) {
+          embedCode = `<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">\n  <iframe src="${src}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 8px;"></iframe>\n</div>`;
+        } else {
+          embedCode = `<iframe width="560" height="315" src="${src}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px;"></iframe>`;
+        }
+
+        codeOutput.value = embedCode;
+        previewContainer.innerHTML = embedCode;
+        resultBox.style.display = 'block';
+      });
+
+      function extractVideoID(url) {
+        const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|shorts\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+        const match = url.match(regExp);
+        return (match && match[2].length === 11) ? match[2] : null;
+      }
+
+      function showError(msg) {
+        errorBox.innerText = msg;
+        errorBox.style.display = 'block';
+      }
+
+      copyBtn.addEventListener('click', () => {
+        codeOutput.select();
+        navigator.clipboard.writeText(codeOutput.value);
+        copyBtn.innerText = 'Copied!';
+        setTimeout(() => copyBtn.innerText = 'Copy Code', 2000);
+      });
+    });
+  </script>
+</body>
+</html>
