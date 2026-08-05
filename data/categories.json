@@ -55,5 +55,13 @@
     "description": "Free YouTube utility tools to extract channel IDs, download HD thumbnails & generate embeds.",
     "icon": "🎥",
     "count": 6
+  },
+  {
+    "id": "pdf",
+    "name": "PDF Tools",
+    "description": "Merge, split, and convert images to PDF documents privately in your browser.",
+    "icon": "📄",
+    "count": 3,
+    "url": "/tools/pdf/"
   }
 ]
