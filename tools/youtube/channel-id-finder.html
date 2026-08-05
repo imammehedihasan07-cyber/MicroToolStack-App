@@ -1,1 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) - Deferred Load -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var gTagScript = document.createElement('script');
+        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        gTagScript.async = true;
+        document.head.appendChild(gTagScript);
 
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F3WWR9KGB4');
+      }, 1000);
+    });
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Channel ID Finder - Find Any Channel ID Instantly | MicroToolStack</title>
+  <meta name="description" content="Free online YouTube Channel ID Finder. Extract any YouTube Channel ID or User ID instantly using channel URL, handle, or video link. Fast, private, and 100% free.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <!-- Schema.org FAQ Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a YouTube Channel ID?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A YouTube Channel ID is a unique 24-character alphanumeric string starting with 'UC' that Google assigns to every channel. It serves as a permanent identifier regardless of custom URL changes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why do I need a YouTube Channel ID?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You need a Channel ID for developer integrations, YouTube Data API queries, setting up RSS feeds, embedding live streams, and third-party analytics tools."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How to find YouTube Channel ID manually?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can open the YouTube channel page, right-click and select 'View Page Source', then search (Ctrl+F) for 'channelId' or 'UC' string. However, our free tool automates this process instantly."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- Header Container -->
+  <div id="header-container"></div>
+
+  <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
+    <!-- Breadcrumb Navigation -->
+    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary);">
+      <a href="/" style="color: var(--accent-primary); text-decoration: none;">Home</a> / 
+      <a href="/tools/youtube/" style="color: var(--accent-primary); text-decoration: none;">YouTube Tools</a> / 
+      <span>Channel ID Finder</span>
+    </nav>
+
+    <!-- Tool Title & Description -->
+    <header style="margin-bottom: 2rem; text-align: center;">
+      <h1 class="hero" style="font-size: 2.2rem; margin-bottom: 0.5rem;">YouTube Channel ID Finder</h1>
+      <p style="color: var(--text-secondary); font-size: 1.05rem; max-width: 650px; margin: 0 auto;">
+        Instantly find and extract the unique Channel ID or User ID from any YouTube Channel URL, Handle (@name), or Video Link.
+      </p>
+    </header>
+
+    <!-- Tool App Box -->
+    <section class="card" style="padding: 2rem; border-radius: 12px; background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.08); margin-bottom: 3rem;">
+      <div style="display: flex; flex-direction: column; gap: 1rem;">
+        <label for="url-input" style="font-weight: 600; font-size: 1rem;">Enter YouTube URL or Handle:</label>
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <input type="text" id="url-input" placeholder="e.g., https://www.youtube.com/@mkbhd or https://www.youtube.com/watch?v=..." style="flex: 1; min-width: 280px; padding: 0.8rem 1rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.15); background: var(--bg-primary); color: #fff; font-size: 1rem;">
+          <button id="find-btn" style="padding: 0.8rem 1.5rem; border-radius: 6px; border: none; background: var(--accent-primary); color: #fff; font-weight: 600; cursor: pointer;">Find Channel ID</button>
+        </div>
+      </div>
+
+      <!-- Result Display -->
+      <div id="result-box" style="display: none; margin-top: 1.5rem; padding: 1.2rem; border-radius: 8px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1);">
+        <p style="margin-bottom: 0.5rem; font-size: 0.9rem; color: var(--text-secondary);">Extracted Channel ID:</p>
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 1rem;">
+          <code id="channel-id-output" style="font-size: 1.2rem; color: #4ade80; font-family: monospace; word-break: break-all;">UC...</code>
+          <button id="copy-btn" style="padding: 0.4rem 0.8rem; border-radius: 4px; border: 1px solid rgba(255,255,255,0.2); background: transparent; color: #fff; cursor: pointer; font-size: 0.85rem;">Copy</button>
+        </div>
+      </div>
+
+      <div id="error-box" style="display: none; margin-top: 1rem; color: #ef4444; font-size: 0.95rem;"></div>
+    </section>
+
+    <!-- SEO Content Section -->
+    <article style="line-height: 1.7; color: var(--text-secondary); margin-bottom: 3rem;">
+      <h2 style="color: var(--text-primary); margin-bottom: 1rem;">What is a YouTube Channel ID?</h2>
+      <p style="margin-bottom: 1.5rem;">
+        A <strong>YouTube Channel ID</strong> is a unique, 24-character string assigned by Google to identify a specific YouTube channel. Starting with the prefix <code>UC</code>, this identifier remains unchanged throughout the lifecycle of the channel, even if the creator updates their channel name, custom URL, or handle (e.g., <code>@username</code>).
+      </p>
+
+      <h2 style="color: var(--text-primary); margin-bottom: 1rem;">Why Do You Need a YouTube Channel ID?</h2>
+      <p style="margin-bottom: 1rem;">
+        While regular users interact with custom handles or links, developers, content managers, and marketers require the official Channel ID for various technical integration tasks:
+      </p>
+      <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+        <li style="margin-bottom: 0.5rem;"><strong>YouTube Data API Integrations:</strong> Querying channel analytics, subscriber counts, or video playlists via Google Cloud Console.</li>
+        <li style="margin-bottom: 0.5rem;"><strong>Setting Up RSS Feeds:</strong> Subscribing to channel updates via RSS syntax using <code>https://www.youtube.com/feeds/videos.xml?channel_id=YOUR_ID</code>.</li>
+        <li style="margin-bottom: 0.5rem;"><strong>Embedding Live Streams & Widgets:</strong> Creating persistent live-stream embeds on websites without updating video IDs manually.</li>
+        <li style="margin-bottom: 0.5rem;"><strong>Third-Party Social Media Analytics:</strong> Connecting accounts to platforms like Social Blade, Hootsuite, or custom dashboard tools.</li>
+      </ul>
+
+      <h2 style="color: var(--text-primary); margin-bottom: 1rem;">How to Use This YouTube Channel ID Finder</h2>
+      <ol style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+        <li style="margin-bottom: 0.5rem;">Copy any YouTube link (e.g., Channel URL, Handle URL, or Video URL).</li>
+        <li style="margin-bottom: 0.5rem;">Paste the URL into the input field above.</li>
+        <li style="margin-bottom: 0.5rem;">Click the <strong>Find Channel ID</strong> button.</li>
+        <li style="margin-bottom: 0.5rem;">Copy your extracted 24-character Channel ID with a single click.</li>
+      </ol>
+
+      <h2 style="color: var(--text-primary); margin-bottom: 1rem;">Frequently Asked Questions (FAQ)</h2>
+      <div style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem;">
+        <div style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 6px;">
+          <h3 style="color: var(--text-primary); font-size: 1.05rem; margin-bottom: 0.3rem;">Is this tool free to use?</h3>
+          <p>Yes! Our YouTube Channel ID Finder is 100% free, private, and requires no registration or API keys.</p>
+        </div>
+        <div style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 6px;">
+          <h3 style="color: var(--text-primary); font-size: 1.05rem; margin-bottom: 0.3rem;">Does the Channel ID ever change?</h3>
+          <p>No. Even if a creator rebrands, changes their handle, or edits their custom URL, the underlying Channel ID stays permanent.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Internal Linking / Related Tools -->
+    <section style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem;">
+      <h3 style="color: var(--text-primary); margin-bottom: 1rem;">Explore Related YouTube Tools</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem;">
+        <a href="/tools/youtube/thumbnail-downloader.html" style="padding: 1rem; background: var(--bg-secondary); border-radius: 8px; text-decoration: none; border: 1px solid rgba(255,255,255,0.05); display: block;">
+          <h4 style="color: var(--text-primary); margin-bottom: 0.3rem;">Thumbnail Downloader</h4>
+          <p style="color: var(--text-secondary); font-size: 0.85rem;">Download HD thumbnails in 1-click.</p>
+        </a>
+        <a href="/tools/youtube/embed-generator.html" style="padding: 1rem; background: var(--bg-secondary); border-radius: 8px; text-decoration: none; border: 1px solid rgba(255,255,255,0.05); display: block;">
+          <h4 style="color: var(--text-primary); margin-bottom: 0.3rem;">Embed Code Generator</h4>
+          <p style="color: var(--text-secondary); font-size: 0.85rem;">Create responsive iframe embed codes.</p>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Container -->
+  <div id="footer-container"></div>
+
+  <!-- Core Scripts -->
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/search.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
+
+  <!-- Tool Logic Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const input = document.getElementById('url-input');
+      const findBtn = document.getElementById('find-btn');
+      const resultBox = document.getElementById('result-box');
+      const output = document.getElementById('channel-id-output');
+      const copyBtn = document.getElementById('copy-btn');
+      const errorBox = document.getElementById('error-box');
+
+      findBtn.addEventListener('click', async () => {
+        const query = input.value.trim();
+        resultBox.style.display = 'none';
+        errorBox.style.display = 'none';
+
+        if (!query) {
+          showError('Please enter a YouTube Channel URL, Handle, or Video Link.');
+          return;
+        }
+
+        // Direct Channel ID Regex Check (UC...)
+        const directMatch = query.match(/(UC[\w-]{22})/);
+        if (directMatch) {
+          showResult(directMatch[1]);
+          return;
+        }
+
+        // Client-side extraction via page fetch logic or oEmbed fallback
+        try {
+          findBtn.innerText = 'Extracting...';
+          findBtn.disabled = true;
+
+          // Attempting page scrape via cors proxy or page parsing
+          let targetUrl = query;
+          if (!targetUrl.startsWith('http')) {
+            targetUrl = 'https://www.youtube.com/' + (targetUrl.startsWith('@') ? targetUrl : '@' + targetUrl);
+          }
+
+          const res = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(targetUrl)}`);
+          if (!res.ok) throw new Error('Failed to fetch page data.');
+          
+          const data = await res.json();
+          const html = data.contents;
+
+          const match = html.match(/["']channelId["']\s*:\s*["'](UC[\w-]{22})["']/);
+          if (match && match[1]) {
+            showResult(match[1]);
+          } else {
+            showError('Could not locate Channel ID. Please verify the URL.');
+          }
+        } catch (err) {
+          showError('Unable to extract Channel ID automatically. Check the URL and try again.');
+        } finally {
+          findBtn.innerText = 'Find Channel ID';
+          findBtn.disabled = false;
+        }
+      });
+
+      function showResult(id) {
+        output.innerText = id;
+        resultBox.style.display = 'block';
+      }
+
+      function showError(msg) {
+        errorBox.innerText = msg;
+        errorBox.style.display = 'block';
+      }
+
+      copyBtn.addEventListener('click', () => {
+        navigator.clipboard.writeText(output.innerText);
+        copyBtn.innerText = 'Copied!';
+        setTimeout(() => copyBtn.innerText = 'Copy', 2000);
+      });
+    });
+  </script>
+</body>
+</html>
