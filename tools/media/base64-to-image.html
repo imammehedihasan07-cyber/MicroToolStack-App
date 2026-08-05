@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var gTagScript = document.createElement('script');
+        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        gTagScript.async = true;
+        document.head.appendChild(gTagScript);
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F3WWR9KGB4');
+      }, 1000);
+    });
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Base64 to Image Converter - Free Online Decoder | MicroToolStack</title>
+  <meta name="description" content="Convert Base64 strings back to downloadable image files (PNG, JPG, WebP) instantly online. Private, fast, browser-based decoding.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <style>
+    .base64-textarea {
+      width: 100%;
+      height: 160px;
+      padding: 0.8rem;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: monospace;
+      font-size: 0.85rem;
+      resize: vertical;
+      margin-bottom: 1rem;
+    }
+    .preview-container { margin-top: 1.5rem; display: none; text-align: center; }
+  </style>
+</head>
+<body>
+  <div id="header-container"></div>
+
+  <main class="container" style="max-width: 800px; margin: 2rem auto; padding: 0 1rem;">
+    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary);">
+      <a href="/" style="color: var(--text-primary); text-decoration: none;">Home</a> / 
+      <a href="/tools/media/" style="color: var(--text-primary); text-decoration: none;">Media Tools</a> / 
+      <span>Base64 to Image</span>
+    </nav>
+
+    <header style="margin-bottom: 2rem; text-align: center;">
+      <h1 class="hero" style="font-size: 2.2rem; margin-bottom: 0.5rem;">Free Base64 to Image Converter</h1>
+      <p style="color: var(--text-secondary); font-size: 1rem;">Decode Base64 Data URI strings back into viewable and downloadable image files.</p>
+    </header>
+
+    <div class="card" style="padding: 2rem; border-radius: 12px; background: var(--bg-secondary); border: 1px solid var(--border-color);">
+      <label style="display: block; font-size: 0.9rem; margin-bottom: 0.5rem; color: var(--text-secondary);">Paste Base64 Data String Here:</label>
+      <textarea id="base64Input" class="base64-textarea" placeholder="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA..."></textarea>
+
+      <div style="text-align: center;">
+        <button class="btn btn-primary" style="padding: 0.8rem 2rem; font-size: 1rem; cursor: pointer;" onclick="decodeBase64()">🖼️ Decode & Preview Image</button>
+      </div>
+
+      <div class="preview-container" id="previewArea">
+        <div style="margin: 1.5rem 0;">
+          <img id="decodedImg" style="max-height: 300px; border-radius: 8px; border: 1px solid var(--border-color);" alt="Decoded Image Preview">
+        </div>
+        <button class="btn btn-primary" style="padding: 0.8rem 2rem; font-size: 1rem; cursor: pointer;" onclick="downloadDecodedImage()">⬇️ Download Image</button>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/search.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
+
+  <script>
+    let decodedDataUrl = '';
+
+    function decodeBase64() {
+      let input = document.getElementById('base64Input').value.trim();
+      if (!input) {
+        alert('Please paste a Base64 string first.');
+        return;
+      }
+
+      // Add data URI prefix if missing
+      if (!input.startsWith('data:image/')) {
+        input = 'data:image/png;base64,' + input;
+      }
+
+      decodedDataUrl = input;
+      const img = document.getElementById('decodedImg');
+      
+      img.onerror = function() {
+        alert('Invalid Base64 image string!');
+        document.getElementById('previewArea').style.display = 'none';
+      };
+      
+      img.onload = function() {
+        document.getElementById('previewArea').style.display = 'block';
+      };
+
+      img.src = decodedDataUrl;
+    }
+
+    function downloadDecodedImage() {
+      if (!decodedDataUrl) return;
+      const link = document.createElement('a');
+      link.download = 'decoded-image.png';
+      link.href = decodedDataUrl;
+      link.click();
+    }
+  </script>
+</body>
+</html>
