@@ -1,3 +1,5 @@
+window.ThemeManager = window.ThemeManager || {};
+
 // Dynamic Header, Footer, Favorites & Theme Switcher
 document.addEventListener('DOMContentLoaded', () => {
     renderNavbar();
