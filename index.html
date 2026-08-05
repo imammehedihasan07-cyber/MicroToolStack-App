@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4"></script>
+<!-- Google tag (gtag.js) - Optimized Load -->
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-F3WWR9KGB4');
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var gTagScript = document.createElement('script');
+        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        gTagScript.async = true;
+        document.head.appendChild(gTagScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F3WWR9KGB4');
+      }, 1000);
+    });
   </script>
 
   <meta charset="UTF-8">
