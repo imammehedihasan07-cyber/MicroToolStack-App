@@ -39,7 +39,7 @@
     "name": "AI Tools",
     "description": "Smart AI-powered generators to boost social media and content workflows.",
     "icon": "🤖",
-    "count": 5
+    "count": 4
   },
   {
     "id": "pet-care",
@@ -53,6 +53,6 @@
     "name": "YouTube Tools",
     "description": "Free YouTube utility tools to extract channel IDs, download HD thumbnails & generate embeds.",
     "icon": "🎥",
-    "count": 5
+    "count": 6
   }
 ]
