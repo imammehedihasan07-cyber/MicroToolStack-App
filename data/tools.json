@@ -292,7 +292,7 @@
   {
     "id": "youtube-title-generator",
     "name": "AI YouTube Title & Description",
-    "category": "ai",
+    "category": "youtube",
     "url": "/tools/ai/youtube-title-generator.html",
     "description": "Generate viral YouTube title ideas and full video descriptions with AI.",
     "icon": "🎬",
