@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) - Deferred Load -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var gTagScript = document.createElement('script');
+        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        gTagScript.async = true;
+        document.head.appendChild(gTagScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F3WWR9KGB4');
+      }, 1000);
+    });
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SVG to PNG Converter - Free & High Resolution | MicroToolStack</title>
+  <meta name="description" content="Convert SVG vector graphics to High-Resolution PNG images online for free. Custom scaling, instant preview, 100% private browser processing.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <style>
+    .upload-box {
+      border: 2px dashed var(--border-color);
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      border-radius: 12px;
+      cursor: pointer;
+      background: var(--bg-secondary);
+      transition: border-color 0.3s;
+      margin-bottom: 1.5rem;
+    }
+    .upload-box:hover {
+      border-color: var(--accent-primary);
+    }
+    .preview-container {
+      margin-top: 1.5rem;
+      text-align: center;
+      display: none;
+    }
+    .preview-img {
+      max-width: 100%;
+      max-height: 350px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      background: repeating-conic-gradient(#808080 0% 25%, transparent 0% 50%) 50% / 16px 16px;
+    }
+    .controls-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    .control-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      text-align: left;
+    }
+    .control-group label {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+    .control-group input, .control-group select {
+      padding: 0.6rem 0.8rem;
+      border-radius: 6px;
+      border: 1px solid var(--border-color);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Container -->
+  <div id="header-container"></div>
+
+  <main class="container" style="max-width: 800px; margin: 2rem auto; padding: 0 1rem;">
+    <!-- Breadcrumb Navigation -->
+    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary);">
+      <a href="/" style="color: var(--text-primary); text-decoration: none;">Home</a> / 
+      <a href="/tools/media/" style="color: var(--text-primary); text-decoration: none;">Media Tools</a> / 
+      <span>SVG to PNG</span>
+    </nav>
+
+    <!-- Tool Header -->
+    <header style="margin-bottom: 2rem; text-align: center;">
+      <h1 class="hero" style="font-size: 2.2rem; margin-bottom: 0.5rem;">Free SVG to PNG Converter</h1>
+      <p style="color: var(--text-secondary); font-size: 1rem;">
+        Convert scalable SVG vector files into high-quality PNG raster images instantly inside your browser.
+      </p>
+    </header>
+
+    <!-- Tool Main Card -->
+    <div class="card" style="padding: 2rem; border-radius: 12px; background: var(--bg-secondary); border: 1px solid var(--border-color);">
+      
+      <!-- Upload Drop Zone -->
+      <div class="upload-box" id="dropZone" onclick="document.getElementById('svgInput').click()">
+        <span style="font-size: 2.5rem; display: block; margin-bottom: 0.5rem;">📂</span>
+        <p style="margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">Click or Drag & Drop SVG File Here</p>
+        <p style="font-size: 0.85rem; color: var(--text-secondary);">Supports .svg vector files only (100% Client-Side Processing)</p>
+        <input type="file" id="svgInput" accept=".svg" style="display: none;" onchange="handleFileSelect(event)">
+      </div>
+
+      <!-- Controls & Preview (Hidden by default) -->
+      <div class="preview-container" id="previewArea">
+        <img id="imagePreview" class="preview-img" alt="SVG Preview">
+
+        <div class="controls-grid">
+          <div class="control-group">
+            <label for="scaleFactor">Scale Resolution Multiplier:</label>
+            <select id="scaleFactor" onchange="renderPNG()">
+              <option value="1">1x (Original SVG Size)</option>
+              <option value="2" selected>2x (High DPI / Retina)</option>
+              <option value="4">4x (Ultra HD 4K Quality)</option>
+            </select>
+          </div>
+          <div class="control-group">
+            <label for="bgColor">Background Style:</label>
+            <select id="bgColor" onchange="renderPNG()">
+              <option value="transparent" selected>Transparent Background</option>
+              <option value="#ffffff">White Background</option>
+              <option value="#000000">Black Background</option>
+            </select>
+          </div>
+        </div>
+
+        <button id="downloadBtn" class="btn btn-primary" style="padding: 0.8rem 2rem; font-size: 1rem; cursor: pointer;" onclick="downloadPNG()">
+          ⬇️ Download PNG Image
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Hidden Canvas for Rendering -->
+    <canvas id="conversionCanvas" style="display: none;"></canvas>
+
+    <!-- Content / FAQ Section -->
+    <section style="margin-top: 3rem; border-top: 1px solid var(--border-color); padding-top: 2rem;">
+      <h2 style="font-size: 1.4rem; margin-bottom: 1rem;">How to Convert SVG to PNG</h2>
+      <ol style="color: var(--text-secondary); line-height: 1.8; padding-left: 1.2rem; margin-bottom: 2rem;">
+        <li>Upload your SVG file by dragging it into the box or clicking to browse.</li>
+        <li>Select your preferred resolution scaling (1x, 2x, or 4x for Ultra HD).</li>
+        <li>Choose a transparent, white, or black background for your PNG.</li>
+        <li>Click <strong>Download PNG Image</strong> to save your rendered image file instantly.</li>
+      </ol>
+
+      <h3 style="font-size: 1.2rem; margin-bottom: 0.8rem;">Why Use MicroToolStack SVG Converter?</h3>
+      <p style="color: var(--text-secondary); line-height: 1.6;">
+        Unlike traditional online converters that upload your vector graphics to remote servers, our tool processes everything directly inside your browser using HTML5 Canvas rendering. Your files remain 100% private and never leave your device.
+      </p>
+    </section>
+  </main>
+
+  <!-- Footer Container -->
+  <div id="footer-container"></div>
+
+  <!-- Core Scripts -->
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/search.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
+
+  <!-- SVG Conversion Script -->
+  <script>
+    let currentSvgText = '';
+    let svgWidth = 300;
+    let svgHeight = 300;
+    let originalFileName = 'converted-image';
+
+    function handleFileSelect(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+
+      originalFileName = file.name.replace(/\.[^/.]+$/, "");
+      const reader = new FileReader();
+
+      reader.onload = function(e) {
+        currentSvgText = e.target.result;
+        parseAndPreviewSVG(currentSvgText);
+      };
+      reader.readAsText(file);
+    }
+
+    // Drag & Drop handlers
+    const dropZone = document.getElementById('dropZone');
+    dropZone.addEventListener('dragover', (e) => { e.preventDefault(); dropZone.style.borderColor = 'var(--accent-primary)'; });
+    dropZone.addEventListener('dragleave', () => { dropZone.style.borderColor = 'var(--border-color)'; });
+    dropZone.addEventListener('drop', (e) => {
+      e.preventDefault();
+      dropZone.style.borderColor = 'var(--border-color)';
+      if (e.dataTransfer.files.length) {
+        document.getElementById('svgInput').files = e.dataTransfer.files;
+        handleFileSelect({ target: { files: e.dataTransfer.files } });
+      }
+    });
+
+    function parseAndPreviewSVG(svgText) {
+      const parser = new DOMParser();
+      const svgDoc = parser.parseFromString(svgText, "image/svg+xml");
+      const svgElement = svgDoc.documentElement;
+
+      // Extract width & height
+      let w = parseFloat(svgElement.getAttribute('width'));
+      let h = parseFloat(svgElement.getAttribute('height'));
+
+      if (!w || !h) {
+        const viewBox = svgElement.getAttribute('viewBox');
+        if (viewBox) {
+          const parts = viewBox.split(/[\s,]+/).map(Number);
+          if (parts.length === 4) {
+            w = parts[2];
+            h = parts[3];
+          }
+        }
+      }
+
+      svgWidth = w || 300;
+      svgHeight = h || 300;
+
+      document.getElementById('previewArea').style.display = 'block';
+      renderPNG();
+    }
+
+    function renderPNG() {
+      if (!currentSvgText) return;
+
+      const scale = parseFloat(document.getElementById('scaleFactor').value);
+      const bg = document.getElementById('bgColor').value;
+
+      const canvas = document.getElementById('conversionCanvas');
+      const ctx = canvas.getContext('2d');
+
+      const targetW = svgWidth * scale;
+      const targetH = svgHeight * scale;
+
+      canvas.width = targetW;
+      canvas.height = targetH;
+
+      ctx.clearRect(0, 0, targetW, targetH);
+
+      if (bg !== 'transparent') {
+        ctx.fillStyle = bg;
+        ctx.fillRect(0, 0, targetW, targetH);
+      }
+
+      const img = new Image();
+      const svgBlob = new Blob([currentSvgText], { type: 'image/svg+xml;charset=utf-8' });
+      const url = URL.createObjectURL(svgBlob);
+
+      img.onload = function() {
+        ctx.drawImage(img, 0, 0, targetW, targetH);
+        URL.revokeObjectURL(url);
+        
+        // Show in Preview Image tag
+        const previewImg = document.getElementById('imagePreview');
+        previewImg.src = canvas.toDataURL('image/png');
+      };
+      img.src = url;
+    }
+
+    function downloadPNG() {
+      const canvas = document.getElementById('conversionCanvas');
+      const link = document.createElement('a');
+      link.download = `${originalFileName}.png`;
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    }
+  </script>
+</body>
+</html>
