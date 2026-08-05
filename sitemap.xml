@@ -118,4 +118,24 @@
     <lastmod>2026-08-05</lastmod>
     <priority>0.80</priority>
   </url>
+  <url>
+    <loc>https://microtoolstack.vercel.app/tools/pdf/</loc>
+    <lastmod>2026-08-06</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://microtoolstack.vercel.app/tools/pdf/merge-pdf.html</loc>
+    <lastmod>2026-08-06</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://microtoolstack.vercel.app/tools/pdf/images-to-pdf.html</loc>
+    <lastmod>2026-08-06</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://microtoolstack.vercel.app/tools/pdf/split-pdf.html</loc>
+    <lastmod>2026-08-06</lastmod>
+    <priority>0.80</priority>
+  </url>
 </urlset>
