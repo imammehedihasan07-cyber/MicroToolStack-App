@@ -18,11 +18,7 @@ async function loadComponent(elementId, filepath) {
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
-  // Load Layout Components
-  await loadComponent('header-container', '/components/header.html');
-  await loadComponent('navbar-container', '/components/navbar.html');
-  await loadComponent('footer-container', '/components/footer.html');
-
+ 
   // Re-sync Theme Manager Buttons after Header Injection
   if (window.ThemeManager) {
     const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
