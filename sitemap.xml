@@ -68,4 +68,54 @@
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
+  <url>
+    <loc>https://microtoolstack.vercel.app/tools/media/svg-to-png.html</loc>
+    <lastmod>2026-08-05</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://microtoolstack.vercel.app/tools/media/png-to-svg.html</loc>
+    <lastmod>2026-08-05</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://microtoolstack.vercel.app/tools/media/image-cropper.html</loc>
+    <lastmod>2026-08-05</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://microtoolstack.vercel.app/tools/media/image-rotator.html</loc>
+    <lastmod>2026-08-05</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://microtoolstack.vercel.app/tools/media/image-flipper.html</loc>
+    <lastmod>2026-08-05</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://microtoolstack.vercel.app/tools/media/image-to-base64.html</loc>
+    <lastmod>2026-08-05</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://microtoolstack.vercel.app/tools/media/base64-to-image.html</loc>
+    <lastmod>2026-08-05</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://microtoolstack.vercel.app/tools/media/exif-metadata-viewer.html</loc>
+    <lastmod>2026-08-05</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://microtoolstack.vercel.app/tools/media/favicon-generator.html</loc>
+    <lastmod>2026-08-05</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://microtoolstack.vercel.app/tools/media/ico-converter.html</loc>
+    <lastmod>2026-08-05</lastmod>
+    <priority>0.80</priority>
+  </url>
 </urlset>
