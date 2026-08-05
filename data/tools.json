@@ -325,4 +325,44 @@
     "url": "/tools/pet-care/cat-age-converter.html",
     "icon": "🐱",
     "popular": false
-  }]
+  }], 
+{
+    "id": "channel-id-finder",
+    "name": "YouTube Channel ID Finder",
+    "icon": "🔍",
+    "description": "Extract unique 24-character Channel IDs from any channel URL, handle, or video link.",
+    "category": "youtube",
+    "link": "/tools/youtube/channel-id-finder.html"
+  },
+  {
+    "id": "thumbnail-downloader",
+    "name": "YouTube Thumbnail Downloader",
+    "icon": "🖼️",
+    "description": "Download Full HD (1080p), HD, and SD video thumbnails with a single click.",
+    "category": "youtube",
+    "link": "/tools/youtube/thumbnail-downloader.html"
+  },
+  {
+    "id": "embed-generator",
+    "name": "YouTube Embed Code Generator",
+    "icon": "📜",
+    "description": "Generate custom, responsive 16:9 iframe embed codes with privacy mode.",
+    "category": "youtube",
+    "link": "/tools/youtube/embed-generator.html"
+  },
+  {
+    "id": "timestamp-generator",
+    "name": "YouTube Timestamp Generator",
+    "icon": "⏱️",
+    "description": "Create shareable YouTube video links that start playback at exact timestamps.",
+    "category": "youtube",
+    "link": "/tools/youtube/timestamp-generator.html"
+  },
+  {
+    "id": "playlist-id-finder",
+    "name": "YouTube Playlist ID Finder",
+    "icon": "📋",
+    "description": "Extract unique Playlist IDs (PL, UU, FL) from any playlist URL instantly.",
+    "category": "youtube",
+    "link": "/tools/youtube/playlist-id-finder.html"
+  }
