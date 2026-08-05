@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var gTagScript = document.createElement('script');
+        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        gTagScript.async = true;
+        document.head.appendChild(gTagScript);
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F3WWR9KGB4');
+      }, 1000);
+    });
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Favicon Generator - Free Website Icon Maker | MicroToolStack</title>
+  <meta name="description" content="Generate multi-size favicons (16x16, 32x32, 48x48, 180x180) for websites online for free. Private, instant, client-side icon generation.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <style>
+    .upload-box {
+      border: 2px dashed var(--border-color);
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      border-radius: 12px;
+      cursor: pointer;
+      background: var(--bg-secondary);
+      margin-bottom: 1.5rem;
+    }
+    .preview-container { margin-top: 1.5rem; display: none; }
+    .favicon-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .fav-card {
+      background: var(--bg-primary);
+      padding: 1rem;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div id="header-container"></div>
+
+  <main class="container" style="max-width: 800px; margin: 2rem auto; padding: 0 1rem;">
+    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary);">
+      <a href="/" style="color: var(--text-primary); text-decoration: none;">Home</a> / 
+      <a href="/tools/media/" style="color: var(--text-primary); text-decoration: none;">Media Tools</a> / 
+      <span>Favicon Generator</span>
+    </nav>
+
+    <header style="margin-bottom: 2rem; text-align: center;">
+      <h1 class="hero" style="font-size: 2.2rem; margin-bottom: 0.5rem;">Free Favicon Generator</h1>
+      <p style="color: var(--text-secondary); font-size: 1rem;">Convert logos and images into multi-size website favicons instantly.</p>
+    </header>
+
+    <div class="card" style="padding: 2rem; border-radius: 12px; background: var(--bg-secondary); border: 1px solid var(--border-color);">
+      <div class="upload-box" id="dropZone" onclick="document.getElementById('imageInput').click()">
+        <span style="font-size: 2.5rem; display: block; margin-bottom: 0.5rem;">🌐</span>
+        <p style="margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">Click or Drag & Drop Image Here</p>
+        <p style="font-size: 0.85rem; color: var(--text-secondary);">Supports PNG, JPG, WebP, SVG (100% Client-Side Processing)</p>
+        <input type="file" id="imageInput" accept="image/*" style="display: none;" onchange="handleFileSelect(event)">
+      </div>
+
+      <div class="preview-container" id="previewArea">
+        <div class="favicon-grid">
+          <div class="fav-card">
+            <h5 style="margin-bottom:0.5rem; color:var(--text-secondary);">16x16 (Browser)</h5>
+            <canvas id="canvas16" width="16" height="16"></canvas>
+            <br>
+            <button class="btn btn-secondary" style="font-size:0.75rem; padding:0.3rem 0.6rem; margin-top:0.5rem;" onclick="downloadFavicon('canvas16', 16)">Download</button>
+          </div>
+          <div class="fav-card">
+            <h5 style="margin-bottom:0.5rem; color:var(--text-secondary);">32x32 (Standard)</h5>
+            <canvas id="canvas32" width="32" height="32"></canvas>
+            <br>
+            <button class="btn btn-secondary" style="font-size:0.75rem; padding:0.3rem 0.6rem; margin-top:0.5rem;" onclick="downloadFavicon('canvas32', 32)">Download</button>
+          </div>
+          <div class="fav-card">
+            <h5 style="margin-bottom:0.5rem; color:var(--text-secondary);">48x48 (Desktop)</h5>
+            <canvas id="canvas48" width="48" height="48"></canvas>
+            <br>
+            <button class="btn btn-secondary" style="font-size:0.75rem; padding:0.3rem 0.6rem; margin-top:0.5rem;" onclick="downloadFavicon('canvas48', 48)">Download</button>
+          </div>
+          <div class="fav-card">
+            <h5 style="margin-bottom:0.5rem; color:var(--text-secondary);">180x180 (Apple)</h5>
+            <canvas id="canvas180" width="180" height="180" style="max-width:48px; height:auto;"></canvas>
+            <br>
+            <button class="btn btn-secondary" style="font-size:0.75rem; padding:0.3rem 0.6rem; margin-top:0.5rem;" onclick="downloadFavicon('canvas180', 180)">Download</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/search.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
+
+  <script>
+    let uploadedImg = null;
+
+    function handleFileSelect(e) {
+      const file = e.target.files[0];
+      if(!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function(evt) {
+        uploadedImg = new Image();
+        uploadedImg.onload = function() {
+          renderFavicons();
+          document.getElementById('previewArea').style.display = 'block';
+        };
+        uploadedImg.src = evt.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function renderFavicons() {
+      const sizes = [16, 32, 48, 180];
+      sizes.forEach(size => {
+        const canvas = document.getElementById(`canvas${size}`);
+        const ctx = canvas.getContext('2d');
+        ctx.clearRect(0, 0, size, size);
+        ctx.drawImage(uploadedImg, 0, 0, size, size);
+      });
+    }
+
+    function downloadFavicon(canvasId, size) {
+      const canvas = document.getElementById(canvasId);
+      const link = document.createElement('a');
+      link.download = `favicon-${size}x${size}.png`;
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    }
+  </script>
+</body>
+</html>
