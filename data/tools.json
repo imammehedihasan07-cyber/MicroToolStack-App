@@ -298,71 +298,85 @@
     "icon": "🎬",
     "isPopular": true,
     "isNew": true
-  }
-,{
+  },
+  {
     "id": "dog-chocolate-toxicity-calculator",
     "name": "Dog Chocolate Toxicity Calculator",
-    "description": "Calculate toxicity risk level based on your dog's weight and chocolate type.",
     "category": "pet-care",
     "url": "/tools/pet-care/dog-chocolate-toxicity-calculator.html",
+    "description": "Calculate toxicity risk level based on your dog's weight and chocolate type.",
     "icon": "🐶",
-    "popular": true
+    "isPopular": true,
+    "isNew": false
   },
   {
     "id": "raw-dog-food-calculator",
     "name": "Raw Dog Food Portion Calculator",
-    "description": "Calculate daily raw food portions for dogs based on weight and activity level.",
     "category": "pet-care",
     "url": "/tools/pet-care/raw-dog-food-calculator.html",
+    "description": "Calculate daily raw food portions for dogs based on weight and activity level.",
     "icon": "🥩",
-    "popular": false
+    "isPopular": false,
+    "isNew": false
   },
   {
     "id": "cat-age-converter",
     "name": "Cat Age to Human Age Converter",
-    "description": "Convert cat age to equivalent human years based on life stage.",
     "category": "pet-care",
     "url": "/tools/pet-care/cat-age-converter.html",
+    "description": "Convert cat age to equivalent human years based on life stage.",
     "icon": "🐱",
-    "popular": false
-  }], 
-{
+    "isPopular": false,
+    "isNew": false
+  },
+  {
     "id": "channel-id-finder",
     "name": "YouTube Channel ID Finder",
-    "icon": "🔍",
-    "description": "Extract unique 24-character Channel IDs from any channel URL, handle, or video link.",
     "category": "youtube",
-    "link": "/tools/youtube/channel-id-finder.html"
+    "url": "/tools/youtube/channel-id-finder.html",
+    "description": "Extract unique 24-character Channel IDs from any channel URL, handle, or video link.",
+    "icon": "🔍",
+    "isPopular": true,
+    "isNew": true
   },
   {
     "id": "thumbnail-downloader",
     "name": "YouTube Thumbnail Downloader",
-    "icon": "🖼️",
-    "description": "Download Full HD (1080p), HD, and SD video thumbnails with a single click.",
     "category": "youtube",
-    "link": "/tools/youtube/thumbnail-downloader.html"
+    "url": "/tools/youtube/thumbnail-downloader.html",
+    "description": "Download Full HD (1080p), HD, and SD video thumbnails with a single click.",
+    "icon": "🖼️",
+    "isPopular": true,
+    "isNew": true
   },
   {
     "id": "embed-generator",
     "name": "YouTube Embed Code Generator",
-    "icon": "📜",
-    "description": "Generate custom, responsive 16:9 iframe embed codes with privacy mode.",
     "category": "youtube",
-    "link": "/tools/youtube/embed-generator.html"
+    "url": "/tools/youtube/embed-generator.html",
+    "description": "Generate custom, responsive 16:9 iframe embed codes with privacy mode.",
+    "icon": "📜",
+    "isPopular": false,
+    "isNew": true
   },
   {
     "id": "timestamp-generator",
     "name": "YouTube Timestamp Generator",
-    "icon": "⏱️",
-    "description": "Create shareable YouTube video links that start playback at exact timestamps.",
     "category": "youtube",
-    "link": "/tools/youtube/timestamp-generator.html"
+    "url": "/tools/youtube/timestamp-generator.html",
+    "description": "Create shareable YouTube video links that start playback at exact timestamps.",
+    "icon": "⏱️",
+    "isPopular": false,
+    "isNew": true
   },
   {
     "id": "playlist-id-finder",
     "name": "YouTube Playlist ID Finder",
-    "icon": "📋",
-    "description": "Extract unique Playlist IDs (PL, UU, FL) from any playlist URL instantly.",
     "category": "youtube",
-    "link": "/tools/youtube/playlist-id-finder.html"
+    "url": "/tools/youtube/playlist-id-finder.html",
+    "description": "Extract unique Playlist IDs (PL, UU, FL) from any playlist URL instantly.",
+    "icon": "📋",
+    "isPopular": false,
+    "isNew": true
   }
+]
