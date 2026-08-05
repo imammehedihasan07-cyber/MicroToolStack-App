@@ -74,3 +74,12 @@ p {
   color: var(--text-secondary);
   margin-bottom: 1rem;
 }
+/* Desktop Layout Shift & Performance Boost */
+.card {
+  contain-intrinsic-size: 200px;
+  content-visibility: auto;
+}
+
+#popular-tools-grid, #categories-grid {
+  min-height: 250px;
+}
