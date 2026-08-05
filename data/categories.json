@@ -27,12 +27,13 @@
     "icon": "🧮",
     "count": 5
   },
-  {
+ {
     "id": "media",
     "name": "Media Tools",
-    "description": "Client-side image conversion, compression, and media editing.",
+    "description": "Convert, crop, flip, and process images privately in your browser.",
     "icon": "🖼️",
-    "count": 1
+    "count": 11,
+    "url": "/tools/media/"
   },
   {
     "id": "ai",
