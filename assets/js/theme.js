@@ -33,7 +33,7 @@ function renderFooter() {
     const footerHTML = `
         <footer style="margin-top: 3rem; padding: 2rem 1rem; border-top: 1px solid rgba(255, 255, 255, 0.1); text-align: center; background-color: rgba(0, 0, 0, 0.2);">
             <div style="display: flex; gap: 1rem; justify-content: center; align-items: center; flex-wrap: wrap; margin-bottom: 1.5rem;">
-                <a href="https://www.buymeacoffee.com/YOUR_USERNAME" target="_blank" rel="noopener noreferrer" style="background-color: #FFDD00; color: #000; font-weight: 600; font-size: 0.9rem; padding: 0.65rem 1.25rem; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;">
+                <a href="https://www.buymeacoffee.com/microtoolstack" target="_blank" rel="noopener noreferrer" style="background-color: #FFDD00; color: #000; font-weight: 600; font-size: 0.9rem; padding: 0.65rem 1.25rem; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;">
                     <span>☕</span> Buy me a coffee
                 </a>
 
