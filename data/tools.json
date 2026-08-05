@@ -378,5 +378,95 @@
     "icon": "📋",
     "isPopular": false,
     "isNew": true
+  },
+  {
+    "id": "svg-to-png",
+    "title": "SVG to PNG Converter",
+    "description": "Convert scalable SVG vector files to High-Resolution PNG images in your browser.",
+    "category": "media",
+    "url": "/tools/media/svg-to-png.html",
+    "icon": "🖼️",
+    "tags": ["svg", "png", "convert", "image", "vector"]
+  },
+  {
+    "id": "png-to-svg",
+    "title": "PNG to SVG Converter",
+    "description": "Trace and convert raster PNG images into scalable vector SVG graphics easily.",
+    "category": "media",
+    "url": "/tools/media/png-to-svg.html",
+    "icon": "🎨",
+    "tags": ["png", "svg", "vectorize", "convert", "image"]
+  },
+  {
+    "id": "image-cropper",
+    "title": "Image Cropper",
+    "description": "Crop and resize images to precise aspect ratios with interactive preview.",
+    "category": "media",
+    "url": "/tools/media/image-cropper.html",
+    "icon": "✂️",
+    "tags": ["crop", "resize", "aspect ratio", "image", "editor"]
+  },
+  {
+    "id": "image-rotator",
+    "title": "Image Rotator",
+    "description": "Rotate JPG, PNG, and WebP images clockwise or counter-clockwise easily.",
+    "category": "media",
+    "url": "/tools/media/image-rotator.html",
+    "icon": "🔄",
+    "tags": ["rotate", "angle", "turn", "image", "editor"]
+  },
+  {
+    "id": "image-flipper",
+    "title": "Image Flipper",
+    "description": "Flip images horizontally (mirror effect) or vertically instantly.",
+    "category": "media",
+    "url": "/tools/media/image-flipper.html",
+    "icon": "🪞",
+    "tags": ["flip", "mirror", "horizontal", "vertical", "image"]
+  },
+  {
+    "id": "image-to-base64",
+    "title": "Image to Base64",
+    "description": "Convert image files directly into Base64 Data URI strings for web embedding.",
+    "category": "media",
+    "url": "/tools/media/image-to-base64.html",
+    "icon": "📄",
+    "tags": ["base64", "encode", "uri", "image", "developer"]
+  },
+  {
+    "id": "base64-to-image",
+    "title": "Base64 to Image",
+    "description": "Decode Base64 Data URI strings back into viewable and downloadable image files.",
+    "category": "media",
+    "url": "/tools/media/base64-to-image.html",
+    "icon": "🖼️",
+    "tags": ["base64", "decode", "string to image", "developer"]
+  },
+  {
+    "id": "exif-metadata-viewer",
+    "title": "EXIF Metadata Viewer",
+    "description": "Inspect EXIF tags, resolution, file specifications, and camera details.",
+    "category": "media",
+    "url": "/tools/media/exif-metadata-viewer.html",
+    "icon": "📷",
+    "tags": ["exif", "metadata", "camera", "info", "photo"]
+  },
+  {
+    "id": "favicon-generator",
+    "title": "Favicon Generator",
+    "description": "Convert logos and images into multi-size website favicons instantly.",
+    "category": "media",
+    "url": "/tools/media/favicon-generator.html",
+    "icon": "🌐",
+    "tags": ["favicon", "icon", "website", "generate", "app icon"]
+  },
+  {
+    "id": "ico-converter",
+    "title": "ICO Converter",
+    "description": "Convert PNG, JPG, or WebP images into ICO format for favicons and shortcuts.",
+    "category": "media",
+    "url": "/tools/media/ico-converter.html",
+    "icon": "📦",
+    "tags": ["ico", "convert", "favicon", "shortcut", "icon"]
   }
 ]
