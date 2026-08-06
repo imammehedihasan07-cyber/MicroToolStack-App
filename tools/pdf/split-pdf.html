@@ -22,13 +22,70 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Split PDF Pages Online - Free & Private | MicroToolStack</title>
   <meta name="description" content="Extract specific pages or split PDF documents online for free. 100% private client-side processing with instant download.">
+  <link rel="canonical" href="https://microtoolstack.vercel.app/tools/pdf/split-pdf.html">
 
+  <!-- Open Graph / Social Media Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Split PDF Pages Online - Free & Private | MicroToolStack">
+  <meta property="og:description" content="Extract specific pages or split PDF documents online for free. 100% private client-side processing.">
+  <meta property="og:url" content="https://microtoolstack.vercel.app/tools/pdf/split-pdf.html">
+  <meta property="og:site_name" content="MicroToolStack">
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Split PDF Pages Online - Free & Private | MicroToolStack">
+  <meta name="twitter:description" content="Extract specific pages or split PDF documents online for free. 100% private client-side processing.">
+
+  <!-- Fonts & CSS Stylesheets -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <!-- Structured Data (JSON-LD Schema) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://microtoolstack.vercel.app/tools/pdf/split-pdf.html#webapp",
+        "url": "https://microtoolstack.vercel.app/tools/pdf/split-pdf.html",
+        "name": "Split PDF Pages Online",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "All",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "Extract specific pages or page ranges from your PDF document easily and privately."
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://microtoolstack.vercel.app/tools/pdf/split-pdf.html#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How do I specify page ranges to split?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You can enter individual page numbers separated by commas (e.g., 1, 3, 5) or page ranges with hyphens (e.g., 1-5)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my PDF uploaded to any server during splitting?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. The splitting process is performed entirely on your device using client-side JavaScript."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 
   <style>
     .upload-box {
@@ -58,6 +115,21 @@
       font-size: 0.95rem;
       margin-top: 0.5rem;
       margin-bottom: 1.5rem;
+    }
+    .related-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+    .related-links a {
+      color: var(--accent-primary);
+      text-decoration: none;
+      font-weight: 500;
+      background: var(--bg-secondary);
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      border: 1px solid var(--border-color);
     }
   </style>
 </head>
@@ -112,12 +184,29 @@
 
     <!-- Content / FAQ Section -->
     <section style="margin-top: 3rem; border-top: 1px solid var(--border-color); padding-top: 2rem;">
-      <h2 style="font-size: 1.4rem; margin-bottom: 1rem;">How to Split PDF Pages</h2>
+      <h2 style="font-size: 1.4rem; margin-bottom: 1rem;">How to Split PDF Pages Online</h2>
       <ol style="color: var(--text-secondary); line-height: 1.8; padding-left: 1.2rem; margin-bottom: 2rem;">
-        <li>Upload your multi-page PDF document.</li>
+        <li>Upload your multi-page PDF document into the box.</li>
         <li>Specify the pages or page ranges you want to extract (e.g., "1-3, 5").</li>
         <li>Click <strong>Split & Download PDF</strong> to extract and save those pages into a new PDF instantly.</li>
       </ol>
+
+      <h3 style="font-size: 1.2rem; margin-bottom: 0.8rem;">Frequently Asked Questions</h3>
+      <div style="margin-bottom: 2rem; color: var(--text-secondary); line-height: 1.6;">
+        <p style="margin-bottom: 1rem;"><strong>Q: How do I enter custom page numbers?</strong><br>
+        A: You can type single pages separated by commas (e.g., "1, 4, 7") or continuous page ranges with hyphens (e.g., "2-6").</p>
+        
+        <p><strong>Q: Is my document kept secure?</strong><br>
+        A: Yes, completely. The extraction happens 100% inside your device browser, so no sensitive documents leave your device.</p>
+      </div>
+
+      <!-- Internal Links -->
+      <h3 style="font-size: 1.1rem; margin-bottom: 0.8rem;">Related Tools</h3>
+      <div class="related-links">
+        <a href="/tools/pdf/merge-pdf.html">🧩 Merge PDF Files</a>
+        <a href="/tools/pdf/images-to-pdf.html">🖼️ Images to PDF</a>
+        <a href="/tools/media/svg-to-png.html">🖼️ SVG to PNG Converter</a>
+      </div>
     </section>
   </main>
 
