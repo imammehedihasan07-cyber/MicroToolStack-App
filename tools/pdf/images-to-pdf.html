@@ -22,13 +22,70 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Images to PDF Converter - Free & Private | MicroToolStack</title>
   <meta name="description" content="Convert JPG, PNG, and WebP images into a single PDF document online for free. 100% private, client-side browser conversion.">
+  <link rel="canonical" href="https://microtoolstack.vercel.app/tools/pdf/images-to-pdf.html">
 
+  <!-- Open Graph / Social Media Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Images to PDF Converter - Free & Private | MicroToolStack">
+  <meta property="og:description" content="Convert JPG, PNG, and WebP images into a single PDF document online for free. 100% private browser conversion.">
+  <meta property="og:url" content="https://microtoolstack.vercel.app/tools/pdf/images-to-pdf.html">
+  <meta property="og:site_name" content="MicroToolStack">
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Images to PDF Converter - Free & Private | MicroToolStack">
+  <meta name="twitter:description" content="Convert JPG, PNG, and WebP images into a single PDF document online for free. 100% private browser conversion.">
+
+  <!-- Fonts & CSS Stylesheets -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <!-- Structured Data (JSON-LD Schema) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://microtoolstack.vercel.app/tools/pdf/images-to-pdf.html#webapp",
+        "url": "https://microtoolstack.vercel.app/tools/pdf/images-to-pdf.html",
+        "name": "Images to PDF Converter",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "All",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "Convert JPG, PNG, and WebP images into a single PDF document online for free."
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://microtoolstack.vercel.app/tools/pdf/images-to-pdf.html#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Which image formats are supported?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Our converter supports all major image formats including JPG, JPEG, PNG, and WebP."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my privacy protected when uploading photos?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, 100%. All images are converted right inside your web browser. No photos are ever uploaded to any server."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 
   <style>
     .upload-box {
@@ -78,6 +135,21 @@
       font-size: 0.75rem;
       cursor: pointer;
     }
+    .related-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+    .related-links a {
+      color: var(--accent-primary);
+      text-decoration: none;
+      font-weight: 500;
+      background: var(--bg-secondary);
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      border: 1px solid var(--border-color);
+    }
   </style>
 </head>
 <body>
@@ -124,12 +196,29 @@
 
     <!-- Content / FAQ Section -->
     <section style="margin-top: 3rem; border-top: 1px solid var(--border-color); padding-top: 2rem;">
-      <h2 style="font-size: 1.4rem; margin-bottom: 1rem;">How to Convert Images to PDF</h2>
+      <h2 style="font-size: 1.4rem; margin-bottom: 1rem;">How to Convert Images to PDF Online</h2>
       <ol style="color: var(--text-secondary); line-height: 1.8; padding-left: 1.2rem; margin-bottom: 2rem;">
         <li>Select one or multiple images from your computer or phone.</li>
         <li>Review your uploaded image thumbnails.</li>
         <li>Click <strong>Convert to PDF Document</strong> to create and download your compiled PDF instantly.</li>
       </ol>
+
+      <h3 style="font-size: 1.2rem; margin-bottom: 0.8rem;">Frequently Asked Questions</h3>
+      <div style="margin-bottom: 2rem; color: var(--text-secondary); line-height: 1.6;">
+        <p style="margin-bottom: 1rem;"><strong>Q: Which image formats can I convert?</strong><br>
+        A: You can convert JPG, JPEG, PNG, and WebP images seamlessly into a standard A4 PDF document.</p>
+        
+        <p><strong>Q: Are my uploaded photos safe?</strong><br>
+        A: Absolutely. Conversion takes place directly in your web browser. Your private pictures are never uploaded to any server or cloud database.</p>
+      </div>
+
+      <!-- Internal Links -->
+      <h3 style="font-size: 1.1rem; margin-bottom: 0.8rem;">Related Tools</h3>
+      <div class="related-links">
+        <a href="/tools/pdf/merge-pdf.html">🧩 Merge PDF Files</a>
+        <a href="/tools/pdf/split-pdf.html">✂️ Split PDF Pages</a>
+        <a href="/tools/media/image-converter.html">🖼️ Format Converter</a>
+      </div>
     </section>
   </main>
 
