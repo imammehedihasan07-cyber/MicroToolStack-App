@@ -1,140 +1,141 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://microtoolstack.vercel.app/</loc><priority>1.0</priority></url>
-  <url><loc>https://microtoolstack.vercel.app/about.html</loc><priority>0.5</priority></url>
-  <url><loc>https://microtoolstack.vercel.app/contact.html</loc><priority>0.5</priority></url>
+  <url><loc>https://microtoolstack.com/</loc><priority>1.0</priority></url>
+  <url><loc>https://microtoolstack.com/about.html</loc><priority>0.5</priority></url>
+  <url><loc>https://microtoolstack.com/contact.html</loc><priority>0.5</priority></url>
   
   <!-- Text Tools -->
-  <url><loc>https://microtoolstack.vercel.app/tools/text/word-counter.html</loc><priority>0.8</priority></url>
-  <url><loc>https://microtoolstack.vercel.app/tools/text/character-counter.html</loc><priority>0.8</priority></url>
-  <url><loc>https://microtoolstack.vercel.app/tools/text/remove-extra-spaces.html</loc><priority>0.8</priority></url>
-  <url><loc>https://microtoolstack.vercel.app/tools/text/case-converter.html</loc><priority>0.8</priority></url>
-  <url><loc>https://microtoolstack.vercel.app/tools/text/reverse-text.html</loc><priority>0.8</priority></url>
-  <url><loc>https://microtoolstack.vercel.app/tools/text/text-sorter.html</loc><priority>0.8</priority></url>
-  <url><loc>https://microtoolstack.vercel.app/tools/text/duplicate-line-remover.html</loc><priority>0.8</priority></url>
+  <url><loc>https://microtoolstack.com/tools/text/word-counter.html</loc><priority>0.8</priority></url>
+  <url><loc>https://microtoolstack.com/tools/text/character-counter.html</loc><priority>0.8</priority></url>
+  <url><loc>https://microtoolstack.com/tools/text/remove-extra-spaces.html</loc><priority>0.8</priority></url>
+  <url><loc>https://microtoolstack.com/tools/text/case-converter.html</loc><priority>0.8</priority></url>
+  <url><loc>https://microtoolstack.com/tools/text/reverse-text.html</loc><priority>0.8</priority></url>
+  <url><loc>https://microtoolstack.com/tools/text/text-sorter.html</loc><priority>0.8</priority></url>
+  <url><loc>https://microtoolstack.com/tools/text/duplicate-line-remover.html</loc><priority>0.8</priority></url>
 
   <!-- SEO Tools -->
-  <url><loc>https://microtoolstack.vercel.app/tools/seo/meta-title-generator.html</loc><priority>0.8</priority></url>
-  <url><loc>https://microtoolstack.vercel.app/tools/seo/meta-description-generator.html</loc><priority>0.8</priority></url>
-  <url><loc>https://microtoolstack.vercel.app/tools/seo/slug-generator.html</loc><priority>0.8</priority></url>
-  <url><loc>https://microtoolstack.vercel.app/tools/seo/robots-txt-generator.html</loc><priority>0.8</priority></url>
-  <url><loc>https://microtoolstack.vercel.app/tools/seo/faq-schema-generator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://microtoolstack.com/tools/seo/meta-title-generator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://microtoolstack.com/tools/seo/meta-description-generator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://microtoolstack.com/tools/seo/slug-generator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://microtoolstack.com/tools/seo/robots-txt-generator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://microtoolstack.com/tools/seo/faq-schema-generator.html</loc><priority>0.8</priority></url>
 
   <!-- Developer Tools -->
-  <url><loc>https://microtoolstack.vercel.app/tools/developer/json-formatter.html</loc><priority>0.8</priority></url>
-  <url><loc>https://microtoolstack.vercel.app/tools/developer/uuid-generator.html</loc><priority>0.8</priority></url>
-  <url><loc>https://microtoolstack.vercel.app/tools/developer/base64-encoder-decoder.html</loc><priority>0.8</priority></url>
+  <url><loc>https://microtoolstack.com/tools/developer/json-formatter.html</loc><priority>0.8</priority></url>
+  <url><loc>https://microtoolstack.com/tools/developer/uuid-generator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://microtoolstack.com/tools/developer/base64-encoder-decoder.html</loc><priority>0.8</priority></url>
 
   <!-- AI Tools -->
-  <url><loc>https://microtoolstack.vercel.app/tools/ai/caption-generator.html</loc><priority>0.8</priority></url>
-  <url><loc>https://microtoolstack.vercel.app/tools/ai/hashtag-generator.html</loc><priority>0.8</priority></url>
-  <url><loc>https://microtoolstack.vercel.app/tools/ai/bio-generator.html</loc><priority>0.8</priority></url>
-  <url><loc>https://microtoolstack.vercel.app/tools/ai/humanizer.html</loc><priority>0.8</priority></url>
-  <url><loc>https://microtoolstack.vercel.app/tools/ai/youtube-title-generator.html</loc><priority>0.8</priority></url>
-<!-- YouTube Tools Category & Tools -->
+  <url><loc>https://microtoolstack.com/tools/ai/caption-generator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://microtoolstack.com/tools/ai/hashtag-generator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://microtoolstack.com/tools/ai/bio-generator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://microtoolstack.com/tools/ai/humanizer.html</loc><priority>0.8</priority></url>
+  <url><loc>https://microtoolstack.com/tools/ai/youtube-title-generator.html</loc><priority>0.8</priority></url>
+
+  <!-- YouTube Tools Category & Tools -->
   <url>
-    <loc>https://microtoolstack.vercel.app/tools/youtube/</loc>
+    <loc>https://microtoolstack.com/tools/youtube/</loc>
     <lastmod>2026-08-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://microtoolstack.vercel.app/tools/youtube/channel-id-finder.html</loc>
+    <loc>https://microtoolstack.com/tools/youtube/channel-id-finder.html</loc>
     <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://microtoolstack.vercel.app/tools/youtube/thumbnail-downloader.html</loc>
+    <loc>https://microtoolstack.com/tools/youtube/thumbnail-downloader.html</loc>
     <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://microtoolstack.vercel.app/tools/youtube/embed-generator.html</loc>
+    <loc>https://microtoolstack.com/tools/youtube/embed-generator.html</loc>
     <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://microtoolstack.vercel.app/tools/youtube/timestamp-generator.html</loc>
+    <loc>https://microtoolstack.com/tools/youtube/timestamp-generator.html</loc>
     <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://microtoolstack.vercel.app/tools/youtube/playlist-id-finder.html</loc>
+    <loc>https://microtoolstack.com/tools/youtube/playlist-id-finder.html</loc>
     <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://microtoolstack.vercel.app/tools/media/svg-to-png.html</loc>
+    <loc>https://microtoolstack.com/tools/media/svg-to-png.html</loc>
     <lastmod>2026-08-05</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://microtoolstack.vercel.app/tools/media/png-to-svg.html</loc>
+    <loc>https://microtoolstack.com/tools/media/png-to-svg.html</loc>
     <lastmod>2026-08-05</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://microtoolstack.vercel.app/tools/media/image-cropper.html</loc>
+    <loc>https://microtoolstack.com/tools/media/image-cropper.html</loc>
     <lastmod>2026-08-05</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://microtoolstack.vercel.app/tools/media/image-rotator.html</loc>
+    <loc>https://microtoolstack.com/tools/media/image-rotator.html</loc>
     <lastmod>2026-08-05</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://microtoolstack.vercel.app/tools/media/image-flipper.html</loc>
+    <loc>https://microtoolstack.com/tools/media/image-flipper.html</loc>
     <lastmod>2026-08-05</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://microtoolstack.vercel.app/tools/media/image-to-base64.html</loc>
+    <loc>https://microtoolstack.com/tools/media/image-to-base64.html</loc>
     <lastmod>2026-08-05</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://microtoolstack.vercel.app/tools/media/base64-to-image.html</loc>
+    <loc>https://microtoolstack.com/tools/media/base64-to-image.html</loc>
     <lastmod>2026-08-05</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://microtoolstack.vercel.app/tools/media/exif-metadata-viewer.html</loc>
+    <loc>https://microtoolstack.com/tools/media/exif-metadata-viewer.html</loc>
     <lastmod>2026-08-05</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://microtoolstack.vercel.app/tools/media/favicon-generator.html</loc>
+    <loc>https://microtoolstack.com/tools/media/favicon-generator.html</loc>
     <lastmod>2026-08-05</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://microtoolstack.vercel.app/tools/media/ico-converter.html</loc>
+    <loc>https://microtoolstack.com/tools/media/ico-converter.html</loc>
     <lastmod>2026-08-05</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://microtoolstack.vercel.app/tools/pdf/</loc>
+    <loc>https://microtoolstack.com/tools/pdf/</loc>
     <lastmod>2026-08-06</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://microtoolstack.vercel.app/tools/pdf/merge-pdf.html</loc>
+    <loc>https://microtoolstack.com/tools/pdf/merge-pdf.html</loc>
     <lastmod>2026-08-06</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://microtoolstack.vercel.app/tools/pdf/images-to-pdf.html</loc>
+    <loc>https://microtoolstack.com/tools/pdf/images-to-pdf.html</loc>
     <lastmod>2026-08-06</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://microtoolstack.vercel.app/tools/pdf/split-pdf.html</loc>
+    <loc>https://microtoolstack.com/tools/pdf/split-pdf.html</loc>
     <lastmod>2026-08-06</lastmod>
     <priority>0.80</priority>
   </url>
