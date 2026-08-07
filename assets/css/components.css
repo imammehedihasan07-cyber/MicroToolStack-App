@@ -450,3 +450,14 @@
   font-size: 1.2rem;
   padding: 0.2rem;
 }
+/* Fix Logo Image & Text Visibility inside Tool Header */
+.custom-logo img {
+  height: 38px !important;
+  width: auto !important;
+  display: block;
+}
+
+.custom-logo {
+  color: #ffffff !important;
+  font-weight: 700;
+}
