@@ -521,5 +521,14 @@
     "isPopular": false,
     "isNew": true,
     "tags": ["pdf", "split", "extract", "pages"]
-  }
+  },
+  {
+  "id": "webp-to-jpg-png",
+  "name": "WEBP to JPG / PNG Converter",
+  "description": "Convert WEBP images to JPG or PNG format online for free with full privacy.",
+  "category": "media",
+  "url": "/tools/media/webp-to-jpg-png.html",
+  "icon": "🖼️",
+  "isPopular": true
+}
 ]
