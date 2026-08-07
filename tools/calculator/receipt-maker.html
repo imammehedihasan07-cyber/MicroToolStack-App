@@ -101,7 +101,6 @@
       font-size: 0.9rem;
       box-sizing: border-box;
     }
-    /* Printable Receipt Preview Style */
     .receipt-paper {
       background: #ffffff;
       color: #111827;
@@ -157,7 +156,10 @@
 
   <!-- Header -->
   <header class="custom-header">
-    <a href="/" class="custom-logo"><span>⚡</span> MicroToolStack</a>
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo.png" alt="MicroToolStack" class="logo-img">
+      <span>MicroToolStack</span>
+    </a>
     <nav class="custom-nav">
       <a href="/#categories">Categories</a>
       <a href="/about.html">About</a>
@@ -219,7 +221,7 @@
           </div>
 
           <div id="items-input-container">
-            <!-- Dynamic rows will inject here -->
+            <!-- Dynamic rows injected here -->
           </div>
 
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-top: 1rem;">
@@ -323,7 +325,6 @@
       const taxRateInput = document.getElementById('tax-rate');
       const discountValInput = document.getElementById('discount-val');
 
-      // Live Preview Elements
       const prevBizName = document.getElementById('prev-biz-name');
       const prevClientName = document.getElementById('prev-client-name');
       const prevDocTitle = document.getElementById('prev-doc-title');
@@ -401,12 +402,10 @@
         prevTotal.textContent = `${curr}${total.toFixed(2)}`;
       }
 
-      // Input Event Listeners
       [bizNameInput, clientNameInput, docTitleInput, currencyInput, taxRateInput, discountValInput].forEach(input => {
         input.addEventListener('input', updateCalculation);
       });
 
-      // PDF Generation
       document.getElementById('download-pdf-btn').addEventListener('click', function() {
         const element = document.getElementById('receipt-paper');
         const opt = {
