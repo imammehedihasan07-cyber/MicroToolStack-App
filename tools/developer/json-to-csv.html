@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) - Optimized Load -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var gTagScript = document.createElement('script');
+        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        gTagScript.async = true;
+        document.head.appendChild(gTagScript);
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F3WWR9KGB4');
+      }, 1000);
+    });
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free JSON to CSV / Excel Converter Online | MicroToolStack</title>
+  <meta name="description" content="Convert JSON data into clean CSV or Excel spreadsheet files online for free. Parse JSON arrays into structured tabular format instantly with 100% browser privacy.">
+  <link rel="canonical" href="https://microtoolstack.com/tools/developer/json-to-csv.html">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+  <!-- Schema -->
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "JSON to CSV / Excel Converter",
+      "url": "https://microtoolstack.com/tools/developer/json-to-csv.html",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is my JSON data uploaded to any server?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Data parsing and CSV download processing run 100% locally inside your web browser."
+          }
+        }
+      ]
+    }
+  ]
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <style>
+    .app-card {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2.5rem;
+    }
+    .json-editor {
+      width: 100%;
+      height: 200px;
+      background: #111827;
+      border: 1px solid #374151;
+      border-radius: 8px;
+      color: #34d399;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 1rem;
+      font-size: 0.9rem;
+      box-sizing: border-box;
+      resize: vertical;
+      outline: none;
+    }
+    .table-container {
+      max-height: 300px;
+      overflow: auto;
+      border: 1px solid #374151;
+      border-radius: 8px;
+      margin-top: 1.5rem;
+      background: rgba(0,0,0,0.2);
+    }
+    .preview-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      text-align: left;
+    }
+    .preview-table th, .preview-table td {
+      border: 1px solid #374151;
+      padding: 0.6rem;
+      color: #e5e7eb;
+    }
+    .preview-table th {
+      background: #1f2937;
+      color: #3b82f6;
+      font-weight: 700;
+      position: sticky;
+      top: 0;
+    }
+    .btn-action {
+      background-color: #2563eb;
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-action:hover {
+      background-color: #1d4ed8;
+    }
+    .btn-download {
+      background-color: #16a34a;
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-block;
+      cursor: pointer;
+    }
+    .btn-download:hover {
+      background-color: #15803d;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="custom-header">
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo.png" alt="MicroToolStack" class="logo-img">
+      <span>MicroToolStack</span>
+    </a>
+    <nav class="custom-nav">
+      <a href="/#categories">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <button id="theme-toggle" class="custom-theme-btn">🌙</button>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container" style="max-width: 950px; margin: 0 auto; padding: 2rem 1rem;">
+    
+    <!-- Title Section -->
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <span class="badge badge-primary" style="margin-bottom: 0.5rem; display: inline-block;">100% Client-Side & Fast</span>
+      <h1>JSON to CSV / Excel Converter</h1>
+      <p style="color: #9ca3af;">Paste raw JSON arrays or objects to automatically format and export into tabular CSV spreadsheets.</p>
+    </div>
+
+    <!-- App Card -->
+    <div class="app-card">
+      <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #e5e7eb;">Paste JSON Array Here:</label>
+      <textarea id="json-input" class="json-editor" spellcheck="false">[
+  { "id": 1, "name": "John Doe", "email": "john@example.com", "role": "Developer" },
+  { "id": 2, "name": "Jane Smith", "email": "jane@example.com", "role": "Designer" },
+  { "id": 3, "name": "Bob Wilson", "email": "bob@example.com", "role": "Manager" }
+]</textarea>
+
+      <div style="display: flex; gap: 1rem; margin-top: 1rem; flex-wrap: wrap; align-items: center;">
+        <button id="convert-btn" class="btn-action">Convert & Preview Table</button>
+        <a id="download-csv-btn" class="btn-download" style="display: none;">📥 Download CSV File</a>
+      </div>
+
+      <div id="error-msg" style="display: none; color: #ef4444; margin-top: 1rem; font-size: 0.9rem; font-weight: 600;"></div>
+
+      <!-- Preview Table Container -->
+      <div id="table-wrap" class="table-container" style="display: none;">
+        <table class="preview-table" id="preview-table">
+          <!-- Rendered dynamically -->
+        </table>
+      </div>
+    </div>
+
+    <!-- SEO Deep Content Area -->
+    <article style="line-height: 1.7; color: #d1d5db; border-top: 1px solid #374151; padding-top: 2rem;">
+      <h2 style="color: #fff;">How to Convert JSON to CSV Spreadsheets</h2>
+      <p>JSON (JavaScript Object Notation) is the most popular data format for Web APIs. However, analyzing or reporting API responses often requires converting JSON data into CSV or Excel files for spreadsheet software like Microsoft Excel or Google Sheets.</p>
+
+      <h3 style="color: #fff; margin-top: 1.5rem;">Step-by-Step Instructions:</h3>
+      <ul>
+        <li>Paste your valid JSON array into the text box above.</li>
+        <li>Click <strong>Convert & Preview Table</strong> to parse keys and values into structured columns.</li>
+        <li>Review your data grid preview.</li>
+        <li>Click <strong>Download CSV File</strong> to save the spreadsheet directly to your device.</li>
+      </ul>
+
+      <h3 style="color: #fff; margin-top: 1.5rem;">Frequently Asked Questions</h3>
+      <div style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+        <strong style="color: #fff;">Is my data uploaded to external servers?</strong>
+        <p style="margin: 0.5rem 0 0 0;">No! Your JSON payload is parsed and converted locally inside your browser using JavaScript. No confidential API data is transmitted or logged.</p>
+      </div>
+    </article>
+
+  </main>
+
+  <div id="footer-container"></div>
+
+  <!-- Scripts -->
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
+
+  <!-- Client Logic -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const jsonInput = document.getElementById('json-input');
+      const convertBtn = document.getElementById('convert-btn');
+      const downloadBtn = document.getElementById('download-csv-btn');
+      const errorMsg = document.getElementById('error-msg');
+      const tableWrap = document.getElementById('table-wrap');
+      const previewTable = document.getElementById('preview-table');
+
+      let csvContent = "";
+
+      convertBtn.addEventListener('click', function() {
+        errorMsg.style.display = 'none';
+        tableWrap.style.display = 'none';
+        downloadBtn.style.display = 'none';
+
+        try {
+          const raw = jsonInput.value.trim();
+          let parsed = JSON.parse(raw);
+
+          if (!Array.isArray(parsed)) {
+            if (typeof parsed === 'object') {
+              parsed = [parsed];
+            } else {
+              throw new Error("JSON must be an array of objects.");
+            }
+          }
+
+          if (parsed.length === 0) {
+            throw new Error("JSON array is empty.");
+          }
+
+          const headers = Array.from(new Set(parsed.flatMap(obj => Object.keys(obj))));
+
+          let tableHtml = '<thead><tr>' + headers.map(h => `<th>${h}</th>`).join('') + '</tr></thead><tbody>';
+          
+          const csvRows = [];
+          csvRows.push(headers.join(','));
+
+          parsed.forEach(row => {
+            tableHtml += '<tr>';
+            const csvRow = headers.map(h => {
+              let val = row[h] !== undefined ? row[h] : '';
+              if (typeof val === 'object') val = JSON.stringify(val);
+              
+              tableHtml += `<td>${val}</td>`;
+
+              const strVal = String(val).replace(/"/g, '""');
+              return `"${strVal}"`;
+            });
+            tableHtml += '</tr>';
+            csvRows.push(csvRow.join(','));
+          });
+
+          tableHtml += '</tbody>';
+          previewTable.innerHTML = tableHtml;
+          tableWrap.style.display = 'block';
+
+          csvContent = csvRows.join('\n');
+          const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+          const url = URL.createObjectURL(blob);
+          
+          downloadBtn.href = url;
+          downloadBtn.download = 'converted-data.csv';
+          downloadBtn.style.display = 'inline-block';
+
+        } catch (err) {
+          errorMsg.textContent = '❌ Invalid JSON format: ' + err.message;
+          errorMsg.style.display = 'block';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
