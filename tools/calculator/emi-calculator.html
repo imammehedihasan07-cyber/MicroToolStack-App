@@ -1,95 +1,402 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) - Optimized Load -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var gTagScript = document.createElement('script');
+        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        gTagScript.async = true;
+        document.head.appendChild(gTagScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F3WWR9KGB4');
+      }, 1000);
+    });
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Loan EMI Calculator | MicroToolStack</title>
-  <meta name="description" content="Calculate monthly loan repayments, total interest payable, and payback schedules.">
   
-  <link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="stylesheet" href="/assets/css/components.css">
-  <link rel="stylesheet" href="/assets/css/tools.css">
+  <!-- Primary SEO Meta Tags -->
+  <title>Free Online Loan EMI Calculator | Personal, Home & Car Loan EMI</title>
+  <meta name="description" content="Free online Loan EMI Calculator to compute monthly installment payments, total interest payable, and total loan cost for home, car, or personal loans. Fast, accurate & 100% free.">
+  <meta name="keywords" content="loan emi calculator, emi calculator online, home loan emi calculator, car loan emi calculator, personal loan calculator, calculate monthly emi, interest payment calculator">
+
+  <link rel="canonical" href="https://microtoolstack.com/tools/calculator/loan-emi-calculator.html">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://microtoolstack.com/tools/calculator/loan-emi-calculator.html">
+  <meta property="og:title" content="Free Online Loan EMI Calculator | MicroToolStack">
+  <meta property="og:description" content="Calculate monthly EMI, total interest, and complete loan breakdown instantly in your web browser. 100% free and private.">
+  <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
+
+  <!-- Favicon Icon -->
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+
+  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Loan EMI Calculator Tool",
+        "operatingSystem": "All",
+        "applicationCategory": "FinancialApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "An online financial utility tool to calculate Equated Monthly Installment (EMI) payments, interest charges, and loan repayment schedules.",
+        "url": "https://microtoolstack.com/tools/calculator/loan-emi-calculator.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is an EMI?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "EMI stands for Equated Monthly Installment. It is a fixed monthly payment made by a borrower to a lender on a specified date each month to repay a loan."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is Loan EMI calculated?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "EMI is calculated using the standard mathematical formula: E = P x r x (1 + r)^n / ((1 + r)^n - 1), where P is principal loan amount, r is monthly interest rate, and n is loan tenure in months."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my financial calculation data saved on any server?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No! All financial math operations take place locally inside your browser using client-side JavaScript."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Preconnect and Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <style>
+    .input-card {
+      background: var(--bg-card, #1e1e2e);
+      padding: 1.5rem;
+      border-radius: var(--radius-md, 8px);
+      border: 1px solid var(--border-color, #333);
+      margin-bottom: 1.5rem;
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .form-group label {
+      font-size: 0.88rem;
+      color: var(--text-primary, #fff);
+      font-weight: 600;
+    }
+    .editor-input, .editor-select {
+      width: 100%;
+      padding: 0.75rem;
+      font-size: 0.95rem;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 6px);
+      background-color: var(--bg-body, #111827);
+      color: var(--text-primary, #fff);
+      outline: none;
+      box-sizing: border-box;
+    }
+    .emi-primary-card {
+      background: linear-gradient(135deg, rgba(59,130,246,0.15), rgba(16,185,129,0.15));
+      border: 1px solid var(--accent-primary, #3b82f6);
+      padding: 1.5rem;
+      border-radius: var(--radius-md, 8px);
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .emi-main-text {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #10b981;
+      margin-bottom: 0.25rem;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .stat-card {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1rem;
+      text-align: center;
+    }
+    .stat-number {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--accent-primary, #3b82f6);
+      margin-bottom: 0.25rem;
+    }
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--text-secondary, #9ca3af);
+      font-weight: 500;
+    }
+    .editor-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.5rem;
+    }
+    .btn-group {
+      display: flex;
+      gap: 0.5rem;
+    }
+    .content-box {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .content-box h2 {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul {
+      color: var(--text-secondary, #9ca3af);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .content-box ul {
+      padding-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .content-box li {
+      margin-bottom: 0.5rem;
+    }
+  </style>
 </head>
-<body>
-  <div id="header-container"></div>
+<body style="margin: 0; padding: 0;">
 
-  <main class="container">
-    <nav class="breadcrumb-container" aria-label="Breadcrumb">
-      <ol class="breadcrumb-list">
-        <li class="breadcrumb-item"><a href="/">Home</a></li>
-        <li class="breadcrumb-item"><a href="/#calculator">Calculators</a></li>
-        <li class="breadcrumb-item active" aria-current="page">EMI Calculator</li>
-      </ol>
+  <!-- Header Section -->
+  <header class="custom-header">
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
+    </a>
+    <nav class="custom-nav">
+      <a href="/#categories">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
     </nav>
+  </header>
 
-    <header style="margin-bottom: 1.5rem;">
-      <h1>Loan EMI Calculator</h1>
-      <p>Calculate your monthly loan repayments and total interest payable instantly.</p>
-    </header>
+  <!-- Main Container -->
+  <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
+    
+    <!-- Tool Title & Description -->
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Loan EMI Calculator</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Calculate Equated Monthly Installments (EMI), total interest, and total payable amount.</p>
+    </div>
 
-    <div class="tool-layout">
-      <div class="tool-container">
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
-          <div>
-            <label style="font-weight: 600; display: block; margin-bottom: 0.5rem;">Loan Amount ($):</label>
-            <input type="number" id="loan-amount" class="search-input" value="10000">
-          </div>
-          <div>
-            <label style="font-weight: 600; display: block; margin-bottom: 0.5rem;">Interest Rate (% p.a):</label>
-            <input type="number" id="interest-rate" class="search-input" value="8.5" step="0.1">
-          </div>
-          <div>
-            <label style="font-weight: 600; display: block; margin-bottom: 0.5rem;">Tenure (Months):</label>
-            <input type="number" id="tenure-months" class="search-input" value="24">
-          </div>
+    <!-- Loan Inputs Card -->
+    <div class="input-card">
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Loan Amount ($ / ৳):</label>
+          <input type="number" id="input-principal" class="editor-input" value="100000" min="1000" step="1000">
+        </div>
+        
+        <div class="form-group">
+          <label>Annual Interest Rate (%):</label>
+          <input type="number" id="input-rate" class="editor-input" value="9.5" min="0.1" step="0.1">
         </div>
 
-        <button class="btn btn-primary" id="btn-calc-emi" style="width: 100%;">🧮 Calculate EMI</button>
-
-        <div class="stats-grid" style="margin-top: 1.5rem;">
-          <div class="stat-card">
-            <div class="stat-value" id="res-emi">$454.56</div>
-            <div class="stat-label">Monthly EMI</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-value" id="res-interest">$909.48</div>
-            <div class="stat-label">Total Interest</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-value" id="res-total-pay">$10,909.48</div>
-            <div class="stat-label">Total Payment</div>
+        <div class="form-group">
+          <label>Loan Tenure Period:</label>
+          <div style="display: flex; gap: 0.5rem;">
+            <input type="number" id="input-tenure" class="editor-input" value="5" min="1" step="1" style="flex: 1;">
+            <select id="select-tenure-type" class="editor-select" style="width: 110px;">
+              <option value="years" selected>Years</option>
+              <option value="months">Months</option>
+            </select>
           </div>
         </div>
       </div>
+      <button id="btn-calc-emi" class="btn btn-primary" style="width: 100%; padding: 0.75rem; cursor: pointer; font-weight: 600;">⚡ Calculate EMI</button>
     </div>
+
+    <!-- Main Output EMI Display Card -->
+    <div class="emi-primary-card">
+      <div style="font-size:0.9rem; color:var(--text-secondary, #9ca3af); margin-bottom:0.25rem;">Your Monthly Loan EMI Is:</div>
+      <div class="emi-main-text" id="emi-main-output">$2,099.64</div>
+    </div>
+
+    <!-- Breakdown Statistics Grid -->
+    <h3 style="font-size: 1.1rem; color: var(--text-primary, #fff); margin-bottom: 0.75rem;">📊 Loan Repayment Summary</h3>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-number" id="stat-principal" style="color: #60a5fa;">$100,000.00</div>
+        <div class="stat-label">Principal Amount</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" id="stat-interest" style="color: #ef4444;">$25,978.40</div>
+        <div class="stat-label">Total Interest Payable</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" id="stat-total" style="color: #10b981;">$125,978.40</div>
+        <div class="stat-label">Total Amount Payable</div>
+      </div>
+    </div>
+
+    <!-- Global Controls -->
+    <div class="editor-controls">
+      <div class="btn-group">
+        <button id="btn-copy" class="btn btn-secondary" style="padding: 0.68rem 1.2rem; cursor: pointer; background: #1f2937; color: #fff; border: 1px solid #4b5563; border-radius: 6px;">📋 Copy EMI Calculation</button>
+      </div>
+      <span id="status-msg" style="font-size: 0.85rem; color: #10b981; font-weight: 500; display: none;">Calculations copied to clipboard!</span>
+    </div>
+
+    <!-- Adsterra Banner Placement Placeholder -->
+    <div style="text-align: center; margin: 2rem 0;">
+      <script src="https://p130663884.effectivecpmnetwork.com/81/02/32/8102329c43de17d196371b4a3e3bed7f.js"></script>
+    </div>
+
+    <!-- SEO Article Content Box 1 -->
+    <div class="content-box">
+      <h2>Understanding Loan EMI Calculations</h2>
+      <p>An <strong>Equated Monthly Installment (EMI)</strong> is a fixed payment amount made by a borrower to a financial institution every month. Whether you are applying for a home loan, car financing, or a personal loan, using our <strong>Loan EMI Calculator</strong> provides complete financial clarity regarding monthly budgets and overall interest costs.</p>
+    </div>
+
+    <!-- SEO Article Content Box 2 -->
+    <div class="content-box">
+      <h2>How EMI Math Works</h2>
+      <p>The mathematical EMI calculation uses the reducing balance formula:</p>
+      <p style="font-family: monospace; background: var(--bg-body, #111827); padding: 0.75rem; border-radius: 6px; color: #10b981;">E = [P x R x (1+R)^N] / [(1+R)^N - 1]</p>
+      <ul>
+        <li><strong>P (Principal):</strong> Total borrowed loan amount.</li>
+        <li><strong>R (Monthly Rate):</strong> Annual interest rate divided by 12 and 100.</li>
+        <li><strong>N (Tenure Months):</strong> Total repayment period expressed in months.</li>
+      </ul>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="content-box">
+      <h2>Frequently Asked Questions</h2>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How can I reduce my total EMI interest cost?</h3>
+        <p>You can reduce interest costs by choosing a shorter loan tenure, opting for a lower interest rate, or making partial loan prepayments.</p>
+      </div>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Does this calculator support both Home and Auto loans?</h3>
+        <p>Yes, the mathematical reducing interest balance formula applies universally to home loans, car loans, personal loans, and education loans.</p>
+      </div>
+    </div>
+
   </main>
 
+  <!-- Footer Container Placeholder -->
   <div id="footer-container"></div>
 
+  <!-- JavaScript Utilities & Logic -->
   <script src="/assets/js/theme.js"></script>
-  <script src="/assets/js/utils.js"></script>
-  <script src="/assets/js/app.js"></script>
+  <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
 
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      function calcEMI() {
-        const p = parseFloat(document.getElementById('loan-amount').value) || 0;
-        const r = (parseFloat(document.getElementById('interest-rate').value) || 0) / 12 / 100;
-        const n = parseFloat(document.getElementById('tenure-months').value) || 1;
+    document.addEventListener('DOMContentLoaded', function() {
+      const inputPrincipal = document.getElementById('input-principal');
+      const inputRate = document.getElementById('input-rate');
+      const inputTenure = document.getElementById('input-tenure');
+      const selectTenureType = document.getElementById('select-tenure-type');
+      const btnCalcEmi = document.getElementById('btn-calc-emi');
 
-        if (p <= 0 || r <= 0) return;
+      const emiMainOutput = document.getElementById('emi-main-output');
+      const statPrincipal = document.getElementById('stat-principal');
+      const statInterest = document.getElementById('stat-interest');
+      const statTotal = document.getElementById('stat-total');
 
-        const emi = (p * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
-        const totalPayment = emi * n;
-        const totalInterest = totalPayment - p;
+      const btnCopy = document.getElementById('btn-copy');
+      const statusMsg = document.getElementById('status-msg');
 
-        document.getElementById('res-emi').textContent = `$${emi.toFixed(2)}`;
-        document.getElementById('res-interest').textContent = `$${totalInterest.toFixed(2)}`;
-        document.getElementById('res-total-pay').textContent = `$${totalPayment.toFixed(2)}`;
+      function calculateEmi() {
+        const principal = parseFloat(inputPrincipal.value) || 0;
+        const annualRate = parseFloat(inputRate.value) || 0;
+        let tenureUnits = parseFloat(inputTenure.value) || 0;
+
+        if (principal <= 0 || annualRate <= 0 || tenureUnits <= 0) {
+          emiMainOutput.textContent = "$0.00";
+          statPrincipal.textContent = "$0.00";
+          statInterest.textContent = "$0.00";
+          statTotal.textContent = "$0.00";
+          return;
+        }
+
+        const totalMonths = selectTenureType.value === 'years' ? tenureUnits * 12 : tenureUnits;
+        const monthlyRate = (annualRate / 12) / 100;
+
+        // EMI Formula
+        const emi = (principal * monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) / (Math.pow(1 + monthlyRate, totalMonths) - 1);
+        const totalPayable = emi * totalMonths;
+        const totalInterest = totalPayable - principal;
+
+        // Formatted Outputs
+        emiMainOutput.textContent = `$${emi.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+        statPrincipal.textContent = `$${principal.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+        statInterest.textContent = `$${totalInterest.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+        statTotal.textContent = `$${totalPayable.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
       }
 
-      document.getElementById('btn-calc-emi').addEventListener('click', calcEMI);
-      calcEMI();
+      btnCalcEmi.addEventListener('click', calculateEmi);
+      inputPrincipal.addEventListener('input', calculateEmi);
+      inputRate.addEventListener('input', calculateEmi);
+      inputTenure.addEventListener('input', calculateEmi);
+      selectTenureType.addEventListener('change', calculateEmi);
+
+      // Copy Result Action
+      btnCopy.addEventListener('click', function() {
+        const text = `Monthly EMI: ${emiMainOutput.textContent}\nPrincipal: ${statPrincipal.textContent}\nTotal Interest: ${statInterest.textContent}\nTotal Payable: ${statTotal.textContent}`;
+        navigator.clipboard.writeText(text).then(function() {
+          statusMsg.style.display = 'inline';
+          setTimeout(() => { statusMsg.style.display = 'none'; }, 2000);
+        });
+      });
+
+      calculateEmi();
     });
   </script>
 </body>
