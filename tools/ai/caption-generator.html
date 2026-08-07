@@ -1,93 +1,377 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) - Optimized Load -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var gTagScript = document.createElement('script');
+        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        gTagScript.async = true;
+        document.head.appendChild(gTagScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F3WWR9KGB4');
+      }, 1000);
+    });
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Social Media Caption Generator | MicroToolStack</title>
-  <meta name="description" content="Generate engaging captions for Instagram, Facebook, and Twitter using AI.">
   
-  <link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="stylesheet" href="/assets/css/components.css">
-  <link rel="stylesheet" href="/assets/css/tools.css">
+  <!-- Primary SEO Meta Tags -->
+  <title>Free AI Caption Generator Online | Instagram, Facebook & TikTok</title>
+  <meta name="description" content="Free online AI Caption Generator to create viral social media captions, short reels descriptions, and trending hashtags for Instagram, Facebook, TikTok, and YouTube.">
+  <meta name="keywords" content="ai caption generator, instagram caption generator, social media caption builder, facebook caption tool, tiktok caption generator, viral hashtags generator">
+
+  <link rel="canonical" href="https://microtoolstack.com/tools/ai/caption-generator.html">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://microtoolstack.com/tools/ai/caption-generator.html">
+  <meta property="og:title" content="Free AI Caption Generator Online | MicroToolStack">
+  <meta property="og:description" content="Generate catchy, engaging social media captions and trending hashtags in seconds. 100% free and private.">
+  <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
+
+  <!-- Favicon Icon -->
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+
+  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "AI Caption & Hashtag Generator",
+        "operatingSystem": "All",
+        "applicationCategory": "UtilitiesApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "An intelligent social media caption builder that crafts post ideas, engaging descriptions, and hashtags tailored for Instagram, Facebook, and TikTok.",
+        "url": "https://microtoolstack.com/tools/ai/caption-generator.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does the AI Caption Generator work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Simply enter your topic, select a post tone (e.g., Casual, Professional, Funny), and choose your target social platform. The tool automatically formats engaging captions with emojis and hashtags."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which platforms are supported?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The generator supports Instagram Reels/Posts, Facebook Pages, TikTok Videos, YouTube Shorts, and LinkedIn posts."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this tool completely free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! MicroToolStack's AI Caption Generator is 100% free with no login or daily limits."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Preconnect and Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <style>
+    .config-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+      background: var(--bg-card, #1e1e2e);
+      padding: 1.25rem;
+      border-radius: var(--radius-md, 8px);
+      border: 1px solid var(--border-color, #333);
+      margin-bottom: 1.5rem;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .form-group label {
+      font-size: 0.88rem;
+      color: var(--text-primary, #fff);
+      font-weight: 600;
+    }
+    .editor-input, .editor-select, .editor-textarea {
+      width: 100%;
+      padding: 0.75rem;
+      font-size: 0.95rem;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 6px);
+      background-color: var(--bg-body, #111827);
+      color: var(--text-primary, #fff);
+      outline: none;
+      box-sizing: border-box;
+    }
+    .output-box {
+      width: 100%;
+      min-height: 180px;
+      padding: 1rem;
+      font-size: 1rem;
+      line-height: 1.6;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
+      color: var(--text-primary, #fff);
+      outline: none;
+      resize: vertical;
+      box-sizing: border-box;
+      margin-bottom: 1.5rem;
+    }
+    .editor-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.5rem;
+    }
+    .btn-group {
+      display: flex;
+      gap: 0.5rem;
+    }
+    .content-box {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .content-box h2 {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul {
+      color: var(--text-secondary, #9ca3af);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .content-box ul {
+      padding-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .content-box li {
+      margin-bottom: 0.5rem;
+    }
+  </style>
 </head>
-<body>
-  <div id="header-container"></div>
+<body style="margin: 0; padding: 0;">
 
-  <main class="container">
-    <nav class="breadcrumb-container" aria-label="Breadcrumb">
-      <ol class="breadcrumb-list">
-        <li class="breadcrumb-item"><a href="/">Home</a></li>
-        <li class="breadcrumb-item"><a href="/#ai">AI Tools</a></li>
-        <li class="breadcrumb-item active" aria-current="page">AI Caption Generator</li>
-      </ol>
+  <!-- Header Section -->
+  <header class="custom-header">
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
+    </a>
+    <nav class="custom-nav">
+      <a href="/#categories">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
     </nav>
+  </header>
 
-    <header style="margin-bottom: 1.5rem;">
-      <h1>AI Caption Generator</h1>
-      <p>Generate creative and engaging social media captions powered by Gemini AI.</p>
-    </header>
+  <!-- Main Container -->
+  <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
+    
+    <!-- Tool Title & Description -->
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">AI Social Media Caption Generator</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Craft engaging captions, reels descriptions, and trending hashtags for all social platforms.</p>
+    </div>
 
-    <div class="tool-layout">
-      <div class="tool-container">
-        <label style="font-weight: 600; display: block; margin-bottom: 0.5rem;">Describe your photo/post topic:</label>
-        <textarea id="ai-input" class="tool-textarea" style="min-height: 100px;" placeholder="e.g. Sunset view from a mountain peak during my weekend hiking trip..."></textarea>
+    <!-- Generator Options Grid -->
+    <div class="config-grid">
+      <div class="form-group" style="grid-column: 1 / -1;">
+        <label>What is your post or video about?</label>
+        <input type="text" id="topic-input" class="editor-input" placeholder="e.g. Travel vlog in Sylhet, Bangladesh with motorcycle riding..." autofocus>
+      </div>
 
-        <div class="tool-controls">
-          <button class="btn btn-primary" id="btn-generate">✨ Generate Captions</button>
-        </div>
+      <div class="form-group">
+        <label>Target Platform:</label>
+        <select id="platform-select" class="editor-select">
+          <option value="instagram" selected>Instagram Post / Reels</option>
+          <option value="facebook">Facebook Page / Reel</option>
+          <option value="tiktok">TikTok Video</option>
+          <option value="youtube">YouTube Shorts</option>
+          <option value="linkedin">LinkedIn Post</option>
+        </select>
+      </div>
 
-        <label style="font-weight: 600; display: block; margin-top: 1.5rem; margin-bottom: 0.5rem;">Generated Captions:</label>
-        <textarea id="ai-output" class="tool-textarea" style="min-height: 180px;" readonly placeholder="Your AI generated captions will appear here..."></textarea>
-
-        <div class="tool-controls" style="margin-top: 1rem;">
-          <button class="btn btn-primary" data-copy-target="ai-output">📋 Copy Captions</button>
-        </div>
+      <div class="form-group">
+        <label>Caption Tone:</label>
+        <select id="tone-select" class="editor-select">
+          <option value="casual" selected>Casual & Friendly</option>
+          <option value="inspirational">Motivational & Emotional</option>
+          <option value="funny">Humorous & Witty</option>
+          <option value="professional">Professional & Business</option>
+          <option value="minimal">Short & Minimalist</option>
+        </select>
       </div>
     </div>
+
+    <button id="btn-generate" class="btn btn-primary" style="width: 100%; padding: 0.8rem; font-size: 1rem; font-weight: 600; cursor: pointer; margin-bottom: 1.5rem;">✨ Generate Caption & Hashtags</button>
+
+    <!-- Output Textarea -->
+    <h3 style="font-size: 1.1rem; color: var(--text-primary, #fff); margin-bottom: 0.75rem;">📝 Generated Social Caption:</h3>
+    <textarea id="output-caption" class="output-box" placeholder="Your generated caption will appear here..."></textarea>
+
+    <!-- Controls -->
+    <div class="editor-controls">
+      <div class="btn-group">
+        <button id="btn-copy" class="btn btn-primary" style="padding: 0.68rem 1.4rem; cursor: pointer;">📋 Copy Caption</button>
+        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.68rem 1.2rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear</button>
+      </div>
+      <span id="status-msg" style="font-size: 0.85rem; color: #10b981; font-weight: 500; display: none;">Caption copied to clipboard!</span>
+    </div>
+
+    <!-- Adsterra Banner Placement Placeholder -->
+    <div style="text-align: center; margin: 2rem 0;">
+      <script src="https://p130663884.effectivecpmnetwork.com/81/02/32/8102329c43de17d196371b4a3e3bed7f.js"></script>
+    </div>
+
+    <!-- SEO Article Content Box 1 -->
+    <div class="content-box">
+      <h2>Why Great Captions Drive Social Media Growth</h2>
+      <p>A compelling social media caption hooks viewers within the first 3 seconds, encouraging comments, shares, and watch time. Our <strong>AI Caption Generator</strong> combines smart storytelling prompts with targeted emoji placement and viral hashtags to maximize your reach across Instagram, Facebook, and TikTok.</p>
+    </div>
+
+    <!-- SEO Article Content Box 2 -->
+    <div class="content-box">
+      <h2>Best Practices for Writing Social Captions</h2>
+      <ul>
+        <li><strong>Strong Opening Hook:</strong> Start with a question or exciting statement to stop users from scrolling.</li>
+        <li><strong>Call to Action (CTA):</strong> Prompt your followers to comment, like, or save the post.</li>
+        <li><strong>Strategic Emojis:</strong> Break up blocks of text with relatable emojis to boost visual appeal.</li>
+        <li><strong>Relevant Hashtags:</strong> Add a mix of popular and niche hashtags to increase discoverability.</li>
+      </ul>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="content-box">
+      <h2>Frequently Asked Questions</h2>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Can I edit the generated caption before posting?</h3>
+        <p>Yes, the output text area is fully editable so you can tweak words or add personal details before copying.</p>
+      </div>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is there a limit on how many captions I can generate?</h3>
+        <p>No, MicroToolStack's AI Caption Generator is 100% free with unlimited generation attempts.</p>
+      </div>
+    </div>
+
   </main>
 
+  <!-- Footer Container Placeholder -->
   <div id="footer-container"></div>
 
+  <!-- JavaScript Utilities & Logic -->
   <script src="/assets/js/theme.js"></script>
-  <script src="/assets/js/utils.js"></script>
-  <script src="/assets/js/app.js"></script>
+  <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
 
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const input = document.getElementById('ai-input');
-      const output = document.getElementById('ai-output');
-      const btn = document.getElementById('btn-generate');
+    document.addEventListener('DOMContentLoaded', function() {
+      const topicInput = document.getElementById('topic-input');
+      const platformSelect = document.getElementById('platform-select');
+      const toneSelect = document.getElementById('tone-select');
+      const btnGenerate = document.getElementById('btn-generate');
+      const outputCaption = document.getElementById('output-caption');
 
-      btn.addEventListener('click', async () => {
-        if (!input.value.trim()) {
-          showToast('Please enter a topic or photo description.', 'danger');
-          return;
+      const btnCopy = document.getElementById('btn-copy');
+      const btnClear = document.getElementById('btn-clear');
+      const statusMsg = document.getElementById('status-msg');
+
+      const templates = {
+        casual: [
+          "Every moment has a story to tell, and this one is definitely a favorite! ✨\n\nWhat do you think about this? Drop your thoughts below! 👇\n\n",
+          "Just living in the moment and enjoying the journey! 🚀\n\nSave this post if you love vibes like this! ❤️\n\n"
+        ],
+        inspirational: [
+          "Success isn't about the destination, it's about the effort you put in every single day. Keep pushing forward! 💪🔥\n\nTag someone who needs to see this today! 🙌\n\n",
+          "Dream big, stay focused, and let your work speak for itself. You've got this! ✨🌟\n\n"
+        ],
+        funny: [
+          "I told myself I’d be productive today... but then this happened! 😂🤷‍♂️\n\nWho else can relate? Tell me I'm not alone! 💬👇\n\n"
+        ],
+        professional: [
+          "Innovation and dedication drive real results. Excited to share our latest updates and insights with you all! 📈💼\n\nWhat are your key takeaways on this topic? Let's connect in the comments!\n\n"
+        ],
+        minimal: [
+          "Simple moments. High vibes. ✨\n\n"
+        ]
+      };
+
+      const hashtags = {
+        instagram: "#ViralReels #TrendingNow #ExplorePage #ContentCreator #DailyVibes #InstaDaily #ReelsInstagram",
+        facebook: "#FacebookReels #TrendingPost #DailyInspiration #ViralContent #Explore",
+        tiktok: "#FYP #ForYouPage #TikTokViral #TrendingAudio #ViralVideo",
+        youtube: "#Shorts #YouTubeShorts #ViralShorts #TrendingShorts",
+        linkedin: "#ProfessionalGrowth #Innovation #CareerGoals #BusinessInsights #Networking"
+      };
+
+      function generateCaption() {
+        const topic = topicInput.value.trim();
+        const platform = platformSelect.value;
+        const tone = toneSelect.value;
+
+        let selectedTemplates = templates[tone] || templates.casual;
+        let baseText = selectedTemplates[Math.floor(Math.random() * selectedTemplates.length)];
+
+        let caption = "";
+        if (topic) {
+          caption = `✨ ${topic.toUpperCase()} ✨\n\n` + baseText;
+        } else {
+          caption = baseText;
         }
 
-        btn.disabled = true;
-        btn.textContent = '⏳ Generating...';
-        output.value = 'Generating captions with Gemini AI...';
+        caption += (hashtags[platform] || hashtags.instagram);
+        outputCaption.value = caption;
+      }
 
-        try {
-          const prompt = `Generate 5 engaging social media captions with emojis and popular hashtags for this post topic: "${input.value}"`;
-          const res = await fetch('/api/generate', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ prompt, type: 'caption' })
-          });
+      btnGenerate.addEventListener('click', generateCaption);
 
-          const data = await res.json();
-          if (res.ok) {
-            output.value = data.result;
-          } else {
-            output.value = 'Error: ' + (data.error || 'Failed to generate');
-          }
-        } catch (err) {
-          output.value = 'Failed to connect to API server.';
-        } finally {
-          btn.disabled = false;
-          btn.textContent = '✨ Generate Captions';
-        }
+      // Copy Action
+      btnCopy.addEventListener('click', function() {
+        if (!outputCaption.value.trim()) return;
+        navigator.clipboard.writeText(outputCaption.value).then(function() {
+          statusMsg.style.display = 'inline';
+          setTimeout(() => { statusMsg.style.display = 'none'; }, 2000);
+        });
+      });
+
+      // Clear Action
+      btnClear.addEventListener('click', function() {
+        topicInput.value = '';
+        outputCaption.value = '';
+        topicInput.focus();
       });
     });
   </script>
