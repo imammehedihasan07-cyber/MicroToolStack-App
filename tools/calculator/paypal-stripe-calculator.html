@@ -245,11 +245,9 @@
         const amt = parseFloat(amountInput.value) || 0;
         const config = feeStructures[gatewaySelect.value];
 
-        // Direct Deductions
         const fee = (amt * config.pct) + config.fixed;
         const takehome = Math.max(0, amt - fee);
 
-        // Reverse Calculation (To receive exact net amount)
         const invoiceNeeded = (amt + config.fixed) / (1 - config.pct);
 
         resAmount.textContent = `$${amt.toFixed(2)}`;
