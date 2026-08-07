@@ -134,7 +134,10 @@
 
   <!-- Header -->
   <header class="custom-header">
-    <a href="/" class="custom-logo"><span>⚡</span> MicroToolStack</a>
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo.png" alt="MicroToolStack" class="logo-img">
+      <span>MicroToolStack</span>
+    </a>
     <nav class="custom-nav">
       <a href="/#categories">Categories</a>
       <a href="/about.html">About</a>
@@ -251,7 +254,7 @@
     <!-- SEO Deep Content Area -->
     <article style="line-height: 1.7; color: #d1d5db; border-top: 1px solid #374151; padding-top: 2rem;">
       <h2 style="color: #fff;">Why Use an AI Prompt Builder?</h2>
-      <p>Artificial Intelligence models like ChatGPT, Midjourney, and DALL-E rely heavily on prompt precision. Vague inputs lead to generic or accurate results, while structured prompts with specified roles, constraints, and parameters unleash the full power of AI generation.</p>
+      <p>Artificial Intelligence models like ChatGPT, Midjourney, and DALL-E rely heavily on prompt precision. Vague inputs lead to generic results, while structured prompts with specified roles, constraints, and parameters unleash the full power of AI generation.</p>
 
       <h3 style="color: #fff; margin-top: 1.5rem;">How to Construct Effective ChatGPT & Midjourney Prompts:</h3>
       <ul>
@@ -331,7 +334,6 @@
       }
     }
 
-    // Attach Input Event Listeners for Live Output Updating
     document.addEventListener('DOMContentLoaded', function() {
       const inputs = document.querySelectorAll('input, textarea, select');
       inputs.forEach(input => {
