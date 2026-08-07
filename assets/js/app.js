@@ -18,10 +18,16 @@ async function loadComponent(elementId, filepath) {
 }
 
 /**
- * Dynamic Categories & Tools Count Renderer
+ * Clean & Fully Generic Category Counter
+ * Matches tools with categories regardless of hyphens, spaces, or case sensitivity
  */
+function normalizeCategoryString(str) {
+  if (!str) return '';
+  return str.toString().toLowerCase().replace(/[^a-z0-9]/g, '');
+}
+
 async function renderCategoriesWithDynamicCount() {
-  const categoryGrid = document.getElementById('category-grid'); // আপনার ক্যাটাগরি গ্রিড কন্টেইনারের ID
+  const categoryGrid = document.getElementById('category-grid');
   if (!categoryGrid) return;
 
   try {
@@ -36,17 +42,26 @@ async function renderCategoriesWithDynamicCount() {
     const categories = await catRes.json();
     const tools = await toolRes.json();
 
-    // Render category cards with dynamic count calculated from tools.json
+    // Render category cards with dynamic counts
     categoryGrid.innerHTML = categories.map(cat => {
-      // Calculate real total count for this category dynamically
-      const dynamicCount = tools.filter(tool => tool.category === cat.id).length;
+      
+      const cleanCatId = normalizeCategoryString(cat.id);
+
+      // Count all matching tools dynamically for EVERY category
+      const dynamicCount = tools.filter(tool => {
+        const cleanToolCat = normalizeCategoryString(tool.category);
+        return cleanToolCat === cleanCatId;
+      }).length;
+
+      // Determine correct URL for category card link
+      const categoryUrl = cat.url || `/categories/${cat.id}.html`;
 
       return `
         <div class="category-card">
           <div class="category-icon">${cat.icon || '📁'}</div>
           <h3>${cat.name}</h3>
           <p>${cat.description}</p>
-          <a href="${cat.url || '/#categories'}" class="category-link">View ${dynamicCount} →</a>
+          <a href="${categoryUrl}" class="category-link">View ${dynamicCount} →</a>
         </div>
       `;
     }).join('');
