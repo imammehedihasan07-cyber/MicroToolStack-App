@@ -96,7 +96,6 @@
       font-size: 0.9rem;
       box-sizing: border-box;
     }
-    /* Preview Container with Gradient Padding */
     .code-canvas-wrap {
       padding: 3rem;
       border-radius: 12px;
@@ -107,7 +106,6 @@
       overflow-x: auto;
       transition: background 0.3s ease;
     }
-    /* Window Mockup */
     .code-window {
       background: #0d1117;
       border-radius: 10px;
@@ -169,7 +167,10 @@
 
   <!-- Header -->
   <header class="custom-header">
-    <a href="/" class="custom-logo"><span>⚡</span> MicroToolStack</a>
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo.png" alt="MicroToolStack" class="logo-img">
+      <span>MicroToolStack</span>
+    </a>
     <nav class="custom-nav">
       <a href="/#categories">Categories</a>
       <a href="/about.html">About</a>
@@ -285,7 +286,6 @@ console.log("Total Payable:", calculateTax(150, 5));</textarea>
       const codeInput = document.getElementById('code-input');
       const downloadBtn = document.getElementById('download-btn');
 
-      // Auto Adjust Textarea Height
       function autoResizeTextarea() {
         codeInput.style.height = 'auto';
         codeInput.style.height = codeInput.scrollHeight + 'px';
@@ -293,7 +293,6 @@ console.log("Total Payable:", calculateTax(150, 5));</textarea>
       codeInput.addEventListener('input', autoResizeTextarea);
       autoResizeTextarea();
 
-      // Controls Event Listeners
       bgSelect.addEventListener('change', function() {
         captureWrap.style.background = this.value;
       });
@@ -306,13 +305,12 @@ console.log("Total Payable:", calculateTax(150, 5));</textarea>
         codeWindow.style.background = this.value;
       });
 
-      // Export PNG using html2canvas
       downloadBtn.addEventListener('click', function() {
         downloadBtn.textContent = '⏳ Rendering PNG...';
         downloadBtn.disabled = true;
 
         html2canvas(captureWrap, {
-          scale: 2, // High DPI / Retina crispness
+          scale: 2,
           backgroundColor: null,
           useCORS: true
         }).then(canvas => {
