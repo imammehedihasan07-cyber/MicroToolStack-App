@@ -1,69 +1,368 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) - Optimized Load -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var gTagScript = document.createElement('script');
+        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        gTagScript.async = true;
+        document.head.appendChild(gTagScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F3WWR9KGB4');
+      }, 1000);
+    });
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SEO URL Slug Generator | MicroToolStack</title>
-  <meta name="description" content="Convert post titles and headlines into readable, lowercased, hypenated URL slugs.">
   
-  <link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="stylesheet" href="/assets/css/components.css">
-  <link rel="stylesheet" href="/assets/css/tools.css">
+  <!-- Primary SEO Meta Tags -->
+  <title>Free Online URL Slug Generator & Permalink Creator | MicroToolStack</title>
+  <meta name="description" content="Free online URL Slug Generator tool to convert titles, headlines, and strings into clean, SEO-friendly permalinks. Strip special characters, spaces, and stop words instantly.">
+  <meta name="keywords" content="url slug generator, seo slug generator, permalink generator, string to slug online, generate slug, slug converter, clean url generator">
+
+  <link rel="canonical" href="https://microtoolstack.com/tools/seo/slug-generator.html">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://microtoolstack.com/tools/seo/slug-generator.html">
+  <meta property="og:title" content="Free Online URL Slug Generator & Permalink Creator | MicroToolStack">
+  <meta property="og:description" content="Convert article titles into clean, lowercase, hyphen-separated SEO slugs instantly in your browser. 100% free and private.">
+  <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
+
+  <!-- Favicon Icon -->
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+
+  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "URL Slug Generator & Permalinks Creator",
+        "operatingSystem": "All",
+        "applicationCategory": "UtilitiesApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "An online SEO utility that converts raw text titles and headlines into lowercase, hyphenated URL slugs for clean web publishing.",
+        "url": "https://microtoolstack.com/tools/seo/slug-generator.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is a URL Slug in SEO?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A URL slug is the end part of a web address (e.g., '/tools/seo/slug-generator') that identifies a specific page in a human-readable, search engine friendly format."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why are hyphens used instead of underscores in URL slugs?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Google officially recommends using hyphens (-) rather than underscores (_) to separate words in URLs because search bops treat hyphens as word separators while underscores join words together."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my text data stored or saved?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No! All string transformations take place locally inside your browser using client-side JavaScript."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Preconnect and Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <style>
+    .editor-input {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      font-size: 1rem;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
+      color: var(--text-primary, #fff);
+      outline: none;
+      box-sizing: border-box;
+      margin-bottom: 1.25rem;
+    }
+    .options-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+      background: var(--bg-card, #1e1e2e);
+      padding: 1.25rem;
+      border-radius: var(--radius-md, 8px);
+      border: 1px solid var(--border-color, #333);
+    }
+    .option-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-primary, #fff);
+      font-size: 0.92rem;
+      cursor: pointer;
+    }
+    .option-item input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      accent-color: var(--accent-primary, #3b82f6);
+      cursor: pointer;
+    }
+    .result-box {
+      background: var(--bg-card, #1e1e2e);
+      border: 1px dashed var(--accent-primary, #3b82f6);
+      padding: 1.25rem;
+      border-radius: var(--radius-md, 8px);
+      margin-bottom: 1.5rem;
+      word-break: break-all;
+    }
+    .result-label {
+      font-size: 0.85rem;
+      color: var(--text-secondary, #9ca3af);
+      margin-bottom: 0.5rem;
+    }
+    .slug-preview {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #10b981;
+      font-family: monospace;
+    }
+    .editor-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.5rem;
+    }
+    .btn-group {
+      display: flex;
+      gap: 0.5rem;
+    }
+    .content-box {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .content-box h2 {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul {
+      color: var(--text-secondary, #9ca3af);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .content-box ul {
+      padding-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .content-box li {
+      margin-bottom: 0.5rem;
+    }
+  </style>
 </head>
-<body>
-  <div id="header-container"></div>
+<body style="margin: 0; padding: 0;">
 
-  <main class="container">
-    <nav class="breadcrumb-container" aria-label="Breadcrumb">
-      <ol class="breadcrumb-list">
-        <li class="breadcrumb-item"><a href="/">Home</a></li>
-        <li class="breadcrumb-item"><a href="/#seo">SEO Tools</a></li>
-        <li class="breadcrumb-item active" aria-current="page">URL Slug Generator</li>
-      </ol>
+  <!-- Header Section -->
+  <header class="custom-header">
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
+    </a>
+    <nav class="custom-nav">
+      <a href="/#categories">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
     </nav>
+  </header>
 
-    <header style="margin-bottom: 1.5rem;">
-      <h1>URL Slug Generator</h1>
-      <p>Transform article titles into clean, SEO-friendly, hyphen-separated URL paths.</p>
-    </header>
+  <!-- Main Container -->
+  <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
+    
+    <!-- Tool Title & Description -->
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">SEO URL Slug Generator</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Convert article titles and raw headings into clean, SEO-friendly URL permalinks.</p>
+    </div>
 
-    <div class="tool-layout">
-      <div class="tool-container">
-        <label for="title-input" style="font-weight: 600; display: block; margin-bottom: 0.5rem;">Enter Headline or Title:</label>
-        <input type="text" id="title-input" class="search-input" placeholder="e.g. 10 Tips for Better Web Performance in 2026!" style="margin-bottom: 1rem;">
+    <!-- Title Input -->
+    <label style="display: block; font-size: 0.9rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff); font-weight: 600;">Title / Text to Convert:</label>
+    <input type="text" id="title-input" class="editor-input" placeholder="e.g. 10 Best Free Online SEO Tools for 2026!" autofocus>
 
-        <label for="slug-output" style="font-weight: 600; display: block; margin-bottom: 0.5rem;">Generated URL Slug:</label>
-        <input type="text" id="slug-output" class="search-input" readonly style="background-color: var(--bg-secondary); margin-bottom: 1rem;">
+    <!-- Customization Options -->
+    <div class="options-grid">
+      <label class="option-item">
+        <input type="checkbox" id="opt-lowercase" checked> Lowercase Conversion
+      </label>
+      <label class="option-item">
+        <input type="checkbox" id="opt-remove-numbers"> Strip Numbers
+      </label>
+      <label class="option-item">
+        <input type="checkbox" id="opt-remove-stop-words"> Filter Common Stop Words (a, the, in, and)
+      </label>
+    </div>
 
-        <div class="tool-controls">
-          <button class="btn btn-primary" data-copy-target="slug-output">📋 Copy Slug</button>
-        </div>
+    <!-- Output Generated Slug Box -->
+    <div class="result-box">
+      <div class="result-label">Generated URL Slug:</div>
+      <div class="slug-preview" id="slug-output">10-best-free-online-seo-tools-for-2026</div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="editor-controls">
+      <div class="btn-group">
+        <button id="btn-copy" class="btn btn-primary" style="padding: 0.68rem 1.4rem; cursor: pointer;">📋 Copy URL Slug</button>
+        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.68rem 1.2rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear Input</button>
+      </div>
+      <span id="status-msg" style="font-size: 0.85rem; color: #10b981; font-weight: 500; display: none;">URL slug copied to clipboard!</span>
+    </div>
+
+    <!-- Adsterra Banner Placement Placeholder -->
+    <div style="text-align: center; margin: 2rem 0;">
+      <script src="https://p130663884.effectivecpmnetwork.com/81/02/32/8102329c43de17d196371b4a3e3bed7f.js"></script>
+    </div>
+
+    <!-- SEO Article Content Box 1 -->
+    <div class="content-box">
+      <h2>What Makes a Great SEO URL Slug?</h2>
+      <p>A <strong>URL Slug</strong> is the user-facing portion of a website link that describes a page's content. Creating clean, hyphenated slugs without uppercase letters, accents, or special symbols makes your links easier for humans to read and for Google bops to index efficiently.</p>
+    </div>
+
+    <!-- SEO Article Content Box 2 -->
+    <div class="content-box">
+      <h2>URL Slug Best Practices</h2>
+      <ul>
+        <li><strong>Use Hyphens as Separators:</strong> Always separate words with hyphens (-) rather than underscores (_).</li>
+        <li><strong>Keep it Short & Focused:</strong> Remove unnecessary stop words (e.g., "and", "the", "for") to focus on target keywords.</li>
+        <li><strong>Use Lowercase Letters:</strong> Avoid capital letters to prevent 404 redirection issues on case-sensitive web servers.</li>
+        <li><strong>Strip Special Characters:</strong> Remove punctuation, symbols, and non-ASCII accents.</li>
+      </ul>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="content-box">
+      <h2>Frequently Asked Questions</h2>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Why should I avoid special characters in URLs?</h3>
+        <p>Special characters like ?, #, %, &, and @ have specific structural functions in web servers and browsers. Including them in slugs causes broken links and ugly encoded URL strings.</p>
+      </div>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Can I change a URL slug after publishing a page?</h3>
+        <p>Yes, but changing a slug alters the page URL. You must set up a 301 redirect from the old URL to the new slug to avoid losing existing SEO traffic and backlink authority.</p>
       </div>
     </div>
+
   </main>
 
+  <!-- Footer Container Placeholder -->
   <div id="footer-container"></div>
 
+  <!-- JavaScript Utilities & Logic -->
   <script src="/assets/js/theme.js"></script>
-  <script src="/assets/js/utils.js"></script>
-  <script src="/assets/js/app.js"></script>
+  <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
 
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const input = document.getElementById('title-input');
-      const output = document.getElementById('slug-output');
+    document.addEventListener('DOMContentLoaded', function() {
+      const titleInput = document.getElementById('title-input');
+      const slugOutput = document.getElementById('slug-output');
 
-      input.addEventListener('input', () => {
-        const str = input.value;
-        const slug = str
-          .toLowerCase()
-          .trim()
-          .replace(/[^\w\s-]/g, '')
-          .replace(/[\s_-]+/g, '-')
-          .replace(/^-+|-+$/g, '');
-        
-        output.value = slug;
+      const optLowercase = document.getElementById('opt-lowercase');
+      const optRemoveNumbers = document.getElementById('opt-remove-numbers');
+      const optRemoveStopWords = document.getElementById('opt-remove-stop-words');
+
+      const btnCopy = document.getElementById('btn-copy');
+      const btnClear = document.getElementById('btn-clear');
+      const statusMsg = document.getElementById('status-msg');
+
+      const stopWords = ['a', 'an', 'and', 'are', 'as', 'at', 'be', 'but', 'by', 'for', 'if', 'in', 'into', 'is', 'it', 'no', 'not', 'of', 'on', 'or', 'such', 'that', 'the', 'their', 'then', 'there', 'these', 'they', 'this', 'to', 'was', 'will', 'with'];
+
+      function generateSlug() {
+        let text = titleInput.value.trim();
+        if (!text) {
+          slugOutput.textContent = 'your-generated-slug-will-appear-here';
+          return;
+        }
+
+        if (optLowercase.checked) {
+          text = text.toLowerCase();
+        }
+
+        // Replace accented characters
+        text = text.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
+        if (optRemoveNumbers.checked) {
+          text = text.replace(/[0-9]/g, '');
+        }
+
+        // Filter special characters
+        text = text.replace(/[^a-zA-Z0-9\s-]/g, '');
+
+        let words = text.split(/\s+/).filter(w => w.length > 0);
+
+        if (optRemoveStopWords.checked) {
+          words = words.filter(w => !stopWords.includes(w.toLowerCase()));
+        }
+
+        let slug = words.join('-').replace(/-+/g, '-').replace(/^-|-$/g, '');
+        slugOutput.textContent = slug || 'clean-url-slug';
+      }
+
+      titleInput.addEventListener('input', generateSlug);
+      optLowercase.addEventListener('change', generateSlug);
+      optRemoveNumbers.addEventListener('change', generateSlug);
+      optRemoveStopWords.addEventListener('change', generateSlug);
+
+      // Copy Action
+      btnCopy.addEventListener('click', function() {
+        const slug = slugOutput.textContent;
+        if (!slug || slug === 'your-generated-slug-will-appear-here') return;
+
+        navigator.clipboard.writeText(slug).then(function() {
+          statusMsg.style.display = 'inline';
+          setTimeout(() => { statusMsg.style.display = 'none'; }, 2000);
+        });
       });
+
+      // Clear Action
+      btnClear.addEventListener('click', function() {
+        titleInput.value = '';
+        generateSlug();
+        titleInput.focus();
+      });
+
+      generateSlug();
     });
   </script>
 </body>
