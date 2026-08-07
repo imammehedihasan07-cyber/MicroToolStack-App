@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) - Optimized Load -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var gTagScript = document.createElement('script');
+        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        gTagScript.async = true;
+        document.head.appendChild(gTagScript);
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F3WWR9KGB4');
+      }, 1000);
+    });
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Assignment Cover Page Generator with PDF Download | MicroToolStack</title>
+  <meta name="description" content="Create professional university and college assignment cover pages online for free. Custom templates, student info, teacher details, and printable A4 PDF export.">
+  <link rel="canonical" href="https://microtoolstack.com/tools/pdf/assignment-cover-page.html">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+  <!-- html2pdf.js Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+  <!-- Schema -->
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Assignment Cover Page Generator",
+      "url": "https://microtoolstack.com/tools/pdf/assignment-cover-page.html",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can I download my assignment cover page in PDF format?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, you can generate and download a clean, print-ready A4 PDF cover page in seconds."
+          }
+        }
+      ]
+    }
+  ]
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <style>
+    .app-card {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2.5rem;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    @media (max-width: 768px) {
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+    .form-group {
+      margin-bottom: 0.85rem;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 0.3rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #e5e7eb;
+    }
+    .form-control {
+      width: 100%;
+      padding: 0.55rem;
+      border-radius: 6px;
+      background: #111827;
+      border: 1px solid #374151;
+      color: #fff;
+      font-size: 0.88rem;
+      box-sizing: border-box;
+    }
+    /* Printable Cover Page Style */
+    .cover-paper {
+      background: #ffffff;
+      color: #111827;
+      padding: 2.5rem 2rem;
+      border-radius: 6px;
+      font-family: 'Times New Roman', Times, serif;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      text-align: center;
+      min-height: 520px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 2px solid #1e3a8a;
+      box-sizing: border-box;
+    }
+    .btn-download {
+      background-color: #16a34a;
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 1.5rem;
+      font-size: 1rem;
+      transition: background 0.2s;
+    }
+    .btn-download:hover {
+      background-color: #15803d;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="custom-header">
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo.png" alt="MicroToolStack" class="logo-img">
+      <span>MicroToolStack</span>
+    </a>
+    <nav class="custom-nav">
+      <a href="/#categories">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <button id="theme-toggle" class="custom-theme-btn">🌙</button>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container" style="max-width: 950px; margin: 0 auto; padding: 2rem 1rem;">
+    
+    <!-- Title Section -->
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <span class="badge badge-primary" style="margin-bottom: 0.5rem; display: inline-block;">100% Free & Printable PDF</span>
+      <h1>Assignment Cover Page Generator</h1>
+      <p style="color: #9ca3af;">Design academic assignment cover pages for university, college, or school with instant A4 PDF download.</p>
+    </div>
+
+    <!-- App Card -->
+    <div class="app-card">
+      <div class="grid-2">
+        
+        <!-- Form Inputs Left -->
+        <div>
+          <h3 style="color: #fff; margin-top: 0; margin-bottom: 1rem; font-size: 1.1rem;">📝 Academic Details</h3>
+          
+          <div class="form-group">
+            <label>Institution / University Name</label>
+            <input type="text" id="univ-name" class="form-control" value="Dhaka University">
+          </div>
+
+          <div class="form-group">
+            <label>Department / Faculty</label>
+            <input type="text" id="dept-name" class="form-control" value="Department of Computer Science & Engineering">
+          </div>
+
+          <div class="form-group">
+            <label>Assignment Title</label>
+            <input type="text" id="title-name" class="form-control" value="Implementation of Artificial Intelligence in Web Tools">
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+            <div class="form-group">
+              <label>Course Title</label>
+              <input type="text" id="course-title" class="form-control" value="Software Engineering">
+            </div>
+
+            <div class="form-group">
+              <label>Course Code</label>
+              <input type="text" id="course-code" class="form-control" value="CSE-401">
+            </div>
+          </div>
+
+          <hr style="border-color: #374151; margin: 0.85rem 0;">
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+            <div>
+              <strong style="color: #38bdf8; font-size: 0.85rem; display: block; margin-bottom: 0.4rem;">Submitted By:</strong>
+              <div class="form-group">
+                <input type="text" id="stu-name" class="form-control" placeholder="Student Name" value="Imam Mehedi">
+              </div>
+              <div class="form-group">
+                <input type="text" id="stu-id" class="form-control" placeholder="ID / Roll No." value="ID: 2026-1042">
+              </div>
+            </div>
+
+            <div>
+              <strong style="color: #38bdf8; font-size: 0.85rem; display: block; margin-bottom: 0.4rem;">Submitted To:</strong>
+              <div class="form-group">
+                <input type="text" id="tea-name" class="form-control" placeholder="Teacher Name" value="Dr. A. Rahman">
+              </div>
+              <div class="form-group">
+                <input type="text" id="tea-desig" class="form-control" placeholder="Designation" value="Associate Professor">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-top: 0.5rem;">
+            <label>Submission Date</label>
+            <input type="text" id="sub-date" class="form-control" value="August 7, 2026">
+          </div>
+        </div>
+
+        <!-- Live Preview Right -->
+        <div>
+          <h3 style="color: #fff; margin-top: 0; margin-bottom: 1rem; font-size: 1.1rem;">📄 A4 Cover Page Preview</h3>
+          
+          <div id="cover-paper" class="cover-paper">
+            <div>
+              <h2 id="prev-univ" style="margin: 0; font-size: 1.35rem; color: #1e3a8a; text-transform: uppercase;">DHAKA UNIVERSITY</h2>
+              <p id="prev-dept" style="margin: 0.3rem 0 0 0; font-size: 0.9rem; color: #4b5563;">Department of Computer Science & Engineering</p>
+            </div>
+
+            <div style="margin: 2rem 0; padding: 1rem; border-top: 1px solid #cbd5e1; border-bottom: 1px solid #cbd5e1;">
+              <p style="margin: 0; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: #64748b;">Assignment On</p>
+              <h3 id="prev-title" style="margin: 0.5rem 0; font-size: 1.15rem; color: #0f172a;">Implementation of Artificial Intelligence in Web Tools</h3>
+              <p style="margin: 0; font-size: 0.85rem; color: #334155;">Course: <span id="prev-ctitle">Software Engineering</span> (<span id="prev-ccode">CSE-401</span>)</p>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; text-align: left; font-size: 0.85rem; line-height: 1.5; color: #1e293b; padding: 0 0.5rem;">
+              <div>
+                <strong style="text-decoration: underline; color: #1e3a8a;">Submitted By:</strong>
+                <p id="prev-sname" style="margin: 0.25rem 0 0 0; font-weight: bold;">Imam Mehedi</p>
+                <p id="prev-sid" style="margin: 0; color: #475569;">ID: 2026-1042</p>
+              </div>
+
+              <div>
+                <strong style="text-decoration: underline; color: #1e3a8a;">Submitted To:</strong>
+                <p id="prev-tname" style="margin: 0.25rem 0 0 0; font-weight: bold;">Dr. A. Rahman</p>
+                <p id="prev-tdesig" style="margin: 0; color: #475569;">Associate Professor</p>
+              </div>
+            </div>
+
+            <div style="margin-top: 1.5rem; font-size: 0.85rem; color: #64748b; border-top: 1px dashed #cbd5e1; pt: 0.5rem;">
+              Date of Submission: <span id="prev-date">August 7, 2026</span>
+            </div>
+          </div>
+
+          <button id="download-pdf-btn" class="btn-download">📥 Download A4 Printable PDF</button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SEO Deep Content Area -->
+    <article style="line-height: 1.7; color: #d1d5db; border-top: 1px solid #374151; padding-top: 2rem;">
+      <h2 style="color: #fff;">Free Academic Assignment Cover Page Creator</h2>
+      <p>A well-structured cover page creates a great first impression for academic submissions. Whether you need a cover sheet for university semester assignments, lab reports, or school projects, this tool formats standard academic cover layouts effortlessly.</p>
+
+      <h3 style="color: #fff; margin-top: 1.5rem;">How to Create & Export Cover Pages:</h3>
+      <ul>
+        <li>Fill in your institution name, department, and assignment topic.</li>
+        <li>Enter course details (Course title and Course code).</li>
+        <li>Input student details (Name, ID) and teacher credentials.</li>
+        <li>Review the live paper preview and click <strong>Download A4 Printable PDF</strong>.</li>
+      </ul>
+
+      <h3 style="color: #fff; margin-top: 1.5rem;">Frequently Asked Questions</h3>
+      <div style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+        <strong style="color: #fff;">Is this tool free for students?</strong>
+        <p style="margin: 0.5rem 0 0 0;">Yes! It is 100% free with no registration, watermarks, or daily caps.</p>
+      </div>
+    </article>
+
+  </main>
+
+  <div id="footer-container"></div>
+
+  <!-- Scripts -->
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
+
+  <!-- Client Logic -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const fields = [
+        { id: 'univ-name', target: 'prev-univ' },
+        { id: 'dept-name', target: 'prev-dept' },
+        { id: 'title-name', target: 'prev-title' },
+        { id: 'course-title', target: 'prev-ctitle' },
+        { id: 'course-code', target: 'prev-ccode' },
+        { id: 'stu-name', target: 'prev-sname' },
+        { id: 'stu-id', target: 'prev-sid' },
+        { id: 'tea-name', target: 'prev-tname' },
+        { id: 'tea-desig', target: 'prev-tdesig' },
+        { id: 'sub-date', target: 'prev-date' }
+      ];
+
+      function syncPreview() {
+        fields.forEach(f => {
+          const input = document.getElementById(f.id);
+          const target = document.getElementById(f.target);
+          if (input && target) {
+            target.textContent = input.value || '-';
+          }
+        });
+      }
+
+      fields.forEach(f => {
+        const input = document.getElementById(f.id);
+        if (input) input.addEventListener('input', syncPreview);
+      });
+
+      syncPreview();
+
+      // PDF Generation
+      document.getElementById('download-pdf-btn').addEventListener('click', function() {
+        const element = document.getElementById('cover-paper');
+        const title = document.getElementById('title-name').value || 'assignment-cover';
+        
+        const opt = {
+          margin:       0.3,
+          filename:     `${title.toLowerCase().replace(/\s+/g, '-')}-cover.pdf`,
+          image:        { type: 'jpeg', quality: 0.98 },
+          html2canvas:  { scale: 2 },
+          jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
+        };
+        html2pdf().set(opt).from(element).save();
+      });
+    });
+  </script>
+</body>
+</html>
