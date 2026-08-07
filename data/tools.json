@@ -539,5 +539,14 @@
   "url": "/tools/media/favicon-generator.html",
   "icon": "🌟",
   "isPopular": true
+},
+  {
+  "id": "qr-code-generator",
+  "name": "Custom QR Code Generator with Logo",
+  "description": "Create free high-resolution QR codes with custom colors and brand logo overlays.",
+  "category": "media",
+  "url": "/tools/media/qr-code-generator.html",
+  "icon": "📲",
+  "isPopular": true
 }
 ]
