@@ -1,110 +1,384 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) - Optimized Load -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var gTagScript = document.createElement('script');
+        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        gTagScript.async = true;
+        document.head.appendChild(gTagScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F3WWR9KGB4');
+      }, 1000);
+    });
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Character Counter - Count Characters & Limits Online | MicroToolStack</title>
-  <meta name="description" content="Count total characters with and without spaces for social media limits like Twitter, LinkedIn, and Meta tags.">
   
-  <link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="stylesheet" href="/assets/css/components.css">
-  <link rel="stylesheet" href="/assets/css/tools.css">
+  <!-- Primary SEO Meta Tags -->
+  <title>Free Online Character Counter & Letter Count Tool | MicroToolStack</title>
+  <meta name="description" content="Free online character counter tool to calculate characters with and without spaces, words, and sentences in real-time. Perfect for social media post limits (Twitter/X, Meta, LinkedIn).">
+  <meta name="keywords" content="character counter, letter counter, count characters online, twitter character counter, meta description character counter, character count tool">
+
+  <link rel="canonical" href="https://microtoolstack.com/tools/text/character-counter.html">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://microtoolstack.com/tools/text/character-counter.html">
+  <meta property="og:title" content="Free Online Character Counter & Letter Count Tool | MicroToolStack">
+  <meta property="og:description" content="Count characters, letters, spaces, and words instantly in your browser. 100% free, private, and no signup required.">
+  <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
+
+  <!-- Favicon Icon -->
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+
+  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Character Counter & Letter Count Tool",
+        "operatingSystem": "All",
+        "applicationCategory": "UtilitiesApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "An online character count utility for social media managers, SEO experts, writers, and digital marketers to track character limits.",
+        "url": "https://microtoolstack.com/tools/text/character-counter.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the character limit for Twitter (X)?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The standard character limit for Twitter (X) posts is 280 characters for non-premium accounts."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How many characters should an SEO meta title and description be?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "An optimal SEO meta title should be between 50–60 characters, while a meta description should ideally be kept between 150–160 characters to avoid truncation in Google search results."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my text data stored or sent anywhere?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No! Everything runs 100% client-side in your web browser. Your text is never stored or uploaded to any server."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Preconnect and Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <style>
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .stat-card {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1rem;
+      text-align: center;
+    }
+    .stat-number {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--accent-primary, #3b82f6);
+      margin-bottom: 0.25rem;
+    }
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--text-secondary, #9ca3af);
+      font-weight: 500;
+    }
+    .limits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+    .limit-badge {
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      padding: 0.75rem 1rem;
+      border-radius: 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.88rem;
+    }
+    .limit-value {
+      font-weight: 700;
+      color: #10b981;
+    }
+    .editor-textarea {
+      width: 100%;
+      min-height: 220px;
+      padding: 1rem;
+      font-size: 1rem;
+      line-height: 1.6;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
+      color: var(--text-primary, #fff);
+      outline: none;
+      resize: vertical;
+      box-sizing: border-box;
+      margin-bottom: 1rem;
+    }
+    .editor-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.5rem;
+    }
+    .btn-group {
+      display: flex;
+      gap: 0.5rem;
+    }
+    .content-box {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .content-box h2 {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul {
+      color: var(--text-secondary, #9ca3af);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .content-box ul {
+      padding-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .content-box li {
+      margin-bottom: 0.5rem;
+    }
+  </style>
 </head>
-<body>
-  <div id="header-container"></div>
+<body style="margin: 0; padding: 0;">
 
-  <main class="container">
-    <nav class="breadcrumb-container" aria-label="Breadcrumb">
-      <ol class="breadcrumb-list">
-        <li class="breadcrumb-item"><a href="/">Home</a></li>
-        <li class="breadcrumb-item"><a href="/#text">Text Tools</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Character Counter</li>
-      </ol>
+  <!-- Header Section -->
+  <header class="custom-header">
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
+    </a>
+    <nav class="custom-nav">
+      <a href="/#categories">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
     </nav>
+  </header>
 
-    <header style="margin-bottom: 1.5rem;">
-      <h1>Character Counter</h1>
-      <p>Instantly check exact character counts, space counts, and track character limits for popular social platforms.</p>
-    </header>
-
-    <div class="tool-layout">
-      <div class="tool-container">
-        <textarea id="text-input" class="tool-textarea" placeholder="Paste your text or post content here..." aria-label="Character count input"></textarea>
-
-        <div class="tool-controls">
-          <button class="btn btn-primary" data-copy-target="text-input">📋 Copy Text</button>
-          <button class="btn btn-secondary" id="clear-btn">🗑️ Clear</button>
-        </div>
-
-        <div class="stats-grid">
-          <div class="stat-card">
-            <div class="stat-value" id="stat-total-chars">0</div>
-            <div class="stat-label">Total Chars</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-value" id="stat-no-spaces">0</div>
-            <div class="stat-label">Without Spaces</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-value" id="stat-spaces">0</div>
-            <div class="stat-label">Spaces Only</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-value" id="stat-twitter">280</div>
-            <div class="stat-label">X/Twitter Remaining</div>
-          </div>
-        </div>
-      </div>
-
-      <aside>
-        <div class="card">
-          <h3>📌 Social Limits</h3>
-          <ul style="font-size: 0.875rem; color: var(--text-secondary); padding-left: 1.25rem; margin-top: 0.5rem; line-height: 1.7;">
-            <li><strong>X (Twitter):</strong> 280 chars</li>
-            <li><strong>SEO Meta Title:</strong> ~60 chars</li>
-            <li><strong>SEO Meta Desc:</strong> ~160 chars</li>
-            <li><strong>LinkedIn Post:</strong> 3,000 chars</li>
-          </ul>
-        </div>
-      </aside>
+  <!-- Main Container -->
+  <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
+    
+    <!-- Tool Title & Description -->
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Real-Time Character Counter</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Track exact character limits for Twitter, Meta SEO tags, SMS, and social media captions.</p>
     </div>
+
+    <!-- Live Statistics Counter Grid -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-number" id="char-count">0</div>
+        <div class="stat-label">Total Characters</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" id="char-no-spaces">0</div>
+        <div class="stat-label">Characters (No Spaces)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" id="word-count">0</div>
+        <div class="stat-label">Words</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" id="space-count">0</div>
+        <div class="stat-label">Spaces</div>
+      </div>
+    </div>
+
+    <!-- Social / SEO Character Limits Progress Tracker -->
+    <div class="limits-grid">
+      <div class="limit-badge">
+        <span>SEO Meta Title (60)</span>
+        <span class="limit-value" id="limit-meta-title">0/60</span>
+      </div>
+      <div class="limit-badge">
+        <span>SEO Meta Description (160)</span>
+        <span class="limit-value" id="limit-meta-desc">0/160</span>
+      </div>
+      <div class="limit-badge">
+        <span>X / Twitter Post (280)</span>
+        <span class="limit-value" id="limit-twitter">0/280</span>
+      </div>
+      <div class="limit-badge">
+        <span>SMS Message (160)</span>
+        <span class="limit-value" id="limit-sms">0/160</span>
+      </div>
+    </div>
+
+    <!-- Textarea Input Editor -->
+    <textarea id="text-input" class="editor-textarea" placeholder="Type or paste your text here to check character length..." autofocus></textarea>
+
+    <!-- Action Buttons -->
+    <div class="editor-controls">
+      <div class="btn-group">
+        <button id="btn-copy" class="btn btn-primary" style="padding: 0.6rem 1.2rem; cursor: pointer;">📋 Copy Text</button>
+        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.6rem 1.2rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear Text</button>
+      </div>
+      <span id="status-msg" style="font-size: 0.85rem; color: #10b981; font-weight: 500; display: none;">Copied to clipboard!</span>
+    </div>
+
+    <!-- Adsterra Banner Placement Placeholder -->
+    <div style="text-align: center; margin: 2rem 0;">
+      <script src="https://p130663884.effectivecpmnetwork.com/81/02/32/8102329c43de17d196371b4a3e3bed7f.js"></script>
+    </div>
+
+    <!-- SEO Article Content Box 1 -->
+    <div class="content-box">
+      <h2>Why Character Count Matters for Social Media & SEO</h2>
+      <p>Platforms like X (formerly Twitter), Meta (Facebook/Instagram), and LinkedIn impose strict character length restrictions on posts and ad copy. In SEO, search engines like Google display titles up to 60 characters and descriptions up to 160 characters before truncating them with an ellipsis (...). Utilizing an accurate <strong>Character Counter</strong> ensures your message remains clear, professional, and within ideal platform guidelines.</p>
+    </div>
+
+    <!-- SEO Article Content Box 2 -->
+    <div class="content-box">
+      <h2>Key Features of Character Counter</h2>
+      <ul>
+        <li><strong>Dual Space Analysis:</strong> View total characters both including and excluding whitespace.</li>
+        <li><strong>Real-Time Limit Badges:</strong> Live indicators for Twitter, SMS, SEO Titles, and Descriptions.</li>
+        <li><strong>Letter & Space Breakdown:</strong> Easily distinguish between printable characters and space counts.</li>
+        <li><strong>Privacy Guaranteed:</strong> Client-side browser execution ensures your copy is never uploaded or saved.</li>
+      </ul>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="content-box">
+      <h2>Frequently Asked Questions</h2>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Why is my meta description being cut off in Google search results?</h3>
+        <p>Google truncates meta descriptions that exceed ~160 characters or ~960 pixels. Keeping your description around 150–155 characters ensures maximum search snippet visibility.</p>
+      </div>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Does this character count tool support non-English characters?</h3>
+        <p>Yes, our tool fully supports UTF-8 encoding, accurately counting letters, numbers, symbols, emojis, and non-Latin characters in Bengali, Spanish, Arabic, and more.</p>
+      </div>
+    </div>
+
   </main>
 
+  <!-- Footer Container Placeholder -->
   <div id="footer-container"></div>
 
+  <!-- JavaScript Utilities & Logic -->
   <script src="/assets/js/theme.js"></script>
-  <script src="/assets/js/utils.js"></script>
-  <script src="/assets/js/app.js"></script>
+  <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
 
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const input = document.getElementById('text-input');
-      const clearBtn = document.getElementById('clear-btn');
+    document.addEventListener('DOMContentLoaded', function() {
+      const textInput = document.getElementById('text-input');
+      const charCountEl = document.getElementById('char-count');
+      const charNoSpacesEl = document.getElementById('char-no-spaces');
+      const wordCountEl = document.getElementById('word-count');
+      const spaceCountEl = document.getElementById('space-count');
 
-      const elTotal = document.getElementById('stat-total-chars');
-      const elNoSpaces = document.getElementById('stat-no-spaces');
-      const elSpaces = document.getElementById('stat-spaces');
-      const elTwitter = document.getElementById('stat-twitter');
+      const limitMetaTitle = document.getElementById('limit-meta-title');
+      const limitMetaDesc = document.getElementById('limit-meta-desc');
+      const limitTwitter = document.getElementById('limit-twitter');
+      const limitSms = document.getElementById('limit-sms');
 
-      function updateCounts() {
-        const val = input.value;
-        const total = val.length;
-        const noSpaces = val.replace(/\s/g, '').length;
-        const spaces = total - noSpaces;
-        const twitterLeft = 280 - total;
+      const btnCopy = document.getElementById('btn-copy');
+      const btnClear = document.getElementById('btn-clear');
+      const statusMsg = document.getElementById('status-msg');
 
-        elTotal.textContent = total.toLocaleString();
-        elNoSpaces.textContent = noSpaces.toLocaleString();
-        elSpaces.textContent = spaces.toLocaleString();
-        elTwitter.textContent = twitterLeft;
-        elTwitter.style.color = twitterLeft < 0 ? 'var(--danger)' : 'var(--accent-primary)';
+      function updateStats() {
+        const text = textInput.value;
+        const totalChars = text.length;
+        const noSpaces = text.replace(/\s/g, '').length;
+        const spaces = totalChars - noSpaces;
+
+        const wordsMatch = text.trim().match(/\b\S+\b/g);
+        const totalWords = wordsMatch ? wordsMatch.length : 0;
+
+        // Stat updates
+        charCountEl.textContent = totalChars.toLocaleString();
+        charNoSpacesEl.textContent = noSpaces.toLocaleString();
+        wordCountEl.textContent = totalWords.toLocaleString();
+        spaceCountEl.textContent = spaces.toLocaleString();
+
+        // Platform limits update
+        limitMetaTitle.textContent = `${totalChars}/60`;
+        limitMetaTitle.style.color = totalChars > 60 ? '#ef4444' : '#10b981';
+
+        limitMetaDesc.textContent = `${totalChars}/160`;
+        limitMetaDesc.style.color = totalChars > 160 ? '#ef4444' : '#10b981';
+
+        limitTwitter.textContent = `${totalChars}/280`;
+        limitTwitter.style.color = totalChars > 280 ? '#ef4444' : '#10b981';
+
+        limitSms.textContent = `${totalChars}/160`;
+        limitSms.style.color = totalChars > 160 ? '#ef4444' : '#10b981';
       }
 
-      input.addEventListener('input', updateCounts);
-      clearBtn.addEventListener('click', () => {
-        input.value = '';
-        updateCounts();
-        input.focus();
+      textInput.addEventListener('input', updateStats);
+
+      // Copy Action
+      btnCopy.addEventListener('click', function() {
+        if (!textInput.value.trim()) return;
+        navigator.clipboard.writeText(textInput.value).then(function() {
+          statusMsg.style.display = 'inline';
+          setTimeout(() => { statusMsg.style.display = 'none'; }, 2000);
+        });
+      });
+
+      // Clear Action
+      btnClear.addEventListener('click', function() {
+        textInput.value = '';
+        updateStats();
+        textInput.focus();
       });
     });
   </script>
