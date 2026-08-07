@@ -1,84 +1,379 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) - Optimized Load -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var gTagScript = document.createElement('script');
+        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        gTagScript.async = true;
+        document.head.appendChild(gTagScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F3WWR9KGB4');
+      }, 1000);
+    });
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Free Robots.txt Generator Tool | MicroToolStack</title>
-  <meta name="description" content="Generate customizable robots.txt files for Google, Bing, and search crawlers easily.">
   
-  <link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="stylesheet" href="/assets/css/components.css">
-  <link rel="stylesheet" href="/assets/css/tools.css">
+  <!-- Primary SEO Meta Tags -->
+  <title>Free Online Robots.txt Generator Tool | MicroToolStack</title>
+  <meta name="description" content="Free online Robots.txt Generator to create custom robots.txt files for Googlebot, Bingbot, and search engine crawlers. Include sitemap links and disallow private directories.">
+  <meta name="keywords" content="robots.txt generator, create robots.txt online, googlebot robots.txt, robots.txt builder, seo robots.txt creator, generate robots file">
+
+  <link rel="canonical" href="https://microtoolstack.com/tools/seo/robots-txt-generator.html">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://microtoolstack.com/tools/seo/robots-txt-generator.html">
+  <meta property="og:title" content="Free Online Robots.txt Generator Tool | MicroToolStack">
+  <meta property="og:description" content="Generate valid, SEO-friendly Robots.txt files instantly in your browser. 100% free, fast, and secure.">
+  <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
+
+  <!-- Favicon Icon -->
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+
+  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Robots.txt Generator Tool",
+        "operatingSystem": "All",
+        "applicationCategory": "UtilitiesApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "An online SEO generator utility that crafts customized robots.txt directives to guide search engine crawlers and web spiders.",
+        "url": "https://microtoolstack.com/tools/seo/robots-txt-generator.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is a robots.txt file?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A robots.txt file is a plain text file placed in the root directory of your website to inform search engine crawlers which pages or files they can or cannot request from your site."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where should I upload the generated robots.txt file?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The robots.txt file must always be uploaded directly to the root directory of your website (e.g., https://yourdomain.com/robots.txt)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my website configuration data saved on any server?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No! Everything runs 100% locally in your web browser using JavaScript."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Preconnect and Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <style>
+    .config-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+      background: var(--bg-card, #1e1e2e);
+      padding: 1.25rem;
+      border-radius: var(--radius-md, 8px);
+      border: 1px solid var(--border-color, #333);
+      margin-bottom: 1.5rem;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .form-group label {
+      font-size: 0.88rem;
+      color: var(--text-primary, #fff);
+      font-weight: 600;
+    }
+    .editor-input, .editor-select {
+      width: 100%;
+      padding: 0.75rem;
+      font-size: 0.95rem;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 6px);
+      background-color: var(--bg-body, #111827);
+      color: var(--text-primary, #fff);
+      outline: none;
+      box-sizing: border-box;
+    }
+    .code-box {
+      width: 100%;
+      min-height: 200px;
+      padding: 1rem;
+      font-family: monospace;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: #0d1117;
+      color: #7ee787;
+      box-sizing: border-box;
+      margin-bottom: 1.5rem;
+      white-space: pre;
+      overflow-x: auto;
+    }
+    .editor-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.5rem;
+    }
+    .btn-group {
+      display: flex;
+      gap: 0.5rem;
+    }
+    .content-box {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .content-box h2 {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul {
+      color: var(--text-secondary, #9ca3af);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .content-box ul {
+      padding-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .content-box li {
+      margin-bottom: 0.5rem;
+    }
+  </style>
 </head>
-<body>
-  <div id="header-container"></div>
+<body style="margin: 0; padding: 0;">
 
-  <main class="container">
-    <nav class="breadcrumb-container" aria-label="Breadcrumb">
-      <ol class="breadcrumb-list">
-        <li class="breadcrumb-item"><a href="/">Home</a></li>
-        <li class="breadcrumb-item"><a href="/#seo">SEO Tools</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Robots.txt Generator</li>
-      </ol>
+  <!-- Header Section -->
+  <header class="custom-header">
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
+    </a>
+    <nav class="custom-nav">
+      <a href="/#categories">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
     </nav>
+  </header>
 
-    <header style="margin-bottom: 1.5rem;">
-      <h1>Robots.txt Generator</h1>
-      <p>Create standard directives to instruct search engine crawlers which paths to index.</p>
-    </header>
+  <!-- Main Container -->
+  <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
+    
+    <!-- Tool Title & Description -->
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Robots.txt Generator</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Create customized robots.txt directives to instruct Googlebot and search crawlers.</p>
+    </div>
 
-    <div class="tool-layout">
-      <div class="tool-container">
-        <div style="margin-bottom: 1rem;">
-          <label style="font-weight: 600; display: block; margin-bottom: 0.5rem;">Sitemap URL (Optional):</label>
-          <input type="url" id="sitemap-url" class="search-input" placeholder="https://example.com/sitemap.xml">
-        </div>
+    <!-- Generator Options Form -->
+    <div class="config-grid">
+      <div class="form-group">
+        <label>Default Robot Access:</label>
+        <select id="select-default-access" class="editor-select">
+          <option value="allow" selected>Allow All Search Crawlers</option>
+          <option value="disallow">Disallow All Search Crawlers</option>
+        </select>
+      </div>
 
-        <div style="margin-bottom: 1rem;">
-          <label style="font-weight: 600; display: block; margin-bottom: 0.5rem;">Disallow Directories (One per line):</label>
-          <textarea id="disallow-paths" class="tool-textarea" style="min-height: 80px;" placeholder="/admin/&#10;/private/"></textarea>
-        </div>
+      <div class="form-group">
+        <label>Crawl-Delay (Seconds):</label>
+        <select id="select-crawl-delay" class="editor-select">
+          <option value="none" selected>No Delay (Recommended)</option>
+          <option value="5">5 Seconds</option>
+          <option value="10">10 Seconds</option>
+          <option value="20">20 Seconds</option>
+        </select>
+      </div>
 
-        <label style="font-weight: 600; display: block; margin-bottom: 0.5rem;">Generated robots.txt File:</label>
-        <textarea id="robots-output" class="tool-textarea" readonly></textarea>
+      <div class="form-group" style="grid-column: 1 / -1;">
+        <label>XML Sitemap URL (Recommended):</label>
+        <input type="text" id="input-sitemap" class="editor-input" placeholder="https://microtoolstack.com/sitemap.xml">
+      </div>
 
-        <div class="tool-controls" style="margin-top: 1rem;">
-          <button class="btn btn-primary" data-copy-target="robots-output">📋 Copy robots.txt</button>
-        </div>
+      <div class="form-group" style="grid-column: 1 / -1;">
+        <label>Disallowed Directories (Comma or New Line separated):</label>
+        <input type="text" id="input-disallow-dirs" class="editor-input" placeholder="e.g. /admin/, /cgi-bin/, /private/, /cart/">
       </div>
     </div>
+
+    <!-- Output Code Preview -->
+    <h3 style="font-size: 1.1rem; color: var(--text-primary, #fff); margin-bottom: 0.75rem;">💻 Generated Robots.txt Code:</h3>
+    <textarea id="output-code" class="code-box" readonly></textarea>
+
+    <!-- Controls -->
+    <div class="editor-controls">
+      <div class="btn-group">
+        <button id="btn-copy" class="btn btn-primary" style="padding: 0.68rem 1.4rem; cursor: pointer;">📋 Copy Robots.txt</button>
+        <button id="btn-download" class="btn btn-secondary" style="padding: 0.68rem 1.2rem; cursor: pointer; background: #1f2937; color: #fff; border: 1px solid #4b5563; border-radius: 6px;">📥 Download File</button>
+      </div>
+      <span id="status-msg" style="font-size: 0.85rem; color: #10b981; font-weight: 500; display: none;">Copied to clipboard!</span>
+    </div>
+
+    <!-- Adsterra Banner Placement Placeholder -->
+    <div style="text-align: center; margin: 2rem 0;">
+      <script src="https://p130663884.effectivecpmnetwork.com/81/02/32/8102329c43de17d196371b4a3e3bed7f.js"></script>
+    </div>
+
+    <!-- SEO Article Content Box 1 -->
+    <div class="content-box">
+      <h2>Why Every Website Needs a Robots.txt File</h2>
+      <p>A <strong>Robots.txt</strong> file acts as a gatekeeper for search engine bots like Googlebot, Bingbot, and DuckDuckGo. By placing a valid robots.txt file in your web server's root folder, you prevent web crawlers from indexing sensitive admin panels, private staging environments, or internal search query result pages.</p>
+    </div>
+
+    <!-- SEO Article Content Box 2 -->
+    <div class="content-box">
+      <h2>Robots.txt Best Practices</h2>
+      <ul>
+        <li><strong>Must Be Placed in Root Directory:</strong> Upload the file directly to <code>https://yourdomain.com/robots.txt</code>.</li>
+        <li><strong>Case-Sensitive Paths:</strong> File paths in robots.txt directives are case-sensitive.</li>
+        <li><strong>Include Your Sitemap Link:</strong> Adding your <code>Sitemap: https://yourdomain.com/sitemap.xml</code> line speeds up Google indexing.</li>
+        <li><strong>Avoid Disallowing Critical CSS/JS:</strong> Ensure you do not accidentally disallow theme CSS or JavaScript files, as Googlebot needs them to render your mobile layout.</li>
+      </ul>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="content-box">
+      <h2>Frequently Asked Questions</h2>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Does robots.txt hide my pages from public users?</h3>
+        <p>No. Robots.txt only instructs well-behaved search engine crawlers not to index a page. It does not act as security protection or prevent human users from accessing URLs directly.</p>
+      </div>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How can I test if my robots.txt file works?</h3>
+        <p>You can verify and test your generated file using Google Search Console's built-in Robots.txt Tester tool.</p>
+      </div>
+    </div>
+
   </main>
 
+  <!-- Footer Container Placeholder -->
   <div id="footer-container"></div>
 
+  <!-- JavaScript Utilities & Logic -->
   <script src="/assets/js/theme.js"></script>
-  <script src="/assets/js/utils.js"></script>
-  <script src="/assets/js/app.js"></script>
+  <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
 
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const sitemapInput = document.getElementById('sitemap-url');
-      const disallowInput = document.getElementById('disallow-paths');
-      const output = document.getElementById('robots-output');
+    document.addEventListener('DOMContentLoaded', function() {
+      const selectDefaultAccess = document.getElementById('select-default-access');
+      const selectCrawlDelay = document.getElementById('select-crawl-delay');
+      const inputSitemap = document.getElementById('input-sitemap');
+      const inputDisallowDirs = document.getElementById('input-disallow-dirs');
+      const outputCode = document.getElementById('output-code');
 
-      function generateRobots() {
-        let content = "User-agent: *\nAllow: /\n";
-        const paths = disallowInput.value.split('\n').filter(p => p.trim() !== '');
-        
-        paths.forEach(p => {
-          content += `Disallow: ${p.trim()}\n`;
-        });
+      const btnCopy = document.getElementById('btn-copy');
+      const btnDownload = document.getElementById('btn-download');
+      const statusMsg = document.getElementById('status-msg');
 
-        if (sitemapInput.value.trim() !== '') {
-          content += `\nSitemap: ${sitemapInput.value.trim()}\n`;
+      function generateRobotsCode() {
+        let lines = [];
+        lines.push('# Robots.txt file generated by MicroToolStack');
+        lines.push('User-agent: *');
+
+        const defaultAccess = selectDefaultAccess.value;
+        if (defaultAccess === 'disallow') {
+          lines.push('Disallow: /');
+        } else {
+          lines.push('Allow: /');
         }
 
-        output.value = content;
+        // Disallow custom directories
+        const disallowDirs = inputDisallowDirs.value.split(/[,;\n]+/).map(d => d.trim()).filter(d => d.length > 0);
+        if (disallowDirs.length > 0 && defaultAccess === 'allow') {
+          disallowDirs.forEach(dir => {
+            const formattedDir = dir.startsWith('/') ? dir : '/' + dir;
+            lines.push(`Disallow: ${formattedDir}`);
+          });
+        }
+
+        // Crawl delay
+        const delay = selectCrawlDelay.value;
+        if (delay !== 'none') {
+          lines.push(`Crawl-delay: ${delay}`);
+        }
+
+        // Sitemap
+        const sitemap = inputSitemap.value.trim();
+        if (sitemap) {
+          lines.push('');
+          lines.push(`Sitemap: ${sitemap}`);
+        }
+
+        outputCode.value = lines.join('\n');
       }
 
-      sitemapInput.addEventListener('input', generateRobots);
-      disallowInput.addEventListener('input', generateRobots);
-      generateRobots();
+      selectDefaultAccess.addEventListener('change', generateRobotsCode);
+      selectCrawlDelay.addEventListener('change', generateRobotsCode);
+      inputSitemap.addEventListener('input', generateRobotsCode);
+      inputDisallowDirs.addEventListener('input', generateRobotsCode);
+
+      // Copy Action
+      btnCopy.addEventListener('click', function() {
+        if (!outputCode.value.trim()) return;
+        navigator.clipboard.writeText(outputCode.value).then(function() {
+          statusMsg.style.display = 'inline';
+          setTimeout(() => { statusMsg.style.display = 'none'; }, 2000);
+        });
+      });
+
+      // Download Action
+      btnDownload.addEventListener('click', function() {
+        const text = outputCode.value;
+        if (!text) return;
+        const blob = new Blob([text], { type: 'text/plain' });
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'robots.txt';
+        a.click();
+        window.URL.revokeObjectURL(url);
+      });
+
+      generateRobotsCode();
     });
   </script>
 </body>
