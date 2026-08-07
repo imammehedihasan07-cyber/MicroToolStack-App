@@ -575,5 +575,41 @@
   "url": "/tools/developer/code-to-image.html",
   "icon": "💻",
   "isPopular": true
+},
+  {
+  "id": "receipt-maker",
+  "name": "Simple Quotation & Receipt Maker",
+  "description": "Create professional receipts and price quotations online with instant PDF download.",
+  "category": "calculator",
+  "url": "/tools/calculator/receipt-maker.html",
+  "icon": "📄",
+  "isPopular": true
+},
+  {
+  "id": "paypal-stripe-calculator",
+  "name": "PayPal & Stripe Fee Calculator",
+  "description": "Calculate exact PayPal and Stripe merchant fees and required invoice amounts online.",
+  "category": "calculator",
+  "url": "/tools/calculator/paypal-stripe-calculator.html",
+  "icon": "💳",
+  "isPopular": true
+},
+  {
+  "id": "json-to-csv",
+  "name": "JSON to CSV / Excel Converter",
+  "description": "Convert raw JSON arrays into structured CSV spreadsheets and Excel data online.",
+  "category": "developer",
+  "url": "/tools/developer/json-to-csv.html",
+  "icon": "📊",
+  "isPopular": true
+},
+  {
+  "id": "assignment-cover-page",
+  "name": "Assignment Cover Page Generator",
+  "description": "Create university and college assignment cover pages with instant A4 PDF download.",
+  "category": "pdf",
+  "url": "/tools/pdf/assignment-cover-page.html",
+  "icon": "🎓",
+  "isPopular": true
 }
 ]
