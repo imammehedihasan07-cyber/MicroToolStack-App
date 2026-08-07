@@ -28,7 +28,7 @@
   <!-- QRCode.js Library -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
-  <!-- Organization & FAQ Schema -->
+  <!-- Schema -->
   <script type="application/ld+json">
   [
     {
@@ -162,7 +162,10 @@
 
   <!-- Header -->
   <header class="custom-header">
-    <a href="/" class="custom-logo"><span>⚡</span> MicroToolStack</a>
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo.png" alt="MicroToolStack" class="logo-img">
+      <span>MicroToolStack</span>
+    </a>
     <nav class="custom-nav">
       <a href="/#categories">Categories</a>
       <a href="/about.html">About</a>
@@ -300,7 +303,6 @@
         const text = textInput.value.trim() || 'https://microtoolstack.com';
         rawDiv.innerHTML = '';
 
-        // Initialize QRCodeJS in hidden div
         new QRCode(rawDiv, {
           text: text,
           width: 260,
@@ -310,7 +312,6 @@
           correctLevel: QRCode.CorrectLevel.H
         });
 
-        // Delay slightly for QRCodeJS to render canvas/img
         setTimeout(function() {
           const rawCanvas = rawDiv.querySelector('canvas');
           const ctx = qrCanvas.getContext('2d');
@@ -320,27 +321,23 @@
           if (rawCanvas) {
             ctx.drawImage(rawCanvas, 0, 0);
 
-            // Draw Central Logo if available
             if (userLogoImg) {
               const logoSize = 60;
               const x = (qrCanvas.width - logoSize) / 2;
               const y = (qrCanvas.height - logoSize) / 2;
 
-              // White background pill behind logo
               ctx.fillStyle = lightColorInput.value;
               ctx.fillRect(x - 4, y - 4, logoSize + 8, logoSize + 8);
 
               ctx.drawImage(userLogoImg, x, y, logoSize, logoSize);
             }
 
-            // Prepare Download
             const dataUrl = qrCanvas.toDataURL('image/png');
             downloadBtn.href = dataUrl;
           }
         }, 150);
       }
 
-      // Initial Render
       renderQRCode();
     });
   </script>
