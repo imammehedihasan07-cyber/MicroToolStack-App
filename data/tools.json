@@ -530,5 +530,14 @@
   "url": "/tools/media/webp-to-jpg-png.html",
   "icon": "🖼️",
   "isPopular": true
+},
+  {
+  "id": "favicon-generator",
+  "name": "Favicon Generator & Color Palette Extractor",
+  "description": "Generate multi-size favicons (16x16, 32x32, 180x180) and extract color palettes from any image.",
+  "category": "media",
+  "url": "/tools/media/favicon-generator.html",
+  "icon": "🌟",
+  "isPopular": true
 }
 ]
