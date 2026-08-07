@@ -1,155 +1,350 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) - Optimized Load -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var gTagScript = document.createElement('script');
+        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        gTagScript.async = true;
+        document.head.appendChild(gTagScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F3WWR9KGB4');
+      }, 1000);
+    });
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Free Online Word Counter - Count Words, Characters & Sentences | MicroToolStack</title>
-  <meta name="description" content="Free online word counter tool. Count words, characters, characters without spaces, sentences, paragraphs, and reading time in real time.">
   
-  <!-- Global Stylesheets -->
-  <link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="stylesheet" href="/assets/css/components.css">
-  <link rel="stylesheet" href="/assets/css/tools.css">
+  <!-- Primary SEO Meta Tags -->
+  <title>Free Online Word Counter & Character Count Tool | MicroToolStack</title>
+  <meta name="description" content="Free online word counter tool to count words, characters, sentences, and paragraphs in real-time. Calculate reading time and check text stats privately with no sign-up required.">
+  <meta name="keywords" content="word counter, character counter, word count online, character count online, sentence counter, reading time calculator, text analyzer">
+
+  <link rel="canonical" href="https://microtoolstack.com/tools/text/word-counter.html">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://microtoolstack.com/tools/text/word-counter.html">
+  <meta property="og:title" content="Free Online Word Counter & Character Count Tool | MicroToolStack">
+  <meta property="og:description" content="Count words, characters, sentences, and reading time instantly in your browser. 100% free, fast, and privacy-first text analysis tool.">
+  <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
+
+  <!-- Favicon Icon -->
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+
+  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Word Counter & Character Count Tool",
+        "operatingSystem": "All",
+        "applicationCategory": "UtilitiesApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "An instant, real-time online word and character counter utility for content creators, SEO specialists, writers, and students.",
+        "url": "https://microtoolstack.com/tools/text/word-counter.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does the Word Counter tool work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Simply type or paste your text into the text area. The tool automatically analyzes the input and updates the word count, character count, sentence count, and estimated reading time in real-time."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my text data safe and private?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, absolutely! All text processing happens locally inside your browser using JavaScript. No text data is ever stored, sent, or saved to any external server."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does spaces count as characters in character count?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Our tool displays both metrics: total characters including spaces and total characters excluding spaces, so you can adhere to any character limit requirement."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Preconnect and Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <style>
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .stat-card {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1rem;
+      text-align: center;
+    }
+    .stat-number {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--accent-primary, #3b82f6);
+      margin-bottom: 0.25rem;
+    }
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--text-secondary, #9ca3af);
+      font-weight: 500;
+    }
+    .editor-textarea {
+      width: 100%;
+      min-height: 250px;
+      padding: 1rem;
+      font-size: 1rem;
+      line-height: 1.6;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
+      color: var(--text-primary, #fff);
+      outline: none;
+      resize: vertical;
+      box-sizing: border-box;
+      margin-bottom: 1rem;
+    }
+    .editor-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.5rem;
+    }
+    .btn-group {
+      display: flex;
+      gap: 0.5rem;
+    }
+    .content-box {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .content-box h2 {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul {
+      color: var(--text-secondary, #9ca3af);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .content-box ul {
+      padding-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .content-box li {
+      margin-bottom: 0.5rem;
+    }
+  </style>
 </head>
-<body>
+<body style="margin: 0; padding: 0;">
 
-  <!-- Dynamic Header / Navbar Placeholder -->
-  <div id="header-container"></div>
-
-  <main class="container">
-    <!-- Breadcrumb Navigation -->
-    <nav class="breadcrumb-container" aria-label="Breadcrumb">
-      <ol class="breadcrumb-list">
-        <li class="breadcrumb-item"><a href="/">Home</a></li>
-        <li class="breadcrumb-item"><a href="/#text">Text Tools</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Word Counter</li>
-      </ol>
+  <!-- Header Section -->
+  <header class="custom-header">
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
+    </a>
+    <nav class="custom-nav">
+      <a href="/#categories">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
     </nav>
+  </header>
 
+  <!-- Main Container -->
+  <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
+    
     <!-- Tool Title & Description -->
-    <header style="margin-bottom: 1.5rem;">
-      <h1>Word Counter</h1>
-      <p>Analyze your text in real-time. Track total words, characters, sentences, paragraphs, and reading time effortlessly.</p>
-    </header>
-
-    <!-- Main Tool Interface -->
-    <div class="tool-layout">
-      <div class="tool-container">
-        <!-- Text Area Input -->
-        <textarea id="text-input" class="tool-textarea" placeholder="Type or paste your text here..." aria-label="Text to count"></textarea>
-
-        <!-- Controls -->
-        <div class="tool-controls">
-          <button class="btn btn-primary" id="copy-btn" data-copy-target="text-input">
-            📋 Copy Text
-          </button>
-          <button class="btn btn-secondary" id="clear-btn">
-            🗑️ Clear
-          </button>
-        </div>
-
-        <!-- Real-time Live Statistics -->
-        <div class="stats-grid">
-          <div class="stat-card">
-            <div class="stat-value" id="stat-words">0</div>
-            <div class="stat-label">Words</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-value" id="stat-chars">0</div>
-            <div class="stat-label">Characters</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-value" id="stat-chars-no-spaces">0</div>
-            <div class="stat-label">No Spaces</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-value" id="stat-sentences">0</div>
-            <div class="stat-label">Sentences</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-value" id="stat-paragraphs">0</div>
-            <div class="stat-label">Paragraphs</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-value" id="stat-reading-time">0m</div>
-            <div class="stat-label">Reading Time</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Sidebar / Additional Info -->
-      <aside>
-        <div class="card">
-          <h3>💡 Pro Tips</h3>
-          <ul style="font-size: 0.875rem; color: var(--text-secondary); padding-left: 1.25rem; margin-top: 0.5rem; line-height: 1.7;">
-            <li>Standard reading speed is estimated at <strong>200 words per minute</strong>.</li>
-            <li>Social posts have character limits (e.g., Twitter/X: 280, LinkedIn: 3,000).</li>
-            <li>Use this tool to keep your SEO meta descriptions under 160 characters.</li>
-          </ul>
-        </div>
-      </aside>
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Real-Time Word Counter</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Count words, characters, sentences, and estimated reading time instantly as you type.</p>
     </div>
+
+    <!-- Live Statistics Counter Grid -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-number" id="word-count">0</div>
+        <div class="stat-label">Words</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" id="char-count">0</div>
+        <div class="stat-label">Characters (With Spaces)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" id="char-no-spaces">0</div>
+        <div class="stat-label">Characters (No Spaces)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" id="sentence-count">0</div>
+        <div class="stat-label">Sentences</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" id="paragraph-count">0</div>
+        <div class="stat-label">Paragraphs</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" id="reading-time">0m</div>
+        <div class="stat-label">Reading Time</div>
+      </div>
+    </div>
+
+    <!-- Textarea Input Editor -->
+    <textarea id="text-input" class="editor-textarea" placeholder="Type or paste your content here to start counting..." autofocus></textarea>
+
+    <!-- Action Buttons -->
+    <div class="editor-controls">
+      <div class="btn-group">
+        <button id="btn-copy" class="btn btn-primary" style="padding: 0.6rem 1.2rem; cursor: pointer;">📋 Copy Text</button>
+        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.6rem 1.2rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear Text</button>
+      </div>
+      <span id="status-msg" style="font-size: 0.85rem; color: #10b981; font-weight: 500; display: none;">Copied to clipboard!</span>
+    </div>
+
+    <!-- Adsterra Banner Placement Placeholder -->
+    <div style="text-align: center; margin: 2rem 0;">
+      <script src="https://p130663884.effectivecpmnetwork.com/81/02/32/8102329c43de17d196371b4a3e3bed7f.js"></script>
+    </div>
+
+    <!-- SEO Article Content Box 1 -->
+    <div class="content-box">
+      <h2>Why Use an Online Word Counter?</h2>
+      <p>Whether you are writing a blog article, essay, research paper, social media post, or meta description, staying within strict word or character limits is crucial. Our free online <strong>Word Counter</strong> provides instant, accurate text metrics without relying on heavy software like Microsoft Word or Google Docs.</p>
+    </div>
+
+    <!-- SEO Article Content Box 2 -->
+    <div class="content-box">
+      <h2>Key Features of Our Word Count Tool</h2>
+      <ul>
+        <li><strong>Real-Time Analysis:</strong> Updates character, word, and sentence counts instantly as you type or paste content.</li>
+        <li><strong>Dual Character Metrics:</strong> Displays total characters both including and excluding whitespace.</li>
+        <li><strong>Reading Time Estimator:</strong> Calculates reading duration based on an average adult reading speed of 200 words per minute (WPM).</li>
+        <li><strong>100% Private & Browser-Based:</strong> Your text never leaves your device. Everything is computed client-side using Javascript.</li>
+      </ul>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="content-box">
+      <h2>Frequently Asked Questions</h2>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this Word Counter completely free?</h3>
+        <p>Yes, MicroToolStack's Word Counter is 100% free forever with no daily usage limits or account registration required.</p>
+      </div>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How is the estimated reading time calculated?</h3>
+        <p>The reading time estimate is calculated assuming an average human reading rate of 200 words per minute.</p>
+      </div>
+    </div>
+
   </main>
 
-  <!-- Dynamic Footer Placeholder -->
+  <!-- Footer Container Placeholder -->
   <div id="footer-container"></div>
 
-  <!-- Core Scripts -->
+  <!-- JavaScript Utilities & Logic -->
   <script src="/assets/js/theme.js"></script>
-  <script src="/assets/js/utils.js"></script>
-  <script src="/assets/js/app.js"></script>
+  <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
 
-  <!-- Tool Specific Script Logic -->
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const input = document.getElementById('text-input');
-      const clearBtn = document.getElementById('clear-btn');
+    document.addEventListener('DOMContentLoaded', function() {
+      const textInput = document.getElementById('text-input');
+      const wordCountEl = document.getElementById('word-count');
+      const charCountEl = document.getElementById('char-count');
+      const charNoSpacesEl = document.getElementById('char-no-spaces');
+      const sentenceCountEl = document.getElementById('sentence-count');
+      const paragraphCountEl = document.getElementById('paragraph-count');
+      const readingTimeEl = document.getElementById('reading-time');
+      const btnCopy = document.getElementById('btn-copy');
+      const btnClear = document.getElementById('btn-clear');
+      const statusMsg = document.getElementById('status-msg');
 
-      // Stat elements
-      const elWords = document.getElementById('stat-words');
-      const elChars = document.getElementById('stat-chars');
-      const elCharsNoSpaces = document.getElementById('stat-chars-no-spaces');
-      const elSentences = document.getElementById('stat-sentences');
-      const elParagraphs = document.getElementById('stat-paragraphs');
-      const elReadingTime = document.getElementById('stat-reading-time');
+      function updateStats() {
+        const text = textInput.value;
 
-      function calculateStats() {
-        const text = input.value;
-
-        // Characters
+        // Characters Count
         const charCount = text.length;
-        const charNoSpacesCount = text.replace(/\s/g, '').length;
+        const charNoSpaces = text.replace(/\s/g, '').length;
 
-        // Words
-        const trimmedText = text.trim();
-        const wordCount = trimmedText === '' ? 0 : trimmedText.split(/\s+/).length;
+        // Words Count
+        const wordsMatch = text.trim().match(/\b\S+\b/g);
+        const wordCount = wordsMatch ? wordsMatch.length : 0;
 
-        // Sentences
-        const sentenceCount = trimmedText === '' ? 0 : (text.match(/[^.!?]+[.!?]+/g) || [text]).length;
+        // Sentences Count
+        const sentencesMatch = text.match(/[^\.!\?]+[\.!\?]+/g);
+        const sentenceCount = sentencesMatch ? sentencesMatch.length : (text.trim().length > 0 ? 1 : 0);
 
-        // Paragraphs
-        const paragraphCount = trimmedText === '' ? 0 : text.split(/\n+/).filter(p => p.trim() !== '').length;
+        // Paragraphs Count
+        const paragraphsMatch = text.replace(/\r\n/g, "\n").split(/\n\s*\n/).filter(p => p.trim().length > 0);
+        const paragraphCount = paragraphsMatch.length;
 
-        // Reading time (approx 200 words per min)
+        // Estimated Reading Time (200 WPM)
         const readingMinutes = Math.ceil(wordCount / 200);
 
-        // Update DOM
-        elWords.textContent = wordCount.toLocaleString();
-        elChars.textContent = charCount.toLocaleString();
-        elCharsNoSpaces.textContent = charNoSpacesCount.toLocaleString();
-        elSentences.textContent = sentenceCount.toLocaleString();
-        elParagraphs.textContent = paragraphCount.toLocaleString();
-        elReadingTime.textContent = wordCount === 0 ? '0m' : `${readingMinutes}m`;
+        // DOM Updates
+        wordCountEl.textContent = wordCount.toLocaleString();
+        charCountEl.textContent = charCount.toLocaleString();
+        charNoSpacesEl.textContent = charNoSpaces.toLocaleString();
+        sentenceCountEl.textContent = sentenceCount.toLocaleString();
+        paragraphCountEl.textContent = paragraphCount.toLocaleString();
+        readingTimeEl.textContent = wordCount > 0 ? (readingMinutes < 1 ? '< 1m' : readingMinutes + 'm') : '0m';
       }
 
-      // Input Event Listener
-      input.addEventListener('input', calculateStats);
+      textInput.addEventListener('input', updateStats);
 
-      // Clear Button Logic
-      clearBtn.addEventListener('click', () => {
-        input.value = '';
-        calculateStats();
-        input.focus();
+      // Copy Text Action
+      btnCopy.addEventListener('click', function() {
+        if (!textInput.value.trim()) return;
+        navigator.clipboard.writeText(textInput.value).then(function() {
+          statusMsg.style.display = 'inline';
+          setTimeout(() => { statusMsg.style.display = 'none'; }, 2000);
+        });
+      });
+
+      // Clear Text Action
+      btnClear.addEventListener('click', function() {
+        textInput.value = '';
+        updateStats();
+        textInput.focus();
       });
     });
   </script>
