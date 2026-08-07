@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) - Optimized Load -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var gTagScript = document.createElement('script');
+        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        gTagScript.async = true;
+        document.head.appendChild(gTagScript);
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F3WWR9KGB4');
+      }, 1000);
+    });
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free PayPal & Stripe Fee Calculator | MicroToolStack</title>
+  <meta name="description" content="Calculate exact PayPal and Stripe merchant fees online. Know how much to invoice or receive after processing deductions instantly.">
+  <link rel="canonical" href="https://microtoolstack.com/tools/calculator/paypal-stripe-calculator.html">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+  <!-- Schema -->
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "PayPal & Stripe Fee Calculator",
+      "url": "https://microtoolstack.com/tools/calculator/paypal-stripe-calculator.html",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What are standard PayPal and Stripe fee rates?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Standard Stripe fees are typically 2.9% + $0.30 per transaction, while PayPal commercial rates range from 2.99% to 4.49% + fixed fee depending on domestic vs. international transactions."
+          }
+        }
+      ]
+    }
+  ]
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <style>
+    .app-card {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2.5rem;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    @media (max-width: 768px) {
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #e5e7eb;
+    }
+    .form-control {
+      width: 100%;
+      padding: 0.75rem;
+      border-radius: 8px;
+      background: #111827;
+      border: 1px solid #374151;
+      color: #fff;
+      font-size: 0.95rem;
+      box-sizing: border-box;
+    }
+    .result-box {
+      background: rgba(0,0,0,0.25);
+      border: 1px solid #374151;
+      border-radius: 10px;
+      padding: 1.5rem;
+    }
+    .stat-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid #374151;
+      font-size: 0.95rem;
+    }
+    .stat-row:last-child {
+      border-bottom: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="custom-header">
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo.png" alt="MicroToolStack" class="logo-img">
+      <span>MicroToolStack</span>
+    </a>
+    <nav class="custom-nav">
+      <a href="/#categories">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <button id="theme-toggle" class="custom-theme-btn">🌙</button>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container" style="max-width: 950px; margin: 0 auto; padding: 2rem 1rem;">
+    
+    <!-- Title Section -->
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <span class="badge badge-primary" style="margin-bottom: 0.5rem; display: inline-block;">100% Instant Financial Calculator</span>
+      <h1>PayPal & Stripe Fee Calculator</h1>
+      <p style="color: #9ca3af;">Calculate exact processing deductions and know how much to bill clients to receive your desired net amount.</p>
+    </div>
+
+    <!-- App Card -->
+    <div class="app-card">
+      <div class="grid-2">
+        
+        <!-- Controls Left -->
+        <div>
+          <div class="form-group">
+            <label>Payment Gateway Platform</label>
+            <select id="gateway" class="form-control">
+              <option value="stripe_us">Stripe US Domestic (2.9% + $0.30)</option>
+              <option value="stripe_intl">Stripe International (3.9% + $0.30)</option>
+              <option value="paypal_us">PayPal US Goods & Services (2.99% + $0.49)</option>
+              <option value="paypal_intl">PayPal International (4.49% + $0.49)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Transaction Amount ($)</label>
+            <input type="number" id="amount" class="form-control" value="100" min="1" step="any">
+          </div>
+        </div>
+
+        <!-- Calculation Display Right -->
+        <div class="result-box">
+          <h3 style="margin: 0 0 1rem 0; color: #fff; font-size: 1.1rem; border-bottom: 1px solid #374151; padding-bottom: 0.5rem;">📊 Breakdown Summary</h3>
+
+          <div class="stat-row">
+            <span style="color: #9ca3af;">Total Processed:</span>
+            <strong id="res-amount" style="color: #fff;">$100.00</strong>
+          </div>
+
+          <div class="stat-row">
+            <span style="color: #ef4444;">Deducted Processing Fee:</span>
+            <strong id="res-fee" style="color: #ef4444;">-$3.20</strong>
+          </div>
+
+          <div class="stat-row">
+            <span style="color: #4ade80;">Net Amount Received:</span>
+            <strong id="res-takehome" style="color: #4ade80; font-size: 1.1rem;">$96.80</strong>
+          </div>
+
+          <hr style="border-color: #374151; margin: 1rem 0;">
+
+          <p style="margin: 0 0 0.25rem 0; font-size: 0.85rem; color: #3b82f6; font-weight: 600;">💡 How much should you invoice?</p>
+          <p style="margin: 0; font-size: 0.85rem; color: #d1d5db;">
+            To receive exactly <strong id="ask-exact">$100.00</strong> net, you must charge your client <strong id="res-invoice" style="color: #f59e0b; font-size: 1.05rem;">$103.30</strong>.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SEO Deep Content Area -->
+    <article style="line-height: 1.7; color: #d1d5db; border-top: 1px solid #374151; padding-top: 2rem;">
+      <h2 style="color: #fff;">Understanding Merchant Payment Processing Fees</h2>
+      <p>When accepting payments online through Stripe or PayPal, transaction fees can quickly add up. Knowing the exact percentage and fixed fees per transaction allows freelancers, e-commerce sellers, and agencies to set accurate pricing and avoid profit loss.</p>
+
+      <h3 style="color: #fff; margin-top: 1.5rem;">Standard Gateway Fee Structures:</h3>
+      <ul>
+        <li><strong>Stripe Domestic:</strong> Charges 2.9% + $0.30 per successful credit card payment within the same country.</li>
+        <li><strong>Stripe International:</strong> Adds an additional 1% cross-border fee for international card processing (3.9% + $0.30).</li>
+        <li><strong>PayPal Commercial:</strong> Standard US merchant transactions usually start at 2.99% + $0.49 fixed fee.</li>
+      </ul>
+
+      <h3 style="color: #fff; margin-top: 1.5rem;">Frequently Asked Questions</h3>
+      <div style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+        <strong style="color: #fff;">How is the "Invoice Amount" calculated?</strong>
+        <p style="margin: 0.5rem 0 0 0;">The invoice calculation uses reverse fee mathematics: <code>(Target Amount + Fixed Fee) / (1 - Fee Percentage)</code> to ensure that after deductions, your net payout matches your target rate.</p>
+      </div>
+    </article>
+
+  </main>
+
+  <div id="footer-container"></div>
+
+  <!-- Scripts -->
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
+
+  <!-- Client Logic -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const gatewaySelect = document.getElementById('gateway');
+      const amountInput = document.getElementById('amount');
+
+      const resAmount = document.getElementById('res-amount');
+      const resFee = document.getElementById('res-fee');
+      const resTakehome = document.getElementById('res-takehome');
+      const askExact = document.getElementById('ask-exact');
+      const resInvoice = document.getElementById('res-invoice');
+
+      const feeStructures = {
+        stripe_us: { pct: 0.029, fixed: 0.30 },
+        stripe_intl: { pct: 0.039, fixed: 0.30 },
+        paypal_us: { pct: 0.0299, fixed: 0.49 },
+        paypal_intl: { pct: 0.0449, fixed: 0.49 }
+      };
+
+      function calculateFees() {
+        const amt = parseFloat(amountInput.value) || 0;
+        const config = feeStructures[gatewaySelect.value];
+
+        // Direct Deductions
+        const fee = (amt * config.pct) + config.fixed;
+        const takehome = Math.max(0, amt - fee);
+
+        // Reverse Calculation (To receive exact net amount)
+        const invoiceNeeded = (amt + config.fixed) / (1 - config.pct);
+
+        resAmount.textContent = `$${amt.toFixed(2)}`;
+        resFee.textContent = `-$${fee.toFixed(2)}`;
+        resTakehome.textContent = `$${takehome.toFixed(2)}`;
+        askExact.textContent = `$${amt.toFixed(2)}`;
+        resInvoice.textContent = `$${invoiceNeeded.toFixed(2)}`;
+      }
+
+      gatewaySelect.addEventListener('change', calculateFees);
+      amountInput.addEventListener('input', calculateFees);
+
+      calculateFees();
+    });
+  </script>
+</body>
+</html>
