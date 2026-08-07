@@ -1,66 +1,323 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) - Optimized Load -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var gTagScript = document.createElement('script');
+        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        gTagScript.async = true;
+        document.head.appendChild(gTagScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F3WWR9KGB4');
+      }, 1000);
+    });
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reverse Text Generator - Flip Text & Words | MicroToolStack</title>
-  <meta name="description" content="Flip text upside down, reverse words, reverse letters, or reverse lines online.">
   
-  <link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="stylesheet" href="/assets/css/components.css">
-  <link rel="stylesheet" href="/assets/css/tools.css">
+  <!-- Primary SEO Meta Tags -->
+  <title>Free Online Reverse Text Generator & Backward Text Tool | MicroToolStack</title>
+  <meta name="description" content="Free online reverse text generator to reverse letters, reverse word order, and flip text backwards instantly. Fast, free, and private text reverser tool.">
+  <meta name="keywords" content="reverse text generator, reverse text online, backward text generator, reverse wording, flip text online, reverse letters, text reverser">
+
+  <link rel="canonical" href="https://microtoolstack.com/tools/text/reverse-text.html">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://microtoolstack.com/tools/text/reverse-text.html">
+  <meta property="og:title" content="Free Online Reverse Text Generator & Backward Text Tool | MicroToolStack">
+  <meta property="og:description" content="Instantly reverse text, flip wording, and spell words backwards in your browser. 100% free and private.">
+  <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
+
+  <!-- Favicon Icon -->
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+
+  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Reverse Text Generator Tool",
+        "operatingSystem": "All",
+        "applicationCategory": "UtilitiesApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "An online text reversal utility that allows users to flip lettering, reverse word sequences, and generate backwards text snippets instantly.",
+        "url": "https://microtoolstack.com/tools/text/reverse-text.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the difference between Reverse Text and Reverse Words?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Reverse Text flips every single character completely backwards (e.g., 'hello' becomes 'olleh'), whereas Reverse Words flips the sequence of words in a sentence while keeping individual words readable."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why would someone need a Reverse Text generator?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Reverse text is commonly used for creating fun social media posts, solving ciphers/puzzles, encrypting casual messages, testing palindromes, and reversing data columns."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my text input saved anywhere?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. All text manipulations are executed directly in your browser using JavaScript. Your text is never sent to any server."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Preconnect and Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <style>
+    .editor-textarea {
+      width: 100%;
+      min-height: 200px;
+      padding: 1rem;
+      font-size: 1rem;
+      line-height: 1.6;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
+      color: var(--text-primary, #fff);
+      outline: none;
+      resize: vertical;
+      box-sizing: border-box;
+      margin-bottom: 1.25rem;
+    }
+    .options-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+      background: var(--bg-card, #1e1e2e);
+      padding: 1.25rem;
+      border-radius: var(--radius-md, 8px);
+      border: 1px solid var(--border-color, #333);
+    }
+    .option-radio {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-primary, #fff);
+      font-size: 0.92rem;
+      cursor: pointer;
+    }
+    .option-radio input[type="radio"] {
+      width: 16px;
+      height: 16px;
+      accent-color: var(--accent-primary, #3b82f6);
+      cursor: pointer;
+    }
+    .editor-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.5rem;
+    }
+    .btn-group {
+      display: flex;
+      gap: 0.5rem;
+    }
+    .content-box {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .content-box h2 {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul {
+      color: var(--text-secondary, #9ca3af);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .content-box ul {
+      padding-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .content-box li {
+      margin-bottom: 0.5rem;
+    }
+  </style>
 </head>
-<body>
-  <div id="header-container"></div>
+<body style="margin: 0; padding: 0;">
 
-  <main class="container">
-    <nav class="breadcrumb-container" aria-label="Breadcrumb">
-      <ol class="breadcrumb-list">
-        <li class="breadcrumb-item"><a href="/">Home</a></li>
-        <li class="breadcrumb-item"><a href="/#text">Text Tools</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Reverse Text</li>
-      </ol>
+  <!-- Header Section -->
+  <header class="custom-header">
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
+    </a>
+    <nav class="custom-nav">
+      <a href="/#categories">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
     </nav>
+  </header>
 
-    <header style="margin-bottom: 1.5rem;">
-      <h1>Reverse Text</h1>
-      <p>Reverse full text strings, reverse word order, or flip letters backwards easily.</p>
-    </header>
+  <!-- Main Container -->
+  <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
+    
+    <!-- Tool Title & Description -->
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Reverse Text Generator</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Flip entire sentences, reverse character order, or reverse word order instantly.</p>
+    </div>
 
-    <div class="tool-layout">
-      <div class="tool-container">
-        <textarea id="text-input" class="tool-textarea" placeholder="Type text to reverse..." aria-label="Text to reverse"></textarea>
+    <!-- Textarea Input Editor -->
+    <textarea id="text-input" class="editor-textarea" placeholder="Type or paste your text here to reverse..." autofocus></textarea>
 
-        <div class="tool-controls">
-          <button class="btn btn-secondary" id="btn-reverse-letters">🔄 Reverse Letters</button>
-          <button class="btn btn-secondary" id="btn-reverse-words">🔀 Reverse Words</button>
-          <button class="btn btn-secondary" id="btn-reverse-lines">↕️ Reverse Lines</button>
-          <button class="btn btn-primary" data-copy-target="text-input">📋 Copy</button>
-        </div>
+    <!-- Reversal Mode Selection Grid -->
+    <div class="options-grid">
+      <label class="option-radio">
+        <input type="radio" name="reverse-mode" value="text" checked> Reverse Entire Text (Backward)
+      </label>
+      <label class="option-radio">
+        <input type="radio" name="reverse-mode" value="words"> Reverse Words Order
+      </label>
+      <label class="option-radio">
+        <input type="radio" name="reverse-mode" value="letter-words"> Reverse Each Word's Letters
+      </label>
+    </div>
+
+    <!-- Controls & Action Buttons -->
+    <div class="editor-controls">
+      <div class="btn-group">
+        <button id="btn-reverse" class="btn btn-primary" style="padding: 0.68rem 1.4rem; cursor: pointer;">🔄 Reverse Text</button>
+        <button id="btn-copy" class="btn btn-secondary" style="padding: 0.68rem 1.2rem; cursor: pointer; background: #1f2937; color: #fff; border: 1px solid #4b5563; border-radius: 6px;">📋 Copy Result</button>
+        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.68rem 1.2rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear</button>
+      </div>
+      <span id="status-msg" style="font-size: 0.85rem; color: #10b981; font-weight: 500; display: none;">Reversed text copied!</span>
+    </div>
+
+    <!-- Adsterra Banner Placement Placeholder -->
+    <div style="text-align: center; margin: 2rem 0;">
+      <script src="https://p130663884.effectivecpmnetwork.com/81/02/32/8102329c43de17d196371b4a3e3bed7f.js"></script>
+    </div>
+
+    <!-- SEO Article Content Box 1 -->
+    <div class="content-box">
+      <h2>What is a Reverse Text Generator?</h2>
+      <p>A <strong>Reverse Text Generator</strong> is an online text utility that converts normal readable text into a backward character string or flips word sequences. Whether you are encoding secret messages, testing palindrome words, or formatting social media captions, this tool delivers instant results without downloading any software.</p>
+    </div>
+
+    <!-- SEO Article Content Box 2 -->
+    <div class="content-box">
+      <h2>Reversal Modes Explained</h2>
+      <ul>
+        <li><strong>Reverse Entire Text:</strong> Flips every single letter completely backwards (e.g. <code>MicroToolStack</code> ➔ <code>kcatSLooTorciM</code>).</li>
+        <li><strong>Reverse Words Order:</strong> Flips the word order in a sentence while keeping letters readable (e.g. <code>Hello World</code> ➔ <code>World Hello</code>).</li>
+        <li><strong>Reverse Each Word's Letters:</strong> Reverses individual words while retaining overall sentence sequence.</li>
+      </ul>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="content-box">
+      <h2>Frequently Asked Questions</h2>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Can I reverse backwards text back to normal?</h3>
+        <p>Yes! Simply paste the reversed text back into the tool and click 'Reverse Text' again to restore the original readable sentence.</p>
+      </div>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this tool free and secure?</h3>
+        <p>Yes, MicroToolStack's Reverse Text generator is 100% free with no registration. Processing occurs purely inside your web browser for total privacy.</p>
       </div>
     </div>
+
   </main>
 
+  <!-- Footer Container Placeholder -->
   <div id="footer-container"></div>
 
+  <!-- JavaScript Utilities & Logic -->
   <script src="/assets/js/theme.js"></script>
-  <script src="/assets/js/utils.js"></script>
-  <script src="/assets/js/app.js"></script>
+  <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
 
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const input = document.getElementById('text-input');
+    document.addEventListener('DOMContentLoaded', function() {
+      const textInput = document.getElementById('text-input');
+      const btnReverse = document.getElementById('btn-reverse');
+      const btnCopy = document.getElementById('btn-copy');
+      const btnClear = document.getElementById('btn-clear');
+      const statusMsg = document.getElementById('status-msg');
 
-      document.getElementById('btn-reverse-letters').addEventListener('click', () => {
-        input.value = input.value.split('').reverse().join('');
+      function executeReversal() {
+        const text = textInput.value;
+        if (!text) return;
+
+        const mode = document.querySelector('input[name="reverse-mode"]:checked').value;
+        let result = '';
+
+        if (mode === 'text') {
+          // Reverse all characters
+          result = text.split('').reverse().join('');
+        } else if (mode === 'words') {
+          // Reverse word order per line
+          result = text.split('\n').map(line => {
+            return line.trim().split(/\s+/).reverse().join(' ');
+          }).join('\n');
+        } else if (mode === 'letter-words') {
+          // Reverse letters of each word
+          result = text.split('\n').map(line => {
+            return line.split(' ').map(word => word.split('').reverse().join('')).join(' ');
+          }).join('\n');
+        }
+
+        textInput.value = result;
+      }
+
+      btnReverse.addEventListener('click', executeReversal);
+
+      // Copy Action
+      btnCopy.addEventListener('click', function() {
+        if (!textInput.value.trim()) return;
+        navigator.clipboard.writeText(textInput.value).then(function() {
+          statusMsg.style.display = 'inline';
+          setTimeout(() => { statusMsg.style.display = 'none'; }, 2000);
+        });
       });
 
-      document.getElementById('btn-reverse-words').addEventListener('click', () => {
-        input.value = input.value.split(' ').reverse().join(' ');
-      });
-
-      document.getElementById('btn-reverse-lines').addEventListener('click', () => {
-        input.value = input.value.split('\n').reverse().join('\n');
+      // Clear Action
+      btnClear.addEventListener('click', function() {
+        textInput.value = '';
+        textInput.focus();
       });
     });
   </script>
