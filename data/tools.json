@@ -557,5 +557,14 @@
   "url": "/tools/media/qr-code-generator.html",
   "icon": "📲",
   "isPopular": true
+},
+  {
+  "id": "prompt-builder",
+  "name": "ChatGPT & Midjourney Prompt Builder",
+  "description": "Construct high-converting ChatGPT text and Midjourney image generation prompts instantly.",
+  "category": "ai",
+  "url": "/tools/ai/prompt-builder.html",
+  "icon": "🤖",
+  "isPopular": true
 }
 ]
