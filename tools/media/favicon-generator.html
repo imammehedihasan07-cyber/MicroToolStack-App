@@ -25,7 +25,7 @@
   <meta name="robots" content="index, follow">
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
-  <!-- Organization & FAQ Schema -->
+  <!-- Schema -->
   <script type="application/ld+json">
   [
     {
@@ -125,26 +125,31 @@
 </head>
 <body>
 
-<header class="custom-header">
-  <a href="/" class="custom-logo">
-    <img src="/assets/images/logo.svg" alt="MicroToolStack">
-    MicroToolStack
-  </a>
-  <nav class="custom-nav">
-    <a href="/#categories">Categories</a>
-    <a href="/about.html">About</a>
-    <a href="/contact.html">Contact</a>
-    <button id="theme-toggle" class="custom-theme-btn">🌙</button>
-  </nav>
-</header>
+  <!-- Header -->
+  <header class="custom-header">
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo.png" alt="MicroToolStack" class="logo-img">
+      <span>MicroToolStack</span>
+    </a>
+    <nav class="custom-nav">
+      <a href="/#categories">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <button id="theme-toggle" class="custom-theme-btn">🌙</button>
+    </nav>
+  </header>
 
+  <!-- Main Content -->
   <main class="container" style="max-width: 900px; margin: 0 auto; padding: 2rem 1rem;">
+    
+    <!-- Title Section -->
     <div style="text-align: center; margin-bottom: 2rem;">
       <span class="badge badge-primary" style="margin-bottom: 0.5rem; display: inline-block;">100% Client-Side & Private</span>
       <h1>Free Online Favicon Generator</h1>
       <p style="color: #9ca3af;">Upload any image or logo to create custom web favicons for browser tabs, taskbars, and iOS shortcuts.</p>
     </div>
 
+    <!-- App Card -->
     <div class="app-card">
       <div class="drop-zone">
         <input type="file" id="image-input" accept="image/png, image/jpeg, image/webp, image/svg+xml">
@@ -177,6 +182,7 @@
       </div>
     </div>
 
+    <!-- SEO Deep Content Area -->
     <article style="line-height: 1.7; color: #d1d5db; border-top: 1px solid #374151; padding-top: 2rem;">
       <h2 style="color: #fff;">How to Create Website Favicons</h2>
       <p>A favicon is a small icon that appears next to your website title in web browser tabs, bookmarks, and search engine results. Having a clear, multi-resolution favicon establishes brand recognition and improves user trust.</p>
@@ -192,10 +198,12 @@
 
   <div id="footer-container"></div>
 
+  <!-- Scripts -->
   <script src="/assets/js/theme.js"></script>
   <script src="/assets/js/utils.js" defer></script>
   <script src="/assets/js/app.js" defer></script>
 
+  <!-- Client Logic -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const input = document.getElementById('image-input');
