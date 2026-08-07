@@ -1,162 +1,340 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Favicon Generator | MicroToolStack</title>
-    <meta name="description" content="Convert your PNG, JPG, or SVG logos into standard website favicons (16x16, 32x32, 48x48, 180x180) instantly in your browser.">
-    
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="stylesheet" href="/assets/css/components.css">
-    <link rel="stylesheet" href="/assets/css/tools.css">
+  <!-- Google tag (gtag.js) - Optimized Load -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var gTagScript = document.createElement('script');
+        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        gTagScript.async = true;
+        document.head.appendChild(gTagScript);
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F3WWR9KGB4');
+      }, 1000);
+    });
+  </script>
 
-    <!-- Structured Data (Schema.org) -->
-    <script type="application/ld+json">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Favicon Generator & Color Palette Extractor | MicroToolStack</title>
+  <meta name="description" content="Generate multi-size website favicons (16x16, 32x32, 180x180) and extract HEX color palettes from any image instantly in your browser.">
+  <link rel="canonical" href="https://microtoolstack.com/tools/media/favicon-generator.html">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+  <!-- Organization & FAQ Schema -->
+  <script type="application/ld+json">
+  [
     {
       "@context": "https://schema.org",
       "@type": "WebApplication",
-      "name": "Favicon Generator",
+      "name": "Favicon Generator & Color Palette Extractor",
       "url": "https://microtoolstack.com/tools/media/favicon-generator.html",
       "applicationCategory": "DeveloperApplication",
       "operatingSystem": "All",
-      "description": "Convert logos and images into multi-size web favicons directly inside your browser."
+      "browserRequirements": "Requires JavaScript",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What sizes does this Favicon Generator create?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It automatically generates standard web icon sizes: 16x16 px (browser tab), 32x32 px (taskbar/shortcut), and 180x180 px (Apple Touch Icon)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does the Image Color Palette Extractor work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The tool analyzes pixel data directly on your local browser canvas to identify dominant colors and provides HEX codes for easy copying."
+          }
+        }
+      ]
     }
-    </script>
+  ]
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <style>
+    .app-card {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2.5rem;
+    }
+    .drop-zone {
+      border: 2px dashed #4b5563;
+      border-radius: 8px;
+      padding: 2.5rem 1rem;
+      text-align: center;
+      cursor: pointer;
+      transition: border-color 0.2s ease;
+      background: rgba(0,0,0,0.15);
+      position: relative;
+    }
+    .drop-zone:hover {
+      border-color: #3b82f6;
+    }
+    .drop-zone input[type="file"] {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      cursor: pointer;
+      width: 100%;
+      height: 100%;
+    }
+    .palette-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .color-swatch {
+      height: 70px;
+      border-radius: 8px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 0.5rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      cursor: pointer;
+      color: #fff;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+      transition: transform 0.2s;
+    }
+    .color-swatch:hover {
+      transform: scale(1.05);
+    }
+    .icon-preview-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      align-items: center;
+      margin-top: 1rem;
+    }
+    .icon-box {
+      background: rgba(0,0,0,0.3);
+      border: 1px solid #374151;
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: center;
+    }
+    .btn-download {
+      background-color: #16a34a;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: inline-block;
+      margin-top: 0.5rem;
+    }
+    .btn-download:hover {
+      background-color: #15803d;
+    }
+  </style>
 </head>
 <body>
-    <div id="header-container"></div>
 
-    <main class="container">
-        <!-- Breadcrumb Navigation -->
-        <nav class="breadcrumb-container" aria-label="Breadcrumb">
-            <ol class="breadcrumb-list">
-                <li class="breadcrumb-item"><a href="/">Home</a></li>
-                <li class="breadcrumb-item"><a href="/#media">Media Tools</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Favicon Generator</li>
-            </ol>
-        </nav>
+  <!-- Header -->
+  <header class="custom-header">
+    <a href="/" class="custom-logo"><span>⚡</span> MicroToolStack</a>
+    <nav class="custom-nav">
+      <a href="/#categories">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <button id="theme-toggle" class="custom-theme-btn">🌙</button>
+    </nav>
+  </header>
 
-        <header style="margin-bottom: 1.5rem; text-align: center;">
-            <h1>Free Online Favicon Generator</h1>
-            <p>Convert any image into crisp multi-size favicons for desktop browsers, iOS, and Android.</p>
-        </header>
+  <!-- Main Content -->
+  <main class="container" style="max-width: 900px; margin: 0 auto; padding: 2rem 1rem;">
+    
+    <!-- Title Section -->
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <span class="badge badge-primary" style="margin-bottom: 0.5rem; display: inline-block;">100% Client-Side & Fast</span>
+      <h1>Favicon Generator & Color Palette Extractor</h1>
+      <p style="color: #9ca3af;">Upload any image or logo to create custom web favicons and extract dominant color palettes instantly.</p>
+    </div>
 
-        <!-- Tool Interface -->
-        <section class="tool-card" style="background: #ffffff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 2rem; max-width: 700px; margin: 0 auto 2rem auto; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
-            <div style="margin-bottom: 1.5rem; text-align: center;">
-                <label for="imageInput" style="display: block; font-weight: 600; margin-bottom: 0.5rem; cursor: pointer; padding: 2rem; border: 2px dashed #cbd5e1; border-radius: 6px; background: #f8fafc;">
-                    📁 Select Logo or Image (PNG, JPG, WEBP)
-                    <input type="file" id="imageInput" accept="image/*" style="display: none;">
-                </label>
-            </div>
+    <!-- App Card -->
+    <div class="app-card">
+      <div class="drop-zone">
+        <input type="file" id="image-input" accept="image/png, image/jpeg, image/webp, image/svg+xml">
+        <span style="font-size: 2.5rem; display: block; margin-bottom: 0.5rem;">🌟</span>
+        <p style="margin: 0; font-weight: 600;" id="file-label">Click or Drag & Drop Image Here</p>
+        <span style="font-size: 0.85rem; color: #9ca3af;">Supports PNG, JPG, WEBP, SVG</span>
+      </div>
 
-            <div id="toolResultArea" style="display: none;">
-                <div style="text-align: center; margin-bottom: 1.5rem;">
-                    <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Uploaded Logo Preview</h3>
-                    <img id="sourceImage" src="" alt="Favicon Source Preview" style="max-width: 120px; max-height: 120px; border-radius: 6px; border: 1px solid #e2e8f0; padding: 4px;">
-                </div>
+      <!-- Result Container -->
+      <div id="result-container" style="display: none; margin-top: 2rem;">
+        
+        <!-- Generated Favicons -->
+        <h3 style="color: #fff; border-bottom: 1px solid #374151; padding-bottom: 0.5rem;">📱 Generated Favicons</h3>
+        <div class="icon-preview-grid">
+          <div class="icon-box">
+            <p style="margin: 0 0 0.5rem 0; font-size: 0.8rem; color: #9ca3af;">16x16 (Browser Tab)</p>
+            <canvas id="canvas-16" width="16" height="16" style="margin: 0 auto; display: block; border: 1px solid #555;"></canvas>
+            <a id="dl-16" class="btn-download" href="" download="favicon-16x16.png">Download</a>
+          </div>
 
-                <hr style="border: 0; border-top: 1px solid #e5e7eb; margin-bottom: 1.5rem;">
+          <div class="icon-box">
+            <p style="margin: 0 0 0.5rem 0; font-size: 0.8rem; color: #9ca3af;">32x32 (Shortcut)</p>
+            <canvas id="canvas-32" width="32" height="32" style="margin: 0 auto; display: block; border: 1px solid #555;"></canvas>
+            <a id="dl-32" class="btn-download" href="" download="favicon-32x32.png">Download</a>
+          </div>
 
-                <h3 style="font-size: 1.1rem; margin-bottom: 1rem; text-align: center;">Download Favicon Sizes</h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem;">
-                    <button class="size-btn" onclick="downloadIcon(16)">16x16 PNG<br><small>(Classic Tab Icon)</small></button>
-                    <button class="size-btn" onclick="downloadIcon(32)">32x32 PNG<br><small>(Standard Browser)</small></button>
-                    <button class="size-btn" onclick="downloadIcon(48)">48x48 PNG<br><small>(Desktop Shortcut)</small></button>
-                    <button class="size-btn" onclick="downloadIcon(180)">180x180 PNG<br><small>(Apple Touch Icon)</small></button>
-                </div>
-            </div>
-        </section>
-
-        <!-- SEO Content & Guide -->
-        <article class="content-section" style="max-width: 800px; margin: 0 auto; line-height: 1.6;">
-            <h2>How to Generate Favicons for Your Website</h2>
-            <ol>
-                <li>Click the upload zone and select your site logo or icon.</li>
-                <li>Preview how your image renders in clear resolution.</li>
-                <li>Click any size button (e.g., 16x16, 32x32, or 180x180) to download the instant PNG favicon.</li>
-            </ol>
-
-            <h2>Why is a Favicon Important for SEO and UX?</h2>
-            <p>Favicons enhance brand identification across web browser tabs, search engine result pages (SERPs), and mobile bookmarks. Having standard sizes ensures your logo looks sharp without blurriness on retina screens or high-DPI monitors.</p>
-
-            <h2>Frequently Asked Questions (FAQ)</h2>
-            <details style="margin-bottom: 0.5rem;">
-                <summary style="font-weight: bold; cursor: pointer;">What is the best format for favicons?</summary>
-                <p style="margin-top: 0.5rem;">PNG files with transparent backgrounds are widely supported across modern web browsers and mobile platforms.</p>
-            </details>
-            <details style="margin-bottom: 0.5rem;">
-                <summary style="font-weight: bold; cursor: pointer;">Are my uploaded images safe?</summary>
-                <p style="margin-top: 0.5rem;">Yes! All image resizing happens locally in your web browser. Nothing is uploaded to any server.</p>
-            </details>
-        </article>
-    </main>
-
-    <!-- Global Footer Block (Buy me a coffee & Share) -->
-    <footer style="margin-top: 3rem; padding: 2rem 0; text-align: center; border-top: 1px solid #1e293b; background: transparent;">
-        <div style="display: flex; justify-content: center; align-items: center; gap: 1rem; margin-bottom: 1rem;">
-            <a href="https://buymeacoffee.com/" target="_blank" style="padding: 0.6rem 1.2rem; background: #FFDD00; color: #000000; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 0.5rem;">
-                ☕ Buy me a coffee
-            </a>
-            <button onclick="navigator.share ? navigator.share({title: document.title, url: window.location.href}) : navigator.clipboard.writeText(window.location.href).then(() => alert('Link copied to clipboard!'));" style="padding: 0.6rem 1.2rem; background: #1e293b; color: #ffffff; border: 1px solid #334155; border-radius: 6px; font-weight: bold; font-size: 0.9rem; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem;">
-                🔗 Share
-            </button>
+          <div class="icon-box">
+            <p style="margin: 0 0 0.5rem 0; font-size: 0.8rem; color: #9ca3af;">180x180 (Apple Touch)</p>
+            <canvas id="canvas-180" width="180" height="180" style="margin: 0 auto; display: block; border: 1px solid #555; width: 64px; height: 64px;"></canvas>
+            <a id="dl-180" class="btn-download" href="" download="apple-touch-icon.png">Download</a>
+          </div>
         </div>
-        <p style="font-size: 0.85rem; color: #94a3b8; margin: 0;">© 2026 MicroToolStack. All rights reserved.</p>
-    </footer>
 
-    <style>
-        .size-btn {
-            padding: 0.8rem;
-            background: #f1f5f9;
-            border: 1px solid #cbd5e1;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: 600;
-            color: #1e293b;
-            transition: all 0.2s;
+        <!-- Color Palette Extractor -->
+        <h3 style="color: #fff; border-bottom: 1px solid #374151; padding-bottom: 0.5rem; margin-top: 2.5rem;">🎨 Extracted Color Palette</h3>
+        <p style="font-size: 0.85rem; color: #9ca3af;">Click on any color box to copy its HEX code to your clipboard.</p>
+        <div class="palette-grid" id="palette-grid"></div>
+
+      </div>
+    </div>
+
+    <!-- SEO Deep Content Area -->
+    <article style="line-height: 1.7; color: #d1d5db; border-top: 1px solid #374151; padding-top: 2rem;">
+      <h2 style="color: #fff;">How to Create Website Favicons and Extract Image Palettes</h2>
+      <p>A favicon is a small icon that appears next to your website title in web browser tabs, bookmarks, and search engine results. Having a clear, multi-resolution favicon establishes brand recognition and improves user trust. In addition, extracting matching color palettes helps developers create unified UI/UX web designs.</p>
+
+      <h3 style="color: #fff; margin-top: 1.5rem;">Step-by-Step Instructions:</h3>
+      <ul>
+        <li>Upload your brand logo or image (PNG or JPG format works best).</li>
+        <li>The tool automatically renders preview icons for <strong>16x16</strong>, <strong>32x32</strong>, and <strong>180x180</strong> pixels.</li>
+        <li>Click <strong>Download</strong> under any icon size to save the file.</li>
+        <li>Explore the extracted color palette below and click any swatch to copy its HEX color code.</li>
+      </ul>
+
+      <h3 style="color: #fff; margin-top: 1.5rem;">Frequently Asked Questions</h3>
+      <div style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+        <strong style="color: #fff;">Why do I need different favicon sizes?</strong>
+        <p style="margin: 0.5rem 0 0 0;">Different devices and platforms require specific dimensions. Desktop browser tabs use 16x16, taskbars use 32x32, while iOS devices use 180x180 for home screen shortcuts.</p>
+      </div>
+      <div style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 8px;">
+        <strong style="color: #fff;">Are my images uploaded to any server?</strong>
+        <p style="margin: 0.5rem 0 0 0;">No. Icon generation and color palette extraction occur 100% locally inside your web browser.</p>
+      </div>
+    </article>
+
+  </main>
+
+  <div id="footer-container"></div>
+
+  <!-- Scripts -->
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
+
+  <!-- Client JavaScript Logic -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const input = document.getElementById('image-input');
+      const label = document.getElementById('file-label');
+      const resultContainer = document.getElementById('result-container');
+      const paletteGrid = document.getElementById('palette-grid');
+
+      input.addEventListener('change', function(e) {
+        const file = e.target.files[0];
+        if (!file) return;
+
+        label.textContent = `Selected: ${file.name}`;
+        const reader = new FileReader();
+
+        reader.onload = function(event) {
+          const img = new Image();
+          img.onload = function() {
+            // Render Favicons
+            renderFavicon('canvas-16', 'dl-16', img, 16, 16);
+            renderFavicon('canvas-32', 'dl-32', img, 32, 32);
+            renderFavicon('canvas-180', 'dl-180', img, 180, 180);
+
+            // Extract Palette
+            extractPalette(img);
+
+            resultContainer.style.display = 'block';
+          };
+          img.src = event.target.result;
+        };
+        reader.readAsDataURL(file);
+      });
+
+      function renderFavicon(canvasId, dlId, img, width, height) {
+        const canvas = document.getElementById(canvasId);
+        const ctx = canvas.getContext('2d');
+        ctx.clearRect(0, 0, width, height);
+        ctx.drawImage(img, 0, 0, width, height);
+
+        const dataUrl = canvas.toDataURL('image/png');
+        const dlBtn = document.getElementById(dlId);
+        dlBtn.href = dataUrl;
+      }
+
+      function extractPalette(img) {
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = 100;
+        canvas.height = 100;
+        ctx.drawImage(img, 0, 0, 100, 100);
+
+        const imageData = ctx.getImageData(0, 0, 100, 100).data;
+        const colorCounts = {};
+
+        for (let i = 0; i < imageData.length; i += 16) {
+          const r = imageData[i];
+          const g = imageData[i + 1];
+          const b = imageData[i + 2];
+          const a = imageData[i + 3];
+
+          if (a < 128) continue; // skip transparent
+
+          const hex = `#${((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)}`;
+          colorCounts[hex] = (colorCounts[hex] || 0) + 1;
         }
-        .size-btn:hover {
-            background: #2563eb;
-            color: #ffffff;
-            border-color: #2563eb;
-        }
-    </style>
 
-    <script>
-        const imageInput = document.getElementById('imageInput');
-        const toolResultArea = document.getElementById('toolResultArea');
-        const sourceImage = document.getElementById('sourceImage');
+        const sortedColors = Object.keys(colorCounts)
+          .sort((a, b) => colorCounts[b] - colorCounts[a])
+          .slice(0, 6);
 
-        imageInput.addEventListener('change', (e) => {
-            const file = e.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = (event) => {
-                    sourceImage.src = event.target.result;
-                    sourceImage.onload = () => {
-                        toolResultArea.style.display = 'block';
-                    };
-                };
-                reader.readAsDataURL(file);
-            }
+        paletteGrid.innerHTML = sortedColors.map(hex => `
+          <div class="color-swatch" style="background-color: ${hex};" onclick="copyColor('${hex}', this)">
+            ${hex}
+          </div>
+        `).join('');
+      }
+
+      window.copyColor = function(hex, element) {
+        navigator.clipboard.writeText(hex).then(() => {
+          const origText = element.textContent;
+          element.textContent = 'Copied!';
+          setTimeout(() => { element.textContent = hex; }, 1200);
         });
-
-        function downloadIcon(size) {
-            const canvas = document.createElement('canvas');
-            canvas.width = size;
-            canvas.height = size;
-            const ctx = canvas.getContext('2d');
-            ctx.drawImage(sourceImage, 0, 0, size, size);
-
-            const dataUrl = canvas.toDataURL('image/png');
-            const link = document.createElement('a');
-            link.href = dataUrl;
-            link.download = `favicon-${size}x${size}.png`;
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        }
-    </script>
+      };
+    });
+  </script>
 </body>
 </html>
