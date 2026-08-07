@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Color Palette Extractor | MicroToolStack</title>
+    <meta name="description" content="Extract dominant color palettes and exact HEX color codes from any image or photo instantly in your browser for free.">
+    
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/components.css">
+    <link rel="stylesheet" href="/assets/css/tools.css">
+
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Image Color Palette Extractor",
+      "url": "https://microtoolstack.com/tools/media/color-palette-extractor.html",
+      "applicationCategory": "DesignApplication",
+      "operatingSystem": "All",
+      "description": "Extract precise HEX color codes and design palettes directly from uploaded images."
+    }
+    </script>
+</head>
+<body>
+    <div id="header-container"></div>
+
+    <main class="container">
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb-container" aria-label="Breadcrumb">
+            <ol class="breadcrumb-list">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/#media">Media Tools</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Color Palette Extractor</li>
+            </ol>
+        </nav>
+
+        <header style="margin-bottom: 1.5rem; text-align: center;">
+            <h1>Image Color Palette Extractor</h1>
+            <p>Upload any picture to automatically identify dominant colors and grab their HEX codes.</p>
+        </header>
+
+        <!-- Tool Interface -->
+        <section class="tool-card" style="background: #ffffff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 2rem; max-width: 750px; margin: 0 auto 2rem auto; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+            <div style="margin-bottom: 1.5rem; text-align: center;">
+                <label for="imageInput" style="display: block; font-weight: 600; margin-bottom: 0.5rem; cursor: pointer; padding: 2rem; border: 2px dashed #cbd5e1; border-radius: 6px; background: #f8fafc;">
+                    📁 Select Image (PNG, JPG, WEBP)
+                    <input type="file" id="imageInput" accept="image/*" style="display: none;">
+                </label>
+            </div>
+
+            <div id="toolResultArea" style="display: none;">
+                <div style="display: flex; gap: 2rem; flex-wrap: wrap; align-items: center; justify-content: center;">
+                    <div style="text-align: center;">
+                        <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Image Preview</h3>
+                        <img id="sourceImage" src="" alt="Color Source Preview" style="max-width: 200px; max-height: 200px; border-radius: 6px; border: 1px solid #e2e8f0; padding: 4px;">
+                    </div>
+                    
+                    <div style="flex: 1; min-width: 250px;">
+                        <h3 style="font-size: 1rem; margin-bottom: 0.5rem; text-align: center;">Dominant HEX Colors</h3>
+                        <div id="paletteContainer" style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEO Content & Guide -->
+        <article class="content-section" style="max-width: 800px; margin: 0 auto; line-height: 1.6;">
+            <h2>How to Extract Color Palettes from Images</h2>
+            <ol>
+                <li>Click the upload section to choose your image file.</li>
+                <li>The algorithm will analyze image pixels in real-time.</li>
+                <li>Click on any extracted color tile to copy the <strong>HEX code</strong> to your clipboard.</li>
+            </ol>
+
+            <h2>Why Extract Colors from Images?</h2>
+            <p>UI designers, web developers, and graphic creators frequently use photo color sampling to create harmonious color schemes for web branding, UI themes, or social media graphics.</p>
+
+            <h2>Frequently Asked Questions (FAQ)</h2>
+            <details style="margin-bottom: 0.5rem;">
+                <summary style="font-weight: bold; cursor: pointer;">How are the main colors calculated?</summary>
+                <p style="margin-top: 0.5rem;">The tool samples pixel values using browser canvas elements and groups dominant RGB values into primary color palettes.</p>
+            </details>
+            <details style="margin-bottom: 0.5rem;">
+                <summary style="font-weight: bold; cursor: pointer;">Is there any file size limit?</summary>
+                <p style="margin-top: 0.5rem;">Since processing happens inside your browser without server uploads, it works quickly on any image size your device can load.</p>
+            </details>
+        </article>
+    </main>
+
+    <style>
+        .color-badge {
+            width: 70px;
+            height: 70px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: bold;
+            color: #ffffff;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.7);
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        .color-badge:hover {
+            transform: scale(1.08);
+        }
+    </style>
+
+    <script>
+        const imageInput = document.getElementById('imageInput');
+        const toolResultArea = document.getElementById('toolResultArea');
+        const sourceImage = document.getElementById('sourceImage');
+        const paletteContainer = document.getElementById('paletteContainer');
+
+        imageInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    sourceImage.src = event.target.result;
+                    sourceImage.onload = () => {
+                        toolResultArea.style.display = 'block';
+                        extractPalette(sourceImage);
+                    };
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        function extractPalette(img) {
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = 50;
+            canvas.height = 50;
+            ctx.drawImage(img, 0, 0, 50, 50);
+
+            const imageData = ctx.getImageData(0, 0, 50, 50).data;
+            const colorCounts = {};
+
+            for (let i = 0; i < imageData.length; i += 16) {
+                const r = imageData[i];
+                const g = imageData[i + 1];
+                const b = imageData[i + 2];
+                const alpha = imageData[i + 3];
+
+                if (alpha < 128) continue; // Skip transparent pixels
+
+                const hex = "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+                colorCounts[hex] = (colorCounts[hex] || 0) + 1;
+            }
+
+            const sortedColors = Object.keys(colorCounts).sort((a, b) => colorCounts[b] - colorCounts[a]).slice(0, 6);
+
+            paletteContainer.innerHTML = '';
+            sortedColors.forEach(hex => {
+                const badge = document.createElement('div');
+                badge.className = 'color-badge';
+                badge.style.backgroundColor = hex;
+                badge.innerText = hex.toUpperCase();
+                badge.title = 'Click to copy HEX code';
+                badge.onclick = () => {
+                    navigator.clipboard.writeText(hex.toUpperCase());
+                    alert(`Copied ${hex.toUpperCase()} to clipboard!`);
+                };
+                paletteContainer.appendChild(badge);
+            });
+        }
+    </script>
+</body>
+</html>
