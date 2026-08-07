@@ -17,8 +17,53 @@ async function loadComponent(elementId, filepath) {
   }
 }
 
+/**
+ * Dynamic Categories & Tools Count Renderer
+ */
+async function renderCategoriesWithDynamicCount() {
+  const categoryGrid = document.getElementById('category-grid'); // আপনার ক্যাটাগরি গ্রিড কন্টেইনারের ID
+  if (!categoryGrid) return;
+
+  try {
+    // Fetch both categories and tools data concurrently
+    const [catRes, toolRes] = await Promise.all([
+      fetch('/data/categories.json'),
+      fetch('/data/tools.json')
+    ]);
+
+    if (!catRes.ok || !toolRes.ok) return;
+
+    const categories = await catRes.json();
+    const tools = await toolRes.json();
+
+    // Render category cards with dynamic count calculated from tools.json
+    categoryGrid.innerHTML = categories.map(cat => {
+      // Calculate real total count for this category dynamically
+      const dynamicCount = tools.filter(tool => tool.category === cat.id).length;
+
+      return `
+        <div class="category-card">
+          <div class="category-icon">${cat.icon || '📁'}</div>
+          <h3>${cat.name}</h3>
+          <p>${cat.description}</p>
+          <a href="${cat.url || '/#categories'}" class="category-link">View ${dynamicCount} →</a>
+        </div>
+      `;
+    }).join('');
+
+  } catch (err) {
+    console.error('Failed to render dynamic categories:', err);
+  }
+}
+
 document.addEventListener('DOMContentLoaded', async () => {
- 
+
+  // Load Footer Component if present
+  await loadComponent('footer-container', '/components/footer.html');
+
+  // Dynamically calculate and render categories count on Home Page
+  await renderCategoriesWithDynamicCount();
+
   // Re-sync Theme Manager Buttons after Header Injection
   if (window.ThemeManager) {
     const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
@@ -44,8 +89,13 @@ document.addEventListener('DOMContentLoaded', async () => {
       const element = document.getElementById(targetId);
       if (element) {
         const text = element.value || element.textContent;
-        copyToClipboard(text);
+        if (typeof copyToClipboard === 'function') {
+          copyToClipboard(text);
+        } else {
+          navigator.clipboard.writeText(text);
+        }
       }
     }
   });
+
 });
