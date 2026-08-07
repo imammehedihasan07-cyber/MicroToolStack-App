@@ -92,6 +92,19 @@
         </article>
     </main>
 
+    <!-- Global Footer Block (Buy me a coffee & Share) -->
+    <footer style="margin-top: 3rem; padding: 2rem 0; text-align: center; border-top: 1px solid #1e293b; background: transparent;">
+        <div style="display: flex; justify-content: center; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+            <a href="https://buymeacoffee.com/" target="_blank" style="padding: 0.6rem 1.2rem; background: #FFDD00; color: #000000; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 0.5rem;">
+                ☕ Buy me a coffee
+            </a>
+            <button onclick="navigator.share ? navigator.share({title: document.title, url: window.location.href}) : navigator.clipboard.writeText(window.location.href).then(() => alert('Link copied to clipboard!'));" style="padding: 0.6rem 1.2rem; background: #1e293b; color: #ffffff; border: 1px solid #334155; border-radius: 6px; font-weight: bold; font-size: 0.9rem; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem;">
+                🔗 Share
+            </button>
+        </div>
+        <p style="font-size: 0.85rem; color: #94a3b8; margin: 0;">© 2026 MicroToolStack. All rights reserved.</p>
+    </footer>
+
     <style>
         .size-btn {
             padding: 0.8rem;
