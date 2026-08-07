@@ -28,7 +28,7 @@
   <link rel="canonical" href="https://microtoolstack.com/">
   <meta name="robots" content="index, follow">
 
-  <!-- Favicon Icon (UPDATED HERE) -->
+  <!-- Favicon Icon -->
   <link rel="icon" type="image/png" href="/assets/images/favicon.png">
 
   <script type="application/ld+json">
@@ -156,7 +156,6 @@
 
   <!-- Header Section -->
   <header class="custom-header">
-    <!-- Header Logo Image (UPDATED HERE TO LOGO-WHITE) -->
     <a href="/" class="custom-logo">
       <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
     </a>
@@ -228,12 +227,12 @@
   <div id="footer-container"></div>
 
   <!-- Core Scripts -->
-<script src="/assets/js/theme.js"></script>
-<script src="/assets/js/utils.js" defer></script>
-<script src="/assets/js/search.js" defer></script>
-<script src="/assets/js/app.js" defer></script>
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/search.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
 
-<!-- Homepage Loader Logic -->
+  <!-- Homepage Loader Logic -->
   <script>
     (async function loadData() {
       try {
@@ -246,6 +245,9 @@
         const tools = await toolsRes.json();
         const categories = await catRes.json();
         const faqs = await faqRes.json();
+
+        // Helper to normalize strings for exact matching
+        const cleanStr = str => (str || '').toString().toLowerCase().replace(/[^a-z0-9]/g, '');
 
         // Render Popular Tools
         const popularGrid = document.getElementById('popular-tools-grid');
@@ -260,17 +262,24 @@
           `).join('');
         }
 
-        // Render Categories
+        // Render Categories with 100% Dynamic Tool Count from tools.json
         const catGrid = document.getElementById('categories-grid');
         if (catGrid) {
-          catGrid.innerHTML = categories.map(cat => `
-            <div class="card card-interactive tool-card" onclick="filterCategory('${cat.id}', '${cat.name}')" style="cursor: pointer;">
-              <div class="tool-card-icon">${cat.icon || '📂'}</div>
-              <h3>${cat.name}</h3>
-              <p>${cat.description || ''}</p>
-              <span style="font-size: 0.85rem; color: var(--accent-primary, #3b82f6); font-weight: 600; margin-top: 0.75rem; display: block;">View ${cat.count || 'Tools'} →</span>
-            </div>
-          `).join('');
+          catGrid.innerHTML = categories.map(cat => {
+            const cleanCatId = cleanStr(cat.id);
+            
+            // Live count directly calculated from tools.json
+            const liveCount = tools.filter(tool => cleanStr(tool.category) === cleanCatId).length;
+
+            return `
+              <div class="card card-interactive tool-card" onclick="filterCategory('${cat.id}', '${cat.name}')" style="cursor: pointer;">
+                <div class="tool-card-icon">${cat.icon || '📂'}</div>
+                <h3>${cat.name}</h3>
+                <p>${cat.description || ''}</p>
+                <span style="font-size: 0.85rem; color: var(--accent-primary, #3b82f6); font-weight: 600; margin-top: 0.75rem; display: block;">View ${liveCount} →</span>
+              </div>
+            `;
+          }).join('');
         }
 
         // Global Category Filter
@@ -279,7 +288,8 @@
           const catTitle = document.getElementById('category-title');
           const catToolsGrid = document.getElementById('category-tools-grid');
 
-          const filteredTools = tools.filter(t => t.category === catId);
+          const cleanCatId = cleanStr(catId);
+          const filteredTools = tools.filter(t => cleanStr(t.category) === cleanCatId);
 
           if (catTitle) catTitle.textContent = `${catName} (${filteredTools.length})`;
           if (catToolsGrid) {
@@ -313,6 +323,7 @@
       }
     })();
   </script>
+
   <!-- Adsterra Banner Script -->
   <script src="https://p130663884.effectivecpmnetwork.com/81/02/32/8102329c43de17d196371b4a3e3bed7f.js"></script>
 
