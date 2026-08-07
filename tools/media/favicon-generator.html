@@ -19,8 +19,8 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Free Favicon Generator & Color Palette Extractor | MicroToolStack</title>
-  <meta name="description" content="Generate multi-size website favicons (16x16, 32x32, 180x180) and extract HEX color palettes from any image instantly in your browser.">
+  <title>Free Online Favicon Generator | MicroToolStack</title>
+  <meta name="description" content="Generate multi-size website favicons (16x16, 32x32, 180x180) from PNG, JPG, or WEBP images instantly in your browser. Free and private.">
   <link rel="canonical" href="https://microtoolstack.com/tools/media/favicon-generator.html">
   <meta name="robots" content="index, follow">
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -31,7 +31,7 @@
     {
       "@context": "https://schema.org",
       "@type": "WebApplication",
-      "name": "Favicon Generator & Color Palette Extractor",
+      "name": "Favicon Generator",
       "url": "https://microtoolstack.com/tools/media/favicon-generator.html",
       "applicationCategory": "DeveloperApplication",
       "operatingSystem": "All",
@@ -52,14 +52,6 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "It automatically generates standard web icon sizes: 16x16 px (browser tab), 32x32 px (taskbar/shortcut), and 180x180 px (Apple Touch Icon)."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How does the Image Color Palette Extractor work?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The tool analyzes pixel data directly on your local browser canvas to identify dominant colors and provides HEX codes for easy copying."
           }
         }
       ]
@@ -99,42 +91,21 @@
       width: 100%;
       height: 100%;
     }
-    .palette-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-    .color-swatch {
-      height: 70px;
-      border-radius: 8px;
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      padding: 0.5rem;
-      font-size: 0.8rem;
-      font-weight: 700;
-      cursor: pointer;
-      color: #fff;
-      text-shadow: 0 1px 3px rgba(0,0,0,0.8);
-      transition: transform 0.2s;
-    }
-    .color-swatch:hover {
-      transform: scale(1.05);
-    }
     .icon-preview-grid {
       display: flex;
       flex-wrap: wrap;
       gap: 1.5rem;
       align-items: center;
-      margin-top: 1rem;
+      justify-content: center;
+      margin-top: 1.5rem;
     }
     .icon-box {
       background: rgba(0,0,0,0.3);
       border: 1px solid #374151;
       border-radius: 8px;
-      padding: 1rem;
+      padding: 1.25rem;
       text-align: center;
+      min-width: 140px;
     }
     .btn-download {
       background-color: #16a34a;
@@ -145,7 +116,7 @@
       font-size: 0.85rem;
       font-weight: 600;
       display: inline-block;
-      margin-top: 0.5rem;
+      margin-top: 0.75rem;
     }
     .btn-download:hover {
       background-color: #15803d;
@@ -154,7 +125,6 @@
 </head>
 <body>
 
-  <!-- Header -->
   <header class="custom-header">
     <a href="/" class="custom-logo"><span>⚡</span> MicroToolStack</a>
     <nav class="custom-nav">
@@ -165,17 +135,13 @@
     </nav>
   </header>
 
-  <!-- Main Content -->
   <main class="container" style="max-width: 900px; margin: 0 auto; padding: 2rem 1rem;">
-    
-    <!-- Title Section -->
     <div style="text-align: center; margin-bottom: 2rem;">
-      <span class="badge badge-primary" style="margin-bottom: 0.5rem; display: inline-block;">100% Client-Side & Fast</span>
-      <h1>Favicon Generator & Color Palette Extractor</h1>
-      <p style="color: #9ca3af;">Upload any image or logo to create custom web favicons and extract dominant color palettes instantly.</p>
+      <span class="badge badge-primary" style="margin-bottom: 0.5rem; display: inline-block;">100% Client-Side & Private</span>
+      <h1>Free Online Favicon Generator</h1>
+      <p style="color: #9ca3af;">Upload any image or logo to create custom web favicons for browser tabs, taskbars, and iOS shortcuts.</p>
     </div>
 
-    <!-- App Card -->
     <div class="app-card">
       <div class="drop-zone">
         <input type="file" id="image-input" accept="image/png, image/jpeg, image/webp, image/svg+xml">
@@ -184,11 +150,8 @@
         <span style="font-size: 0.85rem; color: #9ca3af;">Supports PNG, JPG, WEBP, SVG</span>
       </div>
 
-      <!-- Result Container -->
       <div id="result-container" style="display: none; margin-top: 2rem;">
-        
-        <!-- Generated Favicons -->
-        <h3 style="color: #fff; border-bottom: 1px solid #374151; padding-bottom: 0.5rem;">📱 Generated Favicons</h3>
+        <h3 style="color: #fff; border-bottom: 1px solid #374151; padding-bottom: 0.5rem; text-align: center;">📱 Generated Favicons</h3>
         <div class="icon-preview-grid">
           <div class="icon-box">
             <p style="margin: 0 0 0.5rem 0; font-size: 0.8rem; color: #9ca3af;">16x16 (Browser Tab)</p>
@@ -208,55 +171,33 @@
             <a id="dl-180" class="btn-download" href="" download="apple-touch-icon.png">Download</a>
           </div>
         </div>
-
-        <!-- Color Palette Extractor -->
-        <h3 style="color: #fff; border-bottom: 1px solid #374151; padding-bottom: 0.5rem; margin-top: 2.5rem;">🎨 Extracted Color Palette</h3>
-        <p style="font-size: 0.85rem; color: #9ca3af;">Click on any color box to copy its HEX code to your clipboard.</p>
-        <div class="palette-grid" id="palette-grid"></div>
-
       </div>
     </div>
 
-    <!-- SEO Deep Content Area -->
     <article style="line-height: 1.7; color: #d1d5db; border-top: 1px solid #374151; padding-top: 2rem;">
-      <h2 style="color: #fff;">How to Create Website Favicons and Extract Image Palettes</h2>
-      <p>A favicon is a small icon that appears next to your website title in web browser tabs, bookmarks, and search engine results. Having a clear, multi-resolution favicon establishes brand recognition and improves user trust. In addition, extracting matching color palettes helps developers create unified UI/UX web designs.</p>
+      <h2 style="color: #fff;">How to Create Website Favicons</h2>
+      <p>A favicon is a small icon that appears next to your website title in web browser tabs, bookmarks, and search engine results. Having a clear, multi-resolution favicon establishes brand recognition and improves user trust.</p>
 
       <h3 style="color: #fff; margin-top: 1.5rem;">Step-by-Step Instructions:</h3>
       <ul>
         <li>Upload your brand logo or image (PNG or JPG format works best).</li>
         <li>The tool automatically renders preview icons for <strong>16x16</strong>, <strong>32x32</strong>, and <strong>180x180</strong> pixels.</li>
         <li>Click <strong>Download</strong> under any icon size to save the file.</li>
-        <li>Explore the extracted color palette below and click any swatch to copy its HEX color code.</li>
       </ul>
-
-      <h3 style="color: #fff; margin-top: 1.5rem;">Frequently Asked Questions</h3>
-      <div style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
-        <strong style="color: #fff;">Why do I need different favicon sizes?</strong>
-        <p style="margin: 0.5rem 0 0 0;">Different devices and platforms require specific dimensions. Desktop browser tabs use 16x16, taskbars use 32x32, while iOS devices use 180x180 for home screen shortcuts.</p>
-      </div>
-      <div style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 8px;">
-        <strong style="color: #fff;">Are my images uploaded to any server?</strong>
-        <p style="margin: 0.5rem 0 0 0;">No. Icon generation and color palette extraction occur 100% locally inside your web browser.</p>
-      </div>
     </article>
-
   </main>
 
   <div id="footer-container"></div>
 
-  <!-- Scripts -->
   <script src="/assets/js/theme.js"></script>
   <script src="/assets/js/utils.js" defer></script>
   <script src="/assets/js/app.js" defer></script>
 
-  <!-- Client JavaScript Logic -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const input = document.getElementById('image-input');
       const label = document.getElementById('file-label');
       const resultContainer = document.getElementById('result-container');
-      const paletteGrid = document.getElementById('palette-grid');
 
       input.addEventListener('change', function(e) {
         const file = e.target.files[0];
@@ -268,14 +209,9 @@
         reader.onload = function(event) {
           const img = new Image();
           img.onload = function() {
-            // Render Favicons
             renderFavicon('canvas-16', 'dl-16', img, 16, 16);
             renderFavicon('canvas-32', 'dl-32', img, 32, 32);
             renderFavicon('canvas-180', 'dl-180', img, 180, 180);
-
-            // Extract Palette
-            extractPalette(img);
-
             resultContainer.style.display = 'block';
           };
           img.src = event.target.result;
@@ -293,47 +229,6 @@
         const dlBtn = document.getElementById(dlId);
         dlBtn.href = dataUrl;
       }
-
-      function extractPalette(img) {
-        const canvas = document.createElement('canvas');
-        const ctx = canvas.getContext('2d');
-        canvas.width = 100;
-        canvas.height = 100;
-        ctx.drawImage(img, 0, 0, 100, 100);
-
-        const imageData = ctx.getImageData(0, 0, 100, 100).data;
-        const colorCounts = {};
-
-        for (let i = 0; i < imageData.length; i += 16) {
-          const r = imageData[i];
-          const g = imageData[i + 1];
-          const b = imageData[i + 2];
-          const a = imageData[i + 3];
-
-          if (a < 128) continue; // skip transparent
-
-          const hex = `#${((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)}`;
-          colorCounts[hex] = (colorCounts[hex] || 0) + 1;
-        }
-
-        const sortedColors = Object.keys(colorCounts)
-          .sort((a, b) => colorCounts[b] - colorCounts[a])
-          .slice(0, 6);
-
-        paletteGrid.innerHTML = sortedColors.map(hex => `
-          <div class="color-swatch" style="background-color: ${hex};" onclick="copyColor('${hex}', this)">
-            ${hex}
-          </div>
-        `).join('');
-      }
-
-      window.copyColor = function(hex, element) {
-        navigator.clipboard.writeText(hex).then(() => {
-          const origText = element.textContent;
-          element.textContent = 'Copied!';
-          setTimeout(() => { element.textContent = hex; }, 1200);
-        });
-      };
     });
   </script>
 </body>
