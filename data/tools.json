@@ -566,5 +566,14 @@
   "url": "/tools/ai/prompt-builder.html",
   "icon": "🤖",
   "isPopular": true
+},
+  {
+  "id": "code-to-image",
+  "name": "Code Snippet to Image Generator",
+  "description": "Convert source code into high-resolution social media graphics for Twitter, LinkedIn, and blogs.",
+  "category": "developer",
+  "url": "/tools/developer/code-to-image.html",
+  "icon": "💻",
+  "isPopular": true
 }
 ]
