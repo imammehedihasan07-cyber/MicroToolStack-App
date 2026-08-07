@@ -532,14 +532,23 @@
   "isPopular": true
 },
   {
-  "id": "favicon-generator",
-  "name": "Favicon Generator & Color Palette Extractor",
-  "description": "Generate multi-size favicons (16x16, 32x32, 180x180) and extract color palettes from any image.",
-  "category": "media",
-  "url": "/tools/media/favicon-generator.html",
-  "icon": "🌟",
-  "isPopular": true
-},
+    "id": "favicon-generator",
+    "name": "Favicon Generator",
+    "description": "Generate multi-size web favicons (16x16, 32x32, 180x180) from any image.",
+    "category": "media",
+    "url": "/tools/media/favicon-generator.html",
+    "icon": "🌟",
+    "isPopular": true
+  },
+  {
+    "id": "color-palette-extractor",
+    "name": "Color Palette Extractor",
+    "description": "Extract dominant HEX color palettes from any image or photo instantly.",
+    "category": "media",
+    "url": "/tools/media/color-palette-extractor.html",
+    "icon": "🎨",
+    "isPopular": true
+  },
   {
   "id": "qr-code-generator",
   "name": "Custom QR Code Generator with Logo",
