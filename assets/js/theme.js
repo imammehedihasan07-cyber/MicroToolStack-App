@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initThemeToggle();
 });
 
-// Render Header Navbar
+// Render Header Navbar with Brand Image Logo
 function renderNavbar() {
     const headerContainer = document.getElementById('header-container');
     if (!headerContainer) return;
@@ -16,7 +16,7 @@ function renderNavbar() {
     headerContainer.innerHTML = `
         <header class="custom-header">
             <a href="/" class="custom-logo">
-                <span>⚡</span> MicroToolStack
+                <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto; display: block;">
             </a>
             <nav class="custom-nav">
                 <a href="/#categories">Categories</a>
