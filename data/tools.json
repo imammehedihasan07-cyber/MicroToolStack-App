@@ -468,17 +468,6 @@
     "tags": ["exif", "metadata", "camera", "info", "photo"]
   },
   {
-    "id": "favicon-generator",
-    "name": "Favicon Generator",
-    "category": "media",
-    "url": "/tools/media/favicon-generator.html",
-    "description": "Convert logos and images into multi-size website favicons instantly.",
-    "icon": "🌐",
-    "isPopular": false,
-    "isNew": true,
-    "tags": ["favicon", "icon", "website", "generate", "app icon"]
-  },
-  {
     "id": "ico-converter",
     "name": "ICO Converter",
     "category": "media",
