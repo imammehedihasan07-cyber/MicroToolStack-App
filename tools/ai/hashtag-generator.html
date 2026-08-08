@@ -1,56 +1,284 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) - Optimized Load -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var gTagScript = document.createElement('script');
+        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        gTagScript.async = true;
+        document.head.appendChild(gTagScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F3WWR9KGB4');
+      }, 1000);
+    });
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Hashtag Generator | MicroToolStack</title>
-  <meta name="description" content="Generate high-reach relevant hashtags for Instagram, TikTok, and YouTube.">
   
-  <link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="stylesheet" href="/assets/css/components.css">
-  <link rel="stylesheet" href="/assets/css/tools.css">
+  <!-- Primary SEO Meta Tags -->
+  <title>Free AI Hashtag Generator | Instagram, TikTok & YouTube</title>
+  <meta name="description" content="Generate high-reach relevant hashtags for Instagram, TikTok, and YouTube instantly using AI. Find top-performing niche hashtags to boost social media engagement.">
+  <meta name="keywords" content="ai hashtag generator, instagram hashtag generator, tiktok hashtags maker, YouTube hashtag tool, trending social media hashtags, niche hashtag finder">
+
+  <link rel="canonical" href="https://microtoolstack.com/tools/ai/hashtag-generator.html">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://microtoolstack.com/tools/ai/hashtag-generator.html">
+  <meta property="og:title" content="Free AI Hashtag Generator | MicroToolStack">
+  <meta property="og:description" content="Generate high-reach relevant hashtags for Instagram, TikTok, and YouTube instantly using AI. 100% free and easy to use.">
+  <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
+
+  <!-- Favicon Icon for Google & Devices -->
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
+
+  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "AI Hashtag Generator",
+        "operatingSystem": "All",
+        "applicationCategory": "UtilitiesApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "An intelligent social media utility tool to generate high-reach, relevant hashtags for Instagram, TikTok, and YouTube.",
+        "url": "https://microtoolstack.com/tools/ai/hashtag-generator.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How many hashtags should I use on Instagram?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Instagram allows up to 30 hashtags per post, though using between 10 to 20 highly targeted niche hashtags typically yields optimal reach and engagement."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is the AI Hashtag Generator free to use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! MicroToolStack's AI Hashtag Generator is 100% free with unlimited hashtag generations and no registration required."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Preconnect and Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <style>
+    .app-card {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2.5rem;
+    }
+    .search-input {
+      width: 100%;
+      padding: 0.75rem;
+      font-size: 0.95rem;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 6px);
+      background-color: var(--bg-body, #111827);
+      color: var(--text-primary, #fff);
+      outline: none;
+      box-sizing: border-box;
+    }
+    .tool-textarea {
+      width: 100%;
+      min-height: 160px;
+      padding: 1rem;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-body, #111827);
+      color: #34d399;
+      outline: none;
+      resize: vertical;
+      box-sizing: border-box;
+      margin-top: 0.5rem;
+    }
+    .btn-primary {
+      background-color: var(--accent-primary, #2563eb);
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-primary:hover {
+      opacity: 0.9;
+    }
+    .content-box {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .content-box h2 {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul {
+      color: var(--text-secondary, #9ca3af);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .content-box ul {
+      padding-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .content-box li {
+      margin-bottom: 0.5rem;
+    }
+    .related-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .related-card {
+      display: block;
+      padding: 1rem;
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      color: var(--text-primary, #fff);
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .related-card:hover {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+  </style>
 </head>
-<body>
-  <div id="header-container"></div>
+<body style="margin: 0; padding: 0;">
 
-  <main class="container">
-    <nav class="breadcrumb-container" aria-label="Breadcrumb">
-      <ol class="breadcrumb-list">
-        <li class="breadcrumb-item"><a href="/">Home</a></li>
-        <li class="breadcrumb-item"><a href="/#ai">AI Tools</a></li>
-        <li class="breadcrumb-item active" aria-current="page">AI Hashtag Generator</li>
-      </ol>
+  <!-- Header Section -->
+  <header class="custom-header">
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
+    </a>
+    <nav class="custom-nav">
+      <a href="/#categories">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
     </nav>
+  </header>
 
-    <header style="margin-bottom: 1.5rem;">
-      <h1>AI Hashtag Generator</h1>
-      <p>Find top-performing niche hashtags for your social media posts.</p>
-    </header>
+  <!-- Main Container -->
+  <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
+    <!-- Breadcrumb Navigation -->
+    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
+      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
+      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">AI Tools</a> / 
+      <span>AI Hashtag Generator</span>
+    </nav>
+    
+    <!-- Title Section -->
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">AI Hashtag Generator</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Find top-performing niche hashtags for your social media posts.</p>
+    </div>
 
-    <div class="tool-layout">
-      <div class="tool-container">
-        <label style="font-weight: 600; display: block; margin-bottom: 0.5rem;">Enter Keyword or Niche:</label>
-        <input type="text" id="ai-input" class="search-input" placeholder="e.g. Digital Marketing, Web Development, Fitness Motivation" style="margin-bottom: 1rem;">
+    <!-- App Card -->
+    <div class="app-card">
+      <label style="font-weight: 600; display: block; margin-bottom: 0.5rem; color: #fff;">Enter Keyword or Niche:</label>
+      <input type="text" id="ai-input" class="search-input" placeholder="e.g. Digital Marketing, Web Development, Fitness Motivation" style="margin-bottom: 1rem;">
 
-        <div class="tool-controls">
-          <button class="btn btn-primary" id="btn-generate">✨ Generate Hashtags</button>
-        </div>
+      <div>
+        <button class="btn btn-primary" id="btn-generate">✨ Generate Hashtags</button>
+      </div>
 
-        <label style="font-weight: 600; display: block; margin-top: 1.5rem; margin-bottom: 0.5rem;">Hashtags Output:</label>
-        <textarea id="ai-output" class="tool-textarea" readonly placeholder="Hashtags will appear here..."></textarea>
+      <label style="font-weight: 600; display: block; margin-top: 1.5rem; margin-bottom: 0.5rem; color: #fff;">Hashtags Output:</label>
+      <textarea id="ai-output" class="tool-textarea" readonly placeholder="Hashtags will appear here..."></textarea>
 
-        <div class="tool-controls" style="margin-top: 1rem;">
-          <button class="btn btn-primary" data-copy-target="ai-output">📋 Copy Hashtags</button>
-        </div>
+      <div style="margin-top: 1rem;">
+        <button class="btn btn-primary" data-copy-target="ai-output">📋 Copy Hashtags</button>
       </div>
     </div>
+
+    <!-- SEO Article Content Box 1 -->
+    <div class="content-box">
+      <h2>Why Hashtags Are Crucial for Social Media Reach</h2>
+      <p>Hashtags act as discovery tags that categorize your content for algorithms and users searching for specific topics. Using a targeted mix of broad and niche tags through our <strong>AI Hashtag Generator</strong> helps expose your Instagram reels, TikTok videos, and YouTube shorts to active audiences.</p>
+    </div>
+
+    <!-- Internal Linking Section (SEO Best Practice) -->
+    <div class="content-box">
+      <h2>Explore Related AI & Social Media Tools</h2>
+      <p>Enhance your content creation and social marketing workflow with our free utilities:</p>
+      <div class="related-links">
+        <a href="/tools/ai/caption-generator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📝 AI Caption Generator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Craft engaging social media captions and hooks.</span>
+        </a>
+        <a href="/tools/ai/ai-bio-generator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">✨ AI Bio Generator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Craft catchy profile bios for Twitter and Instagram.</span>
+        </a>
+        <a href="/tools/developer/lorem-ipsum-generator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📜 Lorem Ipsum Generator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Generate dummy placeholder text for UI designs.</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="content-box">
+      <h2>Frequently Asked Questions</h2>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How many hashtags should I use on Instagram?</h3>
+        <p>Instagram allows up to 30 hashtags per post, though using between 10 to 20 highly targeted niche hashtags typically yields optimal reach and engagement.</p>
+      </div>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is the AI Hashtag Generator free to use?</h3>
+        <p>Yes! MicroToolStack's AI Hashtag Generator is 100% free with unlimited hashtag generations and no registration required.</p>
+      </div>
+    </div>
+
   </main>
 
+  <!-- Footer Container Placeholder -->
   <div id="footer-container"></div>
 
+  <!-- JavaScript Utilities & Logic -->
   <script src="/assets/js/theme.js"></script>
-  <script src="/assets/js/utils.js"></script>
-  <script src="/assets/js/app.js"></script>
+  <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
