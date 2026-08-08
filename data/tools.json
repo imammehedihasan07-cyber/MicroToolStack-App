@@ -413,13 +413,13 @@
     "isNew": true,
     "tags": ["rotate", "angle", "turn", "image", "editor"]
   },
-  {
+ {
     "id": "image-flipper",
     "name": "Image Flipper",
     "category": "media",
     "url": "/tools/media/image-flipper.html",
     "description": "Flip images horizontally (mirror effect) or vertically instantly.",
-    "icon": "🪞",
+    "icon": "🔄",
     "isPopular": false,
     "isNew": true,
     "tags": ["flip", "mirror", "horizontal", "vertical", "image"]
