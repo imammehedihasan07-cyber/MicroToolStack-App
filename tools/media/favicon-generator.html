@@ -19,11 +19,27 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Meta Tags -->
   <title>Free Online Favicon Generator | MicroToolStack</title>
   <meta name="description" content="Generate multi-size website favicons (16x16, 32x32, 180x180) from PNG, JPG, or WEBP images instantly in your browser. Free and private.">
+  <meta name="keywords" content="favicon generator, create favicon online, convert image to favicon, website favicon creator, apple touch icon generator, png to favicon">
+
   <link rel="canonical" href="https://microtoolstack.com/tools/media/favicon-generator.html">
   <meta name="robots" content="index, follow">
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+  <!-- Open Graph / Social Media Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Free Online Favicon Generator | MicroToolStack">
+  <meta property="og:description" content="Generate multi-size website favicons (16x16, 32x32, 180x180) from PNG, JPG, or WEBP images instantly in your browser.">
+  <meta property="og:url" content="https://microtoolstack.com/tools/media/favicon-generator.html">
+  <meta property="og:site_name" content="MicroToolStack">
+  <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
+
+  <!-- Favicon Icon for Google & Devices -->
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
   <!-- Schema -->
   <script type="application/ld+json">
@@ -59,6 +75,7 @@
   ]
   </script>
 
+  <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
 
@@ -81,7 +98,7 @@
       position: relative;
     }
     .drop-zone:hover {
-      border-color: #3b82f6;
+      border-color: var(--accent-primary, #3b82f6);
     }
     .drop-zone input[type="file"] {
       position: absolute;
@@ -121,32 +138,80 @@
     .btn-download:hover {
       background-color: #15803d;
     }
+    .content-box {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .content-box h2 {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul, .content-box ol {
+      color: var(--text-secondary, #9ca3af);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .content-box ul, .content-box ol {
+      padding-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .content-box li {
+      margin-bottom: 0.5rem;
+    }
+    .related-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .related-card {
+      display: block;
+      padding: 1rem;
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      color: var(--text-primary, #fff);
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .related-card:hover {
+      border-color: var(--accent-primary, #3b82f6);
+    }
   </style>
 </head>
-<body>
+<body style="margin: 0; padding: 0;">
 
-  <!-- Header -->
+  <!-- Header Section -->
   <header class="custom-header">
     <a href="/" class="custom-logo">
-      <img src="/assets/images/logo.png" alt="MicroToolStack" class="logo-img">
-      <span>MicroToolStack</span>
+      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
     </a>
     <nav class="custom-nav">
       <a href="/#categories">Categories</a>
       <a href="/about.html">About</a>
       <a href="/contact.html">Contact</a>
-      <button id="theme-toggle" class="custom-theme-btn">🌙</button>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
     </nav>
   </header>
 
   <!-- Main Content -->
-  <main class="container" style="max-width: 900px; margin: 0 auto; padding: 2rem 1rem;">
+  <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
+    <!-- Breadcrumb Navigation -->
+    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
+      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
+      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Media Tools</a> / 
+      <span>Favicon Generator</span>
+    </nav>
     
     <!-- Title Section -->
     <div style="text-align: center; margin-bottom: 2rem;">
       <span class="badge badge-primary" style="margin-bottom: 0.5rem; display: inline-block;">100% Client-Side & Private</span>
-      <h1>Free Online Favicon Generator</h1>
-      <p style="color: #9ca3af;">Upload any image or logo to create custom web favicons for browser tabs, taskbars, and iOS shortcuts.</p>
+      <h1 style="font-size: 2rem; color: #fff; margin-bottom: 0.5rem;">Free Online Favicon Generator</h1>
+      <p style="color: var(--text-secondary, #9ca3af);">Upload any image or logo to create custom web favicons for browser tabs, taskbars, and iOS shortcuts.</p>
     </div>
 
     <!-- App Card -->
@@ -154,7 +219,7 @@
       <div class="drop-zone">
         <input type="file" id="image-input" accept="image/png, image/jpeg, image/webp, image/svg+xml">
         <span style="font-size: 2.5rem; display: block; margin-bottom: 0.5rem;">🌟</span>
-        <p style="margin: 0; font-weight: 600;" id="file-label">Click or Drag & Drop Image Here</p>
+        <p style="margin: 0; font-weight: 600; color: #fff;" id="file-label">Click or Drag & Drop Image Here</p>
         <span style="font-size: 0.85rem; color: #9ca3af;">Supports PNG, JPG, WEBP, SVG</span>
       </div>
 
@@ -182,20 +247,45 @@
       </div>
     </div>
 
-    <!-- SEO Deep Content Area -->
-    <article style="line-height: 1.7; color: #d1d5db; border-top: 1px solid #374151; padding-top: 2rem;">
-      <h2 style="color: #fff;">How to Create Website Favicons</h2>
+    <!-- SEO Content Box 1 -->
+    <div class="content-box">
+      <h2>How to Create Website Favicons</h2>
       <p>A favicon is a small icon that appears next to your website title in web browser tabs, bookmarks, and search engine results. Having a clear, multi-resolution favicon establishes brand recognition and improves user trust.</p>
+    </div>
 
-      <h3 style="color: #fff; margin-top: 1.5rem;">Step-by-Step Instructions:</h3>
+    <!-- SEO Content Box 2 -->
+    <div class="content-box">
+      <h2>Step-by-Step Instructions</h2>
       <ul>
         <li>Upload your brand logo or image (PNG or JPG format works best).</li>
         <li>The tool automatically renders preview icons for <strong>16x16</strong>, <strong>32x32</strong>, and <strong>180x180</strong> pixels.</li>
         <li>Click <strong>Download</strong> under any icon size to save the file.</li>
       </ul>
-    </article>
+    </div>
+
+    <!-- Internal Linking Section (SEO Best Practice) -->
+    <div class="content-box">
+      <h2>Explore Related Media & Developer Tools</h2>
+      <p>Enhance your design and site workflow with our free utilities:</p>
+      <div class="related-links">
+        <a href="/tools/media/color-palette-extractor.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🎨 Color Palette Extractor</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Extract matching HEX codes from photos.</span>
+        </a>
+        <a href="/tools/media/base64-to-image.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🖼️ Base64 to Image</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Decode Base64 strings to downloadable images.</span>
+        </a>
+        <a href="/tools/seo/open-graph-generator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🌐 Open Graph Generator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Generate OG meta tags for social previews.</span>
+        </a>
+      </div>
+    </div>
+
   </main>
 
+  <!-- Footer Placeholder -->
   <div id="footer-container"></div>
 
   <!-- Scripts -->
