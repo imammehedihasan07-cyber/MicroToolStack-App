@@ -22,6 +22,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Free YouTube Online Tools - Extract, Download & Embed | MicroToolStack</title>
   <meta name="description" content="Explore our free suite of YouTube online utility tools. Extract Channel IDs, download HD video thumbnails, generate responsive embed codes, and create timestamp links.">
+  <meta name="keywords" content="youtube tools, youtube channel id finder, youtube thumbnail downloader, youtube embed generator, youtube timestamp generator, youtube playlist id finder">
+
+  <link rel="canonical" href="https://microtoolstack.com/tools/youtube/">
+  <meta name="robots" content="index, follow">
+
+  <!-- Favicon Icon for Google & Devices -->
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,68 +38,111 @@
   <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <style>
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 4rem;
+    }
+    .tool-index-card {
+      padding: 1.5rem;
+      border-radius: 12px;
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      text-decoration: none;
+      display: block;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .tool-index-card:hover {
+      border-color: var(--accent-primary, #3b82f6);
+      transform: translateY(-2px);
+    }
+    .tool-index-card h3 {
+      color: #fff;
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+    }
+    .tool-index-card p {
+      color: var(--text-secondary, #9ca3af);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+  </style>
 </head>
-<body>
-  <!-- Header Container -->
-  <div id="header-container"></div>
+<body style="margin: 0; padding: 0;">
+  <!-- Header Section -->
+  <header class="custom-header">
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
+    </a>
+    <nav class="custom-nav">
+      <a href="/#categories">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
+    </nav>
+  </header>
 
   <main class="container" style="max-width: 1000px; margin: 2rem auto; padding: 0 1rem;">
     <!-- Breadcrumb Navigation -->
-    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary);">
-      <a href="/" style="color: var(--accent-primary); text-decoration: none;">Home</a> / 
+    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
+      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
       <span>YouTube Tools</span>
     </nav>
 
     <!-- Category Header -->
     <header style="margin-bottom: 3rem; text-align: center;">
-      <h1 class="hero" style="font-size: 2.5rem; margin-bottom: 0.5rem;">Free YouTube Utility Tools</h1>
-      <p style="color: var(--text-secondary); font-size: 1.1rem; max-width: 700px; margin: 0 auto;">
+      <h1 class="hero" style="font-size: 2.2rem; margin-bottom: 0.5rem; color: #fff;">Free YouTube Utility Tools</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1.05rem; max-width: 700px; margin: 0 auto;">
         A fast, free, and privacy-first suite of web utilities designed specifically for YouTube creators, developers, and digital marketers.
       </p>
     </header>
 
     <!-- YouTube Tools Grid -->
-    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 4rem;">
+    <div class="tools-grid">
       
       <!-- Card 1: Channel ID Finder -->
-      <a href="/tools/youtube/channel-id-finder.html" class="card" style="padding: 1.5rem; border-radius: 12px; background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.08); text-decoration: none; display: block; transition: transform 0.2s;">
-        <h3 style="color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.2rem;">Channel ID Finder</h3>
-        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5;">Extract unique 24-character Channel IDs from any channel URL, handle, or video link.</p>
+      <a href="/tools/youtube/channel-id-finder.html" class="tool-index-card">
+        <h3>Channel ID Finder</h3>
+        <p>Extract unique 24-character Channel IDs from any channel URL, handle, or video link.</p>
       </a>
 
       <!-- Card 2: Thumbnail Downloader -->
-      <a href="/tools/youtube/thumbnail-downloader.html" class="card" style="padding: 1.5rem; border-radius: 12px; background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.08); text-decoration: none; display: block; transition: transform 0.2s;">
-        <h3 style="color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.2rem;">Thumbnail Downloader</h3>
-        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5;">Download Full HD (1080p), HD, and SD video thumbnails with a single click.</p>
+      <a href="/tools/youtube/thumbnail-downloader.html" class="tool-index-card">
+        <h3>Thumbnail Downloader</h3>
+        <p>Download Full HD (1080p), HD, and SD video thumbnails with a single click.</p>
       </a>
 
       <!-- Card 3: Embed Code Generator -->
-      <a href="/tools/youtube/embed-generator.html" class="card" style="padding: 1.5rem; border-radius: 12px; background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.08); text-decoration: none; display: block; transition: transform 0.2s;">
-        <h3 style="color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.2rem;">Embed Code Generator</h3>
-        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5;">Generate custom, responsive 16:9 iframe embed codes with privacy mode.</p>
+      <a href="/tools/youtube/embed-generator.html" class="tool-index-card">
+        <h3>Embed Code Generator</h3>
+        <p>Generate custom, responsive 16:9 iframe embed codes with privacy mode.</p>
       </a>
 
       <!-- Card 4: Timestamp Generator -->
-      <a href="/tools/youtube/timestamp-generator.html" class="card" style="padding: 1.5rem; border-radius: 12px; background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.08); text-decoration: none; display: block; transition: transform 0.2s;">
-        <h3 style="color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.2rem;">Timestamp Link Generator</h3>
-        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5;">Create shareable YouTube video links that start playback at exact timestamps.</p>
+      <a href="/tools/youtube/timestamp-generator.html" class="tool-index-card">
+        <h3>Timestamp Link Generator</h3>
+        <p>Create shareable YouTube video links that start playback at exact timestamps.</p>
       </a>
 
       <!-- Card 5: Playlist ID Finder -->
-      <a href="/tools/youtube/playlist-id-finder.html" class="card" style="padding: 1.5rem; border-radius: 12px; background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.08); text-decoration: none; display: block; transition: transform 0.2s;">
-        <h3 style="color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.2rem;">Playlist ID Finder</h3>
-        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5;">Extract unique Playlist IDs (PL, UU, FL) from any playlist URL instantly.</p>
+      <a href="/tools/youtube/playlist-id-finder.html" class="tool-index-card">
+        <h3>Playlist ID Finder</h3>
+        <p>Extract unique Playlist IDs (PL, UU, FL) from any playlist URL instantly.</p>
       </a> 
+
       <!-- Card 6: AI YouTube Title & Description -->
-      <a href="/tools/ai/youtube-title-generator.html" class="card" style="padding: 1.5rem; border-radius: 12px; background: var(--bg-secondary); border: 1px solid var(--border-color); text-decoration: none; display: block;">
-        <h3 style="color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.2rem;">AI YouTube Title & Description</h3>
-        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5;">Generate viral YouTube title ideas and full video descriptions with AI.</p>
+      <a href="/tools/ai/youtube-title-generator.html" class="tool-index-card">
+        <h3>AI YouTube Title & Description</h3>
+        <p>Generate viral YouTube title ideas and full video descriptions with AI.</p>
       </a>
 
     </div>
   </main>
 
-  <!-- Footer Container -->
+  <!-- Footer Placeholder -->
   <div id="footer-container"></div>
 
   <!-- Core Scripts -->
