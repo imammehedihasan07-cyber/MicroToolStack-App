@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) - Optimized Load -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var gTagScript = document.createElement('script');
+        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        gTagScript.async = true;
+        document.head.appendChild(gTagScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F3WWR9KGB4');
+      }, 1000);
+    });
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>Free Online Readability Score Checker | MicroToolStack</title>
+  <meta name="description" content="Free online Readability Score Checker. Test text readability using Flesch Reading Ease score, calculate word count, syllables, reading time, and sentence difficulty.">
+  <meta name="keywords" content="readability checker, flesch reading ease calculator, text readability analyzer, word count tool, content readability score, reading age test">
+
+  <link rel="canonical" href="https://microtoolstack.com/tools/text/readability-checker.html">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://microtoolstack.com/tools/text/readability-checker.html">
+  <meta property="og:title" content="Free Online Readability Score Checker | MicroToolStack">
+  <meta property="og:description" content="Analyze your article readability score instantly with Flesch-Kincaid formula and word statistics. 100% free and private.">
+  <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
+
+  <!-- Favicon Icon for Google & Devices -->
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
+
+  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Readability Score Checker",
+        "operatingSystem": "All",
+        "applicationCategory": "EducationalApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "An online text analysis tool that measures content readability using the Flesch Reading Ease index, calculates syllable statistics, sentence density, and estimated reading time.",
+        "url": "https://microtoolstack.com/tools/text/readability-checker.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is Flesch Reading Ease?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Flesch Reading Ease is a standard formula that rates text on a 1-100 scale based on sentence length and average syllables per word. Scores between 60 and 70 are considered optimal for web content."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why is content readability important for SEO?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Readable content improves user engagement, reduces bounce rates, and ensures that search engine crawlers and users easily understand your material."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my text data stored or sent to a server?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No! Your content stays 100% confidential. All calculations are executed locally within your web browser."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Preconnect and Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <style>
+    .editor-textarea {
+      width: 100%;
+      min-height: 220px;
+      padding: 1rem;
+      font-family: inherit;
+      font-size: 1rem;
+      line-height: 1.6;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: #0d1117;
+      color: var(--text-primary, #fff);
+      outline: none;
+      resize: vertical;
+      box-sizing: border-box;
+      margin-bottom: 1.25rem;
+    }
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .metric-card {
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: center;
+    }
+    .metric-value {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--accent-primary, #3b82f6);
+      margin-top: 0.25rem;
+    }
+    .metric-label {
+      font-size: 0.85rem;
+      color: var(--text-secondary, #9ca3af);
+    }
+    .score-card {
+      background: rgba(59, 130, 246, 0.1);
+      border: 1px solid var(--accent-primary, #3b82f6);
+      border-radius: 8px;
+      padding: 1.5rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .score-value {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: var(--accent-primary, #3b82f6);
+      line-height: 1;
+      margin: 0.5rem 0;
+    }
+    .score-status {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #10b981;
+    }
+    .editor-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+    .btn-group {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .content-box {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .content-box h2 {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul {
+      color: var(--text-secondary, #9ca3af);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .content-box ul {
+      padding-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .content-box li {
+      margin-bottom: 0.5rem;
+    }
+    .related-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .related-card {
+      display: block;
+      padding: 1rem;
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      color: var(--text-primary, #fff);
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .related-card:hover {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+  </style>
+</head>
+<body style="margin: 0; padding: 0;">
+
+  <!-- Header Section -->
+  <header class="custom-header">
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
+    </a>
+    <nav class="custom-nav">
+      <a href="/#categories">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
+    </nav>
+  </header>
+
+  <!-- Main Container -->
+  <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
+    <!-- Breadcrumb Navigation -->
+    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
+      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
+      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Text Tools</a> / 
+      <span>Readability Score Checker</span>
+    </nav>
+    
+    <!-- Tool Title & Description -->
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Readability Score Checker</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Analyze your text readability with Flesch Reading Ease score, word count, and reading time.</p>
+    </div>
+
+    <!-- Main Text Input -->
+    <textarea id="text-input" class="editor-textarea" placeholder="Paste or type your article/essay here to calculate readability score..." autofocus></textarea>
+
+    <!-- Flesch Score Hero Card -->
+    <div class="score-card">
+      <div style="font-size: 0.85rem; color: var(--text-secondary, #9ca3af); text-transform: uppercase; letter-spacing: 0.05em;">Flesch Reading Ease Score</div>
+      <div id="score-val" class="score-value">0.0</div>
+      <div id="score-status" class="score-status">Enter text to calculate</div>
+    </div>
+
+    <!-- Secondary Text Metrics -->
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-label">Words</div>
+        <div id="stat-words" class="metric-value">0</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Sentences</div>
+        <div id="stat-sentences" class="metric-value">0</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Characters</div>
+        <div id="stat-chars" class="metric-value">0</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Est. Reading Time</div>
+        <div id="stat-reading-time" class="metric-value">0 min</div>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="editor-controls">
+      <div class="btn-group">
+        <button id="btn-sample" class="btn btn-primary" style="padding: 0.68rem 1.4rem; cursor: pointer;">📝 Load Sample Text</button>
+        <button id="btn-copy" class="btn btn-secondary" style="padding: 0.68rem 1.2rem; cursor: pointer; background: #1f2937; color: #fff; border: 1px solid #4b5563; border-radius: 6px;">📋 Copy Text</button>
+        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.68rem 1.2rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear</button>
+      </div>
+      <span id="status-msg" style="font-size: 0.85rem; color: #10b981; font-weight: 500; display: none;">Copied to clipboard!</span>
+    </div>
+
+    <!-- SEO Article Content Box 1 -->
+    <div class="content-box">
+      <h2>What is Flesch Reading Ease Score?</h2>
+      <p>The <strong>Flesch Reading Ease Index</strong> is a widely recognized formula used to evaluate how easy or difficult a piece of writing is to comprehend. Higher scores indicate material that is easier to read, while lower scores indicate complex academic or technical literature.</p>
+    </div>
+
+    <!-- SEO Article Content Box 2 -->
+    <div class="content-box">
+      <h2>Understanding Flesch Score Scale</h2>
+      <ul>
+        <li><strong>90.0 – 100.0:</strong> Very Easy (5th grade reading level, easily understood by an average 11-year-old)</li>
+        <li><strong>60.0 – 70.0:</strong> Standard / Easy (8th–9th grade level, ideal for blog posts, news, and web copy)</li>
+        <li><strong>30.0 – 50.0:</strong> Difficult (College level reading, suitable for technical manuals)</li>
+        <li><strong>0.0 – 30.0:</strong> Very Confusing / Academic (Best understood by university graduates)</li>
+      </ul>
+    </div>
+
+    <!-- Internal Linking Section (SEO Best Practice) -->
+    <div class="content-box">
+      <h2>Explore Related Utilities</h2>
+      <p>Enhance your writing and web editing workflow:</p>
+      <div class="related-links">
+        <a href="/tools/developer/glassmorphism-claymorphism-generator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">✨ CSS Glass & Clay Generator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Design frosted glass & 3D UI cards.</span>
+        </a>
+        <a href="/tools/media/image-exif-remover.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📸 Image EXIF Remover</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Strip metadata and location from images.</span>
+        </a>
+        <a href="/tools/calculator/cgpa-to-percentage.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🎓 CGPA to Percentage</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Convert CGPA to percentage and total marks.</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="content-box">
+      <h2>Frequently Asked Questions</h2>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What is a good readability score for web articles?</h3>
+        <p>For websites, blogs, and online articles, aim for a score between <strong>60 and 70</strong>. This ensures your content is engaging and easily digestible for general audiences.</p>
+      </div>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How can I improve my readability score?</h3>
+        <p>Shorten your sentences, replace multi-syllable jargon with simpler words, and break heavy blocks of text into smaller paragraphs.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer Container Placeholder -->
+  <div id="footer-container"></div>
+
+  <!-- JavaScript Utilities & Logic -->
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const textInput = document.getElementById('text-input');
+      const scoreVal = document.getElementById('score-val');
+      const scoreStatus = document.getElementById('score-status');
+
+      const statWords = document.getElementById('stat-words');
+      const statSentences = document.getElementById('stat-sentences');
+      const statChars = document.getElementById('stat-chars');
+      const statReadingTime = document.getElementById('stat-reading-time');
+
+      const btnSample = document.getElementById('btn-sample');
+      const btnCopy = document.getElementById('btn-copy');
+      const btnClear = document.getElementById('btn-clear');
+      const statusMsg = document.getElementById('status-msg');
+
+      function countSyllables(word) {
+        word = word.toLowerCase().trim();
+        if (word.length <= 3) return 1;
+        word = word.replace(/(?:[^laeiouy]es|ed|[^laeiouy]e)$/, '');
+        word = word.replace(/^y/, '');
+        const syllables = word.match(/[aeiouy]{1,2}/g);
+        return syllables ? syllables.length : 1;
+      }
+
+      function analyzeText() {
+        const text = textInput.value.trim();
+
+        if (!text) {
+          scoreVal.textContent = '0.0';
+          scoreStatus.textContent = 'Enter text to calculate';
+          scoreStatus.style.color = '#9ca3af';
+          statWords.textContent = '0';
+          statSentences.textContent = '0';
+          statChars.textContent = '0';
+          statReadingTime.textContent = '0 min';
+          return;
+        }
+
+        const wordsArray = text.match(/\b\w+\b/g) || [];
+        const totalWords = wordsArray.length;
+
+        const sentencesArray = text.split(/[.!?]+/).filter(s => s.trim().length > 0);
+        const totalSentences = sentencesArray.length || 1;
+
+        const totalChars = text.length;
+
+        let totalSyllables = 0;
+        wordsArray.forEach(word => {
+          totalSyllables += countSyllables(word);
+        });
+
+        // Flesch Reading Ease Formula: 206.835 - 1.015(total words / total sentences) - 84.6(total syllables / total words)
+        let score = 0;
+        if (totalWords > 0) {
+          score = 206.835 - (1.015 * (totalWords / totalSentences)) - (84.6 * (totalSyllables / totalWords));
+        }
+
+        if (score > 100) score = 100;
+        if (score < 0) score = 0;
+
+        scoreVal.textContent = score.toFixed(1);
+
+        // Interpretation
+        if (score >= 80) {
+          scoreStatus.textContent = 'Very Easy (Plain & Clear)';
+          scoreStatus.style.color = '#10b981';
+        } else if (score >= 60) {
+          scoreStatus.textContent = 'Standard / Easy (Ideal for Web)';
+          scoreStatus.style.color = '#3b82f6';
+        } else if (score >= 40) {
+          scoreStatus.textContent = 'Fairly Difficult (Academic)';
+          scoreStatus.style.color = '#f59e0b';
+        } else {
+          scoreStatus.textContent = 'Very Difficult (Technical)';
+          scoreStatus.style.color = '#ef4444';
+        }
+
+        // Stats update
+        statWords.textContent = totalWords.toLocaleString();
+        statSentences.textContent = totalSentences.toLocaleString();
+        statChars.textContent = totalChars.toLocaleString();
+
+        // Reading Time (~200 wpm)
+        const readingMinutes = Math.ceil(totalWords / 200);
+        statReadingTime.textContent = `${readingMinutes} min`;
+      }
+
+      textInput.addEventListener('input', analyzeText);
+
+      // Sample Text Action
+      btnSample.addEventListener('click', function() {
+        textInput.value = "MicroToolStack provides free online developer and productivity tools. All tools run client-side in your web browser for ultimate speed and privacy. Try formatting JSON strings, removing EXIF metadata from pictures, or calculating your university CGPA with zero software installation required!";
+        analyzeText();
+      });
+
+      // Copy Action
+      btnCopy.addEventListener('click', function() {
+        if (!textInput.value.trim()) return;
+        navigator.clipboard.writeText(textInput.value).then(function() {
+          statusMsg.style.display = 'inline';
+          setTimeout(() => { statusMsg.style.display = 'none'; }, 2000);
+        });
+      });
+
+      // Clear Action
+      btnClear.addEventListener('click', function() {
+        textInput.value = '';
+        analyzeText();
+        textInput.focus();
+      });
+    });
+  </script>
+</body>
+</html>
