@@ -1,6 +1,3 @@
-@import url('./variables.css');
-@import url('./components.css');
-
 /* Global Reset & Base Styles */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -24,6 +21,7 @@ body {
   flex-direction: column;
   transition: background-color var(--transition-normal), color var(--transition-normal);
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
@@ -44,6 +42,7 @@ button, input, textarea, select {
 img, svg {
   display: block;
   max-width: 100%;
+  height: auto;
 }
 
 /* Layout Container */
@@ -74,15 +73,17 @@ p {
   color: var(--text-secondary);
   margin-bottom: 1rem;
 }
-/* Desktop Layout Shift & Performance Boost */
+
+/* Performance & Layout Shift Optimization */
 .card {
-  contain-intrinsic-size: 200px;
+  contain-intrinsic-size: 150px;
   content-visibility: auto;
 }
 
 #popular-tools-grid, #categories-grid {
   min-height: 250px;
 }
+
 /* =========================================================
    UNIVERSAL LIGHT & DARK MODE FIX FOR INPUTS & CARDS
    ========================================================= */
@@ -132,7 +133,6 @@ p {
 [data-theme="light"] .option-item {
   color: #111827 !important;
 }
-
 
 /* --- DARK MODE FIX --- */
 [data-theme="dark"] body {
