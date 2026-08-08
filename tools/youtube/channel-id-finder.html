@@ -22,6 +22,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>YouTube Channel ID Finder - Find Any Channel ID Instantly | MicroToolStack</title>
   <meta name="description" content="Free online YouTube Channel ID Finder. Extract any YouTube Channel ID or User ID instantly using channel URL, handle, or video link. Fast, private, and 100% free.">
+  <meta name="keywords" content="youtube channel id finder, find channel id, extract channel id, youtube channel id lookup, get channel id from handle, youtube user id finder">
+
+  <link rel="canonical" href="https://microtoolstack.com/tools/youtube/channel-id-finder.html">
+  <meta name="robots" content="index, follow">
+
+  <!-- Favicon Icon for Google & Devices -->
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,6 +38,52 @@
   <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <style>
+    .related-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .related-card {
+      display: block;
+      padding: 1rem;
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      color: var(--text-primary, #fff);
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .related-card:hover {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+    .content-box {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .content-box h2 {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul, .content-box ol {
+      color: var(--text-secondary, #9ca3af);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .content-box ul, .content-box ol {
+      padding-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .content-box li {
+      margin-bottom: 0.5rem;
+    }
+  </style>
 
   <!-- Schema.org FAQ Markup -->
   <script type="application/ld+json">
@@ -64,104 +119,126 @@
   }
   </script>
 </head>
-<body>
-  <!-- Header Container -->
-  <div id="header-container"></div>
+<body style="margin: 0; padding: 0;">
+  <!-- Header Section -->
+  <header class="custom-header">
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
+    </a>
+    <nav class="custom-nav">
+      <a href="/#categories">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
+    </nav>
+  </header>
 
   <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
     <!-- Breadcrumb Navigation -->
-    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary);">
-      <a href="/" style="color: var(--accent-primary); text-decoration: none;">Home</a> / 
-      <a href="/tools/youtube/" style="color: var(--accent-primary); text-decoration: none;">YouTube Tools</a> / 
+    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
+      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
+      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">YouTube Tools</a> / 
       <span>Channel ID Finder</span>
     </nav>
 
     <!-- Tool Title & Description -->
     <header style="margin-bottom: 2rem; text-align: center;">
-      <h1 class="hero" style="font-size: 2.2rem; margin-bottom: 0.5rem;">YouTube Channel ID Finder</h1>
-      <p style="color: var(--text-secondary); font-size: 1.05rem; max-width: 650px; margin: 0 auto;">
+      <h1 class="hero" style="font-size: 2rem; margin-bottom: 0.5rem; color: #fff;">YouTube Channel ID Finder</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem; max-width: 650px; margin: 0 auto;">
         Instantly find and extract the unique Channel ID or User ID from any YouTube Channel URL, Handle (@name), or Video Link.
       </p>
     </header>
 
     <!-- Tool App Box -->
-    <section class="card" style="padding: 2rem; border-radius: 12px; background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.08); margin-bottom: 3rem;">
+    <section class="card" style="padding: 2rem; border-radius: 12px; background: var(--bg-card, #1e1e2e); border: 1px solid var(--border-color, #333); margin-bottom: 3rem;">
       <div style="display: flex; flex-direction: column; gap: 1rem;">
-        <label for="url-input" style="font-weight: 600; font-size: 1rem;">Enter YouTube URL or Handle:</label>
+        <label for="url-input" style="font-weight: 600; font-size: 1rem; color: #fff;">Enter YouTube URL or Handle:</label>
         <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-          <input type="text" id="url-input" placeholder="e.g., https://www.youtube.com/@mkbhd or https://www.youtube.com/watch?v=..." style="flex: 1; min-width: 280px; padding: 0.8rem 1rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.15); background: var(--bg-primary); color: #fff; font-size: 1rem;">
-          <button id="find-btn" style="padding: 0.8rem 1.5rem; border-radius: 6px; border: none; background: var(--accent-primary); color: #fff; font-weight: 600; cursor: pointer;">Find Channel ID</button>
+          <input type="text" id="url-input" placeholder="e.g., https://www.youtube.com/@mkbhd or https://www.youtube.com/watch?v=..." style="flex: 1; min-width: 280px; padding: 0.8rem 1rem; border-radius: 6px; border: 1px solid var(--border-color, #333); background: var(--bg-card, #12121e); color: #fff; font-size: 1rem; outline: none;">
+          <button id="find-btn" style="padding: 0.8rem 1.5rem; border-radius: 6px; border: none; background: var(--accent-primary, #3b82f6); color: #fff; font-weight: 600; cursor: pointer;">Find Channel ID</button>
         </div>
       </div>
 
       <!-- Result Display -->
-      <div id="result-box" style="display: none; margin-top: 1.5rem; padding: 1.2rem; border-radius: 8px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1);">
-        <p style="margin-bottom: 0.5rem; font-size: 0.9rem; color: var(--text-secondary);">Extracted Channel ID:</p>
+      <div id="result-box" style="display: none; margin-top: 1.5rem; padding: 1.2rem; border-radius: 8px; background: rgba(0,0,0,0.3); border: 1px solid var(--border-color, #333);">
+        <p style="margin-bottom: 0.5rem; font-size: 0.9rem; color: var(--text-secondary, #9ca3af);">Extracted Channel ID:</p>
         <div style="display: flex; align-items: center; justify-content: space-between; gap: 1rem;">
-          <code id="channel-id-output" style="font-size: 1.2rem; color: #4ade80; font-family: monospace; word-break: break-all;">UC...</code>
-          <button id="copy-btn" style="padding: 0.4rem 0.8rem; border-radius: 4px; border: 1px solid rgba(255,255,255,0.2); background: transparent; color: #fff; cursor: pointer; font-size: 0.85rem;">Copy</button>
+          <code id="channel-id-output" style="font-size: 1.2rem; color: #10b981; font-family: monospace; word-break: break-all;">UC...</code>
+          <button id="copy-btn" style="padding: 0.4rem 0.8rem; border-radius: 4px; border: 1px solid var(--border-color, #4b5563); background: transparent; color: #fff; cursor: pointer; font-size: 0.85rem;">Copy</button>
         </div>
       </div>
 
       <div id="error-box" style="display: none; margin-top: 1rem; color: #ef4444; font-size: 0.95rem;"></div>
     </section>
 
-    <!-- SEO Content Section -->
-    <article style="line-height: 1.7; color: var(--text-secondary); margin-bottom: 3rem;">
-      <h2 style="color: var(--text-primary); margin-bottom: 1rem;">What is a YouTube Channel ID?</h2>
-      <p style="margin-bottom: 1.5rem;">
+    <!-- SEO Content Section 1 -->
+    <div class="content-box">
+      <h2>What is a YouTube Channel ID?</h2>
+      <p>
         A <strong>YouTube Channel ID</strong> is a unique, 24-character string assigned by Google to identify a specific YouTube channel. Starting with the prefix <code>UC</code>, this identifier remains unchanged throughout the lifecycle of the channel, even if the creator updates their channel name, custom URL, or handle (e.g., <code>@username</code>).
       </p>
+    </div>
 
-      <h2 style="color: var(--text-primary); margin-bottom: 1rem;">Why Do You Need a YouTube Channel ID?</h2>
-      <p style="margin-bottom: 1rem;">
+    <!-- SEO Content Section 2 -->
+    <div class="content-box">
+      <h2>Why Do You Need a YouTube Channel ID?</h2>
+      <p>
         While regular users interact with custom handles or links, developers, content managers, and marketers require the official Channel ID for various technical integration tasks:
       </p>
-      <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
-        <li style="margin-bottom: 0.5rem;"><strong>YouTube Data API Integrations:</strong> Querying channel analytics, subscriber counts, or video playlists via Google Cloud Console.</li>
-        <li style="margin-bottom: 0.5rem;"><strong>Setting Up RSS Feeds:</strong> Subscribing to channel updates via RSS syntax using <code>https://www.youtube.com/feeds/videos.xml?channel_id=YOUR_ID</code>.</li>
-        <li style="margin-bottom: 0.5rem;"><strong>Embedding Live Streams & Widgets:</strong> Creating persistent live-stream embeds on websites without updating video IDs manually.</li>
-        <li style="margin-bottom: 0.5rem;"><strong>Third-Party Social Media Analytics:</strong> Connecting accounts to platforms like Social Blade, Hootsuite, or custom dashboard tools.</li>
+      <ul>
+        <li><strong>YouTube Data API Integrations:</strong> Querying channel analytics, subscriber counts, or video playlists via Google Cloud Console.</li>
+        <li><strong>Setting Up RSS Feeds:</strong> Subscribing to channel updates via RSS syntax using <code>https://www.youtube.com/feeds/videos.xml?channel_id=YOUR_ID</code>.</li>
+        <li><strong>Embedding Live Streams & Widgets:</strong> Creating persistent live-stream embeds on websites without updating video IDs manually.</li>
+        <li><strong>Third-Party Analytics:</strong> Connecting accounts to platforms like Social Blade, Hootsuite, or custom dashboard tools.</li>
       </ul>
+    </div>
 
-      <h2 style="color: var(--text-primary); margin-bottom: 1rem;">How to Use This YouTube Channel ID Finder</h2>
-      <ol style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
-        <li style="margin-bottom: 0.5rem;">Copy any YouTube link (e.g., Channel URL, Handle URL, or Video URL).</li>
-        <li style="margin-bottom: 0.5rem;">Paste the URL into the input field above.</li>
-        <li style="margin-bottom: 0.5rem;">Click the <strong>Find Channel ID</strong> button.</li>
-        <li style="margin-bottom: 0.5rem;">Copy your extracted 24-character Channel ID with a single click.</li>
+    <!-- SEO Content Section 3 -->
+    <div class="content-box">
+      <h2>How to Use This YouTube Channel ID Finder</h2>
+      <ol>
+        <li>Copy any YouTube link (e.g., Channel URL, Handle URL, or Video URL).</li>
+        <li>Paste the URL into the input field above.</li>
+        <li>Click the <strong>Find Channel ID</strong> button.</li>
+        <li>Copy your extracted 24-character Channel ID with a single click.</li>
       </ol>
+    </div>
 
-      <h2 style="color: var(--text-primary); margin-bottom: 1rem;">Frequently Asked Questions (FAQ)</h2>
-      <div style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem;">
-        <div style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 6px;">
-          <h3 style="color: var(--text-primary); font-size: 1.05rem; margin-bottom: 0.3rem;">Is this tool free to use?</h3>
-          <p>Yes! Our YouTube Channel ID Finder is 100% free, private, and requires no registration or API keys.</p>
-        </div>
-        <div style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 6px;">
-          <h3 style="color: var(--text-primary); font-size: 1.05rem; margin-bottom: 0.3rem;">Does the Channel ID ever change?</h3>
-          <p>No. Even if a creator rebrands, changes their handle, or edits their custom URL, the underlying Channel ID stays permanent.</p>
-        </div>
-      </div>
-    </article>
-
-    <!-- Internal Linking / Related Tools -->
-    <section style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem;">
-      <h3 style="color: var(--text-primary); margin-bottom: 1rem;">Explore Related YouTube Tools</h3>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem;">
-        <a href="/tools/youtube/thumbnail-downloader.html" style="padding: 1rem; background: var(--bg-secondary); border-radius: 8px; text-decoration: none; border: 1px solid rgba(255,255,255,0.05); display: block;">
-          <h4 style="color: var(--text-primary); margin-bottom: 0.3rem;">Thumbnail Downloader</h4>
-          <p style="color: var(--text-secondary); font-size: 0.85rem;">Download HD thumbnails in 1-click.</p>
+    <!-- Internal Linking Section (SEO Best Practice) -->
+    <div class="content-box">
+      <h2>Explore Related YouTube & Developer Tools</h2>
+      <p>Supercharge your video and digital media workflow with our free utilities:</p>
+      <div class="related-links">
+        <a href="/tools/text/word-counter.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📝 Word Counter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Analyze text length for YouTube descriptions.</span>
         </a>
-        <a href="/tools/youtube/embed-generator.html" style="padding: 1rem; background: var(--bg-secondary); border-radius: 8px; text-decoration: none; border: 1px solid rgba(255,255,255,0.05); display: block;">
-          <h4 style="color: var(--text-primary); margin-bottom: 0.3rem;">Embed Code Generator</h4>
-          <p style="color: var(--text-secondary); font-size: 0.85rem;">Create responsive iframe embed codes.</p>
+        <a href="/tools/text/case-converter.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🔤 Case Converter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Format titles in Title Case or Uppercase.</span>
+        </a>
+        <a href="/tools/seo/slug-generator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🔗 Slug Generator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Create clean URLs for video landing pages.</span>
         </a>
       </div>
-    </section>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="content-box">
+      <h2>Frequently Asked Questions (FAQ)</h2>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="color: #fff; font-size: 1.05rem; margin-bottom: 0.3rem;">Is this tool free to use?</h3>
+        <p>Yes! Our YouTube Channel ID Finder is 100% free, private, and requires no registration or API keys.</p>
+      </div>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="color: #fff; font-size: 1.05rem; margin-bottom: 0.3rem;">Does the Channel ID ever change?</h3>
+        <p>No. Even if a creator rebrands, changes their handle, or edits their custom URL, the underlying Channel ID stays permanent.</p>
+      </div>
+    </div>
   </main>
 
-  <!-- Footer Container -->
+  <!-- Footer Placeholder -->
   <div id="footer-container"></div>
 
   <!-- Core Scripts -->
@@ -202,7 +279,6 @@
           findBtn.innerText = 'Extracting...';
           findBtn.disabled = true;
 
-          // Attempting page scrape via cors proxy or page parsing
           let targetUrl = query;
           if (!targetUrl.startsWith('http')) {
             targetUrl = 'https://www.youtube.com/' + (targetUrl.startsWith('@') ? targetUrl : '@' + targetUrl);
