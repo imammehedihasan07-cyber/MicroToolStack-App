@@ -664,5 +664,27 @@
     "isPopular": false,
     "isNew": true,
     "tags": ["readability", "flesch", "text analysis", "word count", "seo"]
+  },
+  {
+    "id": "text-to-speech",
+    "name": "Text to Speech (TTS) Generator",
+    "category": "text",
+    "url": "/tools/text/text-to-speech.html",
+    "description": "Convert written text into natural-sounding voice audio speech instantly.",
+    "icon": "🔊",
+    "isPopular": true,
+    "isNew": true,
+    "tags": ["tts", "text to speech", "voice", "audio", "speech synthesis"]
+  },
+  {
+    "id": "discount-calculator",
+    "name": "Discount & Savings Calculator",
+    "category": "calculator",
+    "url": "/tools/calculator/discount-calculator.html",
+    "description": "Calculate sale price, total savings, and optional sales tax amounts instantly.",
+    "icon": "🏷️",
+    "isPopular": true,
+    "isNew": true,
+    "tags": ["discount", "savings", "sale price", "shopping", "tax", "calculator"]
   }
 ]
