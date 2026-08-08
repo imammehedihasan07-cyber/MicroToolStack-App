@@ -1,66 +1,305 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) - Optimized Load -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var gTagScript = document.createElement('script');
+        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        gTagScript.async = true;
+        document.head.appendChild(gTagScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F3WWR9KGB4');
+      }, 1000);
+    });
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BMI Health Calculator | MicroToolStack</title>
-  <meta name="description" content="Calculate your Body Mass Index (BMI) and health category based on height and weight.">
   
-  <link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="stylesheet" href="/assets/css/components.css">
-  <link rel="stylesheet" href="/assets/css/tools.css">
+  <!-- Primary SEO Meta Tags -->
+  <title>Free Online BMI Calculator | Body Mass Index Health Check</title>
+  <meta name="description" content="Calculate your Body Mass Index (BMI) and health category based on height and weight. Free online BMI health calculator with instant weight status analysis.">
+  <meta name="keywords" content="bmi calculator, body mass index calculator, calculate bmi online, weight status calculator, healthy weight range, health calculator">
+
+  <link rel="canonical" href="https://microtoolstack.com/tools/calculator/bmi-calculator.html">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://microtoolstack.com/tools/calculator/bmi-calculator.html">
+  <meta property="og:title" content="Free Online BMI Calculator | MicroToolStack">
+  <meta property="og:description" content="Calculate your Body Mass Index (BMI) and health category based on height and weight. 100% free and private browser tool.">
+  <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
+
+  <!-- Favicon Icon for Google & Devices -->
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
+
+  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Body Mass Index (BMI) Calculator",
+        "operatingSystem": "All",
+        "applicationCategory": "HealthApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "An online health utility tool to calculate Body Mass Index (BMI) and determine weight categories.",
+        "url": "https://microtoolstack.com/tools/calculator/bmi-calculator.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is a healthy BMI score range?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A BMI score between 18.5 and 24.9 is generally considered a normal, healthy weight range for adults according to World Health Organization (WHO) standards."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is BMI calculated?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "BMI is calculated by taking an individual's weight in kilograms divided by the square of their height in meters (kg/m²)."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Preconnect and Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <style>
+    .input-card {
+      background: var(--bg-card, #1e1e2e);
+      padding: 1.5rem;
+      border-radius: var(--radius-md, 8px);
+      border: 1px solid var(--border-color, #333);
+      margin-bottom: 1.5rem;
+    }
+    .search-input {
+      width: 100%;
+      padding: 0.75rem;
+      font-size: 0.95rem;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 6px);
+      background-color: var(--bg-body, #111827);
+      color: var(--text-primary, #fff);
+      outline: none;
+      box-sizing: border-box;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .stat-card {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.25rem;
+      text-align: center;
+    }
+    .stat-value {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--accent-primary, #3b82f6);
+      margin-bottom: 0.25rem;
+    }
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--text-secondary, #9ca3af);
+      font-weight: 500;
+    }
+    .content-box {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .content-box h2 {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul {
+      color: var(--text-secondary, #9ca3af);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .content-box ul {
+      padding-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .content-box li {
+      margin-bottom: 0.5rem;
+    }
+    .related-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .related-card {
+      display: block;
+      padding: 1rem;
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      color: var(--text-primary, #fff);
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .related-card:hover {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+  </style>
 </head>
-<body>
-  <div id="header-container"></div>
+<body style="margin: 0; padding: 0;">
 
-  <main class="container">
-    <nav class="breadcrumb-container" aria-label="Breadcrumb">
-      <ol class="breadcrumb-list">
-        <li class="breadcrumb-item"><a href="/">Home</a></li>
-        <li class="breadcrumb-item"><a href="/#calculator">Calculators</a></li>
-        <li class="breadcrumb-item active" aria-current="page">BMI Calculator</li>
-      </ol>
+  <!-- Header Section -->
+  <header class="custom-header">
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
+    </a>
+    <nav class="custom-nav">
+      <a href="/#categories">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
     </nav>
+  </header>
 
-    <header style="margin-bottom: 1.5rem;">
-      <h1>BMI Calculator</h1>
-      <p>Check your Body Mass Index (BMI) to understand your healthy weight range.</p>
-    </header>
+  <!-- Main Container -->
+  <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
+    <!-- Breadcrumb Navigation -->
+    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
+      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
+      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Calculators</a> / 
+      <span>BMI Calculator</span>
+    </nav>
+    
+    <!-- Tool Title & Description -->
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">BMI Calculator</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Check your Body Mass Index (BMI) to understand your healthy weight range.</p>
+    </div>
 
-    <div class="tool-layout">
-      <div class="tool-container">
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
-          <div>
-            <label style="font-weight: 600; display: block; margin-bottom: 0.5rem;">Height (cm):</label>
-            <input type="number" id="height-cm" class="search-input" value="175">
-          </div>
-          <div>
-            <label style="font-weight: 600; display: block; margin-bottom: 0.5rem;">Weight (kg):</label>
-            <input type="number" id="weight-kg" class="search-input" value="70">
-          </div>
+    <!-- Input Card -->
+    <div class="input-card">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
+        <div>
+          <label style="font-weight: 600; display: block; margin-bottom: 0.5rem; color: #fff;">Height (cm):</label>
+          <input type="number" id="height-cm" class="search-input" value="175">
         </div>
+        <div>
+          <label style="font-weight: 600; display: block; margin-bottom: 0.5rem; color: #fff;">Weight (kg):</label>
+          <input type="number" id="weight-kg" class="search-input" value="70">
+        </div>
+      </div>
 
-        <button class="btn btn-primary" id="btn-calc-bmi" style="width: 100%;">⚖️ Calculate BMI</button>
+      <button class="btn btn-primary" id="btn-calc-bmi" style="width: 100%; padding: 0.75rem; cursor: pointer; font-weight: 600;">⚖️ Calculate BMI</button>
 
-        <div class="stats-grid" style="margin-top: 1.5rem;">
-          <div class="stat-card">
-            <div class="stat-value" id="res-bmi">22.9</div>
-            <div class="stat-label">BMI Score</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-value" id="res-status" style="color: var(--success);">Normal Weight</div>
-            <div class="stat-label">Category</div>
-          </div>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value" id="res-bmi">22.9</div>
+          <div class="stat-label">BMI Score</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="res-status" style="color: #10b981;">Normal Weight</div>
+          <div class="stat-label">Category</div>
         </div>
       </div>
     </div>
+
+    <!-- SEO Article Content Box 1 -->
+    <div class="content-box">
+      <h2>What is Body Mass Index (BMI)?</h2>
+      <p>Body Mass Index (BMI) is a standardized measurement used to estimate whether a person has a healthy body weight for their height. By dividing your weight by the square of your height, our <strong>BMI Calculator</strong> instantly evaluates your score against international health categories (Underweight, Normal Weight, Overweight, and Obese).</p>
+    </div>
+
+    <!-- SEO Article Content Box 2 -->
+    <div class="content-box">
+      <h2>BMI Classification Categories</h2>
+      <ul>
+        <li><strong>Below 18.5:</strong> Underweight</li>
+        <li><strong>18.5 – 24.9:</strong> Normal Weight (Healthy Range)</li>
+        <li><strong>25.0 – 29.9:</strong> Overweight</li>
+        <li><strong>30.0 and Above:</strong> Obese</li>
+      </ul>
+    </div>
+
+    <!-- Internal Linking Section (SEO Best Practice) -->
+    <div class="content-box">
+      <h2>Explore Related Calculators & Utilities</h2>
+      <p>Enhance your health monitoring and daily productivity with our free tools:</p>
+      <div class="related-links">
+        <a href="/tools/calculator/age-calculator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📅 Age Calculator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Calculate exact chronological age in years and months.</span>
+        </a>
+        <a href="/tools/pet-care/cat-age-converter.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🐱 Cat Age Converter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Convert cat years into human equivalents.</span>
+        </a>
+        <a href="/tools/pet-care/dog-chocolate-calculator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🍫 Dog Chocolate Calculator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Check chocolate toxicity levels for dogs.</span>
+        </a>
+        <a href="/tools/text/word-counter.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📝 Word Counter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Count words, characters, and reading time.</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="content-box">
+      <h2>Frequently Asked Questions</h2>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What is a healthy BMI score range?</h3>
+        <p>A BMI score between 18.5 and 24.9 is generally considered a normal, healthy weight range for adults according to World Health Organization (WHO) standards.</p>
+      </div>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is my health data private?</h3>
+        <p>Yes, all calculations run locally in your browser using JavaScript. No personal weight or height inputs are ever sent to external servers.</p>
+      </div>
+    </div>
+
   </main>
 
+  <!-- Footer Container Placeholder -->
   <div id="footer-container"></div>
 
+  <!-- JavaScript Utilities & Logic -->
   <script src="/assets/js/theme.js"></script>
-  <script src="/assets/js/utils.js"></script>
-  <script src="/assets/js/app.js"></script>
+  <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -72,11 +311,11 @@
 
         const bmi = (w / (h * h)).toFixed(1);
         let status = 'Normal Weight';
-        let color = 'var(--success)';
+        let color = '#10b981';
 
-        if (bmi < 18.5) { status = 'Underweight'; color = 'var(--warning)'; }
-        else if (bmi >= 25 && bmi < 29.9) { status = 'Overweight'; color = 'var(--warning)'; }
-        else if (bmi >= 30) { status = 'Obese'; color = 'var(--danger)'; }
+        if (bmi < 18.5) { status = 'Underweight'; color = '#f59e0b'; }
+        else if (bmi >= 25 && bmi < 29.9) { status = 'Overweight'; color = '#f59e0b'; }
+        else if (bmi >= 30) { status = 'Obese'; color = '#ef4444'; }
 
         document.getElementById('res-bmi').textContent = bmi;
         const statusEl = document.getElementById('res-status');
