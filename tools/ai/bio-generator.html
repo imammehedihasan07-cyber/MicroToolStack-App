@@ -1,56 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) - Optimized Load -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var gTagScript = document.createElement('script');
+        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        gTagScript.async = true;
+        document.head.appendChild(gTagScript);
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F3WWR9KGB4');
+      }, 1000);
+    });
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Bio Generator | MicroToolStack</title>
-  <meta name="description" content="Generate professional social media profile bios for Twitter, Instagram, and LinkedIn.">
   
-  <link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="stylesheet" href="/assets/css/components.css">
-  <link rel="stylesheet" href="/assets/css/tools.css">
+  <!-- Primary SEO Meta Tags -->
+  <title>Free AI Social Media Bio Generator | Twitter, Instagram & LinkedIn</title>
+  <meta name="description" content="Generate professional and catchy social media profile bios for Twitter, Instagram, and LinkedIn instantly using AI. Free, fast, and creative profile bio maker.">
+  <meta name="keywords" content="ai bio generator, social media bio maker, twitter bio generator, instagram bio maker, linkedin summary generator, AI profile creator">
+
+  <link rel="canonical" href="https://microtoolstack.com/tools/ai/ai-bio-generator.html">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://microtoolstack.com/tools/ai/ai-bio-generator.html">
+  <meta property="og:title" content="Free AI Social Media Bio Generator | MicroToolStack">
+  <meta property="og:description" content="Generate professional and catchy social media profile bios for Twitter, Instagram, and LinkedIn instantly using AI.">
+  <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
+
+  <!-- Favicon Icon for Google & Devices -->
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
+
+  <!-- Schema -->
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "AI Bio Generator",
+      "url": "https://microtoolstack.com/tools/ai/ai-bio-generator.html",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What platforms are supported by the AI Bio Generator?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The generator creates profile bio variations suitable for Twitter/X, Instagram, LinkedIn, TikTok, and professional portfolio pages."
+          }
+        }
+      ]
+    }
+  ]
+  </script>
+
+  <!-- Preconnect and Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <style>
+    .app-card {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2.5rem;
+    }
+    .tool-textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border-radius: 8px;
+      border: 1px solid var(--border-color, #374151);
+      background: var(--bg-body, #111827);
+      color: #fff;
+      font-size: 0.95rem;
+      box-sizing: border-box;
+      outline: none;
+      resize: vertical;
+    }
+    .btn-primary {
+      background-color: var(--accent-primary, #2563eb);
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-primary:hover {
+      opacity: 0.9;
+    }
+    .content-box {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .content-box h2 {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul {
+      color: var(--text-secondary, #9ca3af);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .content-box ul {
+      padding-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .content-box li {
+      margin-bottom: 0.5rem;
+    }
+    .related-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .related-card {
+      display: block;
+      padding: 1rem;
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      color: var(--text-primary, #fff);
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .related-card:hover {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+  </style>
 </head>
-<body>
-  <div id="header-container"></div>
+<body style="margin: 0; padding: 0;">
 
-  <main class="container">
-    <nav class="breadcrumb-container" aria-label="Breadcrumb">
-      <ol class="breadcrumb-list">
-        <li class="breadcrumb-item"><a href="/">Home</a></li>
-        <li class="breadcrumb-item"><a href="/#ai">AI Tools</a></li>
-        <li class="breadcrumb-item active" aria-current="page">AI Bio Generator</li>
-      </ol>
+  <!-- Header Section -->
+  <header class="custom-header">
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
+    </a>
+    <nav class="custom-nav">
+      <a href="/#categories">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
     </nav>
+  </header>
 
-    <header style="margin-bottom: 1.5rem;">
-      <h1>AI Bio Generator</h1>
-      <p>Craft concise, catchy bio profiles for Twitter, Instagram, or LinkedIn.</p>
-    </header>
+  <!-- Main Container -->
+  <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
+    <!-- Breadcrumb Navigation -->
+    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
+      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
+      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">AI Tools</a> / 
+      <span>AI Bio Generator</span>
+    </nav>
+    
+    <!-- Title Section -->
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">AI Bio Generator</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Craft concise, catchy bio profiles for Twitter, Instagram, or LinkedIn.</p>
+    </div>
 
-    <div class="tool-layout">
-      <div class="tool-container">
-        <label style="font-weight: 600; display: block; margin-bottom: 0.5rem;">Tell us about yourself or business:</label>
-        <textarea id="ai-input" class="tool-textarea" style="min-height: 80px;" placeholder="e.g. Frontend Web Developer, building open source tools, loves JavaScript and design..."></textarea>
+    <!-- App Card -->
+    <div class="app-card">
+      <label style="font-weight: 600; display: block; margin-bottom: 0.5rem; color: #fff;">Tell us about yourself or business:</label>
+      <textarea id="ai-input" class="tool-textarea" style="min-height: 80px;" placeholder="e.g. Frontend Web Developer, building open source tools, loves JavaScript and design..."></textarea>
 
-        <div class="tool-controls">
-          <button class="btn btn-primary" id="btn-generate">✨ Generate Bios</button>
-        </div>
+      <div style="margin-top: 1rem;">
+        <button class="btn btn-primary" id="btn-generate">✨ Generate Bios</button>
+      </div>
 
-        <label style="font-weight: 600; display: block; margin-top: 1.5rem; margin-bottom: 0.5rem;">Suggested Bios:</label>
-        <textarea id="ai-output" class="tool-textarea" style="min-height: 180px;" readonly placeholder="Bios will appear here..."></textarea>
+      <label style="font-weight: 600; display: block; margin-top: 1.5rem; margin-bottom: 0.5rem; color: #fff;">Suggested Bios:</label>
+      <textarea id="ai-output" class="tool-textarea" style="min-height: 180px;" readonly placeholder="Bios will appear here..."></textarea>
 
-        <div class="tool-controls" style="margin-top: 1rem;">
-          <button class="btn btn-primary" data-copy-target="ai-output">📋 Copy Bio</button>
-        </div>
+      <div style="margin-top: 1rem;">
+        <button class="btn btn-primary" data-copy-target="ai-output">📋 Copy Bio</button>
       </div>
     </div>
+
+    <!-- SEO Article Content Box 1 -->
+    <div class="content-box">
+      <h2>Why Your Social Media Bio Matters</h2>
+      <p>Your social media bio is your digital first impression. Whether potential clients visit your Twitter/X profile or employers check your LinkedIn, a compelling, catchy bio clearly communicates your value proposition and expertise in seconds.</p>
+    </div>
+
+    <!-- Internal Linking Section (SEO Best Practice) -->
+    <div class="content-box">
+      <h2>Explore Related AI & Text Tools</h2>
+      <p>Enhance your content creation and social media workflow with our free utilities:</p>
+      <div class="related-links">
+        <a href="/tools/developer/lorem-ipsum-generator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📜 Lorem Ipsum Generator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Generate dummy placeholder text for layouts.</span>
+        </a>
+        <a href="/tools/developer/base64-encoder-decoder.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🔒 Base64 Encoder / Decoder</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Encode or decode text strings into Base64 format.</span>
+        </a>
+        <a href="/tools/developer/code-to-image.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📷 Code Snippet to Image</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Turn source code into beautiful social media images.</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="content-box">
+      <h2>Frequently Asked Questions</h2>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What platforms are supported by the AI Bio Generator?</h3>
+        <p>The generator creates profile bio variations suitable for Twitter/X, Instagram, LinkedIn, TikTok, and professional portfolio pages.</p>
+      </div>
+    </div>
+
   </main>
 
+  <!-- Footer Container Placeholder -->
   <div id="footer-container"></div>
 
+  <!-- JavaScript Utilities & Logic -->
   <script src="/assets/js/theme.js"></script>
-  <script src="/assets/js/utils.js"></script>
-  <script src="/assets/js/app.js"></script>
+  <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
