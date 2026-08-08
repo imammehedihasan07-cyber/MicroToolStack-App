@@ -1,59 +1,304 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) - Optimized Load -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var gTagScript = document.createElement('script');
+        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        gTagScript.async = true;
+        document.head.appendChild(gTagScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F3WWR9KGB4');
+      }, 1000);
+    });
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bulk UUID Generator (v4) | MicroToolStack</title>
-  <meta name="description" content="Generate cryptographically secure Version-4 UUIDs online in bulk for database keys and testing.">
   
-  <link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="stylesheet" href="/assets/css/components.css">
-  <link rel="stylesheet" href="/assets/css/tools.css">
+  <!-- Primary SEO Meta Tags -->
+  <title>Bulk UUID Generator (v4) - Free Online Tool | MicroToolStack</title>
+  <meta name="description" content="Generate cryptographically secure Version-4 UUIDs online in bulk for database keys, testing, and API identifiers. Fast, 100% private browser processing.">
+  <meta name="keywords" content="uuid generator, bulk uuid generator, uuid v4 generator, random uuid maker, guid generator online, database primary key generator">
+
+  <link rel="canonical" href="https://microtoolstack.com/tools/developer/uuid-generator.html">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Social Media Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Bulk UUID Generator (v4) - Free Online Tool | MicroToolStack">
+  <meta property="og:description" content="Generate cryptographically secure Version-4 UUIDs online in bulk for database keys and testing. Fast, 100% private client-side processing.">
+  <meta property="og:url" content="https://microtoolstack.com/tools/developer/uuid-generator.html">
+  <meta property="og:site_name" content="MicroToolStack">
+  <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
+
+  <!-- Favicon Icon for Google & Devices -->
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
+
+  <!-- JSON-LD Schema Markup -->
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Bulk UUID Generator (v4)",
+      "url": "https://microtoolstack.com/tools/developer/uuid-generator.html",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "All",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "Generate random Version-4 Universally Unique Identifiers (UUIDs) in bulk for database primary keys."
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a Version 4 UUID?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A UUID (Universally Unique Identifier) Version 4 is a 128-bit number generated completely at random using cryptographically secure pseudo-random values."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are my generated UUIDs sent to any server?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The UUID generation runs 100% locally inside your web browser using JavaScript crypto API."
+          }
+        }
+      ]
+    }
+  ]
+  </script>
+
+  <!-- Fonts & CSS Stylesheets -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <style>
+    .app-card {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2.5rem;
+    }
+    .search-input {
+      padding: 0.6rem 0.8rem;
+      border-radius: 6px;
+      border: 1px solid var(--border-color, #374151);
+      background: var(--bg-body, #111827);
+      color: #fff;
+      font-size: 0.95rem;
+      outline: none;
+    }
+    .tool-textarea {
+      width: 100%;
+      min-height: 220px;
+      padding: 1rem;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      background-color: var(--bg-body, #111827);
+      color: #34d399;
+      outline: none;
+      resize: vertical;
+      box-sizing: border-box;
+      margin-top: 1rem;
+    }
+    .btn {
+      padding: 0.65rem 1.25rem;
+      border-radius: 8px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 0.95rem;
+      transition: opacity 0.2s;
+    }
+    .btn:hover {
+      opacity: 0.9;
+    }
+    .btn-primary {
+      background-color: var(--accent-primary, #2563eb);
+      color: #fff;
+    }
+    .content-box {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .content-box h2 {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul, .content-box ol {
+      color: var(--text-secondary, #9ca3af);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .content-box ul, .content-box ol {
+      padding-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .content-box li {
+      margin-bottom: 0.5rem;
+    }
+    .related-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .related-card {
+      display: block;
+      padding: 1rem;
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      color: var(--text-primary, #fff);
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .related-card:hover {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+  </style>
 </head>
-<body>
-  <div id="header-container"></div>
+<body style="margin: 0; padding: 0;">
 
-  <main class="container">
-    <nav class="breadcrumb-container" aria-label="Breadcrumb">
-      <ol class="breadcrumb-list">
-        <li class="breadcrumb-item"><a href="/">Home</a></li>
-        <li class="breadcrumb-item"><a href="/#developer">Developer Tools</a></li>
-        <li class="breadcrumb-item active" aria-current="page">UUID Generator</li>
-      </ol>
+  <!-- Header Section -->
+  <header class="custom-header">
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
+    </a>
+    <nav class="custom-nav">
+      <a href="/#categories">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
     </nav>
+  </header>
 
-    <header style="margin-bottom: 1.5rem;">
-      <h1>UUID Generator (v4)</h1>
-      <p>Generate random Version-4 Universally Unique Identifiers (UUIDs) for database primary keys.</p>
-    </header>
+  <!-- Main Content -->
+  <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
+    <!-- Breadcrumb Navigation -->
+    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
+      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
+      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Developer Tools</a> / 
+      <span>UUID Generator</span>
+    </nav>
+    
+    <!-- Title Section -->
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <span class="badge badge-primary" style="margin-bottom: 0.5rem; display: inline-block;">100% Private & Cryptographically Secure</span>
+      <h1 style="font-size: 2rem; color: #fff; margin-bottom: 0.5rem;">Bulk UUID Generator (v4)</h1>
+      <p style="color: var(--text-secondary, #9ca3af);">Generate random Version-4 Universally Unique Identifiers (UUIDs) for database primary keys and testing.</p>
+    </div>
 
-    <div class="tool-layout">
-      <div class="tool-container">
-        <div style="display: flex; gap: 1rem; align-items: center; margin-bottom: 1rem;">
-          <label style="font-weight: 600;">Quantity:</label>
-          <input type="number" id="uuid-count" class="search-input" value="5" min="1" max="50" style="width: 100px;">
-          <button class="btn btn-primary" id="btn-generate">🎲 Generate</button>
-        </div>
+    <!-- App Card -->
+    <div class="app-card">
+      <div style="display: flex; gap: 1rem; align-items: center; margin-bottom: 1rem; flex-wrap: wrap;">
+        <label style="font-weight: 600; color: #fff;">Quantity:</label>
+        <input type="number" id="uuid-count" class="search-input" value="5" min="1" max="50" style="width: 100px;">
+        <button class="btn btn-primary" id="btn-generate">🎲 Generate UUIDs</button>
+      </div>
 
-        <textarea id="uuid-output" class="tool-textarea" readonly style="font-family: var(--font-mono); font-size: 0.875rem;" aria-label="Generated UUIDs"></textarea>
+      <textarea id="uuid-output" class="tool-textarea" readonly aria-label="Generated UUIDs"></textarea>
 
-        <div class="tool-controls" style="margin-top: 1rem;">
-          <button class="btn btn-primary" data-copy-target="uuid-output">📋 Copy All UUIDs</button>
-        </div>
+      <div style="margin-top: 1.25rem;">
+        <button class="btn btn-primary" id="btn-copy">📋 Copy All UUIDs</button>
       </div>
     </div>
+
+    <!-- SEO Content Box 1 -->
+    <div class="content-box">
+      <h2>Why Use UUID Version 4 for Primary Keys?</h2>
+      <p>UUID (Universally Unique Identifier) Version 4 values are 128-bit numbers constructed using random numbers. Because there are over 3.4 × 10³⁸ possible combinations, the probability of a collision is virtually zero. This makes UUID v4 ideal for distributed systems, database primary keys, session IDs, and microservices without central coordination.</p>
+    </div>
+
+    <!-- SEO Content Box 2 -->
+    <div class="content-box">
+      <h2>How to Use This Generator</h2>
+      <ul>
+        <li>Select the quantity of UUIDs you want to generate (between 1 and 50).</li>
+        <li>Click <strong>Generate UUIDs</strong> to calculate cryptographically secure IDs.</li>
+        <li>Click <strong>Copy All UUIDs</strong> to grab the output straight to your clipboard.</li>
+      </ul>
+    </div>
+
+    <!-- Internal Linking Section (SEO Best Practice) -->
+    <div class="content-box">
+      <h2>Explore Related Developer Tools</h2>
+      <p>Enhance your development and testing workflow with our free utilities:</p>
+      <div class="related-links">
+        <a href="/tools/developer/password-hash-generator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🔑 Password & Hash Generator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Generate passwords and SHA-256 / MD5 hashes.</span>
+        </a>
+        <a href="/tools/developer/base64-encoder-decoder.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🔒 Base64 Encoder / Decoder</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Encode or decode text strings into Base64 format.</span>
+        </a>
+        <a href="/tools/developer/json-formatter.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">✨ JSON Formatter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Format, beautify, and validate JSON syntax.</span>
+        </a>
+        <a href="/tools/developer/code-to-image.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📷 Code Snippet to Image</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Turn source code into beautiful social media images.</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="content-box">
+      <h2>Frequently Asked Questions</h2>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="font-size: 1.05rem; color: #fff; margin-bottom: 0.25rem;">What is a Version 4 UUID?</h3>
+        <p>A UUID Version 4 is a 128-bit identifier generated completely at random using cryptographically secure pseudo-random values.</p>
+      </div>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="font-size: 1.05rem; color: #fff; margin-bottom: 0.25rem;">Are my generated UUIDs sent to any server?</h3>
+        <p>No. The UUID generation runs 100% locally inside your web browser using JavaScript crypto API.</p>
+      </div>
+    </div>
+
   </main>
 
+  <!-- Footer Placeholder -->
   <div id="footer-container"></div>
 
+  <!-- Scripts -->
   <script src="/assets/js/theme.js"></script>
-  <script src="/assets/js/utils.js"></script>
-  <script src="/assets/js/app.js"></script>
+  <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
 
+  <!-- Client Logic -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const countInput = document.getElementById('uuid-count');
       const output = document.getElementById('uuid-output');
+      const copyBtn = document.getElementById('btn-copy');
 
       function generateUUIDv4() {
         return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
@@ -68,6 +313,14 @@
       }
 
       document.getElementById('btn-generate').addEventListener('click', runGenerate);
+      
+      copyBtn.addEventListener('click', () => {
+        if (!output.value) return;
+        navigator.clipboard.writeText(output.value).then(() => {
+          alert('UUIDs copied to clipboard!');
+        });
+      });
+
       runGenerate();
     });
   </script>
