@@ -1,6 +1,19 @@
 {
   "version": 2,
   "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "microtoolstack.vercel.app"
+        }
+      ],
+      "destination": "https://microtoolstack.com/$1",
+      "permanent": true
+    }
+  ],
   "routes": [
     {
       "src": "/api/(.*)",
