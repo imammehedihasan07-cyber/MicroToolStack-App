@@ -1,32 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) - Deferred Load -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var gTagScript = document.createElement('script');
+        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        gTagScript.async = true;
+        document.head.appendChild(gTagScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F3WWR9KGB4');
+      }, 1000);
+    });
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Base64 Encoder / Decoder | MicroToolStack</title>
-  <meta name="description" content="Encode text strings into Base64 format or decode Base64 back into human-readable text online.">
   
-  <link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="stylesheet" href="/assets/css/components.css">
-  <link rel="stylesheet" href="/assets/css/tools.css">
-</head>
-<body>
-  <div id="header-container"></div>
+  <!-- Primary SEO Meta Tags -->
+  <title>Base64 Encoder / Decoder - Free Online Developer Tool | MicroToolStack</title>
+  <meta name="description" content="Encode text strings into Base64 format or decode Base64 back into human-readable text online. Fast, secure, and 100% client-side browser processing.">
+  <meta name="keywords" content="base64 encoder, base64 decoder, encode text to base64, decode base64 string, online base64 converter, developer tools">
 
-  <main class="container">
-    <nav class="breadcrumb-container" aria-label="Breadcrumb">
-      <ol class="breadcrumb-list">
-        <li class="breadcrumb-item"><a href="/">Home</a></li>
-        <li class="breadcrumb-item"><a href="/#developer">Developer Tools</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Base64 Encoder / Decoder</li>
-      </ol>
+  <link rel="canonical" href="https://microtoolstack.com/tools/developer/base64-encoder-decoder.html">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Social Media Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Base64 Encoder / Decoder - Free Online Developer Tool | MicroToolStack">
+  <meta property="og:description" content="Encode text strings into Base64 format or decode Base64 back into human-readable text online. Fast, secure, client-side processing.">
+  <meta property="og:url" content="https://microtoolstack.com/tools/developer/base64-encoder-decoder.html">
+  <meta property="og:site_name" content="MicroToolStack">
+  <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
+
+  <!-- Favicon Icon for Google & Devices -->
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
+
+  <!-- Fonts & CSS Stylesheets -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/tools.css?v=10.0">
+
+  <!-- JSON-LD Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://microtoolstack.com/tools/developer/base64-encoder-decoder.html#webapp",
+        "url": "https://microtoolstack.com/tools/developer/base64-encoder-decoder.html",
+        "name": "Base64 Encoder / Decoder",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "All",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "Easily encode text values to Base64 output or decode string values safely in your browser."
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://microtoolstack.com/tools/developer/base64-encoder-decoder.html#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is my text data safe when encoding or decoding?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, 100% safe. All conversions happen locally inside your web browser using JavaScript. No text is sent to any external server."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does this tool support UTF-8 and special characters?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! Our encoder and decoder properly handle UTF-8 characters, emojis, and international text formatting."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .tool-layout {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2.5rem;
+    }
+    .tool-textarea {
+      width: 100%;
+      min-height: 180px;
+      padding: 1rem;
+      border-radius: 8px;
+      border: 1px solid var(--border-color, #333);
+      background: var(--bg-body, #111827);
+      color: #7ee787;
+      font-family: monospace;
+      font-size: 0.95rem;
+      resize: vertical;
+      margin-bottom: 1.25rem;
+      box-sizing: border-box;
+      outline: none;
+    }
+    .tool-controls {
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 0.95rem;
+      transition: opacity 0.2s;
+    }
+    .btn:hover {
+      opacity: 0.9;
+    }
+    .btn-primary {
+      background-color: var(--accent-primary, #2563eb);
+      color: #fff;
+    }
+    .btn-secondary {
+      background-color: var(--bg-body, #111827);
+      border: 1px solid var(--border-color, #333);
+      color: #fff;
+    }
+    .content-box {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .content-box h2 {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul, .content-box ol {
+      color: var(--text-secondary, #9ca3af);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .content-box ul, .content-box ol {
+      padding-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .content-box li {
+      margin-bottom: 0.5rem;
+    }
+    .related-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .related-card {
+      display: block;
+      padding: 1rem;
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      color: var(--text-primary, #fff);
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .related-card:hover {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+  </style>
+</head>
+<body style="margin: 0; padding: 0;">
+
+  <!-- Header Section -->
+  <header class="custom-header">
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
+    </a>
+    <nav class="custom-nav">
+      <a href="/#categories">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
+    <!-- Breadcrumb Navigation -->
+    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
+      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
+      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Developer Tools</a> / 
+      <span>Base64 Encoder / Decoder</span>
     </nav>
 
-    <header style="margin-bottom: 1.5rem;">
-      <h1>Base64 Encoder / Decoder</h1>
-      <p>Easily encode text values to Base64 output or decode string values safely in your browser.</p>
+    <!-- Header Area -->
+    <header style="margin-bottom: 2rem; text-align: center;">
+      <h1 class="hero" style="font-size: 2rem; margin-bottom: 0.5rem; color: #fff;">Base64 Encoder / Decoder</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">
+        Easily encode text values to Base64 output or decode string values safely in your browser.
+      </p>
     </header>
 
+    <!-- Tool Layout -->
     <div class="tool-layout">
       <div class="tool-container">
         <textarea id="base64-input" class="tool-textarea" placeholder="Type text or Base64 string here..." aria-label="Base64 input"></textarea>
@@ -34,38 +228,106 @@
         <div class="tool-controls">
           <button class="btn btn-primary" id="btn-encode">🔒 Encode to Base64</button>
           <button class="btn btn-secondary" id="btn-decode">🔓 Decode Base64</button>
-          <button class="btn btn-primary" data-copy-target="base64-input">📋 Copy</button>
+          <button class="btn btn-primary" id="btn-copy">📋 Copy Text</button>
         </div>
       </div>
     </div>
+
+    <!-- SEO Content Box 1 -->
+    <div class="content-box">
+      <h2>What is Base64 Encoding?</h2>
+      <p>
+        Base64 is a binary-to-text encoding scheme that represents binary data in an ASCII string format. It is widely used in web development, email transmission (MIME), data storage, and API payload formatting to ensure binary data remains intact during transport.
+      </p>
+    </div>
+
+    <!-- SEO Content Box 2 -->
+    <div class="content-box">
+      <h2>How to Use This Base64 Tool</h2>
+      <ul>
+        <li><strong>To Encode:</strong> Type or paste standard plain text into the input box and click <strong>Encode to Base64</strong>.</li>
+        <li><strong>To Decode:</strong> Paste a valid Base64 string into the input box and click <strong>Decode Base64</strong>.</li>
+        <li>Click <strong>Copy Text</strong> to grab the converted output directly to your clipboard.</li>
+      </ul>
+    </div>
+
+    <!-- Internal Linking Section (SEO Best Practice) -->
+    <div class="content-box">
+      <h2>Explore Related Developer & Text Tools</h2>
+      <p>Enhance your coding and web workflow with our free utilities:</p>
+      <div class="related-links">
+        <a href="/tools/media/base64-to-image.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🖼️ Base64 to Image</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Decode Base64 strings back to downloadable image files.</span>
+        </a>
+        <a href="/tools/media/image-to-base64.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📄 Image to Base64</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Convert image files directly into Data URI strings.</span>
+        </a>
+        <a href="/tools/seo/slug-generator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🔗 Slug Generator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Generate clean, SEO-friendly URL slugs.</span>
+        </a>
+        <a href="/tools/text/case-converter.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🔤 Case Converter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Convert text case into Upper, Lower, or Title Case.</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="content-box">
+      <h2>Frequently Asked Questions</h2>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="font-size: 1.05rem; color: #fff; margin-bottom: 0.25rem;">Is my text data safe when encoding or decoding?</h3>
+        <p>Yes, 100% safe. All conversions happen locally inside your web browser using JavaScript. No text is sent to any external server.</p>
+      </div>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="font-size: 1.05rem; color: #fff; margin-bottom: 0.25rem;">Does this tool support UTF-8 and special characters?</h3>
+        <p>Yes! Our encoder and decoder properly handle UTF-8 characters, emojis, and international text formatting.</p>
+      </div>
+    </div>
+
   </main>
 
+  <!-- Footer Placeholder -->
   <div id="footer-container"></div>
 
+  <!-- Core Scripts -->
   <script src="/assets/js/theme.js"></script>
-  <script src="/assets/js/utils.js"></script>
-  <script src="/assets/js/app.js"></script>
+  <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
 
+  <!-- Client Logic -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const input = document.getElementById('base64-input');
 
       document.getElementById('btn-encode').addEventListener('click', () => {
         try {
+          if (!input.value) return;
           input.value = btoa(unescape(encodeURIComponent(input.value)));
-          showToast('Encoded to Base64!');
+          if (typeof showToast === 'function') showToast('Encoded to Base64!');
         } catch (err) {
-          showToast('Encoding Failed: ' + err.message, 'danger');
+          alert('Encoding Failed: ' + err.message);
         }
       });
 
       document.getElementById('btn-decode').addEventListener('click', () => {
         try {
-          input.value = decodeURIComponent(escape(atob(input.value)));
-          showToast('Decoded Base64!');
+          if (!input.value) return;
+          input.value = decodeURIComponent(escape(atob(input.value.trim())));
+          if (typeof showToast === 'function') showToast('Decoded Base64!');
         } catch (err) {
-          showToast('Invalid Base64 string', 'danger');
+          alert('Invalid Base64 string');
         }
+      });
+
+      document.getElementById('btn-copy').addEventListener('click', () => {
+        if (!input.value) return;
+        navigator.clipboard.writeText(input.value).then(() => {
+          alert('Copied to clipboard!');
+        });
       });
     });
   </script>
