@@ -268,7 +268,7 @@
       <div class="form-group" style="grid-column: span 1 / -1;">
         <label for="voice-select">Select Voice & Language</label>
         <select id="voice-select" class="form-control">
-          <option value="">Loading available voices...</option>
+          <option value="0">Default System Voice</option>
         </select>
       </div>
 
@@ -390,30 +390,30 @@
       function populateVoices() {
         if (!synth) return;
         voices = synth.getVoices();
-        voiceSelect.innerHTML = '';
 
-        if (voices.length === 0) {
-          const opt = document.createElement('option');
-          opt.textContent = 'Standard Default Voice';
-          voiceSelect.appendChild(opt);
-          return;
+        if (voices.length > 0) {
+          voiceSelect.innerHTML = '';
+          voices.forEach((voice, index) => {
+            const option = document.createElement('option');
+            option.textContent = `${voice.name} (${voice.lang})`;
+            option.value = index;
+            if (voice.default || voice.lang.includes('en')) {
+              option.selected = true;
+            }
+            voiceSelect.appendChild(option);
+          });
         }
-
-        voices.forEach((voice, index) => {
-          const option = document.createElement('option');
-          option.textContent = `${voice.name} (${voice.lang})`;
-          option.value = index;
-          if (voice.default) {
-            option.selected = true;
-          }
-          voiceSelect.appendChild(option);
-        });
       }
 
       populateVoices();
+
       if (speechSynthesis.onvoiceschanged !== undefined) {
         speechSynthesis.onvoiceschanged = populateVoices;
       }
+
+      // Android Chrome async retry load
+      setTimeout(populateVoices, 500);
+      setTimeout(populateVoices, 1200);
 
       inputRate.addEventListener('input', () => valRate.textContent = `${inputRate.value}x`);
       inputPitch.addEventListener('input', () => valPitch.textContent = inputPitch.value);
@@ -438,7 +438,7 @@
 
         const utterance = new SpeechSynthesisUtterance(text);
         
-        if (voices[voiceSelect.value]) {
+        if (voices.length > 0 && voices[voiceSelect.value]) {
           utterance.voice = voices[voiceSelect.value];
         }
 
@@ -470,7 +470,7 @@
         ttsInput.focus();
       });
 
-      // Free Client-Side MP3 Download Action
+      // Free MP3 Download Action
       btnDownload.addEventListener('click', function() {
         hideBanner();
         const text = ttsInput.value.trim();
@@ -484,7 +484,7 @@
 
         const encodedText = encodeURIComponent(text.substring(0, 300));
         let selectedLang = 'en';
-        if (voices[voiceSelect.value] && voices[voiceSelect.value].lang) {
+        if (voices.length > 0 && voices[voiceSelect.value] && voices[voiceSelect.value].lang) {
           selectedLang = voices[voiceSelect.value].lang.substring(0, 2);
         }
 
@@ -508,4 +508,17 @@
             showBanner('success', '✓ MP3 audio downloaded successfully!');
           })
           .catch(() => {
-            const a = d
+            const a = document.createElement('a');
+            a.href = freeAudioUrl;
+            a.target = '_blank';
+            a.download = 'tts-speech-audio.mp3';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            showBanner('success', '✓ Audio opened in new tab! Right-click to save MP3.');
+          });
+      });
+    });
+  </script>
+</body>
+</html>
