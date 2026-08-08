@@ -22,19 +22,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Split PDF Pages Online - Free & Private | MicroToolStack</title>
   <meta name="description" content="Extract specific pages or split PDF documents online for free. 100% private client-side processing with instant download.">
-  <link rel="canonical" href="https://microtoolstack.vercel.app/tools/pdf/split-pdf.html">
+  <meta name="keywords" content="split pdf online, extract pdf pages, pdf page extractor, separate pdf pages, client side pdf splitter">
+
+  <link rel="canonical" href="https://microtoolstack.com/tools/pdf/split-pdf.html">
+  <meta name="robots" content="index, follow">
 
   <!-- Open Graph / Social Media Meta Tags -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Split PDF Pages Online - Free & Private | MicroToolStack">
   <meta property="og:description" content="Extract specific pages or split PDF documents online for free. 100% private client-side processing.">
-  <meta property="og:url" content="https://microtoolstack.vercel.app/tools/pdf/split-pdf.html">
+  <meta property="og:url" content="https://microtoolstack.com/tools/pdf/split-pdf.html">
   <meta property="og:site_name" content="MicroToolStack">
+  <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
   <!-- Twitter Meta Tags -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Split PDF Pages Online - Free & Private | MicroToolStack">
   <meta name="twitter:description" content="Extract specific pages or split PDF documents online for free. 100% private client-side processing.">
+
+  <!-- Favicon Icon for Google & Devices -->
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
   <!-- Fonts & CSS Stylesheets -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -49,8 +58,8 @@
     "@graph": [
       {
         "@type": "WebApplication",
-        "@id": "https://microtoolstack.vercel.app/tools/pdf/split-pdf.html#webapp",
-        "url": "https://microtoolstack.vercel.app/tools/pdf/split-pdf.html",
+        "@id": "https://microtoolstack.com/tools/pdf/split-pdf.html#webapp",
+        "url": "https://microtoolstack.com/tools/pdf/split-pdf.html",
         "name": "Split PDF Pages Online",
         "applicationCategory": "UtilitiesApplication",
         "operatingSystem": "All",
@@ -63,7 +72,7 @@
       },
       {
         "@type": "FAQPage",
-        "@id": "https://microtoolstack.vercel.app/tools/pdf/split-pdf.html#faq",
+        "@id": "https://microtoolstack.com/tools/pdf/split-pdf.html#faq",
         "mainEntity": [
           {
             "@type": "Question",
@@ -89,17 +98,17 @@
 
   <style>
     .upload-box {
-      border: 2px dashed var(--border-color);
+      border: 2px dashed var(--border-color, #333);
       padding: 2.5rem 1.5rem;
       text-align: center;
       border-radius: 12px;
       cursor: pointer;
-      background: var(--bg-secondary);
+      background: var(--bg-card, #1e1e2e);
       transition: border-color 0.3s;
       margin-bottom: 1.5rem;
     }
     .upload-box:hover {
-      border-color: var(--accent-primary);
+      border-color: var(--accent-primary, #3b82f6);
     }
     .action-container {
       margin-top: 1.5rem;
@@ -109,66 +118,106 @@
       width: 100%;
       padding: 0.8rem;
       border-radius: 8px;
-      border: 1px solid var(--border-color);
-      background: var(--bg-primary);
-      color: var(--text-primary);
+      border: 1px solid var(--border-color, #333);
+      background: var(--bg-body, #111827);
+      color: #fff;
       font-size: 0.95rem;
       margin-top: 0.5rem;
       margin-bottom: 1.5rem;
+      outline: none;
+      box-sizing: border-box;
+    }
+    .content-box {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .content-box h2 {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul, .content-box ol {
+      color: var(--text-secondary, #9ca3af);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .content-box ul, .content-box ol {
+      padding-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .content-box li {
+      margin-bottom: 0.5rem;
     }
     .related-links {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
       gap: 1rem;
-      flex-wrap: wrap;
       margin-top: 1rem;
     }
-    .related-links a {
-      color: var(--accent-primary);
+    .related-card {
+      display: block;
+      padding: 1rem;
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      color: var(--text-primary, #fff);
       text-decoration: none;
-      font-weight: 500;
-      background: var(--bg-secondary);
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      border: 1px solid var(--border-color);
+      transition: border-color 0.2s;
+    }
+    .related-card:hover {
+      border-color: var(--accent-primary, #3b82f6);
     }
   </style>
 </head>
-<body>
-  <!-- Header Container -->
-  <div id="header-container"></div>
+<body style="margin: 0; padding: 0;">
+  <!-- Header Section -->
+  <header class="custom-header">
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
+    </a>
+    <nav class="custom-nav">
+      <a href="/#categories">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
+    </nav>
+  </header>
 
-  <main class="container" style="max-width: 800px; margin: 2rem auto; padding: 0 1rem;">
+  <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
     <!-- Breadcrumb Navigation -->
-    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary);">
-      <a href="/" style="color: var(--text-primary); text-decoration: none;">Home</a> / 
-      <a href="/tools/pdf/" style="color: var(--text-primary); text-decoration: none;">PDF Tools</a> / 
+    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
+      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
+      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">PDF Tools</a> / 
       <span>Split PDF</span>
     </nav>
 
     <!-- Tool Header -->
     <header style="margin-bottom: 2rem; text-align: center;">
-      <h1 class="hero" style="font-size: 2.2rem; margin-bottom: 0.5rem;">Free Online PDF Splitter</h1>
-      <p style="color: var(--text-secondary); font-size: 1rem;">
+      <h1 class="hero" style="font-size: 2rem; margin-bottom: 0.5rem; color: #fff;">Free Online PDF Splitter</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">
         Extract specific pages or page ranges from your PDF document easily and privately.
       </p>
     </header>
 
     <!-- Tool Main Card -->
-    <div class="card" style="padding: 2rem; border-radius: 12px; background: var(--bg-secondary); border: 1px solid var(--border-color);">
+    <div class="card" style="padding: 2rem; border-radius: 12px; background: var(--bg-card, #1e1e2e); border: 1px solid var(--border-color, #333); margin-bottom: 3rem;">
       
       <!-- Upload Drop Zone -->
       <div class="upload-box" id="dropZone" onclick="document.getElementById('pdfInput').click()">
         <span style="font-size: 2.5rem; display: block; margin-bottom: 0.5rem;">✂️</span>
-        <p style="margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">Click or Drag & Drop PDF File Here</p>
-        <p style="font-size: 0.85rem; color: var(--text-secondary);">Supports multi-page PDF files (100% Client-Side Privacy)</p>
+        <p style="margin-bottom: 0.5rem; font-weight: 600; color: #fff;">Click or Drag & Drop PDF File Here</p>
+        <p style="font-size: 0.85rem; color: var(--text-secondary, #9ca3af);">Supports multi-page PDF files (100% Client-Side Privacy)</p>
         <input type="file" id="pdfInput" accept="application/pdf" style="display: none;" onchange="handleFileSelect(event)">
       </div>
 
       <!-- Action Area -->
       <div class="action-container" id="actionArea">
-        <p style="font-weight: 600; color: var(--text-primary); margin-bottom: 0.2rem;" id="pdfInfoText"></p>
+        <p style="font-weight: 600; color: #fff; margin-bottom: 0.2rem;" id="pdfInfoText"></p>
         
-        <label style="display: block; font-size: 0.9rem; color: var(--text-secondary); margin-top: 1rem;">
+        <label style="display: block; font-size: 0.9rem; color: var(--text-secondary, #9ca3af); margin-top: 1rem;">
           Enter pages to extract (e.g. 1, 3-5, 8):
         </label>
         <input type="text" id="pageRangeInput" class="input-field" placeholder="1-3, 5">
@@ -182,41 +231,57 @@
 
     </div>
 
-    <!-- Content / FAQ Section -->
-    <section style="margin-top: 3rem; border-top: 1px solid var(--border-color); padding-top: 2rem;">
-      <h2 style="font-size: 1.4rem; margin-bottom: 1rem;">How to Split PDF Pages Online</h2>
-      <ol style="color: var(--text-secondary); line-height: 1.8; padding-left: 1.2rem; margin-bottom: 2rem;">
+    <!-- SEO Content Box 1 -->
+    <div class="content-box">
+      <h2>How to Split PDF Pages Online</h2>
+      <ol>
         <li>Upload your multi-page PDF document into the box.</li>
         <li>Specify the pages or page ranges you want to extract (e.g., "1-3, 5").</li>
         <li>Click <strong>Split & Download PDF</strong> to extract and save those pages into a new PDF instantly.</li>
       </ol>
+    </div>
 
-      <h3 style="font-size: 1.2rem; margin-bottom: 0.8rem;">Frequently Asked Questions</h3>
-      <div style="margin-bottom: 2rem; color: var(--text-secondary); line-height: 1.6;">
-        <p style="margin-bottom: 1rem;"><strong>Q: How do I enter custom page numbers?</strong><br>
-        A: You can type single pages separated by commas (e.g., "1, 4, 7") or continuous page ranges with hyphens (e.g., "2-6").</p>
-        
-        <p><strong>Q: Is my document kept secure?</strong><br>
-        A: Yes, completely. The extraction happens 100% inside your device browser, so no sensitive documents leave your device.</p>
-      </div>
-
-      <!-- Internal Links -->
-      <h3 style="font-size: 1.1rem; margin-bottom: 0.8rem;">Related Tools</h3>
+    <!-- Internal Linking Section (SEO Best Practice) -->
+    <div class="content-box">
+      <h2>Explore Related PDF & Academic Tools</h2>
+      <p>Enhance your document workflow with our free utilities:</p>
       <div class="related-links">
-        <a href="/tools/pdf/merge-pdf.html">🧩 Merge PDF Files</a>
-        <a href="/tools/pdf/images-to-pdf.html">🖼️ Images to PDF</a>
-        <a href="/tools/media/svg-to-png.html">🖼️ SVG to PNG Converter</a>
+        <a href="/tools/pdf/merge-pdf.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🧩 Merge PDF Files</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Combine multiple PDFs into a single file.</span>
+        </a>
+        <a href="/tools/pdf/images-to-pdf.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🖼️ Images to PDF</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Convert JPG, PNG, and WebP images to PDF.</span>
+        </a>
+        <a href="/tools/pdf/assignment-cover-page.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📄 Cover Page Generator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Design printable A4 assignment cover pages.</span>
+        </a>
       </div>
-    </section>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="content-box">
+      <h2>Frequently Asked Questions</h2>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="font-size: 1.05rem; color: #fff; margin-bottom: 0.25rem;">How do I enter custom page numbers?</h3>
+        <p>You can type single pages separated by commas (e.g., "1, 4, 7") or continuous page ranges with hyphens (e.g., "2-6").</p>
+      </div>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="font-size: 1.05rem; color: #fff; margin-bottom: 0.25rem;">Is my document kept secure?</h3>
+        <p>Yes, completely. The extraction happens 100% inside your device browser, so no sensitive documents leave your device.</p>
+      </div>
+    </div>
+
   </main>
 
-  <!-- Footer Container -->
+  <!-- Footer Placeholder -->
   <div id="footer-container"></div>
 
   <!-- Core Scripts & PDF-Lib Library -->
   <script src="/assets/js/theme.js"></script>
   <script src="/assets/js/utils.js" defer></script>
-  <script src="/assets/js/search.js" defer></script>
   <script src="/assets/js/app.js" defer></script>
   <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
 
@@ -247,11 +312,11 @@
 
     // Drag & Drop
     const dropZone = document.getElementById('dropZone');
-    dropZone.addEventListener('dragover', (e) => { e.preventDefault(); dropZone.style.borderColor = 'var(--accent-primary)'; });
-    dropZone.addEventListener('dragleave', () => { dropZone.style.borderColor = 'var(--border-color)'; });
+    dropZone.addEventListener('dragover', (e) => { e.preventDefault(); dropZone.style.borderColor = 'var(--accent-primary, #3b82f6)'; });
+    dropZone.addEventListener('dragleave', () => { dropZone.style.borderColor = 'var(--border-color, #333)'; });
     dropZone.addEventListener('drop', (e) => {
       e.preventDefault();
-      dropZone.style.borderColor = 'var(--border-color)';
+      dropZone.style.borderColor = 'var(--border-color, #333)';
       if (e.dataTransfer.files.length) {
         handleFileSelect({ target: { files: e.dataTransfer.files } });
       }
