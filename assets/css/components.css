@@ -108,6 +108,7 @@
   from { transform: translateY(100%); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
 }
+
 /* Navigation & Header Styles */
 .site-header {
   position: sticky;
@@ -116,6 +117,7 @@
   background-color: var(--bg-primary);
   border-bottom: 1px solid var(--border-color);
   backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .navbar-container {
@@ -282,6 +284,7 @@
   color: var(--text-primary);
   font-weight: 500;
 }
+
 /* Search System & Dropdown Styles */
 #search-results-dropdown {
   position: absolute;
@@ -347,6 +350,7 @@
   color: var(--text-muted);
   text-align: center;
 }
+
 /* Header & Theme Toggle Layout Fix */
 .navbar {
   background-color: var(--bg-card, #1e1e2e);
@@ -450,11 +454,13 @@
   font-size: 1.2rem;
   padding: 0.2rem;
 }
+
 /* Fix Logo Image & Text Visibility inside Tool Header */
 .custom-logo img {
   height: 38px !important;
   width: auto !important;
   display: block;
+  aspect-ratio: auto;
 }
 
 .custom-logo {
