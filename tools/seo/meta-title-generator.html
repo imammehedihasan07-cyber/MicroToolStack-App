@@ -36,8 +36,10 @@
   <meta property="og:description" content="Generate high-CTR SEO title tags with real-time Google search snippet previews. 100% free and private.">
   <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
-  <!-- Favicon Icon -->
-  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+  <!-- Favicon Icon for Google & Devices -->
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
   <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
   <script type="application/ld+json">
@@ -201,6 +203,25 @@
     .content-box li {
       margin-bottom: 0.5rem;
     }
+    .related-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .related-card {
+      display: block;
+      padding: 1rem;
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      color: var(--text-primary, #fff);
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .related-card:hover {
+      border-color: var(--accent-primary, #3b82f6);
+    }
   </style>
 </head>
 <body style="margin: 0; padding: 0;">
@@ -269,11 +290,6 @@
       <span id="status-msg" style="font-size: 0.85rem; color: #10b981; font-weight: 500; display: none;">Title tag copied to clipboard!</span>
     </div>
 
-    <!-- Adsterra Banner Placement Placeholder -->
-    <div style="text-align: center; margin: 2rem 0;">
-      <script src="https://p130663884.effectivecpmnetwork.com/81/02/32/8102329c43de17d196371b4a3e3bed7f.js"></script>
-    </div>
-
     <!-- SEO Article Content Box 1 -->
     <div class="content-box">
       <h2>Why Meta Titles Are Crucial for SEO & CTR</h2>
@@ -289,6 +305,26 @@
         <li><strong>Add Brand Authority:</strong> Append your website or brand name at the end separated by a hyphen (-) or pipe (|).</li>
         <li><strong>Write for Humans:</strong> Avoid keyword stuffing; write compelling, click-worthy headlines that answer search intent.</li>
       </ul>
+    </div>
+
+    <!-- Internal Linking Section (SEO Best Practice) -->
+    <div class="content-box">
+      <h2>Explore Related SEO & Text Tools</h2>
+      <p>Enhance your search engine optimization with our free utilities:</p>
+      <div class="related-links">
+        <a href="/tools/seo/meta-description-generator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📄 Meta Description Generator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Craft click-worthy Meta Descriptions with SERP preview.</span>
+        </a>
+        <a href="/tools/seo/faq-schema-generator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">❓ FAQ Schema Generator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Build JSON-LD FAQPage structured data.</span>
+        </a>
+        <a href="/tools/seo/slug-generator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🔗 Slug Generator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Generate clean, SEO-friendly URL slugs.</span>
+        </a>
+      </div>
     </div>
 
     <!-- FAQ Section -->
