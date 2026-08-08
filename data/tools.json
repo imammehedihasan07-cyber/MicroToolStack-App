@@ -597,7 +597,7 @@
     "description": "Calculate proportions and scale your image or video dimensions accurately in real-time.",
     "category": "image",
     "url": "/tools/image/aspect-ratio-calculator.html",
-    "icon": "fa-solid fa-expand"
+    "icon": "📐"
   },
   {
     "id": "ssl-checker",
@@ -605,7 +605,7 @@
     "description": "Check website security, TLS/SSL certificate validity, and expiration timelines instantly.",
     "category": "seo",
     "url": "/tools/seo/ssl-checker.html",
-    "icon": "fa-solid fa-shield-halved"
+    "icon": "🔒"
   },
   {
     "id": "thumbnail-text-overlay-preview",
@@ -613,6 +613,6 @@
     "description": "Preview how text and titles look on your YouTube video thumbnails before publishing.",
     "category": "youtube",
     "url": "/tools/youtube/thumbnail-text-overlay-preview.html",
-   "icon": "fa-solid fa-file-image"
+    "icon": "🖼️"
   }
 ]
