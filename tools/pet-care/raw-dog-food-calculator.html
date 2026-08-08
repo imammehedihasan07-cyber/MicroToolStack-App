@@ -1,28 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) - Optimized Load -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var gTagScript = document.createElement('script');
+        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        gTagScript.async = true;
+        document.head.appendChild(gTagScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F3WWR9KGB4');
+      }, 1000);
+    });
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Raw Dog Food Portion Calculator - MicroToolStack</title>
-  <link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="stylesheet" href="/assets/css/components.css">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>Free Online Raw Dog Food Portion Calculator | BARF Diet Planner</title>
+  <meta name="description" content="Free online raw dog food portion calculator. Instantly calculate daily BARF diet intake (meat, bone, organs) based on your dog's weight and activity level.">
+  <meta name="keywords" content="raw dog food calculator, barf diet calculator, dog food portion calculator, raw feeding guide for dogs, daily raw feeding amounts">
+
+  <link rel="canonical" href="https://microtoolstack.com/tools/pet-care/raw-dog-food-calculator.html">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://microtoolstack.com/tools/pet-care/raw-dog-food-calculator.html">
+  <meta property="og:title" content="Free Online Raw Dog Food Portion Calculator | MicroToolStack">
+  <meta property="og:description" content="Instantly calculate daily raw food portions for your dog based on weight and activity level. 100% free and easy to use.">
+  <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
+
+  <!-- Favicon Icon for Google & Devices -->
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
+
+  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Raw Dog Food Portion Calculator",
+        "operatingSystem": "All",
+        "applicationCategory": "UtilitiesApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "An online pet health utility to calculate daily raw feeding portions based on the BARF diet model for dogs.",
+        "url": "https://microtoolstack.com/tools/pet-care/raw-dog-food-calculator.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the BARF diet for dogs?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "BARF stands for 'Biologically Appropriate Raw Food'. It focuses on feeding dogs raw meat, bones, and organs, mimicking the diet of their wild ancestors."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much raw food should I feed my dog?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A standard recommendation is 2-3% of your adult dog's body weight per day, though this varies based on age, activity level, and metabolic rate."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Preconnect and Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
   <style>
-    .calculator-card { max-width: 600px; margin: 2rem auto; padding: 2rem; background: var(--bg-card, #1e1e2e); border-radius: 12px; border: 1px solid var(--border-color, #333); }
-    .form-group { margin-bottom: 1.2rem; }
-    .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 600; }
-    .form-control { width: 100%; padding: 0.8rem; border-radius: 6px; border: 1px solid var(--border-color, #444); background: rgba(0,0,0,0.2); color: #fff; font-size: 1rem; box-sizing: border-box; }
-    .btn-calc { width: 100%; padding: 0.9rem; background: #38bdf8; color: #000; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; font-size: 1rem; }
-    .result-box { margin-top: 1.5rem; padding: 1.2rem; border-radius: 8px; text-align: center; display: none; background: rgba(56, 189, 248, 0.1); border: 1px solid #38bdf8; }
+    .calculator-card {
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: var(--bg-card, #1e1e2e);
+      border-radius: 12px;
+      border: 1px solid var(--border-color, #333);
+    }
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: #fff;
+    }
+    .form-control {
+      width: 100%;
+      padding: 0.8rem;
+      border-radius: 6px;
+      border: 1px solid var(--border-color, #444);
+      background: var(--bg-body, #111827);
+      color: #fff;
+      font-size: 1rem;
+      box-sizing: border-box;
+      outline: none;
+    }
+    .btn-calc {
+      width: 100%;
+      padding: 0.9rem;
+      background: var(--accent-primary, #3b82f6);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.2s;
+    }
+    .result-box {
+      margin-top: 1.5rem;
+      padding: 1.2rem;
+      border-radius: 8px;
+      text-align: center;
+      display: none;
+      background: rgba(59, 130, 246, 0.1);
+      border: 1px solid var(--accent-primary, #3b82f6);
+    }
+    .content-box {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .content-box h2 {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul {
+      color: var(--text-secondary, #9ca3af);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .content-box ul {
+      padding-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .content-box li {
+      margin-bottom: 0.5rem;
+    }
+    .related-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .related-card {
+      display: block;
+      padding: 1rem;
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      color: var(--text-primary, #fff);
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .related-card:hover {
+      border-color: var(--accent-primary, #3b82f6);
+    }
   </style>
 </head>
-<body>
-  <div id="header-container"></div>
-  <main class="container">
+<body style="margin: 0; padding: 0;">
+
+  <!-- Header Section -->
+  <header class="custom-header">
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
+    </a>
+    <nav class="custom-nav">
+      <a href="/#categories">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
+    </nav>
+  </header>
+
+  <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
+    <!-- Calculator Card -->
     <div class="calculator-card">
-      <h1 style="text-align: center; margin-bottom: 1rem;">🥩 Raw Dog Food Portion Calculator</h1>
+      <h1 style="text-align: center; margin-bottom: 1rem; color: #fff;">🥩 Raw Dog Food Portion Calculator</h1>
       <div class="form-group">
         <label for="dogWeightRaw">Dog's Weight (in kg):</label>
-        <input type="number" id="dogWeightRaw" class="form-control" placeholder="e.g. 15">
+        <input type="number" id="dogWeightRaw" class="form-control" placeholder="e.g. 15" autofocus>
       </div>
       <div class="form-group">
         <label for="activityLevel">Activity Level / Goal:</label>
@@ -35,12 +221,54 @@
         </select>
       </div>
       <button onclick="calculateRawFood()" class="btn-calc">Calculate Daily Food</button>
+      
       <div id="resultRaw" class="result-box">
-        <h3>Daily Portion: <span id="dailyGrams" style="color:#38bdf8;"></span> grams</h3>
-        <p style="margin-top: 8px; font-size: 0.9rem; color: #a1a1aa;">Recommendation (BARF Diet): 80% Meat, 10% Bone, 10% Organ Meat.</p>
+        <h3 style="margin: 0; color: #fff;">Daily Portion: <span id="dailyGrams" style="color:var(--accent-primary, #3b82f6);"></span> grams</h3>
+        <p style="margin-top: 8px; font-size: 0.9rem; color: var(--text-secondary, #9ca3af);">Recommendation (BARF Diet): 80% Meat, 10% Bone, 10% Organ Meat.</p>
       </div>
     </div>
+
+    <!-- SEO Article Content -->
+    <div class="content-box">
+      <h2>Why Choose the BARF Diet for Your Dog?</h2>
+      <p>The <strong>BARF Diet</strong> (Biologically Appropriate Raw Food) aims to provide dogs with a nutrition profile similar to their ancestral diet. Many pet owners switch to raw feeding to improve coat health, dental hygiene, and overall energy levels.</p>
+    </div>
+
+    <div class="content-box">
+      <h2>BARF Diet Breakdown</h2>
+      <ul>
+        <li><strong>Meat (80%):</strong> Lean muscle meat provides protein and essential amino acids.</li>
+        <li><strong>Bone (10%):</strong> Raw, meaty bones provide calcium and phosphorus (Never cook bones!).</li>
+        <li><strong>Organ Meat (10%):</strong> Liver and other secreting organs provide essential vitamins and minerals.</li>
+      </ul>
+    </div>
+
+    <!-- Internal Linking Section -->
+    <div class="content-box">
+      <h2>Explore Related Pet Care & Web Tools</h2>
+      <p>Try our other free online utilities:</p>
+      <div class="related-links">
+        <a href="/tools/pet-care/cat-age-converter.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🐱 Cat Age Converter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Convert cat years into human age equivalents.</span>
+        </a>
+        <a href="/tools/pet-care/dog-chocolate-calculator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🍫 Chocolate Toxicity</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Check if chocolate amount is safe for dogs.</span>
+        </a>
+        <a href="/tools/text/word-counter.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📝 Word Counter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Analyze text length and estimated reading time.</span>
+        </a>
+      </div>
+    </div>
+
   </main>
+
+  <!-- Footer Placeholder -->
+  <div id="footer-container"></div>
+
+  <!-- Scripts -->
   <script src="/assets/js/theme.js"></script>
   <script src="/assets/js/utils.js"></script>
   <script src="/assets/js/app.js"></script>
