@@ -21,7 +21,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Free Online PDF Tools & Utilities | MicroToolStack</title>
-  <meta name="description" content="100% free, private, and browser-based online PDF tools. Merge, split, convert images to PDF, and extract PDF pages instantly without server uploads.">
+  <meta name="description" content="100% free, private, and browser-based online PDF tools. Merge, split, convert images to PDF, and generate assignment cover pages instantly without server uploads.">
+  <meta name="keywords" content="pdf tools, online pdf converter, merge pdf, split pdf, images to pdf, assignment cover page generator">
+
+  <link rel="canonical" href="https://microtoolstack.com/tools/pdf/">
+  <meta name="robots" content="index, follow">
+
+  <!-- Favicon Icon for Google & Devices -->
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,51 +38,99 @@
   <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <style>
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 4rem;
+    }
+    .tool-index-card {
+      padding: 1.5rem;
+      border-radius: 12px;
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      text-decoration: none;
+      display: block;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .tool-index-card:hover {
+      border-color: var(--accent-primary, #3b82f6);
+      transform: translateY(-2px);
+    }
+    .tool-index-card h3 {
+      color: #fff;
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+    }
+    .tool-index-card p {
+      color: var(--text-secondary, #9ca3af);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+  </style>
 </head>
-<body>
-  <!-- Header Container -->
-  <div id="header-container"></div>
+<body style="margin: 0; padding: 0;">
+  <!-- Header Section -->
+  <header class="custom-header">
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
+    </a>
+    <nav class="custom-nav">
+      <a href="/#categories">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
+    </nav>
+  </header>
 
   <main class="container" style="max-width: 1000px; margin: 2rem auto; padding: 0 1rem;">
     <!-- Breadcrumb Navigation -->
-    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary);">
-      <a href="/" style="color: var(--text-primary); text-decoration: none;">Home</a> / 
+    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
+      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
       <span>PDF Tools</span>
     </nav>
 
     <!-- Category Header -->
     <header style="margin-bottom: 3rem; text-align: center;">
-      <h1 class="hero" style="font-size: 2.5rem; margin-bottom: 0.5rem;">Free Online PDF Tools</h1>
-      <p style="color: var(--text-secondary); font-size: 1.1rem; max-width: 700px; margin: 0 auto;">
-        Fast, 100% private client-side utilities to merge, convert, split, and edit PDF documents right in your browser.
+      <h1 class="hero" style="font-size: 2.2rem; margin-bottom: 0.5rem; color: #fff;">Free Online PDF Tools</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1.05rem; max-width: 700px; margin: 0 auto;">
+        Fast, 100% private client-side utilities to merge, convert, split, and generate PDF documents right in your browser.
       </p>
     </header>
 
     <!-- PDF Tools Grid -->
-    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 4rem;">
+    <div class="tools-grid">
       
-      <!-- Card 1: Merge PDF -->
-      <a href="/tools/pdf/merge-pdf.html" class="card" style="padding: 1.5rem; border-radius: 12px; background: var(--bg-secondary); border: 1px solid var(--border-color); text-decoration: none; display: block;">
-        <h3 style="color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.2rem;">🧩 Merge PDF</h3>
-        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5;">Combine multiple PDF files into one single organized document easily.</p>
+      <!-- Card 1: Images to PDF -->
+      <a href="/tools/pdf/images-to-pdf.html" class="tool-index-card">
+        <h3>🖼️ Images to PDF</h3>
+        <p>Convert JPG, PNG, and WebP images into a high-quality PDF document.</p>
       </a>
 
-      <!-- Card 2: Images to PDF -->
-      <a href="/tools/pdf/images-to-pdf.html" class="card" style="padding: 1.5rem; border-radius: 12px; background: var(--bg-secondary); border: 1px solid var(--border-color); text-decoration: none; display: block;">
-        <h3 style="color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.2rem;">🖼️ Images to PDF</h3>
-        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5;">Convert JPG, PNG, and WebP images into a high-quality PDF document.</p>
+      <!-- Card 2: Assignment Cover Page Generator -->
+      <a href="/tools/pdf/assignment-cover-page.html" class="tool-index-card">
+        <h3>📄 Assignment Cover Page</h3>
+        <p>Generate academic assignment cover pages for university and college in A4 PDF.</p>
       </a>
 
-      <!-- Card 3: Split PDF -->
-      <a href="/tools/pdf/split-pdf.html" class="card" style="padding: 1.5rem; border-radius: 12px; background: var(--bg-secondary); border: 1px solid var(--border-color); text-decoration: none; display: block;">
-        <h3 style="color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.2rem;">✂️ Split PDF</h3>
-        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5;">Extract specific pages or page ranges from your PDF document.</p>
+      <!-- Card 3: Merge PDF -->
+      <a href="/tools/pdf/merge-pdf.html" class="tool-index-card">
+        <h3>🧩 Merge PDF</h3>
+        <p>Combine multiple PDF files into one single organized document easily.</p>
+      </a>
+
+      <!-- Card 4: Split PDF -->
+      <a href="/tools/pdf/split-pdf.html" class="tool-index-card">
+        <h3>✂️ Split PDF</h3>
+        <p>Extract specific pages or page ranges from your PDF document.</p>
       </a>
 
     </div>
   </main>
 
-  <!-- Footer Container -->
+  <!-- Footer Placeholder -->
   <div id="footer-container"></div>
 
   <!-- Core Scripts -->
