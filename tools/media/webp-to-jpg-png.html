@@ -19,11 +19,27 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Meta Tags -->
   <title>Free WEBP to JPG / PNG Converter Online | MicroToolStack</title>
   <meta name="description" content="Convert WEBP images to JPG or PNG format online for free. Fast, client-side, browser-based conversion with no image quality loss and no registration needed.">
+  <meta name="keywords" content="webp to jpg converter, webp to png converter, convert webp online, webp image converter, transparent webp to png">
+
   <link rel="canonical" href="https://microtoolstack.com/tools/media/webp-to-jpg-png.html">
   <meta name="robots" content="index, follow">
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+  <!-- Open Graph / Social Media Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Free WEBP to JPG / PNG Converter Online | MicroToolStack">
+  <meta property="og:description" content="Convert WEBP images to JPG or PNG format online for free. Fast, client-side, browser-based conversion with no image quality loss.">
+  <meta property="og:url" content="https://microtoolstack.com/tools/media/webp-to-jpg-png.html">
+  <meta property="og:site_name" content="MicroToolStack">
+  <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
+
+  <!-- Favicon Icon for Google & Devices -->
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
   <!-- Schema -->
   <script type="application/ld+json">
@@ -67,6 +83,9 @@
   ]
   </script>
 
+  <!-- Fonts & CSS Stylesheets -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
 
@@ -89,7 +108,7 @@
       position: relative;
     }
     .drop-zone:hover {
-      border-color: #3b82f6;
+      border-color: var(--accent-primary, #3b82f6);
     }
     .drop-zone input[type="file"] {
       position: absolute;
@@ -100,7 +119,7 @@
       height: 100%;
     }
     .btn-primary {
-      background-color: #2563eb;
+      background-color: var(--accent-primary, #2563eb);
       color: #fff;
       padding: 0.75rem 1.5rem;
       border-radius: 8px;
@@ -111,7 +130,7 @@
       transition: background 0.2s;
     }
     .btn-primary:hover {
-      background-color: #1d4ed8;
+      opacity: 0.9;
     }
     .btn-success {
       background-color: #16a34a;
@@ -134,32 +153,80 @@
     @media (max-width: 640px) {
       .controls-grid { grid-template-columns: 1fr; }
     }
+    .content-box {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .content-box h2 {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul, .content-box ol {
+      color: var(--text-secondary, #9ca3af);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .content-box ul, .content-box ol {
+      padding-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .content-box li {
+      margin-bottom: 0.5rem;
+    }
+    .related-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .related-card {
+      display: block;
+      padding: 1rem;
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      color: var(--text-primary, #fff);
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .related-card:hover {
+      border-color: var(--accent-primary, #3b82f6);
+    }
   </style>
 </head>
-<body>
+<body style="margin: 0; padding: 0;">
 
-  <!-- Header -->
+  <!-- Header Section -->
   <header class="custom-header">
     <a href="/" class="custom-logo">
-      <img src="/assets/images/logo.png" alt="MicroToolStack" class="logo-img">
-      <span>MicroToolStack</span>
+      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
     </a>
     <nav class="custom-nav">
       <a href="/#categories">Categories</a>
       <a href="/about.html">About</a>
       <a href="/contact.html">Contact</a>
-      <button id="theme-toggle" class="custom-theme-btn">🌙</button>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
     </nav>
   </header>
 
   <!-- Main Content -->
-  <main class="container" style="max-width: 900px; margin: 0 auto; padding: 2rem 1rem;">
+  <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
+    <!-- Breadcrumb Navigation -->
+    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
+      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
+      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Media Tools</a> / 
+      <span>WEBP to JPG / PNG</span>
+    </nav>
     
     <!-- Title Section -->
     <div style="text-align: center; margin-bottom: 2rem;">
       <span class="badge badge-primary" style="margin-bottom: 0.5rem; display: inline-block;">100% Client-Side & Private</span>
-      <h1>WEBP to JPG / PNG Converter</h1>
-      <p style="color: #9ca3af;">Convert modern WebP images into universal JPG or PNG format instantly inside your browser.</p>
+      <h1 style="font-size: 2rem; color: #fff; margin-bottom: 0.5rem;">WEBP to JPG / PNG Converter</h1>
+      <p style="color: var(--text-secondary, #9ca3af);">Convert modern WebP images into universal JPG or PNG format instantly inside your browser.</p>
     </div>
 
     <!-- Converter App Card -->
@@ -167,25 +234,25 @@
       <div class="drop-zone" id="drop-zone">
         <input type="file" id="image-input" accept="image/webp">
         <span style="font-size: 2.5rem; display: block; margin-bottom: 0.5rem;">🖼️</span>
-        <p style="margin: 0; font-weight: 600;" id="file-label">Click or Drag & Drop WEBP Image Here</p>
+        <p style="margin: 0; font-weight: 600; color: #fff;" id="file-label">Click or Drag & Drop WEBP Image Here</p>
         <span style="font-size: 0.85rem; color: #9ca3af;">Supports .webp files</span>
       </div>
 
       <div class="controls-grid">
         <div>
-          <label style="display: block; margin-bottom: 0.5rem; font-size: 0.9rem; font-weight: 600;">Target Format</label>
-          <select id="format-select" style="width: 100%; padding: 0.75rem; border-radius: 8px; background: #111827; border: 1px solid #374151; color: #fff;">
+          <label style="display: block; margin-bottom: 0.5rem; font-size: 0.9rem; font-weight: 600; color: #fff;">Target Format</label>
+          <select id="format-select" style="width: 100%; padding: 0.75rem; border-radius: 8px; background: var(--bg-body, #111827); border: 1px solid var(--border-color, #374151); color: #fff; outline: none;">
             <option value="image/jpeg">JPG / JPEG (Best for general photos)</option>
             <option value="image/png">PNG (Supports transparent backgrounds)</option>
           </select>
         </div>
 
         <div id="quality-wrapper">
-          <label style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.9rem; font-weight: 600;">
+          <label style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.9rem; font-weight: 600; color: #fff;">
             <span>Quality</span>
             <span id="quality-val">90%</span>
           </label>
-          <input type="range" id="quality-range" min="0.1" max="1" step="0.05" value="0.9" style="width: 100%; accent-color: #2563eb;">
+          <input type="range" id="quality-range" min="0.1" max="1" step="0.05" value="0.9" style="width: 100%; accent-color: var(--accent-primary, #2563eb);">
         </div>
       </div>
 
@@ -195,56 +262,91 @@
       <canvas id="conversion-canvas" style="display: none;"></canvas>
 
       <!-- Result Area -->
-      <div id="result-container" style="display: none; margin-top: 2rem; border-top: 1px solid #374151; padding-top: 1.5rem;">
+      <div id="result-container" style="display: none; margin-top: 2rem; border-top: 1px solid var(--border-color, #374151); padding-top: 1.5rem;">
         <p style="color: #4ade80; font-weight: 600; margin-bottom: 1rem;">✅ Conversion Successful!</p>
         <div style="display: flex; align-items: center; gap: 1.5rem; background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 8px;">
           <img id="result-preview" src="" alt="Converted Result" style="width: 100px; height: 100px; object-fit: contain; background: #111; border-radius: 6px;">
           <div>
-            <p id="result-filename" style="margin: 0 0 0.5rem 0; font-weight: 600;"></p>
+            <p id="result-filename" style="margin: 0 0 0.5rem 0; font-weight: 600; color: #fff;"></p>
             <a id="download-btn" class="btn-success" href="" download="">📥 Download Image</a>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- SEO Deep Content Area -->
-    <article style="line-height: 1.7; color: #d1d5db; border-top: 1px solid #374151; padding-top: 2rem;">
-      <h2 style="color: #fff;">How to Convert WEBP to JPG or PNG Online</h2>
+    <!-- SEO Content Box 1 -->
+    <div class="content-box">
+      <h2>How to Convert WEBP to JPG or PNG Online</h2>
       <p>WebP is a modern image format created by Google that delivers excellent compression for web pages. However, many desktop programs, graphics tools, and older applications do not fully support opening or editing <code>.webp</code> files. Our free online WEBP Converter transforms your WebP files into universally accepted JPEG or PNG formats in milliseconds.</p>
+    </div>
 
-      <h3 style="color: #fff; margin-top: 1.5rem;">Step-by-Step Instructions:</h3>
+    <!-- SEO Content Box 2 -->
+    <div class="content-box">
+      <h2>Step-by-Step Instructions</h2>
       <ul>
         <li>Click on the upload box above and select your <strong>.webp</strong> file.</li>
         <li>Select your target format: <strong>JPG</strong> for photos or <strong>PNG</strong> if you need transparent backgrounds.</li>
         <li>Adjust the quality slider (for JPG).</li>
         <li>Click <strong>Convert Image</strong>, then click <strong>Download Image</strong> to save the converted file to your device.</li>
       </ul>
+    </div>
 
-      <h3 style="color: #fff; margin-top: 1.5rem;">Why Use MicroToolStack WEBP Converter?</h3>
+    <!-- SEO Content Box 3 -->
+    <div class="content-box">
+      <h2>Why Use MicroToolStack WEBP Converter?</h2>
       <ul>
         <li><strong>100% Privacy & Security:</strong> Image processing happens directly on your device via browser HTML5 Canvas technology. No images are uploaded to any server.</li>
         <li><strong>Lightning Speed:</strong> No wait times for network uploads or queue lines.</li>
         <li><strong>Free & Unlimited:</strong> No registration, watermarks, or daily conversion caps.</li>
       </ul>
+    </div>
 
-      <h3 style="color: #fff; margin-top: 1.5rem;">Frequently Asked Questions</h3>
-      <div style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
-        <strong style="color: #fff;">Are my uploaded files stored on your servers?</strong>
-        <p style="margin: 0.5rem 0 0 0;">No. Your images remain strictly on your browser. We never upload, transfer, or store your images on external servers.</p>
+    <!-- Internal Linking Section (SEO Best Practice) -->
+    <div class="content-box">
+      <h2>Explore Related Media & Web Tools</h2>
+      <p>Enhance your graphics workflow with our free utilities:</p>
+      <div class="related-links">
+        <a href="/tools/media/svg-to-png.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🖼️ SVG to PNG Converter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Convert SVG vectors to High-Res PNG.</span>
+        </a>
+        <a href="/tools/media/png-to-svg.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🎨 PNG to SVG Converter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Trace raster PNG images into SVG vectors.</span>
+        </a>
+        <a href="/tools/media/image-cropper.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">✂️ Image Cropper</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Crop images with custom aspect ratios.</span>
+        </a>
+        <a href="/tools/media/image-to-base64.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📄 Image to Base64</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Convert images to Data URI strings.</span>
+        </a>
       </div>
-      <div style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 8px;">
-        <strong style="color: #fff;">Can I convert WEBP to transparent PNG?</strong>
-        <p style="margin: 0.5rem 0 0 0;">Yes! When converting to PNG, transparent areas of your WEBP file will stay completely transparent.</p>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="content-box">
+      <h2>Frequently Asked Questions</h2>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="font-size: 1.05rem; color: #fff; margin-bottom: 0.25rem;">Are my uploaded files stored on your servers?</h3>
+        <p>No. Your images remain strictly on your browser. We never upload, transfer, or store your images on external servers.</p>
       </div>
-    </article>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="font-size: 1.05rem; color: #fff; margin-bottom: 0.25rem;">Can I convert WEBP to transparent PNG?</h3>
+        <p>Yes! When converting to PNG, transparent areas of your WEBP file will stay completely transparent.</p>
+      </div>
+    </div>
 
   </main>
 
+  <!-- Footer Placeholder -->
   <div id="footer-container"></div>
 
   <!-- Scripts -->
   <script src="/assets/js/theme.js"></script>
   <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/search.js" defer></script>
   <script src="/assets/js/app.js" defer></script>
 
   <!-- Converter Logic Script -->
