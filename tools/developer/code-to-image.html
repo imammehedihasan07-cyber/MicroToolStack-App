@@ -19,11 +19,27 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Meta Tags -->
   <title>Free Code Snippet to Image Generator | MicroToolStack</title>
   <meta name="description" content="Convert your source code into beautiful images for Twitter, LinkedIn, Instagram, and blog posts. Customize gradients, syntax colors, and export crisp PNGs.">
+  <meta name="keywords" content="code snippet to image, carbon code generator, convert code to image, code screenshot generator, beautiful code image creator">
+
   <link rel="canonical" href="https://microtoolstack.com/tools/developer/code-to-image.html">
   <meta name="robots" content="index, follow">
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+  <!-- Open Graph / Social Media Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Free Code Snippet to Image Generator | MicroToolStack">
+  <meta property="og:description" content="Convert your source code into beautiful images for Twitter, LinkedIn, Instagram, and blog posts. Customize gradients and export crisp PNGs.">
+  <meta property="og:url" content="https://microtoolstack.com/tools/developer/code-to-image.html">
+  <meta property="og:site_name" content="MicroToolStack">
+  <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
+
+  <!-- Favicon Icon for Google & Devices -->
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
   <!-- html2canvas for Client-side Image Export -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
@@ -62,6 +78,9 @@
   ]
   </script>
 
+  <!-- Fonts & CSS Stylesheets -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
 
@@ -90,11 +109,12 @@
       width: 100%;
       padding: 0.6rem;
       border-radius: 8px;
-      background: #111827;
-      border: 1px solid #374151;
+      background: var(--bg-body, #111827);
+      border: 1px solid var(--border-color, #374151);
       color: #fff;
       font-size: 0.9rem;
       box-sizing: border-box;
+      outline: none;
     }
     .code-canvas-wrap {
       padding: 3rem;
@@ -161,32 +181,80 @@
     .btn-download:hover {
       background-color: #15803d;
     }
+    .content-box {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .content-box h2 {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul, .content-box ol {
+      color: var(--text-secondary, #9ca3af);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .content-box ul, .content-box ol {
+      padding-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .content-box li {
+      margin-bottom: 0.5rem;
+    }
+    .related-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .related-card {
+      display: block;
+      padding: 1rem;
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      color: var(--text-primary, #fff);
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .related-card:hover {
+      border-color: var(--accent-primary, #3b82f6);
+    }
   </style>
 </head>
-<body>
+<body style="margin: 0; padding: 0;">
 
-  <!-- Header -->
+  <!-- Header Section -->
   <header class="custom-header">
     <a href="/" class="custom-logo">
-      <img src="/assets/images/logo.png" alt="MicroToolStack" class="logo-img">
-      <span>MicroToolStack</span>
+      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
     </a>
     <nav class="custom-nav">
       <a href="/#categories">Categories</a>
       <a href="/about.html">About</a>
       <a href="/contact.html">Contact</a>
-      <button id="theme-toggle" class="custom-theme-btn">🌙</button>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
     </nav>
   </header>
 
   <!-- Main Content -->
-  <main class="container" style="max-width: 950px; margin: 0 auto; padding: 2rem 1rem;">
+  <main class="container" style="max-width: 950px; margin: 2rem auto; padding: 0 1rem;">
+    <!-- Breadcrumb Navigation -->
+    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
+      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
+      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Developer Tools</a> / 
+      <span>Code to Image</span>
+    </nav>
     
     <!-- Title Section -->
     <div style="text-align: center; margin-bottom: 2rem;">
       <span class="badge badge-primary" style="margin-bottom: 0.5rem; display: inline-block;">100% Free & Fast Export</span>
-      <h1>Code Snippet to Image Generator</h1>
-      <p style="color: #9ca3af;">Turn your code snippets into beautiful social media images for Twitter, LinkedIn, Instagram, and blogs.</p>
+      <h1 style="font-size: 2rem; color: #fff; margin-bottom: 0.5rem;">Code Snippet to Image Generator</h1>
+      <p style="color: var(--text-secondary, #9ca3af);">Turn your code snippets into beautiful social media images for Twitter, LinkedIn, Instagram, and blogs.</p>
     </div>
 
     <!-- App Card -->
@@ -246,31 +314,62 @@ console.log("Total Payable:", calculateTax(150, 5));</textarea>
 
     </div>
 
-    <!-- SEO Deep Content Area -->
-    <article style="line-height: 1.7; color: #d1d5db; border-top: 1px solid #374151; padding-top: 2rem;">
-      <h2 style="color: #fff;">Why Share Code Snippets as Images?</h2>
+    <!-- SEO Content Box 1 -->
+    <div class="content-box">
+      <h2>Why Share Code Snippets as Images?</h2>
       <p>Raw text snippets often get distorted across social media platforms like Twitter, LinkedIn, and Instagram due to character limits and lack of syntax formatting. Converting your code snippets into crisp, aesthetic images ensures your code stays readable and visual-first for higher engagement.</p>
+    </div>
 
-      <h3 style="color: #fff; margin-top: 1.5rem;">How to Use the Generator:</h3>
+    <!-- SEO Content Box 2 -->
+    <div class="content-box">
+      <h2>How to Use the Generator</h2>
       <ul>
         <li>Paste or type your code snippet into the editor window above.</li>
         <li>Choose a background gradient that matches your personal brand or post theme.</li>
         <li>Adjust padding and window dark modes to fit your preferred aesthetic.</li>
         <li>Click <strong>Download Image (PNG)</strong> to instantly save your high-resolution graphic.</li>
       </ul>
+    </div>
 
-      <h3 style="color: #fff; margin-top: 1.5rem;">Frequently Asked Questions</h3>
-      <div style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
-        <strong style="color: #fff;">Is my code private when using this tool?</strong>
-        <p style="margin: 0.5rem 0 0 0;">Yes. Your source code is never sent to any external server. All image canvas generation runs directly inside your browser.</p>
+    <!-- Internal Linking Section (SEO Best Practice) -->
+    <div class="content-box">
+      <h2>Explore Related Developer & Text Tools</h2>
+      <p>Enhance your development workflow with our free utilities:</p>
+      <div class="related-links">
+        <a href="/tools/developer/base64-encoder-decoder.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🔒 Base64 Encoder / Decoder</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Encode or decode text strings into Base64 format.</span>
+        </a>
+        <a href="/tools/media/image-to-base64.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📄 Image to Base64</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Convert image files directly into Data URI strings.</span>
+        </a>
+        <a href="/tools/seo/slug-generator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🔗 Slug Generator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Generate clean, SEO-friendly URL slugs.</span>
+        </a>
+        <a href="/tools/text/case-converter.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🔤 Case Converter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Convert text case into Upper, Lower, or Title Case.</span>
+        </a>
       </div>
-    </article>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="content-box">
+      <h2>Frequently Asked Questions</h2>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="font-size: 1.05rem; color: #fff; margin-bottom: 0.25rem;">Is my code private when using this tool?</h3>
+        <p>Yes. Your source code is never sent to any external server. All image canvas generation runs directly inside your browser.</p>
+      </div>
+    </div>
 
   </main>
 
+  <!-- Footer Placeholder -->
   <div id="footer-container"></div>
 
-  <!-- Scripts -->
+  <!-- Core Scripts -->
   <script src="/assets/js/theme.js"></script>
   <script src="/assets/js/utils.js" defer></script>
   <script src="/assets/js/app.js" defer></script>
