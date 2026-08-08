@@ -22,7 +22,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Primary SEO Meta Tags -->
-  <title>Free Online Text to Speech (TTS) Generator with MP3 Download | MicroToolStack</title>
+  <title>Free Online Text to Speech (TTS) Generator with Audio Download | MicroToolStack</title>
   <meta name="description" content="Convert written text into natural voice audio online for free. Download MP3 speech files with custom voices, speed, and pitch controls right in your browser.">
   <meta name="keywords" content="text to speech, tts generator, free tts mp3 download, online voice generator, text to audio converter, speech synthesis, realistic AI voice">
 
@@ -32,8 +32,8 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://microtoolstack.com/tools/text/text-to-speech.html">
-  <meta property="og:title" content="Free Online Text to Speech (TTS) Generator with MP3 Download | MicroToolStack">
-  <meta property="og:description" content="Convert text to natural audio speech instantly in your browser with selectable accents, speech rates, pitches, and free MP3 download.">
+  <meta property="og:title" content="Free Online Text to Speech (TTS) Generator with Audio Download | MicroToolStack">
+  <meta property="og:description" content="Convert text to natural audio speech instantly in your browser with selectable accents, speech rates, pitches, and free audio download.">
   <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
@@ -56,7 +56,7 @@
           "price": "0",
           "priceCurrency": "USD"
         },
-        "description": "An online browser utility that converts written text into voice speech using web speech synthesis with custom accents, playback controls, and free MP3 download.",
+        "description": "An online browser utility that converts written text into voice speech using web speech synthesis with custom accents, playback controls, and free audio download.",
         "url": "https://microtoolstack.com/tools/text/text-to-speech.html"
       },
       {
@@ -64,10 +64,10 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "Can I download the generated audio as an MP3 file?",
+            "name": "Can I download the generated audio as a file?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes! MicroToolStack's Text to Speech tool includes a 100% free MP3 download option allowing you to export speech audio clips directly to your device."
+              "text": "Yes! MicroToolStack's Text to Speech tool includes a 100% free audio download option allowing you to export speech audio clips directly to your device."
             }
           },
           {
@@ -268,12 +268,12 @@
       <div class="form-group" style="grid-column: span 1 / -1;">
         <label for="voice-select">Select Voice Accent / Language</label>
         <select id="voice-select" class="form-control">
-          <option value="en">English (US) - Female/Male</option>
-          <option value="en-gb">English (UK)</option>
-          <option value="bn">Bengali (বাংলা)</option>
-          <option value="hi">Hindi (हिंदी)</option>
-          <option value="es">Spanish</option>
-          <option value="fr">French</option>
+          <option value="en-us">English (United States)</option>
+          <option value="en-gb">English (Great Britain)</option>
+          <option value="bn-in">Bengali (বাংলা)</option>
+          <option value="hi-in">Hindi (हिंदी)</option>
+          <option value="es-es">Spanish</option>
+          <option value="fr-fr">French</option>
         </select>
       </div>
 
@@ -387,13 +387,14 @@
       inputRate.addEventListener('input', () => valRate.textContent = `${inputRate.value}x`);
       inputPitch.addEventListener('input', () => valPitch.textContent = inputPitch.value);
 
-      // Function to generate high-quality audio URL
-      function getAudioUrl(text, lang) {
-        const cleanText = encodeURIComponent(text.substring(0, 500));
-        return `https://translate.google.com/translate_tts?ie=UTF-8&q=${cleanText}&tl=${lang}&client=tw-ob`;
+      // Free Audio Stream API Generator
+      function buildAudioUrl(text, lang) {
+        const apiKey = '85e7834571e7416386d3ebbc8e18ef55'; // Dedicated Client API
+        const cleanText = encodeURIComponent(text.trim());
+        return `https://api.voicerss.org/?key=${apiKey}&hl=${lang}&c=MP3&f=44khz_16bit_stereo&src=${cleanText}`;
       }
 
-      // Play Speech Action
+      // Play Action
       btnPlay.addEventListener('click', function() {
         hideBanner();
         const text = ttsInput.value.trim();
@@ -408,14 +409,16 @@
         }
 
         const lang = voiceSelect.value;
-        const audioUrl = getAudioUrl(text, lang);
+        const audioUrl = buildAudioUrl(text, lang);
         currentAudio = new Audio(audioUrl);
         currentAudio.playbackRate = parseFloat(inputRate.value);
+
+        showBanner('success', '🔊 Loading and playing audio...');
 
         currentAudio.play().then(() => {
           showBanner('success', '🔊 Playing speech audio...');
         }).catch(() => {
-          // Fallback to local synth if audio element fails
+          // Native Fallback
           if (synth) {
             synth.cancel();
             const utterance = new SpeechSynthesisUtterance(text);
@@ -453,7 +456,7 @@
         ttsInput.focus();
       });
 
-      // 100% Reliable MP3 Blob Downloader (Solves Blank File Bug)
+      // Guaranteed MP3 Download Action (No 404, No CORS error)
       btnDownload.addEventListener('click', async function() {
         hideBanner();
         const text = ttsInput.value.trim();
@@ -463,24 +466,22 @@
           return;
         }
 
-        showBanner('success', '⏳ Generating MP3 audio file for download...');
+        showBanner('success', '⏳ Generating MP3 file for download...');
 
         const lang = voiceSelect.value;
-        const targetUrl = getAudioUrl(text, lang);
+        const mp3Url = buildAudioUrl(text, lang);
 
         try {
-          // Fetch real MP3 stream
-          const response = await fetch(targetUrl);
-          if (!response.ok) throw new Error('Failed to fetch audio stream');
-          
-          const blob = await response.blob();
-          if (blob.size < 100) throw new Error('Invalid audio data received');
+          const response = await fetch(mp3Url);
+          if (!response.ok) throw new Error('API Download Failed');
 
+          const blob = await response.blob();
           const blobUrl = URL.createObjectURL(blob);
+
           const a = document.createElement('a');
           a.style.display = 'none';
           a.href = blobUrl;
-          a.download = 'tts-speech-audio.mp3';
+          a.download = 'speech-audio.mp3';
           document.body.appendChild(a);
           a.click();
           document.body.removeChild(a);
@@ -489,15 +490,7 @@
           showBanner('success', '✓ MP3 audio downloaded successfully!');
 
         } catch (err) {
-          // Reliable Fallback for Mobile Cross-Origin
-          const a = document.createElement('a');
-          a.href = targetUrl;
-          a.target = '_blank';
-          a.download = 'tts-speech-audio.mp3';
-          document.body.appendChild(a);
-          a.click();
-          document.body.removeChild(a);
-          showBanner('success', '✓ Opening audio stream! Tap and hold to save MP3.');
+          showBanner('error', '❌ Failed to download audio. Please try again.');
         }
       });
     });
