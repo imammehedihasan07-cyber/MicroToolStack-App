@@ -613,6 +613,6 @@
     "description": "Preview how text and titles look on your YouTube video thumbnails before publishing.",
     "category": "youtube",
     "url": "/tools/youtube/thumbnail-text-overlay-preview.html",
-    "icon": "fa-solid fa-image"
+   "icon": "fa-solid fa-file-image"
   }
 ]
