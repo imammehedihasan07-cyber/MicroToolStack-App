@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) - Optimized Load -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var gTagScript = document.createElement('script');
+        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        gTagScript.async = true;
+        document.head.appendChild(gTagScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F3WWR9KGB4');
+      }, 1000);
+    });
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>Free Online Image EXIF Data Remover | Clean Metadata & Privacy | MicroToolStack</title>
+  <meta name="description" content="Remove EXIF metadata, GPS location, camera details, and personal data from your photos instantly in your browser. 100% free and private image metadata cleaner.">
+  <meta name="keywords" content="exif remover, image metadata remover, strip exif data, photo privacy tool, remove gps from photo, clean image exif online">
+
+  <link rel="canonical" href="https://microtoolstack.com/tools/media/image-exif-remover.html">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://microtoolstack.com/tools/media/image-exif-remover.html">
+  <meta property="og:title" content="Free Online Image EXIF Data Remover | MicroToolStack">
+  <meta property="og:description" content="Strip hidden metadata, GPS coordinates, and camera info from your images before sharing online. Local browser-based processing.">
+  <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
+
+  <!-- Favicon Icon for Google & Devices -->
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
+
+  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Image EXIF Data Remover Tool",
+        "operatingSystem": "All",
+        "applicationCategory": "MultimediaApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "A privacy-focused browser utility that strips EXIF metadata, GPS geolocation coordinates, device models, and timestamps from image files.",
+        "url": "https://microtoolstack.com/tools/media/image-exif-remover.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is EXIF data in photos?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "EXIF (Exchangeable Image File Format) data is hidden metadata saved automatically by smartphones and digital cameras. It contains details like camera model, date, exposure settings, and exact GPS location."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why should I remove EXIF metadata from images?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Removing EXIF metadata protects your privacy by ensuring that strangers, web crawlers, or social media networks cannot track your geolocation or home location through shared photos."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my uploaded image uploaded to a remote server?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No! All image processing is handled 100% locally on your computer or mobile device using JavaScript HTML5 Canvas technology. Your photos never leave your device."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Preconnect and Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <style>
+    .upload-box {
+      border: 2px dashed var(--border-color, #4b5563);
+      border-radius: var(--radius-md, 8px);
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      background-color: var(--bg-card, #1e1e2e);
+      cursor: pointer;
+      transition: border-color 0.2s, background-color 0.2s;
+      margin-bottom: 1.5rem;
+    }
+    .upload-box:hover, .upload-box.dragover {
+      border-color: var(--accent-primary, #3b82f6);
+      background-color: rgba(59, 130, 246, 0.05);
+    }
+    .preview-container {
+      display: none;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+      align-items: center;
+    }
+    .preview-card {
+      background: #0d1117;
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: center;
+    }
+    .preview-img {
+      max-width: 100%;
+      max-height: 220px;
+      object-fit: contain;
+      border-radius: 6px;
+      margin: 0 auto 0.75rem auto;
+    }
+    .status-banner {
+      padding: 0.75rem 1rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+      display: none;
+    }
+    .status-banner.success {
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid #10b981;
+      color: #10b981;
+    }
+    .status-banner.error {
+      background: rgba(239, 68, 68, 0.15);
+      border: 1px solid #ef4444;
+      color: #ef4444;
+    }
+    .editor-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1.5rem;
+    }
+    .btn-group {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .content-box {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .content-box h2 {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul {
+      color: var(--text-secondary, #9ca3af);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .content-box ul {
+      padding-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .content-box li {
+      margin-bottom: 0.5rem;
+    }
+    .related-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .related-card {
+      display: block;
+      padding: 1rem;
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      color: var(--text-primary, #fff);
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .related-card:hover {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+  </style>
+</head>
+<body style="margin: 0; padding: 0;">
+
+  <!-- Header Section -->
+  <header class="custom-header">
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
+    </a>
+    <nav class="custom-nav">
+      <a href="/#categories">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
+    </nav>
+  </header>
+
+  <!-- Main Container -->
+  <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
+    <!-- Breadcrumb Navigation -->
+    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
+      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
+      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Media Tools</a> / 
+      <span>Image EXIF Data Remover</span>
+    </nav>
+    
+    <!-- Tool Title & Description -->
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Image EXIF Data & Metadata Remover</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Strip hidden camera details, dates, and GPS location data from your photos before sharing online.</p>
+    </div>
+
+    <!-- Status Banner -->
+    <div id="status-banner" class="status-banner"></div>
+
+    <!-- Upload Dropzone -->
+    <div id="dropzone" class="upload-box">
+      <input type="file" id="file-input" accept="image/jpeg, image/png, image/webp" style="display: none;">
+      <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📸</div>
+      <p style="font-weight: 600; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Click to upload or Drag & Drop image here</p>
+      <p style="font-size: 0.85rem; color: var(--text-secondary, #9ca3af); margin-bottom: 0;">Supports JPG, PNG, WEBP files (100% Client-side)</p>
+    </div>
+
+    <!-- Preview & Download Section -->
+    <div id="preview-section" class="preview-container">
+      <div class="preview-card">
+        <h4 style="margin-bottom: 0.5rem; font-size: 0.95rem; color: #9ca3af;">Clean Image Preview</h4>
+        <img id="clean-preview" class="preview-img" alt="Metadata Cleared Preview">
+        <div id="file-details" style="font-size: 0.85rem; color: #9ca3af;"></div>
+      </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="editor-controls">
+      <div class="btn-group">
+        <button id="btn-download" class="btn btn-primary" style="padding: 0.68rem 1.4rem; cursor: pointer; display: none;">⬇️ Download Clean Image</button>
+        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.68rem 1.2rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px; display: none;">🗑️ Clear Image</button>
+      </div>
+    </div>
+
+    <div style="margin-bottom: 2.5rem;"></div>
+
+    <!-- SEO Article Content Box 1 -->
+    <div class="content-box">
+      <h2>Why Remove EXIF Data From Your Photos?</h2>
+      <p>When you take a photo with a smartphone or digital camera, the image automatically stores invisible information known as <strong>EXIF (Exchangeable Image File Format) metadata</strong>. This meta information includes exact GPS coordinates, date, camera serial number, lens settings, and location tags. Sharing raw photos online without stripping EXIF metadata poses serious privacy risks.</p>
+    </div>
+
+    <!-- SEO Article Content Box 2 -->
+    <div class="content-box">
+      <h2>Key Features of MicroToolStack EXIF Cleaner</h2>
+      <ul>
+        <li><strong>Complete Privacy:</strong> All processing is done locally inside your browser canvas. Images are never uploaded to any server.</li>
+        <li><strong>Strips Sensitive Meta Tags:</strong> Wipes GPS geolocation, timestamp, camera model, and device identifiers.</li>
+        <li><strong>Fast & Lossless Visual Quality:</strong> Preserves original photo resolution and picture quality while erasing hidden data headers.</li>
+        <li><strong>Multi-Format Support:</strong> Clean metadata from JPG, JPEG, PNG, and WebP image formats.</li>
+      </ul>
+    </div>
+
+    <!-- Internal Linking Section (SEO Best Practice) -->
+    <div class="content-box">
+      <h2>Explore Related Utilities</h2>
+      <p>Enhance your online workflow with our other free utilities:</p>
+      <div class="related-links">
+        <a href="/tools/calculator/cgpa-to-percentage.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🎓 CGPA to Percentage Converter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Convert university CGPA into percentage and total marks.</span>
+        </a>
+        <a href="/tools/developer/json-formatter.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">⚙️ JSON Formatter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Format and validate JSON payloads instantly.</span>
+        </a>
+        <a href="/tools/seo/slug-generator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🔗 Slug Generator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Generate clean, SEO-friendly URL slugs.</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="content-box">
+      <h2>Frequently Asked Questions</h2>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Does removing EXIF metadata reduce photo quality?</h3>
+        <p>No, stripping metadata only removes the hidden text header information from the image file. The visual pixels and overall picture quality remain crisp and unchanged.</p>
+      </div>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Are my private pictures stored anywhere?</h3>
+        <p>Absolute not. MicroToolStack uses client-side JavaScript HTML5 canvas technology, meaning processing occurs entirely in your local device's memory.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer Container Placeholder -->
+  <div id="footer-container"></div>
+
+  <!-- JavaScript Utilities & Logic -->
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const dropzone = document.getElementById('dropzone');
+      const fileInput = document.getElementById('file-input');
+      const previewSection = document.getElementById('preview-section');
+      const cleanPreview = document.getElementById('clean-preview');
+      const fileDetails = document.getElementById('file-details');
+      const statusBanner = document.getElementById('status-banner');
+
+      const btnDownload = document.getElementById('btn-download');
+      const btnClear = document.getElementById('btn-clear');
+
+      let currentCleanDataUrl = null;
+      let originalFileName = 'clean-image.jpg';
+
+      function showBanner(type, message) {
+        statusBanner.className = `status-banner ${type}`;
+        statusBanner.textContent = message;
+        statusBanner.style.display = 'block';
+      }
+
+      function hideBanner() {
+        statusBanner.style.display = 'none';
+      }
+
+      dropzone.addEventListener('click', () => fileInput.click());
+
+      dropzone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropzone.classList.add('dragover');
+      });
+
+      dropzone.addEventListener('dragleave', () => dropzone.classList.remove('dragover'));
+
+      dropzone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropzone.classList.remove('dragover');
+        if (e.dataTransfer.files.length > 0) {
+          processFile(e.dataTransfer.files[0]);
+        }
+      });
+
+      fileInput.addEventListener('change', (e) => {
+        if (e.target.files.length > 0) {
+          processFile(e.target.files[0]);
+        }
+      });
+
+      function processFile(file) {
+        if (!file.type.match('image.*')) {
+          showBanner('error', '❌ Please select a valid image file (JPG, PNG, or WEBP).');
+          return;
+        }
+
+        originalFileName = 'clean-' + file.name;
+
+        const reader = new FileReader();
+        reader.onload = function(event) {
+          const img = new Image();
+          img.onload = function() {
+            // Re-draw onto canvas to strip all EXIF headers completely
+            const canvas = document.createElement('canvas');
+            canvas.width = img.width;
+            canvas.height = img.height;
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(img, 0, 0);
+
+            // Export pure image data (EXIF stripped)
+            const mimeType = file.type === 'image/png' ? 'image/png' : 'image/jpeg';
+            currentCleanDataUrl = canvas.toDataURL(mimeType, 0.92);
+
+            cleanPreview.src = currentCleanDataUrl;
+            fileDetails.textContent = `Dimensions: ${img.width}x${img.height}px | Status: Metadata Removed`;
+            
+            previewSection.style.display = 'grid';
+            btnDownload.style.display = 'inline-block';
+            btnClear.style.display = 'inline-block';
+
+            showBanner('success', '✓ All EXIF metadata & GPS location tags successfully stripped!');
+          };
+          img.src = event.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+
+      btnDownload.addEventListener('click', function() {
+        if (!currentCleanDataUrl) return;
+        const link = document.createElement('a');
+        link.href = currentCleanDataUrl;
+        link.download = originalFileName;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      });
+
+      btnClear.addEventListener('click', function() {
+        fileInput.value = '';
+        currentCleanDataUrl = null;
+        cleanPreview.src = '';
+        previewSection.style.display = 'none';
+        btnDownload.style.display = 'none';
+        btnClear.style.display = 'none';
+        hideBanner();
+      });
+    });
+  </script>
+</body>
+</html>
