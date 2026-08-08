@@ -190,16 +190,6 @@
     "isNew": true
   },
   {
-    "id": "image-converter",
-    "name": "Image Converter & Compressor",
-    "category": "media",
-    "url": "/tools/media/image-converter.html",
-    "description": "Convert JPG/PNG to WebP and compress image sizes 100% in browser.",
-    "icon": "🖼️",
-    "isPopular": true,
-    "isNew": true
-  },
-  {
     "id": "age-calculator",
     "name": "Age Calculator",
     "category": "calculator",
