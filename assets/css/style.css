@@ -74,12 +74,15 @@ p {
   color: var(--text-secondary);
   margin-bottom: 1rem;
 }
+/* Desktop Layout Shift & Performance Boost */
+.card {
+  contain-intrinsic-size: 200px;
+  content-visibility: auto;
+}
 
-/* Popular tools & categories min-height fix */
 #popular-tools-grid, #categories-grid {
   min-height: 250px;
 }
-
 /* =========================================================
    UNIVERSAL LIGHT & DARK MODE FIX FOR INPUTS & CARDS
    ========================================================= */
