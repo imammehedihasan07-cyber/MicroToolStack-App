@@ -620,5 +620,49 @@
     "icon": "🖼️",
     "isPopular": false,
     "isNew": true
+  },
+  {
+    "id": "cgpa-to-percentage",
+    "name": "CGPA to Percentage Converter",
+    "category": "calculator",
+    "url": "/tools/calculator/cgpa-to-percentage.html",
+    "description": "Convert CGPA to percentage and total marks for 4.0, 5.0, and 10.0 scale grading systems.",
+    "icon": "🎓",
+    "isPopular": true,
+    "isNew": true,
+    "tags": ["cgpa", "percentage", "marks", "gpa", "calculator"]
+  },
+  {
+    "id": "image-exif-remover",
+    "name": "Image EXIF Data Remover",
+    "category": "media",
+    "url": "/tools/media/image-exif-remover.html",
+    "description": "Strip hidden EXIF metadata, GPS coordinates, and camera details from photos for privacy.",
+    "icon": "📸",
+    "isPopular": true,
+    "isNew": true,
+    "tags": ["exif", "metadata", "privacy", "gps", "photo"]
+  },
+  {
+    "id": "glassmorphism-claymorphism-generator",
+    "name": "CSS Glassmorphism & Claymorphism Generator",
+    "category": "developer",
+    "url": "/tools/developer/glassmorphism-claymorphism-generator.html",
+    "description": "Design modern translucent frosted glass and 3D soft clay CSS elements with live preview.",
+    "icon": "✨",
+    "isPopular": true,
+    "isNew": true,
+    "tags": ["css", "glassmorphism", "claymorphism", "ui", "generator"]
+  },
+  {
+    "id": "readability-checker",
+    "name": "Readability Score Checker",
+    "category": "text",
+    "url": "/tools/text/readability-checker.html",
+    "description": "Analyze text readability using Flesch Reading Ease score, word count, and reading time.",
+    "icon": "📖",
+    "isPopular": false,
+    "isNew": true,
+    "tags": ["readability", "flesch", "text analysis", "word count", "seo"]
   }
 ]
