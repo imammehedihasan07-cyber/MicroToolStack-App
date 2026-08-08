@@ -21,7 +21,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Free Online Image & Media Tools | MicroToolStack</title>
-  <meta name="description" content="Explore free, browser-based online image utilities. Convert SVG to PNG, PNG to SVG, crop images, extract EXIF data, and convert Base64 fast and privately.">
+  <meta name="description" content="Explore free, browser-based online image utilities. Convert SVG, PNG, JPG, crop, rotate, flip, extract EXIF data, color palettes, and Base64 fast and privately.">
+  <meta name="keywords" content="media tools, image converter, image cropper, favicon generator, base64 to image, exif viewer, color palette extractor, image flipper">
+
+  <link rel="canonical" href="https://microtoolstack.com/tools/media/">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Social Media Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Free Online Image & Media Tools | MicroToolStack">
+  <meta property="og:description" content="Explore free, browser-based online image utilities. Convert, crop, rotate, flip, and process images privately.">
+  <meta property="og:url" content="https://microtoolstack.com/tools/media/">
+  <meta property="og:site_name" content="MicroToolStack">
+  <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
+
+  <!-- Favicon Icon for Google & Devices -->
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,57 +46,129 @@
   <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <style>
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 4rem;
+    }
+    .tool-index-card {
+      padding: 1.5rem;
+      border-radius: 12px;
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      text-decoration: none;
+      display: block;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .tool-index-card:hover {
+      border-color: var(--accent-primary, #3b82f6);
+      transform: translateY(-2px);
+    }
+    .tool-index-card h3 {
+      color: #fff;
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+    }
+    .tool-index-card p {
+      color: var(--text-secondary, #9ca3af);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+  </style>
 </head>
-<body>
-  <!-- Header Container -->
-  <div id="header-container"></div>
+<body style="margin: 0; padding: 0;">
+  <!-- Header Section -->
+  <header class="custom-header">
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
+    </a>
+    <nav class="custom-nav">
+      <a href="/#categories">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
+    </nav>
+  </header>
 
   <main class="container" style="max-width: 1000px; margin: 2rem auto; padding: 0 1rem;">
     <!-- Breadcrumb Navigation -->
-    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary);">
-      <a href="/" style="color: var(--text-primary); text-decoration: none;">Home</a> / 
+    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
+      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
       <span>Media Tools</span>
     </nav>
 
     <!-- Category Header -->
     <header style="margin-bottom: 3rem; text-align: center;">
-      <h1 class="hero" style="font-size: 2.5rem; margin-bottom: 0.5rem;">Free Image & Media Utilities</h1>
-      <p style="color: var(--text-secondary); font-size: 1.1rem; max-width: 700px; margin: 0 auto;">
-        Fast, 100% private, and browser-based utilities to convert, crop, flip, and process image files effortlessly.
+      <h1 class="hero" style="font-size: 2.2rem; margin-bottom: 0.5rem; color: #fff;">Free Image & Media Utilities</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1.05rem; max-width: 700px; margin: 0 auto;">
+        Fast, 100% private, and browser-based utilities to convert, crop, flip, rotate, and process image files effortlessly.
       </p>
     </header>
 
     <!-- Media Tools Grid -->
-    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 4rem;">
+    <div class="tools-grid">
       
-      <!-- Card 1: SVG to PNG Converter -->
-      <a href="/tools/media/svg-to-png.html" class="card" style="padding: 1.5rem; border-radius: 12px; background: var(--bg-secondary); border: 1px solid var(--border-color); text-decoration: none; display: block;">
-        <h3 style="color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.2rem;">🖼️ SVG to PNG Converter</h3>
-        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5;">Convert scalable SVG vector files to High-Resolution PNG images in your browser.</p>
+      <!-- Card 1: Image Cropper -->
+      <a href="/tools/media/image-cropper.html" class="tool-index-card">
+        <h3>✂️ Image Cropper</h3>
+        <p>Crop images to precise aspect ratios (1:1, 16:9, 4:3) with interactive instant preview.</p>
       </a>
 
-      <!-- Card 2: PNG to SVG Converter -->
-      <a href="/tools/media/png-to-svg.html" class="card" style="padding: 1.5rem; border-radius: 12px; background: var(--bg-secondary); border: 1px solid var(--border-color); text-decoration: none; display: block;">
-        <h3 style="color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.2rem;">🎨 PNG to SVG Converter</h3>
-        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5;">Trace and convert raster PNG images into scalable vector SVG graphics easily.</p>
+      <!-- Card 2: Image Flipper -->
+      <a href="/tools/media/image-flipper.html" class="tool-index-card">
+        <h3>🪞 Image Flipper</h3>
+        <p>Flip images horizontally (mirror effect) or vertically instantly in browser.</p>
       </a>
 
-      <!-- Card 3: Image Cropper -->
-      <a href="/tools/media/image-cropper.html" class="card" style="padding: 1.5rem; border-radius: 12px; background: var(--bg-secondary); border: 1px solid var(--border-color); text-decoration: none; display: block;">
-        <h3 style="color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.2rem;">✂️ Image Cropper</h3>
-        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5;">Crop and resize images to precise aspect ratios (1:1, 16:9, 4:3) with interactive preview.</p>
+      <!-- Card 3: Image Rotator -->
+      <a href="/tools/media/image-rotator.html" class="tool-index-card">
+        <h3>🔄 Image Rotator</h3>
+        <p>Rotate JPG, PNG, and WebP images clockwise or counter-clockwise easily.</p>
       </a>
 
-      <!-- Existing Card: Image Converter & Compressor -->
-      <a href="/tools/media/image-converter.html" class="card" style="padding: 1.5rem; border-radius: 12px; background: var(--bg-secondary); border: 1px solid var(--border-color); text-decoration: none; display: block;">
-        <h3 style="color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.2rem;">🗜️ Image Converter & Compressor</h3>
-        <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5;">Convert JPG/PNG to WebP and compress image file sizes 100% locally.</p>
+      <!-- Card 4: Favicon Generator -->
+      <a href="/tools/media/favicon-generator.html" class="tool-index-card">
+        <h3>🌟 Favicon Generator</h3>
+        <p>Generate multi-size website favicons (16x16, 32x32, 180x180) from PNG or JPG images.</p>
+      </a>
+
+      <!-- Card 5: ICO Converter -->
+      <a href="/tools/media/ico-converter.html" class="tool-index-card">
+        <h3>📦 ICO Converter</h3>
+        <p>Convert PNG, JPG, or WebP images into .ICO format for website favicons and desktop icons.</p>
+      </a>
+
+      <!-- Card 6: Color Palette Extractor -->
+      <a href="/tools/media/color-palette-extractor.html" class="tool-index-card">
+        <h3>🎨 Color Palette Extractor</h3>
+        <p>Upload photos or designs to automatically extract dominant matching HEX color codes.</p>
+      </a>
+
+      <!-- Card 7: EXIF Metadata Viewer -->
+      <a href="/tools/media/exif-metadata-viewer.html" class="tool-index-card">
+        <h3>📷 EXIF Metadata Viewer</h3>
+        <p>Inspect hidden EXIF camera tags, resolution, file specifications, and technical metadata.</p>
+      </a>
+
+      <!-- Card 8: Base64 to Image -->
+      <a href="/tools/media/base64-to-image.html" class="tool-index-card">
+        <h3>🖼️ Base64 to Image</h3>
+        <p>Decode Base64 Data URI strings back into viewable and downloadable image files.</p>
+      </a>
+
+      <!-- Card 9: Image to Base64 -->
+      <a href="/tools/media/image-to-base64.html" class="tool-index-card">
+        <h3>📄 Image to Base64</h3>
+        <p>Convert image files directly into Base64 Data URI strings for HTML and CSS embedding.</p>
       </a>
 
     </div>
   </main>
 
-  <!-- Footer Container -->
+  <!-- Footer Placeholder -->
   <div id="footer-container"></div>
 
   <!-- Core Scripts -->
