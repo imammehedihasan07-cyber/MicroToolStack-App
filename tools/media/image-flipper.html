@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) - Deferred Load -->
   <script>
     window.addEventListener('load', function() {
       setTimeout(function() {
@@ -8,6 +9,7 @@
         gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
         gTagScript.async = true;
         document.head.appendChild(gTagScript);
+
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
@@ -18,48 +20,192 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Meta Tags -->
   <title>Image Flipper - Flip Images Horizontally & Vertically | MicroToolStack</title>
-  <meta name="description" content="Flip images horizontally (mirror effect) or vertically online for free. Private, instant, client-side browser image flipper.">
+  <meta name="description" content="Flip images horizontally (mirror effect) or vertically online for free. Private, instant, client-side browser image flipper for JPG, PNG, and WebP.">
+  <meta name="keywords" content="image flipper, flip image online, mirror image generator, flip photo horizontally, flip photo vertically, online picture mirror">
 
+  <link rel="canonical" href="https://microtoolstack.com/tools/media/image-flipper.html">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Social Media Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Image Flipper - Flip Images Horizontally & Vertically | MicroToolStack">
+  <meta property="og:description" content="Flip images horizontally (mirror effect) or vertically online for free. Private, instant, client-side browser image flipper.">
+  <meta property="og:url" content="https://microtoolstack.com/tools/media/image-flipper.html">
+  <meta property="og:site_name" content="MicroToolStack">
+  <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
+
+  <!-- Favicon Icon for Google & Devices -->
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
+
+  <!-- Fonts & CSS Stylesheets -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
 
+  <!-- JSON-LD Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://microtoolstack.com/tools/media/image-flipper.html#webapp",
+        "url": "https://microtoolstack.com/tools/media/image-flipper.html",
+        "name": "Online Image Flipper",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "All",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "Flip images horizontally (mirror effect) or vertically online for free."
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://microtoolstack.com/tools/media/image-flipper.html#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Are my images uploaded to any server?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. The flipping process is performed 100% locally inside your web browser using HTML5 Canvas."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is horizontal vs vertical flipping?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Horizontal flipping creates a mirror effect (left-to-right), while vertical flipping flips the image upside down (top-to-bottom)."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
   <style>
     .upload-box {
-      border: 2px dashed var(--border-color);
+      border: 2px dashed var(--border-color, #333);
       padding: 2.5rem 1.5rem;
       text-align: center;
       border-radius: 12px;
       cursor: pointer;
-      background: var(--bg-secondary);
+      background: var(--bg-card, #1e1e2e);
       margin-bottom: 1.5rem;
+      transition: border-color 0.3s;
     }
-    .preview-container { margin-top: 1.5rem; display: none; text-align: center; }
-    .img-preview { max-width: 100%; max-height: 350px; border-radius: 8px; transition: transform 0.3s ease; }
-    .btn-group { display: flex; gap: 0.8rem; justify-content: center; margin: 1.5rem 0; flex-wrap: wrap; }
+    .upload-box:hover {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+    .preview-container { 
+      margin-top: 1.5rem; 
+      display: none; 
+      text-align: center; 
+    }
+    .img-preview { 
+      max-width: 100%; 
+      max-height: 350px; 
+      border-radius: 8px; 
+      transition: transform 0.3s ease; 
+    }
+    .btn-group { 
+      display: flex; 
+      gap: 0.8rem; 
+      justify-content: center; 
+      margin: 1.5rem 0; 
+      flex-wrap: wrap; 
+    }
+    .content-box {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .content-box h2 {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul, .content-box ol {
+      color: var(--text-secondary, #9ca3af);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .content-box ul, .content-box ol {
+      padding-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .content-box li {
+      margin-bottom: 0.5rem;
+    }
+    .related-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .related-card {
+      display: block;
+      padding: 1rem;
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      color: var(--text-primary, #fff);
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .related-card:hover {
+      border-color: var(--accent-primary, #3b82f6);
+    }
   </style>
 </head>
-<body>
-  <div id="header-container"></div>
+<body style="margin: 0; padding: 0;">
+  <!-- Header Section -->
+  <header class="custom-header">
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
+    </a>
+    <nav class="custom-nav">
+      <a href="/#categories">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
+    </nav>
+  </header>
 
-  <main class="container" style="max-width: 800px; margin: 2rem auto; padding: 0 1rem;">
-    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary);">
-      <a href="/" style="color: var(--text-primary); text-decoration: none;">Home</a> / 
-      <a href="/tools/media/" style="color: var(--text-primary); text-decoration: none;">Media Tools</a> / 
+  <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
+    <!-- Breadcrumb Navigation -->
+    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
+      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
+      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Media Tools</a> / 
       <span>Image Flipper</span>
     </nav>
 
+    <!-- Header Area -->
     <header style="margin-bottom: 2rem; text-align: center;">
-      <h1 class="hero" style="font-size: 2.2rem; margin-bottom: 0.5rem;">Free Online Image Flipper</h1>
-      <p style="color: var(--text-secondary); font-size: 1rem;">Flip images horizontally (mirror) or vertically instantly inside your browser.</p>
+      <h1 class="hero" style="font-size: 2rem; margin-bottom: 0.5rem; color: #fff;">Free Online Image Flipper</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">
+        Flip images horizontally (mirror) or vertically instantly inside your browser.
+      </p>
     </header>
 
-    <div class="card" style="padding: 2rem; border-radius: 12px; background: var(--bg-secondary); border: 1px solid var(--border-color);">
+    <!-- Tool Card -->
+    <div class="card" style="padding: 2rem; border-radius: 12px; background: var(--bg-card, #1e1e2e); border: 1px solid var(--border-color, #333); margin-bottom: 3rem;">
       <div class="upload-box" id="dropZone" onclick="document.getElementById('imageInput').click()">
         <span style="font-size: 2.5rem; display: block; margin-bottom: 0.5rem;">🪞</span>
-        <p style="margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">Click or Drag & Drop Image Here</p>
+        <p style="margin-bottom: 0.5rem; font-weight: 600; color: #fff;">Click or Drag & Drop Image Here</p>
+        <p style="font-size: 0.85rem; color: var(--text-secondary, #9ca3af);">Supports JPG, PNG, WebP (100% Client-Side Privacy)</p>
         <input type="file" id="imageInput" accept="image/*" style="display: none;" onchange="handleFileSelect(event)">
       </div>
 
@@ -69,17 +215,61 @@
         </div>
 
         <div class="btn-group">
-          <button class="btn btn-secondary" onclick="toggleFlip('h')" style="cursor:pointer; background:var(--bg-primary); border:1px solid var(--border-color); color:var(--text-primary);">↔️ Flip Horizontally</button>
-          <button class="btn btn-secondary" onclick="toggleFlip('v')" style="cursor:pointer; background:var(--bg-primary); border:1px solid var(--border-color); color:var(--text-primary);">↕️ Flip Vertically</button>
+          <button class="btn btn-secondary" onclick="toggleFlip('h')" style="cursor:pointer; background:var(--bg-body, #111827); border:1px solid var(--border-color, #333); color:#fff; padding: 0.6rem 1.2rem; border-radius: 6px;">↔️ Flip Horizontally</button>
+          <button class="btn btn-secondary" onclick="toggleFlip('v')" style="cursor:pointer; background:var(--bg-body, #111827); border:1px solid var(--border-color, #333); color:#fff; padding: 0.6rem 1.2rem; border-radius: 6px;">↕️ Flip Vertically</button>
         </div>
 
         <button class="btn btn-primary" style="padding: 0.8rem 2rem; font-size: 1rem; cursor: pointer;" onclick="downloadFlippedImage()">⬇️ Download Flipped Image</button>
       </div>
     </div>
+
+    <!-- SEO Content Box 1 -->
+    <div class="content-box">
+      <h2>How Image Flipping Works</h2>
+      <p>
+        Flipping an image mirrors the pixel grid across an axis. A horizontal flip mirrors the image from left to right (ideal for fixing mirrored selfies or changing composition direction), while a vertical flip turns the image upside down.
+      </p>
+    </div>
+
+    <!-- Internal Linking Section (SEO Best Practice) -->
+    <div class="content-box">
+      <h2>Explore Related Media & Web Tools</h2>
+      <p>Enhance your image assets with our free utilities:</p>
+      <div class="related-links">
+        <a href="/tools/media/image-cropper.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">✂️ Image Cropper</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Crop images with custom aspect ratios.</span>
+        </a>
+        <a href="/tools/media/color-palette-extractor.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🎨 Color Palette Extractor</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Extract matching HEX codes from photos.</span>
+        </a>
+        <a href="/tools/media/base64-to-image.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🖼️ Base64 to Image</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Decode Base64 strings to downloadable images.</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="content-box">
+      <h2>Frequently Asked Questions</h2>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="font-size: 1.05rem; color: #fff; margin-bottom: 0.25rem;">Are my images uploaded to any server?</h3>
+        <p>No. The flipping process is performed 100% locally inside your web browser using HTML5 Canvas.</p>
+      </div>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="font-size: 1.05rem; color: #fff; margin-bottom: 0.25rem;">Does flipping reduce image quality?</h3>
+        <p>No, the canvas re-renders the original image dimensions without applying lossy compression.</p>
+      </div>
+    </div>
+
   </main>
 
+  <!-- Footer Placeholder -->
   <div id="footer-container"></div>
 
+  <!-- Core Scripts -->
   <script src="/assets/js/theme.js"></script>
   <script src="/assets/js/utils.js" defer></script>
   <script src="/assets/js/search.js" defer></script>
