@@ -9,7 +9,6 @@
         gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
         gTagScript.async = true;
         document.head.appendChild(gTagScript);
-
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
@@ -36,8 +35,10 @@
   <meta property="og:description" content="Pick colors, convert HEX/RGB/HSL codes, and generate color schemes instantly in your web browser. 100% free and private.">
   <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
-  <!-- Favicon Icon -->
-  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+  <!-- Favicon Icon for Google & Devices -->
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
   <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
   <script type="application/ld+json">
@@ -203,18 +204,6 @@
     .palette-swatch:hover {
       transform: translateY(-3px);
     }
-    .editor-controls {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 2.5rem;
-    }
-    .btn-group {
-      display: flex;
-      gap: 0.5rem;
-    }
     .content-box {
       background-color: var(--bg-card, #1e1e2e);
       border: 1px solid var(--border-color, #333);
@@ -239,6 +228,25 @@
     .content-box li {
       margin-bottom: 0.5rem;
     }
+    .related-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .related-card {
+      display: block;
+      padding: 1rem;
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      color: var(--text-primary, #fff);
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .related-card:hover {
+      border-color: var(--accent-primary, #3b82f6);
+    }
   </style>
 </head>
 <body style="margin: 0; padding: 0;">
@@ -258,6 +266,12 @@
 
   <!-- Main Container -->
   <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
+    <!-- Breadcrumb Navigation -->
+    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
+      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
+      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Developer Tools</a> / 
+      <span>Color Picker</span>
+    </nav>
     
     <!-- Tool Title & Description -->
     <div style="text-align: center; margin-bottom: 2rem;">
@@ -314,11 +328,6 @@
       <span id="status-msg" style="font-size: 0.85rem; color: #10b981; font-weight: 500; display: none;">Color code copied!</span>
     </div>
 
-    <!-- Adsterra Banner Placement Placeholder -->
-    <div style="text-align: center; margin: 2rem 0;">
-      <script src="https://p130663884.effectivecpmnetwork.com/81/02/32/8102329c43de17d196371b4a3e3bed7f.js"></script>
-    </div>
-
     <!-- SEO Article Content Box 1 -->
     <div class="content-box">
       <h2>Why Every Web Developer Needs a Color Palette Tool</h2>
@@ -333,6 +342,26 @@
         <li><strong>RGB (Red Green Blue):</strong> Direct numerical intensities useful for CSS opacity values (e.g., <code>rgba(59, 130, 246, 0.5)</code>).</li>
         <li><strong>HSL (Hue Saturation Lightness):</strong> Intuitive color model for crafting color themes and shades.</li>
       </ul>
+    </div>
+
+    <!-- Internal Linking Section (SEO Best Practice) -->
+    <div class="content-box">
+      <h2>Explore Related Developer & Design Tools</h2>
+      <p>Enhance your development workflow with our free utilities:</p>
+      <div class="related-links">
+        <a href="/tools/media/color-palette-extractor.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🎨 Color Palette Extractor</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Extract matching HEX codes from photos.</span>
+        </a>
+        <a href="/tools/developer/code-to-image.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📷 Code Snippet to Image</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Turn source code into beautiful social media images.</span>
+        </a>
+        <a href="/tools/developer/base64-encoder-decoder.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🔒 Base64 Encoder / Decoder</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Encode or decode text strings into Base64 format.</span>
+        </a>
+      </div>
     </div>
 
     <!-- FAQ Section -->
