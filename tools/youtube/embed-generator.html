@@ -22,6 +22,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>YouTube Embed Code Generator - Responsive iFrames | MicroToolStack</title>
   <meta name="description" content="Free YouTube Embed Code Generator. Create custom, responsive iframe embed codes with autoplay, custom start time, loop, and privacy-enhanced mode.">
+  <meta name="keywords" content="youtube embed generator, responsive youtube iframe, embed youtube video, youtube nocookie embed, youtube start time embed">
+
+  <link rel="canonical" href="https://microtoolstack.com/tools/youtube/embed-generator.html">
+  <meta name="robots" content="index, follow">
+
+  <!-- Favicon Icon for Google & Devices -->
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,6 +38,52 @@
   <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <style>
+    .related-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .related-card {
+      display: block;
+      padding: 1rem;
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      color: var(--text-primary, #fff);
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .related-card:hover {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+    .content-box {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .content-box h2 {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul, .content-box ol {
+      color: var(--text-secondary, #9ca3af);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .content-box ul, .content-box ol {
+      padding-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .content-box li {
+      margin-bottom: 0.5rem;
+    }
+  </style>
 
   <!-- Schema.org FAQ Markup -->
   <script type="application/ld+json">
@@ -56,104 +111,136 @@
   }
   </script>
 </head>
-<body>
-  <!-- Header Container -->
-  <div id="header-container"></div>
+<body style="margin: 0; padding: 0;">
+  <!-- Header Section -->
+  <header class="custom-header">
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
+    </a>
+    <nav class="custom-nav">
+      <a href="/#categories">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
+    </nav>
+  </header>
 
   <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
     <!-- Breadcrumb Navigation -->
-    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary);">
-      <a href="/" style="color: var(--accent-primary); text-decoration: none;">Home</a> / 
-      <a href="/tools/youtube/" style="color: var(--accent-primary); text-decoration: none;">YouTube Tools</a> / 
+    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
+      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
+      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">YouTube Tools</a> / 
       <span>Embed Generator</span>
     </nav>
 
     <!-- Tool Title & Description -->
     <header style="margin-bottom: 2rem; text-align: center;">
-      <h1 class="hero" style="font-size: 2.2rem; margin-bottom: 0.5rem;">YouTube Embed Code Generator</h1>
-      <p style="color: var(--text-secondary); font-size: 1.05rem; max-width: 650px; margin: 0 auto;">
+      <h1 class="hero" style="font-size: 2rem; margin-bottom: 0.5rem; color: #fff;">YouTube Embed Code Generator</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem; max-width: 650px; margin: 0 auto;">
         Create customized, responsive YouTube embed codes with advanced parameters like privacy mode, start times, and loop.
       </p>
     </header>
 
     <!-- Tool App Box -->
-    <section class="card" style="padding: 2rem; border-radius: 12px; background: var(--bg-secondary); border: 1px solid rgba(255,255,255,0.08); margin-bottom: 3rem;">
+    <section class="card" style="padding: 2rem; border-radius: 12px; background: var(--bg-card, #1e1e2e); border: 1px solid var(--border-color, #333); margin-bottom: 3rem;">
       <div style="display: flex; flex-direction: column; gap: 1.2rem;">
         <div>
-          <label for="url-input" style="font-weight: 600; font-size: 1rem; display: block; margin-bottom: 0.5rem;">YouTube Video URL:</label>
-          <input type="text" id="url-input" placeholder="e.g., https://www.youtube.com/watch?v=dQw4w9WgXcQ" style="width: 100%; padding: 0.8rem 1rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.15); background: var(--bg-primary); color: #fff; font-size: 1rem; box-sizing: border-box;">
+          <label for="url-input" style="font-weight: 600; font-size: 1rem; display: block; margin-bottom: 0.5rem; color: #fff;">YouTube Video URL:</label>
+          <input type="text" id="url-input" placeholder="e.g., https://www.youtube.com/watch?v=dQw4w9WgXcQ" style="width: 100%; padding: 0.8rem 1rem; border-radius: 6px; border: 1px solid var(--border-color, #333); background: var(--bg-card, #12121e); color: #fff; font-size: 1rem; box-sizing: border-box; outline: none;">
         </div>
 
         <!-- Options Grid -->
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 0.5rem;">
           <div>
-            <label for="start-time" style="font-size: 0.88rem; color: var(--text-secondary); display: block; margin-bottom: 0.3rem;">Start Time (seconds):</label>
-            <input type="number" id="start-time" placeholder="e.g. 30" min="0" style="width: 100%; padding: 0.6rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.15); background: var(--bg-primary); color: #fff; box-sizing: border-box;">
+            <label for="start-time" style="font-size: 0.88rem; color: var(--text-secondary, #9ca3af); display: block; margin-bottom: 0.3rem;">Start Time (seconds):</label>
+            <input type="number" id="start-time" placeholder="e.g. 30" min="0" style="width: 100%; padding: 0.6rem; border-radius: 6px; border: 1px solid var(--border-color, #333); background: var(--bg-card, #12121e); color: #fff; box-sizing: border-box; outline: none;">
           </div>
-          <div style="display: flex; align-items: center; gap: 0.5rem; margin-top: 1.2rem;">
-            <input type="checkbox" id="opt-privacy" checked style="width: 18px; height: 18px;">
+          <div style="display: flex; align-items: center; gap: 0.5rem; margin-top: 1.2rem; color: #fff;">
+            <input type="checkbox" id="opt-privacy" checked style="width: 18px; height: 18px; accent-color: var(--accent-primary, #3b82f6);">
             <label for="opt-privacy" style="font-size: 0.9rem; cursor: pointer;">Privacy-Enhanced Mode</label>
           </div>
-          <div style="display: flex; align-items: center; gap: 0.5rem; margin-top: 1.2rem;">
-            <input type="checkbox" id="opt-responsive" checked style="width: 18px; height: 18px;">
+          <div style="display: flex; align-items: center; gap: 0.5rem; margin-top: 1.2rem; color: #fff;">
+            <input type="checkbox" id="opt-responsive" checked style="width: 18px; height: 18px; accent-color: var(--accent-primary, #3b82f6);">
             <label for="opt-responsive" style="font-size: 0.9rem; cursor: pointer;">Make Responsive (16:9)</label>
           </div>
-          <div style="display: flex; align-items: center; gap: 0.5rem; margin-top: 1.2rem;">
-            <input type="checkbox" id="opt-autoplay" style="width: 18px; height: 18px;">
+          <div style="display: flex; align-items: center; gap: 0.5rem; margin-top: 1.2rem; color: #fff;">
+            <input type="checkbox" id="opt-autoplay" style="width: 18px; height: 18px; accent-color: var(--accent-primary, #3b82f6);">
             <label for="opt-autoplay" style="font-size: 0.9rem; cursor: pointer;">Autoplay (Muted)</label>
           </div>
         </div>
 
-        <button id="generate-btn" style="padding: 0.8rem 1.5rem; border-radius: 6px; border: none; background: var(--accent-primary); color: #fff; font-weight: 600; cursor: pointer; margin-top: 1rem;">Generate Embed Code</button>
+        <button id="generate-btn" style="padding: 0.8rem 1.5rem; border-radius: 6px; border: none; background: var(--accent-primary, #3b82f6); color: #fff; font-weight: 600; cursor: pointer; margin-top: 1rem;">Generate Embed Code</button>
       </div>
 
       <!-- Result Box -->
-      <div id="result-box" style="display: none; margin-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem;">
-        <h3 style="color: var(--text-primary); margin-bottom: 0.8rem; font-size: 1.1rem;">Generated Embed Code:</h3>
+      <div id="result-box" style="display: none; margin-top: 2rem; border-top: 1px solid var(--border-color, #333); padding-top: 1.5rem;">
+        <h3 style="color: #fff; margin-bottom: 0.8rem; font-size: 1.1rem;">Generated Embed Code:</h3>
         <div style="position: relative; margin-bottom: 1.5rem;">
-          <textarea id="code-output" readonly rows="5" style="width: 100%; padding: 1rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.15); background: rgba(0,0,0,0.4); color: #4ade80; font-family: monospace; font-size: 0.9rem; resize: vertical; box-sizing: border-box;"></textarea>
-          <button id="copy-btn" style="position: absolute; top: 10px; right: 10px; padding: 0.4rem 0.8rem; border-radius: 4px; border: 1px solid rgba(255,255,255,0.2); background: var(--bg-secondary); color: #fff; cursor: pointer; font-size: 0.8rem;">Copy Code</button>
+          <textarea id="code-output" readonly rows="5" style="width: 100%; padding: 1rem; border-radius: 6px; border: 1px solid var(--border-color, #333); background: rgba(0,0,0,0.4); color: #10b981; font-family: monospace; font-size: 0.9rem; resize: vertical; box-sizing: border-box; outline: none;"></textarea>
+          <button id="copy-btn" style="position: absolute; top: 10px; right: 10px; padding: 0.4rem 0.8rem; border-radius: 4px; border: 1px solid var(--border-color, #4b5563); background: var(--bg-card, #1f2937); color: #fff; cursor: pointer; font-size: 0.8rem;">Copy Code</button>
         </div>
 
-        <h3 style="color: var(--text-primary); margin-bottom: 0.8rem; font-size: 1.1rem;">Live Preview:</h3>
+        <h3 style="color: #fff; margin-bottom: 0.8rem; font-size: 1.1rem;">Live Preview:</h3>
         <div id="preview-container" style="background: rgba(0,0,0,0.5); padding: 1rem; border-radius: 8px;"></div>
       </div>
 
       <div id="error-box" style="display: none; margin-top: 1rem; color: #ef4444; font-size: 0.95rem; text-align: center;"></div>
     </section>
 
-    <!-- SEO Content Section -->
-    <article style="line-height: 1.7; color: var(--text-secondary); margin-bottom: 3rem;">
-      <h2 style="color: var(--text-primary); margin-bottom: 1rem;">Why Use a Custom YouTube Embed Code Generator?</h2>
-      <p style="margin-bottom: 1.5rem;">
+    <!-- SEO Content Section 1 -->
+    <div class="content-box">
+      <h2>Why Use a Custom YouTube Embed Code Generator?</h2>
+      <p>
         Default YouTube share embeds lack responsiveness and don't automatically adjust to mobile screen widths. Our <strong>YouTube Embed Code Generator</strong> creates fluid HTML/CSS containers that fit any blog layout (WordPress, Webflow, Blogger, or custom HTML) seamlessly while respecting user privacy standards.
       </p>
+    </div>
 
-      <h2 style="color: var(--text-primary); margin-bottom: 1rem;">Key Features & Parameters</h2>
-      <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
-        <li style="margin-bottom: 0.5rem;"><strong>100% Mobile Responsive:</strong> Wraps the iframe in aspect-ratio CSS to eliminate side-scrolling issues.</li>
-        <li style="margin-bottom: 0.5rem;"><strong>Privacy-Enhanced Mode (No-Cookie):</strong> Uses <code>youtube-nocookie.com</code> domain to improve GDPR compliance.</li>
-        <li style="margin-bottom: 0.5rem;"><strong>Custom Timestamp Start:</strong> Force videos to begin playing at a specific second mark automatically.</li>
+    <!-- SEO Content Section 2 -->
+    <div class="content-box">
+      <h2>Key Features & Parameters</h2>
+      <ul>
+        <li><strong>100% Mobile Responsive:</strong> Wraps the iframe in aspect-ratio CSS to eliminate side-scrolling issues.</li>
+        <li><strong>Privacy-Enhanced Mode (No-Cookie):</strong> Uses <code>youtube-nocookie.com</code> domain to improve GDPR compliance.</li>
+        <li><strong>Custom Timestamp Start:</strong> Force videos to begin playing at a specific second mark automatically.</li>
+        <li><strong>Muted Autoplay:</strong> Enable seamless background playback without sound disruption.</li>
       </ul>
-    </article>
+    </div>
 
-    <!-- Internal Linking -->
-    <section style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem;">
-      <h3 style="color: var(--text-primary); margin-bottom: 1rem;">Explore Related YouTube Tools</h3>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem;">
-        <a href="/tools/youtube/thumbnail-downloader.html" style="padding: 1rem; background: var(--bg-secondary); border-radius: 8px; text-decoration: none; border: 1px solid rgba(255,255,255,0.05); display: block;">
-          <h4 style="color: var(--text-primary); margin-bottom: 0.3rem;">Thumbnail Downloader</h4>
-          <p style="color: var(--text-secondary); font-size: 0.85rem;">Download HD thumbnails in 1-click.</p>
+    <!-- Internal Linking Section (SEO Best Practice) -->
+    <div class="content-box">
+      <h2>Explore Related YouTube & Developer Tools</h2>
+      <p>Supercharge your video and web content with our free utilities:</p>
+      <div class="related-links">
+        <a href="/tools/youtube/channel-id-finder.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🆔 Channel ID Finder</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Extract 24-character YouTube Channel IDs.</span>
         </a>
-        <a href="/tools/youtube/channel-id-finder.html" style="padding: 1rem; background: var(--bg-secondary); border-radius: 8px; text-decoration: none; border: 1px solid rgba(255,255,255,0.05); display: block;">
-          <h4 style="color: var(--text-primary); margin-bottom: 0.3rem;">Channel ID Finder</h4>
-          <p style="color: var(--text-secondary); font-size: 0.85rem;">Extract 24-character Channel IDs easily.</p>
+        <a href="/tools/text/word-counter.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📝 Word Counter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Analyze text length for YouTube descriptions.</span>
+        </a>
+        <a href="/tools/text/case-converter.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🔤 Case Converter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Format titles in Title Case or Uppercase.</span>
         </a>
       </div>
-    </section>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="content-box">
+      <h2>Frequently Asked Questions (FAQ)</h2>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="color: #fff; font-size: 1.05rem; margin-bottom: 0.3rem;">How do I make an embedded YouTube video responsive?</h3>
+        <p>Our generator wraps the iframe in a responsive CSS container with a 16:9 aspect ratio, ensuring it scales perfectly on mobile screens, tablets, and desktops.</p>
+      </div>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="color: #fff; font-size: 1.05rem; margin-bottom: 0.3rem;">What is YouTube Privacy-Enhanced Mode?</h3>
+        <p>Privacy-enhanced mode uses the domain 'youtube-nocookie.com', preventing YouTube from storing tracking cookies about visitors until they click play.</p>
+      </div>
+    </div>
   </main>
 
-  <!-- Footer Container -->
+  <!-- Footer Placeholder -->
   <div id="footer-container"></div>
 
   <!-- Core Scripts -->
