@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) - Optimized Load -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var gTagScript = document.createElement('script');
+        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        gTagScript.async = true;
+        document.head.appendChild(gTagScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F3WWR9KGB4');
+      }, 1000);
+    });
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>Free CSS Glassmorphism & Claymorphism Generator | MicroToolStack</title>
+  <meta name="description" content="Free online CSS Glassmorphism and Claymorphism generator tool. Customize blur, shadows, border-radius, and copy ready-to-use modern UI CSS code instantly.">
+  <meta name="keywords" content="glassmorphism generator, claymorphism generator, css glass effect, css claymorphism, modern css UI generator, backdrop filter css, 3d css card generator">
+
+  <link rel="canonical" href="https://microtoolstack.com/tools/developer/glassmorphism-claymorphism-generator.html">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://microtoolstack.com/tools/developer/glassmorphism-claymorphism-generator.html">
+  <meta property="og:title" content="Free CSS Glassmorphism & Claymorphism Generator | MicroToolStack">
+  <meta property="og:description" content="Create stunning Glassmorphism and Claymorphism UI designs with live preview and instant CSS code generation.">
+  <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
+
+  <!-- Favicon Icon for Google & Devices -->
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
+
+  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "CSS Glassmorphism & Claymorphism Generator",
+        "operatingSystem": "All",
+        "applicationCategory": "DeveloperApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "An online developer design tool to generate CSS code for Glassmorphism (blurred translucent UI) and Claymorphism (3D inflated tactile UI) effects.",
+        "url": "https://microtoolstack.com/tools/developer/glassmorphism-claymorphism-generator.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is Glassmorphism in Web Design?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Glassmorphism is a modern UI design trend featuring semi-transparent frosted-glass elements with multi-layered depth, vivid background colors, and CSS backdrop-filter blur effects."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is Claymorphism?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Claymorphism is a modern 3D UI aesthetic characterized by rounded corners, inner and outer soft drop-shadows, giving elements an inflated, soft clay-like appearance."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is the generated CSS cross-browser compatible?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! The generator includes vendor prefixes like -webkit-backdrop-filter to ensure compatibility across Chrome, Safari, Firefox, and Edge browsers."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Preconnect and Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <style>
+    .generator-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    @media (max-width: 768px) {
+      .generator-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .preview-stage {
+      min-height: 380px;
+      border-radius: var(--radius-md, 8px);
+      padding: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+      border: 1px solid var(--border-color, #333);
+    }
+    .preview-card {
+      width: 100%;
+      max-width: 280px;
+      height: 200px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      transition: all 0.2s ease;
+    }
+    .controls-card {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+    }
+    .control-group {
+      margin-bottom: 1.25rem;
+    }
+    .control-group label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: var(--text-primary, #fff);
+    }
+    .range-input {
+      width: 100%;
+      accent-color: var(--accent-primary, #3b82f6);
+      cursor: pointer;
+    }
+    .tab-buttons {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+      background: #0d1117;
+      padding: 0.35rem;
+      border-radius: 8px;
+      border: 1px solid var(--border-color, #333);
+    }
+    .tab-btn {
+      flex: 1;
+      padding: 0.6rem 1rem;
+      border: none;
+      background: transparent;
+      color: #9ca3af;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .tab-btn.active {
+      background: var(--accent-primary, #3b82f6);
+      color: #fff;
+    }
+    .code-output {
+      width: 100%;
+      height: 140px;
+      padding: 1rem;
+      font-family: monospace;
+      font-size: 0.85rem;
+      background-color: #0d1117;
+      color: #7ee787;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      outline: none;
+      resize: none;
+      margin-top: 1rem;
+      box-sizing: border-box;
+    }
+    .content-box {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .content-box h2 {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul {
+      color: var(--text-secondary, #9ca3af);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .content-box ul {
+      padding-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .content-box li {
+      margin-bottom: 0.5rem;
+    }
+    .related-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .related-card {
+      display: block;
+      padding: 1rem;
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      color: var(--text-primary, #fff);
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .related-card:hover {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+  </style>
+</head>
+<body style="margin: 0; padding: 0;">
+
+  <!-- Header Section -->
+  <header class="custom-header">
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
+    </a>
+    <nav class="custom-nav">
+      <a href="/#categories">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
+    </nav>
+  </header>
+
+  <!-- Main Container -->
+  <main class="container" style="max-width: 950px; margin: 2rem auto; padding: 0 1rem;">
+    <!-- Breadcrumb Navigation -->
+    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
+      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
+      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Developer Tools</a> / 
+      <span>CSS Glassmorphism & Claymorphism Generator</span>
+    </nav>
+    
+    <!-- Tool Title & Description -->
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">CSS Glassmorphism & Claymorphism Generator</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Design modern frosted glass or 3D soft clay CSS elements with real-time preview.</p>
+    </div>
+
+    <!-- Mode Selector Tabs -->
+    <div class="tab-buttons">
+      <button id="tab-glass" class="tab-btn active">✨ Glassmorphism</button>
+      <button id="tab-clay" class="tab-btn">🧱 Claymorphism</button>
+    </div>
+
+    <!-- Main Generator Grid -->
+    <div class="generator-grid">
+      <!-- Live Preview Canvas -->
+      <div id="preview-stage" class="preview-stage">
+        <div id="card-preview" class="preview-card">
+          <h3 id="card-title" style="margin-bottom: 0.25rem; font-size: 1.2rem; color: #fff;">Glass Effect</h3>
+          <p id="card-desc" style="font-size: 0.85rem; color: rgba(255,255,255,0.8); margin: 0;">Modern CSS UI Element</p>
+        </div>
+      </div>
+
+      <!-- Controls Panel -->
+      <div class="controls-card">
+        <!-- Glassmorphism Controls -->
+        <div id="glass-controls">
+          <div class="control-group">
+            <label>Blur (Backdrop Filter): <span id="val-blur">10px</span></label>
+            <input type="range" id="input-blur" class="range-input" min="0" max="30" value="10">
+          </div>
+          <div class="control-group">
+            <label>Glass Opacity: <span id="val-glass-opacity">0.25</span></label>
+            <input type="range" id="input-glass-opacity" class="range-input" min="0.05" max="0.9" step="0.05" value="0.25">
+          </div>
+          <div class="control-group">
+            <label>Border Transparency: <span id="val-border-opacity">0.3</span></label>
+            <input type="range" id="input-border-opacity" class="range-input" min="0" max="0.8" step="0.05" value="0.3">
+          </div>
+        </div>
+
+        <!-- Claymorphism Controls -->
+        <div id="clay-controls" style="display: none;">
+          <div class="control-group">
+            <label>Clay Depth / Shadow: <span id="val-clay-depth">16px</span></label>
+            <input type="range" id="input-clay-depth" class="range-input" min="5" max="35" value="16">
+          </div>
+          <div class="control-group">
+            <label>Card Color: </label>
+            <input type="color" id="input-clay-color" value="#f472b6" style="width: 100%; height: 38px; border: none; border-radius: 6px; cursor: pointer;">
+          </div>
+        </div>
+
+        <!-- Shared Controls -->
+        <div class="control-group">
+          <label>Border Radius: <span id="val-radius">16px</span></label>
+          <input type="range" id="input-radius" class="range-input" min="0" max="50" value="16">
+        </div>
+
+        <!-- CSS Output Box & Copy -->
+        <textarea id="css-output" class="code-output" readonly></textarea>
+        
+        <div style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center;">
+          <button id="btn-copy" class="btn btn-primary" style="padding: 0.65rem 1.2rem; cursor: pointer; width: 100%;">📋 Copy Generated CSS</button>
+        </div>
+        <span id="status-msg" style="font-size: 0.85rem; color: #10b981; font-weight: 500; display: none; text-align: center; margin-top: 0.5rem;">Copied to clipboard!</span>
+      </div>
+    </div>
+
+    <!-- SEO Article Content Box 1 -->
+    <div class="content-box">
+      <h2>Understanding Glassmorphism & Claymorphism UI Trends</h2>
+      <p>Modern user interface design heavily relies on realistic depth and tactile aesthetics. <strong>Glassmorphism</strong> uses semi-transparent elements with CSS <code>backdrop-filter: blur()</code> properties to give websites an elegant, iOS-style translucent appearance. On the other hand, <strong>Claymorphism</strong> leverages multi-layered outer and inner shadows with vibrant pastel colors to create playful, 3D inflated cards.</p>
+    </div>
+
+    <!-- SEO Article Content Box 2 -->
+    <div class="content-box">
+      <h2>How to Use Generated CSS in Your Projects</h2>
+      <ul>
+        <li><strong>Step 1:</strong> Select your preferred UI style (Glassmorphism or Claymorphism) using the tabs above.</li>
+        <li><strong>Step 2:</strong> Adjust sliders for blur, depth, opacity, border-radius, and background colors in real-time.</li>
+        <li><strong>Step 3:</strong> Click <strong>"Copy Generated CSS"</strong> and paste the properties into your CSS file or UI library (Tailwind, Bootstrap, React, Vue).</li>
+      </ul>
+    </div>
+
+    <!-- Internal Linking Section (SEO Best Practice) -->
+    <div class="content-box">
+      <h2>Explore Related Developer Tools</h2>
+      <p>Upgrade your frontend development with our other free utilities:</p>
+      <div class="related-links">
+        <a href="/tools/developer/json-formatter.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">⚙️ JSON Formatter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Validate, beautify, and minify JSON data.</span>
+        </a>
+        <a href="/tools/media/image-exif-remover.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📸 Image EXIF Remover</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Strip camera metadata and GPS coordinates from photos.</span>
+        </a>
+        <a href="/tools/calculator/cgpa-to-percentage.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🎓 CGPA to Percentage</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Convert CGPA into percentage and total marks.</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="content-box">
+      <h2>Frequently Asked Questions</h2>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Does Glassmorphism work on all mobile browsers?</h3>
+        <p>Yes, modern mobile browsers support CSS <code>backdrop-filter</code>. Our generator automatically includes the <code>-webkit-backdrop-filter</code> prefix to ensure flawless rendering on iOS Safari and WebKit browsers.</p>
+      </div>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Can I use this CSS in commercial UI projects?</h3>
+        <p>Absolutely! All generated CSS snippets are 100% free and open-source for personal, commercial, and client projects.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer Container Placeholder -->
+  <div id="footer-container"></div>
+
+  <!-- JavaScript Utilities & Logic -->
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      let currentMode = 'glass';
+
+      const tabGlass = document.getElementById('tab-glass');
+      const tabClay = document.getElementById('tab-clay');
+      const glassControls = document.getElementById('glass-controls');
+      const clayControls = document.getElementById('clay-controls');
+
+      const cardPreview = document.getElementById('card-preview');
+      const cardTitle = document.getElementById('card-title');
+      const cardDesc = document.getElementById('card-desc');
+      const cssOutput = document.getElementById('css-output');
+
+      // Glass Inputs
+      const inputBlur = document.getElementById('input-blur');
+      const inputGlassOpacity = document.getElementById('input-glass-opacity');
+      const inputBorderOpacity = document.getElementById('input-border-opacity');
+
+      // Clay Inputs
+      const inputClayDepth = document.getElementById('input-clay-depth');
+      const inputClayColor = document.getElementById('input-clay-color');
+
+      // Shared Inputs
+      const inputRadius = document.getElementById('input-radius');
+
+      // Labels
+      const valBlur = document.getElementById('val-blur');
+      const valGlassOpacity = document.getElementById('val-glass-opacity');
+      const valBorderOpacity = document.getElementById('val-border-opacity');
+      const valClayDepth = document.getElementById('val-clay-depth');
+      const valRadius = document.getElementById('val-radius');
+
+      const btnCopy = document.getElementById('btn-copy');
+      const statusMsg = document.getElementById('status-msg');
+
+      function updateGenerator() {
+        const radius = inputRadius.value;
+        valRadius.textContent = `${radius}px`;
+
+        if (currentMode === 'glass') {
+          const blur = inputBlur.value;
+          const glassOp = inputGlassOpacity.value;
+          const borderOp = inputBorderOpacity.value;
+
+          valBlur.textContent = `${blur}px`;
+          valGlassOpacity.textContent = glassOp;
+          valBorderOpacity.textContent = borderOp;
+
+          const glassCss = 
+`background: rgba(255, 255, 255, ${glassOp});
+backdrop-filter: blur(${blur}px);
+-webkit-backdrop-filter: blur(${blur}px);
+border-radius: ${radius}px;
+border: 1px solid rgba(255, 255, 255, ${borderOp});
+box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);`;
+
+          cardPreview.style.cssText = glassCss;
+          cssOutput.value = glassCss;
+
+        } else {
+          const depth = inputClayDepth.value;
+          const color = inputClayColor.value;
+          valClayDepth.textContent = `${depth}px`;
+
+          const clayCss = 
+`background: ${color};
+border-radius: ${radius}px;
+box-shadow: ${depth}px ${depth}px ${depth * 2}px rgba(0, 0, 0, 0.25),
+            inset -${depth/2}px -${depth/2}px ${depth/2}px rgba(0, 0, 0, 0.15),
+            inset ${depth/2}px ${depth/2}px ${depth/2}px rgba(255, 255, 255, 0.4);`;
+
+          cardPreview.style.cssText = clayCss;
+          cssOutput.value = clayCss;
+        }
+      }
+
+      tabGlass.addEventListener('click', () => {
+        currentMode = 'glass';
+        tabGlass.classList.add('active');
+        tabClay.classList.remove('active');
+        glassControls.style.display = 'block';
+        clayControls.style.display = 'none';
+        cardTitle.textContent = 'Glass Effect';
+        cardDesc.textContent = 'Translucent Frosted Look';
+        updateGenerator();
+      });
+
+      tabClay.addEventListener('click', () => {
+        currentMode = 'clay';
+        tabClay.classList.add('active');
+        tabGlass.classList.remove('active');
+        glassControls.style.display = 'none';
+        clayControls.style.display = 'block';
+        cardTitle.textContent = 'Clay Effect';
+        cardDesc.textContent = '3D Inflated Soft Look';
+        updateGenerator();
+      });
+
+      // Event Listeners
+      [inputBlur, inputGlassOpacity, inputBorderOpacity, inputClayDepth, inputClayColor, inputRadius].forEach(el => {
+        el.addEventListener('input', updateGenerator);
+      });
+
+      // Initial Call
+      updateGenerator();
+
+      // Copy Action
+      btnCopy.addEventListener('click', function() {
+        navigator.clipboard.writeText(cssOutput.value).then(function() {
+          statusMsg.style.display = 'block';
+          setTimeout(() => { statusMsg.style.display = 'none'; }, 2000);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
