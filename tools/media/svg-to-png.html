@@ -20,29 +20,92 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Meta Tags -->
   <title>SVG to PNG Converter - Free & High Resolution | MicroToolStack</title>
   <meta name="description" content="Convert SVG vector graphics to High-Resolution PNG images online for free. Custom scaling, instant preview, 100% private browser processing.">
+  <meta name="keywords" content="svg to png converter, convert svg to png online, high res svg to png, vector to raster converter, free svg to png tool">
 
+  <link rel="canonical" href="https://microtoolstack.com/tools/media/svg-to-png.html">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Social Media Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SVG to PNG Converter - Free & High Resolution | MicroToolStack">
+  <meta property="og:description" content="Convert SVG vector graphics to High-Resolution PNG images online for free. Custom scaling, instant preview, 100% private browser processing.">
+  <meta property="og:url" content="https://microtoolstack.com/tools/media/svg-to-png.html">
+  <meta property="og:site_name" content="MicroToolStack">
+  <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
+
+  <!-- Favicon Icon for Google & Devices -->
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
+
+  <!-- Fonts & CSS Stylesheets -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
 
+  <!-- JSON-LD Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://microtoolstack.com/tools/media/svg-to-png.html#webapp",
+        "url": "https://microtoolstack.com/tools/media/svg-to-png.html",
+        "name": "SVG to PNG Converter",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "All",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "Convert scalable SVG vector files into high-quality PNG raster images instantly inside your browser."
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://microtoolstack.com/tools/media/svg-to-png.html#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Are my SVG files uploaded to any server?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. The SVG rendering and conversion process happens 100% locally inside your web browser."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I export high DPI or 4K PNG images?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, you can select scaling multipliers up to 4x (Ultra HD) for crisp resolution."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
   <style>
     .upload-box {
-      border: 2px dashed var(--border-color);
+      border: 2px dashed var(--border-color, #333);
       padding: 2.5rem 1.5rem;
       text-align: center;
       border-radius: 12px;
       cursor: pointer;
-      background: var(--bg-secondary);
+      background: var(--bg-card, #1e1e2e);
       transition: border-color 0.3s;
       margin-bottom: 1.5rem;
     }
     .upload-box:hover {
-      border-color: var(--accent-primary);
+      border-color: var(--accent-primary, #3b82f6);
     }
     .preview-container {
       margin-top: 1.5rem;
@@ -70,45 +133,99 @@
     }
     .control-group label {
       font-size: 0.9rem;
-      color: var(--text-secondary);
+      color: var(--text-secondary, #9ca3af);
     }
     .control-group input, .control-group select {
       padding: 0.6rem 0.8rem;
       border-radius: 6px;
-      border: 1px solid var(--border-color);
-      background: var(--bg-primary);
-      color: var(--text-primary);
+      border: 1px solid var(--border-color, #333);
+      background: var(--bg-body, #111827);
+      color: #fff;
+      outline: none;
+    }
+    .content-box {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .content-box h2 {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul, .content-box ol {
+      color: var(--text-secondary, #9ca3af);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .content-box ul, .content-box ol {
+      padding-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .content-box li {
+      margin-bottom: 0.5rem;
+    }
+    .related-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .related-card {
+      display: block;
+      padding: 1rem;
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      color: var(--text-primary, #fff);
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .related-card:hover {
+      border-color: var(--accent-primary, #3b82f6);
     }
   </style>
 </head>
-<body>
-  <!-- Header Container -->
-  <div id="header-container"></div>
+<body style="margin: 0; padding: 0;">
+  <!-- Header Section -->
+  <header class="custom-header">
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
+    </a>
+    <nav class="custom-nav">
+      <a href="/#categories">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
+    </nav>
+  </header>
 
-  <main class="container" style="max-width: 800px; margin: 2rem auto; padding: 0 1rem;">
+  <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
     <!-- Breadcrumb Navigation -->
-    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary);">
-      <a href="/" style="color: var(--text-primary); text-decoration: none;">Home</a> / 
-      <a href="/tools/media/" style="color: var(--text-primary); text-decoration: none;">Media Tools</a> / 
+    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
+      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
+      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Media Tools</a> / 
       <span>SVG to PNG</span>
     </nav>
 
     <!-- Tool Header -->
     <header style="margin-bottom: 2rem; text-align: center;">
-      <h1 class="hero" style="font-size: 2.2rem; margin-bottom: 0.5rem;">Free SVG to PNG Converter</h1>
-      <p style="color: var(--text-secondary); font-size: 1rem;">
+      <h1 class="hero" style="font-size: 2rem; margin-bottom: 0.5rem; color: #fff;">Free SVG to PNG Converter</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">
         Convert scalable SVG vector files into high-quality PNG raster images instantly inside your browser.
       </p>
     </header>
 
     <!-- Tool Main Card -->
-    <div class="card" style="padding: 2rem; border-radius: 12px; background: var(--bg-secondary); border: 1px solid var(--border-color);">
+    <div class="card" style="padding: 2rem; border-radius: 12px; background: var(--bg-card, #1e1e2e); border: 1px solid var(--border-color, #333); margin-bottom: 3rem;">
       
       <!-- Upload Drop Zone -->
       <div class="upload-box" id="dropZone" onclick="document.getElementById('svgInput').click()">
         <span style="font-size: 2.5rem; display: block; margin-bottom: 0.5rem;">📂</span>
-        <p style="margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary);">Click or Drag & Drop SVG File Here</p>
-        <p style="font-size: 0.85rem; color: var(--text-secondary);">Supports .svg vector files only (100% Client-Side Processing)</p>
+        <p style="margin-bottom: 0.5rem; font-weight: 600; color: #fff;">Click or Drag & Drop SVG File Here</p>
+        <p style="font-size: 0.85rem; color: var(--text-secondary, #9ca3af);">Supports .svg vector files only (100% Client-Side Processing)</p>
         <input type="file" id="svgInput" accept=".svg" style="display: none;" onchange="handleFileSelect(event)">
       </div>
 
@@ -145,24 +262,61 @@
     <!-- Hidden Canvas for Rendering -->
     <canvas id="conversionCanvas" style="display: none;"></canvas>
 
-    <!-- Content / FAQ Section -->
-    <section style="margin-top: 3rem; border-top: 1px solid var(--border-color); padding-top: 2rem;">
-      <h2 style="font-size: 1.4rem; margin-bottom: 1rem;">How to Convert SVG to PNG</h2>
-      <ol style="color: var(--text-secondary); line-height: 1.8; padding-left: 1.2rem; margin-bottom: 2rem;">
+    <!-- SEO Content Box 1 -->
+    <div class="content-box">
+      <h2>How to Convert SVG to PNG Online</h2>
+      <ol>
         <li>Upload your SVG file by dragging it into the box or clicking to browse.</li>
         <li>Select your preferred resolution scaling (1x, 2x, or 4x for Ultra HD).</li>
         <li>Choose a transparent, white, or black background for your PNG.</li>
         <li>Click <strong>Download PNG Image</strong> to save your rendered image file instantly.</li>
       </ol>
+    </div>
 
-      <h3 style="font-size: 1.2rem; margin-bottom: 0.8rem;">Why Use MicroToolStack SVG Converter?</h3>
-      <p style="color: var(--text-secondary); line-height: 1.6;">
+    <!-- SEO Content Box 2 -->
+    <div class="content-box">
+      <h2>Why Use MicroToolStack SVG Converter?</h2>
+      <p>
         Unlike traditional online converters that upload your vector graphics to remote servers, our tool processes everything directly inside your browser using HTML5 Canvas rendering. Your files remain 100% private and never leave your device.
       </p>
-    </section>
+    </div>
+
+    <!-- Internal Linking Section (SEO Best Practice) -->
+    <div class="content-box">
+      <h2>Explore Related Media & Web Tools</h2>
+      <p>Enhance your graphics workflow with our free utilities:</p>
+      <div class="related-links">
+        <a href="/tools/media/png-to-svg.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🎨 PNG to SVG Converter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Trace raster PNG images into SVG vectors.</span>
+        </a>
+        <a href="/tools/media/image-cropper.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">✂️ Image Cropper</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Crop images with custom aspect ratios.</span>
+        </a>
+        <a href="/tools/media/base64-to-image.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🖼️ Base64 to Image</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Decode Base64 strings to downloadable images.</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="content-box">
+      <h2>Frequently Asked Questions</h2>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="font-size: 1.05rem; color: #fff; margin-bottom: 0.25rem;">Are my SVG files uploaded to any server?</h3>
+        <p>No. The SVG rendering and conversion process happens 100% locally inside your web browser.</p>
+      </div>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="font-size: 1.05rem; color: #fff; margin-bottom: 0.25rem;">Can I export high DPI or 4K PNG images?</h3>
+        <p>Yes, you can select scaling multipliers up to 4x (Ultra HD) for crisp resolution.</p>
+      </div>
+    </div>
+
   </main>
 
-  <!-- Footer Container -->
+  <!-- Footer Placeholder -->
   <div id="footer-container"></div>
 
   <!-- Core Scripts -->
@@ -194,11 +348,11 @@
 
     // Drag & Drop handlers
     const dropZone = document.getElementById('dropZone');
-    dropZone.addEventListener('dragover', (e) => { e.preventDefault(); dropZone.style.borderColor = 'var(--accent-primary)'; });
-    dropZone.addEventListener('dragleave', () => { dropZone.style.borderColor = 'var(--border-color)'; });
+    dropZone.addEventListener('dragover', (e) => { e.preventDefault(); dropZone.style.borderColor = 'var(--accent-primary, #3b82f6)'; });
+    dropZone.addEventListener('dragleave', () => { dropZone.style.borderColor = 'var(--border-color, #333)'; });
     dropZone.addEventListener('drop', (e) => {
       e.preventDefault();
-      dropZone.style.borderColor = 'var(--border-color)';
+      dropZone.style.borderColor = 'var(--border-color, #333)';
       if (e.dataTransfer.files.length) {
         document.getElementById('svgInput').files = e.dataTransfer.files;
         handleFileSelect({ target: { files: e.dataTransfer.files } });
