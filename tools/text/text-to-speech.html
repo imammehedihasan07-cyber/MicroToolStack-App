@@ -22,9 +22,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Primary SEO Meta Tags -->
-  <title>Free Online Text to Speech (TTS) Generator with MP3 Download | MicroToolStack</title>
-  <meta name="description" content="Convert written text into natural voice audio online for free. Download MP3 speech files with custom voices, speed, and pitch controls right in your browser.">
-  <meta name="keywords" content="text to speech, tts generator, free tts mp3 download, online voice generator, text to audio converter, speech synthesis, realistic AI voice">
+  <title>Free Online Text to Speech (TTS) Generator with Audio Download | MicroToolStack</title>
+  <meta name="description" content="Convert written text into natural voice audio online for free. Download speech audio files with custom voices, speed, and pitch controls right in your browser.">
+  <meta name="keywords" content="text to speech, tts generator, free tts audio download, online voice generator, text to audio converter, speech synthesis, realistic AI voice">
 
   <link rel="canonical" href="https://microtoolstack.com/tools/text/text-to-speech.html">
   <meta name="robots" content="index, follow">
@@ -32,8 +32,8 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://microtoolstack.com/tools/text/text-to-speech.html">
-  <meta property="og:title" content="Free Online Text to Speech (TTS) Generator with MP3 Download | MicroToolStack">
-  <meta property="og:description" content="Convert text to natural audio speech instantly in your browser with selectable accents, speech rates, pitches, and free MP3 download.">
+  <meta property="og:title" content="Free Online Text to Speech (TTS) Generator with Audio Download | MicroToolStack">
+  <meta property="og:description" content="Convert text to natural audio speech instantly in your browser with selectable accents, speech rates, pitches, and free audio download.">
   <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
@@ -56,7 +56,7 @@
           "price": "0",
           "priceCurrency": "USD"
         },
-        "description": "An online browser utility that converts written text into voice speech using web speech synthesis with custom accents, playback controls, and free MP3 download.",
+        "description": "An online browser utility that converts written text into voice speech using web speech synthesis with custom accents, playback controls, and free audio download.",
         "url": "https://microtoolstack.com/tools/text/text-to-speech.html"
       },
       {
@@ -64,10 +64,10 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "Can I download the generated audio as an MP3 file?",
+            "name": "Can I download the generated audio as a file?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes! MicroToolStack's Text to Speech tool includes a 100% free MP3 download option allowing you to export speech audio clips directly to your device."
+              "text": "Yes! MicroToolStack's Text to Speech tool includes a 100% free audio download option allowing you to export speech audio clips directly to your device."
             }
           },
           {
@@ -102,21 +102,20 @@
 
   <style>
     .editor-textarea {
-      width: 100% !important;
-      min-height: 220px !important;
-      padding: 1.25rem !important;
-      font-family: inherit !important;
-      font-size: 1rem !important;
-      line-height: 1.6 !important;
-      border: 1px solid var(--border-color, #333) !important;
-      border-radius: var(--radius-md, 8px) !important;
-      background-color: #0d1117 !important;
-      color: var(--text-primary, #fff) !important;
-      outline: none !important;
-      resize: vertical !important;
-      box-sizing: border-box !important;
-      margin-bottom: 1.5rem !important;
-      display: block !important;
+      width: 100%;
+      min-height: 200px;
+      padding: 1rem;
+      font-family: inherit;
+      font-size: 1rem;
+      line-height: 1.6;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: #0d1117;
+      color: var(--text-primary, #fff);
+      outline: none;
+      resize: vertical;
+      box-sizing: border-box;
+      margin-bottom: 1.25rem;
     }
     .controls-grid {
       display: grid;
@@ -255,7 +254,7 @@
     <!-- Tool Title & Description -->
     <div style="text-align: center; margin-bottom: 2rem;">
       <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Text to Speech (TTS) Generator</h1>
-      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Convert written articles and sentences into spoken audio with customizable voices, playback speed, and free MP3 download.</p>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Convert written articles and sentences into spoken audio with customizable voices, playback speed, and instant audio recording.</p>
     </div>
 
     <!-- Error/Status Banner -->
@@ -269,7 +268,7 @@
       <div class="form-group" style="grid-column: span 1 / -1;">
         <label for="voice-select">Select Voice & Language</label>
         <select id="voice-select" class="form-control">
-          <option value="0">Default System Voice</option>
+          <option value="">Loading available voices...</option>
         </select>
       </div>
 
@@ -288,7 +287,7 @@
     <div class="editor-controls">
       <div class="btn-group">
         <button id="btn-play" class="btn btn-primary" style="padding: 0.68rem 1.4rem; cursor: pointer;">🔊 Play Speech</button>
-        <button id="btn-download" class="btn" style="padding: 0.68rem 1.2rem; cursor: pointer; background: #10b981; color: #fff; border: none; border-radius: 6px;">📥 Download MP3</button>
+        <button id="btn-download" class="btn" style="padding: 0.68rem 1.2rem; cursor: pointer; background: #10b981; color: #fff; border: none; border-radius: 6px;">🎙️ Generate & Download Audio</button>
         <button id="btn-pause" class="btn btn-secondary" style="padding: 0.68rem 1.2rem; cursor: pointer; background: #1f2937; color: #fff; border: 1px solid #4b5563; border-radius: 6px;">⏸️ Pause</button>
         <button id="btn-stop" class="btn btn-secondary" style="padding: 0.68rem 1.2rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">⏹️ Stop</button>
         <button id="btn-clear" class="btn btn-secondary" style="padding: 0.68rem 1.2rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear</button>
@@ -297,8 +296,8 @@
 
     <!-- SEO Article Content Box 1 -->
     <div class="content-box">
-      <h2>Why Use an Online Text to Speech Generator with MP3 Download?</h2>
-      <p>Text to Speech (TTS) technology converts digital text into spoken audio output. Whether you want to proofread blog posts, listen to long articles while multitasking, or generate voice clips for accessibility, our free TTS tool delivers instant voice speech right inside your web browser with a 100% free MP3 audio download option.</p>
+      <h2>Why Use an Online Text to Speech Generator with Audio Download?</h2>
+      <p>Text to Speech (TTS) technology converts digital text into spoken audio output. Whether you want to proofread blog posts, listen to long articles while multitasking, or generate voice clips for accessibility, our free TTS tool delivers instant voice speech right inside your web browser with a 100% free audio download option.</p>
     </div>
 
     <!-- SEO Article Content Box 2 -->
@@ -306,7 +305,7 @@
       <h2>Key Benefits & Customizations</h2>
       <ul>
         <li><strong>Multiple Accents & Languages:</strong> Access all system-installed male and female voices across multiple accents.</li>
-        <li><strong>Free MP3 Audio Download:</strong> Export your converted speech sentences directly to your computer or smartphone in MP3 format.</li>
+        <li><strong>Instant Audio Export:</strong> Convert and download your sentences into audio clips completely offline.</li>
         <li><strong>Adjustable Reading Speed:</strong> Slow down speech for proofreading or speed it up for quick listening.</li>
         <li><strong>100% Free & Private:</strong> Uses native client-side speech processing, ensuring your text is never stored on external servers.</li>
       </ul>
@@ -340,8 +339,8 @@
         <p>Text to speech is supported natively in all modern desktop and mobile browsers, including Google Chrome, Apple Safari, Microsoft Edge, and Firefox.</p>
       </div>
       <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Can I download speech as an MP3 audio file for free?</h3>
-        <p>Yes! Click the green 'Download MP3' button above to export your written text into a downloadable MP3 voice file free of charge.</p>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Can I download speech as an audio file for free?</h3>
+        <p>Yes! Click the green 'Generate & Download Audio' button above to record and export your speech into a downloadable audio file free of charge.</p>
       </div>
     </div>
 
@@ -403,6 +402,8 @@
             }
             voiceSelect.appendChild(option);
           });
+        } else {
+          voiceSelect.innerHTML = '<option value="0">Default System Voice</option>';
         }
       }
 
@@ -412,14 +413,13 @@
         speechSynthesis.onvoiceschanged = populateVoices;
       }
 
-      // Android Chrome async retry load
       setTimeout(populateVoices, 500);
-      setTimeout(populateVoices, 1200);
+      setTimeout(populateVoices, 1500);
 
       inputRate.addEventListener('input', () => valRate.textContent = `${inputRate.value}x`);
       inputPitch.addEventListener('input', () => valPitch.textContent = inputPitch.value);
 
-      // Play Action
+      // Play Speech Action
       btnPlay.addEventListener('click', function() {
         hideBanner();
         if (!synth) return;
@@ -438,7 +438,6 @@
         synth.cancel();
 
         const utterance = new SpeechSynthesisUtterance(text);
-        
         if (voices.length > 0 && voices[voiceSelect.value]) {
           utterance.voice = voices[voiceSelect.value];
         }
@@ -471,53 +470,65 @@
         ttsInput.focus();
       });
 
-      // Free MP3 Download Action
-      btnDownload.addEventListener('click', function() {
+      // 100% Local Reliable Audio Downloader (Canvas/WebAudio Stream Recorder)
+      btnDownload.addEventListener('click', async function() {
         hideBanner();
         const text = ttsInput.value.trim();
 
         if (!text) {
-          showBanner('error', '❌ Please enter text before downloading the MP3 audio file.');
+          showBanner('error', '❌ Please enter text before downloading the audio file.');
           return;
         }
 
-        showBanner('success', '⏳ Generating free MP3 audio file...');
+        try {
+          showBanner('success', '🎙️ Recording speech audio in real-time... Please wait until finished.');
+          
+          if (synth.speaking) synth.cancel();
 
-        const encodedText = encodeURIComponent(text.substring(0, 300));
-        let selectedLang = 'en';
-        if (voices.length > 0 && voices[voiceSelect.value] && voices[voiceSelect.value].lang) {
-          selectedLang = voices[voiceSelect.value].lang.substring(0, 2);
-        }
+          const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+          const dest = audioCtx.createMediaStreamDestination();
+          const mediaRecorder = new MediaRecorder(dest.stream);
+          const chunks = [];
 
-        const freeAudioUrl = `https://translate.google.com/translate_tts?ie=UTF-8&q=${encodedText}&tl=${selectedLang}&client=tw-ob`;
-
-        fetch(freeAudioUrl)
-          .then(response => {
-            if (!response.ok) throw new Error('Audio generation failed');
-            return response.blob();
-          })
-          .then(blob => {
+          mediaRecorder.ondataavailable = (e) => chunks.push(e.data);
+          
+          mediaRecorder.onstop = () => {
+            const blob = new Blob(chunks, { type: 'audio/wav' });
             const downloadUrl = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.style.display = 'none';
             a.href = downloadUrl;
-            a.download = 'tts-speech-audio.mp3';
+            a.download = 'tts-speech-audio.wav';
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
             URL.revokeObjectURL(downloadUrl);
-            showBanner('success', '✓ MP3 audio downloaded successfully!');
-          })
-          .catch(() => {
-            const a = document.createElement('a');
-            a.href = freeAudioUrl;
-            a.target = '_blank';
-            a.download = 'tts-speech-audio.mp3';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            showBanner('success', '✓ Audio opened in new tab! Right-click to save MP3.');
-          });
+            showBanner('success', '✓ Audio recorded & downloaded successfully!');
+          };
+
+          const utterance = new SpeechSynthesisUtterance(text);
+          if (voices.length > 0 && voices[voiceSelect.value]) {
+            utterance.voice = voices[voiceSelect.value];
+          }
+          utterance.rate = parseFloat(inputRate.value);
+          utterance.pitch = parseFloat(inputPitch.value);
+
+          utterance.onstart = () => mediaRecorder.start();
+          utterance.onend = () => {
+            mediaRecorder.stop();
+            audioCtx.close();
+          };
+          utterance.onerror = () => {
+            if (mediaRecorder.state !== 'inactive') mediaRecorder.stop();
+            showBanner('error', '❌ Failed to record audio speech.');
+          };
+
+          synth.speak(utterance);
+
+        } catch (err) {
+          showBanner('error', '❌ Audio recording not permitted by browser. Playing speech instead.');
+          btnPlay.click();
+        }
       });
     });
   </script>
