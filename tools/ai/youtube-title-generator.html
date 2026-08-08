@@ -36,8 +36,10 @@
   <meta property="og:description" content="Generate high-CTR titles, structured video descriptions, and YouTube SEO tags in seconds. 100% free and private.">
   <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
-  <!-- Favicon Icon -->
-  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+  <!-- Favicon Icon for Google & Devices -->
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
   <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
   <script type="application/ld+json">
@@ -122,7 +124,7 @@
       color: var(--text-primary, #fff);
       font-weight: 600;
     }
-    .editor-input, .editor-select, .editor-textarea {
+    .editor-input, .editor-select {
       width: 100%;
       padding: 0.75rem;
       font-size: 0.95rem;
@@ -174,18 +176,6 @@
       white-space: pre-wrap;
       word-break: break-word;
     }
-    .editor-controls {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 2.5rem;
-    }
-    .btn-group {
-      display: flex;
-      gap: 0.5rem;
-    }
     .content-box {
       background-color: var(--bg-card, #1e1e2e);
       border: 1px solid var(--border-color, #333);
@@ -210,6 +200,25 @@
     .content-box li {
       margin-bottom: 0.5rem;
     }
+    .related-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .related-card {
+      display: block;
+      padding: 1rem;
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      color: var(--text-primary, #fff);
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .related-card:hover {
+      border-color: var(--accent-primary, #3b82f6);
+    }
   </style>
 </head>
 <body style="margin: 0; padding: 0;">
@@ -229,8 +238,14 @@
 
   <!-- Main Container -->
   <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
+    <!-- Breadcrumb Navigation -->
+    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
+      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
+      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">AI Tools</a> / 
+      <span>YouTube Metadata Generator</span>
+    </nav>
     
-    <!-- Tool Title & Description -->
+    <!-- Title Section -->
     <div style="text-align: center; margin-bottom: 2rem;">
       <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">AI YouTube Metadata Generator</h1>
       <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Generate high-CTR titles, structured video descriptions, tags, and hashtags instantly.</p>
@@ -313,11 +328,6 @@
       <span id="status-msg" style="font-size: 0.85rem; color: #10b981; font-weight: 500; display: none;">Copied to clipboard!</span>
     </div>
 
-    <!-- Adsterra Banner Placement Placeholder -->
-    <div style="text-align: center; margin: 2rem 0;">
-      <script src="https://p130663884.effectivecpmnetwork.com/81/02/32/8102329c43de17d196371b4a3e3bed7f.js"></script>
-    </div>
-
     <!-- SEO Article Content Box 1 -->
     <div class="content-box">
       <h2>Why YouTube Metadata Matters for Channel Growth</h2>
@@ -333,6 +343,30 @@
         <li><strong>Balanced SEO Tags:</strong> Combine exact-match target keywords with broad category tags.</li>
         <li><strong>Hashtags in Description:</strong> Place 3 to 5 relevant hashtags above or below your description box.</li>
       </ul>
+    </div>
+
+    <!-- Internal Linking Section (SEO Best Practice) -->
+    <div class="content-box">
+      <h2>Explore Related AI & Social Media Tools</h2>
+      <p>Enhance your content creation and social marketing workflow with our free utilities:</p>
+      <div class="related-links">
+        <a href="/tools/ai/caption-generator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📝 AI Caption Generator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Craft engaging social media captions and hooks.</span>
+        </a>
+        <a href="/tools/ai/ai-bio-generator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">✨ AI Bio Generator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Craft catchy profile bios for Twitter and Instagram.</span>
+        </a>
+        <a href="/tools/ai/hashtag-generator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">#️⃣ AI Hashtag Generator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Generate trending niche hashtags for social media.</span>
+        </a>
+        <a href="/tools/developer/code-to-image.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📷 Code Snippet to Image</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Turn source code into beautiful social media images.</span>
+        </a>
+      </div>
     </div>
 
     <!-- FAQ Section -->
@@ -381,9 +415,9 @@
 
         if (lang === 'bangla') {
           // Bangla Generation Mode
-          resTitle.textContent = `1. ${topic} (সহজ বাংলায় সম্পূর্ণ গাইড! 🔥)\n2. কীভাবে ${topic} করবেন? Step-by-Step Tutorial\n3. ${topic} - সেরা টিপস ও ট্রিকস 2026`;
+          resTitle.textContent = `1. ${topic} (সহজ বাংলায় সম্পূর্ণ গাইড! 🔥)\n2. কীভাবে ${topic} করবেন? Step-by-Step Tutorial\n3. ${topic} - সেরা টিপস ও ট্রিকস 2026`;
           
-          resDesc.textContent = `আজকের ভিডিওতে আমরা আলোচনা করব: ${topic}।\nভিডিওটি ভালো লাগলে লাইক দিন এবং চ্যানেলটি সাবস্ক্রাইব করুন!\n\n📌 সময়সূচী (Timestamps):\n00:00 - Introduction\n01:30 - Main Tutorial\n05:00 - Pro Tips & Outro\n\n#BanglaTutorial #${cat} #YouTubeBangla`;
+          resDesc.textContent = `আজকের ভিডিওতে আমরা আলোচনা করব: ${topic}।\nভিডিওটি ভালো লাগলে লাইক দিন এবং চ্যানেলটি সাবস্ক্রাইব করুন!\n\n📌 সময়সূচী (Timestamps):\n00:00 - Introduction\n01:30 - Main Tutorial\n05:00 - Pro Tips & Outro\n\n#BanglaTutorial #${cat} #YouTubeBangla`;
 
           resTags.textContent = `${topic}, ${topic} bangla, ${topic} tutorial, ${cat} bangla, bangla video, video editing bangla, how to ${topic}`;
 
