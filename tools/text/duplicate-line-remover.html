@@ -36,8 +36,10 @@
   <meta property="og:description" content="Instantly remove duplicate lines and clean up multi-line text in your web browser. 100% free and private.">
   <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
-  <!-- Favicon Icon -->
-  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+  <!-- Favicon Icon for Google & Devices -->
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
   <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
   <script type="application/ld+json">
@@ -198,6 +200,25 @@
     .content-box li {
       margin-bottom: 0.5rem;
     }
+    .related-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .related-card {
+      display: block;
+      padding: 1rem;
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      color: var(--text-primary, #fff);
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .related-card:hover {
+      border-color: var(--accent-primary, #3b82f6);
+    }
   </style>
 </head>
 <body style="margin: 0; padding: 0;">
@@ -266,11 +287,6 @@
       <span id="status-msg" style="font-size: 0.85rem; color: #10b981; font-weight: 500; display: none;">Unique list copied!</span>
     </div>
 
-    <!-- Adsterra Banner Placement Placeholder -->
-    <div style="text-align: center; margin: 2rem 0;">
-      <script src="https://p130663884.effectivecpmnetwork.com/81/02/32/8102329c43de17d196371b4a3e3bed7f.js"></script>
-    </div>
-
     <!-- SEO Article Content Box 1 -->
     <div class="content-box">
       <h2>Why Use a Duplicate Line Remover?</h2>
@@ -286,6 +302,26 @@
         <li><strong>Code & Dataset Refinement:</strong> Strip duplicate rows, configuration keys, or log files easily.</li>
         <li><strong>Live Statistical Feedback:</strong> View live metrics showing original lines, unique lines remaining, and total duplicates removed.</li>
       </ul>
+    </div>
+
+    <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
+    <div class="content-box">
+      <h2>Explore Related Text & Developer Tools</h2>
+      <p>Clean and format your data efficiently with our other text tools:</p>
+      <div class="related-links">
+        <a href="/tools/text/case-converter.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🔤 Case Converter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Convert text to Uppercase, Lowercase, and Title Case.</span>
+        </a>
+        <a href="/tools/text/word-counter.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📝 Word Counter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Analyze readability and word counts.</span>
+        </a>
+        <a href="/tools/seo/slug-generator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🔗 Slug Generator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Convert text into clean, SEO-friendly URLs.</span>
+        </a>
+      </div>
     </div>
 
     <!-- FAQ Section -->
