@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) - Optimized Load -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var gTagScript = document.createElement('script');
+        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        gTagScript.async = true;
+        document.head.appendChild(gTagScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F3WWR9KGB4');
+      }, 1000);
+    });
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>Free CGPA to Percentage & Marks Converter Online | MicroToolStack</title>
+  <meta name="description" content="Convert CGPA to percentage or marks instantly with our free online calculator. Supports 4.0, 5.0, and 10.0 grading scales for universities and schools worldwide.">
+  <meta name="keywords" content="cgpa to percentage, cgpa to percentage converter, convert cgpa to marks, gpa to percentage calculator, cgpa 4 scale to percentage, cgpa 10 scale to percentage">
+
+  <link rel="canonical" href="https://microtoolstack.com/tools/calculator/cgpa-to-percentage.html">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://microtoolstack.com/tools/calculator/cgpa-to-percentage.html">
+  <meta property="og:title" content="Free CGPA to Percentage & Marks Converter Online | MicroToolStack">
+  <meta property="og:description" content="Instantly convert CGPA to percentage or total marks. Supports 4.0, 5.0, and 10.0 scale grading systems with 100% precision.">
+  <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
+
+  <!-- Favicon Icon for Google & Devices -->
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
+
+  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "CGPA to Percentage & Marks Converter",
+        "operatingSystem": "All",
+        "applicationCategory": "EducationalApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "An online academic utility tool designed to convert Cumulative Grade Point Average (CGPA) into percentage equivalents and total marks across various grading scales.",
+        "url": "https://microtoolstack.com/tools/calculator/cgpa-to-percentage.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How is CGPA converted to percentage on a 10.0 scale?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "In standard 10.0 scale systems (like CBSE and many universities), CGPA is multiplied by 9.5 to get the equivalent percentage."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How to convert CGPA to percentage on a 4.0 scale?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "On a standard 4.0 GPA scale, the general formula used is (CGPA / 4.0) * 100 to estimate the percentage."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my data stored or processed on a server?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No! All computations are calculated client-side inside your browser in real-time. No personal information or data is collected."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Preconnect and Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <style>
+    .calc-card {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+    }
+    .form-control {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: #0d1117;
+      color: var(--text-primary, #fff);
+      outline: none;
+      box-sizing: border-box;
+      transition: border-color 0.2s;
+    }
+    .form-control:focus {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+    .result-card {
+      background: rgba(59, 130, 246, 0.1);
+      border: 1px solid var(--accent-primary, #3b82f6);
+      border-radius: 8px;
+      padding: 1.25rem;
+      text-align: center;
+      margin-top: 1.5rem;
+    }
+    .result-value {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--accent-primary, #3b82f6);
+      margin: 0.5rem 0;
+    }
+    .status-banner {
+      padding: 0.75rem 1rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+      display: none;
+    }
+    .status-banner.error {
+      background: rgba(239, 68, 68, 0.15);
+      border: 1px solid #ef4444;
+      color: #ef4444;
+    }
+    .editor-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1.5rem;
+    }
+    .btn-group {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .content-box {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .content-box h2 {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul {
+      color: var(--text-secondary, #9ca3af);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .content-box ul {
+      padding-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .content-box li {
+      margin-bottom: 0.5rem;
+    }
+    .related-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .related-card {
+      display: block;
+      padding: 1rem;
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      color: var(--text-primary, #fff);
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .related-card:hover {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+  </style>
+</head>
+<body style="margin: 0; padding: 0;">
+
+  <!-- Header Section -->
+  <header class="custom-header">
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
+    </a>
+    <nav class="custom-nav">
+      <a href="/#categories">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
+    </nav>
+  </header>
+
+  <!-- Main Container -->
+  <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
+    <!-- Breadcrumb Navigation -->
+    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
+      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
+      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Calculators</a> / 
+      <span>CGPA to Percentage Converter</span>
+    </nav>
+    
+    <!-- Tool Title & Description -->
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">CGPA to Percentage & Marks Converter</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Convert your Cumulative Grade Point Average (CGPA) into percentage and total marks effortlessly.</p>
+    </div>
+
+    <!-- Error Banner -->
+    <div id="status-banner" class="status-banner"></div>
+
+    <!-- Converter Form -->
+    <div class="calc-card">
+      <div class="grid-2">
+        <div class="form-group">
+          <label for="grading-scale">Select Grading Scale</label>
+          <select id="grading-scale" class="form-control">
+            <option value="10">10.0 Scale (CBSE / Indian Varsities - Factor 9.5)</option>
+            <option value="4">4.0 Scale (US / General University Formula)</option>
+            <option value="5">5.0 Scale (Standard 5-Point Scale)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="cgpa-input">Enter Obtained CGPA</label>
+          <input type="number" id="cgpa-input" class="form-control" placeholder="e.g. 3.75 or 8.5" step="0.01" min="0" autofocus>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="form-group">
+          <label for="total-marks">Total Marks (Optional - for Marks calculation)</label>
+          <input type="number" id="total-marks" class="form-control" placeholder="e.g. 1000 or 500" min="1">
+        </div>
+        <div class="form-group">
+          <label for="formula-type">Formula Method</label>
+          <select id="formula-type" class="form-control">
+            <option value="standard">Standard Formula</option>
+            <option value="direct">Direct Multiplication (CGPA x 10)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Live Calculated Output -->
+      <div class="result-card">
+        <div style="font-size: 0.9rem; color: var(--text-secondary, #9ca3af); text-transform: uppercase; letter-spacing: 0.05em;">Equivalent Percentage</div>
+        <div id="result-percentage" class="result-value">0.00%</div>
+        <div id="result-marks-text" style="font-size: 0.95rem; color: var(--text-secondary, #9ca3af); margin-top: 0.25rem;">Marks Equivalent: -- / --</div>
+      </div>
+
+      <!-- Controls -->
+      <div class="editor-controls">
+        <div class="btn-group">
+          <button id="btn-copy" class="btn btn-primary" style="padding: 0.68rem 1.4rem; cursor: pointer;">📋 Copy Result</button>
+          <button id="btn-clear" class="btn btn-secondary" style="padding: 0.68rem 1.2rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Reset</button>
+        </div>
+        <span id="status-msg" style="font-size: 0.85rem; color: #10b981; font-weight: 500; display: none;">Copied to clipboard!</span>
+      </div>
+    </div>
+
+    <!-- SEO Article Content Box 1 -->
+    <div class="content-box">
+      <h2>How CGPA to Percentage Conversion Works</h2>
+      <p>Cumulative Grade Point Average (CGPA) is an academic evaluation metric used globally by schools, colleges, and higher education institutes. Since different institutions follow distinct grading standard scales (such as 4.0, 5.0, or 10.0), converting CGPA into a percentage helps standardize evaluation during job applications, scholarship requests, and university admissions.</p>
+    </div>
+
+    <!-- SEO Article Content Box 2 -->
+    <div class="content-box">
+      <h2>Conversion Formulas Explained</h2>
+      <ul>
+        <li><strong>10.0 Grading Scale (Standard CBSE Method):</strong> <code>Percentage = CGPA × 9.5</code></li>
+        <li><strong>4.0 Grading Scale (US Standard):</strong> <code>Percentage = (CGPA / 4.0) × 100</code></li>
+        <li><strong>5.0 Grading Scale:</strong> <code>Percentage = (CGPA / 5.0) × 100</code></li>
+        <li><strong>Direct Percentage Method:</strong> <code>Percentage = CGPA × 10</code> (used by select technical institutes)</li>
+      </ul>
+    </div>
+
+    <!-- Internal Linking Section (SEO Best Practice) -->
+    <div class="content-box">
+      <h2>Explore Related Calculators & Utilities</h2>
+      <p>Try out our other free online academic and web utilities:</p>
+      <div class="related-links">
+        <a href="/tools/calculator/percentage-calculator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📊 Percentage Calculator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Calculate percentage increases, decreases, and fractions.</span>
+        </a>
+        <a href="/tools/developer/json-formatter.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">⚙️ JSON Formatter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Validate and format JSON data seamlessly.</span>
+        </a>
+        <a href="/tools/seo/slug-generator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🔗 Slug Generator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Generate clean, SEO-friendly URL slugs.</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="content-box">
+      <h2>Frequently Asked Questions</h2>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Why is CGPA multiplied by 9.5 on a 10-point scale?</h3>
+        <p>The multiplier 9.5 was derived by educational boards (such as CBSE) through statistical analysis comparing overall performance data to align grade ranges accurately with percentages.</p>
+      </div>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Can I calculate total marks from CGPA?</h3>
+        <p>Yes! Simply enter your total maximum marks in the calculator above, and it will compute your estimated obtained marks based on your CGPA percentage.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer Container Placeholder -->
+  <div id="footer-container"></div>
+
+  <!-- JavaScript Utilities & Logic -->
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const scaleSelect = document.getElementById('grading-scale');
+      const cgpaInput = document.getElementById('cgpa-input');
+      const totalMarksInput = document.getElementById('total-marks');
+      const formulaTypeSelect = document.getElementById('formula-type');
+
+      const resultPercentage = document.getElementById('result-percentage');
+      const resultMarksText = document.getElementById('result-marks-text');
+      const statusBanner = document.getElementById('status-banner');
+
+      const btnCopy = document.getElementById('btn-copy');
+      const btnClear = document.getElementById('btn-clear');
+      const statusMsg = document.getElementById('status-msg');
+
+      function showError(msg) {
+        statusBanner.className = 'status-banner error';
+        statusBanner.textContent = msg;
+        statusBanner.style.display = 'block';
+      }
+
+      function hideError() {
+        statusBanner.style.display = 'none';
+      }
+
+      function calculate() {
+        hideError();
+        const cgpa = parseFloat(cgpaInput.value);
+        const scale = parseFloat(scaleSelect.value);
+        const totalMarks = parseFloat(totalMarksInput.value);
+        const formula = formulaTypeSelect.value;
+
+        if (isNaN(cgpa) || cgpa === null || cgpaInput.value.trim() === '') {
+          resultPercentage.textContent = '0.00%';
+          resultMarksText.textContent = 'Marks Equivalent: -- / --';
+          return;
+        }
+
+        if (cgpa < 0 || cgpa > scale) {
+          showError(`❌ Entered CGPA cannot exceed the selected scale max value (${scale}).`);
+          resultPercentage.textContent = '0.00%';
+          resultMarksText.textContent = 'Marks Equivalent: -- / --';
+          return;
+        }
+
+        let percentage = 0;
+
+        if (formula === 'direct') {
+          percentage = (cgpa / scale) * 100;
+        } else {
+          if (scale === 10) {
+            percentage = cgpa * 9.5;
+          } else {
+            percentage = (cgpa / scale) * 100;
+          }
+        }
+
+        // Cap max percentage at 100%
+        if (percentage > 100) percentage = 100;
+
+        resultPercentage.textContent = `${percentage.toFixed(2)}%`;
+
+        if (!isNaN(totalMarks) && totalMarks > 0) {
+          const obtainedMarks = (percentage / 100) * totalMarks;
+          resultMarksText.textContent = `Marks Equivalent: ${obtainedMarks.toFixed(1)} / ${totalMarks}`;
+        } else {
+          resultMarksText.textContent = 'Marks Equivalent: -- / --';
+        }
+      }
+
+      cgpaInput.addEventListener('input', calculate);
+      scaleSelect.addEventListener('change', calculate);
+      totalMarksInput.addEventListener('input', calculate);
+      formulaTypeSelect.addEventListener('change', calculate);
+
+      // Copy Action
+      btnCopy.addEventListener('click', function() {
+        const textToCopy = `CGPA: ${cgpaInput.value} (${scaleSelect.value} Scale) | Percentage: ${resultPercentage.textContent} | ${resultMarksText.textContent}`;
+        if (!cgpaInput.value.trim()) return;
+
+        navigator.clipboard.writeText(textToCopy).then(function() {
+          statusMsg.style.display = 'inline';
+          setTimeout(() => { statusMsg.style.display = 'none'; }, 2000);
+        });
+      });
+
+      // Clear Action
+      btnClear.addEventListener('click', function() {
+        cgpaInput.value = '';
+        totalMarksInput.value = '';
+        hideError();
+        calculate();
+        cgpaInput.focus();
+      });
+    });
+  </script>
+</body>
+</html>
