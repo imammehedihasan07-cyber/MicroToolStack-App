@@ -19,11 +19,27 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Meta Tags -->
   <title>Free QR Code Generator with Logo Online | MicroToolStack</title>
   <meta name="description" content="Create custom QR codes with logo overlay, custom colors, and high-resolution PNG download. Fast, free, and 100% private client-side generator.">
+  <meta name="keywords" content="qr code generator with logo, custom qr code maker, create qr code with image, free branded qr code, high res qr code generator">
+
   <link rel="canonical" href="https://microtoolstack.com/tools/media/qr-code-generator.html">
   <meta name="robots" content="index, follow">
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+  <!-- Open Graph / Social Media Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Free QR Code Generator with Logo Online | MicroToolStack">
+  <meta property="og:description" content="Create custom QR codes with logo overlay, custom colors, and high-resolution PNG download. Fast, free, and 100% private client-side generator.">
+  <meta property="og:url" content="https://microtoolstack.com/tools/media/qr-code-generator.html">
+  <meta property="og:site_name" content="MicroToolStack">
+  <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
+
+  <!-- Favicon Icon for Google & Devices -->
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
   <!-- QRCode.js Library -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
@@ -70,6 +86,9 @@
   ]
   </script>
 
+  <!-- Fonts & CSS Stylesheets -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
 
@@ -103,15 +122,16 @@
       width: 100%;
       padding: 0.75rem;
       border-radius: 8px;
-      background: #111827;
-      border: 1px solid #374151;
+      background: var(--bg-body, #111827);
+      border: 1px solid var(--border-color, #374151);
       color: #fff;
       font-size: 0.95rem;
       box-sizing: border-box;
+      outline: none;
     }
     .qr-preview-box {
       background: rgba(0,0,0,0.25);
-      border: 1px solid #374151;
+      border: 1px solid var(--border-color, #374151);
       border-radius: 12px;
       padding: 1.5rem;
       display: flex;
@@ -128,7 +148,7 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     }
     .btn-primary {
-      background-color: #2563eb;
+      background-color: var(--accent-primary, #2563eb);
       color: #fff;
       padding: 0.75rem 1.5rem;
       border-radius: 8px;
@@ -139,7 +159,7 @@
       transition: background 0.2s;
     }
     .btn-primary:hover {
-      background-color: #1d4ed8;
+      opacity: 0.9;
     }
     .btn-download {
       background-color: #16a34a;
@@ -156,32 +176,80 @@
     .btn-download:hover {
       background-color: #15803d;
     }
+    .content-box {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .content-box h2 {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul, .content-box ol {
+      color: var(--text-secondary, #9ca3af);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .content-box ul, .content-box ol {
+      padding-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .content-box li {
+      margin-bottom: 0.5rem;
+    }
+    .related-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .related-card {
+      display: block;
+      padding: 1rem;
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      color: var(--text-primary, #fff);
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .related-card:hover {
+      border-color: var(--accent-primary, #3b82f6);
+    }
   </style>
 </head>
-<body>
+<body style="margin: 0; padding: 0;">
 
-  <!-- Header -->
+  <!-- Header Section -->
   <header class="custom-header">
     <a href="/" class="custom-logo">
-      <img src="/assets/images/logo.png" alt="MicroToolStack" class="logo-img">
-      <span>MicroToolStack</span>
+      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
     </a>
     <nav class="custom-nav">
       <a href="/#categories">Categories</a>
       <a href="/about.html">About</a>
       <a href="/contact.html">Contact</a>
-      <button id="theme-toggle" class="custom-theme-btn">🌙</button>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
     </nav>
   </header>
 
   <!-- Main Content -->
-  <main class="container" style="max-width: 950px; margin: 0 auto; padding: 2rem 1rem;">
+  <main class="container" style="max-width: 950px; margin: 2rem auto; padding: 0 1rem;">
+    <!-- Breadcrumb Navigation -->
+    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
+      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
+      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Media Tools</a> / 
+      <span>QR Code Generator</span>
+    </nav>
     
     <!-- Title Section -->
     <div style="text-align: center; margin-bottom: 2rem;">
       <span class="badge badge-primary" style="margin-bottom: 0.5rem; display: inline-block;">100% Free & Custom Logo Support</span>
-      <h1>Custom QR Code Generator with Logo</h1>
-      <p style="color: #9ca3af;">Generate stylish, high-resolution QR codes for websites, WiFi, or text with custom brand logos.</p>
+      <h1 style="font-size: 2rem; color: #fff; margin-bottom: 0.5rem;">Custom QR Code Generator with Logo</h1>
+      <p style="color: var(--text-secondary, #9ca3af);">Generate stylish, high-resolution QR codes for websites, WiFi, or text with custom brand logos.</p>
     </div>
 
     <!-- App Card -->
@@ -203,12 +271,12 @@
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
             <div class="form-group">
               <label for="dark-color">QR Code Color</label>
-              <input type="color" id="dark-color" value="#000000" style="height: 42px; width: 100%; cursor: pointer; background: #111827; border: 1px solid #374151; border-radius: 6px;">
+              <input type="color" id="dark-color" value="#000000" style="height: 42px; width: 100%; cursor: pointer; background: var(--bg-body, #111827); border: 1px solid var(--border-color, #374151); border-radius: 6px;">
             </div>
 
             <div class="form-group">
               <label for="light-color">Background Color</label>
-              <input type="color" id="light-color" value="#ffffff" style="height: 42px; width: 100%; cursor: pointer; background: #111827; border: 1px solid #374151; border-radius: 6px;">
+              <input type="color" id="light-color" value="#ffffff" style="height: 42px; width: 100%; cursor: pointer; background: var(--bg-body, #111827); border: 1px solid var(--border-color, #374151); border-radius: 6px;">
             </div>
           </div>
 
@@ -231,32 +299,59 @@
     <!-- Hidden Raw Div for QRCodeJS -->
     <div id="qrcode-raw" style="display: none;"></div>
 
-    <!-- SEO Deep Content Area -->
-    <article style="line-height: 1.7; color: #d1d5db; border-top: 1px solid #374151; padding-top: 2rem;">
-      <h2 style="color: #fff;">How to Generate Custom QR Codes with Logos Online</h2>
+    <!-- SEO Content Box 1 -->
+    <div class="content-box">
+      <h2>How to Generate Custom QR Codes with Logos Online</h2>
       <p>Quick Response (QR) codes are essential tools for driving offline users to online destinations. Whether you are creating a digital business card, menu link, WiFi access portal, or promotional campaign, branding your QR code with a custom logo increases click confidence and brand authority.</p>
+    </div>
 
-      <h3 style="color: #fff; margin-top: 1.5rem;">Step-by-Step Instructions:</h3>
+    <!-- SEO Content Box 2 -->
+    <div class="content-box">
+      <h2>Step-by-Step Instructions</h2>
       <ul>
         <li>Enter your website link, landing page, or plain text in the input box.</li>
         <li>(Optional) Upload your company logo or icon to overlay in the center.</li>
         <li>Customize the QR code foreground and background colors to match your brand palette.</li>
         <li>Click <strong>Generate QR Code</strong> and download your print-ready PNG file.</li>
       </ul>
+    </div>
 
-      <h3 style="color: #fff; margin-top: 1.5rem;">Frequently Asked Questions</h3>
-      <div style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
-        <strong style="color: #fff;">Do these generated QR codes ever expire?</strong>
-        <p style="margin: 0.5rem 0 0 0;">No! These are static QR codes containing direct data, meaning they will work forever with no scan limits or hidden subscription fees.</p>
+    <!-- Internal Linking Section (SEO Best Practice) -->
+    <div class="content-box">
+      <h2>Explore Related Media & Developer Tools</h2>
+      <p>Enhance your visual assets and workflow with our free utilities:</p>
+      <div class="related-links">
+        <a href="/tools/media/favicon-generator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🌟 Favicon Generator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Generate multi-size web favicons.</span>
+        </a>
+        <a href="/tools/media/color-palette-extractor.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🎨 Color Palette Extractor</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Extract matching HEX codes from photos.</span>
+        </a>
+        <a href="/tools/media/image-cropper.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">✂️ Image Cropper</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Crop images with custom aspect ratios.</span>
+        </a>
       </div>
-      <div style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 8px;">
-        <strong style="color: #fff;">Is my data private?</strong>
-        <p style="margin: 0.5rem 0 0 0;">Yes. The code rendering and logo composition take place entirely inside your browser. No data is sent to our servers.</p>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="content-box">
+      <h2>Frequently Asked Questions</h2>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="font-size: 1.05rem; color: #fff; margin-bottom: 0.25rem;">Do these generated QR codes ever expire?</h3>
+        <p>No! These are static QR codes containing direct data, meaning they will work forever with no scan limits or hidden subscription fees.</p>
       </div>
-    </article>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="font-size: 1.05rem; color: #fff; margin-bottom: 0.25rem;">Is my data private?</h3>
+        <p>Yes. The code rendering and logo composition take place entirely inside your browser. No data is sent to our servers.</p>
+      </div>
+    </div>
 
   </main>
 
+  <!-- Footer Placeholder -->
   <div id="footer-container"></div>
 
   <!-- Scripts -->
