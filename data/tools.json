@@ -590,5 +590,29 @@
     "url": "/tools/pdf/assignment-cover-page.html",
     "icon": "🎓",
     "isPopular": true
+  },
+  {
+    "id": "aspect-ratio-calculator",
+    "title": "Aspect Ratio Calculator",
+    "description": "Calculate proportions and scale your image or video dimensions accurately in real-time.",
+    "category": "image",
+    "url": "/tools/image/aspect-ratio-calculator.html",
+    "icon": "fa-solid fa-expand"
+  },
+  {
+    "id": "ssl-checker",
+    "title": "SSL Certificate Expiry Checker",
+    "description": "Check website security, TLS/SSL certificate validity, and expiration timelines instantly.",
+    "category": "seo",
+    "url": "/tools/seo/ssl-checker.html",
+    "icon": "fa-solid fa-shield-halved"
+  },
+  {
+    "id": "thumbnail-text-overlay-preview",
+    "title": "Thumbnail Text Overlay Preview Tool",
+    "description": "Preview how text and titles look on your YouTube video thumbnails before publishing.",
+    "category": "youtube",
+    "url": "/tools/youtube/thumbnail-text-overlay-preview.html",
+    "icon": "fa-solid fa-image"
   }
 ]
