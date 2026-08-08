@@ -591,28 +591,34 @@
     "icon": "🎓",
     "isPopular": true
   },
-  {
+ {
     "id": "aspect-ratio-calculator",
-    "title": "Aspect Ratio Calculator",
+    "name": "Aspect Ratio Calculator",
+    "category": "media",
+    "url": "/tools/media/aspect-ratio-calculator.html",
     "description": "Calculate proportions and scale your image or video dimensions accurately in real-time.",
-    "category": "image",
-    "url": "/tools/image/aspect-ratio-calculator.html",
-    "icon": "📐"
+    "icon": "📐",
+    "isPopular": false,
+    "isNew": true
   },
   {
     "id": "ssl-checker",
-    "title": "SSL Certificate Expiry Checker",
-    "description": "Check website security, TLS/SSL certificate validity, and expiration timelines instantly.",
+    "name": "SSL Certificate Expiry Checker",
     "category": "seo",
     "url": "/tools/seo/ssl-checker.html",
-    "icon": "🔒"
+    "description": "Check website security, TLS/SSL certificate validity, and expiration timelines instantly.",
+    "icon": "🔒",
+    "isPopular": false,
+    "isNew": true
   },
   {
     "id": "thumbnail-text-overlay-preview",
-    "title": "Thumbnail Text Overlay Preview Tool",
-    "description": "Preview how text and titles look on your YouTube video thumbnails before publishing.",
+    "name": "Thumbnail Text Overlay Preview Tool",
     "category": "youtube",
     "url": "/tools/youtube/thumbnail-text-overlay-preview.html",
-    "icon": "🖼️"
+    "description": "Preview how text and titles look on your YouTube video thumbnails before publishing.",
+    "icon": "🖼️",
+    "isPopular": false,
+    "isNew": true
   }
 ]
