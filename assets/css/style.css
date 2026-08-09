@@ -76,7 +76,6 @@ h3 { font-size: 1.2rem; }
 
 p {
   color: inherit;
-  opacity: 0.9;
   margin-bottom: 1rem;
 }
 
@@ -88,26 +87,33 @@ p {
    PERFECT DYNAMIC LIGHT & DARK THEME ENGINE
    ========================================================= */
 
-/* --- LIGHT MODE --- */
+/* --- LIGHT MODE FIXES --- */
 [data-theme="light"] body {
   background-color: #f8fafc !important;
   color: #0f172a !important;
 }
 
+/* Header & Logo Fix */
 [data-theme="light"] .custom-header,
 [data-theme="light"] header.custom-header {
   background-color: #ffffff !important;
   border-bottom: 1px solid #e2e8f0 !important;
 }
 
+[data-theme="light"] .custom-logo {
+  color: #0f172a !important;
+}
+
 [data-theme="light"] .custom-nav a {
-  color: #475569 !important;
+  color: #334155 !important;
+  font-weight: 500;
 }
 
 [data-theme="light"] .custom-nav a:hover {
   color: #0f172a !important;
 }
 
+/* Headings & Subtitles Fix */
 [data-theme="light"] h1, 
 [data-theme="light"] h1.hero,
 [data-theme="light"] h2, 
@@ -116,6 +122,14 @@ p {
   color: #0f172a !important;
 }
 
+[data-theme="light"] main header p,
+[data-theme="light"] .hero + p,
+[data-theme="light"] p {
+  color: #475569 !important;
+  opacity: 1 !important;
+}
+
+/* Cards & Content Boxes */
 [data-theme="light"] .card,
 [data-theme="light"] .content-box,
 [data-theme="light"] .section-card,
@@ -123,19 +137,21 @@ p {
 [data-theme="light"] .config-grid,
 [data-theme="light"] .options-grid,
 [data-theme="light"] .result-box,
-[data-theme="light"] .editor-card {
+[data-theme="light"] .editor-card,
+[data-theme="light"] .related-card {
   background-color: #ffffff !important;
   color: #0f172a !important;
   border: 1px solid #e2e8f0 !important;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
 }
 
+/* Inputs & Textareas */
 [data-theme="light"] input,
 [data-theme="light"] textarea,
 [data-theme="light"] select,
+[data-theme="light"] .ratio-input,
 [data-theme="light"] .editor-input,
-[data-theme="light"] .editor-textarea,
-[data-theme="light"] .editor-select {
+[data-theme="light"] .editor-textarea {
   background-color: #f1f5f9 !important;
   color: #0f172a !important;
   border: 1px solid #cbd5e1 !important;
@@ -146,22 +162,27 @@ p {
   color: #64748b !important;
 }
 
-[data-theme="light"] p,
-[data-theme="light"] li,
-[data-theme="light"] span {
+[data-theme="light"] label,
+[data-theme="light"] span,
+[data-theme="light"] li {
   color: #334155 !important;
 }
 
-/* --- DARK MODE --- */
+/* --- DARK MODE FIXES --- */
 [data-theme="dark"] body {
   background-color: #0b0f19 !important;
   color: #f8fafc !important;
 }
 
+/* Header & Logo */
 [data-theme="dark"] .custom-header,
 [data-theme="dark"] header.custom-header {
   background-color: #111827 !important;
   border-bottom: 1px solid #1f2937 !important;
+}
+
+[data-theme="dark"] .custom-logo {
+  color: #ffffff !important;
 }
 
 [data-theme="dark"] .custom-nav a {
@@ -172,6 +193,7 @@ p {
   color: #ffffff !important;
 }
 
+/* Headings & Subtitles */
 [data-theme="dark"] h1, 
 [data-theme="dark"] h1.hero,
 [data-theme="dark"] h2, 
@@ -180,6 +202,13 @@ p {
   color: #f8fafc !important;
 }
 
+[data-theme="dark"] main header p,
+[data-theme="dark"] p {
+  color: #cbd5e1 !important;
+  opacity: 1 !important;
+}
+
+/* Cards & Content Boxes */
 [data-theme="dark"] .card,
 [data-theme="dark"] .content-box,
 [data-theme="dark"] .section-card,
@@ -187,19 +216,33 @@ p {
 [data-theme="dark"] .config-grid,
 [data-theme="dark"] .options-grid,
 [data-theme="dark"] .result-box,
-[data-theme="dark"] .editor-card {
+[data-theme="dark"] .editor-card,
+[data-theme="dark"] .related-card {
   background-color: #111827 !important;
   color: #f8fafc !important;
   border: 1px solid #1f2937 !important;
   box-shadow: none !important;
 }
 
+/* Google Search Preview Box Special Fix */
+[data-theme="dark"] #searchPreviewBox,
+[data-theme="dark"] [style*="background: #fff"],
+[data-theme="dark"] [style*="background-color: #fff"] {
+  background-color: #ffffff !important;
+  color: #202124 !important;
+}
+
+[data-theme="dark"] #searchPreviewBox * {
+  color: initial;
+}
+
+/* Inputs & Textareas */
 [data-theme="dark"] input,
 [data-theme="dark"] textarea,
 [data-theme="dark"] select,
+[data-theme="dark"] .ratio-input,
 [data-theme="dark"] .editor-input,
-[data-theme="dark"] .editor-textarea,
-[data-theme="dark"] .editor-select {
+[data-theme="dark"] .editor-textarea {
   background-color: #1f2937 !important;
   color: #f8fafc !important;
   border: 1px solid #374151 !important;
@@ -210,8 +253,8 @@ p {
   color: #9ca3af !important;
 }
 
-[data-theme="dark"] p,
-[data-theme="dark"] li,
-[data-theme="dark"] span {
+[data-theme="dark"] label,
+[data-theme="dark"] span,
+[data-theme="dark"] li {
   color: #cbd5e1 !important;
-  }
+}
