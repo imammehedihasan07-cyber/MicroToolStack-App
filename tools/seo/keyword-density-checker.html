@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) - Optimized Load -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var gTagScript = document.createElement('script');
+        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        gTagScript.async = true;
+        document.head.appendChild(gTagScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F3WWR9KGB4');
+      }, 1000);
+    });
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>Free Online Keyword Density Checker | MicroToolStack</title>
+  <meta name="description" content="Analyze keyword density and word frequencies in your content for free. Optimize SEO keyword distribution and avoid keyword stuffing in your articles.">
+  <meta name="keywords" content="keyword density checker, keyword frequency analyzer, seo keyword counter, check keyword density, text keyword analyzer">
+
+  <link rel="canonical" href="https://microtoolstack.com/tools/seo/keyword-density-checker.html">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://microtoolstack.com/tools/seo/keyword-density-checker.html">
+  <meta property="og:title" content="Free Online Keyword Density Checker | MicroToolStack">
+  <meta property="og:description" content="Analyze your article's keyword distribution, word frequency, and total word counts in real time. 100% free and client-side.">
+  <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
+
+  <!-- Favicon Icon for Google & Devices -->
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
+
+  <!-- JSON-LD Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Keyword Density Checker",
+        "operatingSystem": "All",
+        "applicationCategory": "SEOApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "An online SEO tool that analyzes word frequency and percentage keyword density across single, double, and triple word combinations.",
+        "url": "https://microtoolstack.com/tools/seo/keyword-density-checker.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is ideal keyword density for SEO?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "An ideal keyword density is generally between 1% and 2%. Keeping keyword frequency natural helps prevent search engine keyword stuffing penalties."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does this tool support stop words filtering?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, common stop words (like 'the', 'is', 'and', 'at') are filtered out automatically so you can focus on meaningful SEO keywords."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <style>
+    .editor-textarea {
+      width: 100%;
+      min-height: 220px;
+      padding: 1rem;
+      font-family: inherit;
+      font-size: 1rem;
+      line-height: 1.6;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: #0d1117;
+      color: var(--text-primary, #fff);
+      outline: none;
+      resize: vertical;
+      box-sizing: border-box;
+      margin-bottom: 1.25rem;
+    }
+    .density-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      background: var(--bg-card, #1e1e2e);
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--border-color, #333);
+    }
+    .density-table th, .density-table td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border-color, #333);
+    }
+    .density-table th {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-primary, #fff);
+    }
+    .density-table td {
+      color: var(--text-secondary, #9ca3af);
+    }
+    .content-box {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .content-box h2 { font-size: 1.35rem; margin-bottom: 1rem; color: var(--text-primary, #fff); }
+    .content-box p, .content-box ul { color: var(--text-secondary, #9ca3af); font-size: 0.95rem; line-height: 1.6; }
+  </style>
+</head>
+<body style="margin: 0; padding: 0;">
+
+  <header class="custom-header">
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
+    </a>
+    <nav class="custom-nav">
+      <a href="/#categories">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
+    </nav>
+  </header>
+
+  <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
+    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
+      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
+      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">SEO Tools</a> / 
+      <span>Keyword Density Checker</span>
+    </nav>
+    
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Keyword Density Checker</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Check keyword frequencies and ratios in your content to optimize search engine ranking.</p>
+    </div>
+
+    <textarea id="text-input" class="editor-textarea" placeholder="Paste your article or Web copy text here to calculate keyword density..." autofocus></textarea>
+
+    <div id="results-container" style="margin-bottom: 2rem;">
+      <h3 style="color: var(--text-primary, #fff); font-size: 1.1rem;">Top Single Keywords</h3>
+      <table class="density-table">
+        <thead>
+          <tr>
+            <th>Keyword</th>
+            <th>Count</th>
+            <th>Density (%)</th>
+          </tr>
+        </thead>
+        <tbody id="density-tbody">
+          <tr><td colspan="3" style="text-align:center;">Enter content above to extract keyword metrics.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="content-box">
+      <h2>Why Keyword Density Matters for Web SEO</h2>
+      <p>Keyword density measures the percentage of times a target keyword appears inside a piece of content relative to the total word count. Maintaining a healthy density (typically around 1%-2%) helps search engines identify page topics without triggering keyword stuffing filters.</p>
+    </div>
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const textInput = document.getElementById('text-input');
+      const tbody = document.getElementById('density-tbody');
+
+      const stopWords = new Set(["the","be","to","of","and","a","in","that","have","i","it","for","not","on","with","he","as","you","do","at","this","but","his","by","from","they","we","say","her","she","or","an","will","my","one","all","would","there","their","what","so","up","out","if","about","who","get","which","go","me"]);
+
+      function analyzeDensity() {
+        const text = textInput.value.toLowerCase().trim();
+        if (!text) {
+          tbody.innerHTML = '<tr><td colspan="3" style="text-align:center;">Enter content above to extract keyword metrics.</td></tr>';
+          return;
+        }
+
+        const words = text.match(/\b[a-z]{2,}\b/g) || [];
+        const totalWords = words.length;
+
+        if (totalWords === 0) return;
+
+        const freqMap = {};
+        words.forEach(word => {
+          if (!stopWords.has(word)) {
+            freqMap[word] = (freqMap[word] || 0) + 1;
+          }
+        });
+
+        const sorted = Object.entries(freqMap).sort((a, b) => b[1] - a[1]).slice(0, 10);
+
+        if (sorted.length === 0) {
+          tbody.innerHTML = '<tr><td colspan="3" style="text-align:center;">No valid keywords found.</td></tr>';
+          return;
+        }
+
+        tbody.innerHTML = sorted.map(([word, count]) => {
+          const density = ((count / totalWords) * 100).toFixed(2);
+          return `<tr>
+            <td><strong>${word}</strong></td>
+            <td>${count}</td>
+            <td>${density}%</td>
+          </tr>`;
+        }).join('');
+      }
+
+      textInput.addEventListener('input', analyzeDensity);
+    });
+  </script>
+</body>
+</html>
