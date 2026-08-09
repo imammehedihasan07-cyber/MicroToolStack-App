@@ -1,4 +1,4 @@
-window.ThemeManager = window.ThemeManager || {};
+Window.ThemeManager = window.ThemeManager || {};
 
 // Dynamic Header, Footer, Favorites & Theme Switcher
 document.addEventListener('DOMContentLoaded', () => {
@@ -8,43 +8,52 @@ document.addEventListener('DOMContentLoaded', () => {
     initThemeToggle();
 });
 
-// Render Header Navbar with Brand Image Logo
+// Render Header Navbar with Dynamic Theme-friendly Brand Logo
 function renderNavbar() {
     const headerContainer = document.getElementById('header-container');
     if (!headerContainer) return;
 
+    const currentTheme = localStorage.getItem('theme') || 'dark';
+    const logoSrc = currentTheme === 'light' ? '/assets/images/logo-dark.png' : '/assets/images/logo-white.png';
+
     headerContainer.innerHTML = `
         <header class="custom-header">
             <a href="/" class="custom-logo">
-                <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto; display: block;">
+                <img id="app-logo" src="${logoSrc}" alt="MicroToolStack Logo" style="height: 38px; width: auto; display: block;" onerror="this.onerror=null; this.src='/assets/images/logo-white.png';">
             </a>
             <nav class="custom-nav">
                 <a href="/#categories">Categories</a>
                 <a href="/about.html">About</a>
                 <a href="/contact.html">Contact</a>
-                <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
+                <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">${currentTheme === 'light' ? '☀️' : '🌙'}</button>
             </nav>
         </header>
     `;
+    
+    // Re-bind click event right after navbar rendering
+    const toggleBtn = document.getElementById('theme-toggle');
+    if (toggleBtn) {
+        toggleBtn.onclick = handleThemeToggle;
+    }
 }
 
-// Render Footer with Buy Me a Coffee & Share
+// Render Footer
 function renderFooter() {
     const footerContainer = document.getElementById('footer-container');
     
     const footerHTML = `
-        <footer style="margin-top: 3rem; padding: 2rem 1rem; border-top: 1px solid rgba(255, 255, 255, 0.1); text-align: center; background-color: rgba(0, 0, 0, 0.2);">
+        <footer class="site-footer" style="margin-top: 3rem; padding: 2rem 1rem; text-align: center;">
             <div style="display: flex; gap: 1rem; justify-content: center; align-items: center; flex-wrap: wrap; margin-bottom: 1.5rem;">
                 <a href="https://www.buymeacoffee.com/microtoolstack" target="_blank" rel="noopener noreferrer" style="background-color: #FFDD00; color: #000; font-weight: 600; font-size: 0.9rem; padding: 0.65rem 1.25rem; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;">
                     <span>☕</span> Buy me a coffee
                 </a>
 
-                <button onclick="shareCurrentPage()" style="background: rgba(255, 255, 255, 0.1); color: #fff; border: 1px solid rgba(255, 255, 255, 0.2); font-weight: 500; font-size: 0.9rem; padding: 0.65rem 1.25rem; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem;">
+                <button onclick="shareCurrentPage()" class="btn-secondary" style="font-weight: 500; font-size: 0.9rem; padding: 0.65rem 1.25rem; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem;">
                     <span>🔗</span> Share
                 </button>
             </div>
 
-            <p style="color: #a1a1aa; font-size: 0.875rem; margin: 0;">© ${new Date().getFullYear()} MicroToolStack. All rights reserved.</p>
+            <p style="font-size: 0.875rem; margin: 0;">© ${new Date().getFullYear()} MicroToolStack. All rights reserved.</p>
         </footer>
     `;
 
@@ -69,7 +78,7 @@ function initFavorites() {
 
     const favBtn = document.createElement('button');
     favBtn.id = 'fav-btn';
-    favBtn.style.cssText = 'background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); color: #fff; font-size: 0.9rem; padding: 0.4rem 0.8rem; border-radius: 20px; cursor: pointer; margin-left: 10px; vertical-align: middle; display: inline-flex; align-items: center; gap: 5px;';
+    favBtn.style.cssText = 'font-size: 0.9rem; padding: 0.4rem 0.8rem; border-radius: 20px; cursor: pointer; margin-left: 10px; vertical-align: middle; display: inline-flex; align-items: center; gap: 5px;';
     
     updateFavBtn(favBtn, isFav);
 
@@ -91,8 +100,8 @@ function initFavorites() {
 
 function updateFavBtn(btn, isFav) {
     btn.innerHTML = isFav ? '❤️ Favorited' : '🤍 Add Favorite';
-    btn.style.borderColor = isFav ? '#ef4444' : 'rgba(255, 255, 255, 0.2)';
-    btn.style.color = isFav ? '#ef4444' : '#ffffff';
+    btn.style.borderColor = isFav ? '#ef4444' : 'var(--border-color, rgba(255, 255, 255, 0.2))';
+    btn.style.color = isFav ? '#ef4444' : 'var(--text-primary, #ffffff)';
 }
 
 // Global Share Logic
@@ -108,23 +117,34 @@ window.shareCurrentPage = function() {
     }
 };
 
-// Theme Toggle Logic
-function initThemeToggle() {
+// Toggle Theme Callback Logic
+function handleThemeToggle() {
+    let activeTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+    let newTheme = activeTheme === 'light' ? 'dark' : 'light';
+    
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    
     const toggleBtn = document.getElementById('theme-toggle');
-    const currentTheme = localStorage.getItem('theme') || 'dark';
+    if (toggleBtn) {
+        toggleBtn.innerText = newTheme === 'light' ? '☀️' : '🌙';
+    }
 
+    // Toggle Logo image based on theme
+    const logoImg = document.getElementById('app-logo');
+    if (logoImg) {
+        logoImg.src = newTheme === 'light' ? '/assets/images/logo-dark.png' : '/assets/images/logo-white.png';
+    }
+}
+
+// Initialize Theme Toggle State
+function initThemeToggle() {
+    const currentTheme = localStorage.getItem('theme') || 'dark';
     document.documentElement.setAttribute('data-theme', currentTheme);
 
+    const toggleBtn = document.getElementById('theme-toggle');
     if (toggleBtn) {
         toggleBtn.innerText = currentTheme === 'light' ? '☀️' : '🌙';
-
-        toggleBtn.onclick = () => {
-            let activeTheme = document.documentElement.getAttribute('data-theme');
-            let newTheme = activeTheme === 'light' ? 'dark' : 'light';
-            
-            document.documentElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            toggleBtn.innerText = newTheme === 'light' ? '☀️' : '🌙';
-        };
+        toggleBtn.onclick = handleThemeToggle;
     }
 }
