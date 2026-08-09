@@ -8,18 +8,18 @@ document.addEventListener('DOMContentLoaded', () => {
     initThemeToggle();
 });
 
-// Render Header Navbar with Dynamic Theme-friendly Brand Logo
+// Render Header Navbar with Both Light & Dark Logos
 function renderNavbar() {
     const headerContainer = document.getElementById('header-container');
     if (!headerContainer) return;
 
     const currentTheme = localStorage.getItem('theme') || 'dark';
-    const logoSrc = currentTheme === 'light' ? '/assets/images/logo-dark.png' : '/assets/images/logo-white.png';
+    const initialLogo = currentTheme === 'light' ? '/assets/images/logo-dark.png' : '/assets/images/logo-white.png';
 
     headerContainer.innerHTML = `
         <header class="custom-header">
             <a href="/" class="custom-logo">
-                <img id="app-logo" src="${logoSrc}" alt="MicroToolStack Logo" style="height: 38px; width: auto; display: block;" onerror="this.onerror=null; this.src='/assets/images/logo-white.png';">
+                <img id="app-logo" src="${initialLogo}" alt="MicroToolStack Logo" style="height: 38px; width: auto; display: block;" onerror="this.onerror=null; this.src='/assets/images/logo-white.png';">
             </a>
             <nav class="custom-nav">
                 <a href="/#categories">Categories</a>
@@ -29,12 +29,6 @@ function renderNavbar() {
             </nav>
         </header>
     `;
-    
-    // Re-bind click event right after navbar rendering
-    const toggleBtn = document.getElementById('theme-toggle');
-    if (toggleBtn) {
-        toggleBtn.onclick = handleThemeToggle;
-    }
 }
 
 // Render Footer
@@ -78,7 +72,7 @@ function initFavorites() {
 
     const favBtn = document.createElement('button');
     favBtn.id = 'fav-btn';
-    favBtn.style.cssText = 'font-size: 0.9rem; padding: 0.4rem 0.8rem; border-radius: 20px; cursor: pointer; margin-left: 10px; vertical-align: middle; display: inline-flex; align-items: center; gap: 5px;';
+    favBtn.style.cssText = 'font-size: 0.9rem; padding: 0.4rem 0.8rem; border-radius: 20px; cursor: pointer; margin-left: 10px; vertical-align: middle; display: inline-flex; align-items: center; gap: 5px; background: transparent; border: 1px solid var(--border-color); color: var(--text-primary);';
     
     updateFavBtn(favBtn, isFav);
 
@@ -100,8 +94,8 @@ function initFavorites() {
 
 function updateFavBtn(btn, isFav) {
     btn.innerHTML = isFav ? '❤️ Favorited' : '🤍 Add Favorite';
-    btn.style.borderColor = isFav ? '#ef4444' : 'var(--border-color, rgba(255, 255, 255, 0.2))';
-    btn.style.color = isFav ? '#ef4444' : 'var(--text-primary, #ffffff)';
+    btn.style.borderColor = isFav ? '#ef4444' : 'var(--border-color)';
+    btn.style.color = isFav ? '#ef4444' : 'var(--text-primary)';
 }
 
 // Global Share Logic
@@ -117,34 +111,33 @@ window.shareCurrentPage = function() {
     }
 };
 
-// Toggle Theme Callback Logic
-function handleThemeToggle() {
-    let activeTheme = document.documentElement.getAttribute('data-theme') || 'dark';
-    let newTheme = activeTheme === 'light' ? 'dark' : 'light';
-    
-    document.documentElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-    
+// Apply Theme and Switch Image File Correctly
+function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+
     const toggleBtn = document.getElementById('theme-toggle');
     if (toggleBtn) {
-        toggleBtn.innerText = newTheme === 'light' ? '☀️' : '🌙';
+        toggleBtn.innerText = theme === 'light' ? '☀️' : '🌙';
     }
 
-    // Toggle Logo image based on theme
     const logoImg = document.getElementById('app-logo');
     if (logoImg) {
-        logoImg.src = newTheme === 'light' ? '/assets/images/logo-dark.png' : '/assets/images/logo-white.png';
+        logoImg.src = theme === 'light' ? '/assets/images/logo-dark.png' : '/assets/images/logo-white.png';
     }
 }
 
-// Initialize Theme Toggle State
+// Initialize Theme Toggle Logic
 function initThemeToggle() {
     const currentTheme = localStorage.getItem('theme') || 'dark';
-    document.documentElement.setAttribute('data-theme', currentTheme);
+    applyTheme(currentTheme);
 
-    const toggleBtn = document.getElementById('theme-toggle');
-    if (toggleBtn) {
-        toggleBtn.innerText = currentTheme === 'light' ? '☀️' : '🌙';
-        toggleBtn.onclick = handleThemeToggle;
-    }
+    document.addEventListener('click', (e) => {
+        const toggleBtn = e.target.closest('#theme-toggle, .custom-theme-btn');
+        if (toggleBtn) {
+            const activeTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+            const newTheme = activeTheme === 'light' ? 'dark' : 'light';
+            applyTheme(newTheme);
+        }
+    });
 }
