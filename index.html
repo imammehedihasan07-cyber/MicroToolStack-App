@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) - Optimized Load -->
+<!-- Google tag (gtag.js) - Optimized Load -->
   <script>
     window.addEventListener('load', function() {
       setTimeout(function() {
@@ -28,14 +28,9 @@
   <link rel="canonical" href="https://microtoolstack.com/">
   <meta name="robots" content="index, follow">
 
-  <!-- Favicon Icon for Google & Devices -->
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
-  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
+  <!-- Favicon Icon -->
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
 
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3023714618008515"
-     crossorigin="anonymous"></script>
-  
   <script type="application/ld+json">
 {
   "@context":"https://schema.org",
@@ -44,43 +39,6 @@
   "url":"https://microtoolstack.com"
 }
 </script>
-
-  <!-- Instant Theme Controller (Prevents Flicker & Handles Toggle) -->
-  <script>
-    (function() {
-      var savedTheme = localStorage.getItem('theme') || 'dark';
-      document.documentElement.setAttribute('data-theme', savedTheme);
-
-      window.updateThemeUI = function(theme) {
-        document.documentElement.setAttribute('data-theme', theme);
-        localStorage.setItem('theme', theme);
-
-        var toggleBtns = document.querySelectorAll('#theme-toggle, .custom-theme-btn');
-        toggleBtns.forEach(function(b) {
-          b.innerText = theme === 'light' ? '☀️' : '🌙';
-        });
-
-        var logoImg = document.getElementById('app-logo');
-        if (logoImg) {
-          logoImg.src = theme === 'light' ? '/assets/images/logo-dark.png' : '/assets/images/logo-white.png';
-        }
-      };
-
-      document.addEventListener('DOMContentLoaded', function() {
-        var current = localStorage.getItem('theme') || 'dark';
-        window.updateThemeUI(current);
-
-        document.addEventListener('click', function(e) {
-          var btn = e.target.closest('#theme-toggle, .custom-theme-btn');
-          if (btn) {
-            var active = document.documentElement.getAttribute('data-theme') || 'dark';
-            var next = active === 'light' ? 'dark' : 'light';
-            window.updateThemeUI(next);
-          }
-        });
-      });
-    })();
-  </script>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -90,11 +48,11 @@
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
 
   <style>
-    /* Direct Navbar & Layout Styling - Cleaned for Theme Compatibility */
+    /* Direct Navbar & Layout Styling */
     .custom-header {
       width: 100%;
-      background-color: var(--bg-card, #111827);
-      border-bottom: 1px solid var(--border-color, #374151);
+      background-color: #111827;
+      border-bottom: 1px solid #374151;
       padding: 1rem 1.5rem;
       display: flex;
       justify-content: space-between;
@@ -106,7 +64,7 @@
     .custom-logo {
       font-size: 1.25rem;
       font-weight: 700;
-      color: var(--text-primary, #ffffff);
+      color: #ffffff;
       text-decoration: none;
       display: flex;
       align-items: center;
@@ -118,18 +76,18 @@
       align-items: center;
     }
     .custom-nav a {
-      color: var(--text-secondary, #d1d5db);
+      color: #d1d5db;
       text-decoration: none;
       font-weight: 500;
       font-size: 0.95rem;
     }
     .custom-nav a:hover {
-      color: var(--text-primary, #ffffff);
+      color: #ffffff;
     }
     .custom-theme-btn {
-      background: var(--bg-secondary, #1f2937);
-      border: 1px solid var(--border-color, #4b5563);
-      color: var(--text-primary, #ffffff);
+      background: #1f2937;
+      border: 1px solid #4b5563;
+      color: #ffffff;
       border-radius: 50%;
       padding: 6px 12px;
       cursor: pointer;
@@ -199,7 +157,7 @@
   <!-- Header Section -->
   <header class="custom-header">
     <a href="/" class="custom-logo">
-      <img id="app-logo" src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;" onerror="this.onerror=null; this.src='/assets/images/logo-white.png';">
+      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
     </a>
     <nav class="custom-nav">
       <a href="/#categories">Categories</a>
@@ -365,6 +323,9 @@
       }
     })();
   </script>
+
+  <!-- Adsterra Banner Script -->
+  <script src="https://p130663884.effectivecpmnetwork.com/81/02/32/8102329c43de17d196371b4a3e3bed7f.js"></script>
 
 </body>
 </html>
