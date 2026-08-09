@@ -8,13 +8,13 @@ document.addEventListener('DOMContentLoaded', () => {
     initThemeToggle();
 });
 
-// Render Header Navbar with Both Light & Dark Logos
+// Render Header Navbar with Exact GitHub Image File Names
 function renderNavbar() {
     const headerContainer = document.getElementById('header-container');
     if (!headerContainer) return;
 
-    const currentTheme = localStorage.getItem('theme') || 'dark';
-    const initialLogo = currentTheme === 'light' ? '/assets/images/logo-dark.png' : '/assets/images/logo-white.png';
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    const initialLogo = currentTheme === 'light' ? '/assets/images/logo-black.png' : '/assets/images/logo-white.png';
 
     headerContainer.innerHTML = `
         <header class="custom-header">
@@ -111,7 +111,7 @@ window.shareCurrentPage = function() {
     }
 };
 
-// Apply Theme and Switch Image File Correctly
+// Switch Image File According to Exact GitHub Name
 function applyTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
@@ -123,22 +123,21 @@ function applyTheme(theme) {
 
     const logoImg = document.getElementById('app-logo');
     if (logoImg) {
-        logoImg.src = theme === 'light' ? '/assets/images/logo-dark.png' : '/assets/images/logo-white.png';
+        logoImg.src = theme === 'light' ? '/assets/images/logo-black.png' : '/assets/images/logo-white.png';
     }
 }
 
 // Initialize Theme Toggle Logic
 function initThemeToggle() {
-    const currentTheme = localStorage.getItem('theme') || 'dark';
+    const currentTheme = localStorage.getItem('theme') || 'light';
     applyTheme(currentTheme);
 
     document.addEventListener('click', (e) => {
         const toggleBtn = e.target.closest('#theme-toggle, .custom-theme-btn');
         if (toggleBtn) {
-            const activeTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+            const activeTheme = document.documentElement.getAttribute('data-theme') || 'light';
             const newTheme = activeTheme === 'light' ? 'dark' : 'light';
             applyTheme(newTheme);
         }
     });
-        }
-
+}
