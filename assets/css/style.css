@@ -180,3 +180,38 @@ html.dark textarea::placeholder {
 label, .form-label, strong {
   color: var(--text-primary) !important;
 }
+/* Tab Buttons Text Visibility Fix (For Light & Dark Modes) */
+.tab-btn,
+.mode-btn,
+.btn-toggle,
+button[class*="tab"],
+button[class*="mode"] {
+  color: var(--text-primary) !important;
+  transition: all var(--transition-fast);
+}
+
+/* Inactive Tab in Light Mode */
+[data-theme="light"] .tab-btn:not(.active),
+[data-theme="light"] .mode-btn:not(.active),
+html:not(.dark) .tab-btn:not(.active),
+html:not(.dark) .mode-btn:not(.active) {
+  background-color: var(--bg-tertiary, #f1f5f9) !important;
+  color: #334155 !important;
+  border: 1px solid var(--border-color, #cbd5e1) !important;
+}
+
+/* Inactive Tab in Dark Mode */
+[data-theme="dark"] .tab-btn:not(.active),
+[data-theme="dark"] .mode-btn:not(.active),
+html.dark .tab-btn:not(.active),
+html.dark .mode-btn:not(.active) {
+  background-color: var(--bg-tertiary, #1e293b) !important;
+  color: #cbd5e1 !important;
+  border: 1px solid var(--border-color, #334155) !important;
+}
+
+/* Selected/Active Tab Text Color */
+.tab-btn.active,
+.mode-btn.active {
+  color: #ffffff !important;
+}
