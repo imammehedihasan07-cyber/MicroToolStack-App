@@ -60,7 +60,6 @@ main {
 
 /* Typography Utilities */
 h1, h2, h3, h4, h5, h6 {
-  color: inherit;
   font-weight: 700;
   line-height: 1.25;
   margin-bottom: 0.75rem;
@@ -74,33 +73,29 @@ h1, h1.hero {
 h2 { font-size: clamp(1.35rem, 3vw, 1.85rem); letter-spacing: -0.01em; }
 h3 { font-size: 1.2rem; }
 
-p {
-  color: inherit;
-  margin-bottom: 1rem;
-}
-
 #popular-tools-grid, #categories-grid {
   min-height: 250px;
 }
 
 /* =========================================================
-   PERFECT DYNAMIC LIGHT & DARK THEME ENGINE
+   FORCE OVERRIDE THEME ENGINE (Overrides Inline HTML Styles)
    ========================================================= */
 
-/* --- LIGHT MODE FIXES --- */
+/* --- LIGHT MODE (Saves from Inline style="color:#fff") --- */
 [data-theme="light"] body {
   background-color: #f8fafc !important;
   color: #0f172a !important;
 }
 
-/* Header & Logo Fix */
+/* Header & Navigation Fixes */
 [data-theme="light"] .custom-header,
 [data-theme="light"] header.custom-header {
   background-color: #ffffff !important;
   border-bottom: 1px solid #e2e8f0 !important;
 }
 
-[data-theme="light"] .custom-logo {
+[data-theme="light"] .custom-logo,
+[data-theme="light"] .custom-logo * {
   color: #0f172a !important;
 }
 
@@ -113,23 +108,29 @@ p {
   color: #0f172a !important;
 }
 
-/* Headings & Subtitles Fix */
+/* All Headings Force Dark in Light Mode */
 [data-theme="light"] h1, 
 [data-theme="light"] h1.hero,
 [data-theme="light"] h2, 
 [data-theme="light"] h3, 
-[data-theme="light"] h4 {
+[data-theme="light"] h4,
+[data-theme="light"] h5,
+[data-theme="light"] h6,
+[data-theme="light"] main header h1 {
   color: #0f172a !important;
 }
 
+/* Force All Descriptions & Texts Dark in Light Mode */
+[data-theme="light"] p,
 [data-theme="light"] main header p,
-[data-theme="light"] .hero + p,
-[data-theme="light"] p {
-  color: #475569 !important;
-  opacity: 1 !important;
+[data-theme="light"] label,
+[data-theme="light"] span,
+[data-theme="light"] li,
+[data-theme="light"] div {
+  color: #334155;
 }
 
-/* Cards & Content Boxes */
+/* Cards & Content Containers */
 [data-theme="light"] .card,
 [data-theme="light"] .content-box,
 [data-theme="light"] .section-card,
@@ -145,7 +146,7 @@ p {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
 }
 
-/* Inputs & Textareas */
+/* Input Fields */
 [data-theme="light"] input,
 [data-theme="light"] textarea,
 [data-theme="light"] select,
@@ -162,13 +163,7 @@ p {
   color: #64748b !important;
 }
 
-[data-theme="light"] label,
-[data-theme="light"] span,
-[data-theme="light"] li {
-  color: #334155 !important;
-}
-
-/* --- DARK MODE FIXES --- */
+/* --- DARK MODE --- */
 [data-theme="dark"] body {
   background-color: #0b0f19 !important;
   color: #f8fafc !important;
@@ -181,7 +176,8 @@ p {
   border-bottom: 1px solid #1f2937 !important;
 }
 
-[data-theme="dark"] .custom-logo {
+[data-theme="dark"] .custom-logo,
+[data-theme="dark"] .custom-logo * {
   color: #ffffff !important;
 }
 
@@ -193,22 +189,26 @@ p {
   color: #ffffff !important;
 }
 
-/* Headings & Subtitles */
+/* Headings in Dark Mode */
 [data-theme="dark"] h1, 
 [data-theme="dark"] h1.hero,
 [data-theme="dark"] h2, 
 [data-theme="dark"] h3, 
-[data-theme="dark"] h4 {
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6 {
   color: #f8fafc !important;
 }
 
+[data-theme="dark"] p,
 [data-theme="dark"] main header p,
-[data-theme="dark"] p {
-  color: #cbd5e1 !important;
-  opacity: 1 !important;
+[data-theme="dark"] label,
+[data-theme="dark"] span,
+[data-theme="dark"] li {
+  color: #cbd5e1;
 }
 
-/* Cards & Content Boxes */
+/* Cards & Content Containers */
 [data-theme="dark"] .card,
 [data-theme="dark"] .content-box,
 [data-theme="dark"] .section-card,
@@ -222,18 +222,6 @@ p {
   color: #f8fafc !important;
   border: 1px solid #1f2937 !important;
   box-shadow: none !important;
-}
-
-/* Google Search Preview Box Special Fix */
-[data-theme="dark"] #searchPreviewBox,
-[data-theme="dark"] [style*="background: #fff"],
-[data-theme="dark"] [style*="background-color: #fff"] {
-  background-color: #ffffff !important;
-  color: #202124 !important;
-}
-
-[data-theme="dark"] #searchPreviewBox * {
-  color: initial;
 }
 
 /* Inputs & Textareas */
@@ -253,8 +241,25 @@ p {
   color: #9ca3af !important;
 }
 
-[data-theme="dark"] label,
-[data-theme="dark"] span,
-[data-theme="dark"] li {
-  color: #cbd5e1 !important;
+/* Google SERP Preview Box Color Lockdown */
+[style*="background: #fff"], 
+[style*="background-color: #fff"],
+[style*="background: white"],
+[style*="background-color: white"] {
+  background-color: #ffffff !important;
+}
+
+[style*="background: #fff"] *, 
+[style*="background-color: #fff"] * {
+  color: #202124 !important;
+}
+
+[style*="background: #fff"] [style*="color: #1a0dab"], 
+[style*="background-color: #fff"] [style*="color: #1a0dab"] {
+  color: #1a0dab !important;
+}
+
+[style*="background: #fff"] [style*="color: #4d5156"], 
+[style*="background-color: #fff"] [style*="color: #4d5156"] {
+  color: #4d5156 !important;
 }
