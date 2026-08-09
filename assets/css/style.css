@@ -1,7 +1,7 @@
 @import url('./variables.css');
 @import url('./components.css');
 
-/* Global Reset & Base Styles */
+/* Global Reset */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -11,153 +11,128 @@
 html {
   font-size: 16px;
   scroll-behavior: smooth;
-  -webkit-text-size-adjust: 100%;
 }
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
+  background-color: var(--bg-primary, #0f172a);
+  color: var(--text-primary, #f8fafc);
   line-height: 1.6;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  transition: background-color 0.2s ease, color 0.2s ease;
-  -webkit-font-smoothing: antialiased;
 }
 
-a {
-  color: var(--accent-primary, #2563eb);
-  text-decoration: none;
-}
-
-button, input, textarea, select {
-  font: inherit;
-  color: inherit;
-}
-
-img, svg {
-  display: block;
-  max-width: 100%;
-}
+a { color: var(--accent-primary, #2563eb); text-decoration: none; }
+button, input, textarea, select { font: inherit; color: inherit; }
+img, svg { display: block; max-width: 100%; }
 
 .container {
   width: 100%;
-  max-width: var(--max-width, 1200px);
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 1.25rem;
 }
 
-main {
-  flex: 1;
-}
+main { flex: 1; }
 
-/* Typography Utility */
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 700;
-  line-height: 1.25;
-  margin-bottom: 0.75rem;
-}
-
+h1, h2, h3, h4, h5, h6 { font-weight: 700; line-height: 1.25; margin-bottom: 0.75rem; }
 h1 { font-size: clamp(1.8rem, 4vw, 2.75rem); }
 h2 { font-size: clamp(1.35rem, 3vw, 1.85rem); }
 
 /* =========================================================
-   DYNAMIC DUAL THEME CONTROLLER
+   LIGHT MODE FORCE FIX (Directly Overrides JS/Inline Bugs)
    ========================================================= */
 
-/* --- LIGHT MODE RULES --- */
-[data-theme="light"] {
-  --bg-primary: #f8fafc;
-  --bg-secondary: #f1f5f9;
-  --bg-card: #ffffff;
-  --text-primary: #0f172a;
-  --text-secondary: #334155;
-  --border-color: #cbd5e1;
-}
-
-[data-theme="light"] body {
+/* Default / Light Mode Color Overrides */
+[data-theme="light"] body, body {
   background-color: #f8fafc !important;
   color: #0f172a !important;
 }
 
-[data-theme="light"] .site-header,
-[data-theme="light"] .navbar,
-[data-theme="light"] .custom-header {
+/* Header & Logo Dark Text Fix */
+.custom-header, header.custom-header, .navbar {
   background-color: #ffffff !important;
   border-bottom: 1px solid #cbd5e1 !important;
 }
 
-[data-theme="light"] .brand-logo,
-[data-theme="light"] .logo,
-[data-theme="light"] .custom-logo {
+.custom-logo, .custom-logo *, .logo, .logo * {
   color: #0f172a !important;
 }
 
-[data-theme="light"] .nav-link,
-[data-theme="light"] .nav-links a,
-[data-theme="light"] .custom-nav a {
-  color: #334155 !important;
+/* Make White Logo Image Visible in Light Mode using CSS Invert */
+.custom-logo img[src*="logo-white"], 
+.logo img[src*="logo-white"],
+#app-logo {
+  filter: invert(1) hue-rotate(180deg) brightness(0.2) !important;
 }
 
-[data-theme="light"] h1, [data-theme="light"] h2, [data-theme="light"] h3, [data-theme="light"] h4 {
+.custom-nav a, .nav-links a, .nav-link {
+  color: #334155 !important;
+  font-weight: 600 !important;
+}
+
+/* Headings & Text High Contrast */
+h1, h2, h3, h4, h5, h6,
+[data-theme="light"] h1, [data-theme="light"] h2, [data-theme="light"] h3 {
   color: #0f172a !important;
 }
 
-[data-theme="light"] p, [data-theme="light"] label, [data-theme="light"] span, [data-theme="light"] li {
-  color: #334155 !important;
+p, label, span, li, small, .hero + p {
+  color: #1e293b !important;
+  opacity: 1 !important;
 }
 
-[data-theme="light"] .card,
-[data-theme="light"] .content-box,
-[data-theme="light"] .section-card,
-[data-theme="light"] .input-card,
-[data-theme="light"] .editor-card {
+/* Cards & Input Box Fix */
+.card, .content-box, .section-card, .input-card, 
+.editor-card, .result-box, .config-grid, .options-grid {
   background-color: #ffffff !important;
   color: #0f172a !important;
   border: 1px solid #cbd5e1 !important;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05) !important;
 }
 
-[data-theme="light"] input,
-[data-theme="light"] textarea,
-[data-theme="light"] select {
+input, textarea, select {
   background-color: #f1f5f9 !important;
   color: #0f172a !important;
   border: 1px solid #cbd5e1 !important;
 }
 
-/* --- DARK MODE RULES --- */
-[data-theme="dark"] {
-  --bg-primary: #0b0f19;
-  --bg-secondary: #0f172a;
-  --bg-card: #111827;
-  --text-primary: #f8fafc;
-  --text-secondary: #cbd5e1;
-  --border-color: #1f2937;
+input::placeholder, textarea::placeholder {
+  color: #64748b !important;
 }
+
+/* =========================================================
+   DARK MODE OVERRIDES (Triggers when data-theme="dark")
+   ========================================================= */
 
 [data-theme="dark"] body {
   background-color: #0b0f19 !important;
   color: #f8fafc !important;
 }
 
-[data-theme="dark"] .site-header,
-[data-theme="dark"] .navbar,
-[data-theme="dark"] .custom-header {
+[data-theme="dark"] .custom-header,
+[data-theme="dark"] header.custom-header,
+[data-theme="dark"] .navbar {
   background-color: #111827 !important;
   border-bottom: 1px solid #1f2937 !important;
 }
 
-[data-theme="dark"] .brand-logo,
+[data-theme="dark"] .custom-logo,
+[data-theme="dark"] .custom-logo *,
 [data-theme="dark"] .logo,
-[data-theme="dark"] .custom-logo {
+[data-theme="dark"] .logo * {
   color: #ffffff !important;
 }
 
-[data-theme="dark"] .nav-link,
-[data-theme="dark"] .nav-links a,
-[data-theme="dark"] .custom-nav a {
+[data-theme="dark"] .custom-logo img[src*="logo-white"], 
+[data-theme="dark"] .logo img[src*="logo-white"],
+[data-theme="dark"] #app-logo {
+  filter: none !important;
+}
+
+[data-theme="dark"] .custom-nav a,
+[data-theme="dark"] .nav-links a {
   color: #9ca3af !important;
 }
 
@@ -169,20 +144,17 @@ h2 { font-size: clamp(1.35rem, 3vw, 1.85rem); }
   color: #cbd5e1 !important;
 }
 
-[data-theme="dark"] .card,
-[data-theme="dark"] .content-box,
-[data-theme="dark"] .section-card,
-[data-theme="dark"] .input-card,
+[data-theme="dark"] .card, [data-theme="dark"] .content-box, 
+[data-theme="dark"] .section-card, [data-theme="dark"] .input-card, 
 [data-theme="dark"] .editor-card {
   background-color: #111827 !important;
   color: #f8fafc !important;
   border: 1px solid #1f2937 !important;
 }
 
-[data-theme="dark"] input,
-[data-theme="dark"] textarea,
-[data-theme="dark"] select {
+[data-theme="dark"] input, [data-theme="dark"] textarea, [data-theme="dark"] select {
   background-color: #1f2937 !important;
   color: #f8fafc !important;
   border: 1px solid #374151 !important;
 }
+
