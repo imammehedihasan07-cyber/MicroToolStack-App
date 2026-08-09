@@ -3,79 +3,87 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <title>Free Online PDF, SEO, Text & Developer Tools | MicroToolStack</title>
   <meta name="description" content="Free online tools for PDF, text, SEO, developer utilities, image conversion and AI productivity. Fast, secure and privacy-friendly. No signup required.">
 
   <link rel="canonical" href="https://microtoolstack.com/">
   <meta name="robots" content="index, follow">
 
-  <!-- Favicon Icons -->
+  <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
   <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
-  <!-- Critical Network Preconnects -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Network Hints -->
   <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 
-  <!-- Google AdSense (Standard Async - Safe & Safe for Revenue) -->
+  <!-- Standard Safe AdSense (Revenue & Core Web Vitals Friendly) -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3023714618008515" crossorigin="anonymous"></script>
 
-  <!-- Schema Markup -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"MicroToolStack",
-    "url":"https://microtoolstack.com"
-  }
+  <!-- Prevent Theme Flash -->
+  <script>
+    (function () {
+      try {
+        var savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
   </script>
 
-  <!-- CSS Stylesheets -->
+  <!-- CSS -->
   <link rel="stylesheet" href="/assets/css/variables.css?v=10.0">
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
   <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
 
+  <!-- Critical Homepage CSS -->
   <style>
-    /* Critical UI & Zero-CLS Optimizations */
     .hero {
       text-align: center;
-      padding: 3.5rem 1rem 2.5rem;
+      padding: 3rem 1rem 2rem;
       max-width: 800px;
       margin: 0 auto;
     }
+
     .hero h1 {
       font-size: clamp(2rem, 5vw, 3.25rem);
       letter-spacing: -0.02em;
     }
+
     .hero p {
-      font-size: 1.125rem;
+      font-size: 1.1rem;
       margin-bottom: 2rem;
     }
+
     .search-wrapper {
       max-width: 550px;
       margin: 0 auto 2.5rem;
       position: relative;
     }
+
     .search-input {
       width: 100%;
-      padding: 0.875rem 1.25rem;
+      padding: 0.85rem 1.25rem;
       font-size: 1rem;
       border: 1px solid var(--border-color, #333);
       border-radius: var(--radius-md, 8px);
       background-color: var(--bg-card, #1e1e2e);
       color: var(--text-primary, #fff);
       outline: none;
+      box-sizing: border-box;
     }
+
     .grid-4 {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
       gap: 1.25rem;
       margin-bottom: 3.5rem;
       min-height: 250px;
     }
+
     .tool-card {
       display: flex;
       flex-direction: column;
@@ -83,10 +91,16 @@
       text-decoration: none;
       color: inherit;
     }
+
     .tool-card-icon {
       font-size: 1.75rem;
       margin-bottom: 0.75rem;
     }
+
+    .faq-section {
+      margin-bottom: 4rem;
+    }
+
     .faq-item {
       background-color: var(--bg-card, #1e1e2e);
       border: 1px solid var(--border-color, #333);
@@ -94,178 +108,284 @@
       padding: 1.25rem;
       margin-bottom: 1rem;
     }
+
     .category-tools-section {
       margin-bottom: 3rem;
     }
+
+    [hidden] {
+      display: none !important;
+    }
   </style>
 </head>
-<body style="margin: 0; padding: 0;">
+
+<body>
 
   <!-- Dynamic Header Container -->
   <div id="header-container"></div>
 
-  <!-- Main Body Content -->
+  <!-- Main Content -->
   <main class="container">
-    <section class="hero">
-      <span class="badge badge-primary" style="margin-bottom: 1rem;">100% Free & Fast</span>
-      <h1>Essential Micro-Tools for Digital Creators</h1>
-      <p>Clean, private, and ultra-fast web utilities for content, SEO, code, and AI generation.</p>
 
+    <!-- Hero -->
+    <section class="hero">
+
+      <span class="badge badge-primary hero-badge">
+        100% Free & Fast
+      </span>
+
+      <h1>Essential Micro-Tools for Digital Creators</h1>
+
+      <p>
+        Clean, private, and ultra-fast web utilities for content, SEO, code, and AI generation.
+      </p>
+
+      <!-- Search -->
       <div class="search-wrapper">
-        <input type="text" id="home-search" class="search-input" placeholder="Search 20+ tools (e.g. Word Counter, JSON, Slug)..." aria-label="Search tools">
+        <input
+          type="text"
+          id="home-search"
+          class="search-input"
+          placeholder="Search 20+ tools (e.g. Word Counter, JSON, Slug)..."
+          aria-label="Search tools"
+          autocomplete="off"
+          spellcheck="false"
+        >
+
         <div id="search-results-dropdown"></div>
       </div>
+
     </section>
 
-    <!-- Popular Tools Section -->
+    <!-- Popular Tools -->
     <section>
       <div class="section-title">
         <h2>🔥 Popular Tools</h2>
       </div>
+
       <div class="grid-4" id="popular-tools-grid"></div>
     </section>
 
-    <!-- Categories Section -->
+    <!-- Categories -->
     <section id="categories">
       <div class="section-title">
         <h2>📂 Explore Categories</h2>
       </div>
+
       <div class="grid-4" id="categories-grid"></div>
     </section>
 
-    <!-- Category Tools Section (Native Hidden to avoid rendering block) -->
-    <section id="category-tools-section" class="category-tools-section" hidden>
+    <!-- Category Tools -->
+    <section
+      id="category-tools-section"
+      class="category-tools-section"
+      hidden
+    >
       <div class="section-title">
         <h2 id="category-title">Tools</h2>
       </div>
+
       <div class="grid-4" id="category-tools-grid"></div>
     </section>
 
-    <!-- FAQ Section -->
-    <section style="margin-bottom: 4rem;">
+    <!-- FAQ -->
+    <section class="faq-section">
       <div class="section-title">
         <h2>❓ Frequently Asked Questions</h2>
       </div>
+
       <div id="faq-container"></div>
     </section>
+
   </main>
 
   <!-- Dynamic Footer Container -->
   <div id="footer-container"></div>
 
-  <!-- Core Non-blocking Scripts -->
+  <!-- Core Scripts -->
   <script src="/assets/js/theme.js"></script>
   <script src="/assets/js/utils.js" defer></script>
   <script src="/assets/js/search.js" defer></script>
 
-  <!-- Interaction-based Smart Analytics Loader -->
+  <!-- Optimized Analytics Smart Loader -->
   <script>
-    function loadAnalytics() {
-      if (window.analyticsLoaded) return;
-      window.analyticsLoaded = true;
+    (function () {
+      'use strict';
 
-      var gTagScript = document.createElement('script');
-      gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
-      gTagScript.async = true;
-      document.head.appendChild(gTagScript);
+      var analyticsLoaded = false;
 
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-F3WWR9KGB4');
-    }
+      function loadAnalytics() {
+        if (analyticsLoaded) return;
+        analyticsLoaded = true;
 
-    ['touchstart', 'scroll', 'mousemove', 'keydown'].forEach(function(ev) {
-      window.addEventListener(ev, loadAnalytics, { passive: true, once: true });
-    });
-    setTimeout(loadAnalytics, 4000);
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = window.gtag || function () {
+          window.dataLayer.push(arguments);
+        };
+
+        window.gtag('js', new Date());
+        window.gtag('config', 'G-F3WWR9KGB4');
+
+        var analyticsScript = document.createElement('script');
+        analyticsScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        analyticsScript.async = true;
+        document.head.appendChild(analyticsScript);
+      }
+
+      var interactionEvents = ['touchstart', 'scroll', 'keydown', 'click'];
+      interactionEvents.forEach(function (eventName) {
+        window.addEventListener(eventName, loadAnalytics, { passive: true, once: true });
+      });
+
+      window.setTimeout(loadAnalytics, 3000);
+    })();
   </script>
 
-  <!-- Data Loader Logic -->
+  <!-- Homepage Data Loader -->
   <script>
-    (async function loadData() {
+    (async function loadHomepageData() {
       try {
-        const [toolsRes, catRes, faqRes] = await Promise.all([
+        const responses = await Promise.all([
           fetch('/data/tools.json'),
           fetch('/data/categories.json'),
           fetch('/data/faqs.json')
         ]);
 
-        const tools = await toolsRes.json();
-        const categories = await catRes.json();
-        const faqs = await faqRes.json();
+        const toolsResponse = responses[0];
+        const categoriesResponse = responses[1];
+        const faqsResponse = responses[2];
 
-        const cleanStr = str => (str || '').toString().toLowerCase().replace(/[^a-z0-9]/g, '');
+        if (!toolsResponse.ok || !categoriesResponse.ok || !faqsResponse.ok) {
+          throw new Error('Failed to load JSON resources');
+        }
 
-        // Render Popular Tools
+        const [tools, categories, faqs] = await Promise.all([
+          toolsResponse.json(),
+          categoriesResponse.json(),
+          faqsResponse.json()
+        ]);
+
+        const cleanStr = function (str) {
+          return (str || '').toString().toLowerCase().replace(/[^a-z0-9]/g, '');
+        };
+
+        // Single Pass Category Count (O(N) Optimization)
+        const categoryCounts = Object.create(null);
+        tools.forEach(function (tool) {
+          const categoryId = cleanStr(tool.category);
+          if (categoryId) {
+            categoryCounts[categoryId] = (categoryCounts[categoryId] || 0) + 1;
+          }
+        });
+
+        // Popular Tools Render
         const popularGrid = document.getElementById('popular-tools-grid');
         if (popularGrid) {
-          const popularTools = tools.filter(t => t.isPopular || t.popular || tools.indexOf(t) < 12);
-          popularGrid.innerHTML = popularTools.map(tool => `
-            <a href="${tool.url}" class="card card-interactive tool-card">
-              <div class="tool-card-icon">${tool.icon || '🛠️'}</div>
-              <h3>${tool.name}</h3>
-              <p>${tool.description}</p>
-            </a>
-          `).join('');
-        }
+          const popularTools = tools.filter(function (tool, index) {
+            return tool.isPopular || tool.popular || index < 12;
+          });
 
-        // Render Categories
-        const catGrid = document.getElementById('categories-grid');
-        if (catGrid) {
-          catGrid.innerHTML = categories.map(cat => {
-            const cleanCatId = cleanStr(cat.id);
-            const liveCount = tools.filter(tool => cleanStr(tool.category) === cleanCatId).length;
-
+          popularGrid.innerHTML = popularTools.map(function (tool) {
             return `
-              <div class="card card-interactive tool-card" onclick="filterCategory('${cat.id}', '${cat.name}')" style="cursor: pointer;">
-                <div class="tool-card-icon">${cat.icon || '📂'}</div>
-                <h3>${cat.name}</h3>
-                <p>${cat.description || ''}</p>
-                <span style="font-size: 0.85rem; color: var(--accent-primary, #3b82f6); font-weight: 600; margin-top: 0.75rem; display: block;">View ${liveCount} →</span>
-              </div>
-            `;
-          }).join('');
-        }
-
-        // Category Filter Function
-        window.filterCategory = function(catId, catName) {
-          const catSection = document.getElementById('category-tools-section');
-          const catTitle = document.getElementById('category-title');
-          const catToolsGrid = document.getElementById('category-tools-grid');
-
-          const cleanCatId = cleanStr(catId);
-          const filteredTools = tools.filter(t => cleanStr(t.category) === cleanCatId);
-
-          if (catTitle) catTitle.textContent = `${catName} (${filteredTools.length})`;
-          if (catToolsGrid) {
-            catToolsGrid.innerHTML = filteredTools.map(tool => `
               <a href="${tool.url}" class="card card-interactive tool-card">
                 <div class="tool-card-icon">${tool.icon || '🛠️'}</div>
                 <h3>${tool.name}</h3>
                 <p>${tool.description}</p>
               </a>
-            `).join('');
+            `;
+          }).join('');
+        }
+
+        // Categories Render
+        const categoriesGrid = document.getElementById('categories-grid');
+        if (categoriesGrid) {
+          categoriesGrid.innerHTML = categories.map(function (cat) {
+            const cleanCatId = cleanStr(cat.id);
+            const liveCount = categoryCounts[cleanCatId] || 0;
+
+            return `
+              <div
+                class="card card-interactive tool-card category-card"
+                data-category-id="${cat.id}"
+                data-category-name="${cat.name}"
+                role="button"
+                tabindex="0"
+              >
+                <div class="tool-card-icon">${cat.icon || '📂'}</div>
+                <h3>${cat.name}</h3>
+                <p>${cat.description || ''}</p>
+                <span class="category-count">View ${liveCount} →</span>
+              </div>
+            `;
+          }).join('');
+        }
+
+        // Category Filter Logic
+        window.filterCategory = function (catId, catName) {
+          const categorySection = document.getElementById('category-tools-section');
+          const categoryTitle = document.getElementById('category-title');
+          const categoryToolsGrid = document.getElementById('category-tools-grid');
+
+          const cleanCatId = cleanStr(catId);
+          const filteredTools = tools.filter(function (tool) {
+            return cleanStr(tool.category) === cleanCatId;
+          });
+
+          if (categoryTitle) {
+            categoryTitle.textContent = `${catName} (${filteredTools.length})`;
           }
 
-          if (catSection) {
-            catSection.removeAttribute('hidden');
-            catSection.scrollIntoView({ behavior: 'smooth' });
+          if (categoryToolsGrid) {
+            categoryToolsGrid.innerHTML = filteredTools.map(function (tool) {
+              return `
+                <a href="${tool.url}" class="card card-interactive tool-card">
+                  <div class="tool-card-icon">${tool.icon || '🛠️'}</div>
+                  <h3>${tool.name}</h3>
+                  <p>${tool.description}</p>
+                </a>
+              `;
+            }).join('');
+          }
+
+          if (categorySection) {
+            categorySection.removeAttribute('hidden');
+            categorySection.scrollIntoView({ behavior: 'smooth', block: 'start' });
           }
         };
 
-        // Render FAQs
-        const faqGrid = document.getElementById('faq-container');
-        if (faqGrid) {
-          faqGrid.innerHTML = faqs.map(faq => `
-            <div class="faq-item">
-              <h3>${faq.question || faq.q}</h3>
-              <p>${faq.answer || faq.a}</p>
-            </div>
-          `).join('');
+        // Event Delegation for Category Cards
+        const categoriesGridElement = document.getElementById('categories-grid');
+        if (categoriesGridElement) {
+          categoriesGridElement.addEventListener('click', function (event) {
+            const card = event.target.closest('.category-card');
+            if (!card) return;
+            window.filterCategory(card.dataset.categoryId, card.dataset.categoryName);
+          });
+
+          categoriesGridElement.addEventListener('keydown', function (event) {
+            if (event.key !== 'Enter' && event.key !== ' ') return;
+            const card = event.target.closest('.category-card');
+            if (!card) return;
+            event.preventDefault();
+            window.filterCategory(card.dataset.categoryId, card.dataset.categoryName);
+          });
         }
-      } catch (err) {
-        console.error('Failed to load homepage data:', err);
+
+        // FAQ Render
+        const faqContainer = document.getElementById('faq-container');
+        if (faqContainer) {
+          faqContainer.innerHTML = faqs.map(function (faq) {
+            return `
+              <div class="faq-item">
+                <h3>${faq.question || faq.q}</h3>
+                <p>${faq.answer || faq.a}</p>
+              </div>
+            `;
+          }).join('');
+        }
+
+      } catch (error) {
+        console.error('Failed to load homepage data:', error);
       }
     })();
   </script>
