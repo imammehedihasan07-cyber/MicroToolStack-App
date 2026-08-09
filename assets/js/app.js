@@ -2,38 +2,6 @@
  * Application Entry Point & Dynamic Layout Component Loader
  */
 
-// Global Theme Manager Engine (Ensures Light & Dark Mode works everywhere)
-const ThemeManager = {
-  init() {
-    const savedTheme = localStorage.getItem('theme') || 
-                       (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    this.applyTheme(savedTheme);
-  },
-
-  applyTheme(theme) {
-    document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
-    this.updateToggleButtons(theme);
-  },
-
-  toggleTheme() {
-    const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    this.applyTheme(newTheme);
-  },
-
-  updateToggleButtons(theme) {
-    const toggleBtns = document.querySelectorAll('.theme-toggle-btn, .custom-theme-btn, #theme-toggle');
-    toggleBtns.forEach(btn => {
-      btn.innerHTML = theme === 'dark' ? '🌙' : '☀️';
-    });
-  }
-};
-
-// Immediately initialize theme on page load to prevent flicker
-ThemeManager.init();
-window.ThemeManager = ThemeManager;
-
 // Helper to inject HTML components dynamically
 async function loadComponent(elementId, filepath) {
   const target = document.getElementById(elementId);
@@ -43,9 +11,6 @@ async function loadComponent(elementId, filepath) {
     const res = await fetch(filepath);
     if (res.ok) {
       target.innerHTML = await res.text();
-      // Re-sync theme after injection
-      const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
-      ThemeManager.updateToggleButtons(currentTheme);
     }
   } catch (err) {
     console.error(`Failed to load component: ${filepath}`, err);
@@ -54,6 +19,7 @@ async function loadComponent(elementId, filepath) {
 
 /**
  * Clean & Fully Generic Category Counter
+ * Matches tools with categories regardless of hyphens, spaces, or case sensitivity
  */
 function normalizeCategoryString(str) {
   if (!str) return '';
@@ -65,6 +31,7 @@ async function renderCategoriesWithDynamicCount() {
   if (!categoryGrid) return;
 
   try {
+    // Fetch both categories and tools data concurrently
     const [catRes, toolRes] = await Promise.all([
       fetch('/data/categories.json'),
       fetch('/data/tools.json')
@@ -75,14 +42,18 @@ async function renderCategoriesWithDynamicCount() {
     const categories = await catRes.json();
     const tools = await toolRes.json();
 
+    // Render category cards with dynamic counts
     categoryGrid.innerHTML = categories.map(cat => {
+      
       const cleanCatId = normalizeCategoryString(cat.id);
 
+      // Count all matching tools dynamically for EVERY category
       const dynamicCount = tools.filter(tool => {
         const cleanToolCat = normalizeCategoryString(tool.category);
         return cleanToolCat === cleanCatId;
       }).length;
 
+      // Determine correct URL for category card link
       const categoryUrl = cat.url || `/categories/${cat.id}.html`;
 
       return `
@@ -108,22 +79,17 @@ document.addEventListener('DOMContentLoaded', async () => {
   // Dynamically calculate and render categories count on Home Page
   await renderCategoriesWithDynamicCount();
 
-  // Re-sync Theme Manager
-  ThemeManager.init();
-
-  // Global Event Listener for Theme Toggle Buttons
-  document.addEventListener('click', (e) => {
-    const themeBtn = e.target.closest('.theme-toggle-btn, .custom-theme-btn, #theme-toggle');
-    if (themeBtn) {
-      ThemeManager.toggleTheme();
-    }
-  });
+  // Re-sync Theme Manager Buttons after Header Injection
+  if (window.ThemeManager) {
+    const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+    window.ThemeManager.updateToggleButtons(currentTheme);
+  }
 
   // Mobile Menu Toggle Event Listener
   document.addEventListener('click', (e) => {
-    const menuBtn = e.target.closest('#mobile-menu-btn, .mobile-menu-btn');
+    const menuBtn = e.target.closest('#mobile-menu-btn');
     if (menuBtn) {
-      const navMenu = document.getElementById('nav-menu') || document.querySelector('.custom-nav');
+      const navMenu = document.getElementById('nav-menu');
       if (navMenu) {
         navMenu.classList.toggle('active');
       }
