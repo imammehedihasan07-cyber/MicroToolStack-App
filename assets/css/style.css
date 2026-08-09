@@ -78,56 +78,59 @@ h3 { font-size: 1.2rem; }
 }
 
 /* =========================================================
-   FORCE OVERRIDE THEME ENGINE (Overrides Inline HTML Styles)
+   BULLETPROOF THEME ENGINE (Overrides Inline HTML Colors)
    ========================================================= */
 
-/* --- LIGHT MODE (Saves from Inline style="color:#fff") --- */
+/* --- LIGHT MODE --- */
 [data-theme="light"] body {
   background-color: #f8fafc !important;
   color: #0f172a !important;
 }
 
-/* Header & Navigation Fixes */
+/* Header & Navigation Fix */
 [data-theme="light"] .custom-header,
-[data-theme="light"] header.custom-header {
+[data-theme="light"] header.custom-header,
+[data-theme="light"] .navbar {
   background-color: #ffffff !important;
   border-bottom: 1px solid #e2e8f0 !important;
 }
 
 [data-theme="light"] .custom-logo,
-[data-theme="light"] .custom-logo * {
+[data-theme="light"] .custom-logo *,
+[data-theme="light"] .logo,
+[data-theme="light"] .logo * {
   color: #0f172a !important;
 }
 
-[data-theme="light"] .custom-nav a {
+[data-theme="light"] .custom-nav a,
+[data-theme="light"] .nav-links a {
   color: #334155 !important;
-  font-weight: 500;
+  font-weight: 600 !important;
 }
 
-[data-theme="light"] .custom-nav a:hover {
-  color: #0f172a !important;
+[data-theme="light"] .custom-nav a:hover,
+[data-theme="light"] .nav-links a:hover {
+  color: #0284c7 !important;
 }
 
-/* All Headings Force Dark in Light Mode */
+/* Headings in Light Mode */
 [data-theme="light"] h1, 
 [data-theme="light"] h1.hero,
 [data-theme="light"] h2, 
 [data-theme="light"] h3, 
 [data-theme="light"] h4,
 [data-theme="light"] h5,
-[data-theme="light"] h6,
-[data-theme="light"] main header h1 {
+[data-theme="light"] h6 {
   color: #0f172a !important;
 }
 
-/* Force All Descriptions & Texts Dark in Light Mode */
+/* Paragraphs & Text Colors */
 [data-theme="light"] p,
-[data-theme="light"] main header p,
 [data-theme="light"] label,
 [data-theme="light"] span,
 [data-theme="light"] li,
 [data-theme="light"] div {
-  color: #334155;
+  color: #1e293b;
 }
 
 /* Cards & Content Containers */
@@ -139,14 +142,15 @@ h3 { font-size: 1.2rem; }
 [data-theme="light"] .options-grid,
 [data-theme="light"] .result-box,
 [data-theme="light"] .editor-card,
-[data-theme="light"] .related-card {
+[data-theme="light"] .related-card,
+[data-theme="light"] .category-card {
   background-color: #ffffff !important;
   color: #0f172a !important;
-  border: 1px solid #e2e8f0 !important;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+  border: 1px solid #cbd5e1 !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05) !important;
 }
 
-/* Input Fields */
+/* Inputs & Textareas */
 [data-theme="light"] input,
 [data-theme="light"] textarea,
 [data-theme="light"] select,
@@ -155,7 +159,7 @@ h3 { font-size: 1.2rem; }
 [data-theme="light"] .editor-textarea {
   background-color: #f1f5f9 !important;
   color: #0f172a !important;
-  border: 1px solid #cbd5e1 !important;
+  border: 1px solid #94a3b8 !important;
 }
 
 [data-theme="light"] input::placeholder,
@@ -169,27 +173,30 @@ h3 { font-size: 1.2rem; }
   color: #f8fafc !important;
 }
 
-/* Header & Logo */
 [data-theme="dark"] .custom-header,
-[data-theme="dark"] header.custom-header {
+[data-theme="dark"] header.custom-header,
+[data-theme="dark"] .navbar {
   background-color: #111827 !important;
   border-bottom: 1px solid #1f2937 !important;
 }
 
 [data-theme="dark"] .custom-logo,
-[data-theme="dark"] .custom-logo * {
+[data-theme="dark"] .custom-logo *,
+[data-theme="dark"] .logo,
+[data-theme="dark"] .logo * {
   color: #ffffff !important;
 }
 
-[data-theme="dark"] .custom-nav a {
+[data-theme="dark"] .custom-nav a,
+[data-theme="dark"] .nav-links a {
   color: #9ca3af !important;
 }
 
-[data-theme="dark"] .custom-nav a:hover {
-  color: #ffffff !important;
+[data-theme="dark"] .custom-nav a:hover,
+[data-theme="dark"] .nav-links a:hover {
+  color: #38bdf8 !important;
 }
 
-/* Headings in Dark Mode */
 [data-theme="dark"] h1, 
 [data-theme="dark"] h1.hero,
 [data-theme="dark"] h2, 
@@ -201,14 +208,12 @@ h3 { font-size: 1.2rem; }
 }
 
 [data-theme="dark"] p,
-[data-theme="dark"] main header p,
 [data-theme="dark"] label,
 [data-theme="dark"] span,
 [data-theme="dark"] li {
   color: #cbd5e1;
 }
 
-/* Cards & Content Containers */
 [data-theme="dark"] .card,
 [data-theme="dark"] .content-box,
 [data-theme="dark"] .section-card,
@@ -217,14 +222,14 @@ h3 { font-size: 1.2rem; }
 [data-theme="dark"] .options-grid,
 [data-theme="dark"] .result-box,
 [data-theme="dark"] .editor-card,
-[data-theme="dark"] .related-card {
+[data-theme="dark"] .related-card,
+[data-theme="dark"] .category-card {
   background-color: #111827 !important;
   color: #f8fafc !important;
   border: 1px solid #1f2937 !important;
   box-shadow: none !important;
 }
 
-/* Inputs & Textareas */
 [data-theme="dark"] input,
 [data-theme="dark"] textarea,
 [data-theme="dark"] select,
@@ -239,27 +244,4 @@ h3 { font-size: 1.2rem; }
 [data-theme="dark"] input::placeholder,
 [data-theme="dark"] textarea::placeholder {
   color: #9ca3af !important;
-}
-
-/* Google SERP Preview Box Color Lockdown */
-[style*="background: #fff"], 
-[style*="background-color: #fff"],
-[style*="background: white"],
-[style*="background-color: white"] {
-  background-color: #ffffff !important;
-}
-
-[style*="background: #fff"] *, 
-[style*="background-color: #fff"] * {
-  color: #202124 !important;
-}
-
-[style*="background: #fff"] [style*="color: #1a0dab"], 
-[style*="background-color: #fff"] [style*="color: #1a0dab"] {
-  color: #1a0dab !important;
-}
-
-[style*="background: #fff"] [style*="color: #4d5156"], 
-[style*="background-color: #fff"] [style*="color: #4d5156"] {
-  color: #4d5156 !important;
 }
