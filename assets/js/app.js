@@ -1,5 +1,5 @@
 /**
- * Application Entry Point & Dynamic Layout Component Loader
+ * Application Entry Point & Optimized Layout Loader
  */
 
 async function loadComponent(elementId, filepath) {
@@ -36,25 +36,26 @@ async function renderCategoriesWithDynamicCount() {
     const categories = await catRes.json();
     const tools = await toolRes.json();
 
-    categoryGrid.innerHTML = categories.map(cat => {
+    const fragment = document.createDocumentFragment();
+
+    categories.forEach(cat => {
       const cleanCatId = normalizeCategoryString(cat.id);
-
-      const dynamicCount = tools.filter(tool => {
-        const cleanToolCat = normalizeCategoryString(tool.category);
-        return cleanToolCat === cleanCatId;
-      }).length;
-
+      const dynamicCount = tools.filter(tool => normalizeCategoryString(tool.category) === cleanCatId).length;
       const categoryUrl = cat.url || `/categories/${cat.id}.html`;
 
-      return `
-        <div class="category-card">
-          <div class="category-icon">${cat.icon || '📁'}</div>
-          <h3>${cat.name}</h3>
-          <p>${cat.description}</p>
-          <a href="${categoryUrl}" class="category-link">View ${dynamicCount} →</a>
-        </div>
+      const card = document.createElement('div');
+      card.className = 'category-card';
+      card.innerHTML = `
+        <div class="category-icon">${cat.icon || '📁'}</div>
+        <h3>${cat.name}</h3>
+        <p>${cat.description}</p>
+        <a href="${categoryUrl}" class="category-link">View ${dynamicCount} →</a>
       `;
-    }).join('');
+      fragment.appendChild(card);
+    });
+
+    categoryGrid.innerHTML = '';
+    categoryGrid.appendChild(fragment);
 
   } catch (err) {
     console.error('Failed to render dynamic categories:', err);
@@ -62,44 +63,33 @@ async function renderCategoriesWithDynamicCount() {
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
+  // Parallel loading for layout components
+  loadComponent('footer-container', '/components/footer.html');
+  renderCategoriesWithDynamicCount();
 
-  await loadComponent('footer-container', '/components/footer.html');
-
-  await renderCategoriesWithDynamicCount();
-
-  // Re-sync Theme Toggle Button Icon after dynamic load
+  // Re-sync Theme Icon fast
   const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
   const toggleBtn = document.getElementById('theme-toggle');
   if (toggleBtn) {
     toggleBtn.innerText = currentTheme === 'dark' ? '☀️' : '🌙';
   }
 
-  // Mobile Menu Toggle Event
+  // Event Delegation for Performance
   document.addEventListener('click', (e) => {
     const menuBtn = e.target.closest('#mobile-menu-btn');
     if (menuBtn) {
       const navMenu = document.getElementById('nav-menu');
-      if (navMenu) {
-        navMenu.classList.toggle('active');
-      }
+      if (navMenu) navMenu.classList.toggle('active');
     }
-  });
 
-  // Global Event Listener for Copy Buttons
-  document.addEventListener('click', (event) => {
-    const target = event.target.closest('[data-copy-target]');
-    if (target) {
-      const targetId = target.getAttribute('data-copy-target');
+    const copyTarget = e.target.closest('[data-copy-target]');
+    if (copyTarget) {
+      const targetId = copyTarget.getAttribute('data-copy-target');
       const element = document.getElementById(targetId);
       if (element) {
         const text = element.value || element.textContent;
-        if (typeof copyToClipboard === 'function') {
-          copyToClipboard(text);
-        } else {
-          navigator.clipboard.writeText(text);
-        }
+        navigator.clipboard.writeText(text);
       }
     }
   });
-
 });
