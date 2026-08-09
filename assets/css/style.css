@@ -75,7 +75,7 @@ p {
   margin-bottom: 1rem;
 }
 
-/* Layout Shifts */
+/* Performance Boost */
 .card {
   contain-intrinsic-size: 200px;
   content-visibility: auto;
@@ -85,22 +85,22 @@ p {
   min-height: 250px;
 }
 
-/* Universal Inputs, Cards & Boxes Theme Fix */
+/* Global Clean Theme Overrides for All Tools & Forms */
 input,
 textarea,
 select,
 .editor-input,
 .editor-textarea,
 .editor-select {
-  background-color: var(--bg-card);
-  color: var(--text-primary);
-  border: 1px solid var(--border-color);
+  background-color: var(--bg-card) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-color) !important;
   transition: background-color var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
 }
 
 input::placeholder,
 textarea::placeholder {
-  color: var(--text-muted);
+  color: var(--text-muted) !important;
   opacity: 1;
 }
 
@@ -109,56 +109,20 @@ textarea::placeholder {
 .section-card,
 .input-card,
 .card,
+.app-card,
+.drop-zone,
+.related-card,
 .options-grid,
 .result-box,
 .editor-card {
-  background-color: var(--bg-card);
-  color: var(--text-primary);
-  border: 1px solid var(--border-color);
+  background-color: var(--bg-card) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-color) !important;
   box-shadow: var(--shadow-sm);
   transition: background-color var(--transition-fast), border-color var(--transition-fast);
 }
 
 label,
 .option-item {
-  color: var(--text-primary);
-}
-/* Tool Page Specific Theme Overrides */
-.tool-container,
-.tool-card,
-.color-picker-box,
-.palette-card {
-  background-color: var(--bg-card) !important;
-  color: var(--text-primary) !important;
-  border-color: var(--border-color) !important;
-}
-
-/* Fix Labels and Headings inside Tools */
-.tool-container label,
-.tool-container h1,
-.tool-container h2,
-.tool-container h3,
-.tool-container p {
-  color: var(--text-primary) !important;
-}
-/* GLOBAL AUTOMATIC FIX FOR ALL TOOL PAGES & TEXT */
-
-[data-theme="light"] .custom-logo img,
-html:not(.dark) .custom-logo img {
-  filter: invert(1) brightness(0.2) !important;
-}
-
-[data-theme="dark"] .custom-logo img,
-html.dark .custom-logo img {
-  filter: none !important;
-}
-
-body h1, body h2, body h3, body h4, body p, body span, body label {
-  color: var(--text-primary) !important;
-}
-
-.app-card, .content-box, .drop-zone, .related-card {
-  background-color: var(--bg-card) !important;
-  border-color: var(--border-color) !important;
   color: var(--text-primary) !important;
 }
