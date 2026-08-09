@@ -15,7 +15,7 @@ html {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   background-color: var(--bg-primary, #0f172a);
   color: var(--text-primary, #f8fafc);
   line-height: 1.6;
@@ -66,7 +66,11 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.75rem;
 }
 
-h1 { font-size: clamp(1.8rem, 4vw, 2.75rem); letter-spacing: -0.02em; }
+h1, h1.hero { 
+  font-size: clamp(1.8rem, 4vw, 2.75rem); 
+  letter-spacing: -0.02em; 
+}
+
 h2 { font-size: clamp(1.35rem, 3vw, 1.85rem); letter-spacing: -0.01em; }
 h3 { font-size: 1.2rem; }
 
@@ -87,6 +91,28 @@ p {
 /* --- LIGHT MODE --- */
 [data-theme="light"] body {
   background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .custom-header,
+[data-theme="light"] header.custom-header {
+  background-color: #ffffff !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+}
+
+[data-theme="light"] .custom-nav a {
+  color: #475569 !important;
+}
+
+[data-theme="light"] .custom-nav a:hover {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] h1, 
+[data-theme="light"] h1.hero,
+[data-theme="light"] h2, 
+[data-theme="light"] h3, 
+[data-theme="light"] h4 {
   color: #0f172a !important;
 }
 
@@ -132,6 +158,28 @@ p {
   color: #f8fafc !important;
 }
 
+[data-theme="dark"] .custom-header,
+[data-theme="dark"] header.custom-header {
+  background-color: #111827 !important;
+  border-bottom: 1px solid #1f2937 !important;
+}
+
+[data-theme="dark"] .custom-nav a {
+  color: #9ca3af !important;
+}
+
+[data-theme="dark"] .custom-nav a:hover {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] h1, 
+[data-theme="dark"] h1.hero,
+[data-theme="dark"] h2, 
+[data-theme="dark"] h3, 
+[data-theme="dark"] h4 {
+  color: #f8fafc !important;
+}
+
 [data-theme="dark"] .card,
 [data-theme="dark"] .content-box,
 [data-theme="dark"] .section-card,
@@ -166,4 +214,4 @@ p {
 [data-theme="dark"] li,
 [data-theme="dark"] span {
   color: #cbd5e1 !important;
-}
+  }
