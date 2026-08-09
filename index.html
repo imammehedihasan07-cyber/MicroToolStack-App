@@ -15,12 +15,12 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
   <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
-  <!-- Preconnect & DNS-Prefetch for Fast Third-Party Connection -->
+  <!-- Critical Network Preconnects -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
 
-  <!-- Google AdSense (Standard Async - No Artificial Delay) -->
+  <!-- Google AdSense (Standard Async - Safe & Safe for Revenue) -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3023714618008515" crossorigin="anonymous"></script>
 
   <!-- Schema Markup -->
@@ -39,17 +39,16 @@
   <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
 
   <style>
-    /* Critical CSS to Prevent Layout Shifts (CLS) & Lower LCP */
+    /* Critical UI & Zero-CLS Optimizations */
     .hero {
       text-align: center;
-      padding: 4rem 1rem 3rem;
+      padding: 3.5rem 1rem 2.5rem;
       max-width: 800px;
       margin: 0 auto;
     }
     .hero h1 {
       font-size: clamp(2rem, 5vw, 3.25rem);
       letter-spacing: -0.02em;
-      min-height: 3.5rem; /* Layout reservation */
     }
     .hero p {
       font-size: 1.125rem;
@@ -57,7 +56,7 @@
     }
     .search-wrapper {
       max-width: 550px;
-      margin: 0 auto 3rem;
+      margin: 0 auto 2.5rem;
       position: relative;
     }
     .search-input {
@@ -75,7 +74,7 @@
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
       gap: 1.25rem;
       margin-bottom: 3.5rem;
-      min-height: 280px; /* Layout reservation */
+      min-height: 250px;
     }
     .tool-card {
       display: flex;
@@ -95,22 +94,23 @@
       padding: 1.25rem;
       margin-bottom: 1rem;
     }
+    .category-tools-section {
+      margin-bottom: 3rem;
+    }
   </style>
 </head>
 <body style="margin: 0; padding: 0;">
 
-  <!-- Header Container Placeholder -->
+  <!-- Dynamic Header Container -->
   <div id="header-container"></div>
 
   <!-- Main Body Content -->
   <main class="container">
-    <!-- Hero Section -->
     <section class="hero">
       <span class="badge badge-primary" style="margin-bottom: 1rem;">100% Free & Fast</span>
       <h1>Essential Micro-Tools for Digital Creators</h1>
       <p>Clean, private, and ultra-fast web utilities for content, SEO, code, and AI generation.</p>
 
-      <!-- Search Input Container -->
       <div class="search-wrapper">
         <input type="text" id="home-search" class="search-input" placeholder="Search 20+ tools (e.g. Word Counter, JSON, Slug)..." aria-label="Search tools">
         <div id="search-results-dropdown"></div>
@@ -133,8 +133,8 @@
       <div class="grid-4" id="categories-grid"></div>
     </section>
 
-    <!-- Category Tools Display Section -->
-    <section id="category-tools-section" style="display: none; margin-bottom: 3rem;">
+    <!-- Category Tools Section (Native Hidden to avoid rendering block) -->
+    <section id="category-tools-section" class="category-tools-section" hidden>
       <div class="section-title">
         <h2 id="category-title">Tools</h2>
       </div>
@@ -150,19 +150,19 @@
     </section>
   </main>
 
-  <!-- Footer Placeholder -->
+  <!-- Dynamic Footer Container -->
   <div id="footer-container"></div>
 
-  <!-- Non-blocking Core Scripts -->
+  <!-- Core Non-blocking Scripts -->
   <script src="/assets/js/theme.js"></script>
   <script src="/assets/js/utils.js" defer></script>
   <script src="/assets/js/search.js" defer></script>
 
-  <!-- Analytics Deferring Script (Triggers on interaction or 4s timeout) -->
+  <!-- Interaction-based Smart Analytics Loader -->
   <script>
-    function initAnalytics() {
-      if (window.analyticsInitialized) return;
-      window.analyticsInitialized = true;
+    function loadAnalytics() {
+      if (window.analyticsLoaded) return;
+      window.analyticsLoaded = true;
 
       var gTagScript = document.createElement('script');
       gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
@@ -175,14 +175,13 @@
       gtag('config', 'G-F3WWR9KGB4');
     }
 
-    // Load Analytics on User Scroll, Touch, Move OR fallback 4 Seconds
     ['touchstart', 'scroll', 'mousemove', 'keydown'].forEach(function(ev) {
-      window.addEventListener(ev, initAnalytics, { passive: true, once: true });
+      window.addEventListener(ev, loadAnalytics, { passive: true, once: true });
     });
-    setTimeout(initAnalytics, 4000);
+    setTimeout(loadAnalytics, 4000);
   </script>
 
-  <!-- Homepage Dynamic Data Loader -->
+  <!-- Data Loader Logic -->
   <script>
     (async function loadData() {
       try {
@@ -229,7 +228,7 @@
           }).join('');
         }
 
-        // Global Category Filter
+        // Category Filter Function
         window.filterCategory = function(catId, catName) {
           const catSection = document.getElementById('category-tools-section');
           const catTitle = document.getElementById('category-title');
@@ -250,7 +249,7 @@
           }
 
           if (catSection) {
-            catSection.style.display = 'block';
+            catSection.removeAttribute('hidden');
             catSection.scrollIntoView({ behavior: 'smooth' });
           }
         };
