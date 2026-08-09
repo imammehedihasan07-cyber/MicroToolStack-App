@@ -22,14 +22,13 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  transition: background-color var(--transition-normal), color var(--transition-normal);
+  transition: background-color 150ms linear, color 150ms linear;
   -webkit-font-smoothing: antialiased;
 }
 
 a {
   color: var(--accent-primary);
   text-decoration: none;
-  transition: color var(--transition-fast);
 }
 
 a:hover {
@@ -75,8 +74,8 @@ p {
   margin-bottom: 1rem;
 }
 
-/* Performance Boost */
-.card {
+/* Layout Shift Prevention & Performance Boost */
+.card, .app-card, .content-box {
   contain-intrinsic-size: 200px;
   content-visibility: auto;
 }
@@ -85,7 +84,7 @@ p {
   min-height: 250px;
 }
 
-/* Global Clean Theme Overrides for All Tools & Forms */
+/* Optimized Theme Overrides for All Tools */
 input,
 textarea,
 select,
@@ -95,7 +94,6 @@ select,
   background-color: var(--bg-card) !important;
   color: var(--text-primary) !important;
   border: 1px solid var(--border-color) !important;
-  transition: background-color var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
 }
 
 input::placeholder,
@@ -119,7 +117,6 @@ textarea::placeholder {
   color: var(--text-primary) !important;
   border: 1px solid var(--border-color) !important;
   box-shadow: var(--shadow-sm);
-  transition: background-color var(--transition-fast), border-color var(--transition-fast);
 }
 
 label,
