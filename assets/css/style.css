@@ -141,3 +141,24 @@ label,
 .tool-container p {
   color: var(--text-primary) !important;
 }
+/* GLOBAL AUTOMATIC FIX FOR ALL TOOL PAGES & TEXT */
+
+[data-theme="light"] .custom-logo img,
+html:not(.dark) .custom-logo img {
+  filter: invert(1) brightness(0.2) !important;
+}
+
+[data-theme="dark"] .custom-logo img,
+html.dark .custom-logo img {
+  filter: none !important;
+}
+
+body h1, body h2, body h3, body h4, body p, body span, body label {
+  color: var(--text-primary) !important;
+}
+
+.app-card, .content-box, .drop-zone, .related-card {
+  background-color: var(--bg-card) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+}
