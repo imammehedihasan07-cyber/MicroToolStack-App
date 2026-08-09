@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) - Optimized Load -->
+  <!-- Google tag (gtag.js) - Speed Optimized Load -->
   <script>
     window.addEventListener('load', function() {
       setTimeout(function() {
@@ -14,7 +14,7 @@
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-F3WWR9KGB4');
-      }, 1000);
+      }, 3500);
     });
   </script>
 
@@ -37,68 +37,23 @@
      crossorigin="anonymous"></script>
   
   <script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"Organization",
-  "name":"MicroToolStack",
-  "url":"https://microtoolstack.com"
-}
-</script>
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"MicroToolStack",
+    "url":"https://microtoolstack.com"
+  }
+  </script>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   
-  <!-- CSS Stylesheets -->
-  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
-  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+  <!-- CSS Stylesheets - Non-blocking Load for Max Speed -->
+  <link rel="stylesheet" href="/assets/css/variables.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0" media="print" onload="this.media='all'">
 
   <style>
-    /* Direct Navbar & Layout Styling */
-    .custom-header {
-      width: 100%;
-      background-color: #111827;
-      border-bottom: 1px solid #374151;
-      padding: 1rem 1.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: relative;
-      z-index: 99999;
-      box-sizing: border-box;
-    }
-    .custom-logo {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: #ffffff;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    .custom-nav {
-      display: flex;
-      gap: 1.5rem;
-      align-items: center;
-    }
-    .custom-nav a {
-      color: #d1d5db;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 0.95rem;
-    }
-    .custom-nav a:hover {
-      color: #ffffff;
-    }
-    .custom-theme-btn {
-      background: #1f2937;
-      border: 1px solid #4b5563;
-      color: #ffffff;
-      border-radius: 50%;
-      padding: 6px 12px;
-      cursor: pointer;
-      font-size: 1rem;
-    }
-
     /* Hero & Main Sections */
     .hero {
       text-align: center;
