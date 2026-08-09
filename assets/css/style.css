@@ -41,69 +41,62 @@ h1 { font-size: clamp(1.8rem, 4vw, 2.75rem); }
 h2 { font-size: clamp(1.35rem, 3vw, 1.85rem); }
 
 /* =========================================================
-   LIGHT MODE FORCE FIX (Directly Overrides JS/Inline Bugs)
+   LIGHT MODE (No Invert Filter, Clean Theme)
    ========================================================= */
 
-/* Default / Light Mode Color Overrides */
-[data-theme="light"] body, body {
+[data-theme="light"] body {
   background-color: #f8fafc !important;
   color: #0f172a !important;
 }
 
-/* Header & Logo Dark Text Fix */
-.custom-header, header.custom-header, .navbar {
+[data-theme="light"] .custom-header, 
+[data-theme="light"] header.custom-header, 
+[data-theme="light"] .navbar {
   background-color: #ffffff !important;
   border-bottom: 1px solid #cbd5e1 !important;
 }
 
-.custom-logo, .custom-logo *, .logo, .logo * {
+[data-theme="light"] .custom-logo, 
+[data-theme="light"] .custom-logo *, 
+[data-theme="light"] .logo, 
+[data-theme="light"] .logo * {
   color: #0f172a !important;
 }
 
-/* Make White Logo Image Visible in Light Mode using CSS Invert */
-.custom-logo img[src*="logo-white"], 
-.logo img[src*="logo-white"],
-#app-logo {
-  filter: invert(1) hue-rotate(180deg) brightness(0.2) !important;
-}
-
-.custom-nav a, .nav-links a, .nav-link {
+[data-theme="light"] .custom-nav a, 
+[data-theme="light"] .nav-links a, 
+[data-theme="light"] .nav-link {
   color: #334155 !important;
   font-weight: 600 !important;
 }
 
-/* Headings & Text High Contrast */
-h1, h2, h3, h4, h5, h6,
-[data-theme="light"] h1, [data-theme="light"] h2, [data-theme="light"] h3 {
+[data-theme="light"] h1, [data-theme="light"] h2, [data-theme="light"] h3, 
+[data-theme="light"] h4, [data-theme="light"] h5, [data-theme="light"] h6 {
   color: #0f172a !important;
 }
 
-p, label, span, li, small, .hero + p {
+[data-theme="light"] p, [data-theme="light"] label, [data-theme="light"] span, 
+[data-theme="light"] li, [data-theme="light"] small {
   color: #1e293b !important;
-  opacity: 1 !important;
 }
 
-/* Cards & Input Box Fix */
-.card, .content-box, .section-card, .input-card, 
-.editor-card, .result-box, .config-grid, .options-grid {
+[data-theme="light"] .card, [data-theme="light"] .content-box, 
+[data-theme="light"] .section-card, [data-theme="light"] .input-card, 
+[data-theme="light"] .editor-card, [data-theme="light"] .result-box {
   background-color: #ffffff !important;
   color: #0f172a !important;
   border: 1px solid #cbd5e1 !important;
   box-shadow: 0 1px 3px rgba(0,0,0,0.05) !important;
 }
 
-input, textarea, select {
+[data-theme="light"] input, [data-theme="light"] textarea, [data-theme="light"] select {
   background-color: #f1f5f9 !important;
   color: #0f172a !important;
   border: 1px solid #cbd5e1 !important;
 }
 
-input::placeholder, textarea::placeholder {
-  color: #64748b !important;
-}
-
 /* =========================================================
-   DARK MODE OVERRIDES (Triggers when data-theme="dark")
+   DARK MODE
    ========================================================= */
 
 [data-theme="dark"] body {
@@ -123,12 +116,6 @@ input::placeholder, textarea::placeholder {
 [data-theme="dark"] .logo,
 [data-theme="dark"] .logo * {
   color: #ffffff !important;
-}
-
-[data-theme="dark"] .custom-logo img[src*="logo-white"], 
-[data-theme="dark"] .logo img[src*="logo-white"],
-[data-theme="dark"] #app-logo {
-  filter: none !important;
 }
 
 [data-theme="dark"] .custom-nav a,
@@ -157,4 +144,3 @@ input::placeholder, textarea::placeholder {
   color: #f8fafc !important;
   border: 1px solid #374151 !important;
 }
-
