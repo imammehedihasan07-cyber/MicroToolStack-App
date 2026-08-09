@@ -1,5 +1,5 @@
 :root {
-  /* Color Palette - Light Mode (Linear/Vercel inspired) */
+  /* Color Palette - Light Mode */
   --bg-primary: #ffffff;
   --bg-secondary: #f8fafc;
   --bg-tertiary: #f1f5f9;
@@ -39,7 +39,8 @@
 }
 
 /* Dark Mode Theme Overrides */
-[data-theme="dark"] {
+[data-theme="dark"],
+html.dark {
   --bg-primary: #090d16;
   --bg-secondary: #0f172a;
   --bg-tertiary: #1e293b;
@@ -59,4 +60,14 @@
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
   --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+}
+
+/* Base Body Styles */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  margin: 0;
+  padding: 0;
+  transition: background-color var(--transition-normal), color var(--transition-normal);
 }
