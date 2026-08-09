@@ -264,3 +264,22 @@
 .search-result-item:hover {
   background-color: var(--bg-secondary);
 }
+/* Universal Logo Visibility for Home & Tool Pages */
+.custom-logo img {
+  height: 38px !important;
+  width: auto !important;
+  display: block;
+  transition: filter var(--transition-fast);
+}
+
+/* Light Mode: Invert white logo to dark */
+[data-theme="light"] .custom-logo img,
+html:not(.dark) .custom-logo img {
+  filter: invert(1) brightness(0.2) !important;
+}
+
+/* Dark Mode: Keep original white logo */
+[data-theme="dark"] .custom-logo img,
+html.dark .custom-logo img {
+  filter: none !important;
+}
