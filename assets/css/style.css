@@ -143,3 +143,40 @@ html:not(.dark) h1 {
 html.dark h1 {
   color: #f8fafc !important;
 }
+/* Fix Input Fields & Placeholder Text Contrast */
+input, textarea, select {
+  color: var(--text-primary) !important;
+  background-color: var(--bg-card) !important;
+}
+
+/* Light Mode Placeholder */
+[data-theme="light"] input::placeholder,
+[data-theme="light"] textarea::placeholder,
+html:not(.dark) input::placeholder,
+html:not(.dark) textarea::placeholder {
+  color: #64748b !important;
+  opacity: 1 !important;
+}
+
+/* Dark Mode Placeholder (Bright & Readable) */
+[data-theme="dark"] input::placeholder,
+[data-theme="dark"] textarea::placeholder,
+html.dark input::placeholder,
+html.dark textarea::placeholder {
+  color: #94a3b8 !important;
+  opacity: 1 !important;
+}
+
+/* Fix Related Cards Subtitle & Secondary Text */
+.related-card span,
+.related-card p,
+.tool-card p,
+.card p,
+.content-box p {
+  color: var(--text-secondary) !important;
+}
+
+/* Fix Form Labels in Both Modes */
+label, .form-label, strong {
+  color: var(--text-primary) !important;
+}
