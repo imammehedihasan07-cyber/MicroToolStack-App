@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) - Optimized Load -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var gTagScript = document.createElement('script');
+        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        gTagScript.async = true;
+        document.head.appendChild(gTagScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F3WWR9KGB4');
+      }, 1000);
+    });
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>Free HTML Link Extractor & Audit Tool | MicroToolStack</title>
+  <meta name="description" content="Free HTML Link Extractor tool. Extract all internal and external hypertext links from HTML code to audit broken references and nofollow attributes for SEO.">
+  <meta name="keywords" content="html link extractor, extract links from html, broken link auditor, check webpage links, href link extractor, internal link checker">
+
+  <link rel="canonical" href="https://microtoolstack.com/tools/seo/broken-link-checker.html">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://microtoolstack.com/tools/seo/broken-link-checker.html">
+  <meta property="og:title" content="Free HTML Link Extractor & Audit Tool | MicroToolStack">
+  <meta property="og:description" content="Extract, parse, and audit all anchor href links from raw HTML source code in real time for free.">
+  <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
+
+  <!-- Favicon Icon for Google & Devices -->
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
+
+  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "HTML Link Extractor & Audit Tool",
+        "operatingSystem": "All",
+        "applicationCategory": "SEOApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "An online SEO utility that extracts all href hypertext links, anchor text, and link attributes from HTML source code.",
+        "url": "https://microtoolstack.com/tools/seo/broken-link-checker.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Why is auditing webpage links important for SEO?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Auditing webpage links ensures all internal and external anchors work properly, helping search engine crawlers distribute PageRank equity effectively."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does this tool identify nofollow links?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! The tool automatically inspects rel attributes to classify links as dofollow, nofollow, or sponsored."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my HTML source code safe?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, 100%. Link extraction is processed locally inside your web browser. No code is transmitted to remote servers."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Preconnect and Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <style>
+    .editor-textarea {
+      width: 100%;
+      min-height: 200px;
+      padding: 1rem;
+      font-family: monospace;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: #0d1117;
+      color: #7ee787;
+      outline: none;
+      resize: vertical;
+      box-sizing: border-box;
+      margin-bottom: 1.25rem;
+    }
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .metric-card {
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: center;
+    }
+    .metric-value {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--accent-primary, #3b82f6);
+      margin-top: 0.25rem;
+    }
+    .metric-label {
+      font-size: 0.85rem;
+      color: var(--text-secondary, #9ca3af);
+    }
+    .link-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      background: var(--bg-card, #1e1e2e);
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--border-color, #333);
+    }
+    .link-table th, .link-table td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border-color, #333);
+      font-size: 0.9rem;
+    }
+    .link-table th {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-primary, #fff);
+      font-weight: 600;
+    }
+    .link-table td {
+      color: var(--text-secondary, #9ca3af);
+      word-break: break-all;
+    }
+    .badge {
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .badge.dofollow { background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid #10b981; }
+    .badge.nofollow { background: rgba(245, 158, 11, 0.15); color: #f59e0b; border: 1px solid #f59e0b; }
+    .editor-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.5rem;
+    }
+    .btn-group {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .content-box {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .content-box h2 {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul {
+      color: var(--text-secondary, #9ca3af);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .content-box ul {
+      padding-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .content-box li {
+      margin-bottom: 0.5rem;
+    }
+    .related-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .related-card {
+      display: block;
+      padding: 1rem;
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      color: var(--text-primary, #fff);
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .related-card:hover {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+  </style>
+</head>
+<body style="margin: 0; padding: 0;">
+
+  <!-- Header Section -->
+  <header class="custom-header">
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
+    </a>
+    <nav class="custom-nav">
+      <a href="/#categories">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
+    </nav>
+  </header>
+
+  <!-- Main Container -->
+  <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
+    <!-- Breadcrumb Navigation -->
+    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
+      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
+      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">SEO Tools</a> / 
+      <span>HTML Link Extractor</span>
+    </nav>
+    
+    <!-- Tool Title & Description -->
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">HTML Link Extractor & Audit Tool</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Extract all hypertext anchor links, anchor texts, and rel attributes from HTML source code.</p>
+    </div>
+
+    <!-- HTML Input Editor -->
+    <textarea id="html-input" class="editor-textarea" placeholder="Paste HTML code to extract and audit all href links..." autofocus></textarea>
+
+    <!-- Metrics -->
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-label">Total Links</div>
+        <div id="stat-total" class="metric-value">0</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">External Links</div>
+        <div id="stat-external" class="metric-value">0</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Nofollow Links</div>
+        <div id="stat-nofollow" class="metric-value">0</div>
+      </div>
+    </div>
+
+    <!-- Extracted Link Table -->
+    <div style="margin-bottom: 1.5rem; overflow-x: auto;">
+      <table class="link-table">
+        <thead>
+          <tr>
+            <th>Anchor Text</th>
+            <th>Target Href URL</th>
+            <th>Link Type</th>
+          </tr>
+        </thead>
+        <tbody id="link-tbody">
+          <tr><td colspan="3" style="text-align:center;">Paste HTML code above to extract and analyze hypertext links.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="editor-controls">
+      <div class="btn-group">
+        <button id="btn-sample" class="btn btn-primary" style="padding: 0.68rem 1.4rem; cursor: pointer;">📝 Load Sample Code</button>
+        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.68rem 1.2rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear</button>
+      </div>
+    </div>
+
+    <!-- SEO Article Content Box 1 -->
+    <div class="content-box">
+      <h2>Why Auditing Webpage Links Matters for SEO</h2>
+      <p>Internal and external links serve as the foundational architecture of the World Wide Web. Search engine crawlers (like Googlebot) follow links to discover new pages and calculate <strong>PageRank authority distribution</strong>. Auditing your page links helps identify missing anchors, improper nofollow tags, and broken reference structures.</p>
+    </div>
+
+    <!-- SEO Article Content Box 2 -->
+    <div class="content-box">
+      <h2>Understanding Link Attributes & Best Practices</h2>
+      <ul>
+        <li><strong>Dofollow Links:</strong> Standard links that pass PageRank equity to the target URL.</li>
+        <li><strong>Nofollow Links (rel="nofollow"):</strong> Instructs search engines not to associate your site with the target URL or pass equity.</li>
+        <li><strong>Descriptive Anchor Text:</strong> Always use relevant, descriptive anchor text instead of generic phrases like "click here".</li>
+      </ul>
+    </div>
+
+    <!-- Internal Linking Section -->
+    <div class="content-box">
+      <h2>Explore Related SEO Utilities</h2>
+      <p>Enhance your search engine optimization workflow with our tools:</p>
+      <div class="related-links">
+        <a href="/tools/seo/canonical-url-checker.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🔗 Canonical URL Checker</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Validate rel='canonical' tags and prevent duplicate URLs.</span>
+        </a>
+        <a href="/tools/seo/meta-tag-analyzer.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🏷️ Meta Tag Analyzer</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Inspect HTML head tags, meta descriptions, and Open Graph.</span>
+        </a>
+        <a href="/tools/seo/slug-generator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🔗 URL Slug Generator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Convert article headlines into clean URL slugs.</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="content-box">
+      <h2>Frequently Asked Questions</h2>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What is an external link?</h3>
+        <p>An external link is a hyperlink that points to a target domain name outside of your current website URL domain.</p>
+      </div>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How many links should a page have?</h3>
+        <p>While search engines can crawl hundreds of links per page, keeping outbound links clean and relevant provides the best user experience.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer Container Placeholder -->
+  <div id="footer-container"></div>
+
+  <!-- JavaScript Utilities & Logic -->
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const htmlInput = document.getElementById('html-input');
+      const tbody = document.getElementById('link-tbody');
+
+      const statTotal = document.getElementById('stat-total');
+      const statExternal = document.getElementById('stat-external');
+      const statNofollow = document.getElementById('stat-nofollow');
+
+      const btnSample = document.getElementById('btn-sample');
+      const btnClear = document.getElementById('btn-clear');
+
+      function extractLinks() {
+        const rawCode = htmlInput.value.trim();
+
+        if (!rawCode) {
+          tbody.innerHTML = '<tr><td colspan="3" style="text-align:center;">Paste HTML code above to extract and analyze hypertext links.</td></tr>';
+          statTotal.textContent = '0';
+          statExternal.textContent = '0';
+          statNofollow.textContent = '0';
+          return;
+        }
+
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(rawCode, 'text/html');
+        const anchors = doc.querySelectorAll('a[href]');
+
+        if (anchors.length === 0) {
+          tbody.innerHTML = '<tr><td colspan="3" style="text-align:center;">No anchor <a> links with href attributes found in provided HTML code.</td></tr>';
+          statTotal.textContent = '0';
+          statExternal.textContent = '0';
+          statNofollow.textContent = '0';
+          return;
+        }
+
+        let totalCount = anchors.length;
+        let extCount = 0;
+        let nofollowCount = 0;
+
+        let rowsHtml = '';
+
+        anchors.forEach(a => {
+          const href = a.getAttribute('href').trim();
+          const anchorText = a.innerText.trim() || '[Image or Empty Anchor]';
+          const rel = (a.getAttribute('rel') || '').toLowerCase();
+
+          const isNofollow = rel.includes('nofollow');
+          const isExternal = href.startsWith('http://') || href.startsWith('https://');
+
+          if (isExternal) extCount++;
+          if (isNofollow) nofollowCount++;
+
+          const badgeClass = isNofollow ? 'badge nofollow' : 'badge dofollow';
+          const badgeText = isNofollow ? 'Nofollow' : 'Dofollow';
+
+          rowsHtml += `<tr>
+            <td><strong>${anchorText}</strong></td>
+            <td><a href="${href}" target="_blank" rel="noopener" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">${href}</a></td>
+            <td><span class="${badgeClass}">${badgeText}</span></td>
+          </tr>`;
+        });
+
+        tbody.innerHTML = rowsHtml;
+
+        statTotal.textContent = totalCount.toLocaleString();
+        statExternal.textContent = extCount.toLocaleString();
+        statNofollow.textContent = nofollowCount.toLocaleString();
+      }
+
+      htmlInput.addEventListener('input', extractLinks);
+
+      btnSample.addEventListener('click', function() {
+        htmlInput.value = `<nav>\n  <a href="https://microtoolstack.com">Home Page</a>\n  <a href="https://microtoolstack.com/tools/developer/json-formatter.html">JSON Formatter</a>\n  <a href="https://google.com" rel="nofollow">External Google</a>\n</nav>`;
+        extractLinks();
+      });
+
+      btnClear.addEventListener('click', function() {
+        htmlInput.value = '';
+        extractLinks();
+        htmlInput.focus();
+      });
+    });
+  </script>
+</body>
+</html>
