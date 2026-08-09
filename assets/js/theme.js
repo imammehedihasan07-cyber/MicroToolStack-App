@@ -1,6 +1,5 @@
 window.ThemeManager = window.ThemeManager || {};
 
-// Dynamic Header, Footer, Favorites & Theme Switcher
 document.addEventListener('DOMContentLoaded', () => {
     renderNavbar();
     renderFooter();
@@ -8,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initThemeToggle();
 });
 
-// Render Header Navbar with Brand Image Logo
+// Render Header Navbar
 function renderNavbar() {
     const headerContainer = document.getElementById('header-container');
     if (!headerContainer) return;
@@ -28,23 +27,23 @@ function renderNavbar() {
     `;
 }
 
-// Render Footer with Buy Me a Coffee & Share
+// Render Footer
 function renderFooter() {
     const footerContainer = document.getElementById('footer-container');
     
     const footerHTML = `
-        <footer style="margin-top: 3rem; padding: 2rem 1rem; border-top: 1px solid rgba(255, 255, 255, 0.1); text-align: center; background-color: rgba(0, 0, 0, 0.2);">
-            <div style="display: flex; gap: 1rem; justify-content: center; align-items: center; flex-wrap: wrap; margin-bottom: 1.5rem;">
-                <a href="https://www.buymeacoffee.com/microtoolstack" target="_blank" rel="noopener noreferrer" style="background-color: #FFDD00; color: #000; font-weight: 600; font-size: 0.9rem; padding: 0.65rem 1.25rem; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;">
+        <footer class="custom-footer">
+            <div class="footer-actions">
+                <a href="https://www.buymeacoffee.com/microtoolstack" target="_blank" rel="noopener noreferrer" class="coffee-btn">
                     <span>☕</span> Buy me a coffee
                 </a>
 
-                <button onclick="shareCurrentPage()" style="background: rgba(255, 255, 255, 0.1); color: #fff; border: 1px solid rgba(255, 255, 255, 0.2); font-weight: 500; font-size: 0.9rem; padding: 0.65rem 1.25rem; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem;">
+                <button onclick="shareCurrentPage()" class="share-btn">
                     <span>🔗</span> Share
                 </button>
             </div>
 
-            <p style="color: #a1a1aa; font-size: 0.875rem; margin: 0;">© ${new Date().getFullYear()} MicroToolStack. All rights reserved.</p>
+            <p class="footer-copy">© ${new Date().getFullYear()} MicroToolStack. All rights reserved.</p>
         </footer>
     `;
 
@@ -69,7 +68,8 @@ function initFavorites() {
 
     const favBtn = document.createElement('button');
     favBtn.id = 'fav-btn';
-    favBtn.style.cssText = 'background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); color: #fff; font-size: 0.9rem; padding: 0.4rem 0.8rem; border-radius: 20px; cursor: pointer; margin-left: 10px; vertical-align: middle; display: inline-flex; align-items: center; gap: 5px;';
+    favBtn.className = 'btn btn-secondary';
+    favBtn.style.cssText = 'font-size: 0.85rem; padding: 0.3rem 0.75rem; margin-left: 10px; border-radius: 20px;';
     
     updateFavBtn(favBtn, isFav);
 
@@ -91,8 +91,8 @@ function initFavorites() {
 
 function updateFavBtn(btn, isFav) {
     btn.innerHTML = isFav ? '❤️ Favorited' : '🤍 Add Favorite';
-    btn.style.borderColor = isFav ? '#ef4444' : 'rgba(255, 255, 255, 0.2)';
-    btn.style.color = isFav ? '#ef4444' : '#ffffff';
+    btn.style.borderColor = isFav ? '#ef4444' : 'var(--border-color)';
+    btn.style.color = isFav ? '#ef4444' : 'var(--text-primary)';
 }
 
 // Global Share Logic
@@ -111,20 +111,29 @@ window.shareCurrentPage = function() {
 // Theme Toggle Logic
 function initThemeToggle() {
     const toggleBtn = document.getElementById('theme-toggle');
-    const currentTheme = localStorage.getItem('theme') || 'dark';
+    const savedTheme = localStorage.getItem('theme') || 'light';
 
-    document.documentElement.setAttribute('data-theme', currentTheme);
+    applyTheme(savedTheme);
 
     if (toggleBtn) {
-        toggleBtn.innerText = currentTheme === 'light' ? '☀️' : '🌙';
+        toggleBtn.innerText = savedTheme === 'dark' ? '☀️' : '🌙';
 
         toggleBtn.onclick = () => {
-            let activeTheme = document.documentElement.getAttribute('data-theme');
-            let newTheme = activeTheme === 'light' ? 'dark' : 'light';
+            const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
             
-            document.documentElement.setAttribute('data-theme', newTheme);
+            applyTheme(newTheme);
             localStorage.setItem('theme', newTheme);
-            toggleBtn.innerText = newTheme === 'light' ? '☀️' : '🌙';
+            toggleBtn.innerText = newTheme === 'dark' ? '☀️' : '🌙';
         };
+    }
+}
+
+function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    if (theme === 'dark') {
+        document.documentElement.classList.add('dark');
+    } else {
+        document.documentElement.classList.remove('dark');
     }
 }
