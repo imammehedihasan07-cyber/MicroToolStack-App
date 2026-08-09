@@ -123,3 +123,23 @@ label,
 .option-item {
   color: var(--text-primary) !important;
 }
+/* Fix H1 Title and Hero Text Visibility in Light/Dark Modes */
+.hero h1,
+main h1,
+.tool-header h1,
+.container h1 {
+  color: var(--text-primary) !important;
+}
+
+/* Force light mode text colors for titles and labels */
+[data-theme="light"] h1,
+[data-theme="light"] .hero h1,
+html:not(.dark) h1 {
+  color: #0f172a !important;
+}
+
+[data-theme="dark"] h1,
+[data-theme="dark"] .hero h1,
+html.dark h1 {
+  color: #f8fafc !important;
+}
