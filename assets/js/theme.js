@@ -1,19 +1,50 @@
 window.ThemeManager = window.ThemeManager || {};
 
-// Dynamic Header, Footer, Favorites & Theme Switcher
+// Global Theme Applicator Function
+function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+
+    // Update all theme buttons instantly without page refresh
+    const toggleBtns = document.querySelectorAll('#theme-toggle, .custom-theme-btn');
+    toggleBtns.forEach(btn => {
+        btn.innerText = theme === 'light' ? '☀️' : '🌙';
+    });
+
+    // Update Logo instantly
+    const logoImg = document.getElementById('app-logo');
+    if (logoImg) {
+        logoImg.src = theme === 'light' ? '/assets/images/logo-black.png' : '/assets/images/logo-white.png';
+    }
+}
+
+// Global Event Listener for Instant Toggle (Works everywhere, even inside tools)
+document.addEventListener('click', (e) => {
+    const toggleBtn = e.target.closest('#theme-toggle, .custom-theme-btn');
+    if (toggleBtn) {
+        const activeTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+        const newTheme = activeTheme === 'light' ? 'dark' : 'light';
+        applyTheme(newTheme);
+    }
+});
+
+// Load Saved Theme Immediately on Page Load
+const initialSavedTheme = localStorage.getItem('theme') || 'dark';
+document.documentElement.setAttribute('data-theme', initialSavedTheme);
+
 document.addEventListener('DOMContentLoaded', () => {
     renderNavbar();
     renderFooter();
     initFavorites();
-    initThemeToggle();
+    applyTheme(localStorage.getItem('theme') || 'dark');
 });
 
-// Render Header Navbar with Exact GitHub Image File Names
+// Render Header Navbar with Both Light & Dark Logos
 function renderNavbar() {
     const headerContainer = document.getElementById('header-container');
     if (!headerContainer) return;
 
-    const currentTheme = localStorage.getItem('theme') || 'light';
+    const currentTheme = localStorage.getItem('theme') || 'dark';
     const initialLogo = currentTheme === 'light' ? '/assets/images/logo-black.png' : '/assets/images/logo-white.png';
 
     headerContainer.innerHTML = `
@@ -34,19 +65,16 @@ function renderNavbar() {
 // Render Footer
 function renderFooter() {
     const footerContainer = document.getElementById('footer-container');
-    
     const footerHTML = `
         <footer class="site-footer" style="margin-top: 3rem; padding: 2rem 1rem; text-align: center;">
             <div style="display: flex; gap: 1rem; justify-content: center; align-items: center; flex-wrap: wrap; margin-bottom: 1.5rem;">
                 <a href="https://www.buymeacoffee.com/microtoolstack" target="_blank" rel="noopener noreferrer" style="background-color: #FFDD00; color: #000; font-weight: 600; font-size: 0.9rem; padding: 0.65rem 1.25rem; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;">
                     <span>☕</span> Buy me a coffee
                 </a>
-
                 <button onclick="shareCurrentPage()" class="btn-secondary" style="font-weight: 500; font-size: 0.9rem; padding: 0.65rem 1.25rem; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem;">
                     <span>🔗</span> Share
                 </button>
             </div>
-
             <p style="font-size: 0.875rem; margin: 0;">© ${new Date().getFullYear()} MicroToolStack. All rights reserved.</p>
         </footer>
     `;
@@ -98,7 +126,6 @@ function updateFavBtn(btn, isFav) {
     btn.style.color = isFav ? '#ef4444' : 'var(--text-primary)';
 }
 
-// Global Share Logic
 window.shareCurrentPage = function() {
     if (navigator.share) {
         navigator.share({
@@ -110,34 +137,3 @@ window.shareCurrentPage = function() {
         alert('Page link copied to clipboard!');
     }
 };
-
-// Switch Image File According to Exact GitHub Name
-function applyTheme(theme) {
-    document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
-
-    const toggleBtn = document.getElementById('theme-toggle');
-    if (toggleBtn) {
-        toggleBtn.innerText = theme === 'light' ? '☀️' : '🌙';
-    }
-
-    const logoImg = document.getElementById('app-logo');
-    if (logoImg) {
-        logoImg.src = theme === 'light' ? '/assets/images/logo-black.png' : '/assets/images/logo-white.png';
-    }
-}
-
-// Initialize Theme Toggle Logic
-function initThemeToggle() {
-    const currentTheme = localStorage.getItem('theme') || 'light';
-    applyTheme(currentTheme);
-
-    document.addEventListener('click', (e) => {
-        const toggleBtn = e.target.closest('#theme-toggle, .custom-theme-btn');
-        if (toggleBtn) {
-            const activeTheme = document.documentElement.getAttribute('data-theme') || 'light';
-            const newTheme = activeTheme === 'light' ? 'dark' : 'light';
-            applyTheme(newTheme);
-        }
-    });
-}
