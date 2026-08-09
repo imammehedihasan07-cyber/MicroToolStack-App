@@ -15,7 +15,7 @@ function renderNavbar() {
     headerContainer.innerHTML = `
         <header class="custom-header">
             <a href="/" class="custom-logo">
-                <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto; display: block;">
+                <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo">
             </a>
             <nav class="custom-nav">
                 <a href="/#categories">Categories</a>
@@ -129,11 +129,17 @@ function initThemeToggle() {
     }
 }
 
+// Global Apply Theme Function (Handling Image Switch)
 function applyTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
+    
+    const logoImg = document.querySelector('.custom-logo img');
+
     if (theme === 'dark') {
         document.documentElement.classList.add('dark');
+        if (logoImg) logoImg.src = '/assets/images/logo-white.png';
     } else {
         document.documentElement.classList.remove('dark');
+        if (logoImg) logoImg.src = '/assets/images/logo-black.png';
     }
 }
