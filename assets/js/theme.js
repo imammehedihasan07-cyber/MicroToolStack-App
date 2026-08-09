@@ -1,50 +1,16 @@
 window.ThemeManager = window.ThemeManager || {};
 
-// Global Theme Applicator Function
-function applyTheme(theme) {
-    document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
-
-    // Update all theme buttons instantly without page refresh
-    const toggleBtns = document.querySelectorAll('#theme-toggle, .custom-theme-btn');
-    toggleBtns.forEach(btn => {
-        btn.innerText = theme === 'light' ? '☀️' : '🌙';
-    });
-
-    // Update Logo instantly
-    const logoImg = document.getElementById('app-logo');
-    if (logoImg) {
-        logoImg.src = theme === 'light' ? '/assets/images/logo-black.png' : '/assets/images/logo-white.png';
-    }
-}
-
-// Global Event Listener for Instant Toggle (Works everywhere, even inside tools)
-document.addEventListener('click', (e) => {
-    const toggleBtn = e.target.closest('#theme-toggle, .custom-theme-btn');
-    if (toggleBtn) {
-        const activeTheme = document.documentElement.getAttribute('data-theme') || 'dark';
-        const newTheme = activeTheme === 'light' ? 'dark' : 'light';
-        applyTheme(newTheme);
-    }
-});
-
-// Load Saved Theme Immediately on Page Load
-const initialSavedTheme = localStorage.getItem('theme') || 'dark';
-document.documentElement.setAttribute('data-theme', initialSavedTheme);
-
+// Universal Auto Injector
 document.addEventListener('DOMContentLoaded', () => {
-    renderNavbar();
-    renderFooter();
-    initFavorites();
-    applyTheme(localStorage.getItem('theme') || 'dark');
-});
+    // Inject Header if container exists, or create one at the top of body
+    let headerContainer = document.getElementById('header-container');
+    if (!headerContainer) {
+        headerContainer = document.createElement('div');
+        headerContainer.id = 'header-container';
+        document.body.insertBefore(headerContainer, document.body.firstChild);
+    }
 
-// Render Header Navbar with Both Light & Dark Logos
-function renderNavbar() {
-    const headerContainer = document.getElementById('header-container');
-    if (!headerContainer) return;
-
-    const currentTheme = localStorage.getItem('theme') || 'dark';
+    const currentTheme = localStorage.getItem('theme') || 'light';
     const initialLogo = currentTheme === 'light' ? '/assets/images/logo-black.png' : '/assets/images/logo-white.png';
 
     headerContainer.innerHTML = `
@@ -60,80 +26,36 @@ function renderNavbar() {
             </nav>
         </header>
     `;
-}
 
-// Render Footer
-function renderFooter() {
-    const footerContainer = document.getElementById('footer-container');
-    const footerHTML = `
-        <footer class="site-footer" style="margin-top: 3rem; padding: 2rem 1rem; text-align: center;">
-            <div style="display: flex; gap: 1rem; justify-content: center; align-items: center; flex-wrap: wrap; margin-bottom: 1.5rem;">
-                <a href="https://www.buymeacoffee.com/microtoolstack" target="_blank" rel="noopener noreferrer" style="background-color: #FFDD00; color: #000; font-weight: 600; font-size: 0.9rem; padding: 0.65rem 1.25rem; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;">
-                    <span>☕</span> Buy me a coffee
-                </a>
-                <button onclick="shareCurrentPage()" class="btn-secondary" style="font-weight: 500; font-size: 0.9rem; padding: 0.65rem 1.25rem; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem;">
-                    <span>🔗</span> Share
-                </button>
-            </div>
-            <p style="font-size: 0.875rem; margin: 0;">© ${new Date().getFullYear()} MicroToolStack. All rights reserved.</p>
-        </footer>
-    `;
+    applyTheme(currentTheme);
+});
 
-    if (footerContainer) {
-        footerContainer.innerHTML = footerHTML;
-    } else {
-        const main = document.querySelector('main') || document.body;
-        const footerDiv = document.createElement('div');
-        footerDiv.innerHTML = footerHTML;
-        main.appendChild(footerDiv);
+// Live Theme Switcher
+function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+
+    const toggleBtn = document.getElementById('theme-toggle');
+    if (toggleBtn) {
+        toggleBtn.innerText = theme === 'light' ? '☀️' : '🌙';
+    }
+
+    const logoImg = document.getElementById('app-logo');
+    if (logoImg) {
+        logoImg.src = theme === 'light' ? '/assets/images/logo-black.png' : '/assets/images/logo-white.png';
     }
 }
 
-// Favorite System Logic
-function initFavorites() {
-    const toolHeader = document.querySelector('.hero h1') || document.querySelector('h1');
-    if (!toolHeader || window.location.pathname === '/' || window.location.pathname === '/index.html') return;
-
-    const currentPath = window.location.pathname;
-    let favorites = JSON.parse(localStorage.getItem('favorite_tools') || '[]');
-    let isFav = favorites.includes(currentPath);
-
-    const favBtn = document.createElement('button');
-    favBtn.id = 'fav-btn';
-    favBtn.style.cssText = 'font-size: 0.9rem; padding: 0.4rem 0.8rem; border-radius: 20px; cursor: pointer; margin-left: 10px; vertical-align: middle; display: inline-flex; align-items: center; gap: 5px; background: transparent; border: 1px solid var(--border-color); color: var(--text-primary);';
-    
-    updateFavBtn(favBtn, isFav);
-
-    favBtn.onclick = () => {
-        favorites = JSON.parse(localStorage.getItem('favorite_tools') || '[]');
-        if (favorites.includes(currentPath)) {
-            favorites = favorites.filter(path => path !== currentPath);
-            isFav = false;
-        } else {
-            favorites.push(currentPath);
-            isFav = true;
-        }
-        localStorage.setItem('favorite_tools', JSON.stringify(favorites));
-        updateFavBtn(favBtn, isFav);
-    };
-
-    toolHeader.appendChild(favBtn);
-}
-
-function updateFavBtn(btn, isFav) {
-    btn.innerHTML = isFav ? '❤️ Favorited' : '🤍 Add Favorite';
-    btn.style.borderColor = isFav ? '#ef4444' : 'var(--border-color)';
-    btn.style.color = isFav ? '#ef4444' : 'var(--text-primary)';
-}
-
-window.shareCurrentPage = function() {
-    if (navigator.share) {
-        navigator.share({
-            title: document.title,
-            url: window.location.href
-        }).catch(() => {});
-    } else {
-        navigator.clipboard.writeText(window.location.href);
-        alert('Page link copied to clipboard!');
+// Global Click Event for Instant Theme Change
+document.addEventListener('click', (e) => {
+    const toggleBtn = e.target.closest('#theme-toggle, .custom-theme-btn');
+    if (toggleBtn) {
+        const activeTheme = document.documentElement.getAttribute('data-theme') || 'light';
+        const newTheme = activeTheme === 'light' ? 'dark' : 'light';
+        applyTheme(newTheme);
     }
-};
+});
+
+// Load theme state immediately before DOM finishes
+const initialSavedTheme = localStorage.getItem('theme') || 'light';
+document.documentElement.setAttribute('data-theme', initialSavedTheme);
