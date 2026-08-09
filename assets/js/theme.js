@@ -1,5 +1,16 @@
 window.ThemeManager = window.ThemeManager || {};
 
+// Set initial theme state instantly to prevent white/dark flashing
+(function() {
+    var savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    if (savedTheme === 'dark') {
+        document.documentElement.classList.add('dark');
+    } else {
+        document.documentElement.classList.remove('dark');
+    }
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
     renderNavbar();
     renderFooter();
@@ -7,21 +18,24 @@ document.addEventListener('DOMContentLoaded', () => {
     initThemeToggle();
 });
 
-// Render Header Navbar
+// Render Header Navbar with Exact Dimensions (Fixes CLS Issue)
 function renderNavbar() {
     const headerContainer = document.getElementById('header-container');
     if (!headerContainer) return;
 
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    const initialLogo = currentTheme === 'light' ? '/assets/images/logo-black.png' : '/assets/images/logo-white.png';
+
     headerContainer.innerHTML = `
         <header class="custom-header">
             <a href="/" class="custom-logo">
-                <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo">
+                <img id="app-logo" src="${initialLogo}" alt="MicroToolStack Logo" width="160" height="38" style="height: 38px; width: auto; display: block;" onerror="this.onerror=null; this.src='/assets/images/logo-white.png';">
             </a>
             <nav class="custom-nav">
                 <a href="/#categories">Categories</a>
                 <a href="/about.html">About</a>
                 <a href="/contact.html">Contact</a>
-                <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
+                <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">${currentTheme === 'dark' ? '☀️' : '🌙'}</button>
             </nav>
         </header>
     `;
@@ -69,7 +83,7 @@ function initFavorites() {
     const favBtn = document.createElement('button');
     favBtn.id = 'fav-btn';
     favBtn.className = 'btn btn-secondary';
-    favBtn.style.cssText = 'font-size: 0.85rem; padding: 0.3rem 0.75rem; margin-left: 10px; border-radius: 20px;';
+    favBtn.style.cssText = 'font-size: 0.85rem; padding: 0.3rem 0.75rem; margin-left: 10px; border-radius: 20px; cursor: pointer;';
     
     updateFavBtn(favBtn, isFav);
 
@@ -108,32 +122,33 @@ window.shareCurrentPage = function() {
     }
 };
 
-// Theme Toggle Logic
+// Theme Toggle Event Delegation
 function initThemeToggle() {
-    const toggleBtn = document.getElementById('theme-toggle');
     const savedTheme = localStorage.getItem('theme') || 'light';
-
     applyTheme(savedTheme);
 
-    if (toggleBtn) {
-        toggleBtn.innerText = savedTheme === 'dark' ? '☀️' : '🌙';
-
-        toggleBtn.onclick = () => {
+    document.addEventListener('click', (e) => {
+        const toggleBtn = e.target.closest('#theme-toggle, .custom-theme-btn');
+        if (toggleBtn) {
             const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
             const newTheme = currentTheme === 'light' ? 'dark' : 'light';
             
             applyTheme(newTheme);
             localStorage.setItem('theme', newTheme);
-            toggleBtn.innerText = newTheme === 'dark' ? '☀️' : '🌙';
-        };
-    }
+        }
+    });
 }
 
-// Global Apply Theme Function (Handling Image Switch)
+// Global Apply Theme Function (Handling Image Switch & Exact Dimension Preservation)
 function applyTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
     
-    const logoImg = document.querySelector('.custom-logo img');
+    const logoImg = document.getElementById('app-logo') || document.querySelector('.custom-logo img');
+    const toggleBtn = document.getElementById('theme-toggle');
+
+    if (toggleBtn) {
+        toggleBtn.innerText = theme === 'dark' ? '☀️' : '🌙';
+    }
 
     if (theme === 'dark') {
         document.documentElement.classList.add('dark');
