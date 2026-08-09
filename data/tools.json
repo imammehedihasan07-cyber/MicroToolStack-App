@@ -686,5 +686,115 @@
     "isPopular": true,
     "isNew": true,
     "tags": ["discount", "savings", "sale price", "shopping", "tax", "calculator"]
+  },
+  {
+    "id": "keyword-density-checker",
+    "name": "Keyword Density Checker",
+    "category": "seo",
+    "url": "/tools/seo/keyword-density-checker.html",
+    "description": "Analyze keyword frequency and percentage ratios in your content to optimize SEO rankings.",
+    "icon": "📊",
+    "isPopular": true,
+    "isNew": true,
+    "tags": ["seo", "keyword", "density", "content", "frequency"]
+  },
+  {
+    "id": "seo-title-preview",
+    "name": "SEO Title Preview Tool",
+    "category": "seo",
+    "url": "/tools/seo/seo-title-preview.html",
+    "description": "Preview how title tags display in Google Search results and test pixel width limits.",
+    "icon": "📐",
+    "isPopular": true,
+    "isNew": true,
+    "tags": ["seo", "title", "pixel", "preview", "serp"]
+  },
+  {
+    "id": "meta-tag-analyzer",
+    "name": "Meta Tag Analyzer",
+    "category": "seo",
+    "url": "/tools/seo/meta-tag-analyzer.html",
+    "description": "Inspect HTML meta tags, Open Graph properties, and verify character count limits.",
+    "icon": "🏷️",
+    "isPopular": false,
+    "isNew": true,
+    "tags": ["seo", "meta tags", "analyzer", "title", "description"]
+  },
+  {
+    "id": "google-serp-preview",
+    "name": "Google SERP Snippet Preview",
+    "category": "seo",
+    "url": "/tools/seo/google-serp-preview.html",
+    "description": "Simulate desktop and mobile Google Search results to optimize title and description snippets.",
+    "icon": "🔍",
+    "isPopular": true,
+    "isNew": true,
+    "tags": ["serp", "google", "preview", "snippet", "seo"]
+  },
+  {
+    "id": "open-graph-preview",
+    "name": "Open Graph Meta Tag Preview",
+    "category": "seo",
+    "url": "/tools/seo/open-graph-preview.html",
+    "description": "Generate and preview Facebook, LinkedIn, and Twitter social media Open Graph cards.",
+    "icon": "🌐",
+    "isPopular": false,
+    "isNew": true,
+    "tags": ["open graph", "social", "facebook", "twitter", "preview"]
+  },
+  {
+    "id": "canonical-url-checker",
+    "name": "Canonical URL Tag Checker",
+    "category": "seo",
+    "url": "/tools/seo/canonical-url-checker.html",
+    "description": "Validate canonical tag syntax and check duplicate URL issues instantly.",
+    "icon": "🔗",
+    "isPopular": false,
+    "isNew": true,
+    "tags": ["canonical", "url", "seo", "checker"]
+  },
+  {
+    "id": "broken-link-checker",
+    "name": "HTML Link Extractor & Audit",
+    "category": "seo",
+    "url": "/tools/seo/broken-link-checker.html",
+    "description": "Extract all hypertext links from HTML code to audit broken references and nofollow attributes.",
+    "icon": "🛠️",
+    "isPopular": false,
+    "isNew": true,
+    "tags": ["links", "extractor", "broken link", "seo", "audit"]
+  },
+  {
+    "id": "redirect-checker",
+    "name": "HTML Meta Refresh Redirect Checker",
+    "category": "seo",
+    "url": "/tools/seo/redirect-checker.html",
+    "description": "Inspect HTML meta refresh redirect codes and target HTTP endpoints.",
+    "icon": "🔄",
+    "isPopular": false,
+    "isNew": true,
+    "tags": ["redirect", "meta refresh", "seo", "checker"]
+  },
+  {
+    "id": "sitemap-generator",
+    "name": "XML Sitemap Generator",
+    "category": "seo",
+    "url": "/tools/seo/sitemap-generator.html",
+    "description": "Generate XML sitemap files for Google Search Console instantly from a URL list.",
+    "icon": "🗺️",
+    "isPopular": true,
+    "isNew": true,
+    "tags": ["sitemap", "xml", "google", "seo"]
+  },
+  {
+    "id": "html-minifier",
+    "name": "Online HTML Minifier",
+    "category": "developer",
+    "url": "/tools/developer/html-minifier.html",
+    "description": "Compress HTML code, strip unnecessary whitespace, and speed up page load times.",
+    "icon": "⚡",
+    "isPopular": true,
+    "isNew": true,
+    "tags": ["html", "minifier", "compress", "developer"]
   }
 ]
