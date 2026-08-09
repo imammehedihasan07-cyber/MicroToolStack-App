@@ -3,67 +3,67 @@
 
 /* Global Reset & Base Styles */
 *, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
-  font-size: 16px;
-  scroll-behavior: smooth;
-  -webkit-text-size-adjust: 100%;
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  font-family: var(--font-sans);
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-  line-height: 1.6;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  transition: background-color var(--transition-normal), color var(--transition-normal);
-  -webkit-font-smoothing: antialiased;
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: background-color var(--transition-normal), color var(--transition-normal);
+  -webkit-font-smoothing: antialiased;
 }
 
 a {
-  color: var(--accent-primary);
-  text-decoration: none;
-  transition: color var(--transition-fast);
+  color: var(--accent-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
 }
 
 a:hover {
-  color: var(--accent-primary-hover);
+  color: var(--accent-primary-hover);
 }
 
 button, input, textarea, select {
-  font: inherit;
-  color: inherit;
+  font: inherit;
+  color: inherit;
 }
 
 img, svg {
-  display: block;
-  max-width: 100%;
+  display: block;
+  max-width: 100%;
 }
 
 /* Layout Container */
 .container {
-  width: 100%;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 1.25rem;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.25rem;
 }
 
 main {
-  flex: 1;
+  flex: 1;
 }
 
 /* Typography Utilities */
 h1, h2, h3, h4, h5, h6 {
-  color: var(--text-primary);
-  font-weight: 700;
-  line-height: 1.25;
-  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
 }
 
 h1 { font-size: clamp(2rem, 5vw, 3.25rem); letter-spacing: -0.02em; }
@@ -71,110 +71,55 @@ h2 { font-size: clamp(1.5rem, 4vw, 2.25rem); letter-spacing: -0.01em; }
 h3 { font-size: 1.25rem; }
 
 p {
-  color: var(--text-secondary);
-  margin-bottom: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
 }
-/* Desktop Layout Shift & Performance Boost */
+
+/* Layout Shifts */
 .card {
-  contain-intrinsic-size: 200px;
-  content-visibility: auto;
+  contain-intrinsic-size: 200px;
+  content-visibility: auto;
 }
 
 #popular-tools-grid, #categories-grid {
-  min-height: 250px;
-}
-/* =========================================================
-   UNIVERSAL LIGHT & DARK MODE FIX FOR INPUTS & CARDS
-   ========================================================= */
-
-/* --- LIGHT MODE FIX --- */
-[data-theme="light"] body {
-  background-color: #f9fafb !important;
-  color: #1f2937 !important;
+  min-height: 250px;
 }
 
-[data-theme="light"] input,
-[data-theme="light"] textarea,
-[data-theme="light"] select,
-[data-theme="light"] .editor-input,
-[data-theme="light"] .editor-textarea,
-[data-theme="light"] .editor-select {
-  background-color: #ffffff !important;
-  color: #111827 !important;
-  border: 1px solid #d1d5db !important;
+/* Universal Inputs, Cards & Boxes Theme Fix */
+input,
+textarea,
+select,
+.editor-input,
+.editor-textarea,
+.editor-select {
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  transition: background-color var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
 }
 
-[data-theme="light"] input::placeholder,
-[data-theme="light"] textarea::placeholder {
-  color: #6b7280 !important;
-  opacity: 1 !important;
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-muted);
+  opacity: 1;
 }
 
-[data-theme="light"] .config-grid,
-[data-theme="light"] .content-box,
-[data-theme="light"] .section-card,
-[data-theme="light"] .input-card,
-[data-theme="light"] .card,
-[data-theme="light"] .options-grid,
-[data-theme="light"] .result-box,
-[data-theme="light"] .editor-card {
-  background-color: #ffffff !important;
-  color: #1f2937 !important;
-  border: 1px solid #e5e7eb !important;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+.config-grid,
+.content-box,
+.section-card,
+.input-card,
+.card,
+.options-grid,
+.result-box,
+.editor-card {
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  transition: background-color var(--transition-fast), border-color var(--transition-fast);
 }
 
-[data-theme="light"] label,
-[data-theme="light"] h1,
-[data-theme="light"] h2,
-[data-theme="light"] h3,
-[data-theme="light"] h4,
-[data-theme="light"] .option-item {
-  color: #111827 !important;
-}
-
-
-/* --- DARK MODE FIX --- */
-[data-theme="dark"] body {
-  background-color: #0f172a !important;
-  color: #f8fafc !important;
-}
-
-[data-theme="dark"] input,
-[data-theme="dark"] textarea,
-[data-theme="dark"] select,
-[data-theme="dark"] .editor-input,
-[data-theme="dark"] .editor-textarea,
-[data-theme="dark"] .editor-select {
-  background-color: #1e293b !important;
-  color: #f8fafc !important;
-  border: 1px solid #334155 !important;
-}
-
-[data-theme="dark"] input::placeholder,
-[data-theme="dark"] textarea::placeholder {
-  color: #94a3b8 !important;
-  opacity: 1 !important;
-}
-
-[data-theme="dark"] .config-grid,
-[data-theme="dark"] .content-box,
-[data-theme="dark"] .section-card,
-[data-theme="dark"] .input-card,
-[data-theme="dark"] .card,
-[data-theme="dark"] .options-grid,
-[data-theme="dark"] .result-box,
-[data-theme="dark"] .editor-card {
-  background-color: #1e293b !important;
-  color: #f8fafc !important;
-  border: 1px solid #334155 !important;
-}
-
-[data-theme="dark"] label,
-[data-theme="dark"] h1,
-[data-theme="dark"] h2,
-[data-theme="dark"] h3,
-[data-theme="dark"] h4,
-[data-theme="dark"] .option-item {
-  color: #f8fafc !important;
+label,
+.option-item {
+  color: var(--text-primary);
 }
