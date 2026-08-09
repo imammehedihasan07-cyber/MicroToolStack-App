@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) - Optimized Load -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var gTagScript = document.createElement('script');
+        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        gTagScript.async = true;
+        document.head.appendChild(gTagScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F3WWR9KGB4');
+      }, 1000);
+    });
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>Free Online XML Sitemap Generator for Google Search | MicroToolStack</title>
+  <meta name="description" content="Free Online XML Sitemap Generator. Generate valid XML sitemap files for Google Search Console instantly from a list of web page URLs. 100% free with instant download.">
+  <meta name="keywords" content="xml sitemap generator, sitemap creator, free xml sitemap builder, google sitemap generator, generate sitemap xml online, sitemap xml downloader">
+
+  <link rel="canonical" href="https://microtoolstack.com/tools/seo/sitemap-generator.html">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://microtoolstack.com/tools/seo/sitemap-generator.html">
+  <meta property="og:title" content="Free Online XML Sitemap Generator | MicroToolStack">
+  <meta property="og:description" content="Create valid XML sitemap files for Google Search Console and Bing Webmaster Tools in seconds.">
+  <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
+
+  <!-- Favicon Icon for Google & Devices -->
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
+
+  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "XML Sitemap Generator",
+        "operatingSystem": "All",
+        "applicationCategory": "SEOApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "An online SEO utility that converts web page URL lists into valid sitemap.xml files formatted for search engine crawlers.",
+        "url": "https://microtoolstack.com/tools/seo/sitemap-generator.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is an XML Sitemap?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "An XML sitemap is a structured code file that lists all critical web page URLs on a website, enabling search engine bots (like Googlebot) to crawl and index pages efficiently."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where should I upload my sitemap.xml file?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Upload the generated sitemap.xml file to your website root directory (e.g., https://example.com/sitemap.xml) and submit its link inside Google Search Console."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this XML Sitemap Generator free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, 100% free with no limits or user registration required."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Preconnect and Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <style>
+    .editor-textarea {
+      width: 100%;
+      min-height: 180px;
+      padding: 1rem;
+      font-family: inherit;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: #0d1117;
+      color: var(--text-primary, #fff);
+      outline: none;
+      resize: vertical;
+      box-sizing: border-box;
+      margin-bottom: 1.25rem;
+    }
+    .code-output {
+      width: 100%;
+      min-height: 200px;
+      padding: 1rem;
+      font-family: monospace;
+      font-size: 0.88rem;
+      line-height: 1.5;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: #0d1117;
+      color: #7ee787;
+      outline: none;
+      box-sizing: border-box;
+      margin-bottom: 1.5rem;
+    }
+    .controls-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 1.25rem;
+    }
+    .form-control {
+      width: 100%;
+      padding: 0.6rem 0.75rem;
+      border: 1px solid var(--border-color, #333);
+      border-radius: 6px;
+      background-color: #0d1117;
+      color: var(--text-primary, #fff);
+      outline: none;
+      box-sizing: border-box;
+    }
+    .editor-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.5rem;
+    }
+    .btn-group {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .content-box {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .content-box h2 {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul {
+      color: var(--text-secondary, #9ca3af);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .content-box ul {
+      padding-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .content-box li {
+      margin-bottom: 0.5rem;
+    }
+    .related-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .related-card {
+      display: block;
+      padding: 1rem;
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      color: var(--text-primary, #fff);
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .related-card:hover {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+  </style>
+</head>
+<body style="margin: 0; padding: 0;">
+
+  <!-- Header Section -->
+  <header class="custom-header">
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
+    </a>
+    <nav class="custom-nav">
+      <a href="/#categories">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
+    </nav>
+  </header>
+
+  <!-- Main Container -->
+  <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
+    <!-- Breadcrumb Navigation -->
+    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
+      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
+      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">SEO Tools</a> / 
+      <span>XML Sitemap Generator</span>
+    </nav>
+    
+    <!-- Tool Title & Description -->
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">XML Sitemap Generator</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Enter website URLs (one per line) to generate a Google Search Console compliant XML sitemap file.</p>
+    </div>
+
+    <!-- URL Input Textarea -->
+    <label style="display:block; font-weight:600; margin-bottom: 0.4rem; color: var(--text-primary, #fff);">Enter Web Page URLs (One URL per line):</label>
+    <textarea id="url-input" class="editor-textarea" placeholder="https://microtoolstack.com&#10;https://microtoolstack.com/about.html&#10;https://microtoolstack.com/contact.html&#10;https://microtoolstack.com/tools/seo/sitemap-generator.html" autofocus></textarea>
+
+    <!-- Settings Controls -->
+    <div class="controls-grid">
+      <div>
+        <label style="font-size:0.85rem; font-weight:600; color:var(--text-primary, #fff); display:block; margin-bottom:0.25rem;">Change Frequency:</label>
+        <select id="sel-freq" class="form-control">
+          <option value="weekly" selected>weekly</option>
+          <option value="daily">daily</option>
+          <option value="monthly">monthly</option>
+          <option value="yearly">yearly</option>
+          <option value="always">always</option>
+        </select>
+      </div>
+      <div>
+        <label style="font-size:0.85rem; font-weight:600; color:var(--text-primary, #fff); display:block; margin-bottom:0.25rem;">Priority Index:</label>
+        <select id="sel-priority" class="form-control">
+          <option value="0.80" selected>0.80 (Default)</option>
+          <option value="1.00">1.00 (Highest - Homepage)</option>
+          <option value="0.60">0.60 (Medium)</option>
+          <option value="0.50">0.50 (Low)</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Output Generated Code -->
+    <div style="margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary, #fff);">Generated XML Sitemap Code (<span id="url-count">0</span> URLs included):</div>
+    <textarea id="xml-output" class="code-output" readonly placeholder="Generated XML sitemap code will appear here..."></textarea>
+
+    <!-- Action Buttons -->
+    <div class="editor-controls">
+      <div class="btn-group">
+        <button id="btn-download" class="btn btn-primary" style="padding: 0.68rem 1.4rem; cursor: pointer; background: #10b981; border: none;">📥 Download sitemap.xml</button>
+        <button id="btn-copy" class="btn btn-secondary" style="padding: 0.68rem 1.2rem; cursor: pointer; background: #1f2937; color: #fff; border: 1px solid #4b5563; border-radius: 6px;">📋 Copy XML Code</button>
+        <button id="btn-sample" class="btn btn-secondary" style="padding: 0.68rem 1.2rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">📝 Load Sample</button>
+        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.68rem 1.2rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear</button>
+      </div>
+      <span id="status-msg" style="font-size: 0.85rem; color: #10b981; font-weight: 500; display: none;">Action completed!</span>
+    </div>
+
+    <!-- SEO Article Content Box 1 -->
+    <div class="content-box">
+      <h2>Why Every Website Needs an XML Sitemap</h2>
+      <p>An <strong>XML Sitemap</strong> acts as a roadmap for search engine crawlers (such as Googlebot and Bingbot). It provides search engines with a clean directory of all published URLs, last modification dates, change frequencies, and crawling priorities. Submitting a sitemap accelerates new page indexing and ensures deep URLs are discovered.</p>
+    </div>
+
+    <!-- SEO Article Content Box 2 -->
+    <div class="content-box">
+      <h2>How to Submit Your Sitemap to Google Search Console</h2>
+      <ul>
+        <li><strong>Step 1:</strong> Generate and download your <code>sitemap.xml</code> file using this free tool.</li>
+        <li><strong>Step 2:</strong> Upload the file to your website server root directory (e.g., <code>https://yourdomain.com/sitemap.xml</code>).</li>
+        <li><strong>Step 3:</strong> Open <strong>Google Search Console</strong>, navigate to the <strong>Sitemaps</strong> section, enter <code>sitemap.xml</code>, and click <strong>Submit</strong>.</li>
+      </ul>
+    </div>
+
+    <!-- Internal Linking Section -->
+    <div class="content-box">
+      <h2>Explore Related SEO Utilities</h2>
+      <p>Enhance your search engine optimization workflow with our tools:</p>
+      <div class="related-links">
+        <a href="/tools/seo/canonical-url-checker.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🔗 Canonical URL Checker</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Validate rel='canonical' tags and prevent duplicate content.</span>
+        </a>
+        <a href="/tools/seo/meta-tag-analyzer.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🏷️ Meta Tag Analyzer</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Inspect HTML head tags, meta descriptions, and Open Graph.</span>
+        </a>
+        <a href="/tools/seo/slug-generator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🔗 URL Slug Generator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Convert article headlines into clean URL slugs.</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="content-box">
+      <h2>Frequently Asked Questions</h2>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How many URLs can a single XML sitemap contain?</h3>
+        <p>A single XML sitemap file can contain up to 50,000 URLs and must not exceed 50 MB uncompressed file size according to official sitemaps.org protocols.</p>
+      </div>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What is the priority tag in an XML sitemap?</h3>
+        <p>The priority attribute indicates the relative importance of a URL compared to other pages on your site, ranging from 0.0 to 1.0.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer Container Placeholder -->
+  <div id="footer-container"></div>
+
+  <!-- JavaScript Utilities & Logic -->
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const urlInput = document.getElementById('url-input');
+      const xmlOutput = document.getElementById('xml-output');
+      const selFreq = document.getElementById('sel-freq');
+      const selPriority = document.getElementById('sel-priority');
+      const urlCount = document.getElementById('url-count');
+
+      const btnDownload = document.getElementById('btn-download');
+      const btnCopy = document.getElementById('btn-copy');
+      const btnSample = document.getElementById('btn-sample');
+      const btnClear = document.getElementById('btn-clear');
+      const statusMsg = document.getElementById('status-msg');
+
+      function generateSitemapXml() {
+        const rawText = urlInput.value.trim();
+
+        if (!rawText) {
+          xmlOutput.value = '';
+          urlCount.textContent = '0';
+          return;
+        }
+
+        const lines = rawText.split('\n')
+          .map(line => line.trim())
+          .filter(line => line.startsWith('http://') || line.startsWith('https://'));
+
+        urlCount.textContent = lines.length.toLocaleString();
+
+        if (lines.length === 0) {
+          xmlOutput.value = '<!-- No valid URLs starting with http:// or https:// detected -->';
+          return;
+        }
+
+        const today = new Date().toISOString().split('T')[0];
+        const freq = selFreq.value;
+        const priority = selPriority.value;
+
+        let xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
+
+        lines.forEach(url => {
+          xml += `  <url>\n    <loc>${escapeXml(url)}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>${freq}</changefreq>\n    <priority>${priority}</priority>\n  </url>\n`;
+        });
+
+        xml += `</urlset>`;
+
+        xmlOutput.value = xml;
+      }
+
+      function escapeXml(unsafe) {
+        return unsafe.replace(/[<>&'"]/g, function (c) {
+          switch (c) {
+            case '<': return '&lt;';
+            case '>': return '&gt;';
+            case '&': return '&amp;';
+            case '\'': return '&apos;';
+            case '"': return '&quot;';
+          }
+        });
+      }
+
+      urlInput.addEventListener('input', generateSitemapXml);
+      selFreq.addEventListener('change', generateSitemapXml);
+      selPriority.addEventListener('change', generateSitemapXml);
+
+      // Copy Action
+      btnCopy.addEventListener('click', function() {
+        if (!xmlOutput.value) return;
+        navigator.clipboard.writeText(xmlOutput.value).then(function() {
+          statusMsg.textContent = 'Copied XML code to clipboard!';
+          statusMsg.style.display = 'inline';
+          setTimeout(() => { statusMsg.style.display = 'none'; }, 2000);
+        });
+      });
+
+      // Download Action
+      btnDownload.addEventListener('click', function() {
+        if (!xmlOutput.value) return;
+        const blob = new Blob([xmlOutput.value], { type: 'text/xml' });
+        const downloadUrl = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.style.display = 'none';
+        a.href = downloadUrl;
+        a.download = 'sitemap.xml';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(downloadUrl);
+
+        statusMsg.textContent = 'Downloaded sitemap.xml file!';
+        statusMsg.style.display = 'inline';
+        setTimeout(() => { statusMsg.style.display = 'none'; }, 2000);
+      });
+
+      // Load Sample Action
+      btnSample.addEventListener('click', function() {
+        urlInput.value = `https://microtoolstack.com\nhttps://microtoolstack.com/about.html\nhttps://microtoolstack.com/contact.html\nhttps://microtoolstack.com/tools/developer/json-formatter.html\nhttps://microtoolstack.com/tools/seo/sitemap-generator.html`;
+        generateSitemapXml();
+      });
+
+      // Clear Action
+      btnClear.addEventListener('click', function() {
+        urlInput.value = '';
+        generateSitemapXml();
+        urlInput.focus();
+      });
+    });
+  </script>
+</body>
+</html>
