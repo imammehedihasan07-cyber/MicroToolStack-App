@@ -123,3 +123,21 @@ label,
 .option-item {
   color: var(--text-primary);
 }
+/* Tool Page Specific Theme Overrides */
+.tool-container,
+.tool-card,
+.color-picker-box,
+.palette-card {
+  background-color: var(--bg-card) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-color) !important;
+}
+
+/* Fix Labels and Headings inside Tools */
+.tool-container label,
+.tool-container h1,
+.tool-container h2,
+.tool-container h3,
+.tool-container p {
+  color: var(--text-primary) !important;
+}
