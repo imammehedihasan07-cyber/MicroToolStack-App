@@ -1,42 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) - Speed Optimized Load -->
-  <script>
-    window.addEventListener('load', function() {
-      setTimeout(function() {
-        var gTagScript = document.createElement('script');
-        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
-        gTagScript.async = true;
-        document.head.appendChild(gTagScript);
-
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-F3WWR9KGB4');
-      }, 3500);
-    });
-  </script>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Free Online PDF, SEO, Text & Developer Tools | MicroToolStack</title>
-  
   <meta name="description" content="Free online tools for PDF, text, SEO, developer utilities, image conversion and AI productivity. Fast, secure and privacy-friendly. No signup required.">
 
   <link rel="canonical" href="https://microtoolstack.com/">
   <meta name="robots" content="index, follow">
 
-  <!-- Favicon Icon for Google & Devices -->
+  <!-- Favicon Icons -->
   <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
   <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
-  <!-- Google AdSense (Unchanged & Safe) -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3023714618008515"
-     crossorigin="anonymous"></script>
-  
+  <!-- Preconnect & DNS-Prefetch for Fast Third-Party Connection -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+
+  <!-- Google AdSense (Standard Async - No Artificial Delay) -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3023714618008515" crossorigin="anonymous"></script>
+
+  <!-- Schema Markup -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -45,22 +32,24 @@
     "url":"https://microtoolstack.com"
   }
   </script>
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  
-  <!-- CSS Stylesheets - Fast Direct Load -->
+
+  <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="/assets/css/variables.css?v=10.0">
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
   <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
 
   <style>
-    /* Hero & Main Sections */
+    /* Critical CSS to Prevent Layout Shifts (CLS) & Lower LCP */
     .hero {
       text-align: center;
       padding: 4rem 1rem 3rem;
       max-width: 800px;
       margin: 0 auto;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      letter-spacing: -0.02em;
+      min-height: 3.5rem; /* Layout reservation */
     }
     .hero p {
       font-size: 1.125rem;
@@ -81,17 +70,12 @@
       color: var(--text-primary, #fff);
       outline: none;
     }
-    .section-title {
-      margin-bottom: 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
     .grid-4 {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
       gap: 1.25rem;
       margin-bottom: 3.5rem;
+      min-height: 280px; /* Layout reservation */
     }
     .tool-card {
       display: flex;
@@ -115,18 +99,8 @@
 </head>
 <body style="margin: 0; padding: 0;">
 
-  <!-- Header Section -->
-  <header class="custom-header">
-    <a href="/" class="custom-logo">
-      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
-    </a>
-    <nav class="custom-nav">
-      <a href="/#categories">Categories</a>
-      <a href="/about.html">About</a>
-      <a href="/contact.html">Contact</a>
-      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
-    </nav>
-  </header>
+  <!-- Header Container Placeholder -->
+  <div id="header-container"></div>
 
   <!-- Main Body Content -->
   <main class="container">
@@ -148,9 +122,7 @@
       <div class="section-title">
         <h2>🔥 Popular Tools</h2>
       </div>
-      <div class="grid-4" id="popular-tools-grid">
-        <!-- Loaded dynamically via JS -->
-      </div>
+      <div class="grid-4" id="popular-tools-grid"></div>
     </section>
 
     <!-- Categories Section -->
@@ -158,9 +130,7 @@
       <div class="section-title">
         <h2>📂 Explore Categories</h2>
       </div>
-      <div class="grid-4" id="categories-grid">
-        <!-- Loaded dynamically via JS -->
-      </div>
+      <div class="grid-4" id="categories-grid"></div>
     </section>
 
     <!-- Category Tools Display Section -->
@@ -168,9 +138,7 @@
       <div class="section-title">
         <h2 id="category-title">Tools</h2>
       </div>
-      <div class="grid-4" id="category-tools-grid">
-        <!-- Loaded dynamically on category click -->
-      </div>
+      <div class="grid-4" id="category-tools-grid"></div>
     </section>
 
     <!-- FAQ Section -->
@@ -178,22 +146,43 @@
       <div class="section-title">
         <h2>❓ Frequently Asked Questions</h2>
       </div>
-      <div id="faq-container">
-        <!-- Loaded dynamically via JS -->
-      </div>
+      <div id="faq-container"></div>
     </section>
   </main>
 
   <!-- Footer Placeholder -->
   <div id="footer-container"></div>
 
-  <!-- Core Scripts -->
+  <!-- Non-blocking Core Scripts -->
   <script src="/assets/js/theme.js"></script>
   <script src="/assets/js/utils.js" defer></script>
   <script src="/assets/js/search.js" defer></script>
-  <script src="/assets/js/app.js" defer></script>
 
-  <!-- Homepage Loader Logic -->
+  <!-- Analytics Deferring Script (Triggers on interaction or 4s timeout) -->
+  <script>
+    function initAnalytics() {
+      if (window.analyticsInitialized) return;
+      window.analyticsInitialized = true;
+
+      var gTagScript = document.createElement('script');
+      gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+      gTagScript.async = true;
+      document.head.appendChild(gTagScript);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-F3WWR9KGB4');
+    }
+
+    // Load Analytics on User Scroll, Touch, Move OR fallback 4 Seconds
+    ['touchstart', 'scroll', 'mousemove', 'keydown'].forEach(function(ev) {
+      window.addEventListener(ev, initAnalytics, { passive: true, once: true });
+    });
+    setTimeout(initAnalytics, 4000);
+  </script>
+
+  <!-- Homepage Dynamic Data Loader -->
   <script>
     (async function loadData() {
       try {
@@ -207,7 +196,6 @@
         const categories = await catRes.json();
         const faqs = await faqRes.json();
 
-        // Helper to normalize strings for exact matching
         const cleanStr = str => (str || '').toString().toLowerCase().replace(/[^a-z0-9]/g, '');
 
         // Render Popular Tools
@@ -223,13 +211,11 @@
           `).join('');
         }
 
-        // Render Categories with 100% Dynamic Tool Count from tools.json
+        // Render Categories
         const catGrid = document.getElementById('categories-grid');
         if (catGrid) {
           catGrid.innerHTML = categories.map(cat => {
             const cleanCatId = cleanStr(cat.id);
-            
-            // Live count directly calculated from tools.json
             const liveCount = tools.filter(tool => cleanStr(tool.category) === cleanCatId).length;
 
             return `
@@ -284,6 +270,5 @@
       }
     })();
   </script>
-
 </body>
 </html>
