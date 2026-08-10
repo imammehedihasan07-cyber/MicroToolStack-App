@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) - Optimized Load -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var gTagScript = document.createElement('script');
+        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        gTagScript.async = true;
+        document.head.appendChild(gTagScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F3WWR9KGB4');
+      }, 1000);
+    });
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>Free Social Media Post Length & Character Limit Checker | MicroToolStack</title>
+  <meta name="description" content="Free Social Media Character Limit Checker. Check real-time post lengths for X (Twitter), LinkedIn, Facebook, Instagram, Threads, and Pinterest simultaneously.">
+  <meta name="keywords" content="social media character limit checker, post length checker, twitter character counter, linkedin post limit, instagram caption length counter">
+
+  <link rel="canonical" href="https://microtoolstack.com/tools/social-media/social-media-post-length-checker.html">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://microtoolstack.com/tools/social-media/social-media-post-length-checker.html">
+  <meta property="og:title" content="Free Social Media Post Length & Character Limit Checker | MicroToolStack">
+  <meta property="og:description" content="Count words, characters, and check platform character limits for major social networks in real-time.">
+  <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
+
+  <!-- Favicon Icon for Google & Devices -->
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
+
+  <!-- JSON-LD Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Social Media Character Limit Checker",
+        "operatingSystem": "All",
+        "applicationCategory": "UtilitiesApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "An online social media utility to inspect character counts and limits for Twitter, LinkedIn, Instagram, Facebook, and Threads.",
+        "url": "https://microtoolstack.com/tools/social-media/social-media-post-length-checker.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What are the character limits for major social platforms?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "X/Twitter: 280 chars, Threads: 500 chars, Instagram Captions: 2,200 chars, LinkedIn Posts: 3,000 chars, Facebook Posts: 63,206 chars."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Preconnect and Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <style>
+    .editor-textarea {
+      width: 100%;
+      min-height: 180px;
+      padding: 1rem;
+      font-family: inherit;
+      font-size: 1rem;
+      line-height: 1.6;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
+      color: var(--text-primary, #fff);
+      outline: none;
+      resize: vertical;
+      box-sizing: border-box;
+      margin-bottom: 1.5rem;
+    }
+    .platform-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .platform-card {
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 10px;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .platform-name {
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--text-primary, #fff);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+    .progress-bar-bg {
+      width: 100%;
+      height: 8px;
+      background: var(--bg-body, #0d1117);
+      border-radius: 4px;
+      overflow: hidden;
+      margin: 0.5rem 0;
+      border: 1px solid var(--border-color, #333);
+    }
+    .progress-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: #3b82f6;
+      transition: width 0.2s, background-color 0.2s;
+    }
+    .limit-stat {
+      font-size: 0.85rem;
+      color: var(--text-secondary, #9ca3af);
+      display: flex;
+      justify-content: space-between;
+    }
+    .editor-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.5rem;
+    }
+    .btn-group {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .content-box {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .content-box h2 {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul {
+      color: var(--text-secondary, #9ca3af);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .content-box ul {
+      padding-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .content-box li {
+      margin-bottom: 0.5rem;
+    }
+    .related-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .related-card {
+      display: block;
+      padding: 1rem;
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      color: var(--text-primary, #fff);
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .related-card:hover {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+  </style>
+</head>
+<body style="margin: 0; padding: 0;">
+
+  <!-- Header Section -->
+  <header class="custom-header">
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
+    </a>
+    <nav class="custom-nav">
+      <a href="/#categories">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
+    </nav>
+  </header>
+
+  <!-- Main Container -->
+  <main class="container" style="max-width: 950px; margin: 2rem auto; padding: 0 1rem;">
+    <!-- Breadcrumb Navigation -->
+    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
+      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
+      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Social Media Tools</a> / 
+      <span>Social Media Post Length Checker</span>
+    </nav>
+    
+    <!-- Tool Title & Description -->
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Social Media Post Length & Limit Checker</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Draft post copy and inspect character counts for X (Twitter), LinkedIn, Instagram, Threads, and Facebook in real-time.</p>
+    </div>
+
+    <!-- Main Text Input -->
+    <textarea id="post-text" class="editor-textarea" placeholder="Type or paste your post content here to check character limits across platforms..." autofocus></textarea>
+
+    <!-- Platform Character Limits Grid -->
+    <div class="platform-grid">
+      <!-- X / Twitter -->
+      <div class="platform-card">
+        <div class="platform-name">
+          <span>🐦 X / Twitter</span>
+          <span id="badge-twitter" style="font-size:0.75rem; color:#10b981;">Valid</span>
+        </div>
+        <div class="progress-bar-bg"><div id="bar-twitter" class="progress-bar-fill"></div></div>
+        <div class="limit-stat">
+          <span id="cnt-twitter">0 / 280</span>
+          <span id="rem-twitter">280 left</span>
+        </div>
+      </div>
+
+      <!-- Threads -->
+      <div class="platform-card">
+        <div class="platform-name">
+          <span>🧵 Threads</span>
+          <span id="badge-threads" style="font-size:0.75rem; color:#10b981;">Valid</span>
+        </div>
+        <div class="progress-bar-bg"><div id="bar-threads" class="progress-bar-fill"></div></div>
+        <div class="limit-stat">
+          <span id="cnt-threads">0 / 500</span>
+          <span id="rem-threads">500 left</span>
+        </div>
+      </div>
+
+      <!-- Instagram -->
+      <div class="platform-card">
+        <div class="platform-name">
+          <span>📸 Instagram</span>
+          <span id="badge-insta" style="font-size:0.75rem; color:#10b981;">Valid</span>
+        </div>
+        <div class="progress-bar-bg"><div id="bar-insta" class="progress-bar-fill"></div></div>
+        <div class="limit-stat">
+          <span id="cnt-insta">0 / 2,200</span>
+          <span id="rem-insta">2,200 left</span>
+        </div>
+      </div>
+
+      <!-- LinkedIn -->
+      <div class="platform-card">
+        <div class="platform-name">
+          <span>💼 LinkedIn</span>
+          <span id="badge-linkedin" style="font-size:0.75rem; color:#10b981;">Valid</span>
+        </div>
+        <div class="progress-bar-bg"><div id="bar-linkedin" class="progress-bar-fill"></div></div>
+        <div class="limit-stat">
+          <span id="cnt-linkedin">0 / 3,000</span>
+          <span id="rem-linkedin">3,000 left</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="editor-controls">
+      <div class="btn-group">
+        <button id="btn-copy" class="btn btn-primary" style="padding: 0.68rem 1.4rem; cursor: pointer; background: #10b981; border: none;">📋 Copy Post Copy</button>
+        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.68rem 1.2rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear</button>
+      </div>
+      <span id="status-msg" style="font-size: 0.85rem; color: #10b981; font-weight: 500; display: none;">Copied to clipboard!</span>
+    </div>
+
+    <!-- SEO Article Content Box 1 -->
+    <div class="content-box">
+      <h2>Why Character Limits Matter in Social Media Marketing</h2>
+      <p>Every major social network enforces maximum post lengths. Exceeding character counts causes truncated copy or failed API post publishing. Tailoring your copy length for **X (280 chars)**, **Threads (500 chars)**, and **LinkedIn (3,000 chars)** ensures optimal engagement across channels.</p>
+    </div>
+
+    <!-- Internal Linking Section -->
+    <div class="content-box">
+      <h2>Explore Related Social Media Utilities</h2>
+      <p>Enhance your social content strategy with our tools:</p>
+      <div class="related-links">
+        <a href="/tools/social-media/linkedin-carousel-pdf-maker.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📄 LinkedIn Carousel PDF Maker</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Design multi-slide PDF carousels.</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="content-box">
+      <h2>Frequently Asked Questions</h2>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Do emojis count as 1 character?</h3>
+        <p>In standard Javascript string length, emojis and unicode symbols consume 1 to 2 character counts.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer Container Placeholder -->
+  <div id="footer-container"></div>
+
+  <!-- JavaScript Utilities & Logic -->
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const postText = document.getElementById('post-text');
+      const btnCopy = document.getElementById('btn-copy');
+      const btnClear = document.getElementById('btn-clear');
+      const statusMsg = document.getElementById('status-msg');
+
+      const platforms = [
+        { id: 'twitter', limit: 280 },
+        { id: 'threads', limit: 500 },
+        { id: 'insta', limit: 2200 },
+        { id: 'linkedin', limit: 3000 }
+      ];
+
+      function updateCounts() {
+        const text = postText.value;
+        const len = text.length;
+
+        platforms.forEach(p => {
+          const bar = document.getElementById(`bar-${p.id}`);
+          const cnt = document.getElementById(`cnt-${p.id}`);
+          const rem = document.getElementById(`rem-${p.id}`);
+          const badge = document.getElementById(`badge-${p.id}`);
+
+          const pct = Math.min(100, Math.round((len / p.limit) * 100));
+          const remaining = p.limit - len;
+
+          bar.style.width = `${pct}%`;
+          cnt.textContent = `${len.toLocaleString()} / ${p.limit.toLocaleString()}`;
+
+          if (remaining < 0) {
+            bar.style.backgroundColor = '#ef4444';
+            rem.textContent = `${Math.abs(remaining)} over limit`;
+            rem.style.color = '#ef4444';
+            badge.textContent = 'Exceeded';
+            badge.style.color = '#ef4444';
+          } else {
+            bar.style.backgroundColor = pct > 85 ? '#f59e0b' : '#3b82f6';
+            rem.textContent = `${remaining.toLocaleString()} left`;
+            rem.style.color = 'var(--text-secondary, #9ca3af)';
+            badge.textContent = 'Valid';
+            badge.style.color = '#10b981';
+          }
+        });
+      }
+
+      postText.addEventListener('input', updateCounts);
+
+      btnCopy.addEventListener('click', function() {
+        if (!postText.value.trim()) return;
+        navigator.clipboard.writeText(postText.value).then(() => {
+          statusMsg.style.display = 'inline';
+          setTimeout(() => { statusMsg.style.display = 'none'; }, 2000);
+        });
+      });
+
+      btnClear.addEventListener('click', function() {
+        postText.value = '';
+        updateCounts();
+        postText.focus();
+      });
+
+      updateCounts();
+    });
+  </script>
+</body>
+</html>
