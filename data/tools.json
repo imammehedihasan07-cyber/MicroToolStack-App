@@ -796,5 +796,115 @@
     "isPopular": true,
     "isNew": true,
     "tags": ["html", "minifier", "compress", "developer"]
+  },
+  {
+    "id": "css-minifier",
+    "name": "CSS Minifier",
+    "category": "developer",
+    "url": "/tools/developer/css-minifier.html",
+    "description": "Compress CSS stylesheets, remove comments and spaces to boost page speed.",
+    "icon": "⚡",
+    "isPopular": true,
+    "isNew": true,
+    "tags": ["css", "minifier", "compress", "stylesheet", "developer"]
+  },
+  {
+    "id": "js-minifier",
+    "name": "JS Minifier",
+    "category": "developer",
+    "url": "/tools/developer/js-minifier.html",
+    "description": "Compress raw JavaScript code, strip comments and whitespace to speed up web apps.",
+    "icon": "⚡",
+    "isPopular": true,
+    "isNew": true,
+    "tags": ["javascript", "js", "minifier", "compress", "developer"]
+  },
+  {
+    "id": "html-formatter",
+    "name": "HTML Formatter",
+    "category": "developer",
+    "url": "/tools/developer/html-formatter.html",
+    "description": "Beautify, indent, and format minified or messy HTML markup.",
+    "icon": "✨",
+    "isPopular": false,
+    "isNew": true,
+    "tags": ["html", "formatter", "beautifier", "indent", "developer"]
+  },
+  {
+    "id": "css-formatter",
+    "name": "CSS Formatter",
+    "category": "developer",
+    "url": "/tools/developer/css-formatter.html",
+    "description": "Un-minify, format, and indent raw CSS stylesheets for clean readability.",
+    "icon": "✨",
+    "isPopular": false,
+    "isNew": true,
+    "tags": ["css", "formatter", "beautifier", "indent", "developer"]
+  },
+  {
+    "id": "html-entity-encoder-decoder",
+    "name": "HTML Entity Encoder/Decoder",
+    "category": "developer",
+    "url": "/tools/developer/html-entity-encoder-decoder.html",
+    "description": "Convert reserved characters into safe HTML entities or decode entities to plain text.",
+    "icon": "🔒",
+    "isPopular": false,
+    "isNew": true,
+    "tags": ["html", "entity", "encoder", "decoder", "developer"]
+  },
+  {
+    "id": "regex-tester",
+    "name": "Regex Tester",
+    "category": "developer",
+    "url": "/tools/developer/regex-tester.html",
+    "description": "Test, validate, and debug regular expression patterns with live match highlighting.",
+    "icon": "🔍",
+    "isPopular": true,
+    "isNew": true,
+    "tags": ["regex", "regular expression", "tester", "debugger", "developer"]
+  },
+  {
+    "id": "timestamp-converter",
+    "name": "Unix Timestamp Converter",
+    "category": "developer",
+    "url": "/tools/developer/timestamp-converter.html",
+    "description": "Convert Unix Epoch timestamps into human-readable date-time strings and vice versa.",
+    "icon": "⏱️",
+    "isPopular": true,
+    "isNew": true,
+    "tags": ["timestamp", "unix", "epoch", "converter", "date", "developer"]
+  },
+  {
+    "id": "http-status-code-checker",
+    "name": "HTTP Status Code Checker",
+    "category": "developer",
+    "url": "/tools/developer/http-status-code-checker.html",
+    "description": "Search and inspect definitions and SEO guidance for HTTP server response codes.",
+    "icon": "📡",
+    "isPopular": false,
+    "isNew": true,
+    "tags": ["http", "status code", "200", "301", "404", "500", "developer"]
+  },
+  {
+    "id": "hex-to-rgb-converter",
+    "name": "HEX to RGB Converter",
+    "category": "developer",
+    "url": "/tools/developer/hex-to-rgb-converter.html",
+    "description": "Convert Hexadecimal color codes into RGB and RGBA CSS values instantly.",
+    "icon": "🎨",
+    "isPopular": false,
+    "isNew": true,
+    "tags": ["hex", "rgb", "converter", "color", "developer"]
+  },
+  {
+    "id": "rgb-to-hex-converter",
+    "name": "RGB to HEX Converter",
+    "category": "developer",
+    "url": "/tools/developer/rgb-to-hex-converter.html",
+    "description": "Convert RGB channel values (0-255) into Hexadecimal CSS color codes.",
+    "icon": "🎨",
+    "isPopular": false,
+    "isNew": true,
+    "tags": ["rgb", "hex", "converter", "color", "developer"]
   }
 ]
