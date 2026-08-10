@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) - Optimized Load -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var gTagScript = document.createElement('script');
+        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        gTagScript.async = true;
+        document.head.appendChild(gTagScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F3WWR9KGB4');
+      }, 1000);
+    });
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>Free LinkedIn Carousel PDF Maker & Slide Generator | MicroToolStack</title>
+  <meta name="description" content="Free Online LinkedIn Carousel PDF Maker. Create high-converting multi-slide PDF carousels for LinkedIn with custom themes, fonts, and instant PDF download.">
+  <meta name="keywords" content="linkedin carousel maker, linkedin pdf generator, linkedin slide creator, linkedin carousel generator, free carousel maker">
+
+  <link rel="canonical" href="https://microtoolstack.com/tools/social-media/linkedin-carousel-pdf-maker.html">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://microtoolstack.com/tools/social-media/linkedin-carousel-pdf-maker.html">
+  <meta property="og:title" content="Free LinkedIn Carousel PDF Maker & Slide Generator | MicroToolStack">
+  <meta property="og:description" content="Design custom multi-page LinkedIn PDF carousels with custom colors, headings, and download ready-to-post PDF files.">
+  <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
+
+  <!-- Favicon Icon for Google & Devices -->
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
+
+  <!-- JSON-LD Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "LinkedIn Carousel PDF Maker",
+        "operatingSystem": "All",
+        "applicationCategory": "DesignApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "An online social media tool to design and export multi-slide PDF carousels for LinkedIn posts.",
+        "url": "https://microtoolstack.com/tools/social-media/linkedin-carousel-pdf-maker.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Why use PDF carousels on LinkedIn?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "LinkedIn PDF carousels generate significantly higher engagement, dwell time, and impressions compared to standard single-image or text posts."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my data uploaded to any server?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No! Slide rendering and PDF exports run 100% locally in your client browser."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Preconnect and Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- jspdf CDN for Client-side PDF Generation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <style>
+    .editor-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    @media (max-width: 850px) {
+      .editor-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+    .panel-card {
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 12px;
+      padding: 1.25rem;
+    }
+    .form-group {
+      margin-bottom: 1rem;
+    }
+    .form-label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.35rem;
+    }
+    .form-input {
+      width: 100%;
+      padding: 0.65rem 0.85rem;
+      border: 1px solid var(--border-color, #333);
+      border-radius: 6px;
+      background-color: var(--bg-body, #0d1117);
+      color: var(--text-primary, #fff);
+      outline: none;
+      box-sizing: border-box;
+      font-family: inherit;
+    }
+    .color-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 0.5rem;
+    }
+    .carousel-preview-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 380px;
+      position: relative;
+    }
+    .slide-box {
+      width: 320px;
+      height: 320px;
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      transition: all 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .slide-heading {
+      font-size: 1.35rem;
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 0.5rem;
+    }
+    .slide-body {
+      font-size: 0.9rem;
+      line-height: 1.4;
+      opacity: 0.9;
+    }
+    .slide-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.75rem;
+      font-weight: 600;
+      opacity: 0.8;
+      border-top: 1px solid rgba(255,255,255,0.2);
+      padding-top: 0.5rem;
+    }
+    .slide-nav {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+      margin-top: 1rem;
+    }
+    .slide-tab-list {
+      display: flex;
+      gap: 0.5rem;
+      overflow-x: auto;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .slide-tab {
+      padding: 0.4rem 0.85rem;
+      background: var(--bg-body, #0d1117);
+      border: 1px solid var(--border-color, #333);
+      color: var(--text-secondary, #9ca3af);
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .slide-tab.active {
+      background: var(--accent-primary, #3b82f6);
+      color: #fff;
+      border-color: var(--accent-primary, #3b82f6);
+    }
+    .editor-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.5rem;
+    }
+    .btn-group {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .content-box {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .content-box h2 {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul {
+      color: var(--text-secondary, #9ca3af);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .content-box ul {
+      padding-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .content-box li {
+      margin-bottom: 0.5rem;
+    }
+    .related-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .related-card {
+      display: block;
+      padding: 1rem;
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      color: var(--text-primary, #fff);
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .related-card:hover {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+  </style>
+</head>
+<body style="margin: 0; padding: 0;">
+
+  <!-- Header Section -->
+  <header class="custom-header">
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
+    </a>
+    <nav class="custom-nav">
+      <a href="/#categories">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
+    </nav>
+  </header>
+
+  <!-- Main Container -->
+  <main class="container" style="max-width: 1000px; margin: 2rem auto; padding: 0 1rem;">
+    <!-- Breadcrumb Navigation -->
+    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
+      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
+      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Social Media Tools</a> / 
+      <span>LinkedIn Carousel PDF Maker</span>
+    </nav>
+    
+    <!-- Tool Title & Description -->
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">LinkedIn Carousel PDF Maker</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Design multi-slide LinkedIn PDF carousels with custom colors, typography, and download instantly.</p>
+    </div>
+
+    <!-- Main Workspace -->
+    <div class="editor-layout">
+      <!-- Left Controls Panel -->
+      <div class="panel-card">
+        <h3 style="margin-bottom: 1rem; color: var(--text-primary, #fff); font-size: 1.1rem;">Slide Customization</h3>
+
+        <!-- Slide Selector Tabs -->
+        <div id="slide-tabs" class="slide-tab-list"></div>
+
+        <div class="form-group">
+          <label class="form-label">Slide Title / Heading:</label>
+          <input type="text" id="in-heading" class="form-input" placeholder="e.g. 5 Tips to Master SEO in 2026">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Slide Content Body:</label>
+          <textarea id="in-body" class="form-input" rows="3" placeholder="Enter key bullet point or insight text..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Author Name / Social Handle:</label>
+          <input type="text" id="in-author" class="form-input" value="@YourName">
+        </div>
+
+        <div class="color-grid">
+          <div class="form-group">
+            <label class="form-label">Background:</label>
+            <input type="color" id="in-bg-color" class="form-input" style="height: 40px; padding: 2px;" value="#1e293b">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Text Color:</label>
+            <input type="color" id="in-text-color" class="form-input" style="height: 40px; padding: 2px;" value="#ffffff">
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
+          <button id="btn-add-slide" class="btn btn-secondary" style="padding: 0.5rem 0.85rem; font-size: 0.85rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">➕ Add Slide</button>
+          <button id="btn-del-slide" class="btn btn-secondary" style="padding: 0.5rem 0.85rem; font-size: 0.85rem; cursor: pointer; background: #ef4444; color: #fff; border: none; border-radius: 6px;">🗑️ Delete Slide</button>
+        </div>
+      </div>
+
+      <!-- Right Preview Panel -->
+      <div class="panel-card carousel-preview-wrap">
+        <div id="slide-preview" class="slide-box" style="background-color: #1e293b; color: #ffffff;">
+          <div>
+            <div id="prev-heading" class="slide-heading">5 Tips to Master SEO in 2026</div>
+            <div id="prev-body" class="slide-body">Focus on user intent, high-speed page performance, and authoritative technical content.</div>
+          </div>
+          <div class="slide-footer">
+            <span id="prev-author">@YourName</span>
+            <span id="prev-counter">Slide 1 of 3</span>
+          </div>
+        </div>
+
+        <div class="slide-nav">
+          <button id="btn-prev-slide" class="btn btn-secondary" style="padding: 0.4rem 0.85rem; font-size: 0.85rem; cursor: pointer;">◀ Previous</button>
+          <span id="nav-indicator" style="font-size: 0.85rem; color: var(--text-secondary, #9ca3af);">1 / 3</span>
+          <button id="btn-next-slide" class="btn btn-secondary" style="padding: 0.4rem 0.85rem; font-size: 0.85rem; cursor: pointer;">Next ▶</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="editor-controls">
+      <div class="btn-group">
+        <button id="btn-download-pdf" class="btn btn-primary" style="padding: 0.75rem 1.6rem; cursor: pointer; background: #10b981; border: none; font-size: 1rem;">📄 Download LinkedIn PDF Carousel</button>
+      </div>
+      <span id="status-msg" style="font-size: 0.85rem; color: #10b981; font-weight: 500; display: none;">Generating PDF...</span>
+    </div>
+
+    <!-- SEO Article Content Box 1 -->
+    <div class="content-box">
+      <h2>Why LinkedIn PDF Carousels Drive Maximum Engagement</h2>
+      <p>PDF carousels are one of the highest-performing content formats on LinkedIn. By structuring information into digestible, swipeable slides, creators encourage users to spend more time on their posts—significantly boosting **dwell time** and algorithmic reach.</p>
+    </div>
+
+    <!-- SEO Article Content Box 2 -->
+    <div class="content-box">
+      <h2>Best Practices for Creating High-Converting Carousels</h2>
+      <ul>
+        <li><strong>Hooking First Slide:</strong> Use bold, clear titles on Slide 1 to grab feed attention.</li>
+        <li><strong>Concise Text:</strong> Keep text brief—use 1 main takeaway per slide.</li>
+        <li><strong>Consistent Branding:</strong> Maintain matching background colors and your social handle across all slides.</li>
+      </ul>
+    </div>
+
+    <!-- Internal Linking Section -->
+    <div class="content-box">
+      <h2>Explore Related Social Media Utilities</h2>
+      <p>Enhance your content production workflow with our tools:</p>
+      <div class="related-links">
+        <a href="/tools/developer/html-formatter.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">✨ HTML Formatter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Beautify and indent web code.</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="content-box">
+      <h2>Frequently Asked Questions</h2>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How do I upload the exported PDF to LinkedIn?</h3>
+        <p>When creating a new LinkedIn post, click the "Document" (PDF) icon, select your downloaded PDF file, and write your post caption.</p>
+      </div>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What is the recommended number of slides?</h3>
+        <p>Carousels with 4 to 8 slides perform best for engagement and scroll depth.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer Container Placeholder -->
+  <div id="footer-container"></div>
+
+  <!-- JavaScript Utilities & Logic -->
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      let slides = [
+        { heading: "5 Tips to Master SEO in 2026", body: "Focus on user intent, high-speed performance, and authoritative technical content.", bg: "#1e293b", text: "#ffffff" },
+        { heading: "1. Optimize Core Web Vitals", body: "Keep LCP under 2.5s and INP low to satisfy Google's ranking signals.", bg: "#0f172a", text: "#38bdf8" },
+        { heading: "2. Build Topical Authority", body: "Write comprehensive topic clusters that solve real searcher queries.", bg: "#1e1e2e", text: "#a7f3d0" }
+      ];
+
+      let currentIndex = 0;
+
+      const inHeading = document.getElementById('in-heading');
+      const inBody = document.getElementById('in-body');
+      const inAuthor = document.getElementById('in-author');
+      const inBgColor = document.getElementById('in-bg-color');
+      const inTextColor = document.getElementById('in-text-color');
+
+      const slidePreview = document.getElementById('slide-preview');
+      const prevHeading = document.getElementById('prev-heading');
+      const prevBody = document.getElementById('prev-body');
+      const prevAuthor = document.getElementById('prev-author');
+      const prevCounter = document.getElementById('prev-counter');
+
+      const slideTabs = document.getElementById('slide-tabs');
+      const navIndicator = document.getElementById('nav-indicator');
+
+      const btnPrev = document.getElementById('btn-prev-slide');
+      const btnNext = document.getElementById('btn-next-slide');
+      const btnAdd = document.getElementById('btn-add-slide');
+      const btnDel = document.getElementById('btn-del-slide');
+      const btnDownload = document.getElementById('btn-download-pdf');
+      const statusMsg = document.getElementById('status-msg');
+
+      function renderTabs() {
+        slideTabs.innerHTML = slides.map((s, idx) => `
+          <button class="slide-tab ${idx === currentIndex ? 'active' : ''}" data-idx="${idx}">Slide ${idx + 1}</button>
+        `).join('');
+
+        document.querySelectorAll('.slide-tab').forEach(tab => {
+          tab.addEventListener('click', function() {
+            currentIndex = parseInt(this.getAttribute('data-idx'));
+            loadCurrentSlide();
+          });
+        });
+      }
+
+      function loadCurrentSlide() {
+        const cur = slides[currentIndex];
+        inHeading.value = cur.heading;
+        inBody.value = cur.body;
+        inBgColor.value = cur.bg;
+        inTextColor.value = cur.text;
+
+        updatePreview();
+        renderTabs();
+      }
+
+      function updatePreview() {
+        const cur = slides[currentIndex];
+        cur.heading = inHeading.value;
+        cur.body = inBody.value;
+        cur.bg = inBgColor.value;
+        cur.text = inTextColor.value;
+
+        prevHeading.textContent = cur.heading || "Slide Title";
+        prevBody.textContent = cur.body || "Slide content body text goes here...";
+        prevAuthor.textContent = inAuthor.value || "@YourName";
+        prevCounter.textContent = `Slide ${currentIndex + 1} of ${slides.length}`;
+
+        slidePreview.style.backgroundColor = cur.bg;
+        slidePreview.style.color = cur.text;
+
+        navIndicator.textContent = `${currentIndex + 1} / ${slides.length}`;
+      }
+
+      inHeading.addEventListener('input', updatePreview);
+      inBody.addEventListener('input', updatePreview);
+      inAuthor.addEventListener('input', updatePreview);
+      inBgColor.addEventListener('input', updatePreview);
+      inTextColor.addEventListener('input', updatePreview);
+
+      btnPrev.addEventListener('click', function() {
+        if (currentIndex > 0) {
+          currentIndex--;
+          loadCurrentSlide();
+        }
+      });
+
+      btnNext.addEventListener('click', function() {
+        if (currentIndex < slides.length - 1) {
+          currentIndex++;
+          loadCurrentSlide();
+        }
+      });
+
+      btnAdd.addEventListener('click', function() {
+        slides.push({
+          heading: `New Slide ${slides.length + 1}`,
+          body: "Enter your slide details here.",
+          bg: slides[currentIndex].bg,
+          text: slides[currentIndex].text
+        });
+        currentIndex = slides.length - 1;
+        loadCurrentSlide();
+      });
+
+      btnDel.addEventListener('click', function() {
+        if (slides.length <= 1) return;
+        slides.splice(currentIndex, 1);
+        if (currentIndex >= slides.length) currentIndex = slides.length - 1;
+        loadCurrentSlide();
+      });
+
+      // PDF Download Logic via jsPDF
+      btnDownload.addEventListener('click', function() {
+        statusMsg.style.display = 'inline';
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF({
+          orientation: 'square',
+          unit: 'px',
+          format: [500, 500]
+        });
+
+        slides.forEach((slide, i) => {
+          if (i > 0) doc.addPage([500, 500], 'square');
+
+          // Background
+          doc.setFillColor(slide.bg);
+          doc.rect(0, 0, 500, 500, 'F');
+
+          // Text Color
+          doc.setTextColor(slide.text);
+
+          // Title Heading
+          doc.setFontSize(26);
+          doc.setFont('helvetica', 'bold');
+          const splitTitle = doc.splitTextToSize(slide.heading || "Title", 420);
+          doc.text(splitTitle, 40, 100);
+
+          // Body Text
+          doc.setFontSize(16);
+          doc.setFont('helvetica', 'normal');
+          const splitBody = doc.splitTextToSize(slide.body || "", 420);
+          doc.text(splitBody, 40, 200);
+
+          // Footer Line
+          doc.setDrawColor(255, 255, 255);
+          doc.setLineWidth(0.5);
+          doc.line(40, 440, 460, 440);
+
+          // Footer Text
+          doc.setFontSize(12);
+          doc.setFont('helvetica', 'bold');
+          doc.text(inAuthor.value || "@YourName", 40, 465);
+          doc.text(`${i + 1} / ${slides.length}`, 420, 465);
+        });
+
+        doc.save('linkedin-carousel.pdf');
+        setTimeout(() => { statusMsg.style.display = 'none'; }, 2000);
+      });
+
+      loadCurrentSlide();
+    });
+  </script>
+</body>
+</html>
