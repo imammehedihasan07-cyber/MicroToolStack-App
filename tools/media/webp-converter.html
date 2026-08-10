@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) - Optimized Load -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var gTagScript = document.createElement('script');
+        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        gTagScript.async = true;
+        document.head.appendChild(gTagScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F3WWR9KGB4');
+      }, 1000);
+    });
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>Free Online WEBP Converter with Custom Resolution | MicroToolStack</title>
+  <meta name="description" content="Free Online WEBP Image Converter with Custom Resolution. Convert JPG, PNG to WEBP, resize image dimensions, adjust compression quality, and reduce file size.">
+  <meta name="keywords" content="webp converter, image to webp, png to webp, jpg to webp, resize webp, image resizer online, custom resolution webp">
+
+  <link rel="canonical" href="https://microtoolstack.com/tools/media/webp-converter.html">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://microtoolstack.com/tools/media/webp-converter.html">
+  <meta property="og:title" content="Free Online WEBP Converter with Custom Resolution | MicroToolStack">
+  <meta property="og:description" content="Convert PNG, JPG images to WebP format, adjust resolution and quality settings directly in your browser.">
+  <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
+
+  <!-- Favicon Icon for Google & Devices -->
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
+
+  <!-- JSON-LD Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "WEBP Converter with Custom Resolution",
+        "operatingSystem": "All",
+        "applicationCategory": "MultimediaApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "An online image converter tool that transforms PNG/JPG to WebP format with custom width and height resolution controls.",
+        "url": "https://microtoolstack.com/tools/media/webp-converter.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Why convert images to WEBP format?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "WEBP provides superior lossless and lossy compression for images on the web, significantly reducing file size compared to PNG or JPG while preserving crisp visual quality."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are my uploaded photos sent to external servers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No! All image conversion and resizing runs 100% locally using HTML5 Canvas inside your web browser instance."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Preconnect and Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <style>
+    .upload-box {
+      border: 2px dashed var(--border-color, #4b5563);
+      border-radius: 12px;
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      background: var(--bg-card, #1e1e2e);
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+      margin-bottom: 1.5rem;
+    }
+    .upload-box:hover {
+      border-color: var(--accent-primary, #3b82f6);
+      background: rgba(59, 130, 246, 0.05);
+    }
+    .controls-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.25rem;
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 10px;
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+    .form-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.35rem;
+    }
+    .form-input {
+      width: 100%;
+      padding: 0.65rem 0.85rem;
+      border: 1px solid var(--border-color, #333);
+      border-radius: 6px;
+      background-color: var(--bg-body, #0d1117);
+      color: var(--text-primary, #fff);
+      outline: none;
+      box-sizing: border-box;
+      font-family: inherit;
+    }
+    .preview-card {
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 10px;
+      padding: 1.25rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      display: none;
+    }
+    .preview-img {
+      max-width: 100%;
+      max-height: 350px;
+      border-radius: 8px;
+      border: 1px solid var(--border-color, #333);
+      margin-top: 1rem;
+    }
+    .metrics-row {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+      padding: 0.85rem;
+      background: var(--bg-body, #0d1117);
+      border-radius: 8px;
+      border: 1px solid var(--border-color, #333);
+    }
+    .metric-item {
+      font-size: 0.9rem;
+      color: var(--text-secondary, #9ca3af);
+    }
+    .metric-val {
+      font-weight: 700;
+      color: var(--accent-primary, #3b82f6);
+    }
+    .editor-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.5rem;
+    }
+    .btn-group {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .content-box {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .content-box h2 {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul {
+      color: var(--text-secondary, #9ca3af);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .content-box ul {
+      padding-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .content-box li {
+      margin-bottom: 0.5rem;
+    }
+    .related-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .related-card {
+      display: block;
+      padding: 1rem;
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      color: var(--text-primary, #fff);
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .related-card:hover {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+  </style>
+</head>
+<body style="margin: 0; padding: 0;">
+
+  <!-- Header Section -->
+  <header class="custom-header">
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
+    </a>
+    <nav class="custom-nav">
+      <a href="/#categories">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
+    </nav>
+  </header>
+
+  <!-- Main Container -->
+  <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
+    <!-- Breadcrumb Navigation -->
+    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
+      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
+      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Media Tools</a> / 
+      <span>WEBP Converter with Custom Resolution</span>
+    </nav>
+    
+    <!-- Tool Title & Description -->
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">WEBP Converter with Custom Resolution</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Convert PNG/JPG images to WEBP format, resize dimensions, and optimize image speed for SEO.</p>
+    </div>
+
+    <!-- Drag & Drop Upload Container -->
+    <div id="drop-zone" class="upload-box">
+      <input type="file" id="file-input" accept="image/*" style="display: none;">
+      <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🖼️</div>
+      <div style="font-weight: 600; color: var(--text-primary, #fff); font-size: 1.05rem;">Click to upload or drag & drop an image</div>
+      <div style="font-size: 0.85rem; color: var(--text-secondary, #9ca3af); margin-top: 0.25rem;">Supports JPG, PNG, GIF, BMP</div>
+    </div>
+
+    <!-- Custom Resolution & Quality Settings -->
+    <div class="controls-grid">
+      <div class="form-group">
+        <label class="form-label">Width (px):</label>
+        <input type="number" id="in-width" class="form-input" placeholder="Auto">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Height (px):</label>
+        <input type="number" id="in-height" class="form-input" placeholder="Auto">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Image Quality (1 - 100%): <span id="lbl-quality" style="color: var(--accent-primary, #3b82f6);">85%</span></label>
+        <input type="range" id="in-quality" min="10" max="100" value="85" style="margin-top: 0.5rem; accent-color: var(--accent-primary, #3b82f6);">
+      </div>
+      <div class="form-group" style="justify-content: flex-end;">
+        <label style="font-size:0.85rem; color:var(--text-primary, #fff); cursor:pointer; margin-top: auto; padding-bottom: 0.5rem;">
+          <input type="checkbox" id="chk-aspect" checked style="accent-color: var(--accent-primary, #3b82f6);"> Lock Aspect Ratio
+        </label>
+      </div>
+    </div>
+
+    <!-- Live Preview Card -->
+    <div id="preview-card" class="preview-card">
+      <h3 style="color: var(--text-primary, #fff); margin-bottom: 0.5rem; font-size: 1.1rem;">Converted WEBP Preview</h3>
+      <img id="converted-img" class="preview-img" alt="Converted WEBP Preview">
+      
+      <div class="metrics-row">
+        <div class="metric-item">Original Size: <span id="m-orig-size" class="metric-val">0 KB</span></div>
+        <div class="metric-item">WEBP Size: <span id="m-new-size" class="metric-val">0 KB</span></div>
+        <div class="metric-item">Dimensions: <span id="m-dims" class="metric-val">0x0</span></div>
+      </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="editor-controls">
+      <div class="btn-group">
+        <button id="btn-convert" class="btn btn-primary" style="padding: 0.75rem 1.6rem; cursor: pointer; background: #3b82f6; border: none;" disabled>⚡ Convert to WEBP</button>
+        <button id="btn-download" class="btn btn-primary" style="padding: 0.75rem 1.6rem; cursor: pointer; background: #10b981; border: none; display: none;">💾 Download WEBP</button>
+        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.75rem 1.2rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear</button>
+      </div>
+    </div>
+
+    <!-- SEO Article Content Box 1 -->
+    <div class="content-box">
+      <h2>Why WEBP Format is Essential for Website Performance</h2>
+      <p>WEBP is a modern web image format developed by Google. It offers superior **lossless and lossy compression**, reducing image file sizes by 25% to 35% compared to JPEG and PNG formats without compromising visual quality. Utilizing WEBP directly enhances your website's **Largest Contentful Paint (LCP)** Core Web Vitals score.</p>
+    </div>
+
+    <!-- SEO Article Content Box 2 -->
+    <div class="content-box">
+      <h2>Benefits of Custom Resolution Image Resizing</h2>
+      <ul>
+        <li><strong>Prevent Layout Shifts:</strong> Outputting exact image dimensions reduces CLS (Cumulative Layout Shift) issues.</li>
+        <li><strong>Bandwidth Savings:</strong> Lower pixel density for thumbnail previews saves mobile user data.</li>
+        <li><strong>Cross-Browser Support:</strong> WEBP is natively supported by modern web browsers including Chrome, Safari, Firefox, and Edge.</li>
+      </ul>
+    </div>
+
+    <!-- Internal Linking Section -->
+    <div class="content-box">
+      <h2>Explore Related Media Utilities</h2>
+      <p>Enhance your digital assets with our tools:</p>
+      <div class="related-links">
+        <a href="/tools/developer/html-formatter.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">✨ HTML Formatter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Beautify and indent web code.</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="content-box">
+      <h2>Frequently Asked Questions</h2>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Does WEBP support transparent backgrounds?</h3>
+        <p>Yes! WEBP fully supports alpha channel transparency, making it a perfect lightweight replacement for heavy transparent PNG images.</p>
+      </div>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What is the recommended image quality setting?</h3>
+        <p>An image quality setting between 80% and 85% provides the optimal balance between high visual fidelity and small file payload size.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer Container Placeholder -->
+  <div id="footer-container"></div>
+
+  <!-- JavaScript Utilities & Logic -->
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const dropZone = document.getElementById('drop-zone');
+      const fileInput = document.getElementById('file-input');
+
+      const inWidth = document.getElementById('in-width');
+      const inHeight = document.getElementById('in-height');
+      const inQuality = document.getElementById('in-quality');
+      const lblQuality = document.getElementById('lbl-quality');
+      const chkAspect = document.getElementById('chk-aspect');
+
+      const previewCard = document.getElementById('preview-card');
+      const convertedImg = document.getElementById('converted-img');
+
+      const mOrigSize = document.getElementById('m-orig-size');
+      const mNewSize = document.getElementById('m-new-size');
+      const mDims = document.getElementById('m-dims');
+
+      const btnConvert = document.getElementById('btn-convert');
+      const btnDownload = document.getElementById('btn-download');
+      const btnClear = document.getElementById('btn-clear');
+
+      let originalImage = null;
+      let originalFile = null;
+      let convertedBlobUrl = null;
+
+      function formatBytes(bytes) {
+        if (bytes === 0) return '0 B';
+        const k = 1024;
+        const sizes = ['B', 'KB', 'MB'];
+        const i = Math.floor(Math.log(bytes) / Math.log(k));
+        return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+      }
+
+      dropZone.addEventListener('click', () => fileInput.click());
+
+      dropZone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropZone.style.borderColor = 'var(--accent-primary, #3b82f6)';
+      });
+
+      dropZone.addEventListener('dragleave', () => {
+        dropZone.style.borderColor = 'var(--border-color, #4b5563)';
+      });
+
+      dropZone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropZone.style.borderColor = 'var(--border-color, #4b5563)';
+        if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+          handleFile(e.dataTransfer.files[0]);
+        }
+      });
+
+      fileInput.addEventListener('change', (e) => {
+        if (e.target.files && e.target.files[0]) {
+          handleFile(e.target.files[0]);
+        }
+      });
+
+      function handleFile(file) {
+        if (!file.type.startsWith('image/')) return;
+
+        originalFile = file;
+        const reader = new FileReader();
+
+        reader.onload = function(evt) {
+          const img = new Image();
+          img.onload = function() {
+            originalImage = img;
+            inWidth.value = img.width;
+            inHeight.value = img.height;
+            btnConvert.disabled = false;
+            processConversion();
+          };
+          img.src = evt.target.result;
+        };
+
+        reader.readAsDataURL(file);
+      }
+
+      inWidth.addEventListener('input', () => {
+        if (chkAspect.checked && originalImage && inWidth.value) {
+          const ratio = originalImage.height / originalImage.width;
+          inHeight.value = Math.round(inWidth.value * ratio);
+        }
+      });
+
+      inHeight.addEventListener('input', () => {
+        if (chkAspect.checked && originalImage && inHeight.value) {
+          const ratio = originalImage.width / originalImage.height;
+          inWidth.value = Math.round(inHeight.value * ratio);
+        }
+      });
+
+      inQuality.addEventListener('input', () => {
+        lblQuality.textContent = `${inQuality.value}%`;
+      });
+
+      btnConvert.addEventListener('click', processConversion);
+
+      function processConversion() {
+        if (!originalImage) return;
+
+        const canvas = document.createElement('canvas');
+        const targetW = parseInt(inWidth.value) || originalImage.width;
+        const targetH = parseInt(inHeight.value) || originalImage.height;
+
+        canvas.width = targetW;
+        canvas.height = targetH;
+
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(originalImage, 0, 0, targetW, targetH);
+
+        const qualityVal = parseFloat(inQuality.value) / 100;
+
+        canvas.toBlob((blob) => {
+          if (!blob) return;
+
+          if (convertedBlobUrl) URL.revokeObjectURL(convertedBlobUrl);
+          convertedBlobUrl = URL.createObjectURL(blob);
+
+          convertedImg.src = convertedBlobUrl;
+          mOrigSize.textContent = formatBytes(originalFile.size);
+          mNewSize.textContent = formatBytes(blob.size);
+          mDims.textContent = `${targetW}x${targetH} px`;
+
+          previewCard.style.display = 'block';
+          btnDownload.style.display = 'inline-block';
+        }, 'image/webp', qualityVal);
+      }
+
+      btnDownload.addEventListener('click', () => {
+        if (!convertedBlobUrl) return;
+        const a = document.createElement('a');
+        a.href = convertedBlobUrl;
+        a.download = (originalFile.name.replace(/\.[^/.]+$/, "") || "converted") + ".webp";
+        a.click();
+      });
+
+      btnClear.addEventListener('click', () => {
+        originalImage = null;
+        originalFile = null;
+        if (convertedBlobUrl) URL.revokeObjectURL(convertedBlobUrl);
+        convertedBlobUrl = null;
+
+        fileInput.value = '';
+        inWidth.value = '';
+        inHeight.value = '';
+        previewCard.style.display = 'none';
+        btnDownload.style.display = 'none';
+        btnConvert.disabled = true;
+      });
+    });
+  </script>
+</body>
+</html>
