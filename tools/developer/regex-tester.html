@@ -41,7 +41,7 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
   <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
-  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
+  <!-- JSON-LD Schema Markup -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -58,35 +58,6 @@
         },
         "description": "An online developer utility that tests, matches, and debugs regular expressions in real-time.",
         "url": "https://microtoolstack.com/tools/developer/regex-tester.html"
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What is a Regular Expression (Regex)?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "A Regular Expression (Regex) is a sequence of characters that defines a search pattern, commonly used for string searching, text replacement, and input validation."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What do the regex flags 'g', 'i', and 'm' mean?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "'g' stands for global search (find all matches), 'i' enables case-insensitive matching, and 'm' enables multi-line matching where ^ and $ match line boundaries."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Is my test data private?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, 100%. Regex testing takes place locally in your web browser instance."
-            }
-          }
-        ]
       }
     ]
   }
@@ -108,8 +79,8 @@
       font-size: 1rem;
       border: 1px solid var(--border-color, #333);
       border-radius: var(--radius-md, 8px);
-      background-color: #0d1117;
-      color: #7ee787;
+      background-color: var(--bg-card, #1e1e2e);
+      color: var(--text-primary, #fff);
       outline: none;
       box-sizing: border-box;
       margin-bottom: 1rem;
@@ -123,7 +94,7 @@
       line-height: 1.6;
       border: 1px solid var(--border-color, #333);
       border-radius: var(--radius-md, 8px);
-      background-color: #0d1117;
+      background-color: var(--bg-card, #1e1e2e);
       color: var(--text-primary, #fff);
       outline: none;
       resize: vertical;
@@ -139,7 +110,7 @@
       line-height: 1.6;
       border: 1px solid var(--border-color, #333);
       border-radius: var(--radius-md, 8px);
-      background-color: #1e1e2e;
+      background-color: var(--bg-card, #1e1e2e);
       color: var(--text-primary, #fff);
       box-sizing: border-box;
       margin-bottom: 1.5rem;
@@ -148,7 +119,7 @@
     }
     .match-highlight {
       background-color: rgba(59, 130, 246, 0.4);
-      color: #fff;
+      color: var(--text-primary, #fff);
       border-radius: 3px;
       padding: 2px 4px;
       font-weight: 700;
@@ -293,19 +264,7 @@
     <!-- SEO Article Content Box 1 -->
     <div class="content-box">
       <h2>Why Online Regex Testing is Essential for Developers</h2>
-      <p>A <strong>Regular Expression (Regex)</strong> is a powerful sequence of characters defining a search pattern. Developers use Regex for form validation (e.g., verifying emails, phone numbers, or passwords), string parsing, and web scraping. Testing Regex patterns in real time prevents infinite-loop performance bugs and syntax errors in production applications.</p>
-    </div>
-
-    <!-- SEO Article Content Box 2 -->
-    <div class="content-box">
-      <h2>Common Regular Expression Cheat Sheet</h2>
-      <ul>
-        <li><code>[a-z]</code> — Matches any lowercase letter.</li>
-        <li><code>\d</code> — Matches any digit (0-9).</li>
-        <li><code>\s</code> — Matches any whitespace character.</li>
-        <li><code>+</code> — Matches 1 or more occurrences of the preceding token.</li>
-        <li><code>*</code> — Matches 0 or more occurrences of the preceding token.</li>
-      </ul>
+      <p>A <strong>Regular Expression (Regex)</strong> is a sequence of characters defining a search pattern. Developers use Regex for form validation (e.g., verifying emails or passwords), string parsing, and web scraping.</p>
     </div>
 
     <!-- Internal Linking Section -->
@@ -317,27 +276,6 @@
           <strong style="display:block; margin-bottom: 0.25rem;">🔒 HTML Entity Encoder</strong>
           <span style="font-size: 0.85rem; color: #9ca3af;">Encode reserved HTML characters safely.</span>
         </a>
-        <a href="/tools/developer/base64-encoder-decoder.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🔐 Base64 Encoder / Decoder</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Encode or decode text strings into Base64.</span>
-        </a>
-        <a href="/tools/developer/json-formatter.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">📦 JSON Formatter</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Validate and format raw JSON data.</span>
-        </a>
-      </div>
-    </div>
-
-    <!-- FAQ Section -->
-    <div class="content-box">
-      <h2>Frequently Asked Questions</h2>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What is the 'g' flag in Regular Expressions?</h3>
-        <p>The global flag ('g') instructs the regex engine to search for all occurrences across the entire target string rather than stopping after the first match.</p>
-      </div>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Which regex flavor does this tool use?</h3>
-        <p>This tool utilizes standard ECMAScript / JavaScript Regular Expression engine syntax natively supported by all web browsers.</p>
       </div>
     </div>
 
