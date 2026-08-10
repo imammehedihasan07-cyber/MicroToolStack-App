@@ -906,5 +906,137 @@
     "isPopular": false,
     "isNew": true,
     "tags": ["rgb", "hex", "converter", "color", "developer"]
+  },
+  {
+    "id": "linkedin-carousel-pdf-maker",
+    "name": "LinkedIn Carousel PDF Maker",
+    "category": "social-media",
+    "url": "/tools/social-media/linkedin-carousel-pdf-maker.html",
+    "description": "Design multi-slide PDF carousels for LinkedIn with custom colors and fonts.",
+    "icon": "📄",
+    "isPopular": true,
+    "isNew": true,
+    "tags": ["linkedin", "carousel", "pdf", "social media", "slides"]
+  },
+  {
+    "id": "webp-converter",
+    "name": "WEBP Converter with Custom Resolution",
+    "category": "media",
+    "url": "/tools/media/webp-converter.html",
+    "description": "Convert JPG and PNG to WEBP, resize image dimensions, and optimize quality.",
+    "icon": "🖼️",
+    "isPopular": true,
+    "isNew": true,
+    "tags": ["webp", "image converter", "resize", "compress", "media"]
+  },
+  {
+    "id": "voice-recorder",
+    "name": "Voice Recorder with Noise Suppression",
+    "category": "media",
+    "url": "/tools/media/voice-recorder.html",
+    "description": "Record high-quality audio with active background noise filter and echo cancellation.",
+    "icon": "🎙️",
+    "isPopular": false,
+    "isNew": true,
+    "tags": ["voice recorder", "audio", "noise suppression", "mic", "media"]
+  },
+  {
+    "id": "html-to-markdown",
+    "name": "HTML to Markdown",
+    "category": "developer",
+    "url": "/tools/developer/html-to-markdown.html",
+    "description": "Convert HTML markup code into clean, readable Markdown syntax.",
+    "icon": "📝",
+    "isPopular": false,
+    "isNew": true,
+    "tags": ["html", "markdown", "converter", "md", "developer"]
+  },
+  {
+    "id": "markdown-to-pdf",
+    "name": "Markdown to PDF",
+    "category": "developer",
+    "url": "/tools/developer/markdown-to-pdf.html",
+    "description": "Render raw Markdown text and export styled PDF documents.",
+    "icon": "📄",
+    "isPopular": true,
+    "isNew": true,
+    "tags": ["markdown", "pdf", "converter", "documentation", "developer"]
+  },
+  {
+    "id": "cron-job-generator",
+    "name": "Cron Job Generator & Explainer",
+    "category": "developer",
+    "url": "/tools/developer/cron-job-generator.html",
+    "description": "Build 5-part crontab expressions visually or translate cron syntax into English.",
+    "icon": "⏱️",
+    "isPopular": true,
+    "isNew": true,
+    "tags": ["cron", "crontab", "schedule", "devops", "developer"]
+  },
+  {
+    "id": "linkedin-banner-creator",
+    "name": "LinkedIn Banner Creator",
+    "category": "social-media",
+    "url": "/tools/social-media/linkedin-banner-creator.html",
+    "description": "Design custom profile header banners in exact 1584x396 dimensions.",
+    "icon": "🖼️",
+    "isPopular": false,
+    "isNew": true,
+    "tags": ["linkedin", "banner", "header", "cover", "social media"]
+  },
+  {
+    "id": "image-watermark-adder",
+    "name": "Image Watermark Adder",
+    "category": "media",
+    "url": "/tools/media/image-watermark-adder.html",
+    "description": "Add text or logo image overlay watermarks to protect your photos.",
+    "icon": "📸",
+    "isPopular": false,
+    "isNew": true,
+    "tags": ["watermark", "image", "photo", "logo", "media"]
+  },
+  {
+    "id": "gif-converter",
+    "name": "GIF to MP4 & WEBP Converter",
+    "category": "media",
+    "url": "/tools/media/gif-converter.html",
+    "description": "Compress animated GIFs into lightweight MP4 videos or WEBP animations.",
+    "icon": "🎬",
+    "isPopular": true,
+    "isNew": true,
+    "tags": ["gif", "mp4", "webp", "video", "media"]
+  },
+  {
+    "id": "http-status-explainer",
+    "name": "HTTP Status Code Explainer & Tester",
+    "category": "developer",
+    "url": "/tools/developer/http-status-explainer.html",
+    "description": "Test live URLs for HTTP status response codes, latency, and server explanations.",
+    "icon": "📡",
+    "isPopular": false,
+    "isNew": true,
+    "tags": ["http", "status code", "tester", "api", "developer"]
+  },
+  {
+    "id": "url-encoder-decoder",
+    "name": "URL Encoder / Decoder",
+    "category": "developer",
+    "url": "/tools/developer/url-encoder-decoder.html",
+    "description": "Convert unsafe characters into Percent-Encoded URLs or decode query strings.",
+    "icon": "🔒",
+    "isPopular": false,
+    "isNew": true,
+    "tags": ["url", "encode", "decode", "uri", "developer"]
+  },
+  {
+    "id": "social-media-post-length-checker",
+    "name": "Social Media Character Limit Checker",
+    "category": "social-media",
+    "url": "/tools/social-media/social-media-post-length-checker.html",
+    "description": "Check real-time post character limits for Twitter, LinkedIn, Instagram, and Threads.",
+    "icon": "📊",
+    "isPopular": false,
+    "isNew": true,
+    "tags": ["social media", "character counter", "twitter", "linkedin", "limit"]
   }
 ]
