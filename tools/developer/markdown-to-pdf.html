@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) - Optimized Load -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var gTagScript = document.createElement('script');
+        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        gTagScript.async = true;
+        document.head.appendChild(gTagScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F3WWR9KGB4');
+      }, 1000);
+    });
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>Free Online Markdown to PDF Converter | MicroToolStack</title>
+  <meta name="description" content="Free Online Markdown to PDF Converter. Convert raw Markdown text to styled PDF documents with live preview and instant download. Fast, free, and secure.">
+  <meta name="keywords" content="markdown to pdf, convert md to pdf, markdown to pdf converter, md2pdf online, export markdown as pdf">
+
+  <link rel="canonical" href="https://microtoolstack.com/tools/developer/markdown-to-pdf.html">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://microtoolstack.com/tools/developer/markdown-to-pdf.html">
+  <meta property="og:title" content="Free Online Markdown to PDF Converter | MicroToolStack">
+  <meta property="og:description" content="Convert Markdown documentation and notes into styled PDF files instantly in your browser.">
+  <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
+
+  <!-- Favicon Icon for Google & Devices -->
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
+
+  <!-- JSON-LD Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Markdown to PDF Converter",
+        "operatingSystem": "All",
+        "applicationCategory": "DeveloperApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "An online developer tool that renders Markdown text and converts it into downloadable PDF documents.",
+        "url": "https://microtoolstack.com/tools/developer/markdown-to-pdf.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does the Markdown to PDF conversion work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The tool parses your Markdown text into styled HTML elements and renders them into a crisp PDF file entirely within your browser."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are my documents kept private?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, 100%. All PDF rendering happens locally on your computer. No text or PDF files are uploaded to any server."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Preconnect and Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Marked JS and HTML2PDF JS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <style>
+    .editor-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+    @media (max-width: 768px) {
+      .editor-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .editor-textarea {
+      width: 100%;
+      min-height: 320px;
+      padding: 1rem;
+      font-family: monospace;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
+      color: var(--text-primary, #fff);
+      outline: none;
+      resize: vertical;
+      box-sizing: border-box;
+    }
+    .preview-box {
+      width: 100%;
+      min-height: 320px;
+      padding: 1.25rem;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: #ffffff;
+      color: #111827;
+      box-sizing: border-box;
+      overflow-y: auto;
+      font-family: system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+    }
+    .preview-box h1, .preview-box h2, .preview-box h3 {
+      color: #1f2937;
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    .preview-box h1 { font-size: 1.6rem; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.3rem; }
+    .preview-box h2 { font-size: 1.3rem; }
+    .preview-box code { background: #f3f4f6; padding: 0.2rem 0.4rem; border-radius: 4px; font-family: monospace; }
+    .preview-box pre { background: #1f2937; color: #f9fafb; padding: 0.75rem; border-radius: 6px; overflow-x: auto; }
+    .preview-box pre code { background: transparent; color: inherit; }
+    .preview-box blockquote { border-left: 4px solid #3b82f6; margin: 0; padding-left: 1rem; color: #4b5563; }
+    .editor-label {
+      display: block;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+    }
+    .editor-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.5rem;
+    }
+    .btn-group {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .content-box {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .content-box h2 {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul {
+      color: var(--text-secondary, #9ca3af);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .content-box ul {
+      padding-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .content-box li {
+      margin-bottom: 0.5rem;
+    }
+    .related-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .related-card {
+      display: block;
+      padding: 1rem;
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      color: var(--text-primary, #fff);
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .related-card:hover {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+  </style>
+</head>
+<body style="margin: 0; padding: 0;">
+
+  <!-- Header Section -->
+  <header class="custom-header">
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
+    </a>
+    <nav class="custom-nav">
+      <a href="/#categories">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
+    </nav>
+  </header>
+
+  <!-- Main Container -->
+  <main class="container" style="max-width: 1000px; margin: 2rem auto; padding: 0 1rem;">
+    <!-- Breadcrumb Navigation -->
+    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
+      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
+      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Developer Tools</a> / 
+      <span>Markdown to PDF</span>
+    </nav>
+    
+    <!-- Tool Title & Description -->
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online Markdown to PDF Converter</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Convert Markdown notes and documentation into beautifully styled PDF files.</p>
+    </div>
+
+    <!-- Dual Textarea & Live Preview Layout -->
+    <div class="editor-grid">
+      <div>
+        <label class="editor-label">Markdown Input:</label>
+        <textarea id="md-input" class="editor-textarea" placeholder="Enter Markdown code here..." autofocus></textarea>
+      </div>
+      <div>
+        <label class="editor-label">Live Styled Preview:</label>
+        <div id="pdf-preview" class="preview-box"></div>
+      </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="editor-controls">
+      <div class="btn-group">
+        <button id="btn-download" class="btn btn-primary" style="padding: 0.75rem 1.6rem; cursor: pointer; background: #10b981; border: none; font-size: 0.95rem;">📄 Download PDF Document</button>
+        <button id="btn-sample" class="btn btn-secondary" style="padding: 0.75rem 1.2rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">📝 Load Sample</button>
+        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.75rem 1.2rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear</button>
+      </div>
+      <span id="status-msg" style="font-size: 0.85rem; color: #10b981; font-weight: 500; display: none;">Generating PDF...</span>
+    </div>
+
+    <!-- SEO Article Content Box 1 -->
+    <div class="content-box">
+      <h2>Why Export Markdown Documents as PDF?</h2>
+      <p>Markdown is ideal for drafting notes, technical README files, and documentation. However, when sharing documents with clients, stakeholders, or students, converting Markdown into a **formally styled PDF document** ensures universal readability across all devices and operating systems.</p>
+    </div>
+
+    <!-- SEO Article Content Box 2 -->
+    <div class="content-box">
+      <h2>Key Features of Our Converter</h2>
+      <ul>
+        <li><strong>Real-Time Live Preview:</strong> Instant visual feedback as you type or edit Markdown text.</li>
+        <li><strong>Code Syntax Formatting:</strong> Code blocks, headings, lists, and quotes are styled for readability.</li>
+        <li><strong>100% Client-Side Privacy:</strong> Your text is never transmitted to external cloud servers.</li>
+      </ul>
+    </div>
+
+    <!-- Internal Linking Section -->
+    <div class="content-box">
+      <h2>Explore Related Developer Utilities</h2>
+      <p>Enhance your development workflow with our tools:</p>
+      <div class="related-links">
+        <a href="/tools/developer/html-to-markdown.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📝 HTML to Markdown</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Convert HTML markup tags into clean Markdown.</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="content-box">
+      <h2>Frequently Asked Questions</h2>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Can I include tables and lists in my Markdown?</h3>
+        <p>Yes! Standard Markdown headings, bulleted lists, numbered lists, blockquotes, and code snippets are fully supported.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer Container Placeholder -->
+  <div id="footer-container"></div>
+
+  <!-- JavaScript Utilities & Logic -->
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const mdInput = document.getElementById('md-input');
+      const pdfPreview = document.getElementById('pdf-preview');
+
+      const btnDownload = document.getElementById('btn-download');
+      const btnSample = document.getElementById('btn-sample');
+      const btnClear = document.getElementById('btn-clear');
+      const statusMsg = document.getElementById('status-msg');
+
+      function renderMarkdown() {
+        const text = mdInput.value;
+        if (!text.trim()) {
+          pdfPreview.innerHTML = '<p style="color:#9ca3af; font-style:italic;">Live PDF preview will render here...</p>';
+          return;
+        }
+        if (typeof marked !== 'undefined') {
+          pdfPreview.innerHTML = marked.parse(text);
+        } else {
+          pdfPreview.textContent = text;
+        }
+      }
+
+      mdInput.addEventListener('input', renderMarkdown);
+
+      btnDownload.addEventListener('click', function() {
+        if (!mdInput.value.trim()) return;
+
+        statusMsg.style.display = 'inline';
+
+        const element = pdfPreview;
+        const opt = {
+          margin:       0.5,
+          filename:     'document.pdf',
+          image:        { type: 'jpeg', quality: 0.98 },
+          html2canvas:  { scale: 2 },
+          jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+        };
+
+        html2pdf().set(opt).from(element).save().then(() => {
+          statusMsg.style.display = 'none';
+        });
+      });
+
+      btnSample.addEventListener('click', function() {
+        mdInput.value = `# Document Title\n\nWelcome to **MicroToolStack** Markdown to PDF converter.\n\n## Key Features\n* Real-time rendering\n* High-quality PDF export\n* 100% free and client-side\n\n> "Simplicity is the soul of efficiency."\n\n\`\`\`javascript\nconsole.log("Hello, World!");\n\`\`\``;
+        renderMarkdown();
+      });
+
+      btnClear.addEventListener('click', function() {
+        mdInput.value = '';
+        renderMarkdown();
+        mdInput.focus();
+      });
+
+      // Default sample
+      btnSample.click();
+    });
+  </script>
+</body>
+</html>
