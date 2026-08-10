@@ -1038,5 +1038,15 @@
     "isPopular": false,
     "isNew": true,
     "tags": ["social media", "character counter", "twitter", "linkedin", "limit"]
+  },
+  {
+  "id": "caption-generator",
+  "name": "AI Social Media Caption Generator",
+  "description": "Create high-converting, catchy captions for Instagram, Facebook, TikTok, and LinkedIn in seconds. AI-powered tones, automatic hashtag suggestions, and instant one-click copy — completely free.",
+  "url": "/tools/social-media/caption-generator.html",
+  "category": "social-media",
+  "icon": "📝",
+  "isPopular": true
   }
+  
 ]
