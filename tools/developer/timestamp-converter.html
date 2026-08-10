@@ -41,7 +41,7 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
   <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
-  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
+  <!-- JSON-LD Schema Markup -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -67,23 +67,7 @@
             "name": "What is a Unix Timestamp (Epoch Time)?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "A Unix timestamp (Epoch time) measures time by tracking the total number of seconds that have elapsed since 00:00:00 UTC on January 1, 1970 (excluding leap seconds)."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What is the difference between Unix seconds and milliseconds?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Unix timestamps in seconds are 10-digit integers (e.g., 1700000000), while JavaScript and high-precision APIs use 13-digit millisecond timestamps."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Is my timestamp conversion secure?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, 100%. All date conversions occur locally inside your client web browser."
+              "text": "A Unix timestamp (Epoch time) measures time by tracking the total number of seconds that have elapsed since 00:00:00 UTC on January 1, 1970."
             }
           }
         ]
@@ -108,8 +92,8 @@
       font-size: 1.1rem;
       border: 1px solid var(--border-color, #333);
       border-radius: var(--radius-md, 8px);
-      background-color: #0d1117;
-      color: #7ee787;
+      background-color: var(--bg-card, #1e1e2e);
+      color: var(--text-primary, #fff);
       outline: none;
       box-sizing: border-box;
       margin-bottom: 1.25rem;
@@ -150,10 +134,10 @@
     }
     .report-value {
       font-size: 1rem;
-      color: var(--text-primary, #fff);
+      color: var(--accent-primary, #3b82f6);
       font-weight: 600;
       font-family: monospace;
-      background: #0d1117;
+      background: var(--bg-body, #0d1117);
       padding: 0.6rem 0.75rem;
       border-radius: 6px;
       border: 1px solid var(--border-color, #333);
@@ -280,7 +264,7 @@
     <div class="report-card">
       <h3 style="color: var(--text-primary, #fff); font-size: 1.1rem; margin-bottom: 1rem;">Convert Date Time to Unix Timestamp</h3>
       <label style="display:block; font-size: 0.85rem; color: var(--text-secondary, #9ca3af); margin-bottom: 0.35rem;">Select Local Date and Time:</label>
-      <input type="datetime-local" id="in-date" class="editor-input" style="color: #fff; font-family: inherit;">
+      <input type="datetime-local" id="in-date" class="editor-input" style="font-family: inherit;">
 
       <div class="report-item">
         <span class="report-label">Generated Unix Timestamp (Seconds):</span>
@@ -304,7 +288,7 @@
     <!-- SEO Article Content Box 1 -->
     <div class="content-box">
       <h2>Understanding Unix Epoch Time</h2>
-      <p>The <strong>Unix Epoch Timestamp</strong> is a system for tracking time widely adopted in computer operating systems and databases. It counts the number of seconds that have elapsed since <strong>January 1, 1970, at 00:00:00 UTC</strong> (Coordinated Universal Time). Because timestamps are represented as simple integers, they avoid timezone conversion ambiguities across global servers.</p>
+      <p>The <strong>Unix Epoch Timestamp</strong> is a system for tracking time widely adopted in computer operating systems and databases. It counts the number of seconds that have elapsed since <strong>January 1, 1970, at 00:00:00 UTC</strong>.</p>
     </div>
 
     <!-- SEO Article Content Box 2 -->
@@ -331,10 +315,6 @@
           <strong style="display:block; margin-bottom: 0.25rem;">🔐 Base64 Encoder / Decoder</strong>
           <span style="font-size: 0.85rem; color: #9ca3af;">Encode or decode text strings into Base64.</span>
         </a>
-        <a href="/tools/developer/json-formatter.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">📦 JSON Formatter</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Validate and format raw JSON data.</span>
-        </a>
       </div>
     </div>
 
@@ -344,10 +324,6 @@
       <div style="margin-bottom: 1rem;">
         <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What is Year 2038 Problem (Y2K38)?</h3>
         <p>32-bit systems storing timestamps as signed integers will overflow on January 19, 2038. Modern 64-bit systems eliminate this limit entirely.</p>
-      </div>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Does Unix timestamp include leap seconds?</h3>
-        <p>No. Unix Epoch time counts days as exactly 86,400 seconds, excluding leap second adjustments.</p>
       </div>
     </div>
 
@@ -399,7 +375,6 @@
         }
 
         let num = parseInt(val, 10);
-        // If 10 digits -> seconds, if 13 digits -> milliseconds
         if (val.length <= 11) {
           num = num * 1000;
         }
@@ -457,7 +432,6 @@
         inEpoch.focus();
       });
 
-      // Default load
       btnNow.click();
     });
   </script>
