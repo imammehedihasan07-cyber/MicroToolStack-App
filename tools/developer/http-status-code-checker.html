@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) - Optimized Load -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var gTagScript = document.createElement('script');
+        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        gTagScript.async = true;
+        document.head.appendChild(gTagScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F3WWR9KGB4');
+      }, 1000);
+    });
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>Free HTTP Status Code Checker & Reference Guide | MicroToolStack</title>
+  <meta name="description" content="Free HTTP Status Code Checker and Reference Guide. Search, filter, and inspect definitions for 200, 301, 404, 500, and all HTTP server status response codes.">
+  <meta name="keywords" content="http status code checker, http response codes, 404 error meaning, 301 redirect status, 500 internal server error, http status code reference, web server response codes">
+
+  <link rel="canonical" href="https://microtoolstack.com/tools/developer/http-status-code-checker.html">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://microtoolstack.com/tools/developer/http-status-code-checker.html">
+  <meta property="og:title" content="Free HTTP Status Code Checker & Reference Guide | MicroToolStack">
+  <meta property="og:description" content="Search and inspect definitions, SEO impacts, and developer guidance for all HTTP web server response codes.">
+  <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
+
+  <!-- Favicon Icon for Google & Devices -->
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
+
+  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "HTTP Status Code Checker & Guide",
+        "operatingSystem": "All",
+        "applicationCategory": "DeveloperApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "An online developer tool providing instant search, filtering, and explanation for HTTP web server status response codes.",
+        "url": "https://microtoolstack.com/tools/developer/http-status-code-checker.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What are HTTP Status Codes?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "HTTP status codes are 3-digit response codes returned by web servers when a browser or search engine crawler sends an HTTP request for a webpage or API resource."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are the 5 main categories of HTTP status codes?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "1xx (Informational), 2xx (Success), 3xx (Redirection), 4xx (Client Error), and 5xx (Server Error)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which HTTP status codes affect SEO?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "301 (Permanent Redirect), 404 (Not Found), 410 (Gone), and 500/503 (Server Error) directly impact search engine indexing and crawl budget distribution."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Preconnect and Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <style>
+    .search-input {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      font-size: 1rem;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: #0d1117;
+      color: var(--text-primary, #fff);
+      outline: none;
+      box-sizing: border-box;
+      margin-bottom: 1.25rem;
+    }
+    .filter-buttons {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+    .filter-btn {
+      padding: 0.5rem 0.85rem;
+      border: 1px solid var(--border-color, #333);
+      background: var(--bg-card, #1e1e2e);
+      color: var(--text-secondary, #9ca3af);
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .filter-btn.active {
+      background: var(--accent-primary, #3b82f6);
+      color: #fff;
+      border-color: var(--accent-primary, #3b82f6);
+    }
+    .status-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+    .status-card {
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      padding: 1.25rem;
+      transition: border-color 0.2s;
+    }
+    .status-card:hover {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+    .status-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+    .status-code {
+      font-size: 1.4rem;
+      font-weight: 700;
+      font-family: monospace;
+    }
+    .status-badge {
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+    .badge-2xx { background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid #10b981; }
+    .badge-3xx { background: rgba(59, 130, 246, 0.15); color: #3b82f6; border: 1px solid #3b82f6; }
+    .badge-4xx { background: rgba(245, 158, 11, 0.15); color: #f59e0b; border: 1px solid #f59e0b; }
+    .badge-5xx { background: rgba(239, 68, 68, 0.15); color: #ef4444; border: 1px solid #ef4444; }
+    .badge-1xx { background: rgba(156, 163, 175, 0.15); color: #9ca3af; border: 1px solid #9ca3af; }
+    .status-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.4rem;
+    }
+    .status-desc {
+      font-size: 0.88rem;
+      color: var(--text-secondary, #9ca3af);
+      line-height: 1.5;
+    }
+    .content-box {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .content-box h2 {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul {
+      color: var(--text-secondary, #9ca3af);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .content-box ul {
+      padding-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .content-box li {
+      margin-bottom: 0.5rem;
+    }
+    .related-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .related-card {
+      display: block;
+      padding: 1rem;
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      color: var(--text-primary, #fff);
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .related-card:hover {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+  </style>
+</head>
+<body style="margin: 0; padding: 0;">
+
+  <!-- Header Section -->
+  <header class="custom-header">
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
+    </a>
+    <nav class="custom-nav">
+      <a href="/#categories">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
+    </nav>
+  </header>
+
+  <!-- Main Container -->
+  <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
+    <!-- Breadcrumb Navigation -->
+    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
+      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
+      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Developer Tools</a> / 
+      <span>HTTP Status Code Checker</span>
+    </nav>
+    
+    <!-- Tool Title & Description -->
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">HTTP Status Code Reference Guide</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Search and inspect HTTP web server status codes, definitions, and SEO recommendations.</p>
+    </div>
+
+    <!-- Live Search Input -->
+    <input type="text" id="search-input" class="search-input" placeholder="Search by status code or keyword (e.g., 200, 301, Not Found, Server Error)..." autofocus>
+
+    <!-- Category Filters -->
+    <div class="filter-buttons">
+      <button class="filter-btn active" data-cat="all">All Codes</button>
+      <button class="filter-btn" data-cat="2xx">2xx Success</button>
+      <button class="filter-btn" data-cat="3xx">3xx Redirection</button>
+      <button class="filter-btn" data-cat="4xx">4xx Client Errors</button>
+      <button class="filter-btn" data-cat="5xx">5xx Server Errors</button>
+      <button class="filter-btn" data-cat="1xx">1xx Info</button>
+    </div>
+
+    <!-- Status Cards Container -->
+    <div id="status-container" class="status-grid"></div>
+
+    <!-- SEO Article Content Box 1 -->
+    <div class="content-box">
+      <h2>Why HTTP Status Codes are Critical for Web Development & SEO</h2>
+      <p>HTTP status response codes are 3-digit integers issued by web servers in response to client browser requests. Understanding status codes enables web developers to debug server routes and assists SEO professionals in managing <strong>indexation, canonical redirects, and crawl budget</strong>.</p>
+    </div>
+
+    <!-- SEO Article Content Box 2 -->
+    <div class="content-box">
+      <h2>HTTP Status Code Classifications</h2>
+      <ul>
+        <li><strong>1xx (Informational):</strong> Request received, continuing process.</li>
+        <li><strong>2xx (Success):</strong> Request successfully received, understood, and accepted (e.g., 200 OK).</li>
+        <li><strong>3xx (Redirection):</strong> Further action required to complete request (e.g., 301 Permanent Redirect).</li>
+        <li><strong>4xx (Client Errors):</strong> Bad request syntax or resource not found (e.g., 404 Not Found, 403 Forbidden).</li>
+        <li><strong>5xx (Server Errors):</strong> Server failed to fulfill an apparently valid request (e.g., 500 Internal Server Error).</li>
+      </ul>
+    </div>
+
+    <!-- Internal Linking Section -->
+    <div class="content-box">
+      <h2>Explore Related Developer Utilities</h2>
+      <p>Enhance your development workflow with our tools:</p>
+      <div class="related-links">
+        <a href="/tools/developer/timestamp-converter.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">⏱️ Unix Timestamp Converter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Convert Epoch timestamps to readable date-times.</span>
+        </a>
+        <a href="/tools/seo/redirect-checker.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🔄 HTML Redirect Checker</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Inspect Meta Refresh redirect tags and target URLs.</span>
+        </a>
+        <a href="/tools/developer/json-formatter.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📦 JSON Formatter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Validate and format raw JSON data.</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="content-box">
+      <h2>Frequently Asked Questions</h2>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What is the difference between a 301 and a 302 redirect?</h3>
+        <p>A 301 status code represents a Permanent Redirect, passing full PageRank link equity to the target URL. A 302 status code represents a Temporary Redirect.</p>
+      </div>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How does a 404 error affect Google indexing?</h3>
+        <p>A 404 status code tells Googlebot that the page no longer exists, leading Google to eventually de-index the page from search results.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer Container Placeholder -->
+  <div id="footer-container"></div>
+
+  <!-- JavaScript Utilities & Logic -->
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const searchInput = document.getElementById('search-input');
+      const statusContainer = document.getElementById('status-container');
+      const filterBtns = document.querySelectorAll('.filter-btn');
+
+      const statusCodesData = [
+        { code: "200", title: "OK", cat: "2xx", desc: "Standard success response for successful HTTP requests. The requested page content is returned." },
+        { code: "201", title: "Created", cat: "2xx", desc: "The request has been fulfilled and resulted in a new resource being created." },
+        { code: "204", title: "No Content", cat: "2xx", desc: "The server successfully processed the request, but is not returning any content." },
+        { code: "301", title: "Moved Permanently", cat: "3xx", desc: "The target resource has been permanently moved to a new URL. Essential for SEO 301 redirects." },
+        { code: "302", title: "Found (Temporary Redirect)", cat: "3xx", desc: "The target resource resides temporarily under a different URL." },
+        { code: "304", title: "Not Modified", cat: "3xx", desc: "Indicates that the resource has not been modified since the last requested cache version." },
+        { code: "307", title: "Temporary Redirect", cat: "3xx", desc: "Target resource resides temporarily under a different URI. Re-issue request with same method." },
+        { code: "308", title: "Permanent Redirect", cat: "3xx", desc: "Target resource has been permanently assigned a new URI. Preserves original HTTP method." },
+        { code: "400", title: "Bad Request", cat: "4xx", desc: "The server cannot process the request due to client syntax error or invalid framing." },
+        { code: "401", title: "Unauthorized", cat: "4xx", desc: "The request requires user authentication credentials." },
+        { code: "403", title: "Forbidden", cat: "4xx", desc: "The server understands the request but refuses to authorize access." },
+        { code: "404", title: "Not Found", cat: "4xx", desc: "The server cannot find the requested resource URL. Common broken link error." },
+        { code: "405", title: "Method Not Allowed", cat: "4xx", desc: "The request method (GET, POST) is known by server but not supported by target resource." },
+        { code: "408", title: "Request Timeout", cat: "4xx", desc: "The server timed out waiting for the client to complete the HTTP request." },
+        { code: "409", title: "Conflict", cat: "4xx", desc: "Request conflicts with current state of target resource (e.g., edit collisions)." },
+        { code: "410", title: "Gone", cat: "4xx", desc: "The target resource has been permanently deleted and will not be available again." },
+        { code: "429", title: "Too Many Requests", cat: "4xx", desc: "User has sent too many requests in a given amount of time (Rate limiting)." },
+        { code: "500", title: "Internal Server Error", cat: "5xx", desc: "The server encountered an unexpected condition that prevented fulfilling the request." },
+        { code: "502", title: "Bad Gateway", cat: "5xx", desc: "The server received an invalid response from an upstream backend server." },
+        { code: "503", title: "Service Unavailable", cat: "5xx", desc: "The server is currently unable to handle the request due to maintenance or overload." },
+        { code: "504", title: "Gateway Timeout", cat: "5xx", desc: "Upstream server failed to send a response in time to gateway." },
+        { code: "100", title: "Continue", cat: "1xx", desc: "Interim response indicating client should continue with request body submission." }
+      ];
+
+      let currentCategory = 'all';
+
+      function renderStatusCodes() {
+        const query = searchInput.value.toLowerCase().trim();
+
+        const filtered = statusCodesData.filter(item => {
+          const matchCat = (currentCategory === 'all') || (item.cat === currentCategory);
+          const matchQuery = !query || 
+            item.code.toLowerCase().includes(query) || 
+            item.title.toLowerCase().includes(query) || 
+            item.desc.toLowerCase().includes(query);
+          return matchCat && matchQuery;
+        });
+
+        if (filtered.length === 0) {
+          statusContainer.innerHTML = '<div style="grid-column: 1/-1; text-align:center; color:#9ca3af; padding: 2rem;">No HTTP status codes found matching your search term.</div>';
+          return;
+        }
+
+        statusContainer.innerHTML = filtered.map(item => {
+          let badgeClass = `badge-${item.cat}`;
+          let codeColor = '#10b981';
+          if (item.cat === '3xx') codeColor = '#3b82f6';
+          if (item.cat === '4xx') codeColor = '#f59e0b';
+          if (item.cat === '5xx') codeColor = '#ef4444';
+          if (item.cat === '1xx') codeColor = '#9ca3af';
+
+          return `<div class="status-card">
+            <div class="status-header">
+              <span class="status-code" style="color: ${codeColor};">${item.code}</span>
+              <span class="status-badge ${badgeClass}">${item.cat.toUpperCase()}</span>
+            </div>
+            <div class="status-title">${item.title}</div>
+            <div class="status-desc">${item.desc}</div>
+          </div>`;
+        }).join('');
+      }
+
+      searchInput.addEventListener('input', renderStatusCodes);
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentCategory = btn.getAttribute('data-cat');
+          renderStatusCodes();
+        });
+      });
+
+      renderStatusCodes();
+    });
+  </script>
+</body>
+</html>
