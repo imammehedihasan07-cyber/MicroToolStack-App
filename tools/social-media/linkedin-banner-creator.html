@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) - Optimized Load -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var gTagScript = document.createElement('script');
+        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        gTagScript.async = true;
+        document.head.appendChild(gTagScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F3WWR9KGB4');
+      }, 1000);
+    });
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>Free LinkedIn Banner & Header Creator | MicroToolStack</title>
+  <meta name="description" content="Free Online LinkedIn Banner Creator. Design custom professional LinkedIn background headers with custom gradients, typography, and download in perfect 1584x396 resolution.">
+  <meta name="keywords" content="linkedin banner creator, linkedin header generator, linkedin cover maker, linkedin background maker, free linkedin header creator">
+
+  <link rel="canonical" href="https://microtoolstack.com/tools/social-media/linkedin-banner-creator.html">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://microtoolstack.com/tools/social-media/linkedin-banner-creator.html">
+  <meta property="og:title" content="Free LinkedIn Banner & Header Creator | MicroToolStack">
+  <meta property="og:description" content="Create high-converting LinkedIn profile cover banners with custom gradients and titles in exact 1584x396 dimensions.">
+  <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
+
+  <!-- Favicon Icon for Google & Devices -->
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
+
+  <!-- JSON-LD Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "LinkedIn Banner & Header Creator",
+        "operatingSystem": "All",
+        "applicationCategory": "DesignApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "An online graphics tool to design and download custom LinkedIn profile header background banners.",
+        "url": "https://microtoolstack.com/tools/social-media/linkedin-banner-creator.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the official LinkedIn banner image size?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The official recommended resolution for personal LinkedIn profile cover banners is 1584 x 396 pixels (4:1 aspect ratio)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this banner generator free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, 100% free with no watermarks or registration required."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Preconnect and Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <style>
+    .editor-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    @media (max-width: 850px) {
+      .editor-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+    .panel-card {
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 12px;
+      padding: 1.25rem;
+    }
+    .form-group {
+      margin-bottom: 1rem;
+    }
+    .form-label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.35rem;
+    }
+    .form-input {
+      width: 100%;
+      padding: 0.65rem 0.85rem;
+      border: 1px solid var(--border-color, #333);
+      border-radius: 6px;
+      background-color: var(--bg-body, #0d1117);
+      color: var(--text-primary, #fff);
+      outline: none;
+      box-sizing: border-box;
+      font-family: inherit;
+    }
+    .color-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 0.5rem;
+    }
+    .banner-preview-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 260px;
+    }
+    .canvas-box {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid var(--border-color, #333);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+    .editor-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.5rem;
+    }
+    .btn-group {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .content-box {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .content-box h2 {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul {
+      color: var(--text-secondary, #9ca3af);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .content-box ul {
+      padding-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .content-box li {
+      margin-bottom: 0.5rem;
+    }
+    .related-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .related-card {
+      display: block;
+      padding: 1rem;
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      color: var(--text-primary, #fff);
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .related-card:hover {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+  </style>
+</head>
+<body style="margin: 0; padding: 0;">
+
+  <!-- Header Section -->
+  <header class="custom-header">
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
+    </a>
+    <nav class="custom-nav">
+      <a href="/#categories">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
+    </nav>
+  </header>
+
+  <!-- Main Container -->
+  <main class="container" style="max-width: 1000px; margin: 2rem auto; padding: 0 1rem;">
+    <!-- Breadcrumb Navigation -->
+    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
+      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
+      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Social Media Tools</a> / 
+      <span>LinkedIn Banner Creator</span>
+    </nav>
+    
+    <!-- Tool Title & Description -->
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">LinkedIn Banner Creator</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Design custom high-converting LinkedIn profile cover banners in exact 1584x396 dimensions.</p>
+    </div>
+
+    <!-- Main Workspace -->
+    <div class="editor-layout">
+      <!-- Left Controls Panel -->
+      <div class="panel-card">
+        <h3 style="margin-bottom: 1rem; color: var(--text-primary, #fff); font-size: 1.1rem;">Banner Controls</h3>
+
+        <div class="form-group">
+          <label class="form-label">Main Heading / Name:</label>
+          <input type="text" id="in-title" class="form-input" value="John Doe | Senior Web Developer">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Tagline / Value Proposition:</label>
+          <input type="text" id="in-subtitle" class="form-input" value="Helping Brands Build High-Performance Web Applications">
+        </div>
+
+        <div class="color-grid">
+          <div class="form-group">
+            <label class="form-label">Background Start:</label>
+            <input type="color" id="in-bg1" class="form-input" style="height: 40px; padding: 2px;" value="#0f172a">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Background End:</label>
+            <input type="color" id="in-bg2" class="form-input" style="height: 40px; padding: 2px;" value="#1e3a8a">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Text Color:</label>
+            <input type="color" id="in-text-color" class="form-input" style="height: 40px; padding: 2px;" value="#ffffff">
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Preview Panel -->
+      <div class="panel-card banner-preview-wrap">
+        <canvas id="banner-canvas" class="canvas-box" width="1584" height="396" style="width: 100%; max-width: 500px; height: auto;"></canvas>
+      </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="editor-controls">
+      <div class="btn-group">
+        <button id="btn-download" class="btn btn-primary" style="padding: 0.75rem 1.6rem; cursor: pointer; background: #10b981; border: none; font-size: 1rem;">🖼️ Download PNG Banner (1584x396)</button>
+      </div>
+    </div>
+
+    <!-- SEO Article Content Box 1 -->
+    <div class="content-box">
+      <h2>Why Your LinkedIn Cover Banner Matters</h2>
+      <p>Your LinkedIn banner is prime digital real estate. It is the first visual element visitors see when clicking on your profile. A clean, targeted header banner communicates your professional value, key skills, and brand positioning instantly.</p>
+    </div>
+
+    <!-- SEO Article Content Box 2 -->
+    <div class="content-box">
+      <h2>LinkedIn Header Design Best Practices</h2>
+      <ul>
+        <li><strong>Profile Picture Clearance:</strong> Keep critical text towards the middle or right side to avoid overlap with your profile photo on the bottom-left.</li>
+        <li><strong>High Contrast:</strong> Ensure strong contrast between background colors and typography.</li>
+        <li><strong>Clear Value Proposition:</strong> State clearly who you help and what problem you solve.</li>
+      </ul>
+    </div>
+
+    <!-- Internal Linking Section -->
+    <div class="content-box">
+      <h2>Explore Related Social Media Utilities</h2>
+      <p>Enhance your social presence with our tools:</p>
+      <div class="related-links">
+        <a href="/tools/social-media/linkedin-carousel-pdf-maker.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📄 LinkedIn Carousel PDF Maker</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Design multi-slide PDF carousels.</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="content-box">
+      <h2>Frequently Asked Questions</h2>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Will this banner fit mobile and desktop devices?</h3>
+        <p>Yes. By exporting in exact 1584 x 396 resolution, your banner scales properly across desktop browsers and the LinkedIn mobile app.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer Container Placeholder -->
+  <div id="footer-container"></div>
+
+  <!-- JavaScript Utilities & Logic -->
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const canvas = document.getElementById('banner-canvas');
+      const ctx = canvas.getContext('2d');
+
+      const inTitle = document.getElementById('in-title');
+      const inSubtitle = document.getElementById('in-subtitle');
+      const inBg1 = document.getElementById('in-bg1');
+      const inBg2 = document.getElementById('in-bg2');
+      const inTextColor = document.getElementById('in-text-color');
+
+      const btnDownload = document.getElementById('btn-download');
+
+      function renderBanner() {
+        // Gradient Background
+        const grad = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+        grad.addColorStop(0, inBg1.value);
+        grad.addColorStop(1, inBg2.value);
+        ctx.fillStyle = grad;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        // Decorative Lines
+        ctx.strokeStyle = 'rgba(255,255,255,0.08)';
+        ctx.lineWidth = 10;
+        ctx.beginPath();
+        ctx.moveTo(100, -50);
+        ctx.lineTo(800, 500);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(300, -50);
+        ctx.lineTo(1000, 500);
+        ctx.stroke();
+
+        // Main Title Text
+        ctx.fillStyle = inTextColor.value;
+        ctx.font = 'bold 54px system-ui, -apple-system, sans-serif';
+        ctx.textAlign = 'left';
+        ctx.fillText(inTitle.value || "", 320, 180);
+
+        // Subtitle Text
+        ctx.font = '500 32px system-ui, -apple-system, sans-serif';
+        ctx.fillStyle = inTextColor.value;
+        ctx.globalAlpha = 0.85;
+        ctx.fillText(inSubtitle.value || "", 320, 240);
+        ctx.globalAlpha = 1.0;
+      }
+
+      [inTitle, inSubtitle, inBg1, inBg2, inTextColor].forEach(el => {
+        el.addEventListener('input', renderBanner);
+      });
+
+      btnDownload.addEventListener('click', function() {
+        const link = document.createElement('a');
+        link.download = 'linkedin-banner.png';
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+      });
+
+      renderBanner();
+    });
+  </script>
+</body>
+</html>
