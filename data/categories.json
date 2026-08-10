@@ -63,5 +63,12 @@
     "icon": "📄",
     "count": 3,
     "url": "/tools/pdf/"
+  },
+  {
+  "id": "social-media",
+  "name": "Social Media Tools",
+  "description": "All-in-one free toolkit for content creators and marketers. Generate viral captions, research trending hashtags, and optimize social media posts for Instagram, Facebook, YouTube, and TikTok — 100% free with no signup.",
+  "icon": "📱"
   }
+
 ]
