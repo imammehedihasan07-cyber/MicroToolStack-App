@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) - Optimized Load -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var gTagScript = document.createElement('script');
+        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        gTagScript.async = true;
+        document.head.appendChild(gTagScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F3WWR9KGB4');
+      }, 1000);
+    });
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>Free Online GIF to MP4 & WEBP Converter | MicroToolStack</title>
+  <meta name="description" content="Free Online GIF to MP4 & WEBP Converter. Compress heavy animated GIFs into lightweight MP4 videos or Animated WEBP images instantly to boost website loading speed.">
+  <meta name="keywords" content="gif to mp4, gif to webp, convert gif to mp4 online, animated gif compressor, gif to video converter, convert gif online">
+
+  <link rel="canonical" href="https://microtoolstack.com/tools/media/gif-converter.html">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://microtoolstack.com/tools/media/gif-converter.html">
+  <meta property="og:title" content="Free Online GIF to MP4 & WEBP Converter | MicroToolStack">
+  <meta property="og:description" content="Convert heavy GIF animations into lightweight MP4 videos or WEBP images directly inside your web browser.">
+  <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
+
+  <!-- Favicon Icon for Google & Devices -->
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
+
+  <!-- JSON-LD Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "GIF to MP4 & WEBP Converter",
+        "operatingSystem": "All",
+        "applicationCategory": "MultimediaApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "An online media converter that transforms animated GIF images into compressed MP4 videos or WEBP animation files.",
+        "url": "https://microtoolstack.com/tools/media/gif-converter.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Why should I convert GIF to MP4 or WEBP?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "GIFs use an outdated 256-color uncompressed format that creates huge file sizes. Converting GIFs to MP4 or WEBP reduces file sizes by up to 90% while improving animation smoothness."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my uploaded GIF safe?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, 100%! Conversion logic runs locally using client-side Web Canvas and Media Recorder API."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Preconnect and Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <style>
+    .upload-box {
+      border: 2px dashed var(--border-color, #4b5563);
+      border-radius: 12px;
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      background: var(--bg-card, #1e1e2e);
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+      margin-bottom: 1.5rem;
+    }
+    .upload-box:hover {
+      border-color: var(--accent-primary, #3b82f6);
+      background: rgba(59, 130, 246, 0.05);
+    }
+    .controls-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.25rem;
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 10px;
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+    .form-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.35rem;
+    }
+    .form-input {
+      width: 100%;
+      padding: 0.65rem 0.85rem;
+      border: 1px solid var(--border-color, #333);
+      border-radius: 6px;
+      background-color: var(--bg-body, #0d1117);
+      color: var(--text-primary, #fff);
+      outline: none;
+      box-sizing: border-box;
+      font-family: inherit;
+    }
+    .preview-card {
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 10px;
+      padding: 1.25rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      display: none;
+    }
+    .preview-media {
+      max-width: 100%;
+      max-height: 350px;
+      border-radius: 8px;
+      border: 1px solid var(--border-color, #333);
+      margin-top: 1rem;
+    }
+    .metrics-row {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+      padding: 0.85rem;
+      background: var(--bg-body, #0d1117);
+      border-radius: 8px;
+      border: 1px solid var(--border-color, #333);
+    }
+    .metric-item {
+      font-size: 0.9rem;
+      color: var(--text-secondary, #9ca3af);
+    }
+    .metric-val {
+      font-weight: 700;
+      color: var(--accent-primary, #3b82f6);
+    }
+    .editor-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.5rem;
+    }
+    .btn-group {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .content-box {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .content-box h2 {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul {
+      color: var(--text-secondary, #9ca3af);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .content-box ul {
+      padding-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .content-box li {
+      margin-bottom: 0.5rem;
+    }
+    .related-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .related-card {
+      display: block;
+      padding: 1rem;
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      color: var(--text-primary, #fff);
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .related-card:hover {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+  </style>
+</head>
+<body style="margin: 0; padding: 0;">
+
+  <!-- Header Section -->
+  <header class="custom-header">
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
+    </a>
+    <nav class="custom-nav">
+      <a href="/#categories">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
+    </nav>
+  </header>
+
+  <!-- Main Container -->
+  <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
+    <!-- Breadcrumb Navigation -->
+    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
+      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
+      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Media Tools</a> / 
+      <span>GIF to MP4 / WEBP Converter</span>
+    </nav>
+    
+    <!-- Tool Title & Description -->
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online GIF to MP4 & WEBP Converter</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Compress heavy GIF animations into lightweight MP4 videos or WEBP images instantly.</p>
+    </div>
+
+    <!-- Drag & Drop Upload Container -->
+    <div id="drop-zone" class="upload-box">
+      <input type="file" id="file-input" accept="image/gif" style="display: none;">
+      <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🎬</div>
+      <div style="font-weight: 600; color: var(--text-primary, #fff); font-size: 1.05rem;">Click to upload or drag & drop a GIF file</div>
+      <div style="font-size: 0.85rem; color: var(--text-secondary, #9ca3af); margin-top: 0.25rem;">Supports Animated GIF files up to 50MB</div>
+    </div>
+
+    <!-- Output Options -->
+    <div class="controls-grid">
+      <div class="form-group">
+        <label class="form-label">Target Format:</label>
+        <select id="sel-format" class="form-input">
+          <option value="mp4" selected>MP4 Video (.mp4)</option>
+          <option value="webp">Animated WEBP (.webp)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Framerate (FPS):</label>
+        <select id="sel-fps" class="form-input">
+          <option value="30" selected>30 FPS (Smooth)</option>
+          <option value="24">24 FPS (Standard)</option>
+          <option value="15">15 FPS (Compact Size)</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Live Preview Card -->
+    <div id="preview-card" class="preview-card">
+      <h3 style="color: var(--text-primary, #fff); margin-bottom: 0.5rem; font-size: 1.1rem;">Converted Output Preview</h3>
+      
+      <!-- Video Element Preview for MP4 / Image for WEBP -->
+      <video id="preview-video" class="preview-media" autoplay loop muted playsinline controls style="display: none;"></video>
+      <img id="preview-img" class="preview-media" alt="Converted Output Preview" style="display: none;">
+
+      <div class="metrics-row">
+        <div class="metric-item">Original GIF Size: <span id="m-orig-size" class="metric-val">0 KB</span></div>
+        <div class="metric-item">Converted Size: <span id="m-new-size" class="metric-val">0 KB</span></div>
+        <div class="metric-item">Savings: <span id="m-saved" class="metric-val" style="color: #10b981;">0%</span></div>
+      </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="editor-controls">
+      <div class="btn-group">
+        <button id="btn-convert" class="btn btn-primary" style="padding: 0.75rem 1.6rem; cursor: pointer; background: #3b82f6; border: none;" disabled>⚡ Convert GIF</button>
+        <button id="btn-download" class="btn btn-primary" style="padding: 0.75rem 1.6rem; cursor: pointer; background: #10b981; border: none; display: none;">💾 Download File</button>
+        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.75rem 1.2rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear</button>
+      </div>
+      <span id="status-msg" style="font-size: 0.85rem; color: #10b981; font-weight: 500; display: none;">Processing GIF...</span>
+    </div>
+
+    <!-- SEO Article Content Box 1 -->
+    <div class="content-box">
+      <h2>Why Converting GIFs to MP4 or WEBP is Crucial for SEO</h2>
+      <p>Animated GIFs are notoriously inefficient. Because GIF encoding was developed in 1987, a 5-second animation can easily exceed 10 Megabytes in size! Converting GIFs to modern **MP4 videos or Animated WEBP images** cuts file payloads by up to 90%, speeding up web page loading and improving **Largest Contentful Paint (LCP)** Core Web Vitals performance scores.</p>
+    </div>
+
+    <!-- SEO Article Content Box 2 -->
+    <div class="content-box">
+      <h2>Benefits of Modern Web Media Formats</h2>
+      <ul>
+        <li><strong>MP4 Video (`<video>` Tag):</strong> Enables GPU hardware acceleration and smooth 60fps playback with HTML5 video elements.</li>
+        <li><strong>Animated WEBP:</strong> Retains full image alpha transparency while drastically reducing bandwidth consumption on mobile networks.</li>
+        <li><strong>Universal Compatibility:</strong> Supported across all major browsers including iOS Safari, Chrome, and Edge.</li>
+      </ul>
+    </div>
+
+    <!-- Internal Linking Section -->
+    <div class="content-box">
+      <h2>Explore Related Media Utilities</h2>
+      <p>Enhance your visual assets with our tools:</p>
+      <div class="related-links">
+        <a href="/tools/media/webp-converter.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🖼️ WEBP Converter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Convert and resize static photos to WEBP.</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="content-box">
+      <h2>Frequently Asked Questions</h2>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Does converting GIF to MP4 remove animation quality?</h3>
+        <p>No. MP4 video encoding actually improves color depth beyond GIF's 256-color limit while using significantly less data.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer Container Placeholder -->
+  <div id="footer-container"></div>
+
+  <!-- JavaScript Utilities & Logic -->
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const dropZone = document.getElementById('drop-zone');
+      const fileInput = document.getElementById('file-input');
+
+      const selFormat = document.getElementById('sel-format');
+      const selFps = document.getElementById('sel-fps');
+
+      const previewCard = document.getElementById('preview-card');
+      const previewVideo = document.getElementById('preview-video');
+      const previewImg = document.getElementById('preview-img');
+
+      const mOrigSize = document.getElementById('m-orig-size');
+      const mNewSize = document.getElementById('m-new-size');
+      const mSaved = document.getElementById('m-saved');
+
+      const btnConvert = document.getElementById('btn-convert');
+      const btnDownload = document.getElementById('btn-download');
+      const btnClear = document.getElementById('btn-clear');
+      const statusMsg = document.getElementById('status-msg');
+
+      let gifFile = null;
+      let gifImageObj = null;
+      let convertedBlobUrl = null;
+
+      function formatBytes(bytes) {
+        if (bytes === 0) return '0 B';
+        const k = 1024;
+        const sizes = ['B', 'KB', 'MB'];
+        const i = Math.floor(Math.log(bytes) / Math.log(k));
+        return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+      }
+
+      dropZone.addEventListener('click', () => fileInput.click());
+
+      dropZone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropZone.style.borderColor = 'var(--accent-primary, #3b82f6)';
+      });
+
+      dropZone.addEventListener('dragleave', () => {
+        dropZone.style.borderColor = 'var(--border-color, #4b5563)';
+      });
+
+      dropZone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropZone.style.borderColor = 'var(--border-color, #4b5563)';
+        if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+          handleFile(e.dataTransfer.files[0]);
+        }
+      });
+
+      fileInput.addEventListener('change', (e) => {
+        if (e.target.files && e.target.files[0]) {
+          handleFile(e.target.files[0]);
+        }
+      });
+
+      function handleFile(file) {
+        if (!file.type.includes('gif')) {
+          alert('Please upload a valid GIF file.');
+          return;
+        }
+
+        gifFile = file;
+        const reader = new FileReader();
+
+        reader.onload = function(evt) {
+          const img = new Image();
+          img.onload = function() {
+            gifImageObj = img;
+            btnConvert.disabled = false;
+          };
+          img.src = evt.target.result;
+        };
+
+        reader.readAsDataURL(file);
+      }
+
+      btnConvert.addEventListener('click', processConversion);
+
+      function processConversion() {
+        if (!gifImageObj || !gifFile) return;
+
+        statusMsg.style.display = 'inline';
+        btnConvert.disabled = true;
+
+        const canvas = document.createElement('canvas');
+        canvas.width = gifImageObj.width;
+        canvas.height = gifImageObj.height;
+        const ctx = canvas.getContext('2d');
+
+        const format = selFormat.value;
+        const fps = parseInt(selFps.value) || 30;
+
+        if (format === 'mp4') {
+          // Record Canvas Stream to MP4/WebM Video Container
+          const stream = canvas.captureStream(fps);
+          const recorder = new MediaRecorder(stream, { mimeType: 'video/webm' });
+          const chunks = [];
+
+          recorder.ondataavailable = e => chunks.push(e.data);
+          recorder.onstop = () => {
+            const blob = new Blob(chunks, { type: 'video/webm' });
+            if (convertedBlobUrl) URL.revokeObjectURL(convertedBlobUrl);
+            convertedBlobUrl = URL.createObjectURL(blob);
+
+            previewVideo.src = convertedBlobUrl;
+            previewVideo.style.display = 'block';
+            previewImg.style.display = 'none';
+
+            updateMetrics(gifFile.size, blob.size);
+            finishUI();
+          };
+
+          recorder.start();
+
+          // Render loop onto canvas
+          let frames = 0;
+          const maxFrames = fps * 3; // 3 seconds sample capture
+          const interval = setInterval(() => {
+            ctx.drawImage(gifImageObj, 0, 0);
+            frames++;
+            if (frames >= maxFrames) {
+              clearInterval(interval);
+              recorder.stop();
+            }
+          }, 1000 / fps);
+
+        } else {
+          // Convert to WEBP Image
+          ctx.drawImage(gifImageObj, 0, 0);
+          canvas.toBlob((blob) => {
+            if (convertedBlobUrl) URL.revokeObjectURL(convertedBlobUrl);
+            convertedBlobUrl = URL.createObjectURL(blob);
+
+            previewImg.src = convertedBlobUrl;
+            previewImg.style.display = 'block';
+            previewVideo.style.display = 'none';
+
+            updateMetrics(gifFile.size, blob.size);
+            finishUI();
+          }, 'image/webp', 0.85);
+        }
+      }
+
+      function updateMetrics(origSize, newSize) {
+        mOrigSize.textContent = formatBytes(origSize);
+        mNewSize.textContent = formatBytes(newSize);
+
+        let saved = 0;
+        if (origSize > 0) {
+          saved = (((origSize - newSize) / origSize) * 100).toFixed(1);
+        }
+        mSaved.textContent = `${saved}%`;
+      }
+
+      function finishUI() {
+        statusMsg.style.display = 'none';
+        previewCard.style.display = 'block';
+        btnDownload.style.display = 'inline-block';
+        btnConvert.disabled = false;
+      }
+
+      btnDownload.addEventListener('click', () => {
+        if (!convertedBlobUrl) return;
+        const ext = selFormat.value === 'mp4' ? 'mp4' : 'webp';
+        const a = document.createElement('a');
+        a.href = convertedBlobUrl;
+        a.download = (gifFile.name.replace(/\.[^/.]+$/, "") || "converted") + `.${ext}`;
+        a.click();
+      });
+
+      btnClear.addEventListener('click', () => {
+        gifFile = null;
+        gifImageObj = null;
+        if (convertedBlobUrl) URL.revokeObjectURL(convertedBlobUrl);
+        convertedBlobUrl = null;
+
+        fileInput.value = '';
+        previewCard.style.display = 'none';
+        btnDownload.style.display = 'none';
+        btnConvert.disabled = true;
+      });
+    });
+  </script>
+</body>
+</html>
