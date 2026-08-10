@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) - Optimized Load -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var gTagScript = document.createElement('script');
+        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        gTagScript.async = true;
+        document.head.appendChild(gTagScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F3WWR9KGB4');
+      }, 1000);
+    });
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>Free Online CSS Minifier & Code Compressor | MicroToolStack</title>
+  <meta name="description" content="Free Online CSS Minifier. Compress raw CSS stylesheet code, remove unnecessary spaces, newlines, and comments to optimize website loading speed.">
+  <meta name="keywords" content="css minifier, css compressor, minify css online, compress stylesheet, css optimizer, page speed css compressor">
+
+  <link rel="canonical" href="https://microtoolstack.com/tools/developer/css-minifier.html">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://microtoolstack.com/tools/developer/css-minifier.html">
+  <meta property="og:title" content="Free Online CSS Minifier & Code Compressor | MicroToolStack">
+  <meta property="og:description" content="Minify and compress CSS stylesheets in real-time to optimize file size and boost page speed performance.">
+  <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
+
+  <!-- Favicon Icon for Google & Devices -->
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
+
+  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "CSS Minifier & Code Compressor",
+        "operatingSystem": "All",
+        "applicationCategory": "DeveloperApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "An online developer tool that compresses CSS stylesheets by stripping whitespace, newlines, and comments.",
+        "url": "https://microtoolstack.com/tools/developer/css-minifier.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is CSS minification?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "CSS minification is the process of stripping unnecessary characters—such as spaces, line breaks, indentation, and comments—from CSS stylesheets without changing how styles render in web browsers."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does minifying CSS improve website performance?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! CSS is a render-blocking resource. Reducing CSS file sizes enables web browsers to download and parse styles faster, improving Google PageSpeed Insights and Core Web Vitals scores."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my CSS code safe and private?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, 100%. All compression runs locally inside your browser instance. No code is transmitted to external servers."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Preconnect and Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <style>
+    .editor-textarea {
+      width: 100%;
+      min-height: 220px;
+      padding: 1rem;
+      font-family: monospace;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: #0d1117;
+      color: #7ee787;
+      outline: none;
+      resize: vertical;
+      box-sizing: border-box;
+      margin-bottom: 1.25rem;
+    }
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .metric-card {
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: center;
+    }
+    .metric-value {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--accent-primary, #3b82f6);
+      margin-top: 0.25rem;
+    }
+    .metric-label {
+      font-size: 0.85rem;
+      color: var(--text-secondary, #9ca3af);
+    }
+    .editor-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.5rem;
+    }
+    .btn-group {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .content-box {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .content-box h2 {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul {
+      color: var(--text-secondary, #9ca3af);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .content-box ul {
+      padding-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .content-box li {
+      margin-bottom: 0.5rem;
+    }
+    .related-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .related-card {
+      display: block;
+      padding: 1rem;
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      color: var(--text-primary, #fff);
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .related-card:hover {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+  </style>
+</head>
+<body style="margin: 0; padding: 0;">
+
+  <!-- Header Section -->
+  <header class="custom-header">
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
+    </a>
+    <nav class="custom-nav">
+      <a href="/#categories">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
+    </nav>
+  </header>
+
+  <!-- Main Container -->
+  <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
+    <!-- Breadcrumb Navigation -->
+    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
+      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
+      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Developer Tools</a> / 
+      <span>CSS Minifier</span>
+    </nav>
+    
+    <!-- Tool Title & Description -->
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online CSS Minifier & Code Compressor</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Compress raw CSS code, remove comments, spaces, and line breaks to boost website loading speed.</p>
+    </div>
+
+    <!-- Options -->
+    <div style="display: flex; gap: 1.5rem; margin-bottom: 1rem; flex-wrap: wrap; background: var(--bg-card, #1e1e2e); padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid var(--border-color, #333);">
+      <label style="font-size: 0.88rem; color: var(--text-primary, #fff); cursor: pointer;">
+        <input type="checkbox" id="opt-comments" checked style="accent-color: var(--accent-primary, #3b82f6);"> Remove CSS Comments
+      </label>
+      <label style="font-size: 0.88rem; color: var(--text-primary, #fff); cursor: pointer;">
+        <input type="checkbox" id="opt-semicolons" checked style="accent-color: var(--accent-primary, #3b82f6);"> Remove Last Semicolons
+      </label>
+    </div>
+
+    <!-- Textarea Input Editor -->
+    <textarea id="css-input" class="editor-textarea" placeholder="Paste your raw CSS code here..." autofocus></textarea>
+
+    <!-- Savings Metrics -->
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-label">Original Size</div>
+        <div id="stat-orig" class="metric-value">0 B</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Minified Size</div>
+        <div id="stat-min" class="metric-value">0 B</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Bytes Saved</div>
+        <div id="stat-saved" class="metric-value" style="color: #10b981;">0%</div>
+      </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="editor-controls">
+      <div class="btn-group">
+        <button id="btn-minify" class="btn btn-primary" style="padding: 0.68rem 1.4rem; cursor: pointer; background: #10b981; border: none;">⚡ Minify CSS</button>
+        <button id="btn-copy" class="btn btn-secondary" style="padding: 0.68rem 1.2rem; cursor: pointer; background: #1f2937; color: #fff; border: 1px solid #4b5563; border-radius: 6px;">📋 Copy Minified CSS</button>
+        <button id="btn-sample" class="btn btn-secondary" style="padding: 0.68rem 1.2rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">📝 Load Sample</button>
+        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.68rem 1.2rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear</button>
+      </div>
+      <span id="status-msg" style="font-size: 0.85rem; color: #10b981; font-weight: 500; display: none;">Copied to clipboard!</span>
+    </div>
+
+    <!-- SEO Article Content Box 1 -->
+    <div class="content-box">
+      <h2>Why CSS Minification is Critical for Modern Web Performance</h2>
+      <p>CSS stylesheets are <strong>render-blocking resources</strong>. When a web browser requests your site, it must download and parse all linked CSS stylesheets before rendering page content. Minifying CSS strips unnecessary whitespace, indentation, line feeds, and developer notes—significantly reducing file sizes and improving **First Contentful Paint (FCP)**.</p>
+    </div>
+
+    <!-- SEO Article Content Box 2 -->
+    <div class="content-box">
+      <h2>Key Benefits of CSS Compression</h2>
+      <ul>
+        <li><strong>Accelerates Loading Times:</strong> Compact stylesheets transmit faster over network connections.</li>
+        <li><strong>Optimizes Mobile Bandwidth:</strong> Reduced file payloads improve user experience on cellular networks.</li>
+        <li><strong>Improves Search Engine Rankings:</strong> Fast-loading pages achieve better Google Core Web Vitals performance scores.</li>
+      </ul>
+    </div>
+
+    <!-- Internal Linking Section -->
+    <div class="content-box">
+      <h2>Explore Related Developer Utilities</h2>
+      <p>Enhance your development workflow with our tools:</p>
+      <div class="related-links">
+        <a href="/tools/developer/html-minifier.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">⚡ HTML Minifier</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Compress raw HTML code and strip whitespace.</span>
+        </a>
+        <a href="/tools/developer/json-formatter.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📦 JSON Formatter & Validator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Validate, prettify, and format raw JSON data.</span>
+        </a>
+        <a href="/tools/developer/glassmorphism-claymorphism-generator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">✨ CSS Glass & Clay Generator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Design modern glass translucent UI elements.</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="content-box">
+      <h2>Frequently Asked Questions</h2>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Will minifying CSS change how my web page looks?</h3>
+        <p>No. Minification removes only non-functional characters like whitespace and comments without altering CSS rules or visual layout rendering.</p>
+      </div>
+      <div style="margin-bottom: 1rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Can I restore minified CSS back to formatted code?</h3>
+        <p>Yes! You can use CSS Formatter or beautifiers to un-minify and re-indent minified stylesheets.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer Container Placeholder -->
+  <div id="footer-container"></div>
+
+  <!-- JavaScript Utilities & Logic -->
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const cssInput = document.getElementById('css-input');
+      const optComments = document.getElementById('opt-comments');
+      const optSemicolons = document.getElementById('opt-semicolons');
+
+      const statOrig = document.getElementById('stat-orig');
+      const statMin = document.getElementById('stat-min');
+      const statSaved = document.getElementById('stat-saved');
+
+      const btnMinify = document.getElementById('btn-minify');
+      const btnCopy = document.getElementById('btn-copy');
+      const btnSample = document.getElementById('btn-sample');
+      const btnClear = document.getElementById('btn-clear');
+      const statusMsg = document.getElementById('status-msg');
+
+      function formatBytes(bytes) {
+        if (bytes === 0) return '0 B';
+        const k = 1024;
+        const sizes = ['B', 'KB', 'MB'];
+        const i = Math.floor(Math.log(bytes) / Math.log(k));
+        return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+      }
+
+      function minifyCss() {
+        let code = cssInput.value;
+
+        if (!code.trim()) {
+          statOrig.textContent = '0 B';
+          statMin.textContent = '0 B';
+          statSaved.textContent = '0%';
+          return;
+        }
+
+        const origSize = new Blob([code]).size;
+        statOrig.textContent = formatBytes(origSize);
+
+        // Strip comments
+        if (optComments.checked) {
+          code = code.replace(/\/\*[\s\S]*?\*\//g, '');
+        }
+
+        // Minify whitespace and syntax
+        code = code.replace(/\s+/g, ' ');
+        code = code.replace(/\s*([\{\}\:\;\,\>])\s*/g, '$1');
+        code = code.replace(/;\}/g, '}');
+
+        if (optSemicolons.checked) {
+          code = code.replace(/;}/g, '}');
+        }
+
+        const minifiedCode = code.trim();
+        cssInput.value = minifiedCode;
+
+        const minSize = new Blob([minifiedCode]).size;
+        statMin.textContent = formatBytes(minSize);
+
+        let savedPct = 0;
+        if (origSize > 0) {
+          savedPct = (((origSize - minSize) / origSize) * 100).toFixed(1);
+        }
+
+        statSaved.textContent = `${savedPct}% saved`;
+      }
+
+      btnMinify.addEventListener('click', minifyCss);
+
+      btnCopy.addEventListener('click', function() {
+        if (!cssInput.value.trim()) return;
+        navigator.clipboard.writeText(cssInput.value).then(function() {
+          statusMsg.style.display = 'inline';
+          setTimeout(() => { statusMsg.style.display = 'none'; }, 2000);
+        });
+      });
+
+      btnSample.addEventListener('click', function() {
+        cssInput.value = `/* Main Header Layout Styles */\n.custom-header {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 1rem 2rem;\n  background-color: #1e1e2e;\n  border-bottom: 1px solid #333333;\n}\n\n/* Custom Navigation Links */\n.custom-nav a {\n  color: #ffffff;\n  text-decoration: none;\n  margin-right: 1.5rem;\n  font-weight: 600;\n}`;
+        const origSize = new Blob([cssInput.value]).size;
+        statOrig.textContent = formatBytes(origSize);
+      });
+
+      btnClear.addEventListener('click', function() {
+        cssInput.value = '';
+        statOrig.textContent = '0 B';
+        statMin.textContent = '0 B';
+        statSaved.textContent = '0%';
+        cssInput.focus();
+      });
+    });
+  </script>
+</body>
+</html>
