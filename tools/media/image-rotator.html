@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) - Deferred Load -->
+  <!-- Google tag (gtag.js) - Optimized Load -->
   <script>
     window.addEventListener('load', function() {
       setTimeout(function() {
@@ -22,19 +22,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Primary SEO Meta Tags -->
-  <title>Image Rotator - Rotate Images Online | MicroToolStack</title>
-  <meta name="description" content="Rotate images clockwise or counter-clockwise online for free. Private, instant, client-side browser image rotation for JPG, PNG, and WebP.">
-  <meta name="keywords" content="image rotator, rotate image online, rotate photo 90 degrees, turn picture clockwise, online photo rotator">
+  <title>Free Online Image Rotator | Rotate Photos 90°, 180°, 270° | MicroToolStack</title>
+  <meta name="description" content="Rotate photos and images online for free. Rotate pictures clockwise, counter-clockwise, 180 degrees, or custom angles instantly with 1-click PNG/JPG download options.">
+  <meta name="keywords" content="image rotator, rotate image online, rotate photo, rotate picture clockwise, rotate image 90 degrees, image orientation fixer, online photo rotator, media tools">
 
   <link rel="canonical" href="https://microtoolstack.com/tools/media/image-rotator.html">
   <meta name="robots" content="index, follow">
 
-  <!-- Open Graph / Social Media Meta Tags -->
+  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Image Rotator - Rotate Images Online | MicroToolStack">
-  <meta property="og:description" content="Rotate images clockwise or counter-clockwise online for free. Private, instant, client-side browser image rotation.">
   <meta property="og:url" content="https://microtoolstack.com/tools/media/image-rotator.html">
-  <meta property="og:site_name" content="MicroToolStack">
+  <meta property="og:title" content="Free Online Image Rotator | MicroToolStack">
+  <meta property="og:description" content="Rotate photos clockwise, counter-clockwise, or 180 degrees with real-time visual canvas previews. 100% free, fast, and privacy-first browser media utility.">
   <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
@@ -42,49 +41,57 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
   <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
-  <!-- Fonts & CSS Stylesheets -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
-  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
-
-  <!-- JSON-LD Schema Markup -->
+  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "WebApplication",
-        "@id": "https://microtoolstack.com/tools/media/image-rotator.html#webapp",
-        "url": "https://microtoolstack.com/tools/media/image-rotator.html",
-        "name": "Online Image Rotator",
-        "applicationCategory": "UtilitiesApplication",
+        "@type": "SoftwareApplication",
+        "name": "Image Rotator Tool",
         "operatingSystem": "All",
+        "applicationCategory": "MultimediaApplication",
         "offers": {
           "@type": "Offer",
           "price": "0",
           "priceCurrency": "USD"
         },
-        "description": "Rotate JPG, PNG, and WebP images clockwise or counter-clockwise easily."
+        "description": "An essential client-side web utility that allows users to rotate photographs and images clockwise, counter-clockwise, or 180 degrees with real-time browser canvas previews.",
+        "url": "https://microtoolstack.com/tools/media/image-rotator.html"
       },
       {
         "@type": "FAQPage",
-        "@id": "https://microtoolstack.com/tools/media/image-rotator.html#faq",
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "Are my images uploaded to any server?",
+            "name": "Why do photos captured on smartphones sometimes open sideways?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "No. The image rotation process runs 100% locally inside your web browser using HTML5 Canvas."
+              "text": "Smartphones save orientation information inside EXIF headers. Some web browsers or software ignore these headers, causing portrait photos to render sideways or upside down."
             }
           },
           {
             "@type": "Question",
-            "name": "Can I rotate photos in 90 degree increments?",
+            "name": "Does rotating an image reduce visual quality?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes, you can rotate your image 90 degrees left (counter-clockwise), 90 degrees right (clockwise), or 180 degrees."
+              "text": "No! Rotating an image simply transforms pixel coordinates along a 90-degree matrix on an HTML5 canvas without compressing or degrading original sharpness."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are my uploaded photos stored on remote servers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No! All image rendering and rotation operations execute 100% locally inside your web browser session using client-side JavaScript. Your photos remain completely private."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this Image Rotator tool free to use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, MicroToolStack's Image Rotator is 100% free with unlimited photo rotation and no registration required."
             }
           }
         ]
@@ -93,38 +100,100 @@
   }
   </script>
 
+  <!-- Preconnect and Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
   <style>
-    .upload-box {
+    .input-group {
+      margin-bottom: 1.25rem;
+    }
+    .input-label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.5rem;
+    }
+
+    /* Drag and Drop Zone */
+    .drop-zone {
+      width: 100%;
+      min-height: 180px;
       border: 2px dashed var(--border-color, #333);
-      padding: 2.5rem 1.5rem;
-      text-align: center;
-      border-radius: 12px;
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       cursor: pointer;
-      background: var(--bg-card, #1e1e2e);
+      transition: all 0.2s ease;
+      padding: 1.5rem;
+      box-sizing: border-box;
+      text-align: center;
       margin-bottom: 1.5rem;
-      transition: border-color 0.3s;
     }
-    .upload-box:hover {
+    .drop-zone:hover, .drop-zone.dragover {
       border-color: var(--accent-primary, #3b82f6);
+      background-color: rgba(59, 130, 246, 0.05);
     }
-    .preview-container { 
-      margin-top: 1.5rem; 
-      display: none; 
-      text-align: center; 
+
+    /* Rotator Stage Workspace */
+    .rotator-stage {
+      width: 100%;
+      min-height: 280px;
+      background: #111827;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+      box-sizing: border-box;
+      margin-bottom: 1.5rem;
+      position: relative;
+      overflow: hidden;
     }
-    .img-preview { 
-      max-width: 100%; 
-      max-height: 350px; 
-      border-radius: 8px; 
-      transition: transform 0.3s ease; 
+
+    #rotate-canvas {
+      max-width: 100%;
+      max-height: 420px;
+      border-radius: 4px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
     }
-    .btn-group { 
-      display: flex; 
-      gap: 0.8rem; 
-      justify-content: center; 
-      margin: 1.5rem 0; 
-      flex-wrap: wrap; 
+
+    .meta-badge {
+      display: inline-block;
+      font-size: 0.85rem;
+      color: var(--text-secondary, #9ca3af);
+      background: rgba(255, 255, 255, 0.05);
+      padding: 0.3rem 0.75rem;
+      border-radius: 6px;
+      border: 1px solid var(--border-color, #333);
+      margin-top: 0.75rem;
     }
+
+    .controls-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .action-btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
     .content-box {
       background-color: var(--bg-card, #1e1e2e);
       border: 1px solid var(--border-color, #333);
@@ -137,12 +206,18 @@
       margin-bottom: 1rem;
       color: var(--text-primary, #fff);
     }
-    .content-box p, .content-box ul, .content-box ol {
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul {
       color: var(--text-secondary, #9ca3af);
       font-size: 0.95rem;
       line-height: 1.6;
     }
-    .content-box ul, .content-box ol {
+    .content-box ul {
       padding-left: 1.25rem;
       margin-bottom: 1rem;
     }
@@ -171,6 +246,7 @@
   </style>
 </head>
 <body style="margin: 0; padding: 0;">
+
   <!-- Header Section -->
   <header class="custom-header">
     <a href="/" class="custom-logo">
@@ -184,149 +260,276 @@
     </nav>
   </header>
 
+  <!-- Main Container -->
   <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
-    <!-- Breadcrumb Navigation -->
-    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
-      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
-      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Media Tools</a> / 
-      <span>Image Rotator</span>
-    </nav>
+    
+    <!-- Tool Title & Description -->
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online Image Rotator</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Rotate images 90° clockwise, 90° counter-clockwise, or 180° instantly.</p>
+    </div>
 
-    <!-- Header Area -->
-    <header style="margin-bottom: 2rem; text-align: center;">
-      <h1 class="hero" style="font-size: 2rem; margin-bottom: 0.5rem; color: #fff;">Free Online Image Rotator</h1>
-      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">
-        Rotate JPG, PNG, and WebP images clockwise or counter-clockwise easily.
-      </p>
-    </header>
+    <!-- Drag and Drop Image Zone -->
+    <div class="drop-zone" id="drop-zone">
+      <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🔄</div>
+      <div style="font-size: 1.05rem; font-weight: 600; color: #fff; margin-bottom: 0.25rem;">Drag & Drop Image Here</div>
+      <div style="font-size: 0.85rem; color: #9ca3af;">or click to browse from device (JPG, PNG, WEBP)</div>
+      <input type="file" id="file-input" accept="image/*" style="display: none;">
+    </div>
 
-    <!-- Tool Card -->
-    <div class="card" style="padding: 2rem; border-radius: 12px; background: var(--bg-card, #1e1e2e); border: 1px solid var(--border-color, #333); margin-bottom: 3rem;">
-      <div class="upload-box" id="dropZone" onclick="document.getElementById('imageInput').click()">
-        <span style="font-size: 2.5rem; display: block; margin-bottom: 0.5rem;">🔄</span>
-        <p style="margin-bottom: 0.5rem; font-weight: 600; color: #fff;">Click or Drag & Drop Image Here</p>
-        <input type="file" id="imageInput" accept="image/*" style="display: none;" onchange="handleFileSelect(event)">
-      </div>
-
-      <div class="preview-container" id="previewArea">
-        <div style="overflow: hidden; padding: 1rem;">
-          <img id="previewImg" class="img-preview" alt="Rotated Image Preview">
-        </div>
-
-        <div class="btn-group">
-          <button class="btn btn-secondary" onclick="rotateImage(-90)" style="cursor:pointer; background:var(--bg-body, #111827); border:1px solid var(--border-color, #333); color:#fff; padding: 0.6rem 1.2rem; border-radius: 6px;">↩️ Rotate Left (90°)</button>
-          <button class="btn btn-secondary" onclick="rotateImage(90)" style="cursor:pointer; background:var(--bg-body, #111827); border:1px solid var(--border-color, #333); color:#fff; padding: 0.6rem 1.2rem; border-radius: 6px;">↪️ Rotate Right (90°)</button>
-          <button class="btn btn-secondary" onclick="rotateImage(180)" style="cursor:pointer; background:var(--bg-body, #111827); border:1px solid var(--border-color, #333); color:#fff; padding: 0.6rem 1.2rem; border-radius: 6px;">🔄 180° Flip</button>
-        </div>
-
-        <button class="btn btn-primary" style="padding: 0.8rem 2rem; font-size: 1rem; cursor: pointer;" onclick="downloadRotatedImage()">⬇️ Download Rotated Image</button>
+    <!-- Rotation Action Controls Card -->
+    <div class="content-box" style="margin-bottom: 1.5rem;">
+      <label class="input-label">Rotation Controls</label>
+      <div class="action-btn-group">
+        <button id="btn-rotate-cw" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem; cursor: pointer;">↻ Rotate 90° CW</button>
+        <button id="btn-rotate-ccw" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem; cursor: pointer; background: #8b5cf6;">↺ Rotate 90° CCW</button>
+        <button id="btn-rotate-180" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.85rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🔃 Rotate 180°</button>
+        <button id="btn-reset" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.85rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">⏪ Reset Angle</button>
       </div>
     </div>
 
-    <!-- SEO Content Box 1 -->
-    <div class="content-box">
-      <h2>How Image Rotation Works</h2>
-      <p>
-        Photos taken with smartphones or digital cameras often contain orientation tags that display incorrectly on certain devices. Rotating your image re-draws the pixel matrix onto a new canvas, adjusting dimensions and fixing orientation issues permanently.
-      </p>
+    <!-- Rotator Workspace Stage -->
+    <div class="rotator-stage">
+      <canvas id="rotate-canvas"></canvas>
+      <div id="status-msg" style="color: #94a3b8; font-size: 0.95rem;">
+        📂 Upload an image to start rotating...
+      </div>
+      <div id="img-meta" class="meta-badge" style="display: none;">Current Angle: 0° | Size: 0 x 0 px</div>
     </div>
 
-    <!-- Internal Linking Section (SEO Best Practice) -->
+    <!-- Controls Bar -->
+    <div class="controls-bar">
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-download" class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-weight: 600; cursor: pointer; background: #10b981;">💾 Download Rotated Image</button>
+      </div>
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear</button>
+      </div>
+    </div>
+
+    <!-- SEO Article Content Box 1 -->
     <div class="content-box">
-      <h2>Explore Related Media & Web Tools</h2>
-      <p>Enhance your image assets with our free utilities:</p>
+      <h2>Why Images Captured on Smartphones Render Sideways</h2>
+      <p>When taking photographs using a smartphone or digital camera, the device records physical orientation data inside hidden EXIF headers instead of physically rotating the pixel grid. Depending on the web browser, email client, or photo viewer used to display the photo, these EXIF orientation headers can sometimes be ignored, causing portrait photos to open sideways or upside down.</p>
+
+      <p>Our free <strong>Online Image Rotator</strong> permanently re-aligns pixel coordinates on an HTML5 canvas context. By rotating the actual image matrix 90 degrees clockwise, counter-clockwise, or 180 degrees, your photo will render in correct orientation across all web browsers and operating systems.</p>
+    </div>
+
+    <!-- SEO Article Content Box 2 -->
+    <div class="content-box">
+      <h2>Common Image Rotation Operations</h2>
+      <p>Easily correct any photo orientation issue:</p>
+
+      <ul>
+        <li><strong>Rotate 90° Clockwise (CW):</strong> Fixes portrait photos that inadvertently open rotated 90 degrees to the left.</li>
+        <li><strong>Rotate 90° Counter-Clockwise (CCW):</strong> Fixes photos that open rotated 90 degrees to the right.</li>
+        <li><strong>Rotate 180° (Upside-Down Fix):</strong> Flips upside-down document scans or inverted photos upright.</li>
+      </ul>
+    </div>
+
+    <!-- SEO Article Content Box 3 -->
+    <div class="content-box">
+      <h2>Features of MicroToolStack's Image Rotator</h2>
+      <ul>
+        <li><strong>1-Click Multi-Angle Rotation:</strong> Rotate images 90° CW, 90° CCW, or 180° with real-time visual feedback.</li>
+        <li><strong>Zero Pixel Compression Loss:</strong> Rotates the raw pixel matrix while preserving original image sharpness and color reproduction.</li>
+        <li><strong>100% Client-Side Privacy:</strong> All image rendering executes locally inside your web browser session using JavaScript. No photos are uploaded or stored remotely.</li>
+        <li><strong>Free & Unlimited Usage:</strong> No file size limits or registration required.</li>
+      </ul>
+    </div>
+
+    <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
+    <div class="content-box">
+      <h2>Explore Related Media Tools</h2>
+      <p>Discover our complementary online media utilities:</p>
       <div class="related-links">
         <a href="/tools/media/image-flipper.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🪞 Image Flipper</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Flip images horizontally or vertically.</span>
+          <strong style="display:block; margin-bottom: 0.25rem;">↔️ Image Flipper & Mirror</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Flip photos horizontally (mirror) or vertically.</span>
         </a>
         <a href="/tools/media/image-cropper.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">✂️ Image Cropper</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Crop images with custom aspect ratios.</span>
+          <strong style="display:block; margin-bottom: 0.25rem;">✂️ Interactive Image Cropper</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Crop, rotate, and scale photos into exact aspect ratios.</span>
         </a>
-        <a href="/tools/media/color-palette-extractor.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🎨 Color Palette Extractor</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Extract matching HEX codes from photos.</span>
+        <a href="/tools/media/aspect-ratio-calculator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📐 Aspect Ratio Calculator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Calculate image and video scaling dimensions.</span>
         </a>
       </div>
     </div>
 
     <!-- FAQ Section -->
     <div class="content-box">
-      <h2>Frequently Asked Questions</h2>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: #fff; margin-bottom: 0.25rem;">Are my images uploaded to any server?</h3>
-        <p>No. The image rotation process runs 100% locally inside your web browser using HTML5 Canvas.</p>
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How do I rotate an image 90 degrees online?</h3>
+        <p>Drag and drop your photo into the drop zone and click "Rotate 90° CW" or "Rotate 90° CCW". Click "Download Rotated Image" to save the file.</p>
       </div>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: #fff; margin-bottom: 0.25rem;">Will rotating my picture reduce its quality?</h3>
-        <p>No, the canvas re-renders the original image without applying heavy compression.</p>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Does rotating an image cause quality loss?</h3>
+        <p>No. Rotating image coordinates on an HTML5 canvas preserves 100% of original pixel resolution and visual quality.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Are my uploaded photos saved on remote servers?</h3>
+        <p>No. All calculations run client-side inside your browser session using JavaScript. Your photos remain completely private.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this Image Rotator tool free?</h3>
+        <p>Yes, MicroToolStack's Image Rotator is 100% free with no usage limits or sign-up required.</p>
       </div>
     </div>
 
   </main>
 
-  <!-- Footer Placeholder -->
+  <!-- Footer Container Placeholder -->
   <div id="footer-container"></div>
 
-  <!-- Core Scripts -->
+  <!-- JavaScript Utilities & Logic -->
   <script src="/assets/js/theme.js"></script>
   <script src="/assets/js/utils.js" defer></script>
-  <script src="/assets/js/search.js" defer></script>
   <script src="/assets/js/app.js" defer></script>
 
   <script>
-    let currentAngle = 0;
-    let originalImage = null;
-    let originalFileName = 'rotated-image';
+    document.addEventListener('DOMContentLoaded', function() {
+      const dropZone = document.getElementById('drop-zone');
+      const fileInput = document.getElementById('file-input');
+      const rotateCanvas = document.getElementById('rotate-canvas');
+      const statusMsg = document.getElementById('status-msg');
+      const imgMeta = document.getElementById('img-meta');
 
-    function handleFileSelect(e) {
-      const file = e.target.files[0];
-      if(!file) return;
-      originalFileName = file.name.replace(/\.[^/.]+$/, "");
-      const reader = new FileReader();
-      reader.onload = function(evt) {
-        originalImage = new Image();
-        originalImage.onload = function() {
-          currentAngle = 0;
-          updatePreview();
-          document.getElementById('previewArea').style.display = 'block';
+      const btnRotateCw = document.getElementById('btn-rotate-cw');
+      const btnRotateCcw = document.getElementById('btn-rotate-ccw');
+      const btnRotate180 = document.getElementById('btn-rotate-180');
+      const btnReset = document.getElementById('btn-reset');
+      const btnDownload = document.getElementById('btn-download');
+      const btnClear = document.getElementById('btn-clear');
+
+      let loadedImageObj = null;
+      let currentAngle = 0; // 0, 90, 180, 270
+
+      dropZone.addEventListener('click', () => fileInput.click());
+
+      dropZone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropZone.classList.add('dragover');
+      });
+
+      dropZone.addEventListener('dragleave', () => dropZone.classList.remove('dragover'));
+
+      dropZone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropZone.classList.remove('dragover');
+        if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+          handleFile(e.dataTransfer.files[0]);
+        }
+      });
+
+      fileInput.addEventListener('change', (e) => {
+        if (e.target.files && e.target.files[0]) {
+          handleFile(e.target.files[0]);
+        }
+      });
+
+      function handleFile(file) {
+        if (!file.type.startsWith('image/')) {
+          alert('Please upload a valid image file.');
+          return;
+        }
+
+        const reader = new FileReader();
+        reader.onload = function(evt) {
+          const img = new Image();
+          img.onload = function() {
+            loadedImageObj = img;
+            currentAngle = 0;
+            renderCanvas();
+            statusMsg.style.display = 'none';
+          };
+          img.src = evt.target.result;
         };
-        originalImage.src = evt.target.result;
-      };
-      reader.readAsDataURL(file);
-    }
+        reader.readAsDataURL(file);
+      }
 
-    function rotateImage(deg) {
-      currentAngle = (currentAngle + deg) % 360;
-      updatePreview();
-    }
+      function renderCanvas() {
+        if (!loadedImageObj) return;
 
-    function updatePreview() {
-      const img = document.getElementById('previewImg');
-      img.style.transform = `rotate(${currentAngle}deg)`;
-    }
+        const ctx = rotateCanvas.getContext('2d');
+        const imgW = loadedImageObj.naturalWidth;
+        const imgH = loadedImageObj.naturalHeight;
 
-    function downloadRotatedImage() {
-      if(!originalImage) return;
-      const canvas = document.createElement('canvas');
-      const ctx = canvas.getContext('2d');
+        // Determine canvas dimensions based on angle
+        if (currentAngle === 90 || currentAngle === 270) {
+          rotateCanvas.width = imgH;
+          rotateCanvas.height = imgW;
+        } else {
+          rotateCanvas.width = imgW;
+          rotateCanvas.height = imgH;
+        }
 
-      const rad = (currentAngle * Math.PI) / 180;
-      const is90 = Math.abs(currentAngle % 180) === 90;
+        ctx.clearRect(0, 0, rotateCanvas.width, rotateCanvas.height);
+        ctx.save();
 
-      canvas.width = is90 ? originalImage.height : originalImage.width;
-      canvas.height = is90 ? originalImage.width : originalImage.height;
+        // Move origin to center
+        ctx.translate(rotateCanvas.width / 2, rotateCanvas.height / 2);
+        ctx.rotate((currentAngle * Math.PI) / 180);
 
-      ctx.translate(canvas.width / 2, canvas.height / 2);
-      ctx.rotate(rad);
-      ctx.drawImage(originalImage, -originalImage.width / 2, -originalImage.height / 2);
+        // Draw image offset from center
+        ctx.drawImage(loadedImageObj, -imgW / 2, -imgH / 2);
+        ctx.restore();
 
-      const link = document.createElement('a');
-      link.download = `${originalFileName}-rotated.png`;
-      link.href = canvas.toDataURL('image/png');
-      link.click();
-    }
+        imgMeta.textContent = `Current Angle: ${currentAngle}° | Size: ${rotateCanvas.width} x ${rotateCanvas.height} px`;
+        imgMeta.style.display = 'inline-block';
+      }
+
+      btnRotateCw.addEventListener('click', function() {
+        if (!loadedImageObj) return;
+        currentAngle = (currentAngle + 90) % 360;
+        renderCanvas();
+      });
+
+      btnRotateCcw.addEventListener('click', function() {
+        if (!loadedImageObj) return;
+        currentAngle = (currentAngle - 90 + 360) % 360;
+        renderCanvas();
+      });
+
+      btnRotate180.addEventListener('click', function() {
+        if (!loadedImageObj) return;
+        currentAngle = (currentAngle + 180) % 360;
+        renderCanvas();
+      });
+
+      btnReset.addEventListener('click', function() {
+        if (!loadedImageObj) return;
+        currentAngle = 0;
+        renderCanvas();
+      });
+
+      btnDownload.addEventListener('click', function() {
+        if (!loadedImageObj) {
+          alert('Please upload an image first.');
+          return;
+        }
+
+        const dataUrl = rotateCanvas.toDataURL('image/png');
+        const link = document.createElement('a');
+        link.href = dataUrl;
+        link.download = 'rotated-image.png';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      });
+
+      btnClear.addEventListener('click', function() {
+        loadedImageObj = null;
+        fileInput.value = '';
+        currentAngle = 0;
+        const ctx = rotateCanvas.getContext('2d');
+        ctx.clearRect(0, 0, rotateCanvas.width, rotateCanvas.height);
+        statusMsg.style.display = 'block';
+        imgMeta.style.display = 'none';
+      });
+    });
   </script>
 </body>
 </html>
