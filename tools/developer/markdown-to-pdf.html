@@ -23,8 +23,8 @@
   
   <!-- Primary SEO Meta Tags -->
   <title>Free Online Markdown to PDF Converter | MicroToolStack</title>
-  <meta name="description" content="Free Online Markdown to PDF Converter. Convert raw Markdown text to styled PDF documents with live preview and instant download. Fast, free, and secure.">
-  <meta name="keywords" content="markdown to pdf, convert md to pdf, markdown to pdf converter, md2pdf online, export markdown as pdf">
+  <meta name="description" content="Convert Markdown (.md) documents into beautifully styled PDF files instantly with our free Markdown to PDF Converter tool. Print or download formatted PDF documents with no sign-up required.">
+  <meta name="keywords" content="markdown to pdf, convert markdown to pdf, md to pdf converter, export markdown as pdf, printable markdown, online markdown pdf generator, developer documentation tools">
 
   <link rel="canonical" href="https://microtoolstack.com/tools/developer/markdown-to-pdf.html">
   <meta name="robots" content="index, follow">
@@ -33,7 +33,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://microtoolstack.com/tools/developer/markdown-to-pdf.html">
   <meta property="og:title" content="Free Online Markdown to PDF Converter | MicroToolStack">
-  <meta property="og:description" content="Convert Markdown documentation and notes into styled PDF files instantly in your browser.">
+  <meta property="og:description" content="Convert Markdown files into formatted PDF documents instantly. 100% free, fast, and privacy-first browser utility.">
   <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
@@ -41,7 +41,7 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
   <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
-  <!-- JSON-LD Schema Markup -->
+  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -56,7 +56,7 @@
           "price": "0",
           "priceCurrency": "USD"
         },
-        "description": "An online developer tool that renders Markdown text and converts it into downloadable PDF documents.",
+        "description": "An essential client-side web utility that parses Markdown syntax into styled HTML documents and exports high-quality downloadable PDF files.",
         "url": "https://microtoolstack.com/tools/developer/markdown-to-pdf.html"
       },
       {
@@ -64,18 +64,34 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "How does the Markdown to PDF conversion work?",
+            "name": "How does Markdown to PDF conversion work?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The tool parses your Markdown text into styled HTML elements and renders them into a crisp PDF file entirely within your browser."
+              "text": "The tool parses your Markdown syntax into formatted HTML elements in real-time, then uses a client-side canvas engine to generate a downloadable vector PDF document directly in your browser."
             }
           },
           {
             "@type": "Question",
-            "name": "Are my documents kept private?",
+            "name": "Are Markdown tables and code blocks preserved in the output PDF?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes, 100%. All PDF rendering happens locally on your computer. No text or PDF files are uploaded to any server."
+              "text": "Yes! All standard Markdown elements—including headings, bold/italic text, lists, blockquotes, code blocks, hyperlinks, images, and HTML tables—are cleanly rendered into the output PDF."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my Markdown document uploaded to remote servers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. All conversion and PDF rendering algorithms execute locally inside your web browser session using JavaScript. Your documents remain 100% private."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this Markdown to PDF converter completely free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, MicroToolStack's Markdown to PDF Converter is 100% free with unlimited document exports and no account registration required."
             }
           }
         ]
@@ -88,33 +104,36 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <!-- Marked JS and HTML2PDF JS CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-
   <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
 
+  <!-- Marked.js CDN for Markdown Parsing -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <!-- HTML2PDF CDN for PDF Export -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
   <style>
     .editor-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.25rem;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
       margin-bottom: 1.5rem;
     }
-    @media (max-width: 768px) {
-      .editor-grid {
-        grid-template-columns: 1fr;
-      }
+    .editor-label {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.5rem;
     }
-    .editor-textarea {
+    .markdown-textarea {
       width: 100%;
       min-height: 320px;
       padding: 1rem;
-      font-family: monospace;
-      font-size: 0.9rem;
-      line-height: 1.5;
+      font-size: 0.95rem;
+      font-family: 'Fira Code', Consolas, Monaco, monospace;
+      line-height: 1.6;
       border: 1px solid var(--border-color, #333);
       border-radius: var(--radius-md, 8px);
       background-color: var(--bg-card, #1e1e2e);
@@ -122,39 +141,43 @@
       outline: none;
       resize: vertical;
       box-sizing: border-box;
+      white-space: pre-wrap;
     }
+    .markdown-textarea:focus {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+
+    /* Styled Live Preview Box */
     .preview-box {
       width: 100%;
       min-height: 320px;
-      padding: 1.25rem;
-      border: 1px solid var(--border-color, #333);
-      border-radius: var(--radius-md, 8px);
-      background-color: #ffffff;
+      max-height: 500px;
+      padding: 1.5rem;
+      background: #ffffff;
       color: #111827;
-      box-sizing: border-box;
+      border-radius: var(--radius-md, 8px);
+      border: 1px solid var(--border-color, #333);
       overflow-y: auto;
-      font-family: system-ui, -apple-system, sans-serif;
-      line-height: 1.6;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
+
     .preview-box h1, .preview-box h2, .preview-box h3 {
-      color: #1f2937;
+      color: #0f172a;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 0.3rem;
       margin-top: 1rem;
-      margin-bottom: 0.5rem;
     }
-    .preview-box h1 { font-size: 1.6rem; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.3rem; }
-    .preview-box h2 { font-size: 1.3rem; }
-    .preview-box code { background: #f3f4f6; padding: 0.2rem 0.4rem; border-radius: 4px; font-family: monospace; }
-    .preview-box pre { background: #1f2937; color: #f9fafb; padding: 0.75rem; border-radius: 6px; overflow-x: auto; }
+    .preview-box p { color: #334155; line-height: 1.6; }
+    .preview-box code { background: #f1f5f9; color: #0f172a; padding: 0.2rem 0.4rem; border-radius: 4px; font-family: monospace; }
+    .preview-box pre { background: #0f172a; color: #f8fafc; padding: 1rem; border-radius: 6px; overflow-x: auto; }
     .preview-box pre code { background: transparent; color: inherit; }
-    .preview-box blockquote { border-left: 4px solid #3b82f6; margin: 0; padding-left: 1rem; color: #4b5563; }
-    .editor-label {
-      display: block;
-      font-weight: 600;
-      color: var(--text-primary, #fff);
-      margin-bottom: 0.5rem;
-      font-size: 0.95rem;
-    }
-    .editor-controls {
+    .preview-box blockquote { border-left: 4px solid #3b82f6; padding-left: 1rem; color: #64748b; margin-left: 0; }
+    .preview-box table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+    .preview-box th, .preview-box td { border: 1px solid #cbd5e1; padding: 0.5rem 0.75rem; text-align: left; }
+    .preview-box th { background-color: #f8fafc; }
+
+    .controls-bar {
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
@@ -162,11 +185,7 @@
       align-items: center;
       margin-bottom: 2.5rem;
     }
-    .btn-group {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-    }
+
     .content-box {
       background-color: var(--bg-card, #1e1e2e);
       border: 1px solid var(--border-color, #333);
@@ -177,6 +196,12 @@
     .content-box h2 {
       font-size: 1.35rem;
       margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
       color: var(--text-primary, #fff);
     }
     .content-box p, .content-box ul {
@@ -210,6 +235,12 @@
     .related-card:hover {
       border-color: var(--accent-primary, #3b82f6);
     }
+
+    @media print {
+      body * { visibility: hidden; }
+      #printable-area, #printable-area * { visibility: visible; }
+      #printable-area { position: absolute; left: 0; top: 0; width: 100%; color: #000; }
+    }
   </style>
 </head>
 <body style="margin: 0; padding: 0;">
@@ -228,147 +259,54 @@
   </header>
 
   <!-- Main Container -->
-  <main class="container" style="max-width: 1000px; margin: 2rem auto; padding: 0 1rem;">
-    <!-- Breadcrumb Navigation -->
-    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
-      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
-      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Developer Tools</a> / 
-      <span>Markdown to PDF</span>
-    </nav>
+  <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
     
     <!-- Tool Title & Description -->
     <div style="text-align: center; margin-bottom: 2rem;">
       <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online Markdown to PDF Converter</h1>
-      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Convert Markdown notes and documentation into beautifully styled PDF files.</p>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Write or paste Markdown syntax to view live formatted previews and export clean PDF documents.</p>
     </div>
 
-    <!-- Dual Textarea & Live Preview Layout -->
+    <!-- Dual Textarea & Live Preview Grid -->
     <div class="editor-grid">
       <div>
-        <label class="editor-label">Markdown Input:</label>
-        <textarea id="md-input" class="editor-textarea" placeholder="Enter Markdown code here..." autofocus></textarea>
+        <label for="input-markdown" class="editor-label">Markdown Input (.md)</label>
+        <textarea id="input-markdown" class="markdown-textarea" placeholder="Type Markdown here...&#10;e.g.,&#10;# Project Documentation&#10;&#10;## Features&#10;- Fast PDF generation&#10;- Clean typography&#10;&#10;```javascript&#10;console.log('Hello PDF!');&#10;```"></textarea>
       </div>
       <div>
-        <label class="editor-label">Live Styled Preview:</label>
-        <div id="pdf-preview" class="preview-box"></div>
+        <label class="editor-label">Live Formatted Preview</label>
+        <div id="printable-area" class="preview-box">
+          <p style="color: #94a3b8; font-style: italic;">Live preview will appear here as you type...</p>
+        </div>
       </div>
     </div>
 
-    <!-- Action Buttons -->
-    <div class="editor-controls">
-      <div class="btn-group">
-        <button id="btn-download" class="btn btn-primary" style="padding: 0.75rem 1.6rem; cursor: pointer; background: #10b981; border: none; font-size: 0.95rem;">📄 Download PDF Document</button>
-        <button id="btn-sample" class="btn btn-secondary" style="padding: 0.75rem 1.2rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">📝 Load Sample</button>
-        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.75rem 1.2rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear</button>
+    <!-- Action Controls Bar -->
+    <div class="controls-bar">
+      <div style="display: flex; gap: 0.75rem; align-items: center;">
+        <button id="btn-export-pdf" class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-weight: 600; cursor: pointer; background: #10b981;">📄 Download PDF Document</button>
+        <button id="btn-print" class="btn btn-primary" style="padding: 0.75rem 1.25rem; font-weight: 600; cursor: pointer;">🖨️ Print Document</button>
       </div>
-      <span id="status-msg" style="font-size: 0.85rem; color: #10b981; font-weight: 500; display: none;">Generating PDF...</span>
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-copy-html" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">📋 Copy Rendered HTML</button>
+        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear</button>
+      </div>
     </div>
 
     <!-- SEO Article Content Box 1 -->
     <div class="content-box">
-      <h2>Why Export Markdown Documents as PDF?</h2>
-      <p>Markdown is ideal for drafting notes, technical README files, and documentation. However, when sharing documents with clients, stakeholders, or students, converting Markdown into a **formally styled PDF document** ensures universal readability across all devices and operating systems.</p>
+      <h2>Why Converting Markdown to PDF Simplifies Documentation Workflows</h2>
+      <p>Markdown is the premier lightweight plain-text markup language used across software development, project management, and tech journalism. From drafting GitHub READMEs and technical API documentation to taking notes in Notion or Obsidian, Markdown offers fast formatting without rich-text editor bloat.</p>
+      <p>However, when sharing project documentation with clients, academic reviewers, or non-technical stakeholders, distributing raw <code>.md</code> files can cause readability issues. Our free <strong>Online Markdown to PDF Converter</strong> bridges this gap by transforming raw Markdown syntax into cleanly formatted, printable PDF documents in seconds.</p>
     </div>
 
     <!-- SEO Article Content Box 2 -->
     <div class="content-box">
-      <h2>Key Features of Our Converter</h2>
-      <ul>
-        <li><strong>Real-Time Live Preview:</strong> Instant visual feedback as you type or edit Markdown text.</li>
-        <li><strong>Code Syntax Formatting:</strong> Code blocks, headings, lists, and quotes are styled for readability.</li>
-        <li><strong>100% Client-Side Privacy:</strong> Your text is never transmitted to external cloud servers.</li>
-      </ul>
-    </div>
+      <h2>Supported Markdown Syntax Features</h2>
+      <p>Our client-side rendering engine parses full GitHub Flavored Markdown (GFM) features:</p>
 
-    <!-- Internal Linking Section -->
-    <div class="content-box">
-      <h2>Explore Related Developer Utilities</h2>
-      <p>Enhance your development workflow with our tools:</p>
-      <div class="related-links">
-        <a href="/tools/developer/html-to-markdown.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">📝 HTML to Markdown</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Convert HTML markup tags into clean Markdown.</span>
-        </a>
-      </div>
-    </div>
+      <h3>1. Document Headings & Typography</h3>
+      <p>Parses standard hash headings (<code># H1</code> through <code>###### H6</code>), bold/italic emphasis (<code>**bold**</code>, <code>*italic*</code>), blockquotes, and horizontal dividers.</p>
 
-    <!-- FAQ Section -->
-    <div class="content-box">
-      <h2>Frequently Asked Questions</h2>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Can I include tables and lists in my Markdown?</h3>
-        <p>Yes! Standard Markdown headings, bulleted lists, numbered lists, blockquotes, and code snippets are fully supported.</p>
-      </div>
-    </div>
-
-  </main>
-
-  <!-- Footer Container Placeholder -->
-  <div id="footer-container"></div>
-
-  <!-- JavaScript Utilities & Logic -->
-  <script src="/assets/js/theme.js"></script>
-  <script src="/assets/js/utils.js" defer></script>
-  <script src="/assets/js/app.js" defer></script>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const mdInput = document.getElementById('md-input');
-      const pdfPreview = document.getElementById('pdf-preview');
-
-      const btnDownload = document.getElementById('btn-download');
-      const btnSample = document.getElementById('btn-sample');
-      const btnClear = document.getElementById('btn-clear');
-      const statusMsg = document.getElementById('status-msg');
-
-      function renderMarkdown() {
-        const text = mdInput.value;
-        if (!text.trim()) {
-          pdfPreview.innerHTML = '<p style="color:#9ca3af; font-style:italic;">Live PDF preview will render here...</p>';
-          return;
-        }
-        if (typeof marked !== 'undefined') {
-          pdfPreview.innerHTML = marked.parse(text);
-        } else {
-          pdfPreview.textContent = text;
-        }
-      }
-
-      mdInput.addEventListener('input', renderMarkdown);
-
-      btnDownload.addEventListener('click', function() {
-        if (!mdInput.value.trim()) return;
-
-        statusMsg.style.display = 'inline';
-
-        const element = pdfPreview;
-        const opt = {
-          margin:       0.5,
-          filename:     'document.pdf',
-          image:        { type: 'jpeg', quality: 0.98 },
-          html2canvas:  { scale: 2 },
-          jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
-        };
-
-        html2pdf().set(opt).from(element).save().then(() => {
-          statusMsg.style.display = 'none';
-        });
-      });
-
-      btnSample.addEventListener('click', function() {
-        mdInput.value = `# Document Title\n\nWelcome to **MicroToolStack** Markdown to PDF converter.\n\n## Key Features\n* Real-time rendering\n* High-quality PDF export\n* 100% free and client-side\n\n> "Simplicity is the soul of efficiency."\n\n\`\`\`javascript\nconsole.log("Hello, World!");\n\`\`\``;
-        renderMarkdown();
-      });
-
-      btnClear.addEventListener('click', function() {
-        mdInput.value = '';
-        renderMarkdown();
-        mdInput.focus();
-      });
-
-      // Default sample
-      btnSample.click();
-    });
-  </script>
-</body>
-</html>
+      <h3>2. Code Snippets & Syntax Blocks</h3>
+      <p>Formating fenced code blocks (<code>```javascript ...
