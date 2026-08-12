@@ -22,9 +22,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Primary SEO Meta Tags -->
-  <title>Free Online Cron Job Expression Generator & Explainer | MicroToolStack</title>
-  <meta name="description" content="Free Online Cron Job Expression Generator and Explainer. Easily generate 5-part crontab expressions visually and convert cron syntax into human-readable text.">
-  <meta name="keywords" content="cron job generator, cron expression explainer, crontab generator, cron syntax helper, cron schedule generator, online crontab maker">
+  <title>Free Online Cron Job Generator & Syntax Explainer | MicroToolStack</title>
+  <meta name="description" content="Generate and translate crontab expressions easily with our free Online Cron Job Generator. Convert complex cron syntax into human-readable task schedules for Linux servers and cloud automation.">
+  <meta name="keywords" content="cron job generator, crontab generator, cron expression explainer, linux cron syntax, crontab schedule helper, online cron creator, devops automation tool">
 
   <link rel="canonical" href="https://microtoolstack.com/tools/developer/cron-job-generator.html">
   <meta name="robots" content="index, follow">
@@ -32,8 +32,8 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://microtoolstack.com/tools/developer/cron-job-generator.html">
-  <meta property="og:title" content="Free Online Cron Job Expression Generator & Explainer | MicroToolStack">
-  <meta property="og:description" content="Build and translate crontab schedules visually into clear English explanations for Linux server automation.">
+  <meta property="og:title" content="Free Online Cron Job Generator | MicroToolStack">
+  <meta property="og:description" content="Generate precise crontab syntax and human-readable schedule explanations instantly. 100% free developer automation utility.">
   <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
@@ -41,14 +41,14 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
   <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
-  <!-- JSON-LD Schema Markup -->
+  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "SoftwareApplication",
-        "name": "Cron Job Expression Generator & Explainer",
+        "name": "Crontab Expression Generator & Explainer",
         "operatingSystem": "All",
         "applicationCategory": "DeveloperApplication",
         "offers": {
@@ -56,7 +56,7 @@
           "price": "0",
           "priceCurrency": "USD"
         },
-        "description": "An online system admin utility to build, edit, and translate Crontab schedule expressions.",
+        "description": "An essential Linux DevOps utility that builds valid Crontab schedule expressions and translates complex cron syntax into human-readable plain text.",
         "url": "https://microtoolstack.com/tools/developer/cron-job-generator.html"
       },
       {
@@ -64,18 +64,34 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "What is a Cron Job?",
+            "name": "What is a Cron Job in Linux?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "A cron job is a Linux system command scheduled to run automatically at specific background intervals or dates."
+              "text": "A Cron job is a time-based job scheduler utility in Unix-like operating systems (Linux/macOS) that executes scripts, database backups, or system commands automatically at specified intervals."
             }
           },
           {
             "@type": "Question",
-            "name": "What are the 5 parts of a Cron Expression?",
+            "name": "What do the 5 stars (* * * * *) in a Cron expression represent?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The 5 fields in standard cron syntax represent: Minute (0-59), Hour (0-23), Day of Month (1-31), Month (1-12), and Day of Week (0-6 where 0 is Sunday)."
+              "text": "The five fields in a standard Cron expression represent: 1. Minute (0-59), 2. Hour (0-23), 3. Day of Month (1-31), 4. Month (1-12), and 5. Day of Week (0-6, where 0 is Sunday)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this Cron Generator tool completely free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, MicroToolStack's Cron Job Generator is 100% free with no usage limits or sign-up required."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my server configuration or script data saved on remote servers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. All cron syntax evaluation and text formatting execute locally inside your web browser using JavaScript. No server commands or inputs are saved or tracked."
             }
           }
         ]
@@ -93,77 +109,53 @@
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
 
   <style>
-    .controls-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 1rem;
-      background: var(--bg-card, #1e1e2e);
-      border: 1px solid var(--border-color, #333);
-      border-radius: 10px;
-      padding: 1.25rem;
-      margin-bottom: 1.5rem;
+    .input-group {
+      margin-bottom: 1.25rem;
     }
-    .form-group {
-      display: flex;
-      flex-direction: column;
-    }
-    .form-label {
-      font-size: 0.85rem;
+    .input-label {
+      display: block;
+      font-size: 0.9rem;
       font-weight: 600;
       color: var(--text-primary, #fff);
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.5rem;
     }
-    .form-input {
+    .form-control, .form-select {
       width: 100%;
-      padding: 0.65rem 0.85rem;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
       border: 1px solid var(--border-color, #333);
-      border-radius: 6px;
-      background-color: var(--bg-body, #0d1117);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
       color: var(--text-primary, #fff);
       outline: none;
       box-sizing: border-box;
-      font-family: monospace;
     }
-    .result-card {
-      background: var(--bg-card, #1e1e2e);
+    .form-control:focus, .form-select:focus {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+    
+    .cron-output-card {
+      background-color: var(--bg-card, #1e1e2e);
       border: 1px solid var(--border-color, #333);
-      border-radius: 10px;
+      border-radius: var(--radius-md, 8px);
       padding: 1.5rem;
       text-align: center;
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
     }
-    .cron-expression-display {
-      font-size: 2.2rem;
-      font-weight: 700;
+    .cron-expression-value {
+      font-size: 2.5rem;
+      font-weight: 800;
       font-family: monospace;
       color: var(--accent-primary, #3b82f6);
-      background: var(--bg-body, #0d1117);
-      padding: 0.75rem 1rem;
-      border-radius: 8px;
-      border: 1px solid var(--border-color, #333);
-      display: inline-block;
-      margin: 0.75rem 0;
-      word-break: break-all;
+      margin-bottom: 0.5rem;
+      letter-spacing: 2px;
     }
-    .explanation-text {
+    .human-readable-text {
       font-size: 1.1rem;
-      color: var(--text-primary, #fff);
-      font-weight: 500;
-      line-height: 1.5;
+      font-weight: 600;
+      color: #10b981;
     }
-    .editor-controls {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 2.5rem;
-    }
-    .btn-group {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-    }
+
     .content-box {
       background-color: var(--bg-card, #1e1e2e);
       border: 1px solid var(--border-color, #333);
@@ -176,7 +168,13 @@
       margin-bottom: 1rem;
       color: var(--text-primary, #fff);
     }
-    .content-box p, .content-box ul {
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul, .content-box table {
       color: var(--text-secondary, #9ca3af);
       font-size: 0.95rem;
       line-height: 1.6;
@@ -187,6 +185,21 @@
     }
     .content-box li {
       margin-bottom: 0.5rem;
+    }
+    .cron-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+    .cron-table th, .cron-table td {
+      border: 1px solid var(--border-color, #333);
+      padding: 0.75rem;
+      text-align: left;
+    }
+    .cron-table th {
+      background-color: rgba(255, 255, 255, 0.05);
+      color: var(--text-primary, #fff);
     }
     .related-links {
       display: grid;
@@ -226,102 +239,205 @@
 
   <!-- Main Container -->
   <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
-    <!-- Breadcrumb Navigation -->
-    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
-      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
-      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Developer Tools</a> / 
-      <span>Cron Job Generator & Explainer</span>
-    </nav>
     
     <!-- Tool Title & Description -->
     <div style="text-align: center; margin-bottom: 2rem;">
-      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Cron Job Expression Generator & Explainer</h1>
-      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Build 5-part crontab expressions visually or parse cron syntax into clear human-readable sentences.</p>
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online Cron Job Schedule Generator</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Build valid Linux Crontab expressions and translate complex cron syntax into human-readable schedules.</p>
     </div>
 
-    <!-- Interactive Schedule Selectors -->
-    <div class="controls-grid">
-      <div class="form-group">
-        <label class="form-label">Minute (0-59):</label>
-        <input type="text" id="cron-min" class="form-input" value="0">
-      </div>
-      <div class="form-group">
-        <label class="form-label">Hour (0-23):</label>
-        <input type="text" id="cron-hour" class="form-input" value="*">
-      </div>
-      <div class="form-group">
-        <label class="form-label">Day of Month (1-31):</label>
-        <input type="text" id="cron-day" class="form-input" value="*">
-      </div>
-      <div class="form-group">
-        <label class="form-label">Month (1-12):</label>
-        <input type="text" id="cron-month" class="form-input" value="*">
-      </div>
-      <div class="form-group">
-        <label class="form-label">Day of Week (0-6):</label>
-        <input type="text" id="cron-dow" class="form-input" value="*">
+    <!-- Generated Cron Syntax Display Box -->
+    <div class="cron-output-card">
+      <div style="font-size: 0.85rem; color: #9ca3af; margin-bottom: 0.25rem;">Generated Crontab Expression</div>
+      <div class="cron-expression-value" id="cron-expression-text">0 0 * * *</div>
+      <div class="human-readable-text" id="cron-human-text">“At 00:00 (Midnight) every day”</div>
+      
+      <div style="margin-top: 1.25rem;">
+        <button id="btn-copy-cron" class="btn btn-primary" style="padding: 0.6rem 1.5rem; font-weight: 600; cursor: pointer;">📋 Copy Cron Expression</button>
       </div>
     </div>
 
-    <!-- Generated Expression Output Card -->
-    <div class="result-card">
-      <div style="font-size: 0.85rem; color: var(--text-secondary, #9ca3af); text-transform: uppercase;">Generated Cron Syntax:</div>
-      <div id="cron-output" class="cron-expression-display">0 * * * *</div>
-      <div id="cron-explain" class="explanation-text">At minute 0 past every hour.</div>
-    </div>
+    <!-- Interactive Schedule Builder Controls -->
+    <div class="content-box" style="margin-bottom: 2rem;">
+      <h2 style="font-size: 1.15rem; margin-bottom: 1.25rem;">Schedule Configuration Builder</h2>
 
-    <!-- Preset Schedule Buttons -->
-    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem; justify-content: center;">
-      <button class="btn-preset btn btn-secondary" data-expr="* * * * *" style="font-size: 0.8rem; cursor: pointer;">Every Minute</button>
-      <button class="btn-preset btn btn-secondary" data-expr="0 * * * *" style="font-size: 0.8rem; cursor: pointer;">Every Hour</button>
-      <button class="btn-preset btn btn-secondary" data-expr="0 0 * * *" style="font-size: 0.8rem; cursor: pointer;">Every Day at Midnight</button>
-      <button class="btn-preset btn btn-secondary" data-expr="0 0 * * 0" style="font-size: 0.8rem; cursor: pointer;">Every Sunday</button>
-      <button class="btn-preset btn btn-secondary" data-expr="0 0 1 * *" style="font-size: 0.8rem; cursor: pointer;">Every 1st of Month</button>
-    </div>
-
-    <!-- Action Buttons -->
-    <div class="editor-controls">
-      <div class="btn-group">
-        <button id="btn-copy" class="btn btn-primary" style="padding: 0.75rem 1.6rem; cursor: pointer; background: #10b981; border: none;">📋 Copy Cron Expression</button>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem;" class="input-group">
+        <div>
+          <label for="cron-preset" class="input-label">Quick Presets</label>
+          <select id="cron-preset" class="form-select">
+            <option value="custom">Custom Schedule</option>
+            <option value="* * * * *">Every Minute (* * * * *)</option>
+            <option value="0 * * * *">Every Hour (0 * * * *)</option>
+            <option value="0 0 * * *">Every Day at Midnight (0 0 * * *)</option>
+            <option value="0 0 * * 0">Every Sunday at Midnight (0 0 * * 0)</option>
+            <option value="0 0 1 * *">First Day of Every Month (0 0 1 * *)</option>
+          </select>
+        </div>
+        <div>
+          <label for="cron-minute" class="input-label">Minute (0-59)</label>
+          <select id="cron-minute" class="form-select">
+            <option value="*">Every Minute (*)</option>
+            <option value="0" selected>At minute 0 (:00)</option>
+            <option value="15">At minute 15 (:15)</option>
+            <option value="30">At minute 30 (:30)</option>
+            <option value="45">At minute 45 (:45)</option>
+            <option value="*/5">Every 5 minutes (*/5)</option>
+            <option value="*/15">Every 15 minutes (*/15)</option>
+          </select>
+        </div>
       </div>
-      <span id="status-msg" style="font-size: 0.85rem; color: #10b981; font-weight: 500; display: none;">Copied to clipboard!</span>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem;" class="input-group">
+        <div>
+          <label for="cron-hour" class="input-label">Hour (0-23)</label>
+          <select id="cron-hour" class="form-select">
+            <option value="*">Every Hour (*)</option>
+            <option value="0" selected>00:00 (Midnight)</option>
+            <option value="6">06:00 (6 AM)</option>
+            <option value="12">12:00 (Noon)</option>
+            <option value="18">18:00 (6 PM)</option>
+            <option value="*/2">Every 2 hours (*/2)</option>
+            <option value="*/6">Every 6 hours (*/6)</option>
+          </select>
+        </div>
+        <div>
+          <label for="cron-dom" class="input-label">Day of Month (1-31)</label>
+          <select id="cron-dom" class="form-select">
+            <option value="*" selected>Every Day of Month (*)</option>
+            <option value="1">1st Day of Month</option>
+            <option value="15">15th Day of Month</option>
+          </select>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem;" class="input-group">
+        <div>
+          <label for="cron-month" class="input-label">Month (1-12)</label>
+          <select id="cron-month" class="form-select">
+            <option value="*" selected>Every Month (*)</option>
+            <option value="1">January</option>
+            <option value="6">June</option>
+            <option value="12">December</option>
+          </select>
+        </div>
+        <div>
+          <label for="cron-dow" class="input-label">Day of Week (0-6)</label>
+          <select id="cron-dow" class="form-select">
+            <option value="*" selected>Every Day of Week (*)</option>
+            <option value="1-5">Monday to Friday (Weekdays)</option>
+            <option value="0,6">Saturday & Sunday (Weekends)</option>
+            <option value="0">Sunday Only</option>
+            <option value="1">Monday Only</option>
+          </select>
+        </div>
+      </div>
     </div>
 
     <!-- SEO Article Content Box 1 -->
     <div class="content-box">
-      <h2>Understanding Crontab Schedules in Linux</h2>
-      <p>The <strong>cron system daemon</strong> automatically executes background shell scripts and automated tasks on Linux and Unix servers. Crontab files rely on a 5-field syntax defining the exact minute, hour, day of the month, month, and day of the week for command execution.</p>
+      <h2>Understanding Linux Cron Jobs and Crontab Scheduling</h2>
+      <p>A <strong>Cron Job</strong> is a time-based job scheduling daemon built into Unix-like operating systems (including Ubuntu, Debian, CentOS, and macOS). System administrators, backend software developers, and cloud engineers utilize Crontab tasks to automate recurring server maintenance—such as daily database backups, clearing temporary cache directories, sending scheduled email newsletters, or triggering API webhooks.</p>
+      <p>Our free <strong>Online Cron Job Generator</strong> eliminates syntax errors by allowing you to build valid 5-field Crontab expressions visually. It automatically translates cryptic asterisks and numbers into plain, human-readable English schedules so you can deploy automation scripts with 100% confidence.</p>
     </div>
 
     <!-- SEO Article Content Box 2 -->
     <div class="content-box">
-      <h2>Cron Syntax Special Characters Guide</h2>
+      <h2>The Standard 5-Field Crontab Syntax Breakdown</h2>
+      <p>A standard Unix Crontab expression consists of 5 space-separated positions:</p>
+
+      <table class="cron-table">
+        <thead>
+          <tr>
+            <th>Field Position</th>
+            <th>Field Name</th>
+            <th>Allowed Values</th>
+            <th>Special Characters</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Minute</td>
+            <td>0 – 59</td>
+            <td>* , - /</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Hour</td>
+            <td>0 – 23 (24-Hour Format)</td>
+            <td>* , - /</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Day of Month</td>
+            <td>1 – 31</td>
+            <td>* , - /</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Month</td>
+            <td>1 – 12 (Jan - Dec)</td>
+            <td>* , - /</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Day of Week</td>
+            <td>0 – 6 (0 = Sunday to 6 = Saturday)</td>
+            <td>* , - /</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- SEO Article Content Box 3 -->
+    <div class="content-box">
+      <h2>Features of MicroToolStack's Cron Generator</h2>
       <ul>
-        <li><code>*</code> (Asterisk) — Matches any value in the field (e.g., every minute or every hour).</li>
-        <li><code>,</code> (Comma) — Specifies a list of values (e.g., <code>1,15,30</code>).</li>
-        <li><code>-</code> (Hyphen) — Defines a range of values (e.g., <code>1-5</code> for Monday through Friday).</li>
-        <li><code>/</code> (Slash) — Specifies step values (e.g., <code>*/15</code> for every 15 minutes).</li>
+        <li><strong>Interactive Visual Controls:</strong> Easily configure schedule intervals without memorizing crontab positional rules.</li>
+        <li><strong>Human-Readable Explanations:</strong> Instantly translates syntax like <code>*/15 * * * *</code> into <em>"Every 15 minutes"</em>.</li>
+        <li><strong>One-Click Clipboard Copying:</strong> Copy finalized Crontab strings directly to your clipboard for instant server deployment.</li>
+        <li><strong>100% Client-Side Privacy:</strong> All schedule logic executes locally inside your web browser. No server commands or credentials are saved.</li>
       </ul>
     </div>
 
-    <!-- Internal Linking Section -->
+    <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
     <div class="content-box">
-      <h2>Explore Related Developer Utilities</h2>
-      <p>Enhance your server automation workflow with our tools:</p>
+      <h2>Explore Related Developer Tools</h2>
+      <p>Discover our complementary online developer utilities:</p>
       <div class="related-links">
-        <a href="/tools/developer/timestamp-converter.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">⏱️ Unix Timestamp Converter</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Convert Epoch timestamps to human dates.</span>
+        <a href="/tools/developer/code-to-image.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🖼️ Code to Image Converter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Export styled code screenshots for social media & blogs.</span>
+        </a>
+        <a href="/tools/developer/base64-encoder-decoder.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🔒 Base64 Encoder / Decoder</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Convert plain text to Base64 or decode Base64 strings.</span>
+        </a>
+        <a href="/tools/text/case-converter.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🔤 Case Converter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Convert text to Uppercase, Lowercase, camelCase & Title Case.</span>
         </a>
       </div>
     </div>
 
     <!-- FAQ Section -->
     <div class="content-box">
-      <h2>Frequently Asked Questions</h2>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is Sunday represented by 0 or 7 in cron?</h3>
-        <p>In standard Linux crontabs, Sunday can be represented by either <code>0</code> or <code>7</code>.</p>
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What does * (asterisk) mean in a Cron expression?</h3>
+        <p>An asterisk (*) serves as a wildcard character meaning "every" or "all." For example, an asterisk in the month field means the job runs every month.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What does */5 mean in Cron syntax?</h3>
+        <p>The slash (/) represents step values. <code>*/5</code> in the minute position means "every 5 minutes."</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is my server configuration or script data saved on your server?</h3>
+        <p>No. All calculations run client-side inside your browser session using JavaScript. No Cron configurations or script details are stored.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this Cron Generator tool free?</h3>
+        <p>Yes, MicroToolStack's Cron Job Generator is 100% free with no usage limits or sign-up required.</p>
       </div>
     </div>
 
@@ -337,85 +453,66 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const cMin = document.getElementById('cron-min');
-      const cHour = document.getElementById('cron-hour');
-      const cDay = document.getElementById('cron-day');
-      const cMonth = document.getElementById('cron-month');
-      const cDow = document.getElementById('cron-dow');
+      const cronPreset = document.getElementById('cron-preset');
+      const cronMinute = document.getElementById('cron-minute');
+      const cronHour = document.getElementById('cron-hour');
+      const cronDom = document.getElementById('cron-dom');
+      const cronMonth = document.getElementById('cron-month');
+      const cronDow = document.getElementById('cron-dow');
 
-      const cronOutput = document.getElementById('cron-output');
-      const cronExplain = document.getElementById('cron-explain');
+      const cronExpressionText = document.getElementById('cron-expression-text');
+      const cronHumanText = document.getElementById('cron-human-text');
+      const btnCopyCron = document.getElementById('btn-copy-cron');
 
-      const btnCopy = document.getElementById('btn-copy');
-      const statusMsg = document.getElementById('status-msg');
+      function updateCronUI() {
+        const expr = `${cronMinute.value} ${cronHour.value} ${cronDom.value} ${cronMonth.value} ${cronDow.value}`;
+        cronExpressionText.textContent = expr;
 
-      const dowNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-      const monthNames = ["", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-
-      function generateAndExplain() {
-        const m = cMin.value.trim() || '*';
-        const h = cHour.value.trim() || '*';
-        const d = cDay.value.trim() || '*';
-        const mon = cMonth.value.trim() || '*';
-        const dow = cDow.value.trim() || '*';
-
-        const expr = `${m} ${h} ${d} ${mon} ${dow}`;
-        cronOutput.textContent = expr;
-
-        let explanation = "Runs ";
-
-        // Minute
-        if (m === '*') explanation += "every minute ";
-        else if (m.startsWith('*/')) explanation += `every ${m.replace('*/', '')} minutes `;
-        else explanation += `at minute ${m} `;
-
-        // Hour
-        if (h === '*') explanation += "of every hour ";
-        else if (h.startsWith('*/')) explanation += `every ${h.replace('*/', '')} hours `;
-        else explanation += `past hour ${h}:00 `;
-
-        // Day of Month
-        if (d !== '*') explanation += `on day ${d} of the month `;
-
-        // Month
-        if (mon !== '*') {
-          const monIdx = parseInt(mon);
-          explanation += `in ${monthNames[monIdx] || 'month ' + mon} `;
+        // Generate Human Readable Explanations
+        let translation = "Custom Schedule";
+        if (expr === "* * * * *") translation = "Every minute (* * * * *)";
+        else if (expr === "0 * * * *") translation = "At minute 0 of every hour";
+        else if (expr === "0 0 * * *") translation = "At 00:00 (Midnight) every day";
+        else if (expr === "0 0 * * 0") translation = "At 00:00 (Midnight) every Sunday";
+        else if (expr === "0 0 1 * *") translation = "At 00:00 (Midnight) on the 1st day of every month";
+        else {
+          translation = `Runs at Minute [${cronMinute.value}], Hour [${cronHour.value}], Day of Month [${cronDom.value}], Month [${cronMonth.value}], Day of Week [${cronDow.value}]`;
         }
 
-        // Day of Week
-        if (dow !== '*') {
-          const dowIdx = parseInt(dow);
-          explanation += `on ${dowNames[dowIdx] || 'day ' + dow + ' of the week'}`;
-        }
-
-        cronExplain.textContent = explanation.trim() + ".";
+        cronHumanText.textContent = `“${translation}”`;
       }
 
-      [cMin, cHour, cDay, cMonth, cDow].forEach(input => {
-        input.addEventListener('input', generateAndExplain);
+      cronPreset.addEventListener('change', function() {
+        if (cronPreset.value !== 'custom') {
+          const parts = cronPreset.value.split(' ');
+          if (parts.length === 5) {
+            cronMinute.value = parts[0];
+            cronHour.value = parts[1];
+            cronDom.value = parts[2];
+            cronMonth.value = parts[3];
+            cronDow.value = parts[4];
+          }
+        }
+        updateCronUI();
       });
 
-      document.querySelectorAll('.btn-preset').forEach(btn => {
-        btn.addEventListener('click', function() {
-          const parts = this.getAttribute('data-expr').split(' ');
-          cMin.value = parts[0];
-          cHour.value = parts[1];
-          cDay.value = parts[2];
-          cMonth.value = parts[3];
-          cDow.value = parts[4];
-          generateAndExplain();
+      [cronMinute, cronHour, cronDom, cronMonth, cronDow].forEach(select => {
+        select.addEventListener('change', function() {
+          cronPreset.value = 'custom';
+          updateCronUI();
         });
       });
 
-      btnCopy.addEventListener('click', function() {
-        navigator.clipboard.writeText(cronOutput.textContent).then(() => {
-          statusMsg.style.display = 'inline';
-          setTimeout(() => { statusMsg.style.display = 'none'; }, 2000);
+      btnCopyCron.addEventListener('click', function() {
+        navigator.clipboard.writeText(cronExpressionText.textContent).then(() => {
+          const originalText = btnCopyCron.textContent;
+          btnCopyCron.textContent = '✅ Copied Expression!';
+          setTimeout(() => { btnCopyCron.textContent = originalText; }, 2000);
         });
       });
 
-      generateAndExplain();
+      // Initial Update
+      updateCronUI();
     });
   </script>
 </body>
