@@ -9,6 +9,7 @@
         gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
         gTagScript.async = true;
         document.head.appendChild(gTagScript);
+
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
@@ -22,18 +23,17 @@
   
   <!-- Primary SEO Meta Tags -->
   <title>Free Online Lorem Ipsum Generator | MicroToolStack</title>
-  <meta name="description" content="Generate dummy placeholder text and paragraphs for UI designs, web mockups, and layouts instantly online. Free, fast, and private client-side generator.">
-  <meta name="keywords" content="lorem ipsum generator, dummy text generator, placeholder text, ui mockup text, dummy paragraphs for web design, latin text generator">
+  <meta name="description" content="Generate custom dummy placeholder text (Lorem Ipsum) by paragraphs, sentences, words, or bytes with our free online tool. Perfect for web designers, UI/UX developers, and content layouts.">
+  <meta name="keywords" content="lorem ipsum generator, dummy text generator, placeholder text, generate lorem ipsum, latin placeholder text, UI mockup text, web design placeholder, developer text generator">
 
   <link rel="canonical" href="https://microtoolstack.com/tools/developer/lorem-ipsum-generator.html">
   <meta name="robots" content="index, follow">
 
-  <!-- Open Graph / Social Media Meta Tags -->
+  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Free Online Lorem Ipsum Generator | MicroToolStack">
-  <meta property="og:description" content="Generate dummy placeholder text and paragraphs for UI designs and mockups instantly. 100% free and easy to use.">
   <meta property="og:url" content="https://microtoolstack.com/tools/developer/lorem-ipsum-generator.html">
-  <meta property="og:site_name" content="MicroToolStack">
+  <meta property="og:title" content="Free Online Lorem Ipsum Generator | MicroToolStack">
+  <meta property="og:description" content="Generate custom dummy placeholder text in paragraphs, sentences, or words instantly. 100% free developer & designer tool.">
   <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
@@ -41,103 +41,138 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
   <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
-  <!-- JSON-LD Schema Markup -->
+  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
   <script type="application/ld+json">
-  [
-    {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "Lorem Ipsum Generator",
-      "url": "https://microtoolstack.com/tools/developer/lorem-ipsum-generator.html",
-      "applicationCategory": "DeveloperApplication",
-      "operatingSystem": "All",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      },
-      "description": "Generate standard placeholder text paragraphs for website designs and layouts."
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What is Lorem Ipsum placeholder text?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Lorem Ipsum is standard dummy text used in typesetting and printing industries to preview layout design without relying on meaningful content."
-          }
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Lorem Ipsum Dummy Text Generator",
+        "operatingSystem": "All",
+        "applicationCategory": "DeveloperApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
         },
-        {
-          "@type": "Question",
-          "name": "How many paragraphs can I generate at once?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "You can generate up to 20 paragraphs of clean placeholder text in a single click."
+        "description": "An essential client-side web utility that generates customized Lorem Ipsum dummy text by paragraphs, sentences, words, or bytes for graphic design and web development mockups.",
+        "url": "https://microtoolstack.com/tools/developer/lorem-ipsum-generator.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is Lorem Ipsum?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Lorem Ipsum is standard dummy text used by the printing, graphic design, and web development industries as a placeholder to demonstrate visual layouts without distracting viewers with readable content."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where does the original Lorem Ipsum text come from?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Lorem Ipsum originates from sections 1.10.32 and 1.10.33 of 'de Finibus Bonorum et Malorum' (The Extremes of Good and Evil), written by Cicero in 45 BC."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I customize the generated placeholder length?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! You can choose to generate text based on the number of paragraphs, sentences, words, or bytes depending on your mockup design requirements."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this Lorem Ipsum generator completely free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, MicroToolStack's Lorem Ipsum Generator is 100% free with unlimited text generation and no account sign-up required."
+            }
           }
-        }
-      ]
-    }
-  ]
+        ]
+      }
+    ]
+  }
   </script>
 
-  <!-- Fonts & CSS Stylesheets -->
+  <!-- Preconnect and Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
 
   <style>
-    .app-card {
-      background-color: var(--bg-card, #1e1e2e);
-      border: 1px solid var(--border-color, #333);
-      border-radius: 12px;
-      padding: 2rem;
-      margin-bottom: 2.5rem;
+    .input-group {
+      margin-bottom: 1.25rem;
     }
-    .search-input {
-      padding: 0.6rem 0.8rem;
-      border-radius: 6px;
-      border: 1px solid var(--border-color, #374151);
-      background: var(--bg-body, #111827);
-      color: #fff;
-      font-size: 0.95rem;
-      outline: none;
+    .input-label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.5rem;
     }
-    .tool-textarea {
+    .form-control, .form-select {
       width: 100%;
-      min-height: 220px;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
+      color: var(--text-primary, #fff);
+      outline: none;
+      box-sizing: border-box;
+    }
+    .form-control:focus, .form-select:focus {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+    
+    .lorem-textarea {
+      width: 100%;
+      min-height: 250px;
       padding: 1rem;
-      font-family: 'Courier New', Courier, monospace;
       font-size: 0.95rem;
+      font-family: inherit;
       line-height: 1.6;
       border: 1px solid var(--border-color, #333);
-      border-radius: 8px;
-      background-color: var(--bg-body, #111827);
-      color: #e5e7eb;
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
+      color: var(--text-primary, #fff);
       outline: none;
       resize: vertical;
       box-sizing: border-box;
-      margin-top: 1rem;
+      white-space: pre-wrap;
     }
-    .btn {
-      padding: 0.65rem 1.25rem;
-      border-radius: 8px;
-      border: none;
-      font-weight: 600;
-      cursor: pointer;
+    .lorem-textarea:focus {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+
+    .checkbox-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1.75rem;
+      color: var(--text-primary, #fff);
       font-size: 0.95rem;
-      transition: opacity 0.2s;
+      cursor: pointer;
     }
-    .btn:hover {
-      opacity: 0.9;
+
+    .controls-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.5rem;
     }
-    .btn-primary {
-      background-color: var(--accent-primary, #2563eb);
-      color: #fff;
-    }
+
     .content-box {
       background-color: var(--bg-card, #1e1e2e);
       border: 1px solid var(--border-color, #333);
@@ -150,12 +185,18 @@
       margin-bottom: 1rem;
       color: var(--text-primary, #fff);
     }
-    .content-box p, .content-box ul, .content-box ol {
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul {
       color: var(--text-secondary, #9ca3af);
       font-size: 0.95rem;
       line-height: 1.6;
     }
-    .content-box ul, .content-box ol {
+    .content-box ul {
       padding-left: 1.25rem;
       margin-bottom: 1rem;
     }
@@ -198,124 +239,257 @@
     </nav>
   </header>
 
-  <!-- Main Content -->
+  <!-- Main Container -->
   <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
-    <!-- Breadcrumb Navigation -->
-    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
-      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
-      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Developer Tools</a> / 
-      <span>Lorem Ipsum Generator</span>
-    </nav>
     
-    <!-- Title Section -->
+    <!-- Tool Title & Description -->
     <div style="text-align: center; margin-bottom: 2rem;">
-      <span class="badge badge-primary" style="margin-bottom: 0.5rem; display: inline-block;">100% Free Placeholder Text</span>
-      <h1 style="font-size: 2rem; color: #fff; margin-bottom: 0.5rem;">Lorem Ipsum Generator</h1>
-      <p style="color: var(--text-secondary, #9ca3af);">Generate standard placeholder text paragraphs for website designs, mockups, and layouts.</p>
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online Lorem Ipsum Dummy Text Generator</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Generate custom Latin placeholder text by paragraphs, sentences, words, or bytes for mockups and UI layouts.</p>
     </div>
 
-    <!-- App Card -->
-    <div class="app-card">
-      <div style="display: flex; gap: 1rem; align-items: center; margin-bottom: 1rem; flex-wrap: wrap;">
-        <label style="font-weight: 600; color: #fff;">Paragraphs:</label>
-        <input type="number" id="para-count" class="search-input" value="3" min="1" max="20" style="width: 90px;">
-        <button class="btn btn-primary" id="btn-gen-lorem">📜 Generate Text</button>
+    <!-- Generator Customization Options -->
+    <div class="content-box" style="margin-bottom: 1.5rem;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem;" class="input-group">
+        <div>
+          <label for="lorem-count" class="input-label">Quantity Amount</label>
+          <input type="number" id="lorem-count" class="form-control" value="3" min="1" max="1000">
+        </div>
+        <div>
+          <label for="lorem-type" class="input-label">Generate By</label>
+          <select id="lorem-type" class="form-select">
+            <option value="paragraphs" selected>Paragraphs</option>
+            <option value="sentences">Sentences</option>
+            <option value="words">Words</option>
+            <option value="bytes">Bytes</option>
+          </select>
+        </div>
+        <div>
+          <label class="checkbox-wrapper">
+            <input type="checkbox" id="start-with-lorem" checked style="width: 18px; height: 18px; cursor: pointer;">
+            <span>Start with "Lorem ipsum..."</span>
+          </label>
+        </div>
       </div>
+      
+      <button id="btn-generate" class="btn btn-primary" style="width: 100%; padding: 0.85rem; font-size: 1rem; font-weight: 600; cursor: pointer; margin-top: 0.5rem;">⚙️ Generate Placeholder Text</button>
+    </div>
 
-      <textarea id="lorem-output" class="tool-textarea" readonly></textarea>
+    <!-- Textarea Display Card -->
+    <div class="input-group">
+      <label for="output-lorem" class="input-label">Generated Lorem Ipsum Output</label>
+      <textarea id="output-lorem" class="lorem-textarea" placeholder="Generated text will appear here..." readonly></textarea>
+    </div>
 
-      <div style="margin-top: 1.25rem;">
-        <button class="btn btn-primary" id="btn-copy">📋 Copy Text</button>
+    <!-- Action Bar -->
+    <div class="controls-bar">
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-copy" class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-weight: 600; cursor: pointer; background: #10b981;">📋 Copy Text</button>
+        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear</button>
+      </div>
+      <div id="stats-info" style="font-size: 0.85rem; color: #9ca3af; align-self: center;">
+        Words: 0 | Characters: 0
       </div>
     </div>
 
-    <!-- SEO Content Box 1 -->
+    <!-- SEO Article Content Box 1 -->
     <div class="content-box">
-      <h2>Why Use Lorem Ipsum Dummy Text?</h2>
-      <p>Using real content during early UI/UX design stages often distracts clients and stakeholders from evaluating layout aesthetics, typography, and visual hierarchy. Lorem Ipsum provides a natural distribution of letters and word lengths that mimics real reading without drawing focus away from design elements.</p>
+      <h2>Why Designers and Web Developers Use Lorem Ipsum Dummy Text</h2>
+      <p>When presenting website mockups, print layouts, graphic designs, or web application UI prototypes to clients, using readable English text often causes evaluators to focus on the copy contents rather than the visual design hierarchy, typography choices, and layout spacing.</p>
+      <p>Using <strong>Lorem Ipsum</strong> placeholder text simulates natural sentence structures and character distribution without presenting readable distraction. Our free <strong>Online Lorem Ipsum Generator</strong> allows UI/UX designers, front-end developers, and content writers to instantly generate formatted Latin dummy text customized by paragraph, sentence, word, or byte limits.</p>
     </div>
 
-    <!-- SEO Content Box 2 -->
+    <!-- SEO Article Content Box 2 -->
     <div class="content-box">
-      <h2>How to Use This Generator</h2>
+      <h2>The Fascinating Classical Origin of Lorem Ipsum</h2>
+      <p>Contrary to popular belief, Lorem Ipsum is not simply random pseudo-Latin gibberish. It has roots in classical Latin literature dating back over 2,000 years:</p>
+
+      <h3>1. Historical Roots in Cicero's Philosophy</h3>
+      <p>The core passage is derived from Marcus Tullius Cicero's philosophical treatise <em>"de Finibus Bonorum et Malorum"</em> (The Extremes of Good and Evil), written in 45 BC. The passage explores theories of ethics and hedonism.</p>
+
+      <h3>2. Scrambled Printing Standard Since the 1500s</h3>
+      <p>An unknown printer in the 16th century took a galley of Cicero's type and scrambled it to make a type specimen book. The standard opening phrase—<em>"Lorem ipsum dolor sit amet, consectetur adipiscing elit..."</em>—comes from the passage <em>"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet..."</em> (There is no one who loves pain itself, who seeks and wants to have it...).</p>
+    </div>
+
+    <!-- SEO Article Content Box 3 -->
+    <div class="content-box">
+      <h2>Features of MicroToolStack's Lorem Ipsum Tool</h2>
       <ul>
-        <li>Select the number of paragraphs you need for your design template (between 1 and 20).</li>
-        <li>Click <strong>Generate Text</strong> to construct formatted paragraph blocks.</li>
-        <li>Click <strong>Copy Text</strong> to copy the output straight to your clipboard.</li>
+        <li><strong>Flexible Quantity Modes:</strong> Generate precise dummy text measured by paragraph counts, sentence counts, word counts, or raw byte limits.</li>
+        <li><strong>Standard Opening Toggle:</strong> Easily check or uncheck whether your dummy block begins with the classic <em>"Lorem ipsum dolor sit amet"</em> phrase.</li>
+        <li><strong>Real-Time Count Metrics:</strong> Displays total generated word counts and character lengths instantly.</li>
+        <li><strong>100% Client-Side Privacy:</strong> Text generation scripts execute locally in your web browser using JavaScript. No browser data is logged remotely.</li>
       </ul>
     </div>
 
-    <!-- Internal Linking Section (SEO Best Practice) -->
+    <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
     <div class="content-box">
-      <h2>Explore Related Developer & Design Tools</h2>
-      <p>Enhance your design and coding workflow with our free utilities:</p>
+      <h2>Explore Related Developer Tools</h2>
+      <p>Discover our complementary online developer utilities:</p>
       <div class="related-links">
-        <a href="/tools/developer/base64-encoder-decoder.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🔒 Base64 Encoder / Decoder</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Encode or decode text strings into Base64 format.</span>
+        <a href="/tools/text/word-counter.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📊 Real-Time Word Counter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Analyze character counts, reading time, and text metrics.</span>
         </a>
-        <a href="/tools/developer/code-to-image.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">📷 Code Snippet to Image</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Turn source code into beautiful social media images.</span>
+        <a href="/tools/text/case-converter.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🔤 Case Converter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Convert text to Uppercase, Lowercase, camelCase & Title Case.</span>
         </a>
-        <a href="/tools/developer/json-formatter.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">✨ JSON Formatter</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Format, beautify, and validate JSON syntax.</span>
-        </a>
-        <a href="/tools/developer/json-to-csv.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">📊 JSON to CSV</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Convert JSON data to tabular CSV spreadsheets.</span>
+        <a href="/tools/developer/html-to-markdown.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📝 HTML to Markdown Converter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Convert HTML markup into Markdown syntax.</span>
         </a>
       </div>
     </div>
 
     <!-- FAQ Section -->
     <div class="content-box">
-      <h2>Frequently Asked Questions</h2>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: #fff; margin-bottom: 0.25rem;">What is Lorem Ipsum placeholder text?</h3>
-        <p>Lorem Ipsum is standard dummy text used in typesetting and printing industries to preview layout design without relying on meaningful content.</p>
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What is Lorem Ipsum?</h3>
+        <p>Lorem Ipsum is dummy placeholder text standardly used in the graphic design, publishing, and web development industries to fill design mockups.</p>
       </div>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: #fff; margin-bottom: 0.25rem;">How many paragraphs can I generate at once?</h3>
-        <p>You can generate up to 20 paragraphs of clean placeholder text in a single click.</p>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Does Lorem Ipsum have a real translation?</h3>
+        <p>Yes. The original passages come from Cicero's 45 BC treatise on ethics, though words were altered and removed to create non-distracting filler text.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is my generated text logged on any remote server?</h3>
+        <p>No. All text generation script execution takes place locally in your web browser session using JavaScript. Your layout input choices remain private.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this tool free to use?</h3>
+        <p>Yes, MicroToolStack's Lorem Ipsum Generator is 100% free with no usage restrictions or sign-up required.</p>
       </div>
     </div>
 
   </main>
 
-  <!-- Footer Placeholder -->
+  <!-- Footer Container Placeholder -->
   <div id="footer-container"></div>
 
-  <!-- Scripts -->
+  <!-- JavaScript Utilities & Logic -->
   <script src="/assets/js/theme.js"></script>
   <script src="/assets/js/utils.js" defer></script>
   <script src="/assets/js/app.js" defer></script>
 
-  <!-- Client Logic -->
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const output = document.getElementById('lorem-output');
-      const countInput = document.getElementById('para-count');
-      const copyBtn = document.getElementById('btn-copy');
+    document.addEventListener('DOMContentLoaded', function() {
+      const loremCount = document.getElementById('lorem-count');
+      const loremType = document.getElementById('lorem-type');
+      const startWithLorem = document.getElementById('start-with-lorem');
+      const btnGenerate = document.getElementById('btn-generate');
+      const outputLorem = document.getElementById('output-lorem');
+      const btnCopy = document.getElementById('btn-copy');
+      const btnClear = document.getElementById('btn-clear');
+      const statsInfo = document.getElementById('stats-info');
 
-      const loremBase = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+      const loremWords = [
+        "lorem", "ipsum", "dolor", "sit", "amet", "consectetur", "adipiscing", "elit", "sed", "do",
+        "eiusmod", "tempor", "incididunt", "ut", "labore", "et", "dolore", "magna", "aliqua", "ut",
+        "enim", "ad", "minim", "veniam", "quis", "nostrud", "exercitation", "ullamco", "laboris", "nisi",
+        "ut", "aliquip", "ex", "ea", "commodo", "consequat", "duis", "aute", "irure", "dolor",
+        "in", "reprehenderit", "in", "voluptate", "velit", "esse", "cillum", "dolore", "eu", "fugiat",
+        "nulla", "pariatur", "excepteur", "sint", "occaecat", "cupidatat", "non", "proident", "sunt", "in",
+        "culpa", "qui", "officia", "deserunt", "mollit", "anim", "id", "est", "laborum"
+      ];
 
-      function generateLorem() {
-        const count = parseInt(countInput.value) || 1;
-        const result = Array.from({ length: Math.min(count, 20) }, () => loremBase).join('\n\n');
-        output.value = result;
+      function getRandomWord() {
+        return loremWords[Math.floor(Math.random() * loremWords.length)];
       }
 
-      document.getElementById('btn-gen-lorem').addEventListener('click', generateLorem);
-      
-      copyBtn.addEventListener('click', () => {
-        if (!output.value) return;
-        navigator.clipboard.writeText(output.value).then(() => {
-          alert('Lorem Ipsum text copied to clipboard!');
+      function generateSentence(minWords = 6, maxWords = 12) {
+        const wordCount = Math.floor(Math.random() * (maxWords - minWords + 1)) + minWords;
+        let sentenceWords = [];
+        for (let i = 0; i < wordCount; i++) {
+          sentenceWords.push(getRandomWord());
+        }
+        let sentence = sentenceWords.join(' ');
+        return sentence.charAt(0).toUpperCase() + sentence.slice(1) + '.';
+      }
+
+      function generateParagraph(minSentences = 4, maxSentences = 7) {
+        const sentenceCount = Math.floor(Math.random() * (maxSentences - minSentences + 1)) + minSentences;
+        let sentences = [];
+        for (let i = 0; i < sentenceCount; i++) {
+          sentences.push(generateSentence());
+        }
+        return sentences.join(' ');
+      }
+
+      function generateLorem() {
+        const count = parseInt(loremCount.value, 10) || 1;
+        const type = loremType.value;
+        const startsWithStd = startWithLorem.checked;
+
+        let resultText = '';
+
+        if (type === 'paragraphs') {
+          let paragraphs = [];
+          for (let i = 0; i < count; i++) {
+            paragraphs.push(generateParagraph());
+          }
+          if (startsWithStd && paragraphs.length > 0) {
+            paragraphs[0] = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. " + paragraphs[0];
+          }
+          resultText = paragraphs.join('\n\n');
+        } else if (type === 'sentences') {
+          let sentences = [];
+          for (let i = 0; i < count; i++) {
+            sentences.push(generateSentence());
+          }
+          if (startsWithStd && sentences.length > 0) {
+            sentences[0] = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+          }
+          resultText = sentences.join(' ');
+        } else if (type === 'words') {
+          let words = [];
+          if (startsWithStd) {
+            words = ["Lorem", "ipsum", "dolor", "sit", "amet"];
+          }
+          while (words.length < count) {
+            words.push(getRandomWord());
+          }
+          resultText = words.slice(0, count).join(' ');
+        } else if (type === 'bytes') {
+          let text = '';
+          if (startsWithStd) {
+            text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ";
+          }
+          while (text.length < count) {
+            text += generateSentence() + ' ';
+          }
+          resultText = text.slice(0, count);
+        }
+
+        outputLorem.value = resultText;
+        updateStats();
+      }
+
+      function updateStats() {
+        const txt = outputLorem.value.trim();
+        const chars = txt.length;
+        const words = txt ? txt.split(/\s+/).length : 0;
+        statsInfo.textContent = `Words: ${words.toLocaleString()} | Characters: ${chars.toLocaleString()}`;
+      }
+
+      btnGenerate.addEventListener('click', generateLorem);
+
+      btnCopy.addEventListener('click', function() {
+        if (!outputLorem.value.trim()) return;
+        navigator.clipboard.writeText(outputLorem.value).then(() => {
+          const originalText = btnCopy.textContent;
+          btnCopy.textContent = '✅ Copied!';
+          setTimeout(() => { btnCopy.textContent = originalText; }, 2000);
         });
       });
 
+      btnClear.addEventListener('click', function() {
+        outputLorem.value = '';
+        updateStats();
+      });
+
+      // Initial Generation
       generateLorem();
     });
   </script>
