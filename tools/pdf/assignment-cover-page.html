@@ -9,6 +9,7 @@
         gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
         gTagScript.async = true;
         document.head.appendChild(gTagScript);
+
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
@@ -21,126 +22,230 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Primary SEO Meta Tags -->
-  <title>Free Assignment Cover Page Generator with PDF Download | MicroToolStack</title>
-  <meta name="description" content="Create professional university and college assignment cover pages online for free. Custom templates, student info, teacher details, and printable A4 PDF export.">
-  <meta name="keywords" content="assignment cover page generator, university cover page builder, college assignment cover sheet, printable assignment cover pdf, free cover page maker">
+  <title>Free Online Assignment Cover Page Generator | Export PDF | MicroToolStack</title>
+  <meta name="description" content="Create professional university and college assignment cover pages online for free. Fill in student, course, and instructor details, view live preview, and download as printable PDF.">
+  <meta name="keywords" content="assignment cover page generator, university cover page maker, college assignment title page, pdf cover page generator, academic cover sheet maker, print assignment cover page, student utility">
 
   <link rel="canonical" href="https://microtoolstack.com/tools/pdf/assignment-cover-page.html">
   <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://microtoolstack.com/tools/pdf/assignment-cover-page.html">
+  <meta property="og:title" content="Free Online Assignment Cover Page Generator | MicroToolStack">
+  <meta property="og:description" content="Generate clean, academic assignment title pages for school, college, or university. Live preview and instant 1-click PDF download.">
+  <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
   <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
   <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
-  <!-- html2pdf.js Library -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-
-  <!-- Schema -->
+  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
   <script type="application/ld+json">
-  [
-    {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "Assignment Cover Page Generator",
-      "url": "https://microtoolstack.com/tools/pdf/assignment-cover-page.html",
-      "applicationCategory": "EducationalApplication",
-      "operatingSystem": "All",
-      "browserRequirements": "Requires JavaScript",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      }
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Can I download my assignment cover page in PDF format?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, you can generate and download a clean, print-ready A4 PDF cover page in seconds."
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Academic Assignment Cover Page Generator",
+        "operatingSystem": "All",
+        "applicationCategory": "EducationalApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "An essential client-side web utility that generates professional academic title pages and printable cover sheets for university assignments, essays, and lab reports.",
+        "url": "https://microtoolstack.com/tools/pdf/assignment-cover-page.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Why is a cover page important for academic assignments?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A cover page gives your academic assignment a clean, formal structure, clearly identifying the student, course code, university name, supervisor, and date of submission."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I save my cover page as a PDF file?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! Our tool converts your filled details directly into a high-resolution PDF document using client-side rendering with zero quality loss."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my personal student data saved on remote servers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. All details entered into the form execute 100% locally inside your web browser session using client-side JavaScript. Your personal data remains private."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this cover page generator completely free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, MicroToolStack's Assignment Cover Page Generator is 100% free with unlimited PDF downloads and no account sign-up required."
+            }
           }
-        }
-      ]
-    }
-  ]
+        ]
+      }
+    ]
+  }
   </script>
 
+  <!-- Preconnect and Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
 
+  <!-- HTML2PDF CDN for PDF Export -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
   <style>
-    .app-card {
-      background-color: var(--bg-card, #1e1e2e);
-      border: 1px solid var(--border-color, #333);
-      border-radius: 12px;
-      padding: 2rem;
-      margin-bottom: 2.5rem;
-    }
-    .grid-2 {
+    .editor-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 1.5rem;
+      margin-bottom: 1.5rem;
     }
-    @media (max-width: 768px) {
-      .grid-2 { grid-template-columns: 1fr; }
+    .input-group {
+      margin-bottom: 1rem;
     }
-    .form-group {
-      margin-bottom: 0.85rem;
-    }
-    .form-group label {
+    .input-label {
       display: block;
-      margin-bottom: 0.3rem;
       font-size: 0.85rem;
       font-weight: 600;
-      color: #e5e7eb;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.35rem;
     }
     .form-control {
       width: 100%;
-      padding: 0.55rem;
-      border-radius: 6px;
-      background: var(--bg-body, #111827);
-      border: 1px solid var(--border-color, #374151);
-      color: #fff;
-      font-size: 0.88rem;
-      box-sizing: border-box;
+      padding: 0.65rem 0.85rem;
+      font-size: 0.95rem;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
+      color: var(--text-primary, #fff);
       outline: none;
+      box-sizing: border-box;
     }
-    .cover-paper {
+    .form-control:focus {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+
+    /* Live Cover Page Preview Box (A4 Proportion) */
+    .preview-stage {
+      width: 100%;
+      background: #525659;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow-x: auto;
+    }
+
+    .cover-sheet {
+      width: 210mm;
+      min-height: 297mm;
       background: #ffffff;
       color: #111827;
-      padding: 2.5rem 2rem;
-      border-radius: 6px;
+      padding: 25mm 20mm;
+      box-sizing: border-box;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
       font-family: 'Times New Roman', Times, serif;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      text-align: center;
-      min-height: 520px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      border: 2px solid #1e3a8a;
-      box-sizing: border-box;
+      text-align: center;
+      margin: 0 auto;
     }
-    .btn-download {
-      background-color: #16a34a;
-      color: #fff;
-      padding: 0.75rem 1.5rem;
-      border-radius: 8px;
-      border: none;
-      font-weight: 600;
-      cursor: pointer;
-      width: 100%;
-      margin-top: 1.5rem;
-      font-size: 1rem;
-      transition: background 0.2s;
+
+    .cover-header {
+      border-bottom: 2px solid #0f172a;
+      padding-bottom: 15px;
+      margin-bottom: 30px;
     }
-    .btn-download:hover {
-      background-color: #15803d;
+    .cover-institution {
+      font-size: 22px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #0f172a;
     }
+    .cover-department {
+      font-size: 16px;
+      color: #475569;
+      margin-top: 5px;
+    }
+
+    .cover-body {
+      margin: 40px 0;
+    }
+    .cover-title {
+      font-size: 26px;
+      font-weight: bold;
+      color: #0f172a;
+      margin-bottom: 15px;
+      line-height: 1.3;
+    }
+    .cover-subtitle {
+      font-size: 18px;
+      color: #334155;
+      font-style: italic;
+    }
+
+    .cover-details-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      text-align: left;
+      border-top: 1px solid #cbd5e1;
+      padding-top: 20px;
+      margin-top: 40px;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .details-block h4 {
+      font-size: 15px;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: #0f172a;
+      margin-bottom: 8px;
+      border-bottom: 1px solid #0f172a;
+      padding-bottom: 2px;
+      display: inline-block;
+    }
+
+    .cover-footer {
+      font-size: 13px;
+      color: #64748b;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 15px;
+    }
+
+    .controls-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.5rem;
+    }
+
     .content-box {
       background-color: var(--bg-card, #1e1e2e);
       border: 1px solid var(--border-color, #333);
@@ -151,6 +256,12 @@
     .content-box h2 {
       font-size: 1.35rem;
       margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
       color: var(--text-primary, #fff);
     }
     .content-box p, .content-box ul {
@@ -184,6 +295,21 @@
     .related-card:hover {
       border-color: var(--accent-primary, #3b82f6);
     }
+
+    @media print {
+      body * { visibility: hidden; }
+      #printable-cover, #printable-cover * { visibility: visible; }
+      #printable-cover {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 210mm;
+        height: 297mm;
+        margin: 0;
+        padding: 20mm;
+        box-shadow: none;
+      }
+    }
   </style>
 </head>
 <body style="margin: 0; padding: 0;">
@@ -201,169 +327,182 @@
     </nav>
   </header>
 
-  <!-- Main Content -->
+  <!-- Main Container -->
   <main class="container" style="max-width: 950px; margin: 2rem auto; padding: 0 1rem;">
     
-    <!-- Title Section -->
+    <!-- Tool Title & Description -->
     <div style="text-align: center; margin-bottom: 2rem;">
-      <span class="badge badge-primary" style="margin-bottom: 0.5rem; display: inline-block;">100% Free & Printable PDF</span>
-      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: #fff;">Assignment Cover Page Generator</h1>
-      <p style="color: var(--text-secondary, #9ca3af);">Design academic assignment cover pages for university, college, or school with instant A4 PDF download.</p>
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online Assignment Cover Page Generator</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Create academic title sheets for school, college, or university assignments and export as PDF.</p>
     </div>
 
-    <!-- App Card -->
-    <div class="app-card">
-      <div class="grid-2">
+    <!-- Dual Form & Live Preview Editor Grid -->
+    <div class="editor-grid">
+      <!-- Input Details Form -->
+      <div class="content-box" style="margin-bottom: 0;">
+        <h3 style="margin-top: 0; font-size: 1.15rem; margin-bottom: 1rem; color: var(--accent-primary, #3b82f6);">📝 Cover Page Details</h3>
         
-        <!-- Form Inputs Left -->
-        <div>
-          <h3 style="color: #fff; margin-top: 0; margin-bottom: 1rem; font-size: 1.1rem;">📝 Academic Details</h3>
-          
-          <div class="form-group">
-            <label>Institution / University Name</label>
-            <input type="text" id="univ-name" class="form-control" value="Dhaka University">
+        <div class="input-group">
+          <label for="inp-institution" class="input-label">University / College Name</label>
+          <input type="text" id="inp-institution" class="form-control" value="Harvard University" placeholder="e.g. Stanford University">
+        </div>
+
+        <div class="input-group">
+          <label for="inp-department" class="input-label">Department / Faculty</label>
+          <input type="text" id="inp-department" class="form-control" value="Department of Computer Science" placeholder="e.g. Department of Physics">
+        </div>
+
+        <div class="input-group">
+          <label for="inp-title" class="input-label">Assignment Title</label>
+          <input type="text" id="inp-title" class="form-control" value="Artificial Intelligence & Neural Networks" placeholder="Title of Assignment">
+        </div>
+
+        <div class="input-group">
+          <label for="inp-course" class="input-label">Course Name & Code</label>
+          <input type="text" id="inp-course" class="form-control" value="CS50: Introduction to Computer Science" placeholder="e.g. PHY101 - General Physics">
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+          <div class="input-group">
+            <label for="inp-student-name" class="input-label">Student Name</label>
+            <input type="text" id="inp-student-name" class="form-control" value="Alice Johnson">
           </div>
-
-          <div class="form-group">
-            <label>Department / Faculty</label>
-            <input type="text" id="dept-name" class="form-control" value="Department of Computer Science & Engineering">
-          </div>
-
-          <div class="form-group">
-            <label>Assignment Title</label>
-            <input type="text" id="title-name" class="form-control" value="Implementation of Artificial Intelligence in Web Tools">
-          </div>
-
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
-            <div class="form-group">
-              <label>Course Title</label>
-              <input type="text" id="course-title" class="form-control" value="Software Engineering">
-            </div>
-
-            <div class="form-group">
-              <label>Course Code</label>
-              <input type="text" id="course-code" class="form-control" value="CSE-401">
-            </div>
-          </div>
-
-          <hr style="border-color: #374151; margin: 0.85rem 0;">
-
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
-            <div>
-              <strong style="color: #38bdf8; font-size: 0.85rem; display: block; margin-bottom: 0.4rem;">Submitted By:</strong>
-              <div class="form-group">
-                <input type="text" id="stu-name" class="form-control" placeholder="Student Name" value="Imam Mehedi">
-              </div>
-              <div class="form-group">
-                <input type="text" id="stu-id" class="form-control" placeholder="ID / Roll No." value="ID: 2026-1042">
-              </div>
-            </div>
-
-            <div>
-              <strong style="color: #38bdf8; font-size: 0.85rem; display: block; margin-bottom: 0.4rem;">Submitted To:</strong>
-              <div class="form-group">
-                <input type="text" id="tea-name" class="form-control" placeholder="Teacher Name" value="Dr. A. Rahman">
-              </div>
-              <div class="form-group">
-                <input type="text" id="tea-desig" class="form-control" placeholder="Designation" value="Associate Professor">
-              </div>
-            </div>
-          </div>
-
-          <div class="form-group" style="margin-top: 0.5rem;">
-            <label>Submission Date</label>
-            <input type="text" id="sub-date" class="form-control" value="August 8, 2026">
+          <div class="input-group">
+            <label for="inp-student-id" class="input-label">Student ID / Roll No.</label>
+            <input type="text" id="inp-student-id" class="form-control" value="STU-2026-8890">
           </div>
         </div>
 
-        <!-- Live Preview Right -->
-        <div>
-          <h3 style="color: #fff; margin-top: 0; margin-bottom: 1rem; font-size: 1.1rem;">📄 A4 Cover Page Preview</h3>
-          
-          <div id="cover-paper" class="cover-paper">
-            <div>
-              <h2 id="prev-univ" style="margin: 0; font-size: 1.35rem; color: #1e3a8a; text-transform: uppercase;">DHAKA UNIVERSITY</h2>
-              <p id="prev-dept" style="margin: 0.3rem 0 0 0; font-size: 0.9rem; color: #4b5563;">Department of Computer Science & Engineering</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+          <div class="input-group">
+            <label for="inp-instructor-name" class="input-label">Instructor / Supervisor</label>
+            <input type="text" id="inp-instructor-name" class="form-control" value="Dr. Robert Smith">
+          </div>
+          <div class="input-group">
+            <label for="inp-date" class="input-label">Submission Date</label>
+            <input type="date" id="inp-date" class="form-control">
+          </div>
+        </div>
+      </div>
+
+      <!-- Live A4 Preview Canvas -->
+      <div>
+        <label class="input-label" style="font-size: 1rem; margin-bottom: 0.5rem;">📄 Live Page Preview</label>
+        <div class="preview-stage">
+          <div id="printable-cover" class="cover-sheet">
+            <div class="cover-header">
+              <div id="out-institution" class="cover-institution">HARVARD UNIVERSITY</div>
+              <div id="out-department" class="cover-department">Department of Computer Science</div>
             </div>
 
-            <div style="margin: 2rem 0; padding: 1rem; border-top: 1px solid #cbd5e1; border-bottom: 1px solid #cbd5e1;">
-              <p style="margin: 0; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: #64748b;">Assignment On</p>
-              <h3 id="prev-title" style="margin: 0.5rem 0; font-size: 1.15rem; color: #0f172a;">Implementation of Artificial Intelligence in Web Tools</h3>
-              <p style="margin: 0; font-size: 0.85rem; color: #334155;">Course: <span id="prev-ctitle">Software Engineering</span> (<span id="prev-ccode">CSE-401</span>)</p>
+            <div class="cover-body">
+              <div id="out-title" class="cover-title">Artificial Intelligence & Neural Networks</div>
+              <div id="out-course" class="cover-subtitle">CS50: Introduction to Computer Science</div>
             </div>
 
-            <div style="display: flex; justify-content: space-between; text-align: left; font-size: 0.85rem; line-height: 1.5; color: #1e293b; padding: 0 0.5rem;">
-              <div>
-                <strong style="text-decoration: underline; color: #1e3a8a;">Submitted By:</strong>
-                <p id="prev-sname" style="margin: 0.25rem 0 0 0; font-weight: bold;">Imam Mehedi</p>
-                <p id="prev-sid" style="margin: 0; color: #475569;">ID: 2026-1042</p>
+            <div class="cover-details-grid">
+              <div class="details-block">
+                <h4>Submitted By:</h4>
+                <div><strong>Name:</strong> <span id="out-student-name">Alice Johnson</span></div>
+                <div><strong>ID / Roll:</strong> <span id="out-student-id">STU-2026-8890</span></div>
               </div>
-
-              <div>
-                <strong style="text-decoration: underline; color: #1e3a8a;">Submitted To:</strong>
-                <p id="prev-tname" style="margin: 0.25rem 0 0 0; font-weight: bold;">Dr. A. Rahman</p>
-                <p id="prev-tdesig" style="margin: 0; color: #475569;">Associate Professor</p>
+              <div class="details-block">
+                <h4>Submitted To:</h4>
+                <div><strong>Instructor:</strong> <span id="out-instructor-name">Dr. Robert Smith</span></div>
+                <div><strong>Date:</strong> <span id="out-date">August 12, 2026</span></div>
               </div>
             </div>
 
-            <div style="margin-top: 1.5rem; font-size: 0.85rem; color: #64748b; border-top: 1px dashed #cbd5e1; padding-top: 0.5rem;">
-              Date of Submission: <span id="prev-date">August 8, 2026</span>
+            <div class="cover-footer">
+              Academic Assignment Submission Sheet
             </div>
           </div>
-
-          <button id="download-pdf-btn" class="btn-download">📥 Download A4 Printable PDF</button>
         </div>
-
       </div>
     </div>
 
-    <!-- SEO Content Box 1 -->
-    <div class="content-box">
-      <h2>Free Academic Assignment Cover Page Creator</h2>
-      <p>A well-structured cover page creates a great first impression for academic submissions. Whether you need a cover sheet for university semester assignments, lab reports, or school projects, this tool formats standard academic cover layouts effortlessly.</p>
+    <!-- Action Controls Bar -->
+    <div class="controls-bar">
+      <div style="display: flex; gap: 0.75rem; align-items: center;">
+        <button id="btn-export-pdf" class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-weight: 600; cursor: pointer; background: #10b981;">📄 Download PDF Document</button>
+        <button id="btn-print" class="btn btn-primary" style="padding: 0.75rem 1.25rem; font-weight: 600; cursor: pointer;">🖨️ Print Cover Sheet</button>
+      </div>
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-reset" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Reset Form</button>
+      </div>
     </div>
 
-    <!-- SEO Content Box 2 -->
+    <!-- SEO Article Content Box 1 -->
     <div class="content-box">
-      <h2>How to Create & Export Cover Pages</h2>
+      <h2>Why a Professional Assignment Cover Page Matters for Students</h2>
+      <p>In academic writing, whether submitting a term paper, research essay, lab report, or university assignment, presentation is as important as content. A clean, standardized <strong>Assignment Cover Page</strong> sets a formal tone and ensures teachers and teaching assistants can record your grade accurately.</p>
+      <p>Creating cover pages from scratch in desktop word processors often causes alignment issues or takes unnecessary time. Our free <strong>Online Assignment Cover Page Generator</strong> automates this process, producing printable, publication-ready PDF title sheets instantly.</p>
+    </div>
+
+    <!-- SEO Article Content Box 2 -->
+    <div class="content-box">
+      <h2>Key Information Every Academic Title Sheet Should Include</h2>
+      <p>Standard university and college formatting guidelines require specific identification details:</p>
+
+      <h3>1. Institution & Department Branding</h3>
+      <p>Clearly displays the official name of the university, college, or high school along with the academic department (e.g. <em>Department of Computer Science</em>).</p>
+
+      <h3>2. Assignment Title & Course Identification</h3>
+      <p>Highlights the main topic of your paper alongside the course code and title (e.g. <em>CS50: Introduction to Computer Science</em>).</p>
+
+      <h3>3. Student & Instructor Verification</h3>
+      <p>Includes your full student name, registration roll number, professor/supervisor name, and exact submission date.</p>
+    </div>
+
+    <!-- SEO Article Content Box 3 -->
+    <div class="content-box">
+      <h2>Features of MicroToolStack's Cover Page Generator</h2>
       <ul>
-        <li>Fill in your institution name, department, and assignment topic.</li>
-        <li>Enter course details (Course title and Course code).</li>
-        <li>Input student details (Name, ID) and teacher credentials.</li>
-        <li>Review the live paper preview and click <strong>Download A4 Printable PDF</strong>.</li>
+        <li><strong>Real-Time Live Preview:</strong> Fill in student and course details on the left form and watch your cover sheet update dynamically in the preview panel.</li>
+        <li><strong>High-DPI Vector PDF Download:</strong> Export your finalized title page as a high-quality A4 PDF ready to merge with your main assignment.</li>
+        <li><strong>100% Client-Side Privacy:</strong> Form calculations run locally inside your browser session using JavaScript. Personal student data is never saved or uploaded.</li>
+        <li><strong>Free & Unlimited Usage:</strong> Generate unlimited cover sheets with zero watermarks or account sign-ups.</li>
       </ul>
     </div>
 
-    <!-- Internal Linking Section (SEO Best Practice) -->
+    <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
     <div class="content-box">
-      <h2>Explore Related Academic & Text Tools</h2>
-      <p>Enhance your writing and editing workflow with our free utilities:</p>
+      <h2>Explore Related Developer & Student Tools</h2>
+      <p>Discover our complementary online utilities:</p>
       <div class="related-links">
+        <a href="/tools/developer/markdown-to-pdf.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📝 Markdown to PDF Converter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Convert Markdown notes into styled PDF documents.</span>
+        </a>
         <a href="/tools/text/word-counter.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">📝 Word Counter</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Analyze text length and estimated reading time.</span>
+          <strong style="display:block; margin-bottom: 0.25rem;">📊 Real-Time Word Counter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Analyze character counts and reading time for essays.</span>
         </a>
-        <a href="/tools/text/case-converter.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🔤 Case Converter</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Convert titles and headings into Title Case.</span>
-        </a>
-        <a href="/tools/seo/slug-generator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🔗 Slug Generator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Generate clean, SEO-friendly URL slugs.</span>
+        <a href="/tools/developer/lorem-ipsum-generator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📄 Lorem Ipsum Generator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Generate dummy text for document mockups.</span>
         </a>
       </div>
     </div>
 
     <!-- FAQ Section -->
     <div class="content-box">
-      <h2>Frequently Asked Questions</h2>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this tool free for students?</h3>
-        <p>Yes! It is 100% free with no registration, watermarks, or daily caps.</p>
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How do I create an assignment cover page?</h3>
+        <p>Type your university name, course title, student ID, and instructor name into the form fields on the left. Once satisfied with the preview, click "Download PDF Document".</p>
       </div>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Does it support standard A4 print size?</h3>
-        <p>Yes, the generated PDF is perfectly calibrated to standard A4 dimensions for easy printing and binding.</p>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is my student data saved on any remote server?</h3>
+        <p>No. All form rendering and PDF generation run locally inside your browser session using JavaScript. Your inputs remain 100% private.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Does the exported PDF contain watermarks?</h3>
+        <p>No. All generated PDF cover pages are completely free of watermarks and ready for academic submission.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this tool free to use?</h3>
+        <p>Yes, MicroToolStack's Assignment Cover Page Generator is 100% free with no usage limits or sign-up required.</p>
       </div>
     </div>
 
@@ -372,57 +511,106 @@
   <!-- Footer Container Placeholder -->
   <div id="footer-container"></div>
 
-  <!-- Scripts -->
+  <!-- JavaScript Utilities & Logic -->
   <script src="/assets/js/theme.js"></script>
   <script src="/assets/js/utils.js" defer></script>
   <script src="/assets/js/app.js" defer></script>
 
-  <!-- Client Logic -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const fields = [
-        { id: 'univ-name', target: 'prev-univ' },
-        { id: 'dept-name', target: 'prev-dept' },
-        { id: 'title-name', target: 'prev-title' },
-        { id: 'course-title', target: 'prev-ctitle' },
-        { id: 'course-code', target: 'prev-ccode' },
-        { id: 'stu-name', target: 'prev-sname' },
-        { id: 'stu-id', target: 'prev-sid' },
-        { id: 'tea-name', target: 'prev-tname' },
-        { id: 'tea-desig', target: 'prev-tdesig' },
-        { id: 'sub-date', target: 'prev-date' }
-      ];
+      const inpInstitution = document.getElementById('inp-institution');
+      const inpDepartment = document.getElementById('inp-department');
+      const inpTitle = document.getElementById('inp-title');
+      const inpCourse = document.getElementById('inp-course');
+      const inpStudentName = document.getElementById('inp-student-name');
+      const inpStudentId = document.getElementById('inp-student-id');
+      const inpInstructorName = document.getElementById('inp-instructor-name');
+      const inpDate = document.getElementById('inp-date');
 
-      function syncPreview() {
-        fields.forEach(f => {
-          const input = document.getElementById(f.id);
-          const target = document.getElementById(f.target);
-          if (input && target) {
-            target.textContent = input.value || '-';
-          }
-        });
+      const outInstitution = document.getElementById('out-institution');
+      const outDepartment = document.getElementById('out-department');
+      const outTitle = document.getElementById('out-title');
+      const outCourse = document.getElementById('out-course');
+      const outStudentName = document.getElementById('out-student-name');
+      const outStudentId = document.getElementById('out-student-id');
+      const outInstructorName = document.getElementById('out-instructor-name');
+      const outDate = document.getElementById('out-date');
+
+      const printableCover = document.getElementById('printable-cover');
+      const btnExportPdf = document.getElementById('btn-export-pdf');
+      const btnPrint = document.getElementById('btn-print');
+      const btnReset = document.getElementById('btn-reset');
+
+      // Set default date to today
+      const today = new Date().toISOString().split('T')[0];
+      inpDate.value = today;
+
+      function formatDate(dateString) {
+        if (!dateString) return '';
+        const d = new Date(dateString);
+        return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
       }
 
-      fields.forEach(f => {
-        const input = document.getElementById(f.id);
-        if (input) input.addEventListener('input', syncPreview);
+      function updatePreview() {
+        outInstitution.textContent = (inpInstitution.value.trim() || 'UNIVERSITY NAME').toUpperCase();
+        outDepartment.textContent = inpDepartment.value.trim() || 'Department Name';
+        outTitle.textContent = inpTitle.value.trim() || 'Assignment Title';
+        outCourse.textContent = inpCourse.value.trim() || 'Course Name & Code';
+        outStudentName.textContent = inpStudentName.value.trim() || 'Student Name';
+        outStudentId.textContent = inpStudentId.value.trim() || 'ID / Roll';
+        outInstructorName.textContent = inpInstructorName.value.trim() || 'Instructor Name';
+        outDate.textContent = formatDate(inpDate.value);
+      }
+
+      [inpInstitution, inpDepartment, inpTitle, inpCourse, inpStudentName, inpStudentId, inpInstructorName, inpDate].forEach(el => {
+        el.addEventListener('input', updatePreview);
       });
 
-      syncPreview();
+      // Export PDF using html2pdf
+      btnExportPdf.addEventListener('click', function() {
+        if (typeof html2pdf === 'undefined') {
+          alert('PDF generation engine is initializing. Please wait a moment and try again.');
+          return;
+        }
 
-      document.getElementById('download-pdf-btn').addEventListener('click', function() {
-        const element = document.getElementById('cover-paper');
-        const title = document.getElementById('title-name').value || 'assignment-cover';
-        
+        const originalText = btnExportPdf.textContent;
+        btnExportPdf.textContent = '⏳ Rendering PDF...';
+
         const opt = {
-          margin:       0.3,
-          filename:     `${title.toLowerCase().replace(/\s+/g, '-')}-cover.pdf`,
+          margin:       0,
+          filename:     'assignment-cover-page.pdf',
           image:        { type: 'jpeg', quality: 0.98 },
-          html2canvas:  { scale: 2 },
-          jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
+          html2canvas:  { scale: 2, useCORS: true },
+          jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
         };
-        html2pdf().set(opt).from(element).save();
+
+        html2pdf().set(opt).from(printableCover).save().then(() => {
+          btnExportPdf.textContent = '✅ PDF Downloaded!';
+          setTimeout(() => { btnExportPdf.textContent = originalText; }, 2000);
+        }).catch(err => {
+          alert('Error generating PDF. Please try again.');
+          btnExportPdf.textContent = originalText;
+        });
       });
+
+      btnPrint.addEventListener('click', function() {
+        window.print();
+      });
+
+      btnReset.addEventListener('click', function() {
+        inpInstitution.value = '';
+        inpDepartment.value = '';
+        inpTitle.value = '';
+        inpCourse.value = '';
+        inpStudentName.value = '';
+        inpStudentId.value = '';
+        inpInstructorName.value = '';
+        inpDate.value = today;
+        updatePreview();
+      });
+
+      // Initial Update
+      updatePreview();
     });
   </script>
 </body>
