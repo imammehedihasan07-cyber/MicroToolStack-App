@@ -22,9 +22,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Primary SEO Meta Tags -->
-  <title>Free FAQ Schema Generator Online | JSON-LD Structured Data Builder</title>
-  <meta name="description" content="Free online FAQ Schema Generator to build valid JSON-LD FAQPage structured data markup. Boost your search visibility and get rich snippet results in Google search.">
-  <meta name="keywords" content="faq schema generator, json-ld schema builder, faq structured data generator, google rich snippet generator, faqpage schema markup, schema org generator">
+  <title>Free Online FAQ Schema Generator | JSON-LD Structured Data Builder | MicroToolStack</title>
+  <meta name="description" content="Generate Google-compliant FAQPage JSON-LD schema markup online for free. Build structured data for your website FAQs, preview code, test validation, and copy 1-click JSON-LD scripts.">
+  <meta name="keywords" content="faq schema generator, json-ld faq generator, schema markup generator, google faq schema, faqpage structured data, rich snippets generator, seo tools, microtoolstack">
 
   <link rel="canonical" href="https://microtoolstack.com/tools/seo/faq-schema-generator.html">
   <meta name="robots" content="index, follow">
@@ -32,8 +32,8 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://microtoolstack.com/tools/seo/faq-schema-generator.html">
-  <meta property="og:title" content="Free FAQ Schema Generator Online | JSON-LD Structured Data Builder">
-  <meta property="og:description" content="Generate valid, error-free JSON-LD FAQPage Schema markup for Google Rich Snippets in seconds. 100% free and private.">
+  <meta property="og:title" content="Free Online FAQ Schema Generator | MicroToolStack">
+  <meta property="og:description" content="Build clean FAQPage JSON-LD structured data markup for Google rich snippets instantly. 100% free, fast, and privacy-first webmaster utility.">
   <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
@@ -48,7 +48,7 @@
     "@graph": [
       {
         "@type": "SoftwareApplication",
-        "name": "FAQ Schema Generator & JSON-LD Markup Builder",
+        "name": "FAQ Schema Markup Generator",
         "operatingSystem": "All",
         "applicationCategory": "UtilitiesApplication",
         "offers": {
@@ -56,7 +56,7 @@
           "price": "0",
           "priceCurrency": "USD"
         },
-        "description": "An online SEO tool designed to generate Schema.org FAQPage structured data in JSON-LD format for Google Search rich results.",
+        "description": "An essential client-side SEO utility that generates Schema.org compliant FAQPage JSON-LD structured data scripts for website rich snippet optimization.",
         "url": "https://microtoolstack.com/tools/seo/faq-schema-generator.html"
       },
       {
@@ -64,26 +64,34 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "What is FAQ Schema Markup?",
+            "name": "What is FAQ Schema Markup (FAQPage)?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "FAQ Schema Markup is a standardized JSON-LD code added to a webpage that tells Google search crawlers about frequently asked questions and answers, allowing them to appear as rich snippets in SERP results."
+              "text": "FAQ Schema is a standardized Schema.org structured data format (JSON-LD) that tells search engines like Google that a webpage contains a list of frequently asked questions and answers."
             }
           },
           {
             "@type": "Question",
-            "name": "Where do I put the generated FAQ JSON-LD code?",
+            "name": "How does FAQ Schema help search engine optimization (SEO)?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "You can paste the generated JSON-LD script block directly into the <head> or <body> section of your webpage HTML code."
+              "text": "Adding valid FAQ JSON-LD schema allows search engines to display rich result accordions directly in SERPs (Search Engine Results Pages), improving click-through rates (CTR) and search visibility."
             }
           },
           {
             "@type": "Question",
-            "name": "How do I test if my FAQ Schema code is valid?",
+            "name": "Where should I place the generated JSON-LD script on my website?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "You can test the generated code using Google's official Rich Results Test tool or Schema.org Validator."
+              "text": "Paste the generated <script type='application/ld+json'>...</script> block inside your webpage's <head> section or before the closing </body> tag."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this FAQ Schema Generator free to use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, MicroToolStack's FAQ Schema Generator is 100% free with unlimited schema builds and no registration required."
             }
           }
         ]
@@ -101,68 +109,78 @@
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
 
   <style>
-    .faq-builder-container {
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
-      margin-bottom: 1.5rem;
+    .input-group {
+      margin-bottom: 1.25rem;
     }
-    .faq-card {
-      background: var(--bg-card, #1e1e2e);
-      padding: 1.25rem;
-      border-radius: var(--radius-md, 8px);
-      border: 1px solid var(--border-color, #333);
-      position: relative;
+    .input-label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.5rem;
     }
-    .faq-card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 0.85rem;
-    }
-    .faq-card-title {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--accent-primary, #3b82f6);
-    }
-    .btn-remove-faq {
-      background: #ef4444;
-      color: #fff;
-      border: none;
-      padding: 0.3rem 0.6rem;
-      border-radius: 4px;
-      font-size: 0.8rem;
-      cursor: pointer;
-    }
-    .editor-input, .editor-textarea {
+    .form-control, .form-select {
       width: 100%;
-      padding: 0.75rem;
-      font-size: 0.95rem;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
       border: 1px solid var(--border-color, #333);
-      border-radius: var(--radius-md, 6px);
-      background-color: var(--bg-body, #111827);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
       color: var(--text-primary, #fff);
       outline: none;
       box-sizing: border-box;
-      margin-bottom: 0.75rem;
     }
-    .code-box {
+    .form-control:focus, .form-select:focus {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+
+    .faq-builder-item {
+      background: #111827;
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      padding: 1.25rem;
+      margin-bottom: 1.25rem;
+      position: relative;
+    }
+
+    .btn-remove-faq {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: rgba(239, 68, 68, 0.15);
+      color: #ef4444;
+      border: 1px solid #ef4444;
+      border-radius: 6px;
+      padding: 0.3rem 0.6rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .btn-remove-faq:hover {
+      background: #ef4444;
+      color: #fff;
+    }
+
+    .code-textarea {
       width: 100%;
-      min-height: 250px;
+      min-height: 220px;
       padding: 1rem;
-      font-family: monospace;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
+      font-family: 'Fira Code', Consolas, Monaco, monospace;
       line-height: 1.5;
       border: 1px solid var(--border-color, #333);
       border-radius: var(--radius-md, 8px);
-      background-color: #0d1117;
-      color: #7ee787;
+      background-color: #111827;
+      color: #38bdf8;
+      outline: none;
+      resize: vertical;
       box-sizing: border-box;
-      margin-bottom: 1.5rem;
-      white-space: pre;
-      overflow-x: auto;
+      white-space: pre-wrap;
+      word-break: break-all;
     }
-    .editor-controls {
+
+    .controls-bar {
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
@@ -170,10 +188,7 @@
       align-items: center;
       margin-bottom: 2.5rem;
     }
-    .btn-group {
-      display: flex;
-      gap: 0.5rem;
-    }
+
     .content-box {
       background-color: var(--bg-card, #1e1e2e);
       border: 1px solid var(--border-color, #333);
@@ -184,6 +199,12 @@
     .content-box h2 {
       font-size: 1.35rem;
       margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
       color: var(--text-primary, #fff);
     }
     .content-box p, .content-box ul {
@@ -239,80 +260,106 @@
     
     <!-- Tool Title & Description -->
     <div style="text-align: center; margin-bottom: 2rem;">
-      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">FAQ Schema Generator (JSON-LD)</h1>
-      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Create structured FAQPage Schema markup to rank with Rich Snippets in Google SERPs.</p>
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online FAQ Schema Generator (JSON-LD)</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Build Google-compliant FAQPage JSON-LD structured data scripts for rich snippet SERP optimization.</p>
     </div>
 
-    <!-- FAQ Item Builder Forms Container -->
-    <div id="faq-builder-list" class="faq-builder-container">
-      <!-- Generated Dynamically via JS -->
-    </div>
+    <!-- FAQ Items Builder Card -->
+    <div class="content-box" style="margin-bottom: 1.5rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h2 style="font-size: 1.15rem; margin: 0;">Frequently Asked Questions List</h2>
+        <button id="btn-add-faq" class="btn btn-primary" style="padding: 0.45rem 1rem; font-size: 0.85rem; cursor: pointer; background: #3b82f6;">➕ Add New Question</button>
+      </div>
 
-    <!-- Add New FAQ Button -->
-    <button id="btn-add-faq" class="btn btn-secondary" style="width: 100%; padding: 0.75rem; background: #1f2937; color: #fff; border: 1px dashed #4b5563; border-radius: 8px; margin-bottom: 1.5rem; cursor: pointer; font-weight: 600;">
-      ➕ Add Another Question
-    </button>
+      <div id="faq-items-container"></div>
+    </div>
 
     <!-- Output JSON-LD Code Box -->
-    <h3 style="font-size: 1.1rem; color: var(--text-primary, #fff); margin-bottom: 0.75rem;">💻 Generated JSON-LD FAQ Schema Markup:</h3>
-    <textarea id="output-json" class="code-box" readonly></textarea>
-
-    <!-- Controls -->
-    <div class="editor-controls">
-      <div class="btn-group">
-        <button id="btn-copy" class="btn btn-primary" style="padding: 0.68rem 1.4rem; cursor: pointer;">📋 Copy Schema Code</button>
-        <button id="btn-test" class="btn btn-secondary" style="padding: 0.68rem 1.2rem; cursor: pointer; background: #1f2937; color: #fff; border: 1px solid #4b5563; border-radius: 6px;">🔍 Test in Google</button>
+    <div class="content-box" style="margin-bottom: 1.5rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+        <label for="jsonld-output" class="input-label" style="margin: 0;">Generated FAQPage JSON-LD Script</label>
+        <button id="btn-copy-code" class="btn btn-secondary" style="padding: 0.35rem 0.8rem; font-size: 0.75rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 4px;">📋 Copy Script Tag</button>
       </div>
-      <span id="status-msg" style="font-size: 0.85rem; color: #10b981; font-weight: 500; display: none;">Copied to clipboard!</span>
+      <textarea id="jsonld-output" class="code-textarea" readonly></textarea>
+    </div>
+
+    <!-- Controls Bar -->
+    <div class="controls-bar">
+      <div></div>
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Reset All</button>
+      </div>
     </div>
 
     <!-- SEO Article Content Box 1 -->
     <div class="content-box">
-      <h2>Why Use FAQ Schema Markup in SEO?</h2>
-      <p>Adding <strong>FAQ Schema Markup (JSON-LD)</strong> to your web pages helps Google, Bing, and AI search engines easily extract your frequently asked questions. When search crawlers detect valid FAQPage structured data, your search results expand into eye-catching <strong>Rich Snippets</strong>, increasing organic visibility and driving higher Click-Through Rates (CTR).</p>
+      <h2>Why Implementing FAQ Schema (JSON-LD) Boosts Organic SERP Visibility</h2>
+      <p>Search Engine Optimization (SEO) in modern web development extends beyond traditional keyword density and backlinks. Implementing structured data markup using <strong>Schema.org standards in JSON-LD format</strong> provides search engines like Google, Bing, and Yahoo with explicit context regarding page content.</p>
+
+      <p>When you add <code>FAQPage</code> structured data markup to a webpage containing frequently asked questions, search engines can render interactive accordion dropdowns directly beneath your organic search listing. This extra real estate significantly improves Search Engine Result Page (SERP) prominence, enhances brand authority, and boosts click-through rates (CTR).</p>
     </div>
 
     <!-- SEO Article Content Box 2 -->
     <div class="content-box">
-      <h2>FAQ Schema Best Practices</h2>
+      <h2>Google Guidelines for FAQ Structured Data</h2>
+      <p>To ensure your FAQ schema qualifies for Google rich snippets, follow these official webmaster guidelines:</p>
+
       <ul>
-        <li><strong>Original & Relevant Q&As:</strong> Ensure questions and answers match the actual visible content on your page.</li>
-        <li><strong>No Promotional Copy:</strong> Avoid using FAQ schema for purely advertising or sales push statements.</li>
-        <li><strong>Valid JSON-LD Syntax:</strong> Always use proper JSON escaping for quotation marks and special symbols.</li>
-        <li><strong>Direct HTML Placement:</strong> Embed the generated <code>&lt;script type="application/ld+json"&gt;</code> code into your HTML <code>&lt;head&gt;</code> section.</li>
+        <li><strong>Visible On-Page Content:</strong> Every question and answer included in your JSON-LD schema must be fully visible to human users on the source webpage.</li>
+        <li><strong>Original FAQ Content:</strong> Use FAQ schema for questions and answers created by the site owner. Do not use FAQPage markup for user-submitted forums (use <code>QAPage</code> schema instead).</li>
+        <li><strong>No Promotional / Repetitive Language:</strong> Ensure answers are informative, concise, and free from excessive advertising language.</li>
       </ul>
     </div>
 
-    <!-- Internal Linking Section (SEO Best Practice) -->
+    <!-- SEO Article Content Box 3 -->
     <div class="content-box">
-      <h2>Explore Related SEO & Text Tools</h2>
-      <p>Enhance your search engine optimization with our free utilities:</p>
+      <h2>Features of MicroToolStack's FAQ Schema Generator</h2>
+      <ul>
+        <li><strong>Dynamic Multi-Question Builder:</strong> Add, edit, or remove unlimited question-and-answer pairs dynamically.</li>
+        <li><strong>Real-Time JSON-LD Code Generation:</strong> Watch valid `<script type="application/ld+json">` code update in real time as you type.</li>
+        <li><strong>100% Client-Side Privacy:</strong> All string parsing and JSON encoding execute locally inside your web browser session using JavaScript. Your content is never stored on external databases.</li>
+        <li><strong>Free & Unlimited Usage:</strong> No creation limits, software downloads, or account sign-ups required.</li>
+      </ul>
+    </div>
+
+    <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
+    <div class="content-box">
+      <h2>Explore Related SEO & Webmaster Tools</h2>
+      <p>Discover our complementary online webmaster utilities:</p>
       <div class="related-links">
-        <a href="/tools/seo/slug-generator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🔗 Slug Generator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Generate clean, SEO-friendly URL slugs.</span>
+        <a href="/tools/seo/canonical-url-checker.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🔍 Canonical URL Tag Checker</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Inspect rel="canonical" tags to prevent duplicate content.</span>
+        </a>
+        <a href="/tools/seo/broken-link-checker.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🔗 Broken Link Checker</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Audit HTML code for dead links and 404 errors.</span>
         </a>
         <a href="/tools/text/word-counter.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">📝 Word Counter</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Analyze text length and estimated reading time.</span>
-        </a>
-        <a href="/tools/text/case-converter.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🔤 Case Converter</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Convert titles and headings into Title Case.</span>
+          <strong style="display:block; margin-bottom: 0.25rem;">📊 Real-Time Word Counter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Analyze keyword density, word counts, and reading times.</span>
         </a>
       </div>
     </div>
 
     <!-- FAQ Section -->
     <div class="content-box">
-      <h2>Frequently Asked Questions</h2>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How long does it take for Google to show FAQ rich snippets?</h3>
-        <p>Once you deploy the JSON-LD schema markup and re-submit your page in Google Search Console, Google usually updates your SERP snippet within a few days to two weeks.</p>
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Where do I paste the generated FAQ JSON-LD script?</h3>
+        <p>Paste the copied <code>&lt;script type="application/ld+json"&gt;...&lt;/script&gt;</code> block into your webpage HTML document inside the <code>&lt;head&gt;</code> section or before the closing <code>&lt;/body&gt;</code> tag.</p>
       </div>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this FAQ Schema Generator completely free?</h3>
-        <p>Yes, MicroToolStack's FAQ Schema Generator is 100% free with no limits on the number of questions or schema outputs generated.</p>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How can I test my generated FAQ Schema?</h3>
+        <p>You can test your website URL or copied JSON-LD code using Google's official Rich Results Test or Schema.org's Markup Validator.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is my FAQ content saved on remote servers?</h3>
+        <p>No. All calculations run client-side inside your browser session using JavaScript. Your inputs remain 100% private.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this FAQ Schema Generator free?</h3>
+        <p>Yes, MicroToolStack's FAQ Schema Generator is 100% free with no usage limits or sign-up required.</p>
       </div>
     </div>
 
@@ -328,76 +375,76 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const faqBuilderList = document.getElementById('faq-builder-list');
+      const faqItemsContainer = document.getElementById('faq-items-container');
       const btnAddFaq = document.getElementById('btn-add-faq');
-      const outputJson = document.getElementById('output-json');
+      const jsonldOutput = document.getElementById('jsonld-output');
+      const btnCopyCode = document.getElementById('btn-copy-code');
+      const btnClear = document.getElementById('btn-clear');
 
-      const btnCopy = document.getElementById('btn-copy');
-      const btnTest = document.getElementById('btn-test');
-      const statusMsg = document.getElementById('status-msg');
-
-      let faqData = [
-        { question: 'Is this FAQ Schema Generator free to use?', answer: 'Yes, this tool is 100% free and requires no registration or API keys.' },
-        { question: 'Where should I place the generated FAQ code?', answer: 'Paste the generated JSON-LD script directly into the head or body tag of your webpage HTML.' }
+      let faqList = [
+        { question: "What is FAQ Schema Markup?", answer: "FAQ Schema is a standardized JSON-LD structured data format that informs search engines that a webpage contains frequently asked questions." },
+        { question: "How does FAQ Schema improve SEO?", answer: "Implementing FAQ schema enables Google rich results SERP accordions, increasing search listing real estate and click-through rates." }
       ];
 
-      function renderFaqForms() {
-        faqBuilderList.innerHTML = '';
-        faqData.forEach((item, index) => {
-          const card = document.createElement('div');
-          card.className = 'faq-card';
-          card.innerHTML = `
-            <div class="faq-card-header">
-              <span class="faq-card-title">Question #${index + 1}</span>
-              ${faqData.length > 1 ? `<button class="btn-remove-faq" onclick="removeFaq(${index})">🗑️ Delete</button>` : ''}
+      function renderFaqInputs() {
+        faqItemsContainer.innerHTML = '';
+
+        faqList.forEach((item, index) => {
+          const div = document.createElement('div');
+          div.className = 'faq-builder-item';
+          div.innerHTML = `
+            ${faqList.length > 1 ? `<button class="btn-remove-faq" onclick="removeFaqItem(${index})">Remove ✕</button>` : ''}
+            <div class="input-group" style="margin-bottom: 0.75rem;">
+              <label class="input-label">Question #${index + 1}</label>
+              <input type="text" class="form-control faq-q" data-index="${index}" value="${escapeAttr(item.question)}" placeholder="Enter question here...">
             </div>
-            <input type="text" class="editor-input q-input" placeholder="Type Question here..." value="${escapeHtml(item.question)}" data-index="${index}">
-            <textarea class="editor-textarea a-input" placeholder="Type Answer here..." data-index="${index}" style="min-height: 80px; margin-bottom: 0;">${escapeHtml(item.answer)}</textarea>
+            <div class="input-group" style="margin-bottom: 0;">
+              <label class="input-label">Answer #${index + 1}</label>
+              <textarea class="form-control faq-a" data-index="${index}" style="min-height: 70px;" placeholder="Enter answer here...">${escapeText(item.answer)}</textarea>
+            </div>
           `;
-          faqBuilderList.appendChild(card);
+          faqItemsContainer.appendChild(div);
         });
 
-        // Attach Event Listeners
-        document.querySelectorAll('.q-input').forEach(input => {
-          input.addEventListener('input', (e) => {
-            const idx = e.target.getAttribute('data-index');
-            faqData[idx].question = e.target.value;
-            generateJsonSchema();
+        // Add input listeners
+        document.querySelectorAll('.faq-q').forEach(input => {
+          input.addEventListener('input', function() {
+            const idx = parseInt(this.getAttribute('data-index'), 10);
+            faqList[idx].question = this.value;
+            generateJsonLd();
           });
         });
 
-        document.querySelectorAll('.a-input').forEach(textarea => {
-          textarea.addEventListener('input', (e) => {
-            const idx = e.target.getAttribute('data-index');
-            faqData[idx].answer = e.target.value;
-            generateJsonSchema();
+        document.querySelectorAll('.faq-a').forEach(textarea => {
+          textarea.addEventListener('input', function() {
+            const idx = parseInt(this.getAttribute('data-index'), 10);
+            faqList[idx].answer = this.value;
+            generateJsonLd();
           });
         });
 
-        generateJsonSchema();
+        generateJsonLd();
       }
 
-      function escapeHtml(str) {
-        return (str || '').replace(/"/g, '&quot;');
-      }
-
-      window.removeFaq = function(index) {
-        faqData.splice(index, 1);
-        renderFaqForms();
+      window.removeFaqItem = function(index) {
+        if (faqList.length > 1) {
+          faqList.splice(index, 1);
+          renderFaqInputs();
+        }
       };
 
       btnAddFaq.addEventListener('click', function() {
-        faqData.push({ question: '', answer: '' });
-        renderFaqForms();
+        faqList.push({ question: '', answer: '' });
+        renderFaqInputs();
       });
 
-      function generateJsonSchema() {
-        const validFaqs = faqData.filter(item => item.question.trim() !== '' && item.answer.trim() !== '');
+      function generateJsonLd() {
+        const validItems = faqList.filter(item => item.question.trim() !== '' && item.answer.trim() !== '');
 
-        const schema = {
+        const schemaObj = {
           "@context": "https://schema.org",
           "@type": "FAQPage",
-          "mainEntity": validFaqs.map(item => ({
+          "mainEntity": validItems.map(item => ({
             "@type": "Question",
             "name": item.question.trim(),
             "acceptedAnswer": {
@@ -407,25 +454,36 @@
           }))
         };
 
-        const jsonString = `<script type="application/ld+json">\n${JSON.stringify(schema, null, 2)}\n<\/script>`;
-        outputJson.value = jsonString;
+        const jsonString = JSON.stringify(schemaObj, null, 2);
+        jsonldOutput.value = `<script type="application/ld+json">
+${jsonString}
+<\/script>`;
       }
 
-      // Copy Action
-      btnCopy.addEventListener('click', function() {
-        if (!outputJson.value.trim()) return;
-        navigator.clipboard.writeText(outputJson.value).then(function() {
-          statusMsg.style.display = 'inline';
-          setTimeout(() => { statusMsg.style.display = 'none'; }, 2000);
+      function escapeAttr(str) {
+        return str.replace(/"/g, '&quot;');
+      }
+
+      function escapeText(str) {
+        return str.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      }
+
+      btnCopyCode.addEventListener('click', function() {
+        if (!jsonldOutput.value) return;
+        navigator.clipboard.writeText(jsonldOutput.value).then(() => {
+          const origText = btnCopyCode.textContent;
+          btnCopyCode.textContent = '✅ Copied!';
+          setTimeout(() => { btnCopyCode.textContent = origText; }, 2000);
         });
       });
 
-      // Test Rich Results Action
-      btnTest.addEventListener('click', function() {
-        window.open('https://search.google.com/test/rich-results', '_blank');
+      btnClear.addEventListener('click', function() {
+        faqList = [{ question: '', answer: '' }];
+        renderFaqInputs();
       });
 
-      renderFaqForms();
+      // Initial Render
+      renderFaqInputs();
     });
   </script>
 </body>
