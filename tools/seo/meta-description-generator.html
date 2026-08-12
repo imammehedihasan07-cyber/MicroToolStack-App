@@ -22,9 +22,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Primary SEO Meta Tags -->
-  <title>Free Online SEO Meta Description Generator & SERP Preview | MicroToolStack</title>
-  <meta name="description" content="Free online SEO Meta Description Generator to write compelling, click-worthy search snippets. Includes real-time character counter, pixel checker, and Google SERP preview.">
-  <meta name="keywords" content="meta description generator, seo description generator, meta snippet tool, google serp preview tool, meta tag optimizer, meta description length checker">
+  <title>Free Online Meta Description Generator | SEO Meta Tag Builder | MicroToolStack</title>
+  <meta name="description" content="Generate optimized meta descriptions for your website pages online for free. Create engaging, click-worthy meta description tags with real-time character counters and SERP pixel width preview.">
+  <meta name="keywords" content="meta description generator, seo meta tag builder, generate meta description online, meta description length checker, meta description snippet maker, seo tools, microtoolstack">
 
   <link rel="canonical" href="https://microtoolstack.com/tools/seo/meta-description-generator.html">
   <meta name="robots" content="index, follow">
@@ -32,8 +32,8 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://microtoolstack.com/tools/seo/meta-description-generator.html">
-  <meta property="og:title" content="Free Online SEO Meta Description Generator & SERP Preview | MicroToolStack">
-  <meta property="og:description" content="Generate high-converting SEO meta descriptions with real-time Google search snippet previews. 100% free and private.">
+  <meta property="og:title" content="Free Online Meta Description Generator | MicroToolStack">
+  <meta property="og:description" content="Build click-worthy, SEO-optimized meta description HTML tags with live pixel width checks and instant 1-click HTML code copying. 100% free webmaster utility.">
   <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
@@ -48,7 +48,7 @@
     "@graph": [
       {
         "@type": "SoftwareApplication",
-        "name": "SEO Meta Description Generator & Checker",
+        "name": "Meta Description Tag Generator",
         "operatingSystem": "All",
         "applicationCategory": "UtilitiesApplication",
         "offers": {
@@ -56,7 +56,7 @@
           "price": "0",
           "priceCurrency": "USD"
         },
-        "description": "An online SEO snippet optimization tool designed to create, test, and measure meta descriptions against Google search length limits.",
+        "description": "An essential client-side SEO utility that crafts optimized HTML meta description tags, calculates character counts and pixel widths, and formats HTML code snippets.",
         "url": "https://microtoolstack.com/tools/seo/meta-description-generator.html"
       },
       {
@@ -64,26 +64,34 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "What is the ideal length for a Meta Description in SEO?",
+            "name": "What is a Meta Description?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The recommended meta description length is between 150 to 160 characters (or around 960 pixels on desktop). Staying within this limit prevents Google from truncating your text with an ellipsis."
+              "text": "A meta description (<meta name='description' content='...'>) is an HTML element that provides a brief summary of a webpage's content for search engines and user snippets on search result pages."
             }
           },
           {
             "@type": "Question",
-            "name": "Does a meta description directly improve Google search rankings?",
+            "name": "What is the recommended length for a meta description?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "While meta descriptions are not a direct Google ranking factor, compelling meta descriptions significantly improve organic Click-Through Rates (CTR), which positively impacts search performance."
+              "text": "Google typically truncates meta descriptions longer than 960 pixels on desktop (~150-160 characters) and 680 pixels on mobile (~120 characters). Keeping descriptions between 120 and 155 characters ensures clear visibility across all devices."
             }
           },
           {
             "@type": "Question",
-            "name": "Is my meta description draft saved anywhere?",
+            "name": "Does a meta description directly impact Google search rankings?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "No! Everything processes locally inside your browser using JavaScript. Your inputs are never uploaded or saved to external servers."
+              "text": "While meta descriptions are not a direct Google ranking factor, an engaging and clear description significantly increases organic click-through rate (CTR), which indirectly improves search performance."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this Meta Description Generator free to use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, MicroToolStack's Meta Description Generator is 100% free with unlimited generation and no registration required."
             }
           }
         ]
@@ -101,77 +109,144 @@
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
 
   <style>
-    .editor-textarea {
+    .input-group {
+      margin-bottom: 1.25rem;
+    }
+    .input-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.5rem;
+    }
+    .counter-info {
+      font-size: 0.8rem;
+      color: var(--text-secondary, #9ca3af);
+      font-weight: 400;
+    }
+    .form-control, .form-select {
       width: 100%;
-      min-height: 120px;
-      padding: 0.85rem 1rem;
+      padding: 0.75rem 1rem;
       font-size: 1rem;
-      line-height: 1.5;
       border: 1px solid var(--border-color, #333);
       border-radius: var(--radius-md, 8px);
       background-color: var(--bg-card, #1e1e2e);
       color: var(--text-primary, #fff);
       outline: none;
+      box-sizing: border-box;
+    }
+    .form-control:focus, .form-select:focus {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+
+    .code-textarea {
+      width: 100%;
+      min-height: 120px;
+      padding: 1rem;
+      font-size: 0.85rem;
+      font-family: 'Fira Code', Consolas, Monaco, monospace;
+      line-height: 1.5;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: #111827;
+      color: #38bdf8;
+      outline: none;
       resize: vertical;
       box-sizing: border-box;
-      margin-bottom: 1rem;
+      white-space: pre-wrap;
+      word-break: break-all;
     }
-    .stats-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: var(--bg-card, #1e1e2e);
-      padding: 0.85rem 1.25rem;
-      border-radius: var(--radius-md, 8px);
-      border: 1px solid var(--border-color, #333);
-      margin-bottom: 1.5rem;
-      font-size: 0.95rem;
-    }
-    .stat-badge {
-      font-weight: 700;
-      color: #10b981;
-    }
-    .serp-preview-box {
+
+    /* SERP Simulation Container */
+    .serp-card-container {
       background: #ffffff;
-      color: #202124;
       border-radius: 8px;
       padding: 1.25rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      font-family: arial, sans-serif;
-    }
-    .serp-site-name {
-      font-size: 14px;
-      line-height: 1.3;
       color: #202124;
+      font-family: arial, sans-serif;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      margin-bottom: 1.5rem;
+      overflow-x: auto;
+    }
+
+    .serp-header {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 12px;
       margin-bottom: 4px;
     }
+
+    .serp-favicon {
+      width: 26px;
+      height: 26px;
+      background: #f1f3f4;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+
+    .serp-site-info {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.3;
+    }
+
+    .serp-site-name {
+      font-size: 14px;
+      color: #202124;
+      font-weight: 400;
+    }
+
     .serp-url {
       font-size: 12px;
       color: #4d5156;
+      word-break: break-all;
     }
+
     .serp-title {
       font-size: 20px;
       line-height: 1.3;
       color: #1a0dab;
+      font-weight: 400;
       cursor: pointer;
+      margin-top: 4px;
       margin-bottom: 4px;
       word-break: break-word;
-      font-weight: 400;
+      display: inline-block;
     }
+
     .serp-title:hover {
       text-decoration: underline;
     }
-    .serp-snippet {
+
+    .serp-description {
       font-size: 14px;
       line-height: 1.58;
       color: #4d5156;
       word-break: break-word;
     }
-    .editor-controls {
+
+    /* Progress bar indicators */
+    .progress-wrapper {
+      height: 6px;
+      width: 100%;
+      background: #334155;
+      border-radius: 3px;
+      margin-top: 6px;
+      overflow: hidden;
+    }
+    .progress-bar {
+      height: 100%;
+      width: 0%;
+      background: #10b981;
+      transition: width 0.2s ease, background-color 0.2s ease;
+    }
+
+    .controls-bar {
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
@@ -179,10 +254,7 @@
       align-items: center;
       margin-bottom: 2.5rem;
     }
-    .btn-group {
-      display: flex;
-      gap: 0.5rem;
-    }
+
     .content-box {
       background-color: var(--bg-card, #1e1e2e);
       border: 1px solid var(--border-color, #333);
@@ -193,6 +265,12 @@
     .content-box h2 {
       font-size: 1.35rem;
       margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
       color: var(--text-primary, #fff);
     }
     .content-box p, .content-box ul {
@@ -248,93 +326,137 @@
     
     <!-- Tool Title & Description -->
     <div style="text-align: center; margin-bottom: 2rem;">
-      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">SEO Meta Description Generator & Preview</h1>
-      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Craft engaging meta descriptions and preview Google Search SERP snippets in real-time.</p>
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online Meta Description Generator</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Craft engaging, click-worthy meta descriptions with live character counters, pixel width checks, and ready-to-copy HTML tags.</p>
     </div>
 
-    <!-- Description Textarea -->
-    <label style="display: block; font-size: 0.9rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff); font-weight: 600;">Meta Description Tag:</label>
-    <textarea id="desc-input" class="editor-textarea" placeholder="Type or paste your meta description snippet here..." autofocus></textarea>
-
-    <!-- Optional Page Title Input for SERP Sync -->
-    <div style="margin-bottom: 1.25rem;">
-      <label style="display: block; font-size: 0.85rem; margin-bottom: 0.4rem; color: var(--text-secondary, #9ca3af);">Associated Page Title (Optional for Preview):</label>
-      <input type="text" id="title-preview-input" class="editor-textarea" style="min-height: 45px; padding: 0.6rem 1rem;" placeholder="e.g. Free Online PDF, SEO & Developer Tools" value="Free Online PDF, SEO, Text & Developer Tools | MicroToolStack">
-    </div>
-
-    <!-- Live Metrics Counter Bar -->
-    <div class="stats-bar">
-      <span>Character Count: <span class="stat-badge" id="char-count">0 / 160</span></span>
-      <span>Estimated Pixel Width: <span class="stat-badge" id="pixel-count">0px / 960px</span></span>
-    </div>
-
-    <!-- SERP Snippet Live Preview Box -->
-    <h3 style="font-size: 1.1rem; color: var(--text-primary, #fff); margin-bottom: 0.75rem;">🔍 Google Search SERP Snippet Preview</h3>
-    <div class="serp-preview-box">
-      <div class="serp-site-name">
-        <span style="font-weight: bold; font-size: 13px;">MicroToolStack</span>
-        <span class="serp-url">https://microtoolstack.com › tools</span>
+    <!-- SERP Preview Card -->
+    <div class="serp-card-container" id="serp-card">
+      <div class="serp-header">
+        <div class="serp-favicon">🌐</div>
+        <div class="serp-site-info">
+          <span class="serp-site-name" id="preview-site-name">MicroToolStack</span>
+          <span class="serp-url" id="preview-url">https://microtoolstack.com › tools › seo</span>
+        </div>
       </div>
-      <div class="serp-title" id="serp-title-preview">Free Online PDF, SEO, Text & Developer Tools | MicroToolStack</div>
-      <div class="serp-snippet" id="serp-desc-preview">Type your meta description above to see live preview...</div>
+      <div class="serp-title" id="preview-title">Free Online Meta Description Generator | MicroToolStack</div>
+      <div class="serp-description" id="preview-description">Generate optimized meta description HTML tags online for free. Create engaging, click-worthy descriptions with real-time character counters and pixel width previews.</div>
     </div>
 
-    <!-- Action Controls -->
-    <div class="editor-controls">
-      <div class="btn-group">
-        <button id="btn-copy" class="btn btn-primary" style="padding: 0.68rem 1.4rem; cursor: pointer;">📋 Copy Meta Description</button>
-        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.68rem 1.2rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear Input</button>
+    <!-- Inputs Settings Card -->
+    <div class="content-box" style="margin-bottom: 1.5rem;">
+      <div class="input-group">
+        <div class="input-label">
+          <span>Meta Description Content</span>
+          <span class="counter-info" id="desc-counter">154 Chars | 920 px / 960 px</span>
+        </div>
+        <textarea id="input-desc" class="form-control" style="min-height: 90px;" placeholder="Write or paste your meta description summary here...">Generate optimized meta description HTML tags online for free. Create engaging, click-worthy descriptions with real-time character counters and pixel width previews.</textarea>
+        <div class="progress-wrapper">
+          <div id="desc-progress" class="progress-bar"></div>
+        </div>
       </div>
-      <span id="status-msg" style="font-size: 0.85rem; color: #10b981; font-weight: 500; display: none;">Meta description copied to clipboard!</span>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;" class="input-group">
+        <div>
+          <label for="input-title" class="input-label">Meta Title (Preview Only)</label>
+          <input type="text" id="input-title" class="form-control" value="Free Online Meta Description Generator | MicroToolStack">
+        </div>
+        <div>
+          <label for="input-url" class="input-label">Page URL (Preview Only)</label>
+          <input type="text" id="input-url" class="form-control" value="https://microtoolstack.com/tools/seo/meta-description-generator.html">
+        </div>
+      </div>
+    </div>
+
+    <!-- Generated HTML Code Box -->
+    <div class="content-box" style="margin-bottom: 1.5rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+        <label for="html-output" class="input-label" style="margin: 0;">Generated HTML Meta Tag</label>
+        <button id="btn-copy-tag" class="btn btn-secondary" style="padding: 0.35rem 0.8rem; font-size: 0.75rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 4px;">📋 Copy Meta Tag</button>
+      </div>
+      <textarea id="html-output" class="code-textarea" readonly></textarea>
+    </div>
+
+    <!-- Hidden Offscreen Canvas for Pixel Measurement -->
+    <canvas id="ruler-canvas" style="display: none;"></canvas>
+
+    <!-- Controls Bar -->
+    <div class="controls-bar">
+      <div></div>
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-reset" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Reset Inputs</button>
+      </div>
     </div>
 
     <!-- SEO Article Content Box 1 -->
     <div class="content-box">
-      <h2>Why Meta Descriptions Matter for Organic Click-Through Rates</h2>
-      <p>A <strong>Meta Description</strong> is an HTML snippet that provides a brief summary of a web page's content. While search engines like Google do not use meta descriptions as a direct ranking algorithm factor, a well-optimized description acts as advertising copy that boosts organic <strong>Click-Through Rate (CTR)</strong> in Search Engine Result Pages (SERPs).</p>
+      <h2>Why Well-Crafted Meta Descriptions Are Critical for Organic CTR</h2>
+      <p>In Search Engine Optimization (SEO), a <strong>Meta Description</strong> acts as an advertising pitch for your webpage within Search Engine Results Pages (SERPs). While Google has stated that meta description tags are not a direct ranking factor in search algorithms, a compelling, action-oriented description drastically increases your <strong>Click-Through Rate (CTR)</strong>.</p>
+
+      <p>If your meta description is too long, search engine crawlers will truncate it with trailing ellipses (<code>...</code>), cutting off crucial information and calls to action. Our free <strong>Online Meta Description Generator</strong> helps you craft concise, high-converting meta descriptions while tracking exact character limits and pixel width thresholds in real-time.</p>
     </div>
 
     <!-- SEO Article Content Box 2 -->
     <div class="content-box">
-      <h2>Tips for Optimization</h2>
+      <h2>Optimal Meta Description Length Guidelines</h2>
+      <p>Key character length and pixel width recommendations for desktop and mobile search devices:</p>
+
       <ul>
-        <li><strong>Ideal Length (150–160 Characters):</strong> Keep text within 155 characters or 960 pixels to avoid truncation.</li>
-        <li><strong>Include Primary Target Keywords:</strong> Google bolds matching search query terms in search snippets.</li>
-        <li><strong>Include a Clear Call-to-Action (CTA):</strong> Encourage clicks using actionable terms like <em>"Try for free," "Learn more," or "Calculate instantly."</em></li>
-        <li><strong>Unique Descriptions Per Page:</strong> Avoid duplicate meta descriptions across different URLs on your site.</li>
+        <li><strong>Desktop Search Limit:</strong> Up to ~960 pixels wide (approximately 150 to 160 characters).</li>
+        <li><strong>Mobile Search Limit:</strong> Up to ~680 pixels wide (approximately 120 to 130 characters).</li>
+        <li><strong>Best Practice Target:</strong> Keep primary marketing points within the first 120 to 150 characters to ensure full visibility across all screen sizes.</li>
       </ul>
     </div>
 
-    <!-- Internal Linking Section (SEO Best Practice) -->
+    <!-- SEO Article Content Box 3 -->
     <div class="content-box">
-      <h2>Explore Related SEO & Text Tools</h2>
-      <p>Enhance your search engine optimization with our free utilities:</p>
+      <h2>Features of MicroToolStack's Meta Description Tool</h2>
+      <ul>
+        <li><strong>Real-Time Pixel Width Measurement:</strong> Measures exact Arial 14px font pixel widths using HTML5 canvas rendering context.</li>
+        <li><strong>Live Google SERP Card Preview:</strong> See exactly how your description, title, and URL snippet will appear to search users.</li>
+        <li><strong>Instant HTML Tag Formatting:</strong> Generates ready-to-paste <code>&lt;meta name="description" content="..."&gt;</code> code automatically.</li>
+        <li><strong>100% Client-Side Privacy:</strong> All calculations execute locally inside your web browser session using JavaScript. Your copy is never uploaded or saved remotely.</li>
+      </ul>
+    </div>
+
+    <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
+    <div class="content-box">
+      <h2>Explore Related SEO & Webmaster Tools</h2>
+      <p>Discover our complementary online webmaster utilities:</p>
       <div class="related-links">
+        <a href="/tools/seo/google-serp-preview.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🖥️ Google SERP Preview Tool</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Simulate desktop & mobile search result snippets.</span>
+        </a>
+        <a href="/tools/seo/keyword-density-checker.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📊 Keyword Density Checker</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Analyze word frequency percentages and key phrase densities.</span>
+        </a>
         <a href="/tools/seo/faq-schema-generator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">❓ FAQ Schema Generator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Build JSON-LD FAQPage structured data.</span>
-        </a>
-        <a href="/tools/text/word-counter.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">📝 Word Counter</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Analyze text length and estimated reading time.</span>
-        </a>
-        <a href="/tools/text/case-converter.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🔤 Case Converter</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Convert titles and headings into Title Case.</span>
+          <strong style="display:block; margin-bottom: 0.25rem;">📄 FAQ Schema Generator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Build Google-compliant FAQPage JSON-LD scripts.</span>
         </a>
       </div>
     </div>
 
     <!-- FAQ Section -->
     <div class="content-box">
-      <h2>Frequently Asked Questions</h2>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Why is Google showing a different meta description than the one I wrote?</h3>
-        <p>Google dynamically rewrites search snippets if it believes the page's body text better answers a user's specific search query or if the original description is off-topic.</p>
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How do I generate a meta description HTML tag?</h3>
+        <p>Type or paste your page summary into the Meta Description Content box. The tool formats the exact <code>&lt;meta name="description" content="..."&gt;</code> tag ready for your HTML <code>&lt;head&gt;</code> section.</p>
       </div>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What happens if my description exceeds 160 characters?</h3>
-        <p>Descriptions longer than ~160 characters will be automatically truncated with an ellipsis (...), hiding valuable information from potential visitors.</p>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Why does Google sometimes ignore my meta description?</h3>
+        <p>Google may choose to display an alternate snippet extracted from your page body if it determines the content is more relevant to a user's specific search query.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is my meta text saved on remote servers?</h3>
+        <p>No. All calculations run client-side inside your browser session using JavaScript. Your inputs remain 100% private.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this Meta Description Generator free?</h3>
+        <p>Yes, MicroToolStack's Meta Description Generator is 100% free with no usage limits or sign-up required.</p>
       </div>
     </div>
 
@@ -350,75 +472,97 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const descInput = document.getElementById('desc-input');
-      const titlePreviewInput = document.getElementById('title-preview-input');
+      const inputDesc = document.getElementById('input-desc');
+      const inputTitle = document.getElementById('input-title');
+      const inputUrl = document.getElementById('input-url');
 
-      const charCountEl = document.getElementById('char-count');
-      const pixelCountEl = document.getElementById('pixel-count');
+      const previewSiteName = document.getElementById('preview-site-name');
+      const previewUrl = document.getElementById('preview-url');
+      const previewTitle = document.getElementById('preview-title');
+      const previewDescription = document.getElementById('preview-description');
 
-      const serpTitlePreview = document.getElementById('serp-title-preview');
-      const serpDescPreview = document.getElementById('serp-desc-preview');
+      const descCounter = document.getElementById('desc-counter');
+      const descProgress = document.getElementById('desc-progress');
+      const htmlOutput = document.getElementById('html-output');
 
-      const btnCopy = document.getElementById('btn-copy');
-      const btnClear = document.getElementById('btn-clear');
-      const statusMsg = document.getElementById('status-msg');
+      const rulerCanvas = document.getElementById('ruler-canvas');
+      const btnCopyTag = document.getElementById('btn-copy-tag');
+      const btnReset = document.getElementById('btn-reset');
 
-      // Approximate Google Arial 14px letter pixel widths for description text
-      function calculatePixelWidth(text) {
-        let width = 0;
-        for (let char of text) {
-          if (/[iIl1'!\.]/.test(char)) width += 4.5;
-          else if (/[fjrI\t]/.test(char)) width += 6;
-          else if (/[abcdeghknopqsuvxyz0-24-9\-]/.test(char)) width += 8.5;
-          else if (/[FJ3]/.test(char)) width += 9.5;
-          else if (/[ABCDEGHKNOPQRSTUVXYZ4-56-8]/.test(char)) width += 10.5;
-          else if (/[WMw]/.test(char)) width += 12.5;
-          else if (/\s/.test(char)) width += 4;
-          else width += 8;
+      function getTextPixelWidth(text, fontSize, fontFamily) {
+        const ctx = rulerCanvas.getContext('2d');
+        ctx.font = `${fontSize} ${fontFamily}`;
+        return Math.round(ctx.measureText(text).width);
+      }
+
+      function formatBreadcrumbUrl(urlStr) {
+        try {
+          const parsed = new URL(urlStr);
+          const domain = parsed.hostname;
+          const path = parsed.pathname.split('/').filter(p => p.length > 0).join(' › ');
+          return `${parsed.protocol}//${domain}${path ? ' › ' + path : ''}`;
+        } catch (e) {
+          return urlStr;
         }
-        return Math.round(width * 0.95);
       }
 
-      function updatePreview() {
-        const descText = descInput.value.trim();
-        const titleText = titlePreviewInput.value.trim();
+      function updateMetaDescription() {
+        const descText = inputDesc.value.trim();
+        const titleText = inputTitle.value.trim() || 'Example Webpage Meta Title';
+        const urlText = inputUrl.value.trim() || 'https://example.com/page.html';
 
-        serpTitlePreview.textContent = titleText || 'Free Online Tools | MicroToolStack';
-        serpDescPreview.textContent = descText || 'Type your meta description above to see live preview...';
+        // Measure Description Pixels (Arial 14px for description)
+        const descPx = getTextPixelWidth(descText, '14px', 'Arial');
+        const maxDescPx = 960; // Desktop threshold
 
-        const totalChars = descText.length;
-        const pixelWidth = calculatePixelWidth(descText);
+        // Update Counters
+        descCounter.textContent = `${descText.length} Chars | ${descPx} px / ${maxDescPx} px`;
 
-        // Update Stats
-        charCountEl.textContent = `${totalChars} / 160`;
-        charCountEl.style.color = (totalChars > 160 || (totalChars > 0 && totalChars < 120)) ? '#ef4444' : '#10b981';
+        // Update Progress Bar
+        const descPct = Math.min(100, Math.round((descPx / maxDescPx) * 100));
+        descProgress.style.width = `${descPct}%`;
+        descProgress.style.backgroundColor = descPx > maxDescPx ? '#ef4444' : (descPx > maxDescPx - 80 ? '#f59e0b' : '#10b981');
 
-        pixelCountEl.textContent = `${pixelWidth}px / 960px`;
-        pixelCountEl.style.color = pixelWidth > 960 ? '#ef4444' : '#10b981';
+        // Update SERP Preview
+        previewTitle.textContent = titleText;
+        previewDescription.textContent = descText || 'Example webpage meta description text snippet for search engine previews.';
+
+        try {
+          const parsed = new URL(urlText);
+          previewSiteName.textContent = parsed.hostname.replace('www.', '');
+          previewUrl.textContent = formatBreadcrumbUrl(urlText);
+        } catch (e) {
+          previewSiteName.textContent = 'Website';
+          previewUrl.textContent = urlText;
+        }
+
+        // Generate HTML Tag
+        const cleanDesc = descText.replace(/"/g, '&quot;');
+        htmlOutput.value = `<meta name="description" content="${cleanDesc}">`;
       }
 
-      descInput.addEventListener('input', updatePreview);
-      titlePreviewInput.addEventListener('input', updatePreview);
+      [inputDesc, inputTitle, inputUrl].forEach(el => {
+        el.addEventListener('input', updateMetaDescription);
+      });
 
-      // Copy Action
-      btnCopy.addEventListener('click', function() {
-        const descText = descInput.value.trim();
-        if (!descText) return;
-
-        navigator.clipboard.writeText(descText).then(function() {
-          statusMsg.style.display = 'inline';
-          setTimeout(() => { statusMsg.style.display = 'none'; }, 2000);
+      btnCopyTag.addEventListener('click', function() {
+        if (!htmlOutput.value) return;
+        navigator.clipboard.writeText(htmlOutput.value).then(() => {
+          const origText = btnCopyTag.textContent;
+          btnCopyTag.textContent = '✅ Copied!';
+          setTimeout(() => { btnCopyTag.textContent = origText; }, 2000);
         });
       });
 
-      // Clear Input
-      btnClear.addEventListener('click', function() {
-        descInput.value = '';
-        updatePreview();
-        descInput.focus();
+      btnReset.addEventListener('click', function() {
+        inputDesc.value = 'Generate optimized meta description HTML tags online for free. Create engaging, click-worthy descriptions with real-time character counters and pixel width previews.';
+        inputTitle.value = 'Free Online Meta Description Generator | MicroToolStack';
+        inputUrl.value = 'https://microtoolstack.com/tools/seo/meta-description-generator.html';
+        updateMetaDescription();
       });
 
-      updatePreview();
+      // Initial Update
+      updateMetaDescription();
     });
   </script>
 </body>
