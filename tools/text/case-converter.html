@@ -22,18 +22,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Primary SEO Meta Tags -->
-  <title>Free Online Case Converter Tool | UPPERCASE, lowercase, Title Case</title>
-  <meta name="description" content="Free online case converter tool to convert text into UPPERCASE, lowercase, Title Case, Sentence case, CamelCase, and PascalCase instantly. Fast, free, and private text transformation.">
-  <meta name="keywords" content="case converter, text case converter, uppercase converter, lowercase converter, title case converter, sentence case online, camelcase converter, convert text case">
+  <title>Free Online Case Converter | UPPERCASE, lowercase, Title Case Maker | MicroToolStack</title>
+  <meta name="description" content="Convert text casing online for free. Transform paragraphs into UPPERCASE, lowercase, Title Case, sentence case, camelCase, snake_case, and kebab-case instantly.">
+  <meta name="keywords" content="case converter, uppercase converter, lowercase converter, title case maker, camelcase generator, snake case converter, text case changer, text tools, microtoolstack">
 
   <link rel="canonical" href="https://microtoolstack.com/tools/text/case-converter.html">
   <meta name="robots" content="index, follow">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://microtoolstack.com/tools/text/case-converter.html">
-  <meta property="og:title" content="Free Online Case Converter Tool | MicroToolStack">
-  <meta property="og:description" content="Convert text between UPPERCASE, lowercase, Title Case, and Sentence case instantly in your browser. 100% free and private.">
+  <meta property="og:url" content="https://microtoolstack.com/tools/seo/case-converter.html">
+  <meta property="og:title" content="Free Online Case Converter | MicroToolStack">
+  <meta property="og:description" content="Transform text between UPPERCASE, lowercase, Title Case, camelCase, and snake_case instantly. 100% free web utility.">
   <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
@@ -56,7 +56,7 @@
           "price": "0",
           "priceCurrency": "USD"
         },
-        "description": "An essential online text utility tool to transform text into uppercase, lowercase, sentence case, title case, and camelCase formatting instantly.",
+        "description": "An essential client-side text utility that converts sentences and paragraphs between UPPERCASE, lowercase, Title Case, sentence case, camelCase, snake_case, and kebab-case.",
         "url": "https://microtoolstack.com/tools/text/case-converter.html"
       },
       {
@@ -64,26 +64,34 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "How does Title Case conversion work?",
+            "name": "How do I convert text casing online?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Title Case capitalizes the first letter of every word in a sentence, which is ideal for blog titles, headings, and document headlines."
+              "text": "Paste your text into the editor box, click any case conversion button (UPPERCASE, lowercase, Title Case, camelCase, etc.), and copy the formatted result instantly."
             }
           },
           {
             "@type": "Question",
-            "name": "What is the difference between CamelCase and PascalCase?",
+            "name": "What is Title Case?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "In camelCase, the first word starts with a lowercase letter and subsequent words start with capital letters (e.g., myVariableName). In PascalCase, every word including the first starts with a capital letter (e.g., MyClassName)."
+              "text": "Title Case capitalizes the first letter of every major word in a sentence or heading, commonly used for book titles, article headings, and blog titles."
             }
           },
           {
             "@type": "Question",
-            "name": "Is my text saved or sent to any server?",
+            "name": "Is my text data saved on remote servers?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "No, all case conversions take place locally in your web browser using client-side JavaScript. Your text remains 100% private."
+              "text": "No! All text transformations execute 100% locally inside your web browser session using client-side JavaScript. Your text remains completely private."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this Case Converter free to use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, MicroToolStack's Case Converter is 100% free with unlimited text transformations and no registration required."
             }
           }
         ]
@@ -101,11 +109,28 @@
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
 
   <style>
-    .editor-textarea {
+    .input-group {
+      margin-bottom: 1.25rem;
+    }
+    .input-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.5rem;
+    }
+    .counter-info {
+      font-size: 0.8rem;
+      color: var(--text-secondary, #9ca3af);
+      font-weight: 400;
+    }
+    .form-control {
       width: 100%;
-      min-height: 220px;
+      min-height: 180px;
       padding: 1rem;
-      font-size: 1rem;
+      font-size: 0.95rem;
       line-height: 1.6;
       border: 1px solid var(--border-color, #333);
       border-radius: var(--radius-md, 8px);
@@ -114,31 +139,38 @@
       outline: none;
       resize: vertical;
       box-sizing: border-box;
-      margin-bottom: 1.25rem;
     }
-    .converter-buttons {
+    .form-control:focus {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+
+    /* Conversion Buttons Grid */
+    .btn-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
       gap: 0.75rem;
       margin-bottom: 1.5rem;
     }
+
     .btn-case {
+      background: var(--bg-card, #1e1e2e);
+      color: var(--text-primary, #fff);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
       padding: 0.75rem 1rem;
       font-size: 0.9rem;
       font-weight: 600;
-      border: 1px solid var(--border-color, #374151);
-      border-radius: 6px;
-      background-color: var(--bg-card, #1f2937);
-      color: #fff;
       cursor: pointer;
       transition: all 0.2s ease;
       text-align: center;
     }
     .btn-case:hover {
-      background-color: var(--accent-primary, #3b82f6);
+      background: rgba(59, 130, 246, 0.15);
       border-color: var(--accent-primary, #3b82f6);
+      color: #38bdf8;
     }
-    .editor-controls {
+
+    .controls-bar {
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
@@ -146,10 +178,7 @@
       align-items: center;
       margin-bottom: 2.5rem;
     }
-    .btn-group {
-      display: flex;
-      gap: 0.5rem;
-    }
+
     .content-box {
       background-color: var(--bg-card, #1e1e2e);
       border: 1px solid var(--border-color, #333);
@@ -160,6 +189,12 @@
     .content-box h2 {
       font-size: 1.35rem;
       margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
       color: var(--text-primary, #fff);
     }
     .content-box p, .content-box ul {
@@ -216,79 +251,115 @@
     <!-- Tool Title & Description -->
     <div style="text-align: center; margin-bottom: 2rem;">
       <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online Case Converter</h1>
-      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Transform text into Sentence case, UPPERCASE, lowercase, Title Case, camelCase, and more.</p>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Transform text between UPPERCASE, lowercase, Title Case, camelCase, snake_case, and more instantly.</p>
     </div>
 
-    <!-- Textarea Input Editor -->
-    <textarea id="text-input" class="editor-textarea" placeholder="Type or paste your text here to convert case..." autofocus></textarea>
+    <!-- Text Input Editor Card -->
+    <div class="content-box" style="margin-bottom: 1.5rem;">
+      <div class="input-group" style="margin-bottom: 0;">
+        <div class="input-label">
+          <span>Enter or Paste Text</span>
+          <span class="counter-info" id="char-word-counter">0 Characters | 0 Words</span>
+        </div>
+        <textarea id="text-input" class="form-control" placeholder="Type or paste your text here to convert casing...">Free online case converter tool for transforming text between UPPERCASE, lowercase, Title Case, and programming identifiers like camelCase and snake_case.</textarea>
+      </div>
+    </div>
 
-    <!-- Case Conversion Action Buttons -->
-    <div class="converter-buttons">
-      <button class="btn-case" id="btn-sentence">Sentence case</button>
+    <!-- Conversion Action Buttons Grid -->
+    <div class="btn-grid">
       <button class="btn-case" id="btn-upper">UPPERCASE</button>
       <button class="btn-case" id="btn-lower">lowercase</button>
       <button class="btn-case" id="btn-title">Title Case</button>
+      <button class="btn-case" id="btn-sentence">Sentence case</button>
       <button class="btn-case" id="btn-camel">camelCase</button>
-      <button class="btn-case" id="btn-pascal">PascalCase</button>
+      <button class="btn-case" id="btn-snake">snake_case</button>
+      <button class="btn-case" id="btn-kebab">kebab-case</button>
+      <button class="btn-case" id="btn-inverse">InVeRsE CaSe</button>
     </div>
 
-    <!-- Controls & Action Buttons -->
-    <div class="editor-controls">
-      <div class="btn-group">
-        <button id="btn-copy" class="btn btn-primary" style="padding: 0.68rem 1.4rem; cursor: pointer;">📋 Copy Result</button>
-        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.68rem 1.2rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear Text</button>
+    <!-- Controls Bar -->
+    <div class="controls-bar">
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-copy" class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-weight: 600; cursor: pointer; background: #10b981;">📋 Copy Converted Text</button>
       </div>
-      <span id="status-msg" style="font-size: 0.85rem; color: #10b981; font-weight: 500; display: none;">Text copied to clipboard!</span>
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-reset" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear Text</button>
+      </div>
     </div>
 
     <!-- SEO Article Content Box 1 -->
     <div class="content-box">
       <h2>Why Use an Online Case Converter?</h2>
-      <p>Accidentally typing an entire paragraph with Caps Lock turned on is a frustrating experience. Instead of retyping everything manually, our <strong>Case Converter</strong> lets you instantly change letter casing to UPPERCASE, lowercase, Sentence case, or Title Case with a single click. It's an indispensable tool for content writers, coders, students, and SEO marketers.</p>
+      <p>Whether you accidentally left your Caps Lock key on while typing a long document, need to format article headings in professional <strong>Title Case</strong>, or are writing programming variables in <code>camelCase</code> and <code>snake_case</code>, converting text manually is tedious and time-consuming.</p>
+
+      <p>Our free <strong>Online Case Converter</strong> processes paragraphs, essays, and code snippets instantly directly inside your web browser. No software installation or sign-up required.</p>
     </div>
 
     <!-- SEO Article Content Box 2 -->
     <div class="content-box">
-      <h2>Supported Text Case Formats</h2>
+      <h2>Overview of Supported Casing Formats</h2>
+      <p>Understanding text and programming casing standards:</p>
+
       <ul>
-        <li><strong>Sentence case:</strong> Capitalizes the first letter of each sentence, perfect for standard paragraphs.</li>
-        <li><strong>UPPERCASE:</strong> Transforms every character into capital letters.</li>
-        <li><strong>lowercase:</strong> Converts all characters into small, lowercase letters.</li>
-        <li><strong>Title Case:</strong> Capitalizes the first letter of every single word, ideal for article titles and subheadings.</li>
-        <li><strong>camelCase & PascalCase:</strong> Removes spaces and formats text into standard programming variable styles.</li>
+        <li><strong>UPPERCASE:</strong> Converts all letters to capital letters (e.g. <code>HELLO WORLD</code>).</li>
+        <li><strong>lowercase:</strong> Converts all letters to small letters (e.g. <code>hello world</code>).</li>
+        <li><strong>Title Case:</strong> Capitalizes the first letter of every major word, ideal for book titles and blog headings.</li>
+        <li><strong>Sentence case:</strong> Capitalizes only the first letter of each sentence.</li>
+        <li><strong>camelCase:</strong> Used in programming to combine words without spaces, capitalizing the first letter of each internal word (e.g. <code>myVariableName</code>).</li>
+        <li><strong>snake_case:</strong> Replaces spaces with underscores and lowercases all letters (e.g. <code>my_variable_name</code>).</li>
+        <li><strong>kebab-case:</strong> Replaces spaces with hyphens, commonly used in URL slugs (e.g. <code>my-blog-post-title</code>).</li>
+      </ul>
+    </div>
+
+    <!-- SEO Article Content Box 3 -->
+    <div class="content-box">
+      <h2>Features of MicroToolStack's Case Converter</h2>
+      <ul>
+        <li><strong>Instant 1-Click Transformations:</strong> Convert text instantly between 8 different casing styles.</li>
+        <li><strong>Real-Time Character & Word Counters:</strong> Track character counts, word counts, and sentence metrics as you type.</li>
+        <li><strong>100% Client-Side Privacy:</strong> All text formatting executes locally inside your web browser session using JavaScript. Your text is never stored remotely.</li>
+        <li><strong>Free & Unlimited Usage:</strong> No word count limits or account registration required.</li>
       </ul>
     </div>
 
     <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
     <div class="content-box">
-      <h2>Explore Related Text & Developer Tools</h2>
-      <p>Boost your editing workflow with our other free micro-utilities:</p>
+      <h2>Explore Related Text & SEO Utilities</h2>
+      <p>Discover our complementary online text tools:</p>
       <div class="related-links">
-        <a href="/tools/text/character-counter.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🔢 Character Counter</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Track Twitter and Meta SEO character limits.</span>
-        </a>
         <a href="/tools/text/word-counter.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">📝 Word Counter</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Analyze readability and word counts.</span>
+          <strong style="display:block; margin-bottom: 0.25rem;">📊 Real-Time Word Counter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Analyze character counts, reading time, and sentence stats.</span>
         </a>
         <a href="/tools/seo/slug-generator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🔗 Slug Generator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Convert text into clean, SEO-friendly URLs.</span>
+          <strong style="display:block; margin-bottom: 0.25rem;">🔗 URL Slug Generator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Convert titles into clean, SEO-friendly URL slugs.</span>
+        </a>
+        <a href="/tools/seo/keyword-density-checker.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📊 Keyword Density Checker</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Analyze word frequency percentages and key phrase densities.</span>
         </a>
       </div>
     </div>
 
     <!-- FAQ Section -->
     <div class="content-box">
-      <h2>Frequently Asked Questions</h2>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How do I fix text written in ALL CAPS?</h3>
-        <p>Simply paste your ALL CAPS text into the box above and click either 'Sentence case' or 'lowercase' to instantly fix it.</p>
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How do I convert UPPERCASE to lowercase?</h3>
+        <p>Paste your text into the editor and click the "lowercase" button to convert all capital letters instantly.</p>
       </div>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is there a word or character limit?</h3>
-        <p>No, there are no limits. You can convert short phrases or large multi-page articles seamlessly.</p>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What is camelCase used for?</h3>
+        <p>camelCase is widely used in programming languages like JavaScript and Java for naming variables, functions, and object properties without spaces.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is my text data saved on remote servers?</h3>
+        <p>No. All calculations run client-side inside your browser session using JavaScript. Your text remains 100% private.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this Case Converter tool free?</h3>
+        <p>Yes, MicroToolStack's Case Converter is 100% free with no usage limits or sign-up required.</p>
       </div>
     </div>
 
@@ -305,58 +376,112 @@
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const textInput = document.getElementById('text-input');
+      const charWordCounter = document.getElementById('char-word-counter');
+
+      const btnUpper = document.getElementById('btn-upper');
+      const btnLower = document.getElementById('btn-lower');
+      const btnTitle = document.getElementById('btn-title');
+      const btnSentence = document.getElementById('btn-sentence');
+      const btnCamel = document.getElementById('btn-camel');
+      const btnSnake = document.getElementById('btn-snake');
+      const btnKebab = document.getElementById('btn-kebab');
+      const btnInverse = document.getElementById('btn-inverse');
+
       const btnCopy = document.getElementById('btn-copy');
-      const btnClear = document.getElementById('btn-clear');
-      const statusMsg = document.getElementById('status-msg');
+      const btnReset = document.getElementById('btn-reset');
 
-      // Conversion Logic
-      document.getElementById('btn-sentence').addEventListener('click', function() {
-        let text = textInput.value.toLowerCase();
-        textInput.value = text.replace(/(^\s*|[.!?]\s+)([a-z])/g, function(m, p1, p2) {
-          return p1 + p2.toUpperCase();
-        });
-      });
+      function updateCounters() {
+        const val = textInput.value;
+        const charCount = val.length;
+        const wordCount = val.trim() ? val.trim().split(/\s+/).length : 0;
+        charWordCounter.textContent = `${charCount} Characters | ${wordCount} Words`;
+      }
 
-      document.getElementById('btn-upper').addEventListener('click', function() {
+      textInput.addEventListener('input', updateCounters);
+
+      // UPPERCASE
+      btnUpper.addEventListener('click', () => {
         textInput.value = textInput.value.toUpperCase();
+        updateCounters();
       });
 
-      document.getElementById('btn-lower').addEventListener('click', function() {
+      // lowercase
+      btnLower.addEventListener('click', () => {
         textInput.value = textInput.value.toLowerCase();
+        updateCounters();
       });
 
-      document.getElementById('btn-title').addEventListener('click', function() {
-        textInput.value = textInput.value.toLowerCase().replace(/\b\w/g, function(txt) {
-          return txt.toUpperCase();
-        });
+      // Title Case
+      btnTitle.addEventListener('click', () => {
+        const words = textInput.value.toLowerCase().split(/\s+/);
+        const titled = words.map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+        textInput.value = titled;
+        updateCounters();
       });
 
-      document.getElementById('btn-camel').addEventListener('click', function() {
-        let text = textInput.value.toLowerCase().replace(/[^a-zA-Z0-9 ]/g, '');
-        let words = text.split(/\s+/);
+      // Sentence case
+      btnSentence.addEventListener('click', () => {
+        const sentences = textInput.value.toLowerCase().split(/([.?!]\s+)/);
+        const result = sentences.map(s => {
+          if (s.length === 0) return '';
+          return s.charAt(0).toUpperCase() + s.slice(1);
+        }).join('');
+        textInput.value = result;
+        updateCounters();
+      });
+
+      // camelCase
+      btnCamel.addEventListener('click', () => {
+        const words = textInput.value.trim().toLowerCase().split(/[^a-zA-Z0-9]+/);
         if (words.length === 0) return;
-        textInput.value = words[0] + words.slice(1).map(w => w.charAt(0).toUpperCase() + w.slice(1)).join('');
+        let camel = words[0];
+        for (let i = 1; i < words.length; i++) {
+          if (words[i]) {
+            camel += words[i].charAt(0).toUpperCase() + words[i].slice(1);
+          }
+        }
+        textInput.value = camel;
+        updateCounters();
       });
 
-      document.getElementById('btn-pascal').addEventListener('click', function() {
-        let text = textInput.value.toLowerCase().replace(/[^a-zA-Z0-9 ]/g, '');
-        textInput.value = text.split(/\s+/).map(w => w.charAt(0).toUpperCase() + w.slice(1)).join('');
+      // snake_case
+      btnSnake.addEventListener('click', () => {
+        const words = textInput.value.trim().toLowerCase().split(/[^a-zA-Z0-9]+/);
+        textInput.value = words.filter(w => w.length > 0).join('_');
+        updateCounters();
       });
 
-      // Copy Action
+      // kebab-case
+      btnKebab.addEventListener('click', () => {
+        const words = textInput.value.trim().toLowerCase().split(/[^a-zA-Z0-9]+/);
+        textInput.value = words.filter(w => w.length > 0).join('-');
+        updateCounters();
+      });
+
+      // InVeRsE CaSe
+      btnInverse.addEventListener('click', () => {
+        const chars = textInput.value.split('');
+        const inverted = chars.map((c, i) => i % 2 === 0 ? c.toLowerCase() : c.toUpperCase()).join('');
+        textInput.value = inverted;
+        updateCounters();
+      });
+
       btnCopy.addEventListener('click', function() {
-        if (!textInput.value.trim()) return;
-        navigator.clipboard.writeText(textInput.value).then(function() {
-          statusMsg.style.display = 'inline';
-          setTimeout(() => { statusMsg.style.display = 'none'; }, 2000);
+        if (!textInput.value) return;
+        navigator.clipboard.writeText(textInput.value).then(() => {
+          const origText = btnCopy.textContent;
+          btnCopy.textContent = '✅ Copied!';
+          setTimeout(() => { btnCopy.textContent = origText; }, 2000);
         });
       });
 
-      // Clear Action
-      btnClear.addEventListener('click', function() {
+      btnReset.addEventListener('click', function() {
         textInput.value = '';
-        textInput.focus();
+        updateCounters();
       });
+
+      // Initial Update
+      updateCounters();
     });
   </script>
 </body>
