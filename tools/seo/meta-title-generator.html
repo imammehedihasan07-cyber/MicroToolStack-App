@@ -22,9 +22,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Primary SEO Meta Tags -->
-  <title>Free Online SEO Meta Title Generator & Pixel Checker | MicroToolStack</title>
-  <meta name="description" content="Free online SEO Meta Title Generator to craft optimized search engine titles. Check character count, pixel width, and Google SERP preview in real-time.">
-  <meta name="keywords" content="meta title generator, seo title generator, google title pixel counter, meta title checker, title tag builder, seo preview tool, title length checker">
+  <title>Free Online Meta Title Generator | SEO Title Tag Builder | MicroToolStack</title>
+  <meta name="description" content="Generate optimized meta titles for your website pages online for free. Create high-CTR, SEO-friendly title tags with real-time character counters, pixel width checks, and instant HTML tag copying.">
+  <meta name="keywords" content="meta title generator, seo title tag builder, title tag pixel checker, generate meta title online, title tag length checker, google title preview, seo tools, microtoolstack">
 
   <link rel="canonical" href="https://microtoolstack.com/tools/seo/meta-title-generator.html">
   <meta name="robots" content="index, follow">
@@ -32,8 +32,8 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://microtoolstack.com/tools/seo/meta-title-generator.html">
-  <meta property="og:title" content="Free Online SEO Meta Title Generator & Pixel Checker | MicroToolStack">
-  <meta property="og:description" content="Generate high-CTR SEO title tags with real-time Google search snippet previews. 100% free and private.">
+  <meta property="og:title" content="Free Online Meta Title Generator | MicroToolStack">
+  <meta property="og:description" content="Build click-worthy, SEO-optimized meta title HTML tags with live pixel width checks and instant 1-click HTML code copying. 100% free webmaster utility.">
   <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
@@ -48,7 +48,7 @@
     "@graph": [
       {
         "@type": "SoftwareApplication",
-        "name": "SEO Meta Title Generator & Checker",
+        "name": "Meta Title Tag Generator",
         "operatingSystem": "All",
         "applicationCategory": "UtilitiesApplication",
         "offers": {
@@ -56,7 +56,7 @@
           "price": "0",
           "priceCurrency": "USD"
         },
-        "description": "An online SEO optimization utility to craft, measure, and preview search engine title tags against Google's character and pixel limits.",
+        "description": "An essential client-side SEO utility that crafts optimized HTML meta title tags, calculates character counts and pixel widths, and formats HTML code snippets.",
         "url": "https://microtoolstack.com/tools/seo/meta-title-generator.html"
       },
       {
@@ -64,26 +64,34 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "What is the recommended length for an SEO Meta Title?",
+            "name": "What is a Meta Title Tag (<title>)?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The ideal SEO title length is between 50 to 60 characters or up to 600 pixels width. Keeping titles within this range prevents Google from cutting them off in search results."
+              "text": "A meta title tag (<title>...</title>) is an essential HTML element located in a webpage's <head> section that defines the document title displayed on browser tabs, social shares, and search engine results pages."
             }
           },
           {
             "@type": "Question",
-            "name": "Why is pixel width important for SEO titles?",
+            "name": "What is the recommended length for a meta title tag?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Google measures title length by pixel width rather than raw character counts. Wide characters like 'W' or 'M' take up more space than narrow letters like 'I' or 'l'."
+              "text": "Google typically truncates meta titles that exceed 580 to 600 pixels in width (approximately 50 to 60 characters). Keeping your title under 580px ensures full visibility on both desktop and mobile screens."
             }
           },
           {
             "@type": "Question",
-            "name": "Is my input title stored or saved?",
+            "name": "Why does Google calculate title length in pixels instead of characters?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "No! Everything runs locally inside your browser using client-side JavaScript for complete privacy."
+              "text": "Google search results use proportional typography (such as Arial or Roboto) where letters vary in width. For instance, capital 'W' takes up significantly more pixel space than lowercase 'i'. Measuring in pixels is far more accurate than raw character counts."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this Meta Title Generator free to use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, MicroToolStack's Meta Title Generator is 100% free with unlimited generation and no registration required."
             }
           }
         ]
@@ -101,9 +109,26 @@
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
 
   <style>
-    .editor-input {
+    .input-group {
+      margin-bottom: 1.25rem;
+    }
+    .input-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.5rem;
+    }
+    .counter-info {
+      font-size: 0.8rem;
+      color: var(--text-secondary, #9ca3af);
+      font-weight: 400;
+    }
+    .form-control, .form-select {
       width: 100%;
-      padding: 0.85rem 1rem;
+      padding: 0.75rem 1rem;
       font-size: 1rem;
       border: 1px solid var(--border-color, #333);
       border-radius: var(--radius-md, 8px);
@@ -111,63 +136,117 @@
       color: var(--text-primary, #fff);
       outline: none;
       box-sizing: border-box;
-      margin-bottom: 1rem;
     }
-    .stats-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: var(--bg-card, #1e1e2e);
-      padding: 0.85rem 1.25rem;
-      border-radius: var(--radius-md, 8px);
+    .form-control:focus, .form-select:focus {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+
+    .code-textarea {
+      width: 100%;
+      min-height: 80px;
+      padding: 1rem;
+      font-size: 0.85rem;
+      font-family: 'Fira Code', Consolas, Monaco, monospace;
+      line-height: 1.5;
       border: 1px solid var(--border-color, #333);
-      margin-bottom: 1.5rem;
-      font-size: 0.95rem;
+      border-radius: var(--radius-md, 8px);
+      background-color: #111827;
+      color: #38bdf8;
+      outline: none;
+      resize: vertical;
+      box-sizing: border-box;
+      white-space: pre-wrap;
+      word-break: break-all;
     }
-    .stat-badge {
-      font-weight: 700;
-      color: #10b981;
-    }
-    .serp-preview-box {
+
+    /* SERP Simulation Container */
+    .serp-card-container {
       background: #ffffff;
-      color: #202124;
       border-radius: 8px;
       padding: 1.25rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      font-family: arial, sans-serif;
-    }
-    .serp-site-name {
-      font-size: 14px;
-      line-height: 1.3;
       color: #202124;
+      font-family: arial, sans-serif;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      margin-bottom: 1.5rem;
+      overflow-x: auto;
+    }
+
+    .serp-header {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 12px;
       margin-bottom: 4px;
     }
+
+    .serp-favicon {
+      width: 26px;
+      height: 26px;
+      background: #f1f3f4;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+
+    .serp-site-info {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.3;
+    }
+
+    .serp-site-name {
+      font-size: 14px;
+      color: #202124;
+      font-weight: 400;
+    }
+
     .serp-url {
       font-size: 12px;
       color: #4d5156;
+      word-break: break-all;
     }
+
     .serp-title {
       font-size: 20px;
       line-height: 1.3;
       color: #1a0dab;
+      font-weight: 400;
       cursor: pointer;
+      margin-top: 4px;
       margin-bottom: 4px;
       word-break: break-word;
-      font-weight: 400;
+      display: inline-block;
     }
+
     .serp-title:hover {
       text-decoration: underline;
     }
-    .serp-snippet {
+
+    .serp-description {
       font-size: 14px;
       line-height: 1.58;
       color: #4d5156;
+      word-break: break-word;
     }
-    .editor-controls {
+
+    /* Progress bar indicators */
+    .progress-wrapper {
+      height: 6px;
+      width: 100%;
+      background: #334155;
+      border-radius: 3px;
+      margin-top: 6px;
+      overflow: hidden;
+    }
+    .progress-bar {
+      height: 100%;
+      width: 0%;
+      background: #10b981;
+      transition: width 0.2s ease, background-color 0.2s ease;
+    }
+
+    .controls-bar {
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
@@ -175,10 +254,7 @@
       align-items: center;
       margin-bottom: 2.5rem;
     }
-    .btn-group {
-      display: flex;
-      gap: 0.5rem;
-    }
+
     .content-box {
       background-color: var(--bg-card, #1e1e2e);
       border: 1px solid var(--border-color, #333);
@@ -189,6 +265,12 @@
     .content-box h2 {
       font-size: 1.35rem;
       margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
       color: var(--text-primary, #fff);
     }
     .content-box p, .content-box ul {
@@ -244,99 +326,138 @@
     
     <!-- Tool Title & Description -->
     <div style="text-align: center; margin-bottom: 2rem;">
-      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">SEO Meta Title Generator & Preview</h1>
-      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Craft click-worthy title tags and preview real-time Google Search SERP snippets.</p>
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online Meta Title Generator</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Craft high-converting, SEO-optimized title tags with live pixel width checks and instant HTML code generation.</p>
     </div>
 
-    <!-- Title Input -->
-    <label style="display: block; font-size: 0.9rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff); font-weight: 600;">Meta Title Tag:</label>
-    <input type="text" id="title-input" class="editor-input" placeholder="Type your SEO Title Tag here (e.g., Best Free Online Tools for Digital Creators)..." autofocus>
-
-    <!-- Brand / Target Keyword Helper Inputs -->
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1.25rem;">
-      <div>
-        <label style="display: block; font-size: 0.85rem; margin-bottom: 0.4rem; color: var(--text-secondary, #9ca3af);">Brand Name (Optional):</label>
-        <input type="text" id="brand-input" class="editor-input" placeholder="e.g. MicroToolStack" value="MicroToolStack" style="margin-bottom:0;">
+    <!-- SERP Preview Card -->
+    <div class="serp-card-container" id="serp-card">
+      <div class="serp-header">
+        <div class="serp-favicon">🌐</div>
+        <div class="serp-site-info">
+          <span class="serp-site-name" id="preview-site-name">MicroToolStack</span>
+          <span class="serp-url" id="preview-url">https://microtoolstack.com › tools › seo</span>
+        </div>
       </div>
-      <div>
-        <label style="display: block; font-size: 0.85rem; margin-bottom: 0.4rem; color: var(--text-secondary, #9ca3af);">Target Keyword (Optional):</label>
-        <input type="text" id="keyword-input" class="editor-input" placeholder="e.g. Free Online Tools" style="margin-bottom:0;">
+      <div class="serp-title" id="preview-title">Free Online Meta Title Generator | MicroToolStack</div>
+      <div class="serp-description" id="preview-description">Generate optimized meta title HTML tags online for free. Create engaging, click-worthy title tags with real-time character counters and pixel width previews.</div>
+    </div>
+
+    <!-- Inputs Settings Card -->
+    <div class="content-box" style="margin-bottom: 1.5rem;">
+      <div class="input-group">
+        <div class="input-label">
+          <span>Meta Title Tag Content (&lt;title&gt;)</span>
+          <span class="counter-info" id="title-counter">55 Chars | 510 px / 580 px</span>
+        </div>
+        <input type="text" id="input-title" class="form-control" value="Free Online Meta Title Generator | MicroToolStack" placeholder="Write or paste your page meta title here...">
+        <div class="progress-wrapper">
+          <div id="title-progress" class="progress-bar"></div>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;" class="input-group">
+        <div>
+          <label for="input-url" class="input-label">Page URL (Preview Only)</label>
+          <input type="text" id="input-url" class="form-control" value="https://microtoolstack.com/tools/seo/meta-title-generator.html">
+        </div>
+        <div>
+          <label for="input-desc" class="input-label">Meta Description (Preview Only)</label>
+          <input type="text" id="input-desc" class="form-control" value="Generate optimized meta title HTML tags online for free. Create engaging, click-worthy title tags with real-time character counters and pixel width previews.">
+        </div>
       </div>
     </div>
 
-    <!-- Live Metrics Counter Bar -->
-    <div class="stats-bar">
-      <span>Character Count: <span class="stat-badge" id="char-count">0 / 60</span></span>
-      <span>Estimated Pixel Width: <span class="stat-badge" id="pixel-count">0px / 600px</span></span>
+    <!-- Generated HTML Code Box -->
+    <div class="content-box" style="margin-bottom: 1.5rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+        <label for="html-output" class="input-label" style="margin: 0;">Generated HTML Title Tag</label>
+        <button id="btn-copy-tag" class="btn btn-secondary" style="padding: 0.35rem 0.8rem; font-size: 0.75rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 4px;">📋 Copy Title Tag</button>
+      </div>
+      <textarea id="html-output" class="code-textarea" readonly></textarea>
     </div>
 
-    <!-- SERP Snippet Live Preview Box -->
-    <h3 style="font-size: 1.1rem; color: var(--text-primary, #fff); margin-bottom: 0.75rem;">🔍 Google Search Preview</h3>
-    <div class="serp-preview-box">
-      <div class="serp-site-name">
-        <span style="font-weight: bold; font-size: 13px;">MicroToolStack</span>
-        <span class="serp-url">https://microtoolstack.com › tools</span>
-      </div>
-      <div class="serp-title" id="serp-title-preview">Your SEO Title Will Appear Here - MicroToolStack</div>
-      <div class="serp-snippet">Optimize your website metadata with our real-time SEO preview tools to boost organic CTR and search engine rankings.</div>
-    </div>
+    <!-- Hidden Offscreen Canvas for Pixel Measurement -->
+    <canvas id="ruler-canvas" style="display: none;"></canvas>
 
-    <!-- Action Controls -->
-    <div class="editor-controls">
-      <div class="btn-group">
-        <button id="btn-copy" class="btn btn-primary" style="padding: 0.68rem 1.4rem; cursor: pointer;">📋 Copy Title Tag</button>
-        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.68rem 1.2rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear Input</button>
+    <!-- Controls Bar -->
+    <div class="controls-bar">
+      <div></div>
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-reset" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Reset Inputs</button>
       </div>
-      <span id="status-msg" style="font-size: 0.85rem; color: #10b981; font-weight: 500; display: none;">Title tag copied to clipboard!</span>
     </div>
 
     <!-- SEO Article Content Box 1 -->
     <div class="content-box">
-      <h2>Why Meta Titles Are Crucial for SEO & CTR</h2>
-      <p>The <strong>Meta Title Tag</strong> (HTML <code>&lt;title&gt;</code> element) is the single most influential on-page SEO element. It serves as the primary headline displayed in Google search results, social media shares, and browser tabs. Crafting titles that fit within Google's pixel limits directly impacts your organic click-through rate (CTR) and search rankings.</p>
+      <h2>Why Meta Title Tags Are the Single Most Critical On-Page SEO Factor</h2>
+      <p>In Search Engine Optimization (SEO), the <strong>Meta Title Tag</strong> (<code>&lt;title&gt;</code>) serves as the primary headline for your webpage across Search Engine Results Pages (SERPs), web browser tabs, and social media links. It is one of the strongest direct on-page ranking signals utilized by search engine algorithms like Google, Bing, and Yahoo.</p>
+
+      <p>A well-crafted meta title must balance target keyword placement with compelling copywriting to maximize organic <strong>Click-Through Rates (CTR)</strong>. If a title exceeds Google's rendering limit, it will be truncated with trailing ellipses (<code>...</code>), which can hide crucial branding and key search terms. Our free <strong>Online Meta Title Generator</strong> measures title pixel widths in real time to prevent truncation.</p>
     </div>
 
     <!-- SEO Article Content Box 2 -->
     <div class="content-box">
-      <h2>Best Practices for Writing SEO Title Tags</h2>
+      <h2>Optimal Meta Title Length & Formatting Guidelines</h2>
+      <p>Follow these essential webmaster best practices when crafting title tags:</p>
+
       <ul>
-        <li><strong>Stay Within 50–60 Characters:</strong> Titles exceeding ~600 pixels or 60 characters risk getting truncated by Google.</li>
-        <li><strong>Place Keywords First:</strong> Put your primary keyword near the beginning of the title tag for maximum SEO weight.</li>
-        <li><strong>Add Brand Authority:</strong> Append your website or brand name at the end separated by a hyphen (-) or pipe (|).</li>
-        <li><strong>Write for Humans:</strong> Avoid keyword stuffing; write compelling, click-worthy headlines that answer search intent.</li>
+        <li><strong>Pixel Width Limit:</strong> Keep titles under 580 to 600 pixels wide (approximately 50 to 60 characters) to ensure complete rendering without ellipses.</li>
+        <li><strong>Front-Load Primary Keywords:</strong> Place your primary target search terms near the beginning of the title for maximum algorithmic weight and user visibility.</li>
+        <li><strong>Brand Name Append:</strong> Add your brand or website name at the end separated by a pipe (<code>|</code>) or hyphen (<code>-</code>) (e.g. <code>Primary Keyword - Secondary Keyword | Brand</code>).</li>
+        <li><strong>Unique Titles Per Page:</strong> Avoid site-wide duplicate title tags across multiple pages to prevent indexing cannibalization.</li>
       </ul>
     </div>
 
-    <!-- Internal Linking Section (SEO Best Practice) -->
+    <!-- SEO Article Content Box 3 -->
     <div class="content-box">
-      <h2>Explore Related SEO & Text Tools</h2>
-      <p>Enhance your search engine optimization with our free utilities:</p>
+      <h2>Features of MicroToolStack's Meta Title Tool</h2>
+      <ul>
+        <li><strong>Real-Time Pixel Width Calculation:</strong> Measures exact Arial 20px font pixel width using HTML5 canvas context.</li>
+        <li><strong>Live SERP Snippet Preview:</strong> View how your title, URL, and meta description render inside a simulated Google search card.</li>
+        <li><strong>100% Client-Side Privacy:</strong> All calculations execute locally inside your web browser session using JavaScript. Your titles and copy are never stored remotely.</li>
+        <li><strong>Free & Unlimited Usage:</strong> No title limits or account sign-ups required.</li>
+      </ul>
+    </div>
+
+    <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
+    <div class="content-box">
+      <h2>Explore Related SEO & Webmaster Tools</h2>
+      <p>Discover our complementary online webmaster utilities:</p>
       <div class="related-links">
         <a href="/tools/seo/meta-description-generator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">📄 Meta Description Generator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Craft click-worthy Meta Descriptions with SERP preview.</span>
+          <strong style="display:block; margin-bottom: 0.25rem;">📝 Meta Description Generator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Craft engaging, click-worthy meta descriptions with live pixel checks.</span>
         </a>
-        <a href="/tools/seo/faq-schema-generator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">❓ FAQ Schema Generator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Build JSON-LD FAQPage structured data.</span>
+        <a href="/tools/seo/google-serp-preview.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🖥️ Google SERP Preview Tool</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Simulate desktop & mobile search result snippets.</span>
         </a>
-        <a href="/tools/seo/slug-generator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🔗 Slug Generator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Generate clean, SEO-friendly URL slugs.</span>
+        <a href="/tools/seo/meta-tag-analyzer.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🔍 Meta Tag Analyzer</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Audit HTML head tags, Open Graph, and Twitter Cards.</span>
         </a>
       </div>
     </div>
 
     <!-- FAQ Section -->
     <div class="content-box">
-      <h2>Frequently Asked Questions</h2>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Why is Google truncating my meta title in search results?</h3>
-        <p>Google truncates titles that exceed ~600 pixels in container width. If your title contains wide uppercase characters, it may be cut off even if it is under 60 characters.</p>
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How do I generate an HTML meta title tag?</h3>
+        <p>Type your desired title into the input box. The tool formats the exact <code>&lt;title&gt;Your Title&lt;/title&gt;</code> tag ready for your HTML <code>&lt;head&gt;</code> section.</p>
       </div>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Can Google change my meta title automatically?</h3>
-        <p>Yes, if Google deems your meta title tag inaccurate, overly stuffed with keywords, or inconsistent with page headings (H1), it may dynamically rewrite it in search results.</p>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Why does Google sometimes rewrite page titles in search results?</h3>
+        <p>Google may dynamically rewrite titles if it determines the original <code>&lt;title&gt;</code> tag is too long, keyword-stuffed, repetitive, or insufficiently relevant to a user's search query.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is my title data saved on remote servers?</h3>
+        <p>No. All calculations run client-side inside your browser session using JavaScript. Your inputs remain 100% private.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this Meta Title Generator free?</h3>
+        <p>Yes, MicroToolStack's Meta Title Generator is 100% free with no usage limits or sign-up required.</p>
       </div>
     </div>
 
@@ -352,84 +473,97 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const titleInput = document.getElementById('title-input');
-      const brandInput = document.getElementById('brand-input');
-      const keywordInput = document.getElementById('keyword-input');
+      const inputTitle = document.getElementById('input-title');
+      const inputUrl = document.getElementById('input-url');
+      const inputDesc = document.getElementById('input-desc');
 
-      const charCountEl = document.getElementById('char-count');
-      const pixelCountEl = document.getElementById('pixel-count');
-      const serpPreview = document.getElementById('serp-title-preview');
+      const previewSiteName = document.getElementById('preview-site-name');
+      const previewUrl = document.getElementById('preview-url');
+      const previewTitle = document.getElementById('preview-title');
+      const previewDescription = document.getElementById('preview-description');
 
-      const btnCopy = document.getElementById('btn-copy');
-      const btnClear = document.getElementById('btn-clear');
-      const statusMsg = document.getElementById('status-msg');
+      const titleCounter = document.getElementById('title-counter');
+      const titleProgress = document.getElementById('title-progress');
+      const htmlOutput = document.getElementById('html-output');
 
-      // Approximate Google Arial 20px letter pixel widths
-      function calculatePixelWidth(text) {
-        let width = 0;
-        for (let char of text) {
-          if (/[iIl1'!\.]/.test(char)) width += 6;
-          else if (/[fjrI\t]/.test(char)) width += 8;
-          else if (/[abcdeghknopqsuvxyz0-24-9\-]/.test(char)) width += 11;
-          else if (/[FJ3]/.test(char)) width += 12;
-          else if (/[ABCDEGHKNOPQRSTUVXYZ4-56-8]/.test(char)) width += 13;
-          else if (/[WMw]/.test(char)) width += 16;
-          else if (/\s/.test(char)) width += 5;
-          else width += 10;
-        }
-        return Math.round(width * 0.92); // Normalized Google SERP scale factor
+      const rulerCanvas = document.getElementById('ruler-canvas');
+      const btnCopyTag = document.getElementById('btn-copy-tag');
+      const btnReset = document.getElementById('btn-reset');
+
+      function getTextPixelWidth(text, fontSize, fontFamily) {
+        const ctx = rulerCanvas.getContext('2d');
+        ctx.font = `${fontSize} ${fontFamily}`;
+        return Math.round(ctx.measureText(text).width);
       }
 
-      function updatePreview() {
-        let titleText = titleInput.value.trim();
-        const brand = brandInput.value.trim();
-
-        if (brand && titleText && !titleText.toLowerCase().includes(brand.toLowerCase())) {
-          titleText = `${titleText} - ${brand}`;
+      function formatBreadcrumbUrl(urlStr) {
+        try {
+          const parsed = new URL(urlStr);
+          const domain = parsed.hostname;
+          const path = parsed.pathname.split('/').filter(p => p.length > 0).join(' › ');
+          return `${parsed.protocol}//${domain}${path ? ' › ' + path : ''}`;
+        } catch (e) {
+          return urlStr;
         }
-
-        const displayText = titleText || 'Your SEO Title Will Appear Here - MicroToolStack';
-        serpPreview.textContent = displayText;
-
-        const totalChars = displayText.length;
-        const pixelWidth = calculatePixelWidth(displayText);
-
-        // Update Stats
-        charCountEl.textContent = `${totalChars} / 60`;
-        charCountEl.style.color = (totalChars > 60 || totalChars < 30) ? '#ef4444' : '#10b981';
-
-        pixelCountEl.textContent = `${pixelWidth}px / 600px`;
-        pixelCountEl.style.color = pixelWidth > 600 ? '#ef4444' : '#10b981';
       }
 
-      titleInput.addEventListener('input', updatePreview);
-      brandInput.addEventListener('input', updatePreview);
-      keywordInput.addEventListener('input', updatePreview);
+      function updateMetaTitle() {
+        const titleText = inputTitle.value.trim();
+        const urlText = inputUrl.value.trim() || 'https://example.com/page.html';
+        const descText = inputDesc.value.trim() || 'Example webpage meta description text snippet for search engine previews.';
 
-      // Copy Title Tag
-      btnCopy.addEventListener('click', function() {
-        let titleText = titleInput.value.trim();
-        const brand = brandInput.value.trim();
-        if (brand && titleText && !titleText.toLowerCase().includes(brand.toLowerCase())) {
-          titleText = `${titleText} - ${brand}`;
+        // Measure Title Pixels (Arial 20px for desktop title)
+        const titlePx = getTextPixelWidth(titleText, '20px', 'Arial');
+        const maxTitlePx = 580; // Desktop threshold
+
+        // Update Counters
+        titleCounter.textContent = `${titleText.length} Chars | ${titlePx} px / ${maxTitlePx} px`;
+
+        // Update Progress Bar
+        const titlePct = Math.min(100, Math.round((titlePx / maxTitlePx) * 100));
+        titleProgress.style.width = `${titlePct}%`;
+        titleProgress.style.backgroundColor = titlePx > maxTitlePx ? '#ef4444' : (titlePx > maxTitlePx - 50 ? '#f59e0b' : '#10b981');
+
+        // Update SERP Preview
+        previewTitle.textContent = titleText || 'Example Webpage Meta Title';
+        previewDescription.textContent = descText;
+
+        try {
+          const parsed = new URL(urlText);
+          previewSiteName.textContent = parsed.hostname.replace('www.', '');
+          previewUrl.textContent = formatBreadcrumbUrl(urlText);
+        } catch (e) {
+          previewSiteName.textContent = 'Website';
+          previewUrl.textContent = urlText;
         }
-        if (!titleText) return;
 
-        navigator.clipboard.writeText(titleText).then(function() {
-          statusMsg.style.display = 'inline';
-          setTimeout(() => { statusMsg.style.display = 'none'; }, 2000);
+        // Generate HTML Tag
+        const cleanTitle = titleText.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        htmlOutput.value = `<title>${cleanTitle}</title>`;
+      }
+
+      [inputTitle, inputUrl, inputDesc].forEach(el => {
+        el.addEventListener('input', updateMetaTitle);
+      });
+
+      btnCopyTag.addEventListener('click', function() {
+        if (!htmlOutput.value) return;
+        navigator.clipboard.writeText(htmlOutput.value).then(() => {
+          const origText = btnCopyTag.textContent;
+          btnCopyTag.textContent = '✅ Copied!';
+          setTimeout(() => { btnCopyTag.textContent = origText; }, 2000);
         });
       });
 
-      // Clear Input
-      btnClear.addEventListener('click', function() {
-        titleInput.value = '';
-        keywordInput.value = '';
-        updatePreview();
-        titleInput.focus();
+      btnReset.addEventListener('click', function() {
+        inputTitle.value = 'Free Online Meta Title Generator | MicroToolStack';
+        inputUrl.value = 'https://microtoolstack.com/tools/seo/meta-title-generator.html';
+        inputDesc.value = 'Generate optimized meta title HTML tags online for free. Create engaging, click-worthy title tags with real-time character counters and pixel width previews.';
+        updateMetaTitle();
       });
 
-      updatePreview();
+      // Initial Update
+      updateMetaTitle();
     });
   </script>
 </body>
