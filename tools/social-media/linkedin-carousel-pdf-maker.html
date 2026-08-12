@@ -22,9 +22,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Primary SEO Meta Tags -->
-  <title>Free LinkedIn Carousel PDF Maker & Slide Generator | MicroToolStack</title>
-  <meta name="description" content="Free Online LinkedIn Carousel PDF Maker. Create high-converting multi-slide PDF carousels for LinkedIn with custom themes, fonts, and instant PDF download.">
-  <meta name="keywords" content="linkedin carousel maker, linkedin pdf generator, linkedin slide creator, linkedin carousel generator, free carousel maker">
+  <title>Free Online LinkedIn Carousel PDF Maker | Document Post Creator | MicroToolStack</title>
+  <meta name="description" content="Create engaging LinkedIn carousel PDF documents online for free. Build multi-slide swipeable presentation posts with custom slide text, background themes, and 1-click PDF export.">
+  <meta name="keywords" content="linkedin carousel pdf maker, linkedin document post creator, carousel slide generator, pdf carousel for linkedin, linkedin content creation tools, social media tools, microtoolstack">
 
   <link rel="canonical" href="https://microtoolstack.com/tools/social-media/linkedin-carousel-pdf-maker.html">
   <meta name="robots" content="index, follow">
@@ -32,8 +32,8 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://microtoolstack.com/tools/social-media/linkedin-carousel-pdf-maker.html">
-  <meta property="og:title" content="Free LinkedIn Carousel PDF Maker & Slide Generator | MicroToolStack">
-  <meta property="og:description" content="Design custom multi-page LinkedIn PDF carousels with custom colors, headings, and download ready-to-post PDF files.">
+  <meta property="og:title" content="Free Online LinkedIn Carousel PDF Maker | MicroToolStack">
+  <meta property="og:description" content="Build swipeable multi-slide carousel documents for LinkedIn document posts instantly in your browser. 100% free web utility.">
   <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
@@ -41,7 +41,7 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
   <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
-  <!-- JSON-LD Schema Markup -->
+  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -50,13 +50,13 @@
         "@type": "SoftwareApplication",
         "name": "LinkedIn Carousel PDF Maker",
         "operatingSystem": "All",
-        "applicationCategory": "DesignApplication",
+        "applicationCategory": "UtilitiesApplication",
         "offers": {
           "@type": "Offer",
           "price": "0",
           "priceCurrency": "USD"
         },
-        "description": "An online social media tool to design and export multi-slide PDF carousels for LinkedIn posts.",
+        "description": "An essential client-side social media utility that generates multi-slide swipeable document PDFs optimized for LinkedIn carousel posts.",
         "url": "https://microtoolstack.com/tools/social-media/linkedin-carousel-pdf-maker.html"
       },
       {
@@ -64,18 +64,34 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "Why use PDF carousels on LinkedIn?",
+            "name": "What is a LinkedIn carousel post?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "LinkedIn PDF carousels generate significantly higher engagement, dwell time, and impressions compared to standard single-image or text posts."
+              "text": "A LinkedIn carousel post is a document upload (PDF) that displays as a swipeable multi-slide presentation in the LinkedIn feed, generating high user engagement and dwell time."
             }
           },
           {
             "@type": "Question",
-            "name": "Is my data uploaded to any server?",
+            "name": "How do I create a carousel PDF for LinkedIn?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "No! Slide rendering and PDF exports run 100% locally in your client browser."
+              "text": "Use our free online LinkedIn Carousel PDF Maker to add slide titles and descriptions, choose background themes, and export a ready-to-upload PDF document instantly."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are my slide texts saved on remote servers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No! All slide generation and PDF compilation execute 100% locally inside your web browser session using client-side JavaScript and jsPDF. Your content remains completely private."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this LinkedIn Carousel PDF Maker free to use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, MicroToolStack's LinkedIn Carousel PDF Maker is 100% free with unlimited slide additions and no registration required."
             }
           }
         ]
@@ -88,130 +104,68 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <!-- jspdf CDN for Client-side PDF Generation -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-
   <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
 
+  <!-- jsPDF Library for Client-Side PDF Generation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
   <style>
-    .editor-layout {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-      margin-bottom: 2rem;
+    .input-group {
+      margin-bottom: 1.25rem;
     }
-    @media (max-width: 850px) {
-      .editor-layout {
-        grid-template-columns: 1fr;
-      }
-    }
-    .panel-card {
-      background: var(--bg-card, #1e1e2e);
-      border: 1px solid var(--border-color, #333);
-      border-radius: 12px;
-      padding: 1.25rem;
-    }
-    .form-group {
-      margin-bottom: 1rem;
-    }
-    .form-label {
+    .input-label {
       display: block;
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       font-weight: 600;
       color: var(--text-primary, #fff);
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.5rem;
     }
-    .form-input {
+    .form-control, .form-select {
       width: 100%;
-      padding: 0.65rem 0.85rem;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
       border: 1px solid var(--border-color, #333);
-      border-radius: 6px;
-      background-color: var(--bg-body, #0d1117);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
       color: var(--text-primary, #fff);
       outline: none;
       box-sizing: border-box;
-      font-family: inherit;
     }
-    .color-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-      gap: 0.5rem;
+    .form-control:focus, .form-select:focus {
+      border-color: var(--accent-primary, #3b82f6);
     }
-    .carousel-preview-wrap {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 380px;
-      position: relative;
-    }
-    .slide-box {
-      width: 320px;
-      height: 320px;
-      border-radius: 8px;
-      padding: 1.5rem;
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-      transition: all 0.2s ease;
-      position: relative;
-      overflow: hidden;
-    }
-    .slide-heading {
-      font-size: 1.35rem;
-      font-weight: 800;
-      line-height: 1.25;
-      margin-bottom: 0.5rem;
-    }
-    .slide-body {
-      font-size: 0.9rem;
-      line-height: 1.4;
-      opacity: 0.9;
-    }
-    .slide-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.75rem;
-      font-weight: 600;
-      opacity: 0.8;
-      border-top: 1px solid rgba(255,255,255,0.2);
-      padding-top: 0.5rem;
-    }
-    .slide-nav {
-      display: flex;
-      gap: 0.75rem;
-      align-items: center;
-      margin-top: 1rem;
-    }
-    .slide-tab-list {
-      display: flex;
-      gap: 0.5rem;
-      overflow-x: auto;
-      padding-bottom: 0.5rem;
-      margin-bottom: 1rem;
-    }
-    .slide-tab {
-      padding: 0.4rem 0.85rem;
-      background: var(--bg-body, #0d1117);
+
+    .slide-builder-item {
+      background: #111827;
       border: 1px solid var(--border-color, #333);
-      color: var(--text-secondary, #9ca3af);
+      border-radius: 8px;
+      padding: 1.25rem;
+      margin-bottom: 1.25rem;
+      position: relative;
+    }
+
+    .btn-remove-slide {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: rgba(239, 68, 68, 0.15);
+      color: #ef4444;
+      border: 1px solid #ef4444;
       border-radius: 6px;
+      padding: 0.3rem 0.6rem;
       font-size: 0.8rem;
       font-weight: 600;
       cursor: pointer;
-      white-space: nowrap;
+      transition: all 0.2s ease;
     }
-    .slide-tab.active {
-      background: var(--accent-primary, #3b82f6);
+    .btn-remove-slide:hover {
+      background: #ef4444;
       color: #fff;
-      border-color: var(--accent-primary, #3b82f6);
     }
-    .editor-controls {
+
+    .controls-bar {
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
@@ -219,11 +173,7 @@
       align-items: center;
       margin-bottom: 2.5rem;
     }
-    .btn-group {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-    }
+
     .content-box {
       background-color: var(--bg-card, #1e1e2e);
       border: 1px solid var(--border-color, #333);
@@ -234,6 +184,12 @@
     .content-box h2 {
       font-size: 1.35rem;
       margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
       color: var(--text-primary, #fff);
     }
     .content-box p, .content-box ul {
@@ -285,128 +241,122 @@
   </header>
 
   <!-- Main Container -->
-  <main class="container" style="max-width: 1000px; margin: 2rem auto; padding: 0 1rem;">
-    <!-- Breadcrumb Navigation -->
-    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
-      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
-      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Social Media Tools</a> / 
-      <span>LinkedIn Carousel PDF Maker</span>
-    </nav>
+  <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
     
     <!-- Tool Title & Description -->
     <div style="text-align: center; margin-bottom: 2rem;">
-      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">LinkedIn Carousel PDF Maker</h1>
-      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Design multi-slide LinkedIn PDF carousels with custom colors, typography, and download instantly.</p>
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online LinkedIn Carousel PDF Maker</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Design swipeable presentation slides and export ready-to-upload PDF documents for LinkedIn.</p>
     </div>
 
-    <!-- Main Workspace -->
-    <div class="editor-layout">
-      <!-- Left Controls Panel -->
-      <div class="panel-card">
-        <h3 style="margin-bottom: 1rem; color: var(--text-primary, #fff); font-size: 1.1rem;">Slide Customization</h3>
-
-        <!-- Slide Selector Tabs -->
-        <div id="slide-tabs" class="slide-tab-list"></div>
-
-        <div class="form-group">
-          <label class="form-label">Slide Title / Heading:</label>
-          <input type="text" id="in-heading" class="form-input" placeholder="e.g. 5 Tips to Master SEO in 2026">
+    <!-- Theme Settings Card -->
+    <div class="content-box" style="margin-bottom: 1.5rem;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem;" class="input-group" style="margin-bottom: 0;">
+        <div>
+          <label for="theme-select" class="input-label">Slide Theme Style</label>
+          <select id="theme-select" class="form-select">
+            <option value="modern-blue" selected>Modern Blue Gradient</option>
+            <option value="dark-minimal">Dark Minimalist</option>
+            <option value="vibrant-purple">Vibrant Purple Tech</option>
+            <option value="clean-slate">Professional Slate</option>
+          </select>
         </div>
-
-        <div class="form-group">
-          <label class="form-label">Slide Content Body:</label>
-          <textarea id="in-body" class="form-input" rows="3" placeholder="Enter key bullet point or insight text..."></textarea>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label">Author Name / Social Handle:</label>
-          <input type="text" id="in-author" class="form-input" value="@YourName">
-        </div>
-
-        <div class="color-grid">
-          <div class="form-group">
-            <label class="form-label">Background:</label>
-            <input type="color" id="in-bg-color" class="form-input" style="height: 40px; padding: 2px;" value="#1e293b">
-          </div>
-          <div class="form-group">
-            <label class="form-label">Text Color:</label>
-            <input type="color" id="in-text-color" class="form-input" style="height: 40px; padding: 2px;" value="#ffffff">
-          </div>
-        </div>
-
-        <div style="display: flex; gap: 0.5rem; margin-top: 1rem;">
-          <button id="btn-add-slide" class="btn btn-secondary" style="padding: 0.5rem 0.85rem; font-size: 0.85rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">➕ Add Slide</button>
-          <button id="btn-del-slide" class="btn btn-secondary" style="padding: 0.5rem 0.85rem; font-size: 0.85rem; cursor: pointer; background: #ef4444; color: #fff; border: none; border-radius: 6px;">🗑️ Delete Slide</button>
-        </div>
-      </div>
-
-      <!-- Right Preview Panel -->
-      <div class="panel-card carousel-preview-wrap">
-        <div id="slide-preview" class="slide-box" style="background-color: #1e293b; color: #ffffff;">
-          <div>
-            <div id="prev-heading" class="slide-heading">5 Tips to Master SEO in 2026</div>
-            <div id="prev-body" class="slide-body">Focus on user intent, high-speed page performance, and authoritative technical content.</div>
-          </div>
-          <div class="slide-footer">
-            <span id="prev-author">@YourName</span>
-            <span id="prev-counter">Slide 1 of 3</span>
-          </div>
-        </div>
-
-        <div class="slide-nav">
-          <button id="btn-prev-slide" class="btn btn-secondary" style="padding: 0.4rem 0.85rem; font-size: 0.85rem; cursor: pointer;">◀ Previous</button>
-          <span id="nav-indicator" style="font-size: 0.85rem; color: var(--text-secondary, #9ca3af);">1 / 3</span>
-          <button id="btn-next-slide" class="btn btn-secondary" style="padding: 0.4rem 0.85rem; font-size: 0.85rem; cursor: pointer;">Next ▶</button>
+        <div>
+          <label for="author-handle" class="input-label">Footer Brand / Handle</label>
+          <input type="text" id="author-handle" class="form-control" value="linkedin.com/in/mehedi" placeholder="@username or brand">
         </div>
       </div>
     </div>
 
-    <!-- Action Buttons -->
-    <div class="editor-controls">
-      <div class="btn-group">
-        <button id="btn-download-pdf" class="btn btn-primary" style="padding: 0.75rem 1.6rem; cursor: pointer; background: #10b981; border: none; font-size: 1rem;">📄 Download LinkedIn PDF Carousel</button>
+    <!-- Slide Builder Card -->
+    <div class="content-box" style="margin-bottom: 1.5rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h2 style="font-size: 1.15rem; margin: 0;">Carousel Slides Deck</h2>
+        <button id="btn-add-slide" class="btn btn-primary" style="padding: 0.45rem 1rem; font-size: 0.85rem; cursor: pointer; background: #3b82f6;">➕ Add New Slide</button>
       </div>
-      <span id="status-msg" style="font-size: 0.85rem; color: #10b981; font-weight: 500; display: none;">Generating PDF...</span>
+
+      <div id="slide-items-container"></div>
+    </div>
+
+    <!-- Controls Bar -->
+    <div class="controls-bar">
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-generate-pdf" class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-weight: 600; cursor: pointer; background: #10b981;">📄 Download Carousel PDF</button>
+      </div>
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-reset" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Reset Slides</button>
+      </div>
     </div>
 
     <!-- SEO Article Content Box 1 -->
     <div class="content-box">
-      <h2>Why LinkedIn PDF Carousels Drive Maximum Engagement</h2>
-      <p>PDF carousels are one of the highest-performing content formats on LinkedIn. By structuring information into digestible, swipeable slides, creators encourage users to spend more time on their posts—significantly boosting **dwell time** and algorithmic reach.</p>
+      <h2>Why LinkedIn Carousel Posts Drive Exceptional Engagement</h2>
+      <p>LinkedIn document posts (commonly referred to as <strong>Carousels</strong>) are currently one of the highest-performing content formats on the platform. When users swipe through multi-slide presentation documents directly inside their feeds, it increases dwell time and signals strong algorithmic relevance to LinkedIn.</p>
+
+      <p>Designing custom carousel graphics traditionally requires complex design software. Our free <strong>Online LinkedIn Carousel PDF Maker</strong> allows you to type your slide headlines and descriptions, select professional color themes, and export a ready-to-upload square PDF document instantly.</p>
     </div>
 
     <!-- SEO Article Content Box 2 -->
     <div class="content-box">
-      <h2>Best Practices for Creating High-Converting Carousels</h2>
+      <h2>Best Practices for High-Converting LinkedIn Carousels</h2>
+      <p>Follow these expert tips when structuring your carousel presentation deck:</p>
+
       <ul>
-        <li><strong>Hooking First Slide:</strong> Use bold, clear titles on Slide 1 to grab feed attention.</li>
-        <li><strong>Concise Text:</strong> Keep text brief—use 1 main takeaway per slide.</li>
-        <li><strong>Consistent Branding:</strong> Maintain matching background colors and your social handle across all slides.</li>
+        <li><strong>Hook Them on Slide 1:</strong> Your first slide title should present a compelling hook, question, or promise to capture user attention instantly.</li>
+        <li><strong>Keep Text Concise:</strong> Use short bullet points and bold headings. Avoid dense paragraphs that are difficult to read on mobile devices.</li>
+        <li><strong>Include a Call-to-Action (CTA):</strong> End your final slide with a clear CTA encouraging users to comment, connect, or follow your profile.</li>
       </ul>
     </div>
 
-    <!-- Internal Linking Section -->
+    <!-- SEO Article Content Box 3 -->
     <div class="content-box">
-      <h2>Explore Related Social Media Utilities</h2>
-      <p>Enhance your content production workflow with our tools:</p>
+      <h2>Features of MicroToolStack's Carousel Creator</h2>
+      <ul>
+        <li><strong>Client-Side PDF Generation:</strong> Uses jsPDF to compile high-resolution vector slides directly in browser memory.</li>
+        <li><strong>Dynamic Slide Management:</strong> Easily add, edit, or remove slides in your presentation deck on the fly.</li>
+        <li><strong>100% Privacy:</strong> All text processing and PDF building execute locally inside your browser session. Your content is never stored remotely.</li>
+        <li><strong>Free & Unlimited Usage:</strong> No slide limits, watermarks, or account sign-ups required.</li>
+      </ul>
+    </div>
+
+    <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
+    <div class="content-box">
+      <h2>Explore Related Social Media & Document Tools</h2>
+      <p>Discover our complementary online utilities:</p>
       <div class="related-links">
-        <a href="/tools/developer/html-formatter.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">✨ HTML Formatter</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Beautify and indent web code.</span>
+        <a href="/tools/social-media/linkedin-banner-creator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🎨 LinkedIn Banner Creator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Design custom 1584x396 profile header banners.</span>
+        </a>
+        <a href="/tools/pdf/merge-pdf.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📚 Online PDF Merger</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Combine multiple PDF files into one organized document.</span>
+        </a>
+        <a href="/tools/media/qr-code-generator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📲 Custom QR Code Generator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Create scannable QR codes for websites and portfolios.</span>
         </a>
       </div>
     </div>
 
     <!-- FAQ Section -->
     <div class="content-box">
-      <h2>Frequently Asked Questions</h2>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How do I upload the exported PDF to LinkedIn?</h3>
-        <p>When creating a new LinkedIn post, click the "Document" (PDF) icon, select your downloaded PDF file, and write your post caption.</p>
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How do I upload a carousel PDF to LinkedIn?</h3>
+        <p>Create a new post on LinkedIn, click the '+' or 'More' icon, select 'Add document', upload your downloaded PDF file, add a caption, and publish!</p>
       </div>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What is the recommended number of slides?</h3>
-        <p>Carousels with 4 to 8 slides perform best for engagement and scroll depth.</p>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What is the best aspect ratio for LinkedIn carousels?</h3>
+        <p>Square (1:1 ratio, such as 1080 x 1080 pixels) or portrait (4:5 ratio) documents perform exceptionally well on both desktop and mobile LinkedIn feeds.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is my slide data saved on remote servers?</h3>
+        <p>No. All PDF generation runs client-side inside your browser session using JavaScript. Your text remains 100% private.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this LinkedIn Carousel PDF Maker free?</h3>
+        <p>Yes, MicroToolStack's LinkedIn Carousel PDF Maker is 100% free with no usage limits or sign-up required.</p>
       </div>
     </div>
 
@@ -422,165 +372,195 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      let slides = [
-        { heading: "5 Tips to Master SEO in 2026", body: "Focus on user intent, high-speed performance, and authoritative technical content.", bg: "#1e293b", text: "#ffffff" },
-        { heading: "1. Optimize Core Web Vitals", body: "Keep LCP under 2.5s and INP low to satisfy Google's ranking signals.", bg: "#0f172a", text: "#38bdf8" },
-        { heading: "2. Build Topical Authority", body: "Write comprehensive topic clusters that solve real searcher queries.", bg: "#1e1e2e", text: "#a7f3d0" }
+      const slideItemsContainer = document.getElementById('slide-items-container');
+      const btnAddSlide = document.getElementById('btn-add-slide');
+      const btnGeneratePdf = document.getElementById('btn-generate-pdf');
+      const btnReset = document.getElementById('btn-reset');
+      const themeSelect = document.getElementById('theme-select');
+      const authorHandle = document.getElementById('author-handle');
+
+      let slideList = [
+        { title: "🚀 3 Ways to Boost Your LinkedIn Reach", body: "Stop posting random links and start leveraging high-engagement document carousels today." },
+        { title: "1. Hook Your Readers Instantly", body: "Slide 1 is your billboard. Use bold statements or curiosity gaps to force the swipe." },
+        { title: "2. Keep Formatting Clean & Simple", body: "Use large fonts, high contrast, and short bullet points optimized for mobile reading." },
+        { title: "3. End with a Clear CTA", body: "Tell your audience exactly what to do next: Follow, comment, or click the link in bio!" }
       ];
 
-      let currentIndex = 0;
+      function renderSlideInputs() {
+        slideItemsContainer.innerHTML = '';
 
-      const inHeading = document.getElementById('in-heading');
-      const inBody = document.getElementById('in-body');
-      const inAuthor = document.getElementById('in-author');
-      const inBgColor = document.getElementById('in-bg-color');
-      const inTextColor = document.getElementById('in-text-color');
+        slideList.forEach((slide, index) => {
+          const div = document.createElement('div');
+          div.className = 'slide-builder-item';
+          div.innerHTML = `
+            ${slideList.length > 1 ? `<button class="btn-remove-slide" onclick="removeSlideItem(${index})">Remove ✕</button>` : ''}
+            <div class="input-group" style="margin-bottom: 0.75rem;">
+              <label class="input-label">Slide #${index + 1} Title</label>
+              <input type="text" class="form-control slide-title" data-index="${index}" value="${escapeAttr(slide.title)}" placeholder="Enter slide title...">
+            </div>
+            <div class="input-group" style="margin-bottom: 0;">
+              <label class="input-label">Slide #${index + 1} Body Text</label>
+              <textarea class="form-control slide-body" data-index="${index}" style="min-height: 70px;" placeholder="Enter slide body text...">${escapeText(slide.body)}</textarea>
+            </div>
+          `;
+          slideItemsContainer.appendChild(div);
+        });
 
-      const slidePreview = document.getElementById('slide-preview');
-      const prevHeading = document.getElementById('prev-heading');
-      const prevBody = document.getElementById('prev-body');
-      const prevAuthor = document.getElementById('prev-author');
-      const prevCounter = document.getElementById('prev-counter');
+        // Add event listeners
+        document.querySelectorAll('.slide-title').forEach(input => {
+          input.addEventListener('input', function() {
+            const idx = parseInt(this.getAttribute('data-index'), 10);
+            slideList[idx].title = this.value;
+          });
+        });
 
-      const slideTabs = document.getElementById('slide-tabs');
-      const navIndicator = document.getElementById('nav-indicator');
-
-      const btnPrev = document.getElementById('btn-prev-slide');
-      const btnNext = document.getElementById('btn-next-slide');
-      const btnAdd = document.getElementById('btn-add-slide');
-      const btnDel = document.getElementById('btn-del-slide');
-      const btnDownload = document.getElementById('btn-download-pdf');
-      const statusMsg = document.getElementById('status-msg');
-
-      function renderTabs() {
-        slideTabs.innerHTML = slides.map((s, idx) => `
-          <button class="slide-tab ${idx === currentIndex ? 'active' : ''}" data-idx="${idx}">Slide ${idx + 1}</button>
-        `).join('');
-
-        document.querySelectorAll('.slide-tab').forEach(tab => {
-          tab.addEventListener('click', function() {
-            currentIndex = parseInt(this.getAttribute('data-idx'));
-            loadCurrentSlide();
+        document.querySelectorAll('.slide-body').forEach(textarea => {
+          textarea.addEventListener('input', function() {
+            const idx = parseInt(this.getAttribute('data-index'), 10);
+            slideList[idx].body = this.value;
           });
         });
       }
 
-      function loadCurrentSlide() {
-        const cur = slides[currentIndex];
-        inHeading.value = cur.heading;
-        inBody.value = cur.body;
-        inBgColor.value = cur.bg;
-        inTextColor.value = cur.text;
+      window.removeSlideItem = function(index) {
+        if (slideList.length > 1) {
+          slideList.splice(index, 1);
+          renderSlideInputs();
+        }
+      };
 
-        updatePreview();
-        renderTabs();
-      }
+      btnAddSlide.addEventListener('click', function() {
+        slideList.push({ title: `Slide #${slideList.add ? slideList.length + 1 : slideList.length + 1} Headline`, body: "Add your explanatory text or bullet points here for this slide." });
+        renderSlideInputs();
+      });
 
-      function updatePreview() {
-        const cur = slides[currentIndex];
-        cur.heading = inHeading.value;
-        cur.body = inBody.value;
-        cur.bg = inBgColor.value;
-        cur.text = inTextColor.value;
+      btnGeneratePdf.addEventListener('click', async function() {
+        if (slideList.length === 0) {
+          alert('Please add at least one slide to generate a carousel PDF.');
+          return;
+        }
 
-        prevHeading.textContent = cur.heading || "Slide Title";
-        prevBody.textContent = cur.body || "Slide content body text goes here...";
-        prevAuthor.textContent = inAuthor.value || "@YourName";
-        prevCounter.textContent = `Slide ${currentIndex + 1} of ${slides.length}`;
+        if (typeof window.jspdf === 'undefined') {
+          alert('PDF generation library is still loading. Please try again in a moment.');
+          return;
+        }
 
-        slidePreview.style.backgroundColor = cur.bg;
-        slidePreview.style.color = cur.text;
+        const origText = btnGeneratePdf.textContent;
+        btnGeneratePdf.textContent = '⏳ Generating Carousel PDF...';
+        btnGeneratePdf.disabled = true;
 
-        navIndicator.textContent = `${currentIndex + 1} / ${slides.length}`;
-      }
+        try {
+          const { jsPDF } = window.jspdf;
+          // Create square PDF (1080x1080 points format ratio)
+          const doc = new jsPDF({
+            orientation: 'portrait',
+            unit: 'pt',
+            format: [1080, 1080]
+          });
 
-      inHeading.addEventListener('input', updatePreview);
-      inBody.addEventListener('input', updatePreview);
-      inAuthor.addEventListener('input', updatePreview);
-      inBgColor.addEventListener('input', updatePreview);
-      inTextColor.addEventListener('input', updatePreview);
+          const theme = themeSelect.value;
+          const handle = authorHandle.value.trim();
 
-      btnPrev.addEventListener('click', function() {
-        if (currentIndex > 0) {
-          currentIndex--;
-          loadCurrentSlide();
+          // Theme colors
+          let bgColor = [30, 58, 138]; // Modern blue
+          let accentColor = [2, 132, 199];
+          let textColor = [255, 255, 255];
+          let subTextColor = [186, 230, 253];
+
+          if (theme === 'dark-minimal') {
+            bgColor = [15, 23, 42];
+            accentColor = [51, 65, 85];
+            textColor = [255, 255, 255];
+            subTextColor = [148, 163, 184];
+          } else if (theme === 'vibrant-purple') {
+            bgColor = [88, 28, 135];
+            accentColor = [147, 51, 234];
+            textColor = [255, 255, 255];
+            subTextColor = [233, 213, 255];
+          } else if (theme === 'clean-slate') {
+            bgColor = [51, 65, 85];
+            accentColor = [71, 85, 105];
+            textColor = [255, 255, 255];
+            subTextColor = [203, 213, 225];
+          }
+
+          slideList.forEach((slide, idx) => {
+            if (idx > 0) {
+              doc.addPage([1080, 1080], 'portrait');
+            }
+
+            // Fill background
+            doc.setFillColor(bgColor[0], bgColor[1], bgColor[2]);
+            doc.rect(0, 0, 1080, 1080, 'F');
+
+            // Header Slide Number Badge
+            doc.setFont('Helvetica', 'bold');
+            doc.setFontSize(28);
+            doc.setTextColor(subTextColor[0], subTextColor[1], subTextColor[2]);
+            doc.text(`${idx + 1} / ${slideList.length}`, 100, 120);
+
+            // Title
+            doc.setFont('Helvetica', 'bold');
+            doc.setFontSize(60);
+            doc.setTextColor(textColor[0], textColor[1], textColor[2]);
+            
+            const splitTitle = doc.splitTextToSize(slide.title || 'Slide Title', 880);
+            doc.text(splitTitle, 100, 240);
+
+            // Body text
+            doc.setFont('Helvetica', 'normal');
+            doc.setFontSize(36);
+            doc.setTextColor(subTextColor[0], subTextColor[1], subTextColor[2]);
+
+            const splitBody = doc.splitTextToSize(slide.body || '', 880);
+            doc.text(splitBody, 100, 460);
+
+            // Footer handle
+            if (handle) {
+              doc.setFont('Helvetica', 'bold');
+              doc.setFontSize(24);
+              doc.setTextColor(subTextColor[0], subTextColor[1], subTextColor[2]);
+              doc.text(handle, 100, 980);
+            }
+          });
+
+          doc.save('linkedin-carousel-presentation.pdf');
+
+          btnGeneratePdf.textContent = '✅ PDF Downloaded Successfully!';
+          setTimeout(() => {
+            btnGeneratePdf.textContent = origText;
+            btnGeneratePdf.disabled = false;
+          }, 2000);
+
+        } catch (err) {
+          alert('An error occurred while compiling the PDF. Please try again.');
+          btnGeneratePdf.textContent = origText;
+          btnGeneratePdf.disabled = false;
         }
       });
 
-      btnNext.addEventListener('click', function() {
-        if (currentIndex < slides.length - 1) {
-          currentIndex++;
-          loadCurrentSlide();
-        }
+      function escapeAttr(str) {
+        return str.replace(/"/g, '&quot;');
+      }
+
+      function escapeText(str) {
+        return str.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      }
+
+      btnReset.addEventListener('click', function() {
+        slideList = [
+          { title: "🚀 3 Ways to Boost Your LinkedIn Reach", body: "Stop posting random links and start leveraging high-engagement document carousels today." },
+          { title: "1. Hook Your Readers Instantly", body: "Slide 1 is your billboard. Use bold statements or curiosity gaps to force the swipe." },
+          { title: "2. Keep Formatting Clean & Simple", body: "Use large fonts, high contrast, and short bullet points optimized for mobile reading." },
+          { title: "3. End with a Clear CTA", body: "Tell your audience exactly what to do next: Follow, comment, or click the link in bio!" }
+        ];
+        themeSelect.value = 'modern-blue';
+        authorHandle.value = 'linkedin.com/in/mehedi';
+        renderSlideInputs();
       });
 
-      btnAdd.addEventListener('click', function() {
-        slides.push({
-          heading: `New Slide ${slides.length + 1}`,
-          body: "Enter your slide details here.",
-          bg: slides[currentIndex].bg,
-          text: slides[currentIndex].text
-        });
-        currentIndex = slides.length - 1;
-        loadCurrentSlide();
-      });
-
-      btnDel.addEventListener('click', function() {
-        if (slides.length <= 1) return;
-        slides.splice(currentIndex, 1);
-        if (currentIndex >= slides.length) currentIndex = slides.length - 1;
-        loadCurrentSlide();
-      });
-
-      // PDF Download Logic via jsPDF
-      btnDownload.addEventListener('click', function() {
-        statusMsg.style.display = 'inline';
-        const { jsPDF } = window.jspdf;
-        const doc = new jsPDF({
-          orientation: 'square',
-          unit: 'px',
-          format: [500, 500]
-        });
-
-        slides.forEach((slide, i) => {
-          if (i > 0) doc.addPage([500, 500], 'square');
-
-          // Background
-          doc.setFillColor(slide.bg);
-          doc.rect(0, 0, 500, 500, 'F');
-
-          // Text Color
-          doc.setTextColor(slide.text);
-
-          // Title Heading
-          doc.setFontSize(26);
-          doc.setFont('helvetica', 'bold');
-          const splitTitle = doc.splitTextToSize(slide.heading || "Title", 420);
-          doc.text(splitTitle, 40, 100);
-
-          // Body Text
-          doc.setFontSize(16);
-          doc.setFont('helvetica', 'normal');
-          const splitBody = doc.splitTextToSize(slide.body || "", 420);
-          doc.text(splitBody, 40, 200);
-
-          // Footer Line
-          doc.setDrawColor(255, 255, 255);
-          doc.setLineWidth(0.5);
-          doc.line(40, 440, 460, 440);
-
-          // Footer Text
-          doc.setFontSize(12);
-          doc.setFont('helvetica', 'bold');
-          doc.text(inAuthor.value || "@YourName", 40, 465);
-          doc.text(`${i + 1} / ${slides.length}`, 420, 465);
-        });
-
-        doc.save('linkedin-carousel.pdf');
-        setTimeout(() => { statusMsg.style.display = 'none'; }, 2000);
-      });
-
-      loadCurrentSlide();
+      // Initial Render
+      renderSlideInputs();
     });
   </script>
 </body>
