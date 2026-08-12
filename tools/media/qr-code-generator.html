@@ -9,6 +9,7 @@
         gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
         gTagScript.async = true;
         document.head.appendChild(gTagScript);
+
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
@@ -21,19 +22,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Primary SEO Meta Tags -->
-  <title>Free QR Code Generator with Logo Online | MicroToolStack</title>
-  <meta name="description" content="Create custom QR codes with logo overlay, custom colors, and high-resolution PNG download. Fast, free, and 100% private client-side generator.">
-  <meta name="keywords" content="qr code generator with logo, custom qr code maker, create qr code with image, free branded qr code, high res qr code generator">
+  <title>Free Online QR Code Generator | Create Custom QR Codes | MicroToolStack</title>
+  <meta name="description" content="Generate custom QR codes online for free. Convert URLs, text, Wi-Fi passwords, and email addresses into scannable QR codes with custom colors, size settings, and 1-click PNG download.">
+  <meta name="keywords" content="qr code generator, create qr code online, free qr code maker, custom qr code generator, url to qr code, wifi qr code generator, qr code download png, media tools">
 
   <link rel="canonical" href="https://microtoolstack.com/tools/media/qr-code-generator.html">
   <meta name="robots" content="index, follow">
 
-  <!-- Open Graph / Social Media Meta Tags -->
+  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Free QR Code Generator with Logo Online | MicroToolStack">
-  <meta property="og:description" content="Create custom QR codes with logo overlay, custom colors, and high-resolution PNG download. Fast, free, and 100% private client-side generator.">
   <meta property="og:url" content="https://microtoolstack.com/tools/media/qr-code-generator.html">
-  <meta property="og:site_name" content="MicroToolStack">
+  <meta property="og:title" content="Free Online QR Code Generator | MicroToolStack">
+  <meta property="og:description" content="Create custom high-resolution QR codes for websites, text, and Wi-Fi networks instantly. 100% free, fast, and privacy-first browser media utility.">
   <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
@@ -41,141 +41,172 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
   <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
-  <!-- QRCode.js Library -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-
-  <!-- Schema -->
+  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
   <script type="application/ld+json">
-  [
-    {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "QR Code Generator with Logo",
-      "url": "https://microtoolstack.com/tools/media/qr-code-generator.html",
-      "applicationCategory": "UtilitiesApplication",
-      "operatingSystem": "All",
-      "browserRequirements": "Requires JavaScript",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      }
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Is it free to generate custom QR codes with logos?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, 100% free with no sign-up or expiration dates on generated QR codes."
-          }
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Custom QR Code Generator",
+        "operatingSystem": "All",
+        "applicationCategory": "MultimediaApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
         },
-        {
-          "@type": "Question",
-          "name": "Will adding a logo affect the QR code scanability?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Our generator uses high error-correction levels so scanners can easily read the code even with a central logo."
+        "description": "An essential client-side web utility that generates scannable high-resolution QR codes for URLs, plain text, Wi-Fi credentials, and contact info with custom colors.",
+        "url": "https://microtoolstack.com/tools/media/qr-code-generator.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is a QR Code?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A QR Code (Quick Response Code) is a 2D matrix barcode that encodes digital information—such as website URLs, contact details, or text strings—readable by smartphone camera scanners."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do generated QR codes expire?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No! Our tool generates static QR codes where data is encoded directly into the barcode pattern. Static QR codes never expire and function indefinitely."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are my input links or text data saved on remote servers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No! All QR code matrix calculations and rendering execute 100% locally inside your web browser session using client-side JavaScript. Your inputs remain completely private."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this QR Code Generator free to use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, MicroToolStack's QR Code Generator is 100% free with unlimited QR code creations and no registration required."
+            }
           }
-        }
-      ]
-    }
-  ]
+        ]
+      }
+    ]
+  }
   </script>
 
-  <!-- Fonts & CSS Stylesheets -->
+  <!-- Preconnect and Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
 
+  <!-- QRCode.js CDN for client-side rendering -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
   <style>
-    .app-card {
-      background-color: var(--bg-card, #1e1e2e);
-      border: 1px solid var(--border-color, #333);
-      border-radius: 12px;
-      padding: 2rem;
-      margin-bottom: 2.5rem;
-    }
-    .controls-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-    }
-    @media (max-width: 768px) {
-      .controls-grid { grid-template-columns: 1fr; }
-    }
-    .form-group {
+    .input-group {
       margin-bottom: 1.25rem;
     }
-    .form-group label {
+    .input-label {
       display: block;
-      margin-bottom: 0.5rem;
       font-size: 0.9rem;
       font-weight: 600;
-      color: #e5e7eb;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.5rem;
     }
-    .form-control {
+    .form-control, .form-select {
       width: 100%;
-      padding: 0.75rem;
-      border-radius: 8px;
-      background: var(--bg-body, #111827);
-      border: 1px solid var(--border-color, #374151);
-      color: #fff;
-      font-size: 0.95rem;
-      box-sizing: border-box;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
+      color: var(--text-primary, #fff);
       outline: none;
+      box-sizing: border-box;
     }
-    .qr-preview-box {
-      background: rgba(0,0,0,0.25);
-      border: 1px solid var(--border-color, #374151);
-      border-radius: 12px;
-      padding: 1.5rem;
+    .form-control:focus, .form-select:focus {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+
+    /* Mode Tabs */
+    .tab-bar {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .tab-btn {
+      padding: 0.6rem 1.25rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      background: var(--bg-card, #1e1e2e);
+      color: var(--text-secondary, #9ca3af);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .tab-btn.active {
+      background: var(--accent-primary, #3b82f6);
+      color: #fff;
+      border-color: var(--accent-primary, #3b82f6);
+    }
+
+    /* QR Code Stage Workspace */
+    .qr-stage {
+      width: 100%;
+      min-height: 280px;
+      background: #111827;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
-    }
-    #canvas-container {
-      background: #ffffff;
-      padding: 12px;
-      border-radius: 8px;
-      display: inline-block;
-      margin-bottom: 1.25rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    }
-    .btn-primary {
-      background-color: var(--accent-primary, #2563eb);
-      color: #fff;
-      padding: 0.75rem 1.5rem;
-      border-radius: 8px;
-      border: none;
-      font-weight: 600;
-      cursor: pointer;
-      width: 100%;
-      transition: background 0.2s;
-    }
-    .btn-primary:hover {
-      opacity: 0.9;
-    }
-    .btn-download {
-      background-color: #16a34a;
-      color: #fff;
-      padding: 0.75rem 1.25rem;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      display: inline-block;
-      width: 100%;
-      text-align: center;
+      align-items: center;
+      padding: 1.5rem;
       box-sizing: border-box;
+      margin-bottom: 1.5rem;
+      position: relative;
     }
-    .btn-download:hover {
-      background-color: #15803d;
+
+    .qr-box {
+      padding: 1rem;
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
+
+    .meta-badge {
+      display: inline-block;
+      font-size: 0.85rem;
+      color: var(--text-secondary, #9ca3af);
+      background: rgba(255, 255, 255, 0.05);
+      padding: 0.3rem 0.75rem;
+      border-radius: 6px;
+      border: 1px solid var(--border-color, #333);
+      margin-top: 0.75rem;
+    }
+
+    .controls-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.5rem;
+    }
+
     .content-box {
       background-color: var(--bg-card, #1e1e2e);
       border: 1px solid var(--border-color, #333);
@@ -188,12 +219,18 @@
       margin-bottom: 1rem;
       color: var(--text-primary, #fff);
     }
-    .content-box p, .content-box ul, .content-box ol {
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul {
       color: var(--text-secondary, #9ca3af);
       font-size: 0.95rem;
       line-height: 1.6;
     }
-    .content-box ul, .content-box ol {
+    .content-box ul {
       padding-left: 1.25rem;
       margin-bottom: 1rem;
     }
@@ -236,204 +273,323 @@
     </nav>
   </header>
 
-  <!-- Main Content -->
-  <main class="container" style="max-width: 950px; margin: 2rem auto; padding: 0 1rem;">
-    <!-- Breadcrumb Navigation -->
-    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
-      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
-      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Media Tools</a> / 
-      <span>QR Code Generator</span>
-    </nav>
+  <!-- Main Container -->
+  <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
     
-    <!-- Title Section -->
+    <!-- Tool Title & Description -->
     <div style="text-align: center; margin-bottom: 2rem;">
-      <span class="badge badge-primary" style="margin-bottom: 0.5rem; display: inline-block;">100% Free & Custom Logo Support</span>
-      <h1 style="font-size: 2rem; color: #fff; margin-bottom: 0.5rem;">Custom QR Code Generator with Logo</h1>
-      <p style="color: var(--text-secondary, #9ca3af);">Generate stylish, high-resolution QR codes for websites, WiFi, or text with custom brand logos.</p>
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online Custom QR Code Generator</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Convert website URLs, text strings, and Wi-Fi networks into scannable high-res QR codes.</p>
     </div>
 
-    <!-- App Card -->
-    <div class="app-card">
-      <div class="controls-grid">
-        
-        <!-- Left Side: Inputs -->
+    <!-- Mode Selector Tabs -->
+    <div class="tab-bar">
+      <button class="tab-btn active" id="tab-url">🔗 URL / Link</button>
+      <button class="tab-btn" id="tab-text">📝 Plain Text</button>
+      <button class="tab-btn" id="tab-wifi">📶 Wi-Fi Network</button>
+    </div>
+
+    <!-- Data Input Controls Card -->
+    <div class="content-box" style="margin-bottom: 1.5rem;">
+      <!-- Mode 1: URL Input -->
+      <div id="mode-url-box" class="input-group">
+        <label for="url-input" class="input-label">Website URL / Target Link</label>
+        <input type="url" id="url-input" class="form-control" value="https://microtoolstack.com" placeholder="https://example.com">
+      </div>
+
+      <!-- Mode 2: Text Input -->
+      <div id="mode-text-box" class="input-group" style="display: none;">
+        <label for="text-input" class="input-label">Custom Plain Text Message</label>
+        <textarea id="text-input" class="form-control" style="min-height: 80px;" placeholder="Type or paste any text string here..."></textarea>
+      </div>
+
+      <!-- Mode 3: Wi-Fi Input -->
+      <div id="mode-wifi-box" class="input-group" style="display: none;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem;">
+          <div>
+            <label for="wifi-ssid" class="input-label">Network Name (SSID)</label>
+            <input type="text" id="wifi-ssid" class="form-control" placeholder="MyHomeWiFi">
+          </div>
+          <div>
+            <label for="wifi-pass" class="input-label">Wi-Fi Password</label>
+            <input type="password" id="wifi-pass" class="form-control" placeholder="Password123">
+          </div>
+          <div>
+            <label for="wifi-type" class="input-label">Security Encryption</label>
+            <select id="wifi-type" class="form-select">
+              <option value="WPA" selected>WPA/WPA2/WPA3</option>
+              <option value="WEP">WEP</option>
+              <option value="nopass">None (Open Network)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <hr style="border-color: var(--border-color, #333); margin: 1.5rem 0;">
+
+      <!-- Customization Options -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem;" class="input-group">
         <div>
-          <div class="form-group">
-            <label for="qr-text">Website URL or Text *</label>
-            <input type="text" id="qr-text" class="form-control" placeholder="https://microtoolstack.com" value="https://microtoolstack.com">
-          </div>
-
-          <div class="form-group">
-            <label for="logo-input">Upload Center Logo (Optional)</label>
-            <input type="file" id="logo-input" class="form-control" accept="image/png, image/jpeg, image/svg+xml">
-          </div>
-
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-            <div class="form-group">
-              <label for="dark-color">QR Code Color</label>
-              <input type="color" id="dark-color" value="#000000" style="height: 42px; width: 100%; cursor: pointer; background: var(--bg-body, #111827); border: 1px solid var(--border-color, #374151); border-radius: 6px;">
-            </div>
-
-            <div class="form-group">
-              <label for="light-color">Background Color</label>
-              <input type="color" id="light-color" value="#ffffff" style="height: 42px; width: 100%; cursor: pointer; background: var(--bg-body, #111827); border: 1px solid var(--border-color, #374151); border-radius: 6px;">
-            </div>
-          </div>
-
-          <button id="generate-btn" class="btn-primary" style="margin-top: 0.5rem;">Generate QR Code</button>
+          <label for="qr-size" class="input-label">QR Code Size Resolution</label>
+          <select id="qr-size" class="form-select">
+            <option value="180">180 x 180 px (Small)</option>
+            <option value="256" selected>256 x 256 px (Standard HD)</option>
+            <option value="384">384 x 384 px (Print HD)</option>
+            <option value="512">512 x 512 px (Ultra HD)</option>
+          </select>
         </div>
-
-        <!-- Right Side: Preview -->
-        <div class="qr-preview-box">
-          <div id="canvas-container">
-            <canvas id="qr-canvas" width="220" height="220"></canvas>
-          </div>
-          <div style="width: 100%;">
-            <a id="download-btn" class="btn-download" href="#" download="qrcode.png">📥 Download High-Res PNG</a>
-          </div>
+        <div>
+          <label for="qr-fg-color" class="input-label">Foreground Color</label>
+          <input type="color" id="qr-fg-color" class="form-control" value="#000000" style="height: 42px; padding: 0.2rem;">
         </div>
-
+        <div>
+          <label for="qr-bg-color" class="input-label">Background Color</label>
+          <input type="color" id="qr-bg-color" class="form-control" value="#ffffff" style="height: 42px; padding: 0.2rem;">
+        </div>
       </div>
     </div>
 
-    <!-- Hidden Raw Div for QRCodeJS -->
-    <div id="qrcode-raw" style="display: none;"></div>
-
-    <!-- SEO Content Box 1 -->
-    <div class="content-box">
-      <h2>How to Generate Custom QR Codes with Logos Online</h2>
-      <p>Quick Response (QR) codes are essential tools for driving offline users to online destinations. Whether you are creating a digital business card, menu link, WiFi access portal, or promotional campaign, branding your QR code with a custom logo increases click confidence and brand authority.</p>
+    <!-- QR Workspace Stage -->
+    <div class="qr-stage">
+      <div class="qr-box" id="qr-container"></div>
+      <div id="status-msg" style="color: #94a3b8; font-size: 0.95rem; display: none;">
+        📂 Enter content above to generate QR code...
+      </div>
+      <div id="qr-meta" class="meta-badge">Resolution: 256 x 256 px</div>
     </div>
 
-    <!-- SEO Content Box 2 -->
+    <!-- Controls Bar -->
+    <div class="controls-bar">
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-download" class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-weight: 600; cursor: pointer; background: #10b981;">💾 Download QR Code (PNG)</button>
+      </div>
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear</button>
+      </div>
+    </div>
+
+    <!-- SEO Article Content Box 1 -->
     <div class="content-box">
-      <h2>Step-by-Step Instructions</h2>
+      <h2>Why Custom QR Codes Are Essential for Marketing & Touchless Interactions</h2>
+      <p>A <strong>QR Code (Quick Response Code)</strong> is a two-dimensional matrix barcode that encodes digital information readable by smartphone cameras. QR codes bridge physical print media—such as business cards, flyers, restaurant menus, and product packaging—directly to digital destinations.</p>
+
+      <p>By scanning a QR code with a smartphone camera, users can instantly visit website URLs, join Wi-Fi networks without typing passwords, or view contact details. Our free <strong>Online QR Code Generator</strong> creates high-resolution static QR codes customized with your preferred colors and size resolutions.</p>
+    </div>
+
+    <!-- SEO Article Content Box 2 -->
+    <div class="content-box">
+      <h2>Static vs. Dynamic QR Codes</h2>
+      <p>Understanding how static QR code encoding works:</p>
+
       <ul>
-        <li>Enter your website link, landing page, or plain text in the input box.</li>
-        <li>(Optional) Upload your company logo or icon to overlay in the center.</li>
-        <li>Customize the QR code foreground and background colors to match your brand palette.</li>
-        <li>Click <strong>Generate QR Code</strong> and download your print-ready PNG file.</li>
+        <li><strong>Static QR Codes (Permanent):</strong> Information is encoded directly into the barcode pattern. Static QR codes never expire, require no ongoing server subscriptions, and function indefinitely.</li>
+        <li><strong>High Scan Reliability:</strong> High contrast between foreground barcode patterns and light background colors ensures 100% scan success across all smartphone cameras.</li>
       </ul>
     </div>
 
-    <!-- Internal Linking Section (SEO Best Practice) -->
+    <!-- SEO Article Content Box 3 -->
     <div class="content-box">
-      <h2>Explore Related Media & Developer Tools</h2>
-      <p>Enhance your visual assets and workflow with our free utilities:</p>
+      <h2>Features of MicroToolStack's QR Code Maker</h2>
+      <ul>
+        <li><strong>Multi-Data Encoding Modes:</strong> Convert website URLs, plain text notes, or Wi-Fi network credentials (SSID/Password) into instant barcodes.</li>
+        <li><strong>Custom Resolution & Color Styling:</strong> Choose custom foreground and background colors alongside 180px, 256px, 384px, or 512px print resolution exports.</li>
+        <li><strong>100% Client-Side Privacy:</strong> All matrix calculations execute locally in your browser using JavaScript. No links or passwords are recorded remotely.</li>
+        <li><strong>Free & Unlimited Usage:</strong> No scan limits, watermark restrictions, or account sign-ups required.</li>
+      </ul>
+    </div>
+
+    <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
+    <div class="content-box">
+      <h2>Explore Related Media Tools</h2>
+      <p>Discover our complementary online media utilities:</p>
       <div class="related-links">
         <a href="/tools/media/favicon-generator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🌟 Favicon Generator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Generate multi-size web favicons.</span>
+          <strong style="display:block; margin-bottom: 0.25rem;">🌐 Favicon Generator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Create complete multi-resolution favicon suites & HTML code.</span>
         </a>
-        <a href="/tools/media/color-palette-extractor.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🎨 Color Palette Extractor</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Extract matching HEX codes from photos.</span>
+        <a href="/tools/media/png-to-svg.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📐 PNG to SVG Converter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Convert raster PNG images into scalable SVG vectors.</span>
         </a>
-        <a href="/tools/media/image-cropper.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">✂️ Image Cropper</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Crop images with custom aspect ratios.</span>
+        <a href="/tools/media/image-watermark-adder.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📸 Image Watermark Adder</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Overlay text or logo watermarks onto photos.</span>
         </a>
       </div>
     </div>
 
     <!-- FAQ Section -->
     <div class="content-box">
-      <h2>Frequently Asked Questions</h2>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: #fff; margin-bottom: 0.25rem;">Do these generated QR codes ever expire?</h3>
-        <p>No! These are static QR codes containing direct data, meaning they will work forever with no scan limits or hidden subscription fees.</p>
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How do I generate a QR code for a website URL?</h3>
+        <p>Type or paste your website link into the "Website URL" box. The QR code updates automatically, and you can click "Download QR Code (PNG)" to save it.</p>
       </div>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: #fff; margin-bottom: 0.25rem;">Is my data private?</h3>
-        <p>Yes. The code rendering and logo composition take place entirely inside your browser. No data is sent to our servers.</p>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Do these QR codes expire after a certain time?</h3>
+        <p>No! Our tool creates permanent static QR codes. They never expire and can be scanned indefinitely.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Are my website links or Wi-Fi passwords saved on remote servers?</h3>
+        <p>No. All calculations run client-side inside your browser session using JavaScript. Your inputs remain completely private.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this QR Code Generator free?</h3>
+        <p>Yes, MicroToolStack's QR Code Generator is 100% free with no usage limits or sign-up required.</p>
       </div>
     </div>
 
   </main>
 
-  <!-- Footer Placeholder -->
+  <!-- Footer Container Placeholder -->
   <div id="footer-container"></div>
 
-  <!-- Scripts -->
+  <!-- JavaScript Utilities & Logic -->
   <script src="/assets/js/theme.js"></script>
   <script src="/assets/js/utils.js" defer></script>
   <script src="/assets/js/app.js" defer></script>
 
-  <!-- Client Logic Script -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const textInput = document.getElementById('qr-text');
-      const logoInput = document.getElementById('logo-input');
-      const darkColorInput = document.getElementById('dark-color');
-      const lightColorInput = document.getElementById('light-color');
-      const generateBtn = document.getElementById('generate-btn');
-      const qrCanvas = document.getElementById('qr-canvas');
-      const downloadBtn = document.getElementById('download-btn');
-      const rawDiv = document.getElementById('qrcode-raw');
+      const tabUrl = document.getElementById('tab-url');
+      const tabText = document.getElementById('tab-text');
+      const tabWifi = document.getElementById('tab-wifi');
 
-      let userLogoImg = null;
+      const modeUrlBox = document.getElementById('mode-url-box');
+      const modeTextBox = document.getElementById('mode-text-box');
+      const modeWifiBox = document.getElementById('mode-wifi-box');
 
-      logoInput.addEventListener('change', function(e) {
-        const file = e.target.files[0];
-        if (file) {
-          const reader = new FileReader();
-          reader.onload = function(evt) {
-            const img = new Image();
-            img.onload = function() {
-              userLogoImg = img;
-              renderQRCode();
-            };
-            img.src = evt.target.result;
-          };
-          reader.readAsDataURL(file);
-        } else {
-          userLogoImg = null;
-          renderQRCode();
-        }
+      const urlInput = document.getElementById('url-input');
+      const textInput = document.getElementById('text-input');
+      const wifiSsid = document.getElementById('wifi-ssid');
+      const wifiPass = document.getElementById('wifi-pass');
+      const wifiType = document.getElementById('wifi-type');
+
+      const qrSize = document.getElementById('qr-size');
+      const qrFgColor = document.getElementById('qr-fg-color');
+      const qrBgColor = document.getElementById('qr-bg-color');
+
+      const qrContainer = document.getElementById('qr-container');
+      const statusMsg = document.getElementById('status-msg');
+      const qrMeta = document.getElementById('qr-meta');
+      const btnDownload = document.getElementById('btn-download');
+      const btnClear = document.getElementById('btn-clear');
+
+      let currentMode = 'url';
+      let qrcodeObj = null;
+
+      // Tab Switch
+      tabUrl.addEventListener('click', () => {
+        tabUrl.classList.add('active');
+        tabText.classList.remove('active');
+        tabWifi.classList.remove('active');
+        modeUrlBox.style.display = 'block';
+        modeTextBox.style.display = 'none';
+        modeWifiBox.style.display = 'none';
+        currentMode = 'url';
+        generateQrCode();
       });
 
-      generateBtn.addEventListener('click', renderQRCode);
+      tabText.addEventListener('click', () => {
+        tabText.classList.add('active');
+        tabUrl.classList.remove('active');
+        tabWifi.classList.remove('active');
+        modeTextBox.style.display = 'block';
+        modeUrlBox.style.display = 'none';
+        modeWifiBox.style.display = 'none';
+        currentMode = 'text';
+        generateQrCode();
+      });
 
-      function renderQRCode() {
-        const text = textInput.value.trim() || 'https://microtoolstack.com';
-        rawDiv.innerHTML = '';
+      tabWifi.addEventListener('click', () => {
+        tabWifi.classList.add('active');
+        tabUrl.classList.remove('active');
+        tabText.classList.remove('active');
+        modeWifiBox.style.display = 'block';
+        modeUrlBox.style.display = 'none';
+        modeTextBox.style.display = 'none';
+        currentMode = 'wifi';
+        generateQrCode();
+      });
 
-        new QRCode(rawDiv, {
-          text: text,
-          width: 260,
-          height: 260,
-          colorDark: darkColorInput.value,
-          colorLight: lightColorInput.value,
-          correctLevel: QRCode.CorrectLevel.H
-        });
+      // Inputs Change Listeners
+      [urlInput, textInput, wifiSsid, wifiPass, wifiType, qrSize, qrFgColor, qrBgColor].forEach(el => {
+        el.addEventListener('input', generateQrCode);
+        el.addEventListener('change', generateQrCode);
+      });
 
-        setTimeout(function() {
-          const rawCanvas = rawDiv.querySelector('canvas');
-          const ctx = qrCanvas.getContext('2d');
-          qrCanvas.width = 260;
-          qrCanvas.height = 260;
-
-          if (rawCanvas) {
-            ctx.drawImage(rawCanvas, 0, 0);
-
-            if (userLogoImg) {
-              const logoSize = 60;
-              const x = (qrCanvas.width - logoSize) / 2;
-              const y = (qrCanvas.height - logoSize) / 2;
-
-              ctx.fillStyle = lightColorInput.value;
-              ctx.fillRect(x - 4, y - 4, logoSize + 8, logoSize + 8);
-
-              ctx.drawImage(userLogoImg, x, y, logoSize, logoSize);
-            }
-
-            const dataUrl = qrCanvas.toDataURL('image/png');
-            downloadBtn.href = dataUrl;
-          }
-        }, 150);
+      function getPayloadString() {
+        if (currentMode === 'url') {
+          return urlInput.value.trim() || 'https://microtoolstack.com';
+        } else if (currentMode === 'text') {
+          return textInput.value.trim() || 'Sample Text QR Code';
+        } else if (currentMode === 'wifi') {
+          const ssid = wifiSsid.value.trim() || 'MyWiFi';
+          const pass = wifiPass.value || '';
+          const type = wifiType.value;
+          return `WIFI:S:${ssid};T:${type};P:${pass};;`;
+        }
+        return 'https://microtoolstack.com';
       }
 
-      renderQRCode();
+      function generateQrCode() {
+        const payload = getPayloadString();
+        const size = parseInt(qrSize.value, 10) || 256;
+        const fg = qrFgColor.value;
+        const bg = qrBgColor.value;
+
+        qrContainer.innerHTML = '';
+
+        if (typeof QRCode !== 'undefined') {
+          qrcodeObj = new QRCode(qrContainer, {
+            text: payload,
+            width: size,
+            height: size,
+            colorDark: fg,
+            colorLight: bg,
+            correctLevel: QRCode.CorrectLevel.H
+          });
+
+          statusMsg.style.display = 'none';
+          qrMeta.textContent = `Resolution: ${size} x ${size} px`;
+          qrMeta.style.display = 'inline-block';
+        }
+      }
+
+      btnDownload.addEventListener('click', function() {
+        const img = qrContainer.querySelector('img');
+        const canvas = qrContainer.querySelector('canvas');
+
+        let dataUrl = '';
+        if (canvas) {
+          dataUrl = canvas.toDataURL('image/png');
+        } else if (img) {
+          dataUrl = img.src;
+        }
+
+        if (!dataUrl) {
+          alert('Unable to export QR code image.');
+          return;
+        }
+
+        const link = document.createElement('a');
+        link.href = dataUrl;
+        link.download = 'qrcode.png';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      });
+
+      btnClear.addEventListener('click', function() {
+        urlInput.value = '';
+        textInput.value = '';
+        wifiSsid.value = '';
+        wifiPass.value = '';
+        generateQrCode();
+      });
+
+      // Initial Render
+      generateQrCode();
     });
   </script>
 </body>
