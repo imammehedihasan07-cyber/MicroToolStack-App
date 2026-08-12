@@ -22,18 +22,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Primary SEO Meta Tags -->
-  <title>Cat Age to Human Age Converter - Calculate Feline Years | MicroToolStack</title>
-  <meta name="description" content="Free online Cat Age to Human Age Converter. Instantly calculate your cat's age in human years using standard veterinary age conversion formulas. Fast, accurate, and free.">
-  <meta name="keywords" content="cat age converter, cat age in human years, feline age calculator, cat age calculator, how old is my cat in human years, cat lifespan converter">
+  <title>Free Online Cat Age Calculator & Converter | Human Years to Cat Years | MicroToolStack</title>
+  <meta name="description" content="Calculate your cat's age in human years accurately online for free. Understand feline life stages, health milestones, and age conversion guidelines.">
+  <meta name="keywords" content="cat age calculator, cat age converter, cat age in human years, feline age chart, cat year converter, how old is my cat in human years, pet care tools">
 
-  <link rel="canonical" href="https://microtoolstack.com/tools/calculators/cat-age-converter.html">
+  <link rel="canonical" href="https://microtoolstack.com/tools/pet-care/cat-age-converter.html">
   <meta name="robots" content="index, follow">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://microtoolstack.com/tools/calculators/cat-age-converter.html">
-  <meta property="og:title" content="Cat Age to Human Age Converter | MicroToolStack">
-  <meta property="og:description" content="Instantly convert your cat's age into human years with accurate feline life stage calculations. 100% free and easy to use.">
+  <meta property="og:url" content="https://microtoolstack.com/tools/pet-care/cat-age-converter.html">
+  <meta property="og:title" content="Free Online Cat Age Calculator & Converter | MicroToolStack">
+  <meta property="og:description" content="Convert your cat's age to human years accurately using veterinary life stage guidelines. 100% free, instant, and privacy-first pet utility.">
   <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
@@ -48,7 +48,7 @@
     "@graph": [
       {
         "@type": "SoftwareApplication",
-        "name": "Cat Age to Human Age Converter",
+        "name": "Cat Age Calculator & Converter",
         "operatingSystem": "All",
         "applicationCategory": "UtilitiesApplication",
         "offers": {
@@ -56,34 +56,42 @@
           "price": "0",
           "priceCurrency": "USD"
         },
-        "description": "An online pet age calculation utility that converts feline chronological years into equivalent human age based on veterinary aging standards.",
-        "url": "https://microtoolstack.com/tools/calculators/cat-age-converter.html"
+        "description": "An essential client-side pet care utility that converts a cat's age in years and months into equivalent human age based on AAHA and AAFP veterinary life stage standards.",
+        "url": "https://microtoolstack.com/tools/pet-care/cat-age-converter.html"
       },
       {
         "@type": "FAQPage",
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "How is a cat's age calculated in human years?",
+            "name": "How are cat years calculated compared to human years?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The first year of a cat's life equals roughly 15 human years. The second year adds about 9 human years (making a 2-year-old cat roughly 24). Each subsequent year adds approximately 4 human years."
+              "text": "A cat matures rapidly in its first two years: Year 1 equals roughly 15 human years, Year 2 equals roughly 24 human years. Each additional cat year equals approximately 4 human years."
             }
           },
           {
             "@type": "Question",
-            "name": "Is 1 cat year really equal to 7 human years?",
+            "name": "Why is the old rule of '1 cat year = 7 human years' inaccurate?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "No, the old rule of multiplying by 7 is inaccurate for cats. Feline growth is rapid during the first two years of life and slows down significantly afterwards."
+              "text": "Cats mature much faster in early life than humans. Applying a simple 7-to-1 ratio underestimates adolescent growth in kittens and young adult cats."
             }
           },
           {
             "@type": "Question",
-            "name": "How long do indoor cats typically live?",
+            "name": "What are the key life stages of a cat?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Indoor cats generally live between 12 to 15 years on average, though many well-cared-for cats live up to 18 to 20 years or more."
+              "text": "Veterinary standards classify cats into six life stages: Kitten (0-6 months), Junior (7 months - 2 years), Prime (3-6 years), Mature (7-10 years), Senior (11-14 years), and Super Senior (15+ years)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this Cat Age Calculator free to use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, MicroToolStack's Cat Age Calculator is 100% free with no registration or download required."
             }
           }
         ]
@@ -101,58 +109,77 @@
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
 
   <style>
-    .calculator-card {
-      max-width: 650px;
-      margin: 2rem auto;
-      padding: 2rem;
-      background: var(--bg-card, #1e1e2e);
-      border-radius: 12px;
-      border: 1px solid var(--border-color, #333);
+    .input-group {
+      margin-bottom: 1.25rem;
     }
-    .form-group {
-      margin-bottom: 1.2rem;
-    }
-    .form-group label {
+    .input-label {
       display: block;
-      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
       font-weight: 600;
-      color: #fff;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.5rem;
     }
-    .form-control {
+    .form-control, .form-select {
       width: 100%;
-      padding: 0.8rem;
-      border-radius: 6px;
-      border: 1px solid var(--border-color, #444);
-      background: var(--bg-body, #111827);
-      color: #fff;
+      padding: 0.75rem 1rem;
       font-size: 1rem;
-      box-sizing: border-box;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
+      color: var(--text-primary, #fff);
       outline: none;
+      box-sizing: border-box;
     }
-    .btn-calc {
+    .form-control:focus, .form-select:focus {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+
+    /* Result Stage Workspace */
+    .calculator-stage {
       width: 100%;
-      padding: 0.9rem;
-      background: var(--accent-primary, #3b82f6);
-      color: #fff;
-      border: none;
-      border-radius: 6px;
-      font-weight: bold;
-      cursor: pointer;
-      font-size: 1rem;
-      transition: background-color 0.2s;
-    }
-    .btn-calc:hover {
-      opacity: 0.9;
-    }
-    .result-box {
-      margin-top: 1.5rem;
-      padding: 1.2rem;
-      border-radius: 8px;
+      min-height: 200px;
+      background: #111827;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1.5rem;
+      box-sizing: border-box;
+      margin-bottom: 1.5rem;
       text-align: center;
-      display: none;
-      background: rgba(59, 130, 246, 0.1);
-      border: 1px solid var(--accent-primary, #3b82f6);
     }
+
+    .human-age-display {
+      font-size: 3rem;
+      font-family: 'Fira Code', Consolas, Monaco, monospace;
+      font-weight: 800;
+      color: #38bdf8;
+      margin-bottom: 0.5rem;
+    }
+
+    .life-stage-badge {
+      display: inline-block;
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      background: rgba(59, 130, 246, 0.2);
+      color: #60a5fa;
+      border: 1px solid #3b82f6;
+      margin-top: 0.5rem;
+    }
+
+    .controls-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.5rem;
+    }
+
     .content-box {
       background-color: var(--bg-card, #1e1e2e);
       border: 1px solid var(--border-color, #333);
@@ -165,18 +192,41 @@
       margin-bottom: 1rem;
       color: var(--text-primary, #fff);
     }
-    .content-box p, .content-box ul, .content-box ol {
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul, .content-box table {
       color: var(--text-secondary, #9ca3af);
       font-size: 0.95rem;
       line-height: 1.6;
     }
-    .content-box ul, .content-box ol {
+    .content-box ul {
       padding-left: 1.25rem;
       margin-bottom: 1rem;
     }
     .content-box li {
       margin-bottom: 0.5rem;
     }
+
+    .age-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+    .age-table th, .age-table td {
+      border: 1px solid var(--border-color, #333);
+      padding: 0.65rem 0.85rem;
+      text-align: left;
+    }
+    .age-table th {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-primary, #fff);
+    }
+
     .related-links {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -216,132 +266,240 @@
   <!-- Main Container -->
   <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
     
-    <!-- Calculator Card App -->
-    <div class="calculator-card">
-      <h1 style="text-align: center; margin-bottom: 0.5rem; font-size: 1.8rem; color: #fff;">🐱 Cat Age to Human Age Converter</h1>
-      <p style="text-align: center; color: var(--text-secondary, #9ca3af); font-size: 0.95rem; margin-bottom: 1.5rem;">
-        Convert your feline friend's chronological age into human equivalent years based on veterinary guidelines.
-      </p>
+    <!-- Tool Title & Description -->
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online Cat Age Calculator & Converter</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Convert your cat's actual age into equivalent human years based on AAHA veterinary life stage guidelines.</p>
+    </div>
 
-      <div class="form-group">
-        <label for="catAge">Cat's Age (in years):</label>
-        <input type="number" id="catAge" class="form-control" placeholder="e.g. 3" step="0.5" autofocus>
-      </div>
-
-      <button onclick="calculateCatAge()" class="btn-calc">Convert Age Now</button>
-
-      <div id="resultCat" class="result-box">
-        <h3 style="margin: 0; font-size: 1.2rem; color: #fff;">
-          Equivalent Human Age: <span id="humanYears" style="color: var(--accent-primary, #3b82f6); font-size: 1.5rem;"></span> years old
-        </h3>
+    <!-- Converter Form Settings Card -->
+    <div class="content-box" style="margin-bottom: 1.5rem;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem;" class="input-group">
+        <div>
+          <label for="cat-years-input" class="input-label">Cat Age (Years)</label>
+          <input type="number" id="cat-years-input" class="form-control" min="0" max="35" value="3">
+        </div>
+        <div>
+          <label for="cat-months-input" class="input-label">Additional Months</label>
+          <input type="number" id="cat-months-input" class="form-control" min="0" max="11" value="0">
+        </div>
       </div>
     </div>
 
-    <!-- SEO Content Section 1 -->
+    <!-- Calculator Display Workspace -->
+    <div class="calculator-stage">
+      <div style="font-size: 0.9rem; color: #94a3b8; margin-bottom: 0.25rem;">Equivalent Human Age</div>
+      <div id="human-age-display" class="human-age-display">28 Human Years</div>
+      <div id="life-stage-badge" class="life-stage-badge">Life Stage: Prime Adult (3 - 6 Years)</div>
+    </div>
+
+    <!-- Controls Bar -->
+    <div class="controls-bar">
+      <div></div>
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-reset" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Reset Calculator</button>
+      </div>
+    </div>
+
+    <!-- SEO Article Content Box 1 -->
     <div class="content-box">
-      <h2>How Are Cat Years Calculated in Human Years?</h2>
-      <p>
-        The popular myth that "one cat year equals seven human years" is inaccurate. Cats age much faster during their first two years of life than humans do, reaching sexual and physiological adulthood rapidly.
-      </p>
-      <p>
-        Veterinary health guidelines evaluate feline aging using a progressive formula:
-      </p>
+      <h2>How Are Cat Years Converted to Human Years?</h2>
+      <p>A common myth suggests that multiplying a cat's age by 7 yields its equivalent human age. However, feline physical development occurs much more rapidly during the first two years of life compared to human maturation.</p>
+      <p>Veterinary organizations like the <strong>American Animal Hospital Association (AAHA)</strong> and the <strong>American Association of Feline Practitioners (AAFP)</strong> utilize a phased conversion scale:</p>
+      
       <ul>
-        <li><strong>First Year of Life:</strong> A 1-year-old cat is roughly equivalent to a 15-year-old human teenager.</li>
-        <li><strong>Second Year of Life:</strong> A 2-year-old cat matures to approximately 24 human years.</li>
-        <li><strong>Each Year After Age 2:</strong> Every additional year adds roughly 4 human years (e.g., a 3-year-old cat equals ~28 human years).</li>
+        <li><strong>First Year of Life:</strong> A 1-year-old cat reaches physical maturity equivalent to a 15-year-old human teenager.</li>
+        <li><strong>Second Year of Life:</strong> By age 2, a cat is roughly equivalent to a 24-year-old young human adult.</li>
+        <li><strong>Subsequent Years (3+ Years):</strong> Each additional feline year adds approximately 4 human years.</li>
       </ul>
     </div>
 
-    <!-- SEO Content Section 2 -->
+    <!-- SEO Article Content Box 2 -->
     <div class="content-box">
-      <h2>Feline Life Stages Guide</h2>
+      <h2>Feline Life Stages & Conversion Reference Table</h2>
+      <p>Veterinary standards group cats into six main life stages based on physiological health and nutritional needs:</p>
+
+      <table class="age-table">
+        <thead>
+          <tr>
+            <th>Cat Age</th>
+            <th>Human Equivalent</th>
+            <th>AAHA/AAFP Life Stage</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1 Month</td>
+            <td>1 Year</td>
+            <td>Kitten (Rapid growth phase)</td>
+          </tr>
+          <tr>
+            <td>6 Months</td>
+            <td>10 Years</td>
+            <td>Kitten (Adolescence begins)</td>
+          </tr>
+          <tr>
+            <td>1 Year</td>
+            <td>15 Years</td>
+            <td>Junior (Full physical growth)</td>
+          </tr>
+          <tr>
+            <td>2 Years</td>
+            <td>24 Years</td>
+            <td>Junior (Adult maturity)</td>
+          </tr>
+          <tr>
+            <td>4 Years</td>
+            <td>32 Years</td>
+            <td>Prime (Peak physical condition)</td>
+          </tr>
+          <tr>
+            <td>8 Years</td>
+            <td>48 Years</td>
+            <td>Mature (Senior transition begins)</td>
+          </tr>
+          <tr>
+            <td>12 Years</td>
+            <td>64 Years</td>
+            <td>Senior (Increased healthcare needs)</td>
+          </tr>
+          <tr>
+            <td>16 Years</td>
+            <td>80 Years</td>
+            <td>Super Senior (Geriatric care stage)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- SEO Article Content Box 3 -->
+    <div class="content-box">
+      <h2>Features of MicroToolStack's Cat Age Converter</h2>
       <ul>
-        <li><strong>Kitten (0 – 6 months):</strong> Rapid growth, teething, and high energy development.</li>
-        <li><strong>Junior (6 months – 2 years):</strong> Full physical size and prime athletic agility.</li>
-        <li><strong>Prime (3 – 6 years):</strong> Mature adult phase with stable health and personality.</li>
-        <li><strong>Mature (7 – 10 years):</strong> Equivalent to human middle age (44–56 years).</li>
-        <li><strong>Senior (11 – 14 years):</strong> Human equivalent of 60 to 72 years; requires regular vet checkups.</li>
-        <li><strong>Geriatric (15+ years):</strong> Advanced aging phase requiring tailored nutrition and comfortable care.</li>
+        <li><strong>Precise Month & Year Support:</strong> Calculates exact human age increments taking both years and months into account.</li>
+        <li><strong>AAHA / AAFP Life Stage Identifier:</strong> Displays official feline development stages (Kitten, Junior, Prime, Mature, Senior, Super Senior).</li>
+        <li><strong>100% Client-Side Privacy:</strong> All calculations execute locally inside your web browser using JavaScript. No personal pet information is recorded or stored.</li>
+        <li><strong>Free & Unlimited Usage:</strong> No sign-up, registration, or fees required.</li>
       </ul>
     </div>
 
-    <!-- Internal Linking Section (SEO Best Practice) -->
+    <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
     <div class="content-box">
-      <h2>Explore Related Micro Utilities</h2>
-      <p>Try our other free web productivity and text editing tools:</p>
+      <h2>Explore Related Utilities</h2>
+      <p>Discover our complementary online tools:</p>
       <div class="related-links">
         <a href="/tools/text/word-counter.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">📝 Word Counter</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Analyze text length and estimated reading time.</span>
+          <strong style="display:block; margin-bottom: 0.25rem;">📊 Real-Time Word Counter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Count words, characters, and sentences instantly.</span>
         </a>
-        <a href="/tools/text/case-converter.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🔤 Case Converter</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Convert text to Uppercase, Lowercase, and Title Case.</span>
+        <a href="/tools/media/voice-recorder.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🎙️ Online Voice Recorder</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Record audio notes with real-time visualizers.</span>
         </a>
-        <a href="/tools/seo/slug-generator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🔗 Slug Generator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Generate clean, SEO-friendly URL slugs.</span>
+        <a href="/tools/media/color-palette-extractor.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🎨 Color Palette Extractor</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Extract dominant colors and HEX codes from photos.</span>
         </a>
       </div>
     </div>
 
     <!-- FAQ Section -->
     <div class="content-box">
-      <h2>Frequently Asked Questions (FAQ)</h2>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="color: #fff; font-size: 1.05rem; margin-bottom: 0.25rem;">How is a cat's age calculated in human years?</h3>
-        <p>The first year equals 15 human years. The second year adds 9 human years (reaching 24). After age 2, each cat year adds approximately 4 human years.</p>
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How many human years is 1 cat year?</h3>
+        <p>The first cat year is equivalent to approximately 15 human years. The second year brings a cat to roughly 24 human years, and each subsequent year adds about 4 human years.</p>
       </div>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="color: #fff; font-size: 1.05rem; margin-bottom: 0.25rem;">Is 1 cat year really equal to 7 human years?</h3>
-        <p>No, the 1:7 ratio is a misconception. Cat development is far more rapid during early months than human growth.</p>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">At what age is a cat considered senior?</h3>
+        <p>According to veterinary guidelines, cats are considered 'Mature' at 7-10 years, 'Senior' at 11-14 years (approx. 60-72 human years), and 'Super Senior' at 15 years and older.</p>
       </div>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="color: #fff; font-size: 1.05rem; margin-bottom: 0.25rem;">How long do indoor cats typically live?</h3>
-        <p>Indoor cats live an average of 12 to 15 years, with many well-cared-for felines reaching 18 to 20 years.</p>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is my pet data saved on remote servers?</h3>
+        <p>No. All calculations run client-side inside your browser session using JavaScript. Your data remains 100% private.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this Cat Age Calculator free?</h3>
+        <p>Yes, MicroToolStack's Cat Age Calculator is 100% free with no usage limits or account registration required.</p>
       </div>
     </div>
 
   </main>
 
-  <!-- Footer Placeholder -->
+  <!-- Footer Container Placeholder -->
   <div id="footer-container"></div>
 
-  <!-- Core Scripts -->
+  <!-- JavaScript Utilities & Logic -->
   <script src="/assets/js/theme.js"></script>
-  <script src="/assets/js/utils.js"></script>
-  <script src="/assets/js/app.js"></script>
+  <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
 
-  <!-- Calculator Logic -->
   <script>
-    function calculateCatAge() {
-      const ageInput = document.getElementById('catAge').value;
-      const age = parseFloat(ageInput);
-      
-      if (isNaN(age) || age < 0) { 
-        alert("Please enter a valid positive number for your cat's age."); 
-        return; 
+    document.addEventListener('DOMContentLoaded', function() {
+      const catYearsInput = document.getElementById('cat-years-input');
+      const catMonthsInput = document.getElementById('cat-months-input');
+      const humanAgeDisplay = document.getElementById('human-age-display');
+      const lifeStageBadge = document.getElementById('life-stage-badge');
+      const btnReset = document.getElementById('btn-reset');
+
+      function calculateCatAge() {
+        let years = parseInt(catYearsInput.value, 10) || 0;
+        let months = parseInt(catMonthsInput.value, 10) || 0;
+
+        if (years < 0) years = 0;
+        if (months < 0) months = 0;
+        if (months > 11) months = 11;
+
+        const totalYears = years + (months / 12);
+        let humanAge = 0;
+
+        if (totalYears <= 0) {
+          humanAge = 0;
+        } else if (totalYears <= 1) {
+          // 0 to 1 year scales from 0 to 15
+          humanAge = totalYears * 15;
+        } else if (totalYears <= 2) {
+          // 1 to 2 years scales from 15 to 24
+          humanAge = 15 + ((totalYears - 1) * 9);
+        } else {
+          // 2+ years: 24 + 4 per year
+          humanAge = 24 + ((totalYears - 2) * 4);
+        }
+
+        const roundedHumanAge = Math.round(humanAge * 10) / 10;
+        humanAgeDisplay.textContent = `${roundedHumanAge} Human Years`;
+
+        // Life Stage Classification (AAHA / AAFP)
+        let stageText = '';
+        if (totalYears < 0.5) {
+          stageText = 'Kitten (0 - 6 Months)';
+        } else if (totalYears <= 2) {
+          stageText = 'Junior (7 Months - 2 Years)';
+        } else if (totalYears <= 6) {
+          stageText = 'Prime Adult (3 - 6 Years)';
+        } else if (totalYears <= 10) {
+          stageText = 'Mature Adult (7 - 10 Years)';
+        } else if (totalYears <= 14) {
+          stageText = 'Senior (11 - 14 Years)';
+        } else {
+          stageText = 'Super Senior / Geriatric (15+ Years)';
+        }
+
+        lifeStageBadge.textContent = `Life Stage: ${stageText}`;
       }
 
-      let humanAge = 0;
-      if (age <= 1) { 
-        humanAge = age * 15; 
-      } else if (age <= 2) { 
-        humanAge = 15 + ((age - 1) * 9); 
-      } else { 
-        humanAge = 24 + ((age - 2) * 4); 
-      }
+      [catYearsInput, catMonthsInput].forEach(el => {
+        el.addEventListener('input', calculateCatAge);
+      });
 
-      document.getElementById('humanYears').innerText = Math.round(humanAge);
-      document.getElementById('resultCat').style.display = "block";
-    }
-
-    // Allow Enter key press to calculate
-    document.getElementById('catAge').addEventListener('keypress', function(e) {
-      if (e.key === 'Enter') {
+      btnReset.addEventListener('click', function() {
+        catYearsInput.value = '3';
+        catMonthsInput.value = '0';
         calculateCatAge();
-      }
+      });
+
+      // Initial Calculation
+      calculateCatAge();
     });
   </script>
 </body>
