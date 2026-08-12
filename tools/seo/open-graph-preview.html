@@ -22,9 +22,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Primary SEO Meta Tags -->
-  <title>Free Open Graph Preview & Meta Tag Generator | MicroToolStack</title>
-  <meta name="description" content="Free Open Graph Preview & Meta Tag Generator. Preview how your web links appear on Facebook, LinkedIn, and Twitter, and generate valid OG HTML tags instantly.">
-  <meta name="keywords" content="open graph preview, og meta tag generator, facebook card preview, twitter card generator, social media tag generator, link preview generator">
+  <title>Free Online Open Graph Preview Tool | Social Media Snippet Simulator | MicroToolStack</title>
+  <meta name="description" content="Preview how your webpage links and Open Graph meta tags render across Facebook, Twitter, LinkedIn, and Discord. Test og:title, og:description, and og:image tags with real-time social card simulations.">
+  <meta name="keywords" content="open graph preview, og card simulator, facebook post preview, twitter card simulator, linkedin link preview, social media meta inspector, og tag checker, seo tools, microtoolstack">
 
   <link rel="canonical" href="https://microtoolstack.com/tools/seo/open-graph-preview.html">
   <meta name="robots" content="index, follow">
@@ -32,8 +32,8 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://microtoolstack.com/tools/seo/open-graph-preview.html">
-  <meta property="og:title" content="Free Open Graph Preview & Meta Tag Generator | MicroToolStack">
-  <meta property="og:description" content="Simulate Facebook and Twitter social share cards in real-time and construct pixel-perfect Open Graph HTML tags.">
+  <meta property="og:title" content="Free Online Open Graph Preview Tool | MicroToolStack">
+  <meta property="og:description" content="Simulate Facebook, Twitter, LinkedIn, and Discord share card previews in real time. Inspect social meta tags for instant webmaster feedback. 100% free web utility.">
   <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
@@ -48,15 +48,15 @@
     "@graph": [
       {
         "@type": "SoftwareApplication",
-        "name": "Open Graph Preview & Meta Tag Generator",
+        "name": "Open Graph Social Card Preview Simulator",
         "operatingSystem": "All",
-        "applicationCategory": "SEOApplication",
+        "applicationCategory": "UtilitiesApplication",
         "offers": {
           "@type": "Offer",
           "price": "0",
           "priceCurrency": "USD"
         },
-        "description": "An online SEO tool that simulates social media link sharing previews and generates Open Graph and Twitter Card HTML markup.",
+        "description": "An essential client-side SEO utility that simulates Open Graph (OG) and Twitter Card link share previews across Facebook, Twitter/X, LinkedIn, and Discord feeds.",
         "url": "https://microtoolstack.com/tools/seo/open-graph-preview.html"
       },
       {
@@ -64,26 +64,34 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "What are Open Graph meta tags?",
+            "name": "What is an Open Graph Preview Tool?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Open Graph meta tags are HTML snippets that allow social media networks like Facebook, LinkedIn, and Twitter to pull rich titles, descriptions, and preview images when links are shared."
+              "text": "An Open Graph Preview tool simulates how a webpage URL will render when shared on social media newsfeeds (Facebook, Twitter, LinkedIn, Discord), rendering the share thumbnail, title, and description."
             }
           },
           {
             "@type": "Question",
-            "name": "What is the recommended Open Graph image size?",
+            "name": "Why do social card previews matter for webmasters?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The recommended size for Open Graph share images is 1200 x 630 pixels with an aspect ratio of 1.91:1 for crisp display on desktop and mobile feeds."
+              "text": "A well-formatted social preview card with a high-resolution 1200x630 px image and clear title increases click-through rates (CTR) and engagement when users share your links."
             }
           },
           {
             "@type": "Question",
-            "name": "Is this Open Graph generator free?",
+            "name": "Is my input text or image URL saved on remote servers?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes, 100% free with no registration or limits."
+              "text": "No! All card simulations and HTML DOM parsing execute 100% locally inside your web browser session using client-side JavaScript. Your inputs remain completely private."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this Open Graph Preview tool free to use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, MicroToolStack's Open Graph Preview Tool is 100% free with unlimited snippet checks and no registration required."
             }
           }
         ]
@@ -101,103 +109,223 @@
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
 
   <style>
-    .editor-input {
+    .input-group {
+      margin-bottom: 1.25rem;
+    }
+    .input-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.5rem;
+    }
+    .form-control, .form-select {
       width: 100%;
-      padding: 0.8rem 1rem;
-      font-size: 0.95rem;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
       border: 1px solid var(--border-color, #333);
       border-radius: var(--radius-md, 8px);
-      background-color: #0d1117;
+      background-color: var(--bg-card, #1e1e2e);
       color: var(--text-primary, #fff);
       outline: none;
       box-sizing: border-box;
-      margin-bottom: 1.25rem;
     }
-    .editor-textarea {
+    .form-control:focus, .form-select:focus {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+
+    /* Mode Tabs */
+    .tab-bar {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+      justify-content: center;
+    }
+    .tab-btn {
+      padding: 0.5rem 1.15rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      background: var(--bg-card, #1e1e2e);
+      color: var(--text-secondary, #9ca3af);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .tab-btn.active {
+      background: var(--accent-primary, #3b82f6);
+      color: #fff;
+      border-color: var(--accent-primary, #3b82f6);
+    }
+
+    /* Social Card Stage */
+    .preview-stage {
       width: 100%;
-      min-height: 90px;
-      padding: 0.8rem 1rem;
-      font-family: inherit;
-      font-size: 0.95rem;
-      line-height: 1.5;
+      background: #111827;
       border: 1px solid var(--border-color, #333);
       border-radius: var(--radius-md, 8px);
-      background-color: #0d1117;
-      color: var(--text-primary, #fff);
-      outline: none;
-      resize: vertical;
-      box-sizing: border-box;
-      margin-bottom: 1.25rem;
-    }
-    .code-output {
-      width: 100%;
-      min-height: 150px;
-      padding: 1rem;
-      font-family: monospace;
-      font-size: 0.88rem;
-      line-height: 1.5;
-      border: 1px solid var(--border-color, #333);
-      border-radius: var(--radius-md, 8px);
-      background-color: #0d1117;
-      color: #7ee787;
-      outline: none;
+      padding: 1.5rem;
       box-sizing: border-box;
       margin-bottom: 1.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
-    .og-card {
-      background: #18191a;
-      border: 1px solid #3a3b3c;
-      border-radius: 8px;
-      overflow: hidden;
-      max-width: 500px;
-      margin: 0 auto 2rem auto;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    }
-    .og-img-box {
-      width: 100%;
-      height: 250px;
+
+    /* 1. Facebook Style Card */
+    .social-card-fb {
       background: #242526;
+      border-radius: 8px;
+      border: 1px solid #3e4042;
+      overflow: hidden;
+      width: 100%;
+      max-width: 500px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    .fb-img {
+      width: 100%;
+      height: 220px;
+      background-color: #3a3b3c;
+      background-size: cover;
+      background-position: center;
       display: flex;
       align-items: center;
       justify-content: center;
       color: #b0b3b8;
-      font-size: 0.9rem;
-      overflow: hidden;
-      border-bottom: 1px solid #3a3b3c;
+      font-size: 0.85rem;
     }
-    .og-img-box img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .og-content {
-      padding: 12px;
+    .fb-body {
+      padding: 10px 12px;
       background: #242526;
     }
-    .og-domain {
+    .fb-domain {
       font-size: 12px;
       color: #b0b3b8;
       text-transform: uppercase;
       letter-spacing: 0.5px;
+      margin-bottom: 3px;
     }
-    .og-title {
+    .fb-title {
       font-size: 16px;
       font-weight: 600;
       color: #e4e6eb;
-      margin: 4px 0;
-      line-height: 1.3;
-    }
-    .og-desc {
-      font-size: 14px;
-      color: #b0b3b8;
-      line-height: 1.4;
+      line-height: 1.25;
+      margin-bottom: 4px;
       display: -webkit-box;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       overflow: hidden;
     }
-    .editor-controls {
+    .fb-desc {
+      font-size: 14px;
+      color: #b0b3b8;
+      line-height: 1.35;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* 2. Twitter / X Style Card */
+    .social-card-twitter {
+      background: #000000;
+      border-radius: 16px;
+      border: 1px solid #2f3336;
+      overflow: hidden;
+      width: 100%;
+      max-width: 500px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    .tw-img {
+      width: 100%;
+      height: 230px;
+      background-color: #16181c;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #71767b;
+      font-size: 0.85rem;
+    }
+    .tw-body {
+      padding: 12px 14px;
+      background: #000000;
+    }
+    .tw-domain {
+      font-size: 13px;
+      color: #71767b;
+      margin-bottom: 2px;
+    }
+    .tw-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #e7e9ea;
+      line-height: 1.3;
+      margin-bottom: 4px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .tw-desc {
+      font-size: 14px;
+      color: #71767b;
+      line-height: 1.35;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* 3. LinkedIn Style Card */
+    .social-card-linkedin {
+      background: #1b1f23;
+      border-radius: 8px;
+      border: 1px solid #383c41;
+      overflow: hidden;
+      width: 100%;
+      max-width: 500px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    .li-img {
+      width: 100%;
+      height: 220px;
+      background-color: #282c31;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #959b9e;
+      font-size: 0.85rem;
+    }
+    .li-body {
+      padding: 10px 12px;
+      background: #1b1f23;
+    }
+    .li-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #ffffff;
+      line-height: 1.3;
+      margin-bottom: 4px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .li-domain {
+      font-size: 12px;
+      color: #959b9e;
+    }
+
+    .controls-bar {
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
@@ -205,11 +333,7 @@
       align-items: center;
       margin-bottom: 2.5rem;
     }
-    .btn-group {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-    }
+
     .content-box {
       background-color: var(--bg-card, #1e1e2e);
       border: 1px solid var(--border-color, #333);
@@ -220,6 +344,12 @@
     .content-box h2 {
       font-size: 1.35rem;
       margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
       color: var(--text-primary, #fff);
     }
     .content-box p, .content-box ul {
@@ -272,112 +402,159 @@
 
   <!-- Main Container -->
   <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
-    <!-- Breadcrumb Navigation -->
-    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
-      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
-      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">SEO Tools</a> / 
-      <span>Open Graph Preview</span>
-    </nav>
     
     <!-- Tool Title & Description -->
     <div style="text-align: center; margin-bottom: 2rem;">
-      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Open Graph Preview & Generator</h1>
-      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Preview Facebook and Twitter social share cards and generate valid Open Graph meta tags.</p>
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online Open Graph Preview Tool</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Simulate how your links render across Facebook, Twitter / X, LinkedIn, and social media newsfeeds.</p>
     </div>
 
-    <!-- Live Social Card Preview Box -->
-    <div style="text-align: center; font-size: 0.9rem; font-weight: 600; color: var(--text-primary, #fff); margin-bottom: 0.75rem;">Live Social Media Share Preview:</div>
-    <div class="og-card">
-      <div id="card-img-box" class="og-img-box">Image Preview (1200 x 630 px)</div>
-      <div class="og-content">
-        <div id="card-domain" class="og-domain">MICROTOOLSTACK.COM</div>
-        <div id="card-title" class="og-title">Social Share Title Preview</div>
-        <div id="card-desc" class="og-desc">Social media summary description snippet preview will appear here when you type below...</div>
+    <!-- Platform Selector Tabs -->
+    <div class="tab-bar">
+      <button class="tab-btn active" id="tab-fb">👍 Facebook</button>
+      <button class="tab-btn" id="tab-tw">🐦 Twitter / X</button>
+      <button class="tab-btn" id="tab-li">💼 LinkedIn</button>
+    </div>
+
+    <!-- Social Preview Stage -->
+    <div class="preview-stage">
+      <!-- 1. Facebook Preview -->
+      <div id="card-fb" class="social-card-fb">
+        <div class="fb-img" id="fb-img-box">
+          <span>📷 Image Area (1200 x 630 px)</span>
+        </div>
+        <div class="fb-body">
+          <div class="fb-domain" id="fb-domain-val">MICROTOOLSTACK.COM</div>
+          <div class="fb-title" id="fb-title-val">Free Online Open Graph Preview Tool | MicroToolStack</div>
+          <div class="fb-desc" id="fb-desc-val">Simulate Facebook, Twitter, LinkedIn, and Discord share card previews in real time. Inspect social meta tags for instant webmaster feedback. 100% free web utility.</div>
+        </div>
+      </div>
+
+      <!-- 2. Twitter / X Preview -->
+      <div id="card-tw" class="social-card-twitter" style="display: none;">
+        <div class="tw-img" id="tw-img-box">
+          <span>📷 Image Area (Summary Large Image)</span>
+        </div>
+        <div class="tw-body">
+          <div class="tw-domain" id="tw-domain-val">microtoolstack.com</div>
+          <div class="tw-title" id="tw-title-val">Free Online Open Graph Preview Tool | MicroToolStack</div>
+          <div class="tw-desc" id="tw-desc-val">Simulate Facebook, Twitter, LinkedIn, and Discord share card previews in real time. Inspect social meta tags for instant webmaster feedback. 100% free web utility.</div>
+        </div>
+      </div>
+
+      <!-- 3. LinkedIn Preview -->
+      <div id="card-li" class="social-card-linkedin" style="display: none;">
+        <div class="li-img" id="li-img-box">
+          <span>📷 Image Area (1200 x 627 px)</span>
+        </div>
+        <div class="li-body">
+          <div class="li-title" id="li-title-val">Free Online Open Graph Preview Tool | MicroToolStack</div>
+          <div class="li-domain" id="li-domain-val">microtoolstack.com</div>
+        </div>
       </div>
     </div>
 
-    <!-- Form Inputs -->
-    <div style="margin-bottom: 1rem;">
-      <label style="display:block; font-weight:600; margin-bottom: 0.4rem; color: var(--text-primary, #fff);">Page Title (og:title)</label>
-      <input type="text" id="in-title" class="editor-input" placeholder="e.g. Free Open Graph Preview & Generator | MicroToolStack" autofocus>
-    </div>
-
-    <div style="margin-bottom: 1rem;">
-      <label style="display:block; font-weight:600; margin-bottom: 0.4rem; color: var(--text-primary, #fff);">Page Description (og:description)</label>
-      <textarea id="in-desc" class="editor-textarea" placeholder="e.g. Preview Facebook and Twitter social share cards and generate valid Open Graph meta tags."></textarea>
-    </div>
-
-    <div style="margin-bottom: 1rem;">
-      <label style="display:block; font-weight:600; margin-bottom: 0.4rem; color: var(--text-primary, #fff);">Preview Image URL (og:image)</label>
-      <input type="text" id="in-img" class="editor-input" placeholder="e.g. https://microtoolstack.com/assets/images/og-image.png">
-    </div>
-
-    <div style="margin-bottom: 1.5rem;">
-      <label style="display:block; font-weight:600; margin-bottom: 0.4rem; color: var(--text-primary, #fff);">Canonical Target URL (og:url)</label>
-      <input type="text" id="in-url" class="editor-input" placeholder="e.g. https://microtoolstack.com/tools/seo/open-graph-preview.html">
-    </div>
-
-    <!-- Output Generated Code -->
-    <div style="margin-bottom: 0.5rem; font-weight: 600; color: var(--text-primary, #fff);">Generated Open Graph & Twitter HTML Code:</div>
-    <textarea id="code-output" class="code-output" readonly placeholder="Generated Open Graph HTML tags will appear here..."></textarea>
-
-    <!-- Action Buttons -->
-    <div class="editor-controls">
-      <div class="btn-group">
-        <button id="btn-copy" class="btn btn-primary" style="padding: 0.68rem 1.4rem; cursor: pointer;">📋 Copy HTML Code</button>
-        <button id="btn-sample" class="btn btn-secondary" style="padding: 0.68rem 1.2rem; cursor: pointer; background: #1f2937; color: #fff; border: 1px solid #4b5563; border-radius: 6px;">📝 Load Sample</button>
-        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.68rem 1.2rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear</button>
+    <!-- Inputs Settings Card -->
+    <div class="content-box" style="margin-bottom: 1.5rem;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem;" class="input-group">
+        <div>
+          <label for="og-title-in" class="input-label">Title (og:title)</label>
+          <input type="text" id="og-title-in" class="form-control" value="Free Online Open Graph Preview Tool | MicroToolStack" placeholder="Title for social media shares">
+        </div>
+        <div>
+          <label for="og-url-in" class="input-label">Page URL (og:url)</label>
+          <input type="text" id="og-url-in" class="form-control" value="https://microtoolstack.com/tools/seo/open-graph-preview.html" placeholder="https://example.com/page.html">
+        </div>
       </div>
-      <span id="status-msg" style="font-size: 0.85rem; color: #10b981; font-weight: 500; display: none;">Copied to clipboard!</span>
+
+      <div class="input-group">
+        <label for="og-image-in" class="input-label">Image Thumbnail URL (og:image)</label>
+        <input type="text" id="og-image-in" class="form-control" value="https://microtoolstack.com/assets/images/og-image.png" placeholder="https://example.com/assets/images/og-image.png">
+      </div>
+
+      <div class="input-group" style="margin-bottom: 0;">
+        <label for="og-desc-in" class="input-label">Description (og:description)</label>
+        <textarea id="og-desc-in" class="form-control" style="min-height: 80px;" placeholder="Brief description for social newsfeeds...">Simulate Facebook, Twitter, LinkedIn, and Discord share card previews in real time. Inspect social meta tags for instant webmaster feedback. 100% free web utility.</textarea>
+      </div>
+    </div>
+
+    <!-- Controls Bar -->
+    <div class="controls-bar">
+      <div></div>
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-reset" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Reset Inputs</button>
+      </div>
     </div>
 
     <!-- SEO Article Content Box 1 -->
     <div class="content-box">
-      <h2>Why Open Graph Tags are Essential for Social Traffic</h2>
-      <p>Open Graph (OG) protocol tags allow web developers to control how web content presents when shared on social networks like Facebook, LinkedIn, Twitter, and messaging apps. Without OG tags, social networks automatically guess title and image elements, frequently resulting in missing thumbnails or broken descriptions.</p>
+      <h2>Why Testing Open Graph Snippets Improves Social Media Click-Through Rates</h2>
+      <p>Social media feeds are visual environments. When users share your links on platforms like Facebook, X (formerly Twitter), LinkedIn, or Discord, the platform inspects your HTML head tags for <strong>Open Graph (OG)</strong> metadata to generate a rich preview snippet.</p>
+
+      <p>If your Open Graph title is too long, or if your <code>og:image</code> thumbnail is improperly sized or missing, social networks will render broken, unappealing text-only cards. Using our free <strong>Online Open Graph Preview Tool</strong> allows webmasters to test and refine social share cards before publishing content live.</p>
     </div>
 
     <!-- SEO Article Content Box 2 -->
     <div class="content-box">
-      <h2>Core Open Graph Protocol Meta Tags</h2>
+      <h2>Recommended Social Share Card Specs</h2>
+      <p>Follow these official dimensions across major social networks:</p>
+
       <ul>
-        <li><code>og:title</code> — The headline title of your article or page.</li>
-        <li><code>og:description</code> — A brief 2 to 3 sentence summary of your content.</li>
-        <li><code>og:image</code> — The featured thumbnail image (optimal dimensions: 1200 x 630 pixels).</li>
-        <li><code>og:url</code> — The canonical web URL for social engagement counters.</li>
+        <li><strong>Facebook Link Cards:</strong> Requires an <code>og:image</code> ratio of 1.91:1, ideally 1200 x 630 pixels. Titles render clearly up to 60-70 characters.</li>
+        <li><strong>Twitter / X Summary Large Image:</strong> Requires a 2:1 image ratio (at least 600 x 300 px, ideally 1200 x 600 px) with <code>twitter:card</code> set to <code>summary_large_image</code>.</li>
+        <li><strong>LinkedIn Feed Share:</strong> Uses an <code>og:image</code> recommendation of 1200 x 627 pixels.</li>
       </ul>
     </div>
 
-    <!-- Internal Linking Section -->
+    <!-- SEO Article Content Box 3 -->
     <div class="content-box">
-      <h2>Explore Related SEO Utilities</h2>
-      <p>Optimize your website's search and social presence with our other tools:</p>
+      <h2>Features of MicroToolStack's Open Graph Simulator</h2>
+      <ul>
+        <li><strong>Multi-Platform Switcher:</strong> Instantly switch between Facebook, Twitter / X, and LinkedIn preview card styles.</li>
+        <li><strong>Live Thumbnail Preview:</strong> Tests whether your <code>og:image</code> thumbnail URL loads correctly in browser memory.</li>
+        <li><strong>100% Client-Side Privacy:</strong> All calculations execute locally inside your browser session using JavaScript. No URLs or inputs are saved remotely.</li>
+        <li><strong>Free & Unlimited Usage:</strong> No preview limits or sign-up required.</li>
+      </ul>
+    </div>
+
+    <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
+    <div class="content-box">
+      <h2>Explore Related SEO & Webmaster Tools</h2>
+      <p>Discover our complementary online webmaster utilities:</p>
       <div class="related-links">
-        <a href="/tools/seo/google-serp-preview.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🔍 Google SERP Preview Tool</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Simulate desktop and mobile Google Search snippets.</span>
+        <a href="/tools/seo/open-graph-generator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🌐 Open Graph Tag Generator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Generate Facebook OG and Twitter Card HTML meta code.</span>
         </a>
         <a href="/tools/seo/meta-tag-analyzer.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🏷️ Meta Tag Analyzer</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Inspect HTML head tags, canonicals, and metadata.</span>
+          <strong style="display:block; margin-bottom: 0.25rem;">🔍 Meta Tag Analyzer</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Audit HTML head tags, Open Graph, and Twitter Cards.</span>
         </a>
-        <a href="/tools/seo/seo-title-preview.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">📐 SEO Title Preview Tool</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Measure title tag pixel widths and truncation risks.</span>
+        <a href="/tools/seo/google-serp-preview.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🖥️ Google SERP Preview Tool</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Simulate desktop & mobile search result snippets.</span>
         </a>
       </div>
     </div>
 
     <!-- FAQ Section -->
     <div class="content-box">
-      <h2>Frequently Asked Questions</h2>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Why is my image not updating on Facebook?</h3>
-        <p>Facebook caches Open Graph share data for several days. You can force Facebook to refresh cached metadata using the official Facebook Sharing Debugger tool.</p>
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How do I preview how my link looks on social media?</h3>
+        <p>Type or paste your Title, Page URL, Image URL, and Description into the input boxes. Select Facebook, Twitter, or LinkedIn tabs to inspect live share cards.</p>
       </div>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Where should I place these meta tags?</h3>
-        <p>Paste the generated Open Graph meta tags inside the <code>&lt;head&gt;...&lt;/head&gt;</code> section of your HTML document.</p>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Why doesn't my social image thumbnail load in the preview?</h3>
+        <p>Ensure your <code>og:image</code> URL is an absolute link starting with <code>https://</code> and that the server hosting the image allows cross-origin loading.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is my input data saved on remote servers?</h3>
+        <p>No. All calculations run client-side inside your browser session using JavaScript. Your inputs remain 100% private.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this Open Graph Preview Tool free?</h3>
+        <p>Yes, MicroToolStack's Open Graph Preview Tool is 100% free with no usage limits or sign-up required.</p>
       </div>
     </div>
 
@@ -393,85 +570,122 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const inTitle = document.getElementById('in-title');
-      const inDesc = document.getElementById('in-desc');
-      const inImg = document.getElementById('in-img');
-      const inUrl = document.getElementById('in-url');
+      const tabFb = document.getElementById('tab-fb');
+      const tabTw = document.getElementById('tab-tw');
+      const tabLi = document.getElementById('tab-li');
 
-      const cardTitle = document.getElementById('card-title');
-      const cardDesc = document.getElementById('card-desc');
-      const cardImgBox = document.getElementById('card-img-box');
-      const cardDomain = document.getElementById('card-domain');
+      const cardFb = document.getElementById('card-fb');
+      const cardTw = document.getElementById('card-tw');
+      const cardLi = document.getElementById('card-li');
 
-      const codeOutput = document.getElementById('code-output');
+      const ogTitleIn = document.getElementById('og-title-in');
+      const ogUrlIn = document.getElementById('og-url-in');
+      const ogImageIn = document.getElementById('og-image-in');
+      const ogDescIn = document.getElementById('og-desc-in');
 
-      const btnCopy = document.getElementById('btn-copy');
-      const btnSample = document.getElementById('btn-sample');
-      const btnClear = document.getElementById('btn-clear');
-      const statusMsg = document.getElementById('status-msg');
+      // FB elements
+      const fbImgBox = document.getElementById('fb-img-box');
+      const fbDomainVal = document.getElementById('fb-domain-val');
+      const fbTitleVal = document.getElementById('fb-title-val');
+      const fbDescVal = document.getElementById('fb-desc-val');
 
-      function updateCardAndCode() {
-        const titleVal = inTitle.value.trim() || 'Free Open Graph Preview & Generator | MicroToolStack';
-        const descVal = inDesc.value.trim() || 'Preview Facebook and Twitter social share cards and generate valid Open Graph meta tags.';
-        const imgVal = inImg.value.trim() || 'https://microtoolstack.com/assets/images/og-image.png';
-        const urlVal = inUrl.value.trim() || 'https://microtoolstack.com/tools/seo/open-graph-preview.html';
+      // Twitter elements
+      const twImgBox = document.getElementById('tw-img-box');
+      const twDomainVal = document.getElementById('tw-domain-val');
+      const twTitleVal = document.getElementById('tw-title-val');
+      const twDescVal = document.getElementById('tw-desc-val');
 
-        // Extract domain name for card header
-        let domain = 'MICROTOOLSTACK.COM';
+      // LinkedIn elements
+      const liImgBox = document.getElementById('li-img-box');
+      const liTitleVal = document.getElementById('li-title-val');
+      const liDomainVal = document.getElementById('li-domain-val');
+
+      const btnReset = document.getElementById('btn-reset');
+
+      function updatePreviews() {
+        const title = ogTitleIn.value.trim() || 'Social Share Title';
+        const url = ogUrlIn.value.trim() || 'https://example.com/page.html';
+        const img = ogImageIn.value.trim();
+        const desc = ogDescIn.value.trim() || 'Brief description for social newsfeeds...';
+
+        let domain = 'EXAMPLE.COM';
+        let rawDomain = 'example.com';
         try {
-          if (urlVal.startsWith('http')) {
-            const urlObj = new URL(urlVal);
-            domain = urlObj.hostname.toUpperCase();
+          const parsed = new URL(url);
+          domain = parsed.hostname.toUpperCase();
+          rawDomain = parsed.hostname;
+        } catch (e) {}
+
+        // FB
+        fbTitleVal.textContent = title;
+        fbDescVal.textContent = desc;
+        fbDomainVal.textContent = domain;
+
+        // TW
+        twTitleVal.textContent = title;
+        twDescVal.textContent = desc;
+        twDomainVal.textContent = rawDomain;
+
+        // LI
+        liTitleVal.textContent = title;
+        liDomainVal.textContent = rawDomain;
+
+        // Image handler
+        [fbImgBox, twImgBox, liImgBox].forEach(box => {
+          if (img && (img.startsWith('http://') || img.startsWith('https://'))) {
+            box.style.backgroundImage = `url("${img}")`;
+            const span = box.querySelector('span');
+            if (span) span.style.display = 'none';
+          } else {
+            box.style.backgroundImage = 'none';
+            const span = box.querySelector('span');
+            if (span) span.style.display = 'inline';
           }
-        } catch(e) {}
-
-        cardTitle.textContent = titleVal;
-        cardDesc.textContent = descVal;
-        cardDomain.textContent = domain;
-
-        if (imgVal) {
-          cardImgBox.innerHTML = `<img src="${imgVal}" alt="OG Preview Image" onerror="this.onerror=null; this.parentNode.innerHTML='Image Load Failed';">`;
-        } else {
-          cardImgBox.innerHTML = 'Image Preview (1200 x 630 px)';
-        }
-
-        // Generate HTML tags
-        const codeText = `<!-- Primary Open Graph Meta Tags -->\n<meta property="og:type" content="website">\n<meta property="og:url" content="${urlVal}">\n<meta property="og:title" content="${titleVal}">\n<meta property="og:description" content="${descVal}">\n<meta property="og:image" content="${imgVal}">\n\n<!-- Twitter Card Meta Tags -->\n<meta name="twitter:card" content="summary_large_image">\n<meta name="twitter:url" content="${urlVal}">\n<meta name="twitter:title" content="${titleVal}">\n<meta name="twitter:description" content="${descVal}">\n<meta name="twitter:image" content="${imgVal}">`;
-
-        codeOutput.value = codeText;
+        });
       }
 
-      inTitle.addEventListener('input', updateCardAndCode);
-      inDesc.addEventListener('input', updateCardAndCode);
-      inImg.addEventListener('input', updateCardAndCode);
-      inUrl.addEventListener('input', updateCardAndCode);
-
-      btnCopy.addEventListener('click', function() {
-        if (!codeOutput.value) return;
-        navigator.clipboard.writeText(codeOutput.value).then(function() {
-          statusMsg.style.display = 'inline';
-          setTimeout(() => { statusMsg.style.display = 'none'; }, 2000);
-        });
+      // Tab Events
+      tabFb.addEventListener('click', () => {
+        tabFb.classList.add('active');
+        tabTw.classList.remove('active');
+        tabLi.classList.remove('active');
+        cardFb.style.display = 'block';
+        cardTw.style.display = 'none';
+        cardLi.style.display = 'none';
       });
 
-      btnSample.addEventListener('click', function() {
-        inTitle.value = 'Free Online JSON Formatter & Validator | MicroToolStack';
-        inDesc.value = 'Validate, prettify, and format raw JSON data seamlessly in your web browser for free. Fast, private, and developer-friendly.';
-        inImg.value = 'https://microtoolstack.com/assets/images/og-image.png';
-        inUrl.value = 'https://microtoolstack.com/tools/developer/json-formatter.html';
-        updateCardAndCode();
+      tabTw.addEventListener('click', () => {
+        tabTw.classList.add('active');
+        tabFb.classList.remove('active');
+        tabLi.classList.remove('active');
+        cardTw.style.display = 'block';
+        cardFb.style.display = 'none';
+        cardLi.style.display = 'none';
       });
 
-      btnClear.addEventListener('click', function() {
-        inTitle.value = '';
-        inDesc.value = '';
-        inImg.value = '';
-        inUrl.value = '';
-        updateCardAndCode();
-        inTitle.focus();
+      tabLi.addEventListener('click', () => {
+        tabLi.classList.add('active');
+        tabFb.classList.remove('active');
+        tabTw.classList.remove('active');
+        cardLi.style.display = 'block';
+        cardFb.style.display = 'none';
+        cardTw.style.display = 'none';
       });
 
-      updateCardAndCode();
+      [ogTitleIn, ogUrlIn, ogImageIn, ogDescIn].forEach(el => {
+        el.addEventListener('input', updatePreviews);
+      });
+
+      btnReset.addEventListener('click', function() {
+        ogTitleIn.value = 'Free Online Open Graph Preview Tool | MicroToolStack';
+        ogUrlIn.value = 'https://microtoolstack.com/tools/seo/open-graph-preview.html';
+        ogImageIn.value = 'https://microtoolstack.com/assets/images/og-image.png';
+        ogDescIn.value = 'Simulate Facebook, Twitter, LinkedIn, and Discord share card previews in real time. Inspect social meta tags for instant webmaster feedback. 100% free web utility.';
+        updatePreviews();
+      });
+
+      // Initial Update
+      updatePreviews();
     });
   </script>
 </body>
