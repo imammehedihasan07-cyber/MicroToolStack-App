@@ -22,9 +22,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Primary SEO Meta Tags -->
-  <title>Free Online Readability Score Checker | MicroToolStack</title>
-  <meta name="description" content="Free online Readability Score Checker. Test text readability using Flesch Reading Ease score, calculate word count, syllables, reading time, and sentence difficulty.">
-  <meta name="keywords" content="readability checker, flesch reading ease calculator, text readability analyzer, word count tool, content readability score, reading age test">
+  <title>Free Online Readability Checker | Flesch-Kincaid & Grade Level Analyzer | MicroToolStack</title>
+  <meta name="description" content="Check text readability, Flesch Reading Ease score, and Flesch-Kincaid grade level online for free. Analyze sentence complexity, word counts, and writing clarity instantly.">
+  <meta name="keywords" content="readability checker, flesch kincaid grade level, flesch reading ease score, text readability analyzer, readability test tool, writing clarity checker, text tools, microtoolstack">
 
   <link rel="canonical" href="https://microtoolstack.com/tools/text/readability-checker.html">
   <meta name="robots" content="index, follow">
@@ -32,8 +32,8 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://microtoolstack.com/tools/text/readability-checker.html">
-  <meta property="og:title" content="Free Online Readability Score Checker | MicroToolStack">
-  <meta property="og:description" content="Analyze your article readability score instantly with Flesch-Kincaid formula and word statistics. 100% free and private.">
+  <meta property="og:title" content="Free Online Readability Checker | MicroToolStack">
+  <meta property="og:description" content="Analyze Flesch Reading Ease scores, grade levels, and text complexity in real time. 100% free web utility.">
   <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
@@ -48,15 +48,15 @@
     "@graph": [
       {
         "@type": "SoftwareApplication",
-        "name": "Readability Score Checker",
+        "name": "Readability Checker & Grade Level Analyzer",
         "operatingSystem": "All",
-        "applicationCategory": "EducationalApplication",
+        "applicationCategory": "UtilitiesApplication",
         "offers": {
           "@type": "Offer",
           "price": "0",
           "priceCurrency": "USD"
         },
-        "description": "An online text analysis tool that measures content readability using the Flesch Reading Ease index, calculates syllable statistics, sentence density, and estimated reading time.",
+        "description": "An essential client-side text utility that calculates Flesch Reading Ease scores, Flesch-Kincaid grade levels, and sentence complexity metrics.",
         "url": "https://microtoolstack.com/tools/text/readability-checker.html"
       },
       {
@@ -64,26 +64,34 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "What is Flesch Reading Ease?",
+            "name": "What is the Flesch Reading Ease score?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Flesch Reading Ease is a standard formula that rates text on a 1-100 scale based on sentence length and average syllables per word. Scores between 60 and 70 are considered optimal for web content."
+              "text": "The Flesch Reading Ease score rates text on a 0 to 100 scale. Higher scores indicate material that is easier to read, while lower numbers mark more complex academic text."
             }
           },
           {
             "@type": "Question",
-            "name": "Why is content readability important for SEO?",
+            "name": "What is the Flesch-Kincaid Grade Level?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Readable content improves user engagement, reduces bounce rates, and ensures that search engine crawlers and users easily understand your material."
+              "text": "The Flesch-Kincaid Grade Level converts text complexity into US school grade levels (e.g., Grade 8 means an 8th-grade reading level)."
             }
           },
           {
             "@type": "Question",
-            "name": "Is my text data stored or sent to a server?",
+            "name": "Is my text data saved on remote servers?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "No! Your content stays 100% confidential. All calculations are executed locally within your web browser."
+              "text": "No! All text analysis and readability computations execute 100% locally inside your web browser session using JavaScript. Your text remains completely private."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this Readability Checker free to use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, MicroToolStack's Readability Checker is 100% free with unlimited text analysis and no registration required."
             }
           }
         ]
@@ -101,78 +109,79 @@
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
 
   <style>
-    .editor-textarea {
+    .input-group {
+      margin-bottom: 1.25rem;
+    }
+    .input-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.5rem;
+    }
+    .counter-info {
+      font-size: 0.8rem;
+      color: var(--text-secondary, #9ca3af);
+      font-weight: 400;
+    }
+    .form-control {
       width: 100%;
-      min-height: 220px;
+      min-height: 180px;
       padding: 1rem;
-      font-family: inherit;
-      font-size: 1rem;
+      font-size: 0.95rem;
       line-height: 1.6;
       border: 1px solid var(--border-color, #333);
       border-radius: var(--radius-md, 8px);
-      background-color: #0d1117;
+      background-color: var(--bg-card, #1e1e2e);
       color: var(--text-primary, #fff);
       outline: none;
       resize: vertical;
       box-sizing: border-box;
-      margin-bottom: 1.25rem;
     }
-    .metrics-grid {
+    .form-control:focus {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+
+    /* Metrics Summary Grid */
+    .metrics-summary-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 1rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
     }
+
     .metric-card {
-      background: var(--bg-card, #1e1e2e);
+      background: #111827;
       border: 1px solid var(--border-color, #333);
       border-radius: 8px;
-      padding: 1rem;
+      padding: 1.25rem;
       text-align: center;
     }
+
     .metric-value {
-      font-size: 1.6rem;
+      font-size: 2.2rem;
+      font-family: 'Fira Code', Consolas, Monaco, monospace;
       font-weight: 700;
-      color: var(--accent-primary, #3b82f6);
-      margin-top: 0.25rem;
+      color: #38bdf8;
     }
+
     .metric-label {
       font-size: 0.85rem;
-      color: var(--text-secondary, #9ca3af);
+      color: #9ca3af;
+      margin-top: 0.3rem;
     }
-    .score-card {
-      background: rgba(59, 130, 246, 0.1);
-      border: 1px solid var(--accent-primary, #3b82f6);
-      border-radius: 8px;
-      padding: 1.5rem;
-      text-align: center;
-      margin-bottom: 1.5rem;
-    }
-    .score-value {
-      font-size: 2.8rem;
-      font-weight: 800;
-      color: var(--accent-primary, #3b82f6);
-      line-height: 1;
-      margin: 0.5rem 0;
-    }
-    .score-status {
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: #10b981;
-    }
-    .editor-controls {
+
+    .controls-bar {
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 2rem;
+      margin-bottom: 2.5rem;
     }
-    .btn-group {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-    }
+
     .content-box {
       background-color: var(--bg-card, #1e1e2e);
       border: 1px solid var(--border-color, #333);
@@ -183,6 +192,12 @@
     .content-box h2 {
       font-size: 1.35rem;
       margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
       color: var(--text-primary, #fff);
     }
     .content-box p, .content-box ul {
@@ -229,112 +244,124 @@
       <a href="/#categories">Categories</a>
       <a href="/about.html">About</a>
       <a href="/contact.html">Contact</a>
-      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">ЁЯМЩ</button>
     </nav>
   </header>
 
   <!-- Main Container -->
   <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
-    <!-- Breadcrumb Navigation -->
-    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
-      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
-      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Text Tools</a> / 
-      <span>Readability Score Checker</span>
-    </nav>
     
     <!-- Tool Title & Description -->
     <div style="text-align: center; margin-bottom: 2rem;">
-      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Readability Score Checker</h1>
-      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Analyze your text readability with Flesch Reading Ease score, word count, and reading time.</p>
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online Readability Checker</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Analyze Flesch Reading Ease scores, Flesch-Kincaid grade levels, and text complexity in real time.</p>
     </div>
 
-    <!-- Main Text Input -->
-    <textarea id="text-input" class="editor-textarea" placeholder="Paste or type your article/essay here to calculate readability score..." autofocus></textarea>
-
-    <!-- Flesch Score Hero Card -->
-    <div class="score-card">
-      <div style="font-size: 0.85rem; color: var(--text-secondary, #9ca3af); text-transform: uppercase; letter-spacing: 0.05em;">Flesch Reading Ease Score</div>
-      <div id="score-val" class="score-value">0.0</div>
-      <div id="score-status" class="score-status">Enter text to calculate</div>
-    </div>
-
-    <!-- Secondary Text Metrics -->
-    <div class="metrics-grid">
-      <div class="metric-card">
-        <div class="metric-label">Words</div>
-        <div id="stat-words" class="metric-value">0</div>
-      </div>
-      <div class="metric-card">
-        <div class="metric-label">Sentences</div>
-        <div id="stat-sentences" class="metric-value">0</div>
-      </div>
-      <div class="metric-card">
-        <div class="metric-label">Characters</div>
-        <div id="stat-chars" class="metric-value">0</div>
-      </div>
-      <div class="metric-card">
-        <div class="metric-label">Est. Reading Time</div>
-        <div id="stat-reading-time" class="metric-value">0 min</div>
+    <!-- Text Input Editor Card -->
+    <div class="content-box" style="margin-bottom: 1.5rem;">
+      <div class="input-group" style="margin-bottom: 0;">
+        <label for="text-input" class="input-label">
+          <span>Enter or Paste Text to Analyze</span>
+          <span class="counter-info" id="char-word-info">0 Words | 0 Sentences</span>
+        </label>
+        <textarea id="text-input" class="form-control" placeholder="Paste your article, essay, or blog post here to calculate readability scores...">Good writing is clear, concise, and easy for readers to understand. By analyzing sentence length and syllable counts, writers can ensure their content engages audiences effectively without unnecessary jargon.</textarea>
       </div>
     </div>
 
-    <!-- Controls -->
-    <div class="editor-controls">
-      <div class="btn-group">
-        <button id="btn-sample" class="btn btn-primary" style="padding: 0.68rem 1.4rem; cursor: pointer;">📝 Load Sample Text</button>
-        <button id="btn-copy" class="btn btn-secondary" style="padding: 0.68rem 1.2rem; cursor: pointer; background: #1f2937; color: #fff; border: 1px solid #4b5563; border-radius: 6px;">📋 Copy Text</button>
-        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.68rem 1.2rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear</button>
+    <!-- Metrics Summary Grid -->
+    <div class="metrics-summary-grid">
+      <div class="metric-card">
+        <div id="stat-ease" class="metric-value">0.0</div>
+        <div class="metric-label">Flesch Reading Ease</div>
       </div>
-      <span id="status-msg" style="font-size: 0.85rem; color: #10b981; font-weight: 500; display: none;">Copied to clipboard!</span>
+      <div class="metric-card">
+        <div id="stat-grade" class="metric-value">0.0</div>
+        <div class="metric-label">Flesch-Kincaid Grade Level</div>
+      </div>
+      <div class="metric-card">
+        <div id="stat-level-desc" class="metric-value" style="font-size: 1.25rem; margin-top: 0.5rem;">Standard</div>
+        <div class="metric-label">Reading Difficulty Level</div>
+      </div>
+    </div>
+
+    <!-- Controls Bar -->
+    <div class="controls-bar">
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-copy" class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-weight: 600; cursor: pointer; background: #10b981;">ЁЯУЛ Copy Text</button>
+      </div>
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-reset" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">ЁЯЧСя╕П Clear Text</button>
+      </div>
     </div>
 
     <!-- SEO Article Content Box 1 -->
     <div class="content-box">
-      <h2>What is Flesch Reading Ease Score?</h2>
-      <p>The <strong>Flesch Reading Ease Index</strong> is a widely recognized formula used to evaluate how easy or difficult a piece of writing is to comprehend. Higher scores indicate material that is easier to read, while lower scores indicate complex academic or technical literature.</p>
+      <h2>Why Text Readability Matters for Content Writing and SEO</h2>
+      <p>Whether you are publishing blog posts, writing marketing copy, or drafting academic research papers, ensuring your content is readable is crucial. If your writing is overly complex or filled with convoluted sentence structures, readers will quickly bounce from your webpage.</p>
+
+      <p>Search engines like Google favor clear, structured content that provides immediate value to users. Our free <strong>Online Readability Checker</strong> evaluates sentence lengths and syllable counts instantly to compute standard readability indices.</p>
     </div>
 
     <!-- SEO Article Content Box 2 -->
     <div class="content-box">
-      <h2>Understanding Flesch Score Scale</h2>
+      <h2>Understanding Readability Formulas</h2>
+      <p>Key metrics calculated by our text analyzer:</p>
+
       <ul>
-        <li><strong>90.0 – 100.0:</strong> Very Easy (5th grade reading level, easily understood by an average 11-year-old)</li>
-        <li><strong>60.0 – 70.0:</strong> Standard / Easy (8th–9th grade level, ideal for blog posts, news, and web copy)</li>
-        <li><strong>30.0 – 50.0:</strong> Difficult (College level reading, suitable for technical manuals)</li>
-        <li><strong>0.0 – 30.0:</strong> Very Confusing / Academic (Best understood by university graduates)</li>
+        <li><strong>Flesch Reading Ease Score (0 - 100):</strong> Higher scores indicate material that is very easy to read. Scores between 60 and 70 are standard for general web content.</li>
+        <li><strong>Flesch-Kincaid Grade Level:</strong> Translates your text into US school grade levels. For example, a score of 8.0 indicates an 8th-grade reading level.</li>
+        <li><strong>Sentence & Syllable Analysis:</strong> Evaluates average sentence lengths and word syllable densities to gauge overall comprehension difficulty.</li>
       </ul>
     </div>
 
-    <!-- Internal Linking Section (SEO Best Practice) -->
+    <!-- SEO Article Content Box 3 -->
     <div class="content-box">
-      <h2>Explore Related Utilities</h2>
-      <p>Enhance your writing and web editing workflow:</p>
+      <h2>Features of MicroToolStack's Readability Tool</h2>
+      <ul>
+        <li><strong>Real-Time Instant Computation:</strong> Scores update immediately as you type or paste text into the editor.</li>
+        <li><strong>100% Client-Side Privacy:</strong> All text processing executes locally inside your web browser session using JavaScript. Your text is never stored or transmitted remotely.</li>
+        <li><strong>Free & Unlimited Usage:</strong> No word count limits or account registration required.</li>
+      </ul>
+    </div>
+
+    <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
+    <div class="content-box">
+      <h2>Explore Related Text & SEO Utilities</h2>
+      <p>Discover our complementary online text tools:</p>
       <div class="related-links">
-        <a href="/tools/developer/glassmorphism-claymorphism-generator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">✨ CSS Glass & Clay Generator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Design frosted glass & 3D UI cards.</span>
+        <a href="/tools/text/word-counter.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">ЁЯУК Real-Time Word Counter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Analyze character counts, reading time, and sentence stats.</span>
         </a>
-        <a href="/tools/media/image-exif-remover.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">📸 Image EXIF Remover</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Strip metadata and location from images.</span>
+        <a href="/tools/text/character-counter.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">ЁЯФд Online Character Counter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Count characters, words, sentences, and paragraphs.</span>
         </a>
-        <a href="/tools/calculator/cgpa-to-percentage.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🎓 CGPA to Percentage</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Convert CGPA to percentage and total marks.</span>
+        <a href="/tools/seo/keyword-density-checker.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">ЁЯУК Keyword Density Checker</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Analyze word frequency percentages and key phrase densities.</span>
         </a>
       </div>
     </div>
 
     <!-- FAQ Section -->
     <div class="content-box">
-      <h2>Frequently Asked Questions</h2>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What is a good readability score for web articles?</h3>
-        <p>For websites, blogs, and online articles, aim for a score between <strong>60 and 70</strong>. This ensures your content is engaging and easily digestible for general audiences.</p>
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What is a good Flesch Reading Ease score?</h3>
+        <p>A score between 60 and 70 is considered standard and easily readable for the general public. Scores above 80 are very easy (suitable for children's books), while scores below 30 are best suited for academic or legal documents.</p>
       </div>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How can I improve my readability score?</h3>
-        <p>Shorten your sentences, replace multi-syllable jargon with simpler words, and break heavy blocks of text into smaller paragraphs.</p>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How are syllables counted?</h3>
+        <p>Syllables are estimated using standard phonetic vowel group counting algorithms implemented in JavaScript.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is my text data saved on remote servers?</h3>
+        <p>No. All calculations run client-side inside your browser session using JavaScript. Your text remains 100% private.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this Readability Checker free?</h3>
+        <p>Yes, MicroToolStack's Readability Checker is 100% free with no usage limits or sign-up required.</p>
       </div>
     </div>
 
@@ -351,114 +378,94 @@
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const textInput = document.getElementById('text-input');
-      const scoreVal = document.getElementById('score-val');
-      const scoreStatus = document.getElementById('score-status');
+      const charWordInfo = document.getElementById('char-word-info');
+      const statEase = document.getElementById('stat-ease');
+      const statGrade = document.getElementById('stat-grade');
+      const statLevelDesc = document.getElementById('stat-level-desc');
 
-      const statWords = document.getElementById('stat-words');
-      const statSentences = document.getElementById('stat-sentences');
-      const statChars = document.getElementById('stat-chars');
-      const statReadingTime = document.getElementById('stat-reading-time');
-
-      const btnSample = document.getElementById('btn-sample');
       const btnCopy = document.getElementById('btn-copy');
-      const btnClear = document.getElementById('btn-clear');
-      const statusMsg = document.getElementById('status-msg');
+      const btnReset = document.getElementById('btn-reset');
 
       function countSyllables(word) {
-        word = word.toLowerCase().trim();
-        if (word.length <= 3) return 1;
-        word = word.replace(/(?:[^laeiouy]es|ed|[^laeiouy]e)$/, '');
+        word = word.toLowerCase().replace(/(?:[^laeiouy]|ed|es|e)$/, '');
         word = word.replace(/^y/, '');
-        const syllables = word.match(/[aeiouy]{1,2}/g);
-        return syllables ? syllables.length : 1;
+        const matches = word.match(/[aeiouy]{1,2}/g);
+        return matches ? matches.length : 1;
       }
 
-      function analyzeText() {
-        const text = textInput.value.trim();
+      function countTotalSyllables(wordsArr) {
+        let count = 0;
+        wordsArr.forEach(w => {
+          count += countSyllables(w);
+        });
+        return Math.max(1, count);
+      }
 
-        if (!text) {
-          scoreVal.textContent = '0.0';
-          scoreStatus.textContent = 'Enter text to calculate';
-          scoreStatus.style.color = '#9ca3af';
-          statWords.textContent = '0';
-          statSentences.textContent = '0';
-          statChars.textContent = '0';
-          statReadingTime.textContent = '0 min';
+      function calculateReadability() {
+        const text = textInput.value;
+        const words = text.trim() ? text.trim().match(/ [a-zA-Z0-9]+(?:'[a-zA-Z0-9]+)? /g) || [] : [];
+        const wordCount = words.length;
+
+        const sentences = text.trim() ? text.split(/[.!?]+/).filter(s => s.trim().length > 0).length : 0;
+        const validSentences = Math.max(1, sentences);
+
+        charWordInfo.textContent = `${wordCount} Words | ${validSentences} Sentences`;
+
+        if (wordCount === 0) {
+          statEase.textContent = '0.0';
+          statGrade.textContent = '0.0';
+          statLevelDesc.textContent = 'N/A';
           return;
         }
 
-        const wordsArray = text.match(/\b\w+\b/g) || [];
-        const totalWords = wordsArray.length;
+        const syllableCount = countTotalSyllables(words);
 
-        const sentencesArray = text.split(/[.!?]+/).filter(s => s.trim().length > 0);
-        const totalSentences = sentencesArray.length || 1;
+        // Flesch Reading Ease = 206.835 - 1.015 * (total words / total sentences) - 84.6 * (total syllables / total words)
+        const wordsPerSentence = wordCount / validSentences;
+        const syllablesPerWord = syllableCount / wordCount;
 
-        const totalChars = text.length;
+        const readingEase = 206.835 - (1.015 * wordsPerSentence) - (84.6 * syllablesPerWord);
 
-        let totalSyllables = 0;
-        wordsArray.forEach(word => {
-          totalSyllables += countSyllables(word);
-        });
+        // Flesch-Kincaid Grade Level = 0.39 * (total words / total sentences) + 11.8 * (total syllables / total words) - 15.59
+        const gradeLevel = (0.39 * wordsPerSentence) + (11.8 * syllablesPerWord) - 15.59;
 
-        // Flesch Reading Ease Formula: 206.835 - 1.015(total words / total sentences) - 84.6(total syllables / total words)
-        let score = 0;
-        if (totalWords > 0) {
-          score = 206.835 - (1.015 * (totalWords / totalSentences)) - (84.6 * (totalSyllables / totalWords));
-        }
+        const roundedEase = Math.round(Math.max(0, Math.min(100, readingEase)) * 10) / 10;
+        const roundedGrade = Math.round(Math.max(0, gradeLevel) * 10) / 10;
 
-        if (score > 100) score = 100;
-        if (score < 0) score = 0;
+        statEase.textContent = roundedEase;
+        statGrade.textContent = roundedGrade;
 
-        scoreVal.textContent = score.toFixed(1);
+        // Difficulty label
+        let diffLabel = 'Standard';
+        if (roundedEase >= 90) diffLabel = 'Very Easy (5th Grade)';
+        else if (roundedEase >= 80) diffLabel = 'Easy (6th Grade)';
+        else if (roundedEase >= 70) diffLabel = 'Fairly Easy (7th Grade)';
+        else if (roundedEase >= 60) diffLabel = 'Standard (8th-9th Grade)';
+        else if (roundedEase >= 50) diffLabel = 'Fairly Difficult (High School)';
+        else if (roundedEase >= 30) diffLabel = 'Difficult (College Level)';
+        else diffLabel = 'Very Confusing (Graduate Level)';
 
-        // Interpretation
-        if (score >= 80) {
-          scoreStatus.textContent = 'Very Easy (Plain & Clear)';
-          scoreStatus.style.color = '#10b981';
-        } else if (score >= 60) {
-          scoreStatus.textContent = 'Standard / Easy (Ideal for Web)';
-          scoreStatus.style.color = '#3b82f6';
-        } else if (score >= 40) {
-          scoreStatus.textContent = 'Fairly Difficult (Academic)';
-          scoreStatus.style.color = '#f59e0b';
-        } else {
-          scoreStatus.textContent = 'Very Difficult (Technical)';
-          scoreStatus.style.color = '#ef4444';
-        }
-
-        // Stats update
-        statWords.textContent = totalWords.toLocaleString();
-        statSentences.textContent = totalSentences.toLocaleString();
-        statChars.textContent = totalChars.toLocaleString();
-
-        // Reading Time (~200 wpm)
-        const readingMinutes = Math.ceil(totalWords / 200);
-        statReadingTime.textContent = `${readingMinutes} min`;
+        statLevelDesc.textContent = diffLabel;
       }
 
-      textInput.addEventListener('input', analyzeText);
+      textInput.addEventListener('input', calculateReadability);
 
-      // Sample Text Action
-      btnSample.addEventListener('click', function() {
-        textInput.value = "MicroToolStack provides free online developer and productivity tools. All tools run client-side in your web browser for ultimate speed and privacy. Try formatting JSON strings, removing EXIF metadata from pictures, or calculating your university CGPA with zero software installation required!";
-        analyzeText();
-      });
-
-      // Copy Action
       btnCopy.addEventListener('click', function() {
-        if (!textInput.value.trim()) return;
-        navigator.clipboard.writeText(textInput.value).then(function() {
-          statusMsg.style.display = 'inline';
-          setTimeout(() => { statusMsg.style.display = 'none'; }, 2000);
+        if (!textInput.value) return;
+        navigator.clipboard.writeText(textInput.value).then(() => {
+          const origText = btnCopy.textContent;
+          btnCopy.textContent = 'тЬЕ Copied!';
+          setTimeout(() => { btnCopy.textContent = origText; }, 2000);
         });
       });
 
-      // Clear Action
-      btnClear.addEventListener('click', function() {
+      btnReset.addEventListener('click', function() {
         textInput.value = '';
-        analyzeText();
-        textInput.focus();
+        calculateReadability();
       });
+
+      // Initial Calculation
+      calculateReadability();
     });
   </script>
 </body>
