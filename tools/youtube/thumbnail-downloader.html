@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) - Deferred Load -->
+  <!-- Google tag (gtag.js) - Optimized Load -->
   <script>
     window.addEventListener('load', function() {
       setTimeout(function() {
@@ -20,18 +20,87 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>YouTube Thumbnail Downloader - Download Full HD Images Free | MicroToolStack</title>
-  <meta name="description" content="Free YouTube Thumbnail Downloader. Easily download HD, Full HD (1080p), 4K, and SD video thumbnails from any YouTube video or Short instantly.">
-  <meta name="keywords" content="youtube thumbnail downloader, download youtube thumbnail, hd thumbnail downloader, get youtube cover image, 1080p thumbnail downloader">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>Free Online YouTube Thumbnail Downloader | HD & 4K Grabber | MicroToolStack</title>
+  <meta name="description" content="Download high-resolution YouTube video thumbnails online for free. Grab HD, HQ, standard, and maximum resolution JPG/PNG thumbnail images instantly by URL.">
+  <meta name="keywords" content="youtube thumbnail downloader, download youtube video thumbnail, get youtube thumbnail hd, grab yt thumbnail online, youtube thumbnail saver, video tools, microtoolstack">
 
   <link rel="canonical" href="https://microtoolstack.com/tools/youtube/thumbnail-downloader.html">
   <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://microtoolstack.com/tools/youtube/thumbnail-downloader.html">
+  <meta property="og:title" content="Free Online YouTube Thumbnail Downloader | MicroToolStack">
+  <meta property="og:description" content="Download HD, HQ, and 4K YouTube video thumbnail images instantly by pasting any video link. 100% free web utility.">
+  <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
   <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
   <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
+  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "YouTube Thumbnail Downloader Tool",
+        "operatingSystem": "All",
+        "applicationCategory": "UtilitiesApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "An essential client-side YouTube webmaster utility that extracts and downloads high-resolution HD, HQ, and maximum resolution video thumbnails from YouTube URLs.",
+        "url": "https://microtoolstack.com/tools/youtube/thumbnail-downloader.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How do I download a YouTube video thumbnail?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Paste your YouTube video URL or ID into our free Thumbnail Downloader tool, and it will instantly display download buttons for Max Resolution, HD, High Quality, and Standard definitions."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the highest resolution available for YouTube thumbnails?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The maximum resolution thumbnail (maxresdefault) is typically 1280x720 pixels, provided the video creator uploaded a high-definition custom thumbnail."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my video search logged or saved?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No! All URL parsing and image extraction execute 100% locally inside your web browser session using JavaScript. Your queries remain completely private."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this YouTube Thumbnail Downloader free to use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, MicroToolStack's YouTube Thumbnail Downloader is 100% free with unlimited downloads and no registration required."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Preconnect and Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -40,6 +109,126 @@
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
 
   <style>
+    .input-group {
+      margin-bottom: 1.25rem;
+    }
+    .input-label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.5rem;
+    }
+    .form-control {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
+      color: var(--text-primary, #fff);
+      outline: none;
+      box-sizing: border-box;
+    }
+    .form-control:focus {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+
+    /* Thumbnail Results Grid */
+    .thumb-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .thumb-card {
+      background: #111827;
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .thumb-img-wrapper {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #000;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .thumb-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .thumb-body {
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex-grow: 1;
+    }
+
+    .thumb-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.25rem;
+    }
+
+    .thumb-res {
+      font-size: 0.8rem;
+      color: #9ca3af;
+      margin-bottom: 1rem;
+    }
+
+    .controls-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .content-box {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .content-box h2 {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul {
+      color: var(--text-secondary, #9ca3af);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .content-box ul {
+      padding-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .content-box li {
+      margin-bottom: 0.5rem;
+    }
     .related-links {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -59,59 +248,10 @@
     .related-card:hover {
       border-color: var(--accent-primary, #3b82f6);
     }
-    .content-box {
-      background-color: var(--bg-card, #1e1e2e);
-      border: 1px solid var(--border-color, #333);
-      border-radius: var(--radius-md, 8px);
-      padding: 1.5rem;
-      margin-bottom: 2rem;
-    }
-    .content-box h2 {
-      font-size: 1.35rem;
-      margin-bottom: 1rem;
-      color: var(--text-primary, #fff);
-    }
-    .content-box p, .content-box ul, .content-box ol {
-      color: var(--text-secondary, #9ca3af);
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-    .content-box ul, .content-box ol {
-      padding-left: 1.25rem;
-      margin-bottom: 1rem;
-    }
-    .content-box li {
-      margin-bottom: 0.5rem;
-    }
   </style>
-
-  <!-- Schema.org FAQ Markup -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Is it legal to download YouTube thumbnails?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, downloading YouTube thumbnails for personal reference, design inspiration, educational purposes, or fair use commentary is legal."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is the highest resolution thumbnail I can download?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Our tool retrieves the highest quality available from YouTube servers, including Full HD (1080p) and Standard HD (720p)."
-        }
-      }
-    ]
-  }
-  </script>
 </head>
 <body style="margin: 0; padding: 0;">
+
   <!-- Header Section -->
   <header class="custom-header">
     <a href="/" class="custom-logo">
@@ -125,178 +265,192 @@
     </nav>
   </header>
 
+  <!-- Main Container -->
   <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
-    <!-- Breadcrumb Navigation -->
-    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
-      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
-      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">YouTube Tools</a> / 
-      <span>Thumbnail Downloader</span>
-    </nav>
-
+    
     <!-- Tool Title & Description -->
-    <header style="margin-bottom: 2rem; text-align: center;">
-      <h1 class="hero" style="font-size: 2rem; margin-bottom: 0.5rem; color: #fff;">YouTube Thumbnail Downloader</h1>
-      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem; max-width: 650px; margin: 0 auto;">
-        Download high-resolution HD and Full HD thumbnails from any YouTube video or Shorts link in 1-click.
-      </p>
-    </header>
-
-    <!-- Tool App Box -->
-    <section class="card" style="padding: 2rem; border-radius: 12px; background: var(--bg-card, #1e1e2e); border: 1px solid var(--border-color, #333); margin-bottom: 3rem;">
-      <div style="display: flex; flex-direction: column; gap: 1rem;">
-        <label for="url-input" style="font-weight: 600; font-size: 1rem; color: #fff;">Paste YouTube Video or Shorts URL:</label>
-        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-          <input type="text" id="url-input" placeholder="e.g., https://www.youtube.com/watch?v=dQw4w9WgXcQ" style="flex: 1; min-width: 280px; padding: 0.8rem 1rem; border-radius: 6px; border: 1px solid var(--border-color, #333); background: var(--bg-card, #12121e); color: #fff; font-size: 1rem; outline: none;">
-          <button id="get-btn" style="padding: 0.8rem 1.5rem; border-radius: 6px; border: none; background: var(--accent-primary, #3b82f6); color: #fff; font-weight: 600; cursor: pointer;">Get Thumbnails</button>
-        </div>
-      </div>
-
-      <!-- Result Display -->
-      <div id="results-wrapper" style="display: none; margin-top: 2rem;">
-        <h3 style="color: #fff; margin-bottom: 1rem; text-align: center;">Available Quality Sizes:</h3>
-        
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;">
-          <!-- HD Quality Box -->
-          <div style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 8px; border: 1px solid var(--border-color, #333); text-align: center;">
-            <p style="font-size: 0.9rem; color: #10b981; font-weight: 600; margin-bottom: 0.5rem;">Max HD Quality (1080p / 720p)</p>
-            <img id="img-max" src="" alt="Max Quality Thumbnail" style="width: 100%; height: auto; border-radius: 6px; margin-bottom: 1rem;">
-            <a id="btn-max" href="#" target="_blank" download="thumbnail-hd.jpg" style="display: inline-block; padding: 0.6rem 1.2rem; background: var(--accent-primary, #3b82f6); color: #fff; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 0.9rem;">Download Image</a>
-          </div>
-
-          <!-- Medium Quality Box -->
-          <div style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 8px; border: 1px solid var(--border-color, #333); text-align: center;">
-            <p style="font-size: 0.9rem; color: var(--text-secondary, #9ca3af); font-weight: 600; margin-bottom: 0.5rem;">Standard Quality (480p)</p>
-            <img id="img-hq" src="" alt="HQ Quality Thumbnail" style="width: 100%; height: auto; border-radius: 6px; margin-bottom: 1rem;">
-            <a id="btn-hq" href="#" target="_blank" download="thumbnail-hq.jpg" style="display: inline-block; padding: 0.6rem 1.2rem; background: rgba(255,255,255,0.1); color: #fff; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 0.9rem;">Download Image</a>
-          </div>
-        </div>
-      </div>
-
-      <div id="error-box" style="display: none; margin-top: 1rem; color: #ef4444; font-size: 0.95rem; text-align: center;"></div>
-    </section>
-
-    <!-- SEO Content Section 1 -->
-    <div class="content-box">
-      <h2>Why Download YouTube Thumbnails?</h2>
-      <p>
-        Thumbnails are the single most critical factor for increasing Click-Through Rates (CTR) on YouTube. Marketers, content creators, and graphic designers often download video cover images for competitor research, presentation mockups, blog covers, or social media promotions.
-      </p>
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online YouTube Thumbnail Downloader</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Paste any YouTube video URL to instantly grab HD, HQ, and maximum resolution thumbnail images.</p>
     </div>
 
-    <!-- SEO Content Section 2 -->
+    <!-- Input Card -->
+    <div class="content-box" style="margin-bottom: 1.5rem;">
+      <div class="input-group" style="margin-bottom: 0;">
+        <label for="url-input" class="input-label">Enter YouTube Video URL or ID</label>
+        <div style="display: flex; gap: 0.75rem;">
+          <input type="text" id="url-input" class="form-control" value="https://www.youtube.com/watch?v=dQw4w9WgXcQ" placeholder="https://www.youtube.com/watch?v=... or video ID">
+          <button id="btn-fetch" class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-weight: 600; white-space: nowrap; cursor: pointer; background: #10b981;">📥 Get Thumbnails</button>
+        </div>
+      </div>
+
+      <!-- Results Grid Container -->
+      <div id="results-container" style="display: none;">
+        <div class="thumb-grid" id="thumb-grid"></div>
+      </div>
+    </div>
+
+    <!-- Controls Bar -->
+    <div class="controls-bar">
+      <div></div>
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-reset" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px; display: none;">🗑️ Reset Input</button>
+      </div>
+    </div>
+
+    <!-- SEO Article Content Box 1 -->
     <div class="content-box">
-      <h2>Supported Resolutions & Sizes</h2>
+      <h2>Why Download YouTube Video Thumbnails?</h2>
+      <p>YouTube video thumbnails play a pivotal role in video click-through rates (CTR) and creator branding. Whether you are analyzing competitor thumbnail styles, archiving your own video artwork, or repurposing graphics for social media posts, having access to original high-resolution thumbnail files is essential.</p>
+
+      <p>Our free <strong>Online YouTube Thumbnail Downloader</strong> extracts and provides direct download links for all available resolutions—from standard quality up to 1280x720 max resolution.</p>
+    </div>
+
+    <!-- SEO Article Content Box 2 -->
+    <div class="content-box">
+      <h2>Available YouTube Thumbnail Resolutions</h2>
+      <p>Understanding thumbnail quality formats:</p>
+
       <ul>
-        <li><strong>Maximum Resolution (1920x1080 / 1280x720):</strong> Best quality available uploaded directly by the creator.</li>
-        <li><strong>High Quality (480x360):</strong> Standard clear preview for general use.</li>
-        <li><strong>Medium Quality (320x180):</strong> Optimized smaller size for web previews.</li>
+        <li><strong>Maximum Resolution (maxresdefault):</strong> 1280 x 720 pixels (HD 720p). The highest quality available if uploaded by the creator.</li>
+        <li><strong>High Quality (hqdefault):</strong> 480 x 360 pixels. Standard high-quality preview widely supported across legacy embeds.</li>
+        <li><strong>Medium Quality (mqdefault):</strong> 320 x 180 pixels. Optimized for mobile feeds and quick loading.</li>
+        <li><strong>Standard Definition (sddefault):</strong> 640 x 480 pixels.</li>
       </ul>
     </div>
 
-    <!-- SEO Content Section 3 -->
+    <!-- SEO Article Content Box 3 -->
     <div class="content-box">
-      <h2>How to Download Any Thumbnail</h2>
-      <ol>
-        <li>Copy the YouTube Video or Shorts URL from your browser address bar or share button.</li>
-        <li>Paste the link into the box above and click <strong>Get Thumbnails</strong>.</li>
-        <li>Choose your desired resolution quality and click <strong>Download Image</strong>.</li>
-      </ol>
+      <h2>Features of MicroToolStack's Thumbnail Downloader</h2>
+      <ul>
+        <li><strong>Instant URL Parsing:</strong> Extracts video IDs from standard watch URLs (`youtube.com/watch?v=...`), short links (`youtu.be/...`), and embed codes automatically.</li>
+        <li><strong>100% Client-Side Privacy:</strong> All URL extraction and image rendering execute locally inside your browser session using JavaScript. Your searches remain completely private.</li>
+        <li><strong>Free & Unlimited Usage:</strong> No download limits or registration required.</li>
+      </ul>
     </div>
 
-    <!-- Internal Linking Section (SEO Best Practice) -->
+    <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
     <div class="content-box">
-      <h2>Explore Related YouTube & Developer Tools</h2>
-      <p>Supercharge your video and web content with our free utilities:</p>
+      <h2>Explore Related YouTube & Webmaster Tools</h2>
+      <p>Discover our complementary online webmaster utilities:</p>
       <div class="related-links">
         <a href="/tools/youtube/channel-id-finder.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🆔 Channel ID Finder</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Find unique 24-character Channel IDs.</span>
+          <strong style="display:block; margin-bottom: 0.25rem;">🔍 YouTube Channel ID Finder</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Retrieve unique channel IDs (UC...) from URLs.</span>
         </a>
         <a href="/tools/youtube/embed-generator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🎬 Embed Code Generator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Create responsive 16:9 iframe embeds.</span>
+          <strong style="display:block; margin-bottom: 0.25rem;">💻 YouTube Embed Generator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Generate responsive video iframe embed codes.</span>
         </a>
-        <a href="/tools/youtube/playlist-id-finder.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">📜 Playlist ID Finder</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Extract playlist IDs from URLs.</span>
+        <a href="/tools/seo/open-graph-generator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🌐 Open Graph Tag Generator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Build Facebook and Twitter social share meta tags.</span>
         </a>
       </div>
     </div>
 
     <!-- FAQ Section -->
     <div class="content-box">
-      <h2>Frequently Asked Questions (FAQ)</h2>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="color: #fff; font-size: 1.05rem; margin-bottom: 0.3rem;">Is it legal to download YouTube thumbnails?</h3>
-        <p>Yes, downloading YouTube thumbnails for personal reference, design inspiration, educational purposes, or fair use commentary is legal.</p>
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How do I download a YouTube thumbnail?</h3>
+        <p>Paste the YouTube video URL or ID into the input box and click "Get Thumbnails". Choose your preferred resolution and click download.</p>
       </div>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="color: #fff; font-size: 1.05rem; margin-bottom: 0.3rem;">What is the highest resolution thumbnail I can download?</h3>
-        <p>Our tool retrieves the highest quality available from YouTube servers, including Full HD (1080p) and Standard HD (720p).</p>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Why is the Max Resolution thumbnail not available?</h3>
+        <p>If a video creator did not upload a custom 720p HD thumbnail, YouTube does not generate a <code>maxresdefault</code> image, falling back to 480p high quality.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is my video search query saved on remote servers?</h3>
+        <p>No. All lookups run client-side inside your browser session using JavaScript. Your searches remain 100% private.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this YouTube Thumbnail Downloader free?</h3>
+        <p>Yes, MicroToolStack's YouTube Thumbnail Downloader is 100% free with no usage limits or sign-up required.</p>
       </div>
     </div>
+
   </main>
 
-  <!-- Footer Placeholder -->
+  <!-- Footer Container Placeholder -->
   <div id="footer-container"></div>
 
-  <!-- Core Scripts -->
+  <!-- JavaScript Utilities & Logic -->
   <script src="/assets/js/theme.js"></script>
   <script src="/assets/js/utils.js" defer></script>
-  <script src="/assets/js/search.js" defer></script>
   <script src="/assets/js/app.js" defer></script>
 
-  <!-- Tool Logic Script -->
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const input = document.getElementById('url-input');
-      const getBtn = document.getElementById('get-btn');
-      const resultsWrapper = document.getElementById('results-wrapper');
-      const errorBox = document.getElementById('error-box');
+    document.addEventListener('DOMContentLoaded', function() {
+      const urlInput = document.getElementById('url-input');
+      const btnFetch = document.getElementById('btn-fetch');
+      const resultsContainer = document.getElementById('results-container');
+      const thumbGrid = document.getElementById('thumb-grid');
+      const btnReset = document.getElementById('btn-reset');
 
-      const imgMax = document.getElementById('img-max');
-      const btnMax = document.getElementById('btn-max');
-      const imgHq = document.getElementById('img-hq');
-      const btnHq = document.getElementById('btn-hq');
+      function extractVideoId(urlOrId) {
+        if (!urlOrId) return 'dQw4w9WgXcQ';
+        const clean = urlOrId.trim();
+        if (clean.length === 11 && !clean.includes('/') && !clean.includes('.')) {
+          return clean;
+        }
+        const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+        const match = clean.match(regExp);
+        return (match && match[2].length === 11) ? match[2] : 'dQw4w9WgXcQ';
+      }
 
-      getBtn.addEventListener('click', () => {
-        const url = input.value.trim();
-        resultsWrapper.style.display = 'none';
-        errorBox.style.display = 'none';
-
-        if (!url) {
-          showError('Please paste a YouTube URL.');
+      function fetchThumbnails() {
+        const val = urlInput.value.trim();
+        if (!val) {
+          alert('Please enter a valid YouTube video URL or ID.');
           return;
         }
 
-        const videoId = extractVideoID(url);
-        if (!videoId) {
-          showError('Invalid YouTube URL. Please check the link and try again.');
-          return;
-        }
+        const videoId = extractVideoId(val);
+        resultsContainer.style.display = 'block';
+        btnReset.style.display = 'block';
+        thumbGrid.innerHTML = '';
 
-        const maxUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
-        const hqUrl = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+        const thumbs = [
+          { name: 'Max Resolution (HD 720p)', res: '1280 x 720 px', url: `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg` },
+          { name: 'Standard Definition', res: '640 x 480 px', url: `https://img.youtube.com/vi/${videoId}/sddefault.jpg` },
+          { name: 'High Quality', res: '480 x 360 px', url: `https://img.youtube.com/vi/${videoId}/hqdefault.jpg` },
+          { name: 'Medium Quality', res: '320 x 180 px', url: `https://img.youtube.com/vi/${videoId}/mqdefault.jpg` }
+        ];
 
-        imgMax.src = maxUrl;
-        btnMax.href = maxUrl;
+        thumbs.forEach(t => {
+          const card = document.createElement('div');
+          card.className = 'thumb-card';
+          card.innerHTML = `
+            <div class="thumb-img-wrapper">
+              <img src="${t.url}" alt="${t.name}" onerror="this.src='https://img.youtube.com/vi/${videoId}/hqdefault.jpg'">
+            </div>
+            <div class="thumb-body">
+              <div>
+                <div class="thumb-title">${t.name}</div>
+                <div class="thumb-res">${t.res}</div>
+              </div>
+              <a href="${t.url}" target="_blank" download="youtube-thumbnail.jpg" class="btn btn-primary" style="display: block; text-align: center; padding: 0.6rem 1rem; font-size: 0.85rem; font-weight: 600; background: #3b82f6; text-decoration: none; border-radius: 6px; color: #fff;">📥 Download Image</a>
+            </div>
+          `;
+          thumbGrid.appendChild(card);
+        });
+      }
 
-        imgHq.src = hqUrl;
-        btnHq.href = hqUrl;
-
-        resultsWrapper.style.display = 'block';
+      btnFetch.addEventListener('click', fetchThumbnails);
+      urlInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') fetchThumbnails();
       });
 
-      function extractVideoID(url) {
-        const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|shorts\/|watch\?v=|\&v=)([^#\&\?]*).*/;
-        const match = url.match(regExp);
-        return (match && match[2].length === 11) ? match[2] : null;
-      }
+      btnReset.addEventListener('click', function() {
+        urlInput.value = '';
+        resultsContainer.style.display = 'none';
+        btnReset.style.display = 'none';
+        thumbGrid.innerHTML = '';
+      });
 
-      function showError(msg) {
-        errorBox.innerText = msg;
-        errorBox.style.display = 'block';
-      }
+      // Initial run
+      fetchThumbnails();
     });
   </script>
 </body>
