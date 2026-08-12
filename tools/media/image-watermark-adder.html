@@ -22,9 +22,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Primary SEO Meta Tags -->
-  <title>Free Online Image Watermark Adder (Text & Logo Overlay) | MicroToolStack</title>
-  <meta name="description" content="Free Online Image Watermark Adder. Add custom text or logo image watermarks to your photos to protect your digital content. Fast, free, and 100% private.">
-  <meta name="keywords" content="image watermark adder, add watermark to photo, photo watermark online, text watermark generator, logo overlay tool, protect photos online">
+  <title>Free Online Image Watermark Adder | Add Text & Logo Watermarks | MicroToolStack</title>
+  <meta name="description" content="Add text or logo watermarks to your images online for free. Protect photos and copyright assets with custom opacity, font sizes, colors, positioning, and instant 1-click PNG/JPG download.">
+  <meta name="keywords" content="image watermark adder, add watermark to photo, copyright watermark tool, photo watermark generator, watermark image online, add text logo to photo, media tools">
 
   <link rel="canonical" href="https://microtoolstack.com/tools/media/image-watermark-adder.html">
   <meta name="robots" content="index, follow">
@@ -32,8 +32,8 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://microtoolstack.com/tools/media/image-watermark-adder.html">
-  <meta property="og:title" content="Free Online Image Watermark Adder (Text & Logo Overlay) | MicroToolStack">
-  <meta property="og:description" content="Protect your photos and digital artwork with customizable text and logo watermarks in real-time.">
+  <meta property="og:title" content="Free Online Image Watermark Adder | MicroToolStack">
+  <meta property="og:description" content="Protect photos and copyright assets with custom text or logo watermarks. 100% free, fast, and privacy-first browser media utility.">
   <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
@@ -41,14 +41,14 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
   <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
-  <!-- JSON-LD Schema Markup -->
+  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "SoftwareApplication",
-        "name": "Image Watermark Adder",
+        "name": "Image Watermark Adder Tool",
         "operatingSystem": "All",
         "applicationCategory": "MultimediaApplication",
         "offers": {
@@ -56,7 +56,7 @@
           "price": "0",
           "priceCurrency": "USD"
         },
-        "description": "An online image utility that overlays customizable text and logo watermarks onto photos to prevent content theft.",
+        "description": "An essential client-side web utility that allows photographers and creators to add text copyright overlays or image logo watermarks onto photos with custom opacity and positioning.",
         "url": "https://microtoolstack.com/tools/media/image-watermark-adder.html"
       },
       {
@@ -64,18 +64,34 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "Why should I add a watermark to my images?",
+            "name": "Why should I add a watermark to my photos before publishing online?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Watermarking protects your copyright, prevents unauthorized image scraping, and builds brand recognition when photos are shared across social media."
+              "text": "Watermarking photos establishes brand ownership, deters unauthorized image theft or re-uploading, and promotes your website or social media handle across shared media."
             }
           },
           {
             "@type": "Question",
-            "name": "Are my uploaded photos secure?",
+            "name": "Can I add both text and image logo watermarks?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes, 100%! All image processing and watermark rendering occur locally inside your browser via HTML5 Canvas."
+              "text": "Yes! You can choose between text watermarks (with custom fonts, sizes, and colors) or upload custom PNG logo graphics to overlay on your images."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are my uploaded photos saved on remote servers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No! All image rendering and watermark overlays execute 100% locally inside your web browser session using client-side JavaScript canvas APIs. Your photos remain completely private."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this Image Watermark Adder tool free to use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, MicroToolStack's Image Watermark Adder is 100% free with unlimited photo processing and no registration required."
             }
           }
         ]
@@ -93,64 +109,114 @@
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
 
   <style>
-    .editor-layout {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-      margin-bottom: 2rem;
+    .input-group {
+      margin-bottom: 1.25rem;
     }
-    @media (max-width: 850px) {
-      .editor-layout {
-        grid-template-columns: 1fr;
-      }
-    }
-    .panel-card {
-      background: var(--bg-card, #1e1e2e);
-      border: 1px solid var(--border-color, #333);
-      border-radius: 12px;
-      padding: 1.25rem;
-    }
-    .form-group {
-      margin-bottom: 1rem;
-    }
-    .form-label {
+    .input-label {
       display: block;
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       font-weight: 600;
       color: var(--text-primary, #fff);
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.5rem;
     }
-    .form-input {
+    .form-control, .form-select {
       width: 100%;
-      padding: 0.65rem 0.85rem;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
       border: 1px solid var(--border-color, #333);
-      border-radius: 6px;
-      background-color: var(--bg-body, #0d1117);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
       color: var(--text-primary, #fff);
       outline: none;
       box-sizing: border-box;
-      font-family: inherit;
     }
-    .controls-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    .form-control:focus, .form-select:focus {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+
+    /* Mode Tabs */
+    .tab-bar {
+      display: flex;
       gap: 0.5rem;
+      margin-bottom: 1.5rem;
     }
-    .preview-wrap {
+    .tab-btn {
+      padding: 0.6rem 1.25rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      background: var(--bg-card, #1e1e2e);
+      color: var(--text-secondary, #9ca3af);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .tab-btn.active {
+      background: var(--accent-primary, #3b82f6);
+      color: #fff;
+      border-color: var(--accent-primary, #3b82f6);
+    }
+
+    /* Drag and Drop Zone */
+    .drop-zone {
+      width: 100%;
+      min-height: 160px;
+      border: 2px dashed var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
-      min-height: 320px;
+      align-items: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      padding: 1.5rem;
+      box-sizing: border-box;
+      text-align: center;
+      margin-bottom: 1.5rem;
     }
-    .canvas-preview {
-      max-width: 100%;
-      height: auto;
-      border-radius: 8px;
+    .drop-zone:hover, .drop-zone.dragover {
+      border-color: var(--accent-primary, #3b82f6);
+      background-color: rgba(59, 130, 246, 0.05);
+    }
+
+    /* Watermark Stage Workspace */
+    .watermark-stage {
+      width: 100%;
+      min-height: 280px;
+      background: #111827;
       border: 1px solid var(--border-color, #333);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+      border-radius: var(--radius-md, 8px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+      box-sizing: border-box;
+      margin-bottom: 1.5rem;
+      position: relative;
+      overflow: hidden;
     }
-    .editor-controls {
+
+    #watermark-canvas {
+      max-width: 100%;
+      max-height: 420px;
+      border-radius: 4px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .meta-badge {
+      display: inline-block;
+      font-size: 0.85rem;
+      color: var(--text-secondary, #9ca3af);
+      background: rgba(255, 255, 255, 0.05);
+      padding: 0.3rem 0.75rem;
+      border-radius: 6px;
+      border: 1px solid var(--border-color, #333);
+      margin-top: 0.75rem;
+    }
+
+    .controls-bar {
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
@@ -158,11 +224,7 @@
       align-items: center;
       margin-bottom: 2.5rem;
     }
-    .btn-group {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-    }
+
     .content-box {
       background-color: var(--bg-card, #1e1e2e);
       border: 1px solid var(--border-color, #333);
@@ -173,6 +235,12 @@
     .content-box h2 {
       font-size: 1.35rem;
       margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
       color: var(--text-primary, #fff);
     }
     .content-box p, .content-box ul {
@@ -224,133 +292,160 @@
   </header>
 
   <!-- Main Container -->
-  <main class="container" style="max-width: 1000px; margin: 2rem auto; padding: 0 1rem;">
-    <!-- Breadcrumb Navigation -->
-    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
-      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
-      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Media Tools</a> / 
-      <span>Image Watermark Adder</span>
-    </nav>
+  <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
     
     <!-- Tool Title & Description -->
     <div style="text-align: center; margin-bottom: 2rem;">
-      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Image Watermark Adder</h1>
-      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Protect your photos with customizable text or logo overlay watermarks in real-time.</p>
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online Image Watermark Adder</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Overlay text copyright tags or logo graphics onto photos to protect visual assets online.</p>
     </div>
 
-    <!-- Main Workspace -->
-    <div class="editor-layout">
-      <!-- Left Controls Panel -->
-      <div class="panel-card">
-        <h3 style="margin-bottom: 1rem; color: var(--text-primary, #fff); font-size: 1.1rem;">Watermark Controls</h3>
+    <!-- Drag and Drop Base Photo Zone -->
+    <div class="drop-zone" id="drop-zone">
+      <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📸</div>
+      <div style="font-size: 1.05rem; font-weight: 600; color: #fff; margin-bottom: 0.25rem;">Drag & Drop Main Photo Here</div>
+      <div style="font-size: 0.85rem; color: #9ca3af;">or click to browse from device (JPG, PNG, WEBP)</div>
+      <input type="file" id="file-input" accept="image/*" style="display: none;">
+    </div>
 
-        <!-- Main Image Input -->
-        <div class="form-group">
-          <label class="form-label">Upload Base Image:</label>
-          <input type="file" id="input-main-img" class="form-input" accept="image/*">
+    <!-- Mode Selector Tabs -->
+    <div class="tab-bar">
+      <button class="tab-btn active" id="tab-text">🔤 Text Watermark</button>
+      <button class="tab-btn" id="tab-logo">🖼️ Logo Graphic Watermark</button>
+    </div>
+
+    <!-- Mode 1: Text Options -->
+    <div id="mode-text-box" class="content-box" style="margin-bottom: 1.5rem;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem;" class="input-group">
+        <div style="grid-column: span 2;">
+          <label for="wm-text-input" class="input-label">Watermark Text String</label>
+          <input type="text" id="wm-text-input" class="form-control" value="© MicroToolStack Watermark">
         </div>
+        <div>
+          <label for="wm-text-color" class="input-label">Text Color</label>
+          <input type="color" id="wm-text-color" class="form-control" value="#ffffff" style="height: 42px; padding: 0.2rem;">
+        </div>
+        <div>
+          <label for="wm-text-size" class="input-label">Font Size (px)</label>
+          <input type="number" id="wm-text-size" class="form-control" value="36" min="10" max="200">
+        </div>
+      </div>
+    </div>
 
-        <!-- Watermark Type Selector -->
-        <div class="form-group">
-          <label class="form-label">Watermark Type:</label>
-          <select id="sel-type" class="form-input">
-            <option value="text" selected>Custom Text Watermark</option>
-            <option value="logo">Logo Image Overlay</option>
+    <!-- Mode 2: Logo Options -->
+    <div id="mode-logo-box" class="content-box" style="display: none; margin-bottom: 1.5rem;">
+      <label class="input-label">Upload Watermark Logo (PNG Recommended)</label>
+      <input type="file" id="logo-file-input" accept="image/*" class="form-control">
+    </div>
+
+    <!-- Common Settings: Position & Opacity -->
+    <div class="content-box" style="margin-bottom: 1.5rem;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem;" class="input-group">
+        <div>
+          <label for="wm-position" class="input-label">Watermark Position</label>
+          <select id="wm-position" class="form-select">
+            <option value="bottom-right" selected>Bottom Right</option>
+            <option value="bottom-left">Bottom Left</option>
+            <option value="top-right">Top Right</option>
+            <option value="top-left">Top Left</option>
+            <option value="center">Center Overlay</option>
           </select>
         </div>
-
-        <!-- Text Watermark Controls -->
-        <div id="group-text-controls">
-          <div class="form-group">
-            <label class="form-label">Watermark Text:</label>
-            <input type="text" id="in-wm-text" class="form-input" value="© Confidential - Do Not Copy">
-          </div>
-          <div class="controls-grid">
-            <div class="form-group">
-              <label class="form-label">Color:</label>
-              <input type="color" id="in-wm-color" class="form-input" style="height: 38px; padding: 2px;" value="#ffffff">
-            </div>
-            <div class="form-group">
-              <label class="form-label">Size (px):</label>
-              <input type="number" id="in-wm-size" class="form-input" value="36" min="10" max="150">
-            </div>
-          </div>
+        <div>
+          <label for="wm-opacity" class="input-label">Opacity Transparency (<span id="opacity-val">70</span>%)</label>
+          <input type="range" id="wm-opacity" min="10" max="100" value="70" style="width: 100%; accent-color: #3b82f6;">
         </div>
-
-        <!-- Logo Image Watermark Controls -->
-        <div id="group-logo-controls" style="display: none;">
-          <div class="form-group">
-            <label class="form-label">Upload Logo File:</label>
-            <input type="file" id="input-logo-img" class="form-input" accept="image/*">
-          </div>
-        </div>
-
-        <!-- Universal Position & Opacity -->
-        <div class="controls-grid" style="margin-top: 0.5rem;">
-          <div class="form-group">
-            <label class="form-label">Position:</label>
-            <select id="sel-pos" class="form-input">
-              <option value="center">Center</option>
-              <option value="bottom-right" selected>Bottom Right</option>
-              <option value="bottom-left">Bottom Left</option>
-              <option value="top-right">Top Right</option>
-              <option value="top-left">Top Left</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Opacity (%):</label>
-            <input type="number" id="in-wm-opacity" class="form-input" value="70" min="10" max="100">
-          </div>
-        </div>
-      </div>
-
-      <!-- Right Preview Panel -->
-      <div class="panel-card preview-wrap">
-        <canvas id="preview-canvas" class="canvas-preview" width="600" height="400"></canvas>
       </div>
     </div>
 
-    <!-- Action Buttons -->
-    <div class="editor-controls">
-      <div class="btn-group">
-        <button id="btn-download" class="btn btn-primary" style="padding: 0.75rem 1.6rem; cursor: pointer; background: #10b981; border: none; font-size: 1rem;" disabled>📸 Download Watermarked Photo</button>
+    <!-- Watermark Workspace Stage -->
+    <div class="watermark-stage">
+      <canvas id="watermark-canvas"></canvas>
+      <div id="status-msg" style="color: #94a3b8; font-size: 0.95rem;">
+        📂 Upload a main photo to start watermarking...
+      </div>
+      <div id="img-meta" class="meta-badge" style="display: none;">Dimensions: 0 x 0 px</div>
+    </div>
+
+    <!-- Controls Bar -->
+    <div class="controls-bar">
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-download" class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-weight: 600; cursor: pointer; background: #10b981;">💾 Download Watermarked Photo</button>
+      </div>
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear</button>
       </div>
     </div>
 
     <!-- SEO Article Content Box 1 -->
     <div class="content-box">
-      <h2>Why Watermarking Digital Images is Essential</h2>
-      <p>Photographers, digital artists, and online store owners risk having their visual content scraped or stolen without attribution. Applying a <strong>semi-transparent text or logo watermark</strong> ensures your brand identity remains linked to your media assets wherever they are published.</p>
+      <h2>Why Watermarking Photos Protects Digital Creative Assets</h2>
+      <p>In the age of viral social media sharing, content scraping, and online digital publishing, original visual assets can be copied and republished without credit or permission. Adding a subtle <strong>Watermark Overlay</strong> serves as a visible signature establishing brand ownership and copyright protection.</p>
+
+      <p>Whether you are a professional photographer showcasing portfolio shots, an e-commerce seller protecting product images, or a content creator branding social graphics, our free <strong>Online Image Watermark Adder</strong> overlays text strings or custom logo graphics onto your photos seamlessly.</p>
     </div>
 
     <!-- SEO Article Content Box 2 -->
     <div class="content-box">
-      <h2>Effective Watermarking Tips</h2>
+      <h2>Best Practices for Effective Watermarking</h2>
+      <p>To balance copyright deterrence against visual aesthetic quality, consider these tips:</p>
+
       <ul>
-        <li><strong>Balanced Opacity:</strong> Set transparency between 50% and 70% so the watermark is clearly visible without obscuring main photo details.</li>
-        <li><strong>Strategic Positioning:</strong> Placing watermarks in corners or near subject centers prevents quick cropping theft.</li>
-        <li><strong>High Contrast Color:</strong> Use white or black text depending on your image background tones.</li>
+        <li><strong>Subtle Transparency Opacity:</strong> Use a 50% to 70% opacity setting to ensure the watermark remains clearly readable without distracting from the main photo subject.</li>
+        <li><strong>Strategic Positioning:</strong> Position watermarks in corners or near complex photo areas to prevent effortless automated removal.</li>
+        <li><strong>High-Contrast Colors:</strong> Select white or dark grey text colors depending on whether your photo background is light or dark.</li>
       </ul>
     </div>
 
-    <!-- Internal Linking Section -->
+    <!-- SEO Article Content Box 3 -->
     <div class="content-box">
-      <h2>Explore Related Media Utilities</h2>
-      <p>Enhance your visual assets with our tools:</p>
+      <h2>Features of MicroToolStack's Watermark Tool</h2>
+      <ul>
+        <li><strong>Text & Logo Graphic Overlays:</strong> Add custom copyright text strings or upload PNG brand logos.</li>
+        <li><strong>Flexible Positioning & Transparency:</strong> Choose bottom-right, bottom-left, top, or center alignment with customizable opacity sliders.</li>
+        <li><strong>100% Client-Side Privacy:</strong> All canvas rendering and watermark merging execute locally in your web browser using JavaScript. No photos are stored or uploaded remotely.</li>
+        <li><strong>Free & Unlimited Usage:</strong> No file size limits or account sign-ups required.</li>
+      </ul>
+    </div>
+
+    <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
+    <div class="content-box">
+      <h2>Explore Related Media Tools</h2>
+      <p>Discover our complementary online media utilities:</p>
       <div class="related-links">
-        <a href="/tools/media/webp-converter.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🖼️ WEBP Converter</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Convert and resize images to WEBP.</span>
+        <a href="/tools/media/image-cropper.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">✂️ Interactive Image Cropper</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Crop, rotate, and scale photos into exact aspect ratios.</span>
+        </a>
+        <a href="/tools/media/image-flipper.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">↔️ Image Flipper & Mirror</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Flip photos horizontally (mirror) or vertically.</span>
+        </a>
+        <a href="/tools/media/aspect-ratio-calculator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📐 Aspect Ratio Calculator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Calculate image and video scaling dimensions.</span>
         </a>
       </div>
     </div>
 
     <!-- FAQ Section -->
     <div class="content-box">
-      <h2>Frequently Asked Questions</h2>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Does watermarking lower my image quality?</h3>
-        <p>No. Watermarks are rendered natively onto your original canvas resolution before export.</p>
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How do I add a watermark to an image online?</h3>
+        <p>Drag and drop your photo into the drop zone, choose between text or logo mode, adjust opacity and position, and click "Download Watermarked Photo".</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Can I upload a transparent PNG logo as a watermark?</h3>
+        <p>Yes! Uploading a transparent PNG logo graphic provides clean, professional branding overlays over your main photo.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Are my uploaded photos saved on remote servers?</h3>
+        <p>No. All calculations run client-side inside your browser session using JavaScript. Your photos remain completely private.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this Image Watermark Adder free?</h3>
+        <p>Yes, MicroToolStack's Image Watermark Adder is 100% free with no usage limits or sign-up required.</p>
       </div>
     </div>
 
@@ -366,168 +461,229 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const canvas = document.getElementById('preview-canvas');
-      const ctx = canvas.getContext('2d');
+      const dropZone = document.getElementById('drop-zone');
+      const fileInput = document.getElementById('file-input');
+      const watermarkCanvas = document.getElementById('watermark-canvas');
+      const statusMsg = document.getElementById('status-msg');
+      const imgMeta = document.getElementById('img-meta');
 
-      const inputMainImg = document.getElementById('input-main-img');
-      const inputLogoImg = document.getElementById('input-logo-img');
+      const tabText = document.getElementById('tab-text');
+      const tabLogo = document.getElementById('tab-logo');
+      const modeTextBox = document.getElementById('mode-text-box');
+      const modeLogoBox = document.getElementById('mode-logo-box');
 
-      const selType = document.getElementById('sel-type');
-      const groupTextControls = document.getElementById('group-text-controls');
-      const groupLogoControls = document.getElementById('group-logo-controls');
+      const wmTextInput = document.getElementById('wm-text-input');
+      const wmTextColor = document.getElementById('wm-text-color');
+      const wmTextSize = document.getElementById('wm-text-size');
+      const logoFileInput = document.getElementById('logo-file-input');
 
-      const inWmText = document.getElementById('in-wm-text');
-      const inWmColor = document.getElementById('in-wm-color');
-      const inWmSize = document.getElementById('in-wm-size');
-
-      const selPos = document.getElementById('sel-pos');
-      const inWmOpacity = document.getElementById('in-wm-opacity');
+      const wmPosition = document.getElementById('wm-position');
+      const wmOpacity = document.getElementById('wm-opacity');
+      const opacityVal = document.getElementById('opacity-val');
 
       const btnDownload = document.getElementById('btn-download');
+      const btnClear = document.getElementById('btn-clear');
 
-      let mainImage = null;
-      let logoImage = null;
+      let mainImageObj = null;
+      let logoImageObj = null;
+      let currentMode = 'text';
 
-      // Type Switching
-      selType.addEventListener('change', () => {
-        if (selType.value === 'text') {
-          groupTextControls.style.display = 'block';
-          groupLogoControls.style.display = 'none';
-        } else {
-          groupTextControls.style.display = 'none';
-          groupLogoControls.style.display = 'block';
-        }
-        renderWatermark();
+      // Mode Switch
+      tabText.addEventListener('click', () => {
+        tabText.classList.add('active');
+        tabLogo.classList.remove('active');
+        modeTextBox.style.display = 'block';
+        modeLogoBox.style.display = 'none';
+        currentMode = 'text';
+        renderCanvas();
       });
 
-      // Load Main Image
-      inputMainImg.addEventListener('change', (e) => {
+      tabLogo.addEventListener('click', () => {
+        tabLogo.classList.add('active');
+        tabText.classList.remove('active');
+        modeTextBox.style.display = 'none';
+        modeLogoBox.style.display = 'block';
+        currentMode = 'logo';
+        renderCanvas();
+      });
+
+      // Main File Input
+      dropZone.addEventListener('click', () => fileInput.click());
+
+      dropZone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropZone.classList.add('dragover');
+      });
+
+      dropZone.addEventListener('dragleave', () => dropZone.classList.remove('dragover'));
+
+      dropZone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropZone.classList.remove('dragover');
+        if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+          handleMainFile(e.dataTransfer.files[0]);
+        }
+      });
+
+      fileInput.addEventListener('change', (e) => {
         if (e.target.files && e.target.files[0]) {
-          const reader = new FileReader();
-          reader.onload = (evt) => {
-            const img = new Image();
-            img.onload = () => {
-              mainImage = img;
-              canvas.width = img.width;
-              canvas.height = img.height;
-              btnDownload.disabled = false;
-              renderWatermark();
-            };
-            img.src = evt.target.result;
-          };
-          reader.readAsDataURL(e.target.files[0]);
+          handleMainFile(e.target.files[0]);
         }
       });
 
-      // Load Logo Image
-      inputLogoImg.addEventListener('change', (e) => {
-        if (e.target.files && e.target.files[0]) {
-          const reader = new FileReader();
-          reader.onload = (evt) => {
-            const img = new Image();
-            img.onload = () => {
-              logoImage = img;
-              renderWatermark();
-            };
-            img.src = evt.target.result;
-          };
-          reader.readAsDataURL(e.target.files[0]);
-        }
-      });
-
-      function renderWatermark() {
-        if (!mainImage) {
-          ctx.fillStyle = '#0d1117';
-          ctx.fillRect(0, 0, canvas.width, canvas.height);
-          ctx.fillStyle = '#9ca3af';
-          ctx.font = '20px system-ui';
-          ctx.textAlign = 'center';
-          ctx.fillText('Upload an image to preview watermark', canvas.width / 2, canvas.height / 2);
+      function handleMainFile(file) {
+        if (!file.type.startsWith('image/')) {
+          alert('Please upload a valid image file.');
           return;
         }
 
+        const reader = new FileReader();
+        reader.onload = function(evt) {
+          const img = new Image();
+          img.onload = function() {
+            mainImageObj = img;
+            renderCanvas();
+            statusMsg.style.display = 'none';
+          };
+          img.src = evt.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+
+      // Logo File Input
+      logoFileInput.addEventListener('change', function(e) {
+        if (e.target.files && e.target.files[0]) {
+          const reader = new FileReader();
+          reader.onload = function(evt) {
+            const img = new Image();
+            img.onload = function() {
+              logoImageObj = img;
+              renderCanvas();
+            };
+            img.src = evt.target.result;
+          };
+          reader.readAsDataURL(e.target.files[0]);
+        }
+      });
+
+      // Live Updates
+      [wmTextInput, wmTextColor, wmTextSize, wmPosition, wmOpacity].forEach(el => {
+        el.addEventListener('input', () => {
+          opacityVal.textContent = wmOpacity.value;
+          renderCanvas();
+        });
+      });
+
+      function renderCanvas() {
+        if (!mainImageObj) return;
+
+        const ctx = watermarkCanvas.getContext('2d');
+        const w = mainImageObj.naturalWidth;
+        const h = mainImageObj.naturalHeight;
+
+        watermarkCanvas.width = w;
+        watermarkCanvas.height = h;
+
+        ctx.clearRect(0, 0, w, h);
+
         // Draw Base Image
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.drawImage(mainImage, 0, 0);
+        ctx.drawImage(mainImageObj, 0, 0, w, h);
 
-        const opacityVal = (parseInt(inWmOpacity.value) || 70) / 100;
-        ctx.globalAlpha = opacityVal;
+        // Global Alpha Opacity
+        const alpha = parseFloat(wmOpacity.value) / 100;
+        ctx.globalAlpha = alpha;
 
-        const pos = selPos.value;
-        const padding = 30;
+        const pos = wmPosition.value;
+        const margin = Math.round(w * 0.03);
 
-        if (selType.value === 'text') {
-          const fontSize = parseInt(inWmSize.value) || 36;
-          const text = inWmText.value || "";
+        if (currentMode === 'text') {
+          const txt = wmTextInput.value.trim() || '© Watermark';
+          const fontSize = parseInt(wmTextSize.value, 10) || 36;
 
-          ctx.font = `bold ${fontSize}px system-ui, -apple-system, sans-serif`;
-          ctx.fillStyle = inWmColor.value;
+          ctx.font = `bold ${fontSize}px sans-serif`;
+          ctx.fillStyle = wmTextColor.value;
 
-          let x = canvas.width / 2;
-          let y = canvas.height / 2;
+          let textX = margin;
+          let textY = margin + fontSize;
 
-          if (pos === 'bottom-right') {
-            ctx.textAlign = 'right';
-            x = canvas.width - padding;
-            y = canvas.height - padding;
-          } else if (pos === 'bottom-left') {
-            ctx.textAlign = 'left';
-            x = padding;
-            y = canvas.height - padding;
-          } else if (pos === 'top-right') {
-            ctx.textAlign = 'right';
-            x = canvas.width - padding;
-            y = padding + fontSize;
-          } else if (pos === 'top-left') {
-            ctx.textAlign = 'left';
-            x = padding;
-            y = padding + fontSize;
-          } else {
-            ctx.textAlign = 'center';
-          }
-
-          ctx.fillText(text, x, y);
-
-        } else if (selType.value === 'logo' && logoImage) {
-          const logoW = canvas.width * 0.25; // 25% of image width
-          const logoH = (logoImage.height / logoImage.width) * logoW;
-
-          let x = (canvas.width - logoW) / 2;
-          let y = (canvas.height - logoH) / 2;
+          const textWidth = ctx.measureText(txt).width;
 
           if (pos === 'bottom-right') {
-            x = canvas.width - logoW - padding;
-            y = canvas.height - logoH - padding;
+            textX = w - textWidth - margin;
+            textY = h - margin;
           } else if (pos === 'bottom-left') {
-            x = padding;
-            y = canvas.height - logoH - padding;
+            textX = margin;
+            textY = h - margin;
           } else if (pos === 'top-right') {
-            x = canvas.width - logoW - padding;
-            y = padding;
+            textX = w - textWidth - margin;
+            textY = margin + fontSize;
           } else if (pos === 'top-left') {
-            x = padding;
-            y = padding;
+            textX = margin;
+            textY = margin + fontSize;
+          } else if (pos === 'center') {
+            textX = (w - textWidth) / 2;
+            textY = (h + fontSize) / 2;
           }
 
-          ctx.drawImage(logoImage, x, y, logoW, logoH);
+          ctx.fillText(txt, textX, textY);
+        } else if (currentMode === 'logo' && logoImageObj) {
+          const logoW = Math.round(w * 0.25);
+          const logoH = Math.round((logoImageObj.naturalHeight / logoImageObj.naturalWidth) * logoW);
+
+          let logoX = margin;
+          let logoY = margin;
+
+          if (pos === 'bottom-right') {
+            logoX = w - logoW - margin;
+            logoY = h - logoH - margin;
+          } else if (pos === 'bottom-left') {
+            logoX = margin;
+            logoY = h - logoH - margin;
+          } else if (pos === 'top-right') {
+            logoX = w - logoW - margin;
+            logoY = margin;
+          } else if (pos === 'top-left') {
+            logoX = margin;
+            logoY = margin;
+          } else if (pos === 'center') {
+            logoX = (w - logoW) / 2;
+            logoY = (h - logoH) / 2;
+          }
+
+          ctx.drawImage(logoImageObj, logoX, logoY, logoW, logoH);
         }
 
         ctx.globalAlpha = 1.0;
+
+        imgMeta.textContent = `Dimensions: ${w} x ${h} px`;
+        imgMeta.style.display = 'inline-block';
       }
 
-      [inWmText, inWmColor, inWmSize, selPos, inWmOpacity].forEach(el => {
-        el.addEventListener('input', renderWatermark);
-      });
+      btnDownload.addEventListener('click', function() {
+        if (!mainImageObj) {
+          alert('Please upload a photo first.');
+          return;
+        }
 
-      btnDownload.addEventListener('click', () => {
-        if (!mainImage) return;
+        const dataUrl = watermarkCanvas.toDataURL('image/png');
         const link = document.createElement('a');
-        link.download = 'watermarked-image.png';
-        link.href = canvas.toDataURL('image/png');
+        link.href = dataUrl;
+        link.download = 'watermarked-photo.png';
+        document.body.appendChild(link);
         link.click();
+        document.body.removeChild(link);
       });
 
-      renderWatermark();
+      btnClear.addEventListener('click', function() {
+        mainImageObj = null;
+        logoImageObj = null;
+        fileInput.value = '';
+        logoFileInput.value = '';
+        const ctx = watermarkCanvas.getContext('2d');
+        ctx.clearRect(0, 0, watermarkCanvas.width, watermarkCanvas.height);
+        statusMsg.style.display = 'block';
+        imgMeta.style.display = 'none';
+      });
     });
   </script>
 </body>
