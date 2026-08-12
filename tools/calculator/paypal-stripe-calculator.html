@@ -9,6 +9,7 @@
         gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
         gTagScript.async = true;
         document.head.appendChild(gTagScript);
+
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
@@ -21,9 +22,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Primary SEO Meta Tags -->
-  <title>Free PayPal & Stripe Fee Calculator | MicroToolStack</title>
-  <meta name="description" content="Calculate exact PayPal and Stripe merchant fees online. Know how much to invoice or receive after processing deductions instantly.">
-  <meta name="keywords" content="paypal fee calculator, stripe fee calculator, merchant processing fee, credit card fee calculator, paypal invoice calculator, stripe deduction calculator">
+  <title>Free PayPal & Stripe Fee Calculator | Calculate Merchant Transaction Fees | MicroToolStack</title>
+  <meta name="description" content="Calculate PayPal and Stripe transaction fees instantly. Find out how much you will receive after fees or how much to invoice clients to get paid your exact amount. Free merchant fee calculator.">
+  <meta name="keywords" content="paypal fee calculator, stripe fee calculator, payment gateway fee calculator, merchant fee calculator, calculate paypal fees, stripe transaction fee tool, invoice fee calculator">
 
   <link rel="canonical" href="https://microtoolstack.com/tools/calculator/paypal-stripe-calculator.html">
   <meta name="robots" content="index, follow">
@@ -32,7 +33,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://microtoolstack.com/tools/calculator/paypal-stripe-calculator.html">
   <meta property="og:title" content="Free PayPal & Stripe Fee Calculator | MicroToolStack">
-  <meta property="og:description" content="Calculate exact PayPal and Stripe merchant fees online. Know how much to invoice or receive after processing deductions instantly.">
+  <meta property="og:description" content="Calculate exact PayPal and Stripe transaction fees and net payout amounts instantly. 100% free merchant calculator.">
   <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
@@ -40,38 +41,63 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
   <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
-  <!-- Schema -->
+  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
   <script type="application/ld+json">
-  [
-    {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "PayPal & Stripe Fee Calculator",
-      "url": "https://microtoolstack.com/tools/calculator/paypal-stripe-calculator.html",
-      "applicationCategory": "FinanceApplication",
-      "operatingSystem": "All",
-      "browserRequirements": "Requires JavaScript",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      }
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What are standard PayPal and Stripe fee rates?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Standard Stripe fees are typically 2.9% + $0.30 per transaction, while PayPal commercial rates range from 2.99% to 4.49% + fixed fee depending on domestic vs. international transactions."
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "PayPal & Stripe Fee Calculator",
+        "operatingSystem": "All",
+        "applicationCategory": "FinancialApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "An essential payment processing calculator that computes exact transaction fees, net payouts, and required invoice amounts for PayPal and Stripe merchants.",
+        "url": "https://microtoolstack.com/tools/calculator/paypal-stripe-calculator.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What are standard PayPal merchant transaction fees?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Standard US domestic PayPal commercial transactions typically charge 2.99% + $0.49 per transaction, while international transactions incur additional cross-border processing surcharges (typically +1.5%)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are standard Stripe payment processing fees?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Stripe standard credit card processing rates for domestic transactions are 2.9% + $0.30 per successful card charge, with an additional +1.5% fee for international credit cards."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I calculate how much to invoice to receive an exact amount?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "To receive an exact net target amount, use the gross-up formula: Invoice Amount = (Desired Net Amount + Fixed Fee) / (1 - Percentage Rate). Our tool calculates this automatically."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my transaction or payment data saved?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. All calculation scripts run locally in your web browser using JavaScript. No financial inputs, client invoices, or transaction amounts are saved or logged."
+            }
           }
-        }
-      ]
-    }
-  ]
+        ]
+      }
+    ]
+  }
   </script>
 
   <!-- Preconnect and Fonts -->
@@ -83,57 +109,53 @@
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
 
   <style>
-    .app-card {
-      background-color: var(--bg-card, #1e1e2e);
-      border: 1px solid var(--border-color, #333);
-      border-radius: 12px;
-      padding: 2rem;
-      margin-bottom: 2.5rem;
-    }
-    .grid-2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-    }
-    @media (max-width: 768px) {
-      .grid-2 { grid-template-columns: 1fr; }
-    }
-    .form-group {
+    .input-group {
       margin-bottom: 1.25rem;
     }
-    .form-group label {
+    .input-label {
       display: block;
-      margin-bottom: 0.5rem;
       font-size: 0.9rem;
       font-weight: 600;
-      color: #e5e7eb;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.5rem;
     }
-    .form-control {
+    .form-control, .form-select {
       width: 100%;
-      padding: 0.75rem;
-      border-radius: 8px;
-      background: var(--bg-body, #111827);
-      border: 1px solid var(--border-color, #374151);
-      color: #fff;
-      font-size: 0.95rem;
-      box-sizing: border-box;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
+      color: var(--text-primary, #fff);
       outline: none;
+      box-sizing: border-box;
     }
-    .result-box {
-      background: rgba(0,0,0,0.25);
-      border: 1px solid var(--border-color, #374151);
-      border-radius: 10px;
-      padding: 1.5rem;
+    .form-control:focus, .form-select:focus {
+      border-color: var(--accent-primary, #3b82f6);
     }
-    .stat-row {
-      display: flex;
-      justify-content: space-between;
-      padding: 0.75rem 0;
-      border-bottom: 1px solid var(--border-color, #374151);
-      font-size: 0.95rem;
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
     }
-    .stat-row:last-child {
-      border-bottom: none;
+    .stat-card {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.25rem;
+      text-align: center;
+    }
+    .stat-number {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--accent-primary, #3b82f6);
+      margin-bottom: 0.25rem;
+    }
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--text-secondary, #9ca3af);
+      font-weight: 500;
     }
     .content-box {
       background-color: var(--bg-card, #1e1e2e);
@@ -145,6 +167,12 @@
     .content-box h2 {
       font-size: 1.35rem;
       margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
       color: var(--text-primary, #fff);
     }
     .content-box p, .content-box ul {
@@ -195,120 +223,141 @@
     </nav>
   </header>
 
-  <!-- Main Content -->
-  <main class="container" style="max-width: 950px; margin: 2rem auto; padding: 0 1rem;">
-    <!-- Breadcrumb Navigation -->
-    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
-      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
-      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Calculators</a> / 
-      <span>PayPal & Stripe Fee Calculator</span>
-    </nav>
+  <!-- Main Container -->
+  <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
     
-    <!-- Title Section -->
+    <!-- Tool Title & Description -->
     <div style="text-align: center; margin-bottom: 2rem;">
-      <span class="badge badge-primary" style="margin-bottom: 0.5rem; display: inline-block;">100% Instant Financial Calculator</span>
-      <h1 style="font-size: 2rem; color: #fff; margin-bottom: 0.5rem;">PayPal & Stripe Fee Calculator</h1>
-      <p style="color: var(--text-secondary, #9ca3af);">Calculate exact processing deductions and know how much to bill clients to receive your desired net amount.</p>
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">PayPal & Stripe Fee Calculator</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Calculate exact payment gateway fees, net payouts, and required invoice amounts instantly.</p>
     </div>
 
-    <!-- App Card -->
-    <div class="app-card">
-      <div class="grid-2">
-        
-        <!-- Controls Left -->
+    <!-- Calculator Input Card -->
+    <div class="content-box" style="margin-bottom: 2rem;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;" class="input-group">
         <div>
-          <div class="form-group">
-            <label>Payment Gateway Platform</label>
-            <select id="gateway" class="form-control">
-              <option value="stripe_us">Stripe US Domestic (2.9% + $0.30)</option>
-              <option value="stripe_intl">Stripe International (3.9% + $0.30)</option>
-              <option value="paypal_us">PayPal US Goods & Services (2.99% + $0.49)</option>
-              <option value="paypal_intl">PayPal International (4.49% + $0.49)</option>
-            </select>
-          </div>
+          <label for="gateway-select" class="input-label">Payment Gateway</label>
+          <select id="gateway-select" class="form-select">
+            <option value="paypal-dom">PayPal (Domestic US: 2.99% + $0.49)</option>
+            <option value="paypal-intl">PayPal (International: 4.49% + $0.49)</option>
+            <option value="stripe-dom">Stripe (Domestic US: 2.90% + $0.30)</option>
+            <option value="stripe-intl">Stripe (International: 4.40% + $0.30)</option>
+            <option value="custom">Custom Rates (% + Fixed Fee)</option>
+          </select>
+        </div>
+        <div>
+          <label for="amount-input" class="input-label">Transaction Amount ($)</label>
+          <input type="number" id="amount-input" class="form-control" placeholder="e.g., 500" step="0.01" min="0">
+        </div>
+      </div>
 
-          <div class="form-group">
-            <label>Transaction Amount ($)</label>
-            <input type="number" id="amount" class="form-control" value="100" min="1" step="any">
+      <!-- Custom Rate Settings (Hidden by Default) -->
+      <div id="custom-rate-wrapper" style="display: none;" class="input-group">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem;">
+          <div>
+            <label for="custom-percent" class="input-label">Custom Fee Percentage (%)</label>
+            <input type="number" id="custom-percent" class="form-control" value="2.9" step="0.01">
+          </div>
+          <div>
+            <label for="custom-fixed" class="input-label">Custom Fixed Fee ($)</label>
+            <input type="number" id="custom-fixed" class="form-control" value="0.30" step="0.01">
           </div>
         </div>
+      </div>
 
-        <!-- Calculation Display Right -->
-        <div class="result-box">
-          <h3 style="margin: 0 0 1rem 0; color: #fff; font-size: 1.1rem; border-bottom: 1px solid var(--border-color, #374151); padding-bottom: 0.5rem;">📊 Breakdown Summary</h3>
+      <button id="btn-calc-gateway" class="btn btn-primary" style="width: 100%; padding: 0.85rem; font-size: 1rem; font-weight: 600; cursor: pointer;">💳 Calculate Payment Fees</button>
 
-          <div class="stat-row">
-            <span style="color: var(--text-secondary, #9ca3af);">Total Processed:</span>
-            <strong id="res-amount" style="color: #fff;">$100.00</strong>
+      <!-- Results Grid -->
+      <div id="results-wrapper" style="display: none;">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number" id="res-net-received" style="color: #10b981;">$0.00</div>
+            <div class="stat-label">If You Invoice $X, You Take Home</div>
           </div>
-
-          <div class="stat-row">
-            <span style="color: #ef4444;">Deducted Processing Fee:</span>
-            <strong id="res-fee" style="color: #ef4444;">-$3.20</strong>
+          <div class="stat-card">
+            <div class="stat-number" id="res-fee-deducted" style="color: #ef4444;">$0.00</div>
+            <div class="stat-label">Gateway Processing Fee</div>
           </div>
-
-          <div class="stat-row">
-            <span style="color: #4ade80;">Net Amount Received:</span>
-            <strong id="res-takehome" style="color: #4ade80; font-size: 1.1rem;">$96.80</strong>
+          <div class="stat-card">
+            <div class="stat-number" id="res-invoice-needed" style="color: #3b82f6;">$0.00</div>
+            <div class="stat-label">To Take Home $X, Invoice Client</div>
           </div>
-
-          <hr style="border-color: var(--border-color, #374151); margin: 1rem 0;">
-
-          <p style="margin: 0 0 0.25rem 0; font-size: 0.85rem; color: var(--accent-primary, #3b82f6); font-weight: 600;">💡 How much should you invoice?</p>
-          <p style="margin: 0; font-size: 0.85rem; color: var(--text-secondary, #d1d5db);">
-            To receive exactly <strong id="ask-exact">$100.00</strong> net, you must charge your client <strong id="res-invoice" style="color: #f59e0b; font-size: 1.05rem;">$103.30</strong>.
-          </p>
         </div>
-
       </div>
     </div>
 
     <!-- SEO Article Content Box 1 -->
     <div class="content-box">
-      <h2>Understanding Merchant Payment Processing Fees</h2>
-      <p>When accepting payments online through Stripe or PayPal, transaction fees can quickly add up. Knowing the exact percentage and fixed fees per transaction allows freelancers, e-commerce sellers, and agencies to set accurate pricing and avoid profit loss.</p>
+      <h2>Understanding Payment Gateway Merchant Processing Fees</h2>
+      <p>When running an e-commerce store, freelancing business, digital agency, or SaaS platform, processing credit card payments via <strong>PayPal or Stripe</strong> involves transaction processing fees. Every time a client pays an invoice, payment gateways deduct a combination of a percentage rate (e.g., 2.9%) and a small fixed transaction fee (e.g., $0.30).</p>
+      <p>Our free <strong>PayPal & Stripe Fee Calculator</strong> helps merchants and freelancers understand exact profit margins. It calculates the net payout you will receive after fees, as well as the exact gross amount you must charge your client to cover transaction fees completely.</p>
     </div>
 
     <!-- SEO Article Content Box 2 -->
     <div class="content-box">
-      <h2>Standard Gateway Fee Structures</h2>
+      <h2>Standard Payment Gateway Fee Formulas Explained</h2>
+      <p>Calculating payment gateway deductions requires applying two primary financial formulas:</p>
+
+      <h3>1. Net Take-Home Amount Formula</h3>
+      <p>When you send a client an invoice for a set dollar amount ($A$), the payment processor calculates the fee and net payout using:</p>
+      <p>$$\text{Processing Fee} = (A \times \text{Percentage Rate}) + \text{Fixed Fee}$$</p>
+      <p>$$\text{Net Received} = A - \text{Processing Fee}$$</p>
+
+      <h3>2. Required Invoice (Gross-Up) Formula</h3>
+      <p>If you want to receive an exact net amount ($N$) in your bank account after fees are subtracted, you must invoice a slightly higher gross amount ($G$):</p>
+      <p>$$G = \frac{N + \text{Fixed Fee}}{1 - \text{Percentage Rate}}$$</p>
+      <p><em>Example:</em> To take home exactly $100.00 on Stripe domestic (2.9% + $0.30), you must invoice the client **$103.30**.</p>
+    </div>
+
+    <!-- SEO Article Content Box 3 -->
+    <div class="content-box">
+      <h2>Features of MicroToolStack's Merchant Fee Calculator</h2>
       <ul>
-        <li><strong>Stripe Domestic:</strong> Charges 2.9% + $0.30 per successful credit card payment within the same country.</li>
-        <li><strong>Stripe International:</strong> Adds an additional 1% cross-border fee for international card processing (3.9% + $0.30).</li>
-        <li><strong>PayPal Commercial:</strong> Standard US merchant transactions usually start at 2.99% + $0.49 fixed fee.</li>
+        <li><strong>Pre-Configured Rates:</strong> Features up-to-date domestic and international fee tiers for both PayPal Commercial and Stripe Payments.</li>
+        <li><strong>Custom Gateway Option:</strong> Supports custom percentage and fixed fee inputs for other merchant providers (such as Square, Razorpay, or Authorize.net).</li>
+        <li><strong>Dual Direction Calculation:</strong> Instantly view both what you take home and what you should invoice.</li>
+        <li><strong>100% Free & Private:</strong> All mathematical processing occurs locally inside your web browser. No invoice amounts or transaction logs are stored.</li>
       </ul>
     </div>
 
-    <!-- Internal Linking Section (SEO Best Practice) -->
+    <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
     <div class="content-box">
-      <h2>Explore Related Financial & Utility Tools</h2>
-      <p>Enhance your calculations and daily workflow with our free utilities:</p>
+      <h2>Explore Related Calculators & Utilities</h2>
+      <p>Discover our complementary everyday financial tools:</p>
       <div class="related-links">
-        <a href="/tools/calculator/loan-emi-calculator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">💳 Loan EMI Calculator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Calculate monthly loan installment payments.</span>
+        <a href="/tools/calculator/discount-calculator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🏷️ Sale Discount Calculator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Calculate percentage off savings and checkout tax totals.</span>
         </a>
-        <a href="/tools/calculator/age-calculator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">📅 Age Calculator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Calculate exact chronological age in years and months.</span>
+        <a href="/tools/calculator/emi-calculator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🏦 Loan EMI Calculator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Calculate monthly loan repayments and total interest costs.</span>
         </a>
-        <a href="/tools/calculator/bmi-calculator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">⚖️ BMI Calculator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Check your Body Mass Index and weight category.</span>
-        </a>
-        <a href="/tools/developer/base64-encoder-decoder.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🔒 Base64 Encoder / Decoder</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Encode or decode text strings into Base64 format.</span>
+        <a href="/tools/text/word-counter.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📊 Real-Time Word Counter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Analyze character counts, reading time, and text metrics.</span>
         </a>
       </div>
     </div>
 
     <!-- FAQ Section -->
     <div class="content-box">
-      <h2>Frequently Asked Questions</h2>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How is the "Invoice Amount" calculated?</h3>
-        <p>The invoice calculation uses reverse fee mathematics: <code>(Target Amount + Fixed Fee) / (1 - Fee Percentage)</code> to ensure that after deductions, your net payout matches your target rate.</p>
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What is Stripe's standard transaction fee?</h3>
+        <p>Stripe's standard domestic credit card rate is 2.9% + $0.30 per successful transaction. International cards incur an extra +1.5% cross-border fee.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What is PayPal's standard merchant commercial fee?</h3>
+        <p>PayPal's standard US domestic commercial transaction fee is 2.99% + $0.49 per transaction, with cross-border international sales incurring additional percentage fees.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is my transaction or payment data stored on your server?</h3>
+        <p>No. All calculations run client-side inside your web browser using JavaScript. No financial inputs or invoice values are logged or uploaded.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this Fee Calculator free to use?</h3>
+        <p>Yes, MicroToolStack's Payment Gateway Fee Calculator is completely free with no usage limits or registration required.</p>
       </div>
     </div>
 
@@ -317,50 +366,76 @@
   <!-- Footer Container Placeholder -->
   <div id="footer-container"></div>
 
-  <!-- Scripts -->
+  <!-- JavaScript Utilities & Logic -->
   <script src="/assets/js/theme.js"></script>
   <script src="/assets/js/utils.js" defer></script>
   <script src="/assets/js/app.js" defer></script>
 
-  <!-- Client Logic -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const gatewaySelect = document.getElementById('gateway');
-      const amountInput = document.getElementById('amount');
+      const gatewaySelect = document.getElementById('gateway-select');
+      const amountInput = document.getElementById('amount-input');
+      const customRateWrapper = document.getElementById('custom-rate-wrapper');
+      const customPercentInput = document.getElementById('custom-percent');
+      const customFixedInput = document.getElementById('custom-fixed');
+      const btnCalc = document.getElementById('btn-calc-gateway');
+      const resultsWrapper = document.getElementById('results-wrapper');
 
-      const resAmount = document.getElementById('res-amount');
-      const resFee = document.getElementById('res-fee');
-      const resTakehome = document.getElementById('res-takehome');
-      const askExact = document.getElementById('ask-exact');
-      const resInvoice = document.getElementById('res-invoice');
+      const resNetReceived = document.getElementById('res-net-received');
+      const resFeeDeducted = document.getElementById('res-fee-deducted');
+      const resInvoiceNeeded = document.getElementById('res-invoice-needed');
 
-      const feeStructures = {
-        stripe_us: { pct: 0.029, fixed: 0.30 },
-        stripe_intl: { pct: 0.039, fixed: 0.30 },
-        paypal_us: { pct: 0.0299, fixed: 0.49 },
-        paypal_intl: { pct: 0.0449, fixed: 0.49 }
-      };
+      gatewaySelect.addEventListener('change', function() {
+        if (gatewaySelect.value === 'custom') {
+          customRateWrapper.style.display = 'block';
+        } else {
+          customRateWrapper.style.display = 'none';
+        }
+      });
 
-      function calculateFees() {
-        const amt = parseFloat(amountInput.value) || 0;
-        const config = feeStructures[gatewaySelect.value];
+      btnCalc.addEventListener('click', function() {
+        const amount = parseFloat(amountInput.value);
 
-        const fee = (amt * config.pct) + config.fixed;
-        const takehome = Math.max(0, amt - fee);
+        if (isNaN(amount) || amount <= 0) {
+          alert('Please enter a valid positive transaction amount.');
+          return;
+        }
 
-        const invoiceNeeded = (amt + config.fixed) / (1 - config.pct);
+        let ratePercent = 0;
+        let fixedFee = 0;
 
-        resAmount.textContent = `$${amt.toFixed(2)}`;
-        resFee.textContent = `-$${fee.toFixed(2)}`;
-        resTakehome.textContent = `$${takehome.toFixed(2)}`;
-        askExact.textContent = `$${amt.toFixed(2)}`;
-        resInvoice.textContent = `$${invoiceNeeded.toFixed(2)}`;
-      }
+        const mode = gatewaySelect.value;
+        if (mode === 'paypal-dom') {
+          ratePercent = 0.0299;
+          fixedFee = 0.49;
+        } else if (mode === 'paypal-intl') {
+          ratePercent = 0.0449;
+          fixedFee = 0.49;
+        } else if (mode === 'stripe-dom') {
+          ratePercent = 0.0290;
+          fixedFee = 0.30;
+        } else if (mode === 'stripe-intl') {
+          ratePercent = 0.0440;
+          fixedFee = 0.30;
+        } else if (mode === 'custom') {
+          ratePercent = (parseFloat(customPercentInput.value) || 0) / 100;
+          fixedFee = parseFloat(customFixedInput.value) || 0;
+        }
 
-      gatewaySelect.addEventListener('change', calculateFees);
-      amountInput.addEventListener('input', calculateFees);
+        // 1. If you invoice $A, you receive $Net
+        const feeDeducted = (amount * ratePercent) + fixedFee;
+        const netReceived = amount - feeDeducted;
 
-      calculateFees();
+        // 2. To take home $A, you must invoice $Gross
+        const grossInvoiceNeeded = (amount + fixedFee) / (1 - ratePercent);
+
+        // Display update
+        resNetReceived.textContent = '$' + Math.max(0, netReceived).toFixed(2);
+        resFeeDeducted.textContent = '$' + feeDeducted.toFixed(2);
+        resInvoiceNeeded.textContent = '$' + grossInvoiceNeeded.toFixed(2);
+
+        resultsWrapper.style.display = 'block';
+      });
     });
   </script>
 </body>
