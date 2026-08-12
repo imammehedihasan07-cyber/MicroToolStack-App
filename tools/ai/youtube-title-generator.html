@@ -310,7 +310,7 @@
   <script src="/assets/js/theme.js"></script>
   <script src="/assets/js/utils.js" defer></script>
 
-  <!-- Working Smart JavaScript Engine -->
+  <!-- Smart Fixed JavaScript Engine -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const topicInput = document.getElementById('video-topic');
@@ -326,23 +326,25 @@
       const copyDescBtn = document.getElementById('copy-desc-btn');
       const copyTagsBtn = document.getElementById('copy-tags-btn');
 
-      // Smart Title Case Formatter
-      function toTitleCase(str) {
-        if (!str) return "Earn Money Online";
-        return str.trim().replace(/\w\S*/g, function(txt){
+      // Helper function for clean title capitalization
+      function cleanSubject(str) {
+        if (!str || str.trim() === "") return "Earn Money Online";
+        let cleaned = str.trim().replace(/[^a-zA-Z0-9 ]/gi, '');
+        if(cleaned.length < 2) return "Earn Money Online";
+        return cleaned.replace(/\w\S*/g, function(txt){
           return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
         });
       }
 
       generateBtn.addEventListener('click', function () {
-        const rawInput = topicInput.value.trim() || "How to earn money online";
-        const topicTitle = toTitleCase(rawInput);
+        // Read input cleanly
+        const rawInput = topicInput.value.trim();
+        const topicTitle = cleanSubject(rawInput);
         const style = styleSelect.value;
         const niche = nicheSelect.value;
 
         // 1. Generate Natural Titles
         let titles = [];
-        const isHowTo = /^how\s+/i.test(rawInput);
 
         if (style === 'High CTR & Clickbait') {
           titles = [
@@ -422,16 +424,16 @@ Don't forget to LIKE 👍, SHARE ↗️, and SUBSCRIBE 🔔 for more high-qualit
         descBox.innerText = descriptionTemplate;
 
         // 3. Generate Clean Tags
-        const cleanWords = rawInput.toLowerCase().replace(/[^a-z0-9 ]/gi, '').split(' ').filter(w => w.length > 1);
+        const cleanWords = topicTitle.toLowerCase().split(' ').filter(w => w.length > 2);
         
         const tags = [
-          rawInput.toLowerCase(),
           topicTitle.toLowerCase(),
-          `${rawInput.toLowerCase()} tutorial`,
-          `${rawInput.toLowerCase()} guide`,
-          `${rawInput.toLowerCase()} 2026`,
-          `${rawInput.toLowerCase()} tips`,
-          `${rawInput.toLowerCase()} for beginners`,
+          `how to ${topicTitle.toLowerCase()}`,
+          `${topicTitle.toLowerCase()} tutorial`,
+          `${topicTitle.toLowerCase()} guide`,
+          `${topicTitle.toLowerCase()} 2026`,
+          `${topicTitle.toLowerCase()} tips`,
+          `${topicTitle.toLowerCase()} for beginners`,
           ...cleanWords,
           niche.toLowerCase()
         ];
