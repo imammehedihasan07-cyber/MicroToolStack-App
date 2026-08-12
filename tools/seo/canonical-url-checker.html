@@ -22,9 +22,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Primary SEO Meta Tags -->
-  <title>Free Canonical URL & Meta Tag Checker | MicroToolStack</title>
-  <meta name="description" content="Free Canonical URL & Tag Checker. Inspect HTML rel='canonical' tags, detect missing canonical URLs, and resolve duplicate content issues for Google SEO.">
-  <meta name="keywords" content="canonical url checker, canonical tag checker, check rel canonical, duplicate content checker, canonical tag validator, seo url checker">
+  <title>Free Online Canonical URL Checker | Audit rel="canonical" Tags | MicroToolStack</title>
+  <meta name="description" content="Audit webpage HTML source code for canonical URL tags online for free. Inspect rel='canonical' href links, detect duplicate content risks, and verify self-referential canonical tags.">
+  <meta name="keywords" content="canonical url checker, canonical tag checker, check rel canonical, find canonical link, duplicate content checker, canonical tag auditor, webmaster canonical tool, seo tools">
 
   <link rel="canonical" href="https://microtoolstack.com/tools/seo/canonical-url-checker.html">
   <meta name="robots" content="index, follow">
@@ -32,8 +32,8 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://microtoolstack.com/tools/seo/canonical-url-checker.html">
-  <meta property="og:title" content="Free Canonical URL & Meta Tag Checker | MicroToolStack">
-  <meta property="og:description" content="Inspect HTML rel='canonical' tags in real-time to ensure search engines index the primary original source URL.">
+  <meta property="og:title" content="Free Online Canonical URL Checker | MicroToolStack">
+  <meta property="og:description" content="Inspect and validate webpage rel='canonical' HTML tags to prevent duplicate content indexing issues on search engines. 100% free and privacy-first webmaster utility.">
   <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
@@ -48,15 +48,15 @@
     "@graph": [
       {
         "@type": "SoftwareApplication",
-        "name": "Canonical URL Tag Checker",
+        "name": "Canonical URL Tag Checker & Auditor",
         "operatingSystem": "All",
-        "applicationCategory": "SEOApplication",
+        "applicationCategory": "UtilitiesApplication",
         "offers": {
           "@type": "Offer",
           "price": "0",
           "priceCurrency": "USD"
         },
-        "description": "An online SEO tool that parses HTML code to detect and validate rel='canonical' URL tags.",
+        "description": "An essential client-side SEO utility that extracts and inspects rel='canonical' HTML head tags to audit self-referential links and prevent search engine duplicate content indexing issues.",
         "url": "https://microtoolstack.com/tools/seo/canonical-url-checker.html"
       },
       {
@@ -64,26 +64,34 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "What is a canonical URL tag?",
+            "name": "What is a Canonical URL Tag (rel='canonical')?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "A canonical URL tag (<link rel='canonical' href='...'>) is an HTML link element that tells search engines which specific URL represents the authoritative, original source version of a webpage."
+              "text": "A canonical URL tag (<link rel='canonical' href='...'>) is an HTML element placed inside a webpage's <head> section that tells search engine crawlers which master URL version represents the authoritative original page."
             }
           },
           {
             "@type": "Question",
-            "name": "Why is a canonical tag necessary for SEO?",
+            "name": "Why are canonical tags important for SEO?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Canonical tags prevent duplicate content issues when similar content is accessible through multiple URLs (e.g., HTTP vs HTTPS, tracking parameters, or mobile variations)."
+              "text": "Canonical tags prevent duplicate content penalties on search engines when multiple URLs serve similar or identical content (such as HTTPS vs HTTP, www vs non-www, or tracking parameters)."
             }
           },
           {
             "@type": "Question",
-            "name": "Is my HTML input kept private?",
+            "name": "Is my HTML source code saved on remote servers?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes, 100%. All processing occurs locally in your web browser. No code is stored on external servers."
+              "text": "No! All HTML DOM parsing and canonical tag extractions execute 100% locally inside your web browser session using client-side JavaScript. Your code remains completely private."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this Canonical URL Checker free to use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, MicroToolStack's Canonical URL Checker is 100% free with unlimited tag audits and no registration required."
             }
           }
         ]
@@ -101,72 +109,75 @@
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
 
   <style>
-    .editor-textarea {
-      width: 100%;
-      min-height: 200px;
-      padding: 1rem;
-      font-family: monospace;
+    .input-group {
+      margin-bottom: 1.25rem;
+    }
+    .input-label {
+      display: block;
       font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.5rem;
+    }
+    .form-control, .form-select {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
+      color: var(--text-primary, #fff);
+      outline: none;
+      box-sizing: border-box;
+    }
+    .form-control:focus, .form-select:focus {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+
+    .code-textarea {
+      width: 100%;
+      min-height: 180px;
+      padding: 1rem;
+      font-size: 0.85rem;
+      font-family: 'Fira Code', Consolas, Monaco, monospace;
       line-height: 1.5;
       border: 1px solid var(--border-color, #333);
       border-radius: var(--radius-md, 8px);
-      background-color: #0d1117;
-      color: #7ee787;
+      background-color: var(--bg-card, #1e1e2e);
+      color: var(--text-primary, #fff);
       outline: none;
       resize: vertical;
       box-sizing: border-box;
-      margin-bottom: 1.25rem;
-    }
-    .status-banner {
-      padding: 1rem;
-      border-radius: 8px;
-      font-size: 0.95rem;
-      font-weight: 600;
-      margin-bottom: 1.5rem;
-      display: none;
-    }
-    .status-banner.success {
-      background: rgba(16, 185, 129, 0.15);
-      border: 1px solid #10b981;
-      color: #10b981;
-    }
-    .status-banner.error {
-      background: rgba(239, 68, 68, 0.15);
-      border: 1px solid #ef4444;
-      color: #ef4444;
-    }
-    .result-box {
-      background: var(--bg-card, #1e1e2e);
-      border: 1px solid var(--border-color, #333);
-      border-radius: 8px;
-      padding: 1.25rem;
-      margin-bottom: 1.5rem;
-      display: none;
-    }
-    .result-item {
-      margin-bottom: 0.75rem;
-      font-size: 0.95rem;
-    }
-    .result-item:last-child {
-      margin-bottom: 0;
-    }
-    .result-label {
-      color: var(--text-secondary, #9ca3af);
-      font-size: 0.85rem;
-      display: block;
-      margin-bottom: 0.25rem;
-    }
-    .result-value {
-      color: var(--text-primary, #fff);
-      font-weight: 600;
-      font-family: monospace;
-      background: #0d1117;
-      padding: 0.5rem 0.75rem;
-      border-radius: 6px;
-      border: 1px solid var(--border-color, #333);
+      white-space: pre-wrap;
       word-break: break-all;
     }
-    .editor-controls {
+
+    /* Results Card & Badges */
+    .status-badge {
+      display: inline-block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 0.35rem 0.75rem;
+      border-radius: 6px;
+      margin-top: 0.5rem;
+    }
+    .badge-success { background: rgba(16, 185, 129, 0.2); color: #10b981; border: 1px solid #10b981; }
+    .badge-warning { background: rgba(245, 158, 11, 0.2); color: #f59e0b; border: 1px solid #f59e0b; }
+    .badge-error { background: rgba(239, 68, 68, 0.2); color: #ef4444; border: 1px solid #ef4444; }
+
+    .canonical-value-box {
+      background: #111827;
+      border: 1px solid var(--border-color, #333);
+      border-radius: 6px;
+      padding: 0.85rem 1rem;
+      font-family: 'Fira Code', Consolas, Monaco, monospace;
+      font-size: 0.9rem;
+      color: #38bdf8;
+      word-break: break-all;
+      margin-top: 0.5rem;
+    }
+
+    .controls-bar {
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
@@ -174,11 +185,7 @@
       align-items: center;
       margin-bottom: 2.5rem;
     }
-    .btn-group {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-    }
+
     .content-box {
       background-color: var(--bg-card, #1e1e2e);
       border: 1px solid var(--border-color, #333);
@@ -189,6 +196,12 @@
     .content-box h2 {
       font-size: 1.35rem;
       margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
       color: var(--text-primary, #fff);
     }
     .content-box p, .content-box ul {
@@ -241,96 +254,116 @@
 
   <!-- Main Container -->
   <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
-    <!-- Breadcrumb Navigation -->
-    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
-      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
-      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">SEO Tools</a> / 
-      <span>Canonical URL Checker</span>
-    </nav>
     
     <!-- Tool Title & Description -->
     <div style="text-align: center; margin-bottom: 2rem;">
-      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Canonical URL Tag Checker</h1>
-      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Inspect HTML rel="canonical" link tags to prevent duplicate content issues in Google Search.</p>
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online Canonical URL Tag Checker</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Inspect webpage HTML code to audit rel="canonical" tags and resolve duplicate content issues.</p>
     </div>
 
-    <!-- HTML Input Editor -->
-    <textarea id="html-input" class="editor-textarea" placeholder="Paste HTML code containing <link rel='canonical' href='...'> to check syntax and canonical URL target..." autofocus></textarea>
+    <!-- Input HTML Code -->
+    <div class="input-group">
+      <label for="html-input" class="input-label">Paste Webpage HTML Source Code (including &lt;head&gt; section)</label>
+      <textarea id="html-input" class="code-textarea" placeholder="Paste HTML code containing <link rel='canonical' href='...'> to inspect..."></textarea>
+    </div>
 
-    <!-- Status Alert Banner -->
-    <div id="status-banner" class="status-banner"></div>
-
-    <!-- Extracted Canonical Details -->
-    <div id="result-box" class="result-box">
-      <div class="result-item">
-        <span class="result-label">Extracted Canonical Link:</span>
-        <div id="val-href" class="result-value">-</div>
+    <!-- Controls Bar -->
+    <div class="controls-bar">
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-check-canonical" class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-weight: 600; cursor: pointer; background: #10b981;">🔍 Audit Canonical Tag</button>
       </div>
-      <div class="result-item">
-        <span class="result-label">Full HTML Tag Code:</span>
-        <div id="val-tag" class="result-value">-</div>
-      </div>
-      <div class="result-item">
-        <span class="result-label">SEO Evaluation:</span>
-        <div id="val-eval" style="color: #10b981; font-weight: 600; font-size: 0.95rem;">-</div>
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear</button>
       </div>
     </div>
 
-    <!-- Action Buttons -->
-    <div class="editor-controls">
-      <div class="btn-group">
-        <button id="btn-sample" class="btn btn-primary" style="padding: 0.68rem 1.4rem; cursor: pointer;">📝 Load Sample Code</button>
-        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.68rem 1.2rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear</button>
+    <!-- Audit Results Box -->
+    <div class="content-box" id="results-box" style="display: none; margin-bottom: 2rem;">
+      <h2 style="font-size: 1.15rem; margin-top: 0; margin-bottom: 0.5rem;">Canonical Tag Audit Analysis</h2>
+      
+      <div id="status-badge-container"></div>
+
+      <div style="margin-top: 1.25rem;">
+        <label class="input-label" style="font-size: 0.85rem;">Detected Canonical URL Href</label>
+        <div id="canonical-href-val" class="canonical-value-box">None Detected</div>
+      </div>
+
+      <div style="margin-top: 1.25rem;" id="audit-notes-wrapper">
+        <label class="input-label" style="font-size: 0.85rem;">SEO Recommendations & Verification</label>
+        <p id="audit-notes-text" style="color: #9ca3af; font-size: 0.9rem; margin-top: 0.25rem;"></p>
       </div>
     </div>
 
     <!-- SEO Article Content Box 1 -->
     <div class="content-box">
-      <h2>Why Canonical Tags are Critical for Google SEO</h2>
-      <p>A <strong>canonical URL tag</strong> (<code>&lt;link rel="canonical" href="https://example.com/page"&gt;</code>) instructs search engine crawlers which specific version of a web page to index when the same content is reachable via multiple URLs (for example, with tracking query parameters like <code>?utm_source=facebook</code> or HTTP vs HTTPS protocols). Implementing canonical tags eliminates <strong>duplicate content penalties</strong>.</p>
+      <h2>Why Canonical URL Tags are Vital for Preventing Search Duplicate Content</h2>
+      <p>In modern web architecture and CMS platforms (WordPress, Shopify, e-commerce stores), the same page content can frequently be accessed via multiple distinct URL variations (e.g. HTTP vs. HTTPS, trailing slash vs. non-trailing slash, or URL parameters for tracking and sorting). Search engines like Google treat distinct URLs as separate pages, leading to <strong>Duplicate Content</strong> indexing penalties.</p>
+
+      <p>The <strong>Canonical Tag</strong> (<code>&lt;link rel="canonical" href="https://example.com/page.html"&gt;</code>) solves this issue by explicitly instructing search engine crawlers which master URL represents the original authoritative version. Our free <strong>Online Canonical URL Checker</strong> extracts and validates canonical tags directly from your HTML source code.</p>
     </div>
 
     <!-- SEO Article Content Box 2 -->
     <div class="content-box">
-      <h2>Best Practices for Implementing Canonical Tags</h2>
+      <h2>Canonical Tag Best Practices Checklist</h2>
+      <p>Follow these essential webmaster guidelines when implementing canonical tags:</p>
+
       <ul>
-        <li><strong>Use Absolute URLs:</strong> Always specify complete URLs including <code>https://</code> rather than relative paths like <code>/page.html</code>.</li>
-        <li><strong>Place in HTML Head:</strong> Insert canonical tags exclusively inside the <code>&lt;head&gt;...&lt;/head&gt;</code> element.</li>
-        <li><strong>Self-Referential Canonicals:</strong> Every unique page should include a canonical tag pointing back to its own definitive URL.</li>
-        <li><strong>Avoid Multiple Tags:</strong> Never place more than one canonical link tag on a single HTML page.</li>
+        <li><strong>Use Absolute URLs:</strong> Always specify complete absolute URLs (e.g. <code>https://microtoolstack.com/page.html</code>) rather than relative paths (<code>/page.html</code>) to avoid crawler misinterpretation.</li>
+        <li><strong>Self-Referential Canonicalization:</strong> Each unique webpage should ideally include a self-referential canonical tag pointing directly to its own primary URL.</li>
+        <li><strong>Single Canonical Tag Per Page:</strong> Never include multiple <code>rel="canonical"</code> links in the same HTML <code>&lt;head&gt;</code> section, as search engines will ignore all of them.</li>
+        <li><strong>Match Canonical Protocols:</strong> Ensure your canonical tag matches your site's secure SSL protocol (HTTPS).</li>
       </ul>
     </div>
 
-    <!-- Internal Linking Section -->
+    <!-- SEO Article Content Box 3 -->
     <div class="content-box">
-      <h2>Explore Related SEO Utilities</h2>
-      <p>Enhance your search engine optimization workflow with our other tools:</p>
+      <h2>Features of MicroToolStack's Canonical Auditor</h2>
+      <ul>
+        <li><strong>Client-Side DOM Parsing:</strong> Parses HTML head sections dynamically to locate single or multiple <code>rel="canonical"</code> tags.</li>
+        <li><strong>Absolute vs Relative URL Detection:</strong> Verifies if the canonical tag uses valid absolute URL protocols (HTTPS/HTTP).</li>
+        <li><strong>100% Client-Side Privacy:</strong> All DOM parsing executes locally in your web browser session using JavaScript. No source code or URLs are transmitted to external databases.</li>
+        <li><strong>Free & Unlimited Usage:</strong> No audit caps or account sign-ups required.</li>
+      </ul>
+    </div>
+
+    <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
+    <div class="content-box">
+      <h2>Explore Related SEO & Webmaster Tools</h2>
+      <p>Discover our complementary online webmaster utilities:</p>
       <div class="related-links">
-        <a href="/tools/seo/meta-tag-analyzer.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🏷️ Meta Tag Analyzer</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Inspect HTML head tags, meta descriptions, and Open Graph.</span>
+        <a href="/tools/seo/broken-link-checker.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🔍 Broken Link Checker</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Inspect HTML code for broken links and 404 errors.</span>
         </a>
-        <a href="/tools/seo/open-graph-preview.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🌐 Open Graph Preview</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Simulate Facebook and Twitter social share cards.</span>
+        <a href="/tools/text/word-counter.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📊 Real-Time Word Counter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Analyze text character counts and keyword density.</span>
         </a>
-        <a href="/tools/seo/slug-generator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🔗 URL Slug Generator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Convert headlines into clean, SEO-friendly URL slugs.</span>
+        <a href="/tools/media/qr-code-generator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📲 Custom QR Code Generator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Create scannable QR codes for canonical links.</span>
         </a>
       </div>
     </div>
 
     <!-- FAQ Section -->
     <div class="content-box">
-      <h2>Frequently Asked Questions</h2>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Does Google respect canonical tags?</h3>
-        <p>Yes. Canonical tags serve as a strong hint to Google's indexing system, though Google may choose a different URL if the canonical points to a page with completely different content.</p>
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How do I check if a webpage has a canonical tag?</h3>
+        <p>Paste your webpage HTML source code into the text area and click "Audit Canonical Tag". The tool parses your <code>&lt;head&gt;</code> section and extracts the canonical URL.</p>
       </div>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What is the difference between a 301 redirect and a canonical tag?</h3>
-        <p>A 301 redirect automatically forwards users and search bots to a new URL. A canonical tag allows visitors to view the page normally while telling search engines to attribute ranking equity to the target URL.</p>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What happens if a webpage has multiple canonical tags?</h3>
+        <p>If a webpage contains multiple <code>rel="canonical"</code> link tags, search engine crawlers like Googlebot will ignore all canonical declarations, leading to potential duplicate indexing.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is my HTML source code saved on remote servers?</h3>
+        <p>No. All parsing runs client-side inside your browser session using JavaScript. Your source code remains completely private.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this Canonical URL Checker free?</h3>
+        <p>Yes, MicroToolStack's Canonical URL Checker is 100% free with no usage limits or sign-up required.</p>
       </div>
     </div>
 
@@ -347,80 +380,77 @@
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const htmlInput = document.getElementById('html-input');
-      const statusBanner = document.getElementById('status-banner');
-      const resultBox = document.getElementById('result-box');
-
-      const valHref = document.getElementById('val-href');
-      const valTag = document.getElementById('val-tag');
-      const valEval = document.getElementById('val-eval');
-
-      const btnSample = document.getElementById('btn-sample');
+      const btnCheckCanonical = document.getElementById('btn-check-canonical');
       const btnClear = document.getElementById('btn-clear');
 
-      function checkCanonicalTag() {
-        const rawCode = htmlInput.value.trim();
+      const resultsBox = document.getElementById('results-box');
+      const statusBadgeContainer = document.getElementById('status-badge-container');
+      const canonicalHrefVal = document.getElementById('canonical-href-val');
+      const auditNotesText = document.getElementById('audit-notes-text');
 
-        if (!rawCode) {
-          statusBanner.style.display = 'none';
-          resultBox.style.display = 'none';
+      btnCheckCanonical.addEventListener('click', function() {
+        const text = htmlInput.value.trim();
+        if (!text) {
+          alert('Please paste webpage HTML code first.');
           return;
         }
 
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(rawCode, 'text/html');
+        statusBadgeContainer.innerHTML = '';
+        resultsBox.style.display = 'block';
 
-        // Query all canonical link tags
-        const canonicalTags = doc.querySelectorAll('link[rel="canonical" i]');
+        let canonicalLinks = [];
 
-        if (canonicalTags.length === 0) {
-          statusBanner.className = 'status-banner error';
-          statusBanner.textContent = '❌ No <link rel="canonical"> tag detected in the provided HTML code.';
-          statusBanner.style.display = 'block';
-          resultBox.style.display = 'none';
-          return;
+        try {
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(text, 'text/html');
+          const links = doc.querySelectorAll('link[rel~="canonical"]');
+          links.forEach(l => {
+            const href = l.getAttribute('href');
+            if (href) canonicalLinks.push(href.trim());
+          });
+        } catch (e) {}
+
+        // Fallback Regex check
+        if (canonicalLinks.length === 0) {
+          const regex = /<link\s+[^>]*rel=["']canonical["'][^>]*href=["']([^"']+)["']/gi;
+          let match;
+          while ((match = regex.exec(text)) !== null) {
+            canonicalLinks.push(match[1].trim());
+          }
         }
 
-        if (canonicalTags.length > 1) {
-          statusBanner.className = 'status-banner error';
-          statusBanner.textContent = `⚠️ Warning: Found ${canonicalTags.length} canonical tags! Pages should contain only one canonical link tag.`;
-          statusBanner.style.display = 'block';
+        if (canonicalLinks.length === 0) {
+          statusBadgeContainer.innerHTML = `<span class="status-badge badge-error">❌ Missing Canonical Tag</span>`;
+          canonicalHrefVal.textContent = 'None Found in HTML Head';
+          auditNotesText.innerHTML = 'No <code>&lt;link rel="canonical" href="..."&gt;</code> tag was detected in the provided HTML. Adding a self-referential canonical tag is strongly recommended to prevent duplicate content indexing issues on search engines.';
+        } else if (canonicalLinks.length === 1) {
+          const href = canonicalLinks[0];
+          canonicalHrefVal.textContent = href;
+
+          if (href.startsWith('http://') || href.startsWith('https://')) {
+            statusBadgeContainer.innerHTML = `<span class="status-badge badge-success">✅ Valid Absolute Canonical Tag Found</span>`;
+            auditNotesText.innerHTML = 'A single absolute canonical URL tag was detected. This correctly specifies your authoritative URL version to search engine crawlers.';
+          } else {
+            statusBadgeContainer.innerHTML = `<span class="status-badge badge-warning">⚠️ Relative Canonical URL Warning</span>`;
+            auditNotesText.innerHTML = 'A canonical tag was found, but it uses a relative URL path (e.g., <code>' + escapeHtml(href) + '</code>). Search engine guidelines recommend using complete absolute URLs starting with <code>https://</code> to prevent indexing errors.';
+          }
         } else {
-          statusBanner.className = 'status-banner success';
-          statusBanner.textContent = '✓ Valid Canonical Tag Detected!';
-          statusBanner.style.display = 'block';
+          statusBadgeContainer.innerHTML = `<span class="status-badge badge-error">❌ Multiple Canonical Tags Found (${canonicalLinks.length})</span>`;
+          canonicalHrefVal.textContent = canonicalLinks.join('  |  ');
+          auditNotesText.innerHTML = 'Multiple <code>rel="canonical"</code> tags were detected in the HTML. Search engines like Google will ignore all canonical declarations when duplicate tags exist on a single webpage.';
         }
-
-        const tag = canonicalTags[0];
-        const href = (tag.getAttribute('href') || '').trim();
-
-        valHref.textContent = href || 'Empty (href attribute is blank)';
-        valTag.textContent = tag.outerHTML;
-
-        if (!href) {
-          valEval.textContent = '❌ Invalid: The href attribute is empty.';
-          valEval.style.color = '#ef4444';
-        } else if (href.startsWith('http://') || href.startsWith('https://')) {
-          valEval.textContent = '✓ Optimal: Absolute URL including protocol specified.';
-          valEval.style.color = '#10b981';
-        } else {
-          valEval.textContent = '⚠️ Warning: Relative URL detected. It is strongly recommended to use absolute URLs (including https://).';
-          valEval.style.color = '#f59e0b';
-        }
-
-        resultBox.style.display = 'block';
-      }
-
-      htmlInput.addEventListener('input', checkCanonicalTag);
-
-      btnSample.addEventListener('click', function() {
-        htmlInput.value = `<head>\n  <title>Free Online JSON Formatter & Validator | MicroToolStack</title>\n  <link rel="canonical" href="https://microtoolstack.com/tools/developer/json-formatter.html">\n</head>`;
-        checkCanonicalTag();
       });
+
+      function escapeHtml(str) {
+        return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+      }
 
       btnClear.addEventListener('click', function() {
         htmlInput.value = '';
-        checkCanonicalTag();
-        htmlInput.focus();
+        resultsBox.style.display = 'none';
+        statusBadgeContainer.innerHTML = '';
+        canonicalHrefVal.textContent = 'None Detected';
+        auditNotesText.textContent = '';
       });
     });
   </script>
