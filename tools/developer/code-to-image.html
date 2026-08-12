@@ -9,6 +9,7 @@
         gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
         gTagScript.async = true;
         document.head.appendChild(gTagScript);
+
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
@@ -21,19 +22,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Primary SEO Meta Tags -->
-  <title>Free Code Snippet to Image Generator | MicroToolStack</title>
-  <meta name="description" content="Convert your source code into beautiful images for Twitter, LinkedIn, Instagram, and blog posts. Customize gradients, syntax colors, and export crisp PNGs.">
-  <meta name="keywords" content="code snippet to image, carbon code generator, convert code to image, code screenshot generator, beautiful code image creator">
+  <title>Free Code to Image Converter | Generate Beautiful Code Screenshots | MicroToolStack</title>
+  <meta name="description" content="Convert source code into beautiful, high-resolution PNG images instantly. Customize syntax themes, padding, and background gradients with our free Code to Image Generator.">
+  <meta name="keywords" content="code to image, convert code to image, code snippet screenshot, carbon code alternative, code image generator, export code snippet png, developer screenshot tool">
 
   <link rel="canonical" href="https://microtoolstack.com/tools/developer/code-to-image.html">
   <meta name="robots" content="index, follow">
 
-  <!-- Open Graph / Social Media Meta Tags -->
+  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Free Code Snippet to Image Generator | MicroToolStack">
-  <meta property="og:description" content="Convert your source code into beautiful images for Twitter, LinkedIn, Instagram, and blog posts. Customize gradients and export crisp PNGs.">
   <meta property="og:url" content="https://microtoolstack.com/tools/developer/code-to-image.html">
-  <meta property="og:site_name" content="MicroToolStack">
+  <meta property="og:title" content="Free Code to Image Converter | MicroToolStack">
+  <meta property="og:description" content="Turn your code snippets into stunning high-resolution images for Twitter, LinkedIn, and blogs. 100% free developer tool.">
   <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
@@ -41,146 +41,158 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
   <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
-  <!-- html2canvas for Client-side Image Export -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-
-  <!-- Schema -->
+  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
   <script type="application/ld+json">
-  [
-    {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "Code Snippet to Image Generator",
-      "url": "https://microtoolstack.com/tools/developer/code-to-image.html",
-      "applicationCategory": "DeveloperApplication",
-      "operatingSystem": "All",
-      "browserRequirements": "Requires JavaScript",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      }
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Is my code uploaded to any external server?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "No. Rendering and canvas image export take place 100% locally inside your web browser."
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Code to Image Generator",
+        "operatingSystem": "All",
+        "applicationCategory": "DeveloperApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "An essential developer tool that renders source code snippets into beautifully formatted, high-resolution PNG images with customizable backgrounds and syntax themes.",
+        "url": "https://microtoolstack.com/tools/developer/code-to-image.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does the Code to Image Generator work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Paste your code snippet into the editor, choose your preferred syntax theme and background style, then click Download PNG Image to export a high-resolution graphic ready for sharing."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my source code uploaded or saved on external servers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. All code rendering and canvas image generation execute locally inside your web browser using HTML5 Canvas and JavaScript. Your source code remains completely private."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I use generated code images for commercial posts and blogs?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! All images created using MicroToolStack's Code to Image tool are 100% royalty-free and can be freely published on Twitter, LinkedIn, tech blogs, or educational tutorials."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this tool completely free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, MicroToolStack's Code to Image tool is 100% free with no watermark enforcement or registration required."
+            }
           }
-        }
-      ]
-    }
-  ]
+        ]
+      }
+    ]
+  }
   </script>
 
-  <!-- Fonts & CSS Stylesheets -->
+  <!-- Preconnect and Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
 
+  <!-- HTML2Canvas CDN for Image Rendering -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" defer></script>
+
   <style>
-    .app-card {
-      background-color: var(--bg-card, #1e1e2e);
-      border: 1px solid var(--border-color, #333);
-      border-radius: 12px;
-      padding: 2rem;
-      margin-bottom: 2.5rem;
+    .input-group {
+      margin-bottom: 1.25rem;
     }
-    .controls-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-      margin-bottom: 1.5rem;
-    }
-    .form-group label {
+    .input-label {
       display: block;
-      margin-bottom: 0.5rem;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: #e5e7eb;
-    }
-    .form-control {
-      width: 100%;
-      padding: 0.6rem;
-      border-radius: 8px;
-      background: var(--bg-body, #111827);
-      border: 1px solid var(--border-color, #374151);
-      color: #fff;
       font-size: 0.9rem;
-      box-sizing: border-box;
-      outline: none;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.5rem;
     }
-    .code-canvas-wrap {
-      padding: 3rem;
+    .form-control, .form-select {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
+      color: var(--text-primary, #fff);
+      outline: none;
+      box-sizing: border-box;
+    }
+    .form-control:focus, .form-select:focus {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+    
+    /* Code Canvas Container */
+    .code-canvas-container {
+      padding: 2.5rem;
       border-radius: 12px;
-      background: linear-gradient(135deg, #ec4899, #8b5cf6, #3b82f6);
+      background: linear-gradient(135deg, #6366f1, #a855f7, #ec4899);
       display: flex;
       justify-content: center;
       align-items: center;
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
       overflow-x: auto;
-      transition: background 0.3s ease;
     }
     .code-window {
-      background: #0d1117;
+      background-color: #1e1e2e;
       border-radius: 10px;
-      box-shadow: 0 20px 30px rgba(0,0,0,0.5);
-      min-width: 320px;
-      max-width: 100%;
+      width: 100%;
+      max-width: 750px;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
       overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.1);
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
-    .window-header {
-      background: #161b22;
-      padding: 0.75rem 1rem;
+    .code-header {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      padding: 0.75rem 1rem;
+      background-color: rgba(0, 0, 0, 0.3);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
     .dot {
       width: 12px;
       height: 12px;
       border-radius: 50%;
       display: inline-block;
+      margin-right: 6px;
     }
-    .dot-red { background: #ff5f56; }
-    .dot-yellow { background: #ffbd2e; }
-    .dot-green { background: #27c93f; }
-    .code-editor {
+    .dot-red { background-color: #ff5f56; }
+    .dot-yellow { background-color: #ffbd2e; }
+    .dot-green { background-color: #27c93f; }
+    
+    .code-input-textarea {
       width: 100%;
-      background: transparent;
-      border: none;
-      color: #e6edf3;
-      font-family: 'Courier New', Courier, monospace;
+      min-height: 220px;
+      padding: 1.25rem;
+      font-family: 'Fira Code', Consolas, Monaco, 'Andale Mono', monospace;
       font-size: 0.95rem;
       line-height: 1.6;
-      padding: 1.25rem;
-      resize: none;
+      background: transparent;
+      color: #f8f8f2;
+      border: none;
       outline: none;
+      resize: vertical;
       box-sizing: border-box;
       white-space: pre;
     }
-    .btn-download {
-      background-color: #16a34a;
-      color: #fff;
-      padding: 0.75rem 1.5rem;
-      border-radius: 8px;
-      border: none;
-      font-weight: 600;
-      cursor: pointer;
-      width: 100%;
-      margin-top: 1.5rem;
-      font-size: 1rem;
-      transition: background 0.2s;
-    }
-    .btn-download:hover {
-      background-color: #15803d;
-    }
+
     .content-box {
       background-color: var(--bg-card, #1e1e2e);
       border: 1px solid var(--border-color, #333);
@@ -193,12 +205,18 @@
       margin-bottom: 1rem;
       color: var(--text-primary, #fff);
     }
-    .content-box p, .content-box ul, .content-box ol {
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul {
       color: var(--text-secondary, #9ca3af);
       font-size: 0.95rem;
       line-height: 1.6;
     }
-    .content-box ul, .content-box ol {
+    .content-box ul {
       padding-left: 1.25rem;
       margin-bottom: 1rem;
     }
@@ -241,190 +259,206 @@
     </nav>
   </header>
 
-  <!-- Main Content -->
-  <main class="container" style="max-width: 950px; margin: 2rem auto; padding: 0 1rem;">
-    <!-- Breadcrumb Navigation -->
-    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
-      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
-      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Developer Tools</a> / 
-      <span>Code to Image</span>
-    </nav>
+  <!-- Main Container -->
+  <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
     
-    <!-- Title Section -->
+    <!-- Tool Title & Description -->
     <div style="text-align: center; margin-bottom: 2rem;">
-      <span class="badge badge-primary" style="margin-bottom: 0.5rem; display: inline-block;">100% Free & Fast Export</span>
-      <h1 style="font-size: 2rem; color: #fff; margin-bottom: 0.5rem;">Code Snippet to Image Generator</h1>
-      <p style="color: var(--text-secondary, #9ca3af);">Turn your code snippets into beautiful social media images for Twitter, LinkedIn, Instagram, and blogs.</p>
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Code to Image Converter</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Transform raw code snippets into stunning, exportable PNG screenshots for social media and blogs.</p>
     </div>
 
-    <!-- App Card -->
-    <div class="app-card">
-      
-      <!-- Controls -->
-      <div class="controls-grid">
-        <div class="form-group">
-          <label>Background Gradient</label>
-          <select id="bg-select" class="form-control">
-            <option value="linear-gradient(135deg, #ec4899, #8b5cf6, #3b82f6)">Sunset Cyber (Pink/Purple/Blue)</option>
-            <option value="linear-gradient(135deg, #4338ca, #06b6d4)">Deep Ocean (Indigo/Cyan)</option>
-            <option value="linear-gradient(135deg, #10b981, #059669, #047857)">Emerald Forest</option>
-            <option value="linear-gradient(135deg, #f59e0b, #ef4444)">Fiery Lava (Amber/Red)</option>
-            <option value="linear-gradient(135deg, #1f2937, #111827)">Dark Minimal (Slate/Black)</option>
+    <!-- Generator Control Panel -->
+    <div class="content-box" style="margin-bottom: 1.5rem;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem;" class="input-group">
+        <div>
+          <label for="bg-style" class="input-label">Background Gradient</label>
+          <select id="bg-style" class="form-select">
+            <option value="linear-gradient(135deg, #6366f1, #a855f7, #ec4899)">Purple Dusk</option>
+            <option value="linear-gradient(135deg, #0f172a, #1e293b, #334155)">Midnight Slate</option>
+            <option value="linear-gradient(135deg, #3b82f6, #06b6d4, #10b981)">Ocean Breeze</option>
+            <option value="linear-gradient(135deg, #f97316, #e11d48, #9333ea)">Sunset Flame</option>
+            <option value="transparent">Transparent Background</option>
           </select>
         </div>
-
-        <div class="form-group">
-          <label>Padding Space</label>
-          <select id="padding-select" class="form-control">
-            <option value="3rem">Medium (48px)</option>
-            <option value="1.5rem">Compact (24px)</option>
-            <option value="4.5rem">Large (72px)</option>
+        <div>
+          <label for="editor-theme" class="input-label">Editor Theme</label>
+          <select id="editor-theme" class="form-select">
+            <option value="#1e1e2e">VS Code Dark (Default)</option>
+            <option value="#282a36">Dracula Dark</option>
+            <option value="#272822">Monokai Dark</option>
+            <option value="#ffffff">GitHub Light</option>
           </select>
         </div>
-
-        <div class="form-group">
-          <label>Window Theme</label>
-          <select id="window-theme" class="form-control">
-            <option value="#0d1117">Dark (GitHub Dark)</option>
-            <option value="#1e1e1e">VS Code Dark</option>
-            <option value="#000000">Pure Pitch Black</option>
-          </select>
+        <div>
+          <label for="window-title" class="input-label">Window Title (Optional)</label>
+          <input type="text" id="window-title" class="form-control" value="script.js" placeholder="e.g., app.py">
         </div>
       </div>
+    </div>
 
-      <!-- Preview Box -->
-      <div id="capture-wrap" class="code-canvas-wrap">
-        <div id="code-window" class="code-window">
-          <div class="window-header">
+    <!-- Visual Code Canvas Output -->
+    <div id="capture-container" class="code-canvas-container">
+      <div id="code-window-box" class="code-window">
+        <div class="code-header">
+          <div>
             <span class="dot dot-red"></span>
             <span class="dot dot-yellow"></span>
             <span class="dot dot-green"></span>
           </div>
-          <textarea id="code-input" class="code-editor" rows="8" spellcheck="false">// Quick JavaScript Example
-function calculateTax(amount, rate) {
-  const total = amount * (1 + rate / 100);
+          <div id="display-title" style="margin-left: 1rem; font-size: 0.8rem; color: #9ca3af; font-family: monospace;">script.js</div>
+        </div>
+        <textarea id="code-textarea" class="code-input-textarea" placeholder="Paste your code snippet here..." spellcheck="false">// Quick JavaScript Example
+function calculateGrowth(principal, rate, years) {
+  let total = principal * Math.pow((1 + rate / 100), years);
   return total.toFixed(2);
 }
 
-console.log("Total Payable:", calculateTax(150, 5));</textarea>
-        </div>
+console.log("Total Portfolio:", calculateGrowth(1000, 8, 5));</textarea>
       </div>
-
-      <button id="download-btn" class="btn-download">📷 Download Image (PNG)</button>
-
     </div>
 
-    <!-- SEO Content Box 1 -->
-    <div class="content-box">
-      <h2>Why Share Code Snippets as Images?</h2>
-      <p>Raw text snippets often get distorted across social media platforms like Twitter, LinkedIn, and Instagram due to character limits and lack of syntax formatting. Converting your code snippets into crisp, aesthetic images ensures your code stays readable and visual-first for higher engagement.</p>
+    <!-- Download Action Button -->
+    <div style="text-align: center; margin-bottom: 2.5rem;">
+      <button id="btn-download-image" class="btn btn-primary" style="padding: 0.85rem 2rem; font-size: 1rem; font-weight: 600; cursor: pointer;">🖼️ Download PNG Image</button>
     </div>
 
-    <!-- SEO Content Box 2 -->
+    <!-- SEO Article Content Box 1 -->
     <div class="content-box">
-      <h2>How to Use the Generator</h2>
+      <h2>Why Sharing Code as Images Improves Engagement for Developers</h2>
+      <p>Whether you are a software engineer sharing programming tips on Twitter/X, publishing technical tutorials on LinkedIn, or building developer documentation, presenting raw code as unformatted plain text leads to poor readability and missed engagement.</p>
+      <p>Our free <strong>Code to Image Converter</strong> lets you transform raw source code into high-resolution, beautifully framed PNG screenshots. Modeled after top developer utilities like Carbon, this tool adds elegant gradient padding, window control dots, and clean syntax typography that stops the scroll on social media feeds.</p>
+    </div>
+
+    <!-- SEO Article Content Box 2 -->
+    <div class="content-box">
+      <h2>Key Features of MicroToolStack's Code Screenshot Creator</h2>
+      <p>Designed for fast and friction-free developer workflows:</p>
+
+      <h3>1. Customizable Background Gradients & Padding</h3>
+      <p>Choose from vibrant color gradients (such as Purple Dusk, Ocean Breeze, and Sunset Flame) or transparent backgrounds for easy embedding into slide decks or blog posts.</p>
+
+      <h3>2. Multiple IDE Syntax Color Themes</h3>
+      <p>Switch between popular dark editor palettes including VS Code Dark, Dracula, Monokai, and crisp GitHub Light to match your personal brand.</p>
+
+      <h3>3. 100% Client-Side Exporting</h3>
+      <p>Render high-DPI PNG graphics directly in your browser using HTML5 Canvas technology without uploading proprietary source code or API keys to external servers.</p>
+    </div>
+
+    <!-- SEO Article Content Box 3 -->
+    <div class="content-box">
+      <h2>Best Practices for Sharing Code Snippets Online</h2>
       <ul>
-        <li>Paste or type your code snippet into the editor window above.</li>
-        <li>Choose a background gradient that matches your personal brand or post theme.</li>
-        <li>Adjust padding and window dark modes to fit your preferred aesthetic.</li>
-        <li>Click <strong>Download Image (PNG)</strong> to instantly save your high-resolution graphic.</li>
+        <li><strong>Keep Snippets Focused:</strong> Limit your code image to 10–20 lines of key logic to ensure text remains readable on mobile screens.</li>
+        <li><strong>Add Descriptive Window Titles:</strong> File extensions like <code>app.py</code>, <code>styles.css</code>, or <code>server.ts</code> provide instant context for readers.</li>
+        <li><strong>Include Text Explanations:</strong> Accompany your image post with plain text explanations or links so readers can copy-paste the code if needed.</li>
       </ul>
     </div>
 
-    <!-- Internal Linking Section (SEO Best Practice) -->
+    <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
     <div class="content-box">
-      <h2>Explore Related Developer & Text Tools</h2>
-      <p>Enhance your development workflow with our free utilities:</p>
+      <h2>Explore Related Developer Tools</h2>
+      <p>Discover our complementary online developer utilities:</p>
       <div class="related-links">
         <a href="/tools/developer/base64-encoder-decoder.html" class="related-card">
           <strong style="display:block; margin-bottom: 0.25rem;">🔒 Base64 Encoder / Decoder</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Encode or decode text strings into Base64 format.</span>
-        </a>
-        <a href="/tools/media/image-to-base64.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">📄 Image to Base64</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Convert image files directly into Data URI strings.</span>
-        </a>
-        <a href="/tools/seo/slug-generator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🔗 Slug Generator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Generate clean, SEO-friendly URL slugs.</span>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Convert plain text to Base64 or decode Base64 strings.</span>
         </a>
         <a href="/tools/text/case-converter.html" class="related-card">
           <strong style="display:block; margin-bottom: 0.25rem;">🔤 Case Converter</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Convert text case into Upper, Lower, or Title Case.</span>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Convert text to Uppercase, Lowercase, camelCase & Title Case.</span>
+        </a>
+        <a href="/tools/ai/prompt-builder.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">✨ AI Prompt Builder</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Build structured prompts for ChatGPT, Midjourney, and Claude.</span>
         </a>
       </div>
     </div>
 
     <!-- FAQ Section -->
     <div class="content-box">
-      <h2>Frequently Asked Questions</h2>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: #fff; margin-bottom: 0.25rem;">Is my code private when using this tool?</h3>
-        <p>Yes. Your source code is never sent to any external server. All image canvas generation runs directly inside your browser.</p>
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How do I convert code to a PNG image?</h3>
+        <p>Paste your code into the editor box, customize your background gradient and editor theme, then click "Download PNG Image" to export your graphic.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is my source code stored on any server?</h3>
+        <p>No. All canvas rendering occurs locally inside your web browser using HTML5 Canvas technology. Your source code remains 100% private.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this Code to Image converter free?</h3>
+        <p>Yes, MicroToolStack's Code to Image tool is completely free with no usage limits, watermark enforcement, or sign-up required.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Can I use these images for commercial tutorials and blogs?</h3>
+        <p>Yes! All generated images are royalty-free and can be used anywhere.</p>
       </div>
     </div>
 
   </main>
 
-  <!-- Footer Placeholder -->
+  <!-- Footer Container Placeholder -->
   <div id="footer-container"></div>
 
-  <!-- Core Scripts -->
+  <!-- JavaScript Utilities & Logic -->
   <script src="/assets/js/theme.js"></script>
   <script src="/assets/js/utils.js" defer></script>
   <script src="/assets/js/app.js" defer></script>
 
-  <!-- Client Logic -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const bgSelect = document.getElementById('bg-select');
-      const paddingSelect = document.getElementById('padding-select');
-      const themeSelect = document.getElementById('window-theme');
-      const captureWrap = document.getElementById('capture-wrap');
-      const codeWindow = document.getElementById('code-window');
-      const codeInput = document.getElementById('code-input');
-      const downloadBtn = document.getElementById('download-btn');
+      const bgStyle = document.getElementById('bg-style');
+      const editorTheme = document.getElementById('editor-theme');
+      const windowTitle = document.getElementById('window-title');
+      const displayTitle = document.getElementById('display-title');
+      const captureContainer = document.getElementById('capture-container');
+      const codeWindowBox = document.getElementById('code-window-box');
+      const codeTextarea = document.getElementById('code-textarea');
+      const btnDownload = document.getElementById('btn-download-image');
 
-      function autoResizeTextarea() {
-        codeInput.style.height = 'auto';
-        codeInput.style.height = codeInput.scrollHeight + 'px';
-      }
-      codeInput.addEventListener('input', autoResizeTextarea);
-      autoResizeTextarea();
-
-      bgSelect.addEventListener('change', function() {
-        captureWrap.style.background = this.value;
+      // Update background gradient
+      bgStyle.addEventListener('change', function() {
+        captureContainer.style.background = bgStyle.value;
       });
 
-      paddingSelect.addEventListener('change', function() {
-        captureWrap.style.padding = this.value;
+      // Update editor theme
+      editorTheme.addEventListener('change', function() {
+        const bgVal = editorTheme.value;
+        codeWindowBox.style.backgroundColor = bgVal;
+        codeTextarea.style.color = bgVal === '#ffffff' ? '#1e293b' : '#f8f8f2';
       });
 
-      themeSelect.addEventListener('change', function() {
-        codeWindow.style.background = this.value;
+      // Update window title
+      windowTitle.addEventListener('input', function() {
+        displayTitle.textContent = windowTitle.value.trim() || 'script.js';
       });
 
-      downloadBtn.addEventListener('click', function() {
-        downloadBtn.textContent = '⏳ Rendering PNG...';
-        downloadBtn.disabled = true;
+      // Download PNG using HTML2Canvas
+      btnDownload.addEventListener('click', function() {
+        if (typeof html2canvas === 'undefined') {
+          alert('Canvas rendering library is loading. Please wait a second and try again.');
+          return;
+        }
 
-        html2canvas(captureWrap, {
-          scale: 2,
-          backgroundColor: null,
-          useCORS: true
+        const originalBtnText = btnDownload.textContent;
+        btnDownload.textContent = '⏳ Rendering PNG Image...';
+
+        html2canvas(captureContainer, {
+          scale: 2, // High resolution (DPI)
+          useCORS: true,
+          backgroundColor: null
         }).then(canvas => {
           const link = document.createElement('a');
-          link.download = 'code-snippet.png';
+          link.download = (windowTitle.value.trim() || 'code-snippet') + '.png';
           link.href = canvas.toDataURL('image/png');
           link.click();
 
-          downloadBtn.textContent = '📷 Download Image (PNG)';
-          downloadBtn.disabled = false;
+          btnDownload.textContent = '✅ Image Downloaded!';
+          setTimeout(() => { btnDownload.textContent = originalBtnText; }, 2000);
         }).catch(err => {
-          console.error('Export Error:', err);
           alert('Failed to generate image. Please try again.');
-          downloadBtn.textContent = '📷 Download Image (PNG)';
-          downloadBtn.disabled = false;
+          btnDownload.textContent = originalBtnText;
         });
       });
     });
