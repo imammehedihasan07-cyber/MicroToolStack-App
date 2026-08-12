@@ -9,6 +9,7 @@
         gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
         gTagScript.async = true;
         document.head.appendChild(gTagScript);
+
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
@@ -21,19 +22,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Primary SEO Meta Tags -->
-  <title>Free WEBP to JPG / PNG Converter Online | MicroToolStack</title>
-  <meta name="description" content="Convert WEBP images to JPG or PNG format online for free. Fast, client-side, browser-based conversion with no image quality loss and no registration needed.">
-  <meta name="keywords" content="webp to jpg converter, webp to png converter, convert webp online, webp image converter, transparent webp to png">
+  <title>Free Online WEBP to JPG / PNG Converter | MicroToolStack</title>
+  <meta name="description" content="Convert WEBP images to PNG or JPG format online for free. Convert next-gen WEBP files into universally compatible PNG or JPEG photos with 1-click downloads.">
+  <meta name="keywords" content="webp to jpg, webp to png, convert webp to png, convert webp to jpg, webp image converter, decode webp photo, webp to jpeg online, media tools">
 
   <link rel="canonical" href="https://microtoolstack.com/tools/media/webp-to-jpg-png.html">
   <meta name="robots" content="index, follow">
 
-  <!-- Open Graph / Social Media Meta Tags -->
+  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Free WEBP to JPG / PNG Converter Online | MicroToolStack">
-  <meta property="og:description" content="Convert WEBP images to JPG or PNG format online for free. Fast, client-side, browser-based conversion with no image quality loss.">
   <meta property="og:url" content="https://microtoolstack.com/tools/media/webp-to-jpg-png.html">
-  <meta property="og:site_name" content="MicroToolStack">
+  <meta property="og:title" content="Free Online WEBP to JPG / PNG Converter | MicroToolStack">
+  <meta property="og:description" content="Convert WEBP images into universally compatible PNG or JPG photos with live canvas previews. 100% free, fast, and privacy-first media utility.">
   <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
@@ -41,118 +41,168 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
   <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
-  <!-- Schema -->
+  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
   <script type="application/ld+json">
-  [
-    {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "WEBP to JPG / PNG Converter",
-      "url": "https://microtoolstack.com/tools/media/webp-to-jpg-png.html",
-      "applicationCategory": "MultimediaApplication",
-      "operatingSystem": "All",
-      "browserRequirements": "Requires JavaScript",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      }
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Is my uploaded WEBP image safe or saved on any server?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, 100% safe. All conversions take place inside your local browser using HTML5 Canvas. Your files are never uploaded to any external server."
-          }
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "WEBP to JPG and PNG Image Converter",
+        "operatingSystem": "All",
+        "applicationCategory": "MultimediaApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
         },
-        {
-          "@type": "Question",
-          "name": "Can I convert WEBP to PNG with a transparent background?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes! When converting WEBP to PNG, transparent backgrounds are fully preserved without adding solid backgrounds."
+        "description": "An essential client-side web utility that converts WEBP vector/raster graphics into universally compatible PNG or JPG image formats with customizable background colors.",
+        "url": "https://microtoolstack.com/tools/media/webp-to-jpg-png.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Why convert WEBP images to PNG or JPG?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Converting WEBP to PNG or JPG ensures maximum compatibility when importing web graphics into image editors, office documents, social media uploads, or legacy software that does not support WEBP files."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does converting WEBP to PNG preserve background transparency?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! When converting WEBP to PNG, full alpha channel transparency is 100% preserved."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are my uploaded photos sent to remote servers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No! All image rendering and format conversions execute 100% locally inside your web browser session using client-side JavaScript canvas APIs. Your photos remain completely private."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this WEBP to JPG/PNG Converter free to use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, MicroToolStack's WEBP to JPG/PNG Converter is 100% free with unlimited image conversions and no registration required."
+            }
           }
-        }
-      ]
-    }
-  ]
+        ]
+      }
+    ]
+  }
   </script>
 
-  <!-- Fonts & CSS Stylesheets -->
+  <!-- Preconnect and Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
 
   <style>
-    .converter-card {
-      background-color: var(--bg-card, #1e1e2e);
+    .input-group {
+      margin-bottom: 1.25rem;
+    }
+    .input-label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.5rem;
+    }
+    .form-control, .form-select {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
       border: 1px solid var(--border-color, #333);
-      border-radius: 12px;
-      padding: 2rem;
-      margin-bottom: 2.5rem;
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
+      color: var(--text-primary, #fff);
+      outline: none;
+      box-sizing: border-box;
     }
-    .drop-zone {
-      border: 2px dashed #4b5563;
-      border-radius: 8px;
-      padding: 2.5rem 1rem;
-      text-align: center;
-      cursor: pointer;
-      transition: border-color 0.2s ease;
-      background: rgba(0,0,0,0.15);
-      position: relative;
-    }
-    .drop-zone:hover {
+    .form-control:focus, .form-select:focus {
       border-color: var(--accent-primary, #3b82f6);
     }
-    .drop-zone input[type="file"] {
-      position: absolute;
-      inset: 0;
-      opacity: 0;
-      cursor: pointer;
+
+    /* Drag and Drop Zone */
+    .drop-zone {
       width: 100%;
-      height: 100%;
-    }
-    .btn-primary {
-      background-color: var(--accent-primary, #2563eb);
-      color: #fff;
-      padding: 0.75rem 1.5rem;
-      border-radius: 8px;
-      border: none;
-      font-weight: 600;
+      min-height: 180px;
+      border: 2px dashed var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       cursor: pointer;
+      transition: all 0.2s ease;
+      padding: 1.5rem;
+      box-sizing: border-box;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .drop-zone:hover, .drop-zone.dragover {
+      border-color: var(--accent-primary, #3b82f6);
+      background-color: rgba(59, 130, 246, 0.05);
+    }
+
+    /* Converter Stage Workspace */
+    .converter-stage {
       width: 100%;
-      transition: background 0.2s;
+      min-height: 260px;
+      background: #111827;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1.5rem;
+      box-sizing: border-box;
+      margin-bottom: 1.5rem;
+      position: relative;
     }
-    .btn-primary:hover {
-      opacity: 0.9;
-    }
-    .btn-success {
-      background-color: #16a34a;
-      color: #fff;
-      padding: 0.75rem 1.25rem;
+
+    .preview-img {
+      max-width: 100%;
+      max-height: 320px;
       border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      object-fit: contain;
+      display: none;
+    }
+
+    .meta-badge {
       display: inline-block;
+      font-size: 0.85rem;
+      color: var(--text-secondary, #9ca3af);
+      background: rgba(255, 255, 255, 0.05);
+      padding: 0.3rem 0.75rem;
+      border-radius: 6px;
+      border: 1px solid var(--border-color, #333);
+      margin-top: 0.75rem;
     }
-    .btn-success:hover {
-      background-color: #15803d;
+
+    .controls-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.5rem;
     }
-    .controls-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-      margin-top: 1.5rem;
-    }
-    @media (max-width: 640px) {
-      .controls-grid { grid-template-columns: 1fr; }
-    }
+
     .content-box {
       background-color: var(--bg-card, #1e1e2e);
       border: 1px solid var(--border-color, #333);
@@ -165,12 +215,18 @@
       margin-bottom: 1rem;
       color: var(--text-primary, #fff);
     }
-    .content-box p, .content-box ul, .content-box ol {
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul {
       color: var(--text-secondary, #9ca3af);
       font-size: 0.95rem;
       line-height: 1.6;
     }
-    .content-box ul, .content-box ol {
+    .content-box ul {
       padding-left: 1.25rem;
       margin-bottom: 1rem;
     }
@@ -213,220 +269,277 @@
     </nav>
   </header>
 
-  <!-- Main Content -->
+  <!-- Main Container -->
   <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
-    <!-- Breadcrumb Navigation -->
-    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
-      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
-      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Media Tools</a> / 
-      <span>WEBP to JPG / PNG</span>
-    </nav>
     
-    <!-- Title Section -->
+    <!-- Tool Title & Description -->
     <div style="text-align: center; margin-bottom: 2rem;">
-      <span class="badge badge-primary" style="margin-bottom: 0.5rem; display: inline-block;">100% Client-Side & Private</span>
-      <h1 style="font-size: 2rem; color: #fff; margin-bottom: 0.5rem;">WEBP to JPG / PNG Converter</h1>
-      <p style="color: var(--text-secondary, #9ca3af);">Convert modern WebP images into universal JPG or PNG format instantly inside your browser.</p>
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online WEBP to JPG / PNG Converter</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Convert WEBP images into universally compatible PNG or JPG format with customizable background color controls.</p>
     </div>
 
-    <!-- Converter App Card -->
-    <div class="converter-card">
-      <div class="drop-zone" id="drop-zone">
-        <input type="file" id="image-input" accept="image/webp">
-        <span style="font-size: 2.5rem; display: block; margin-bottom: 0.5rem;">🖼️</span>
-        <p style="margin: 0; font-weight: 600; color: #fff;" id="file-label">Click or Drag & Drop WEBP Image Here</p>
-        <span style="font-size: 0.85rem; color: #9ca3af;">Supports .webp files</span>
-      </div>
+    <!-- Drag and Drop Image Zone -->
+    <div class="drop-zone" id="drop-zone">
+      <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🔄</div>
+      <div style="font-size: 1.05rem; font-weight: 600; color: #fff; margin-bottom: 0.25rem;">Drag & Drop WEBP File Here</div>
+      <div style="font-size: 0.85rem; color: #9ca3af;">or click to browse from device (.WEBP)</div>
+      <input type="file" id="file-input" accept="image/webp, image/*" style="display: none;">
+    </div>
 
-      <div class="controls-grid">
+    <!-- Conversion Settings Card -->
+    <div class="content-box" style="margin-bottom: 1.5rem;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem;" class="input-group">
         <div>
-          <label style="display: block; margin-bottom: 0.5rem; font-size: 0.9rem; font-weight: 600; color: #fff;">Target Format</label>
-          <select id="format-select" style="width: 100%; padding: 0.75rem; border-radius: 8px; background: var(--bg-body, #111827); border: 1px solid var(--border-color, #374151); color: #fff; outline: none;">
-            <option value="image/jpeg">JPG / JPEG (Best for general photos)</option>
-            <option value="image/png">PNG (Supports transparent backgrounds)</option>
+          <label for="target-format" class="input-label">Target Output Format</label>
+          <select id="target-format" class="form-select">
+            <option value="png" selected>PNG (Preserves Transparency)</option>
+            <option value="jpeg">JPG / JPEG (Solid Background)</option>
           </select>
         </div>
-
-        <div id="quality-wrapper">
-          <label style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.9rem; font-weight: 600; color: #fff;">
-            <span>Quality</span>
-            <span id="quality-val">90%</span>
-          </label>
-          <input type="range" id="quality-range" min="0.1" max="1" step="0.05" value="0.9" style="width: 100%; accent-color: var(--accent-primary, #2563eb);">
+        <div>
+          <label for="jpg-quality" class="input-label">Output Quality (<span id="quality-val">92</span>%)</label>
+          <input type="range" id="jpg-quality" min="10" max="100" value="92" style="width: 100%; accent-color: #3b82f6;">
         </div>
-      </div>
-
-      <button id="convert-btn" class="btn-primary" style="margin-top: 1.5rem;" disabled>Convert Image</button>
-
-      <!-- Hidden Canvas for Conversion -->
-      <canvas id="conversion-canvas" style="display: none;"></canvas>
-
-      <!-- Result Area -->
-      <div id="result-container" style="display: none; margin-top: 2rem; border-top: 1px solid var(--border-color, #374151); padding-top: 1.5rem;">
-        <p style="color: #4ade80; font-weight: 600; margin-bottom: 1rem;">✅ Conversion Successful!</p>
-        <div style="display: flex; align-items: center; gap: 1.5rem; background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 8px;">
-          <img id="result-preview" src="" alt="Converted Result" style="width: 100px; height: 100px; object-fit: contain; background: #111; border-radius: 6px;">
-          <div>
-            <p id="result-filename" style="margin: 0 0 0.5rem 0; font-weight: 600; color: #fff;"></p>
-            <a id="download-btn" class="btn-success" href="" download="">📥 Download Image</a>
-          </div>
+        <div>
+          <label for="bg-color-picker" class="input-label">JPG Background Color</label>
+          <input type="color" id="bg-color-picker" class="form-control" value="#ffffff" style="height: 42px; padding: 0.2rem;" disabled>
         </div>
       </div>
     </div>
 
-    <!-- SEO Content Box 1 -->
-    <div class="content-box">
-      <h2>How to Convert WEBP to JPG or PNG Online</h2>
-      <p>WebP is a modern image format created by Google that delivers excellent compression for web pages. However, many desktop programs, graphics tools, and older applications do not fully support opening or editing <code>.webp</code> files. Our free online WEBP Converter transforms your WebP files into universally accepted JPEG or PNG formats in milliseconds.</p>
+    <!-- Converter Stage Workspace -->
+    <div class="converter-stage">
+      <img id="preview-img" class="preview-img" alt="Converted Image Preview">
+      <div id="status-msg" style="color: #94a3b8; font-size: 0.95rem;">
+        📂 Upload a WEBP image to convert to PNG or JPG...
+      </div>
+      <div id="img-meta" class="meta-badge" style="display: none;">Dimensions: 0 x 0 px</div>
     </div>
 
-    <!-- SEO Content Box 2 -->
+    <!-- Controls Bar -->
+    <div class="controls-bar">
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-download" class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-weight: 600; cursor: pointer; background: #10b981;">💾 Download Converted Image</button>
+      </div>
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear</button>
+      </div>
+    </div>
+
+    <!-- Offscreen Processing Canvas -->
+    <canvas id="proc-canvas" style="display: none;"></canvas>
+
+    <!-- SEO Article Content Box 1 -->
     <div class="content-box">
-      <h2>Step-by-Step Instructions</h2>
+      <h2>Why Converting WEBP to PNG or JPG Solves Compatibility Issues</h2>
+      <p>While the <strong>WEBP</strong> image format created by Google offers excellent web compression, many desktop image editors, word processors, social media schedulers, and printing services still struggle to process <code>.webp</code> files properly.</p>
+
+      <p>When downloading graphics or web images saved as WEBP, converting them into universally supported <strong>PNG</strong> or <strong>JPG</strong> formats is necessary for editing, sharing, or printing. Our free <strong>Online WEBP to JPG / PNG Converter</strong> decodes WEBP files and exports high-quality PNG or JPEG images directly inside your web browser.</p>
+    </div>
+
+    <!-- SEO Article Content Box 2 -->
+    <div class="content-box">
+      <h2>PNG vs. JPG: Which Format Should You Choose?</h2>
+      <p>Selecting the ideal target format for your converted WEBP graphic:</p>
+
       <ul>
-        <li>Click on the upload box above and select your <strong>.webp</strong> file.</li>
-        <li>Select your target format: <strong>JPG</strong> for photos or <strong>PNG</strong> if you need transparent backgrounds.</li>
-        <li>Adjust the quality slider (for JPG).</li>
-        <li>Click <strong>Convert Image</strong>, then click <strong>Download Image</strong> to save the converted file to your device.</li>
+        <li><strong>PNG (Portable Network Graphics):</strong> Ideal for logos, icons, diagrams, and illustrations containing transparent backgrounds. PNG uses lossless compression to preserve pixel-sharp line edges.</li>
+        <li><strong>JPG / JPEG (Joint Photographic Experts Group):</strong> Ideal for photographs, complex scenes, and realistic images without transparency. JPG delivers small file sizes suited for email attachments and photo albums.</li>
       </ul>
     </div>
 
-    <!-- SEO Content Box 3 -->
+    <!-- SEO Article Content Box 3 -->
     <div class="content-box">
-      <h2>Why Use MicroToolStack WEBP Converter?</h2>
+      <h2>Features of MicroToolStack's WEBP Converter</h2>
       <ul>
-        <li><strong>100% Privacy & Security:</strong> Image processing happens directly on your device via browser HTML5 Canvas technology. No images are uploaded to any server.</li>
-        <li><strong>Lightning Speed:</strong> No wait times for network uploads or queue lines.</li>
-        <li><strong>Free & Unlimited:</strong> No registration, watermarks, or daily conversion caps.</li>
+        <li><strong>Dual Export Options:</strong> Convert WEBP graphics to transparent PNG or solid-background JPG images seamlessly.</li>
+        <li><strong>Custom Quality & Background Controls:</strong> Fine-tune JPG compression quality and choose custom background fill colors.</li>
+        <li><strong>100% Client-Side Privacy:</strong> All canvas decoding and image encoding execute locally inside your web browser session using JavaScript. Photos are never uploaded remotely.</li>
+        <li><strong>Free & Unlimited Usage:</strong> No file size caps or registration required.</li>
       </ul>
     </div>
 
-    <!-- Internal Linking Section (SEO Best Practice) -->
+    <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
     <div class="content-box">
-      <h2>Explore Related Media & Web Tools</h2>
-      <p>Enhance your graphics workflow with our free utilities:</p>
+      <h2>Explore Related Media Tools</h2>
+      <p>Discover our complementary online media utilities:</p>
       <div class="related-links">
-        <a href="/tools/media/svg-to-png.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🖼️ SVG to PNG Converter</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Convert SVG vectors to High-Res PNG.</span>
+        <a href="/tools/media/webp-converter.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">⚡ WEBP Image Converter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Convert PNG and JPG images into next-gen WEBP format.</span>
         </a>
-        <a href="/tools/media/png-to-svg.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🎨 PNG to SVG Converter</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Trace raster PNG images into SVG vectors.</span>
+        <a href="/tools/media/ico-converter.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🌐 Image to ICO Converter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Convert PNG and JPG images into website favicons.</span>
         </a>
         <a href="/tools/media/image-cropper.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">✂️ Image Cropper</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Crop images with custom aspect ratios.</span>
-        </a>
-        <a href="/tools/media/image-to-base64.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">📄 Image to Base64</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Convert images to Data URI strings.</span>
+          <strong style="display:block; margin-bottom: 0.25rem;">✂️ Interactive Image Cropper</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Crop, rotate, and scale photos into exact aspect ratios.</span>
         </a>
       </div>
     </div>
 
     <!-- FAQ Section -->
     <div class="content-box">
-      <h2>Frequently Asked Questions</h2>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: #fff; margin-bottom: 0.25rem;">Are my uploaded files stored on your servers?</h3>
-        <p>No. Your images remain strictly on your browser. We never upload, transfer, or store your images on external servers.</p>
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How do I convert a WEBP file to PNG or JPG online?</h3>
+        <p>Drag and drop your WEBP image into the drop zone, choose your target format (PNG or JPG), and click "Download Converted Image".</p>
       </div>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: #fff; margin-bottom: 0.25rem;">Can I convert WEBP to transparent PNG?</h3>
-        <p>Yes! When converting to PNG, transparent areas of your WEBP file will stay completely transparent.</p>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Does converting WEBP to PNG preserve transparent backgrounds?</h3>
+        <p>Yes! Converting WEBP to PNG preserves full alpha channel transparency.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Are my uploaded WEBP files saved on remote servers?</h3>
+        <p>No. All calculations run client-side inside your browser session using JavaScript. Your files remain completely private.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this WEBP to JPG/PNG Converter free?</h3>
+        <p>Yes, MicroToolStack's WEBP to JPG/PNG Converter is 100% free with no usage limits or sign-up required.</p>
       </div>
     </div>
 
   </main>
 
-  <!-- Footer Placeholder -->
+  <!-- Footer Container Placeholder -->
   <div id="footer-container"></div>
 
-  <!-- Scripts -->
+  <!-- JavaScript Utilities & Logic -->
   <script src="/assets/js/theme.js"></script>
   <script src="/assets/js/utils.js" defer></script>
-  <script src="/assets/js/search.js" defer></script>
   <script src="/assets/js/app.js" defer></script>
 
-  <!-- Converter Logic Script -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const input = document.getElementById('image-input');
-      const label = document.getElementById('file-label');
-      const convertBtn = document.getElementById('convert-btn');
-      const formatSelect = document.getElementById('format-select');
-      const qualityWrapper = document.getElementById('quality-wrapper');
-      const qualityRange = document.getElementById('quality-range');
+      const dropZone = document.getElementById('drop-zone');
+      const fileInput = document.getElementById('file-input');
+
+      const targetFormat = document.getElementById('target-format');
+      const jpgQuality = document.getElementById('jpg-quality');
       const qualityVal = document.getElementById('quality-val');
-      const canvas = document.getElementById('conversion-canvas');
-      const resultContainer = document.getElementById('result-container');
-      const resultPreview = document.getElementById('result-preview');
-      const resultFilename = document.getElementById('result-filename');
-      const downloadBtn = document.getElementById('download-btn');
+      const bgColorPicker = document.getElementById('bg-color-picker');
 
-      let loadedImage = null;
-      let rawFileName = 'converted-image';
+      const previewImg = document.getElementById('preview-img');
+      const statusMsg = document.getElementById('status-msg');
+      const imgMeta = document.getElementById('img-meta');
 
-      input.addEventListener('change', function(e) {
-        const file = e.target.files[0];
-        if (file) {
-          rawFileName = file.name.replace(/\.[^/.]+$/, "");
-          label.textContent = `Selected: ${file.name}`;
-          const reader = new FileReader();
-          reader.onload = function(event) {
-            const img = new Image();
-            img.onload = function() {
-              loadedImage = img;
-              convertBtn.disabled = false;
-            };
-            img.src = event.target.result;
+      const btnDownload = document.getElementById('btn-download');
+      const btnClear = document.getElementById('btn-clear');
+      const procCanvas = document.getElementById('proc-canvas');
+
+      let loadedImageObj = null;
+      let convertedDataUrl = '';
+
+      dropZone.addEventListener('click', () => fileInput.click());
+
+      dropZone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropZone.classList.add('dragover');
+      });
+
+      dropZone.addEventListener('dragleave', () => dropZone.classList.remove('dragover'));
+
+      dropZone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropZone.classList.remove('dragover');
+        if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+          handleFile(e.dataTransfer.files[0]);
+        }
+      });
+
+      fileInput.addEventListener('change', (e) => {
+        if (e.target.files && e.target.files[0]) {
+          handleFile(e.target.files[0]);
+        }
+      });
+
+      function handleFile(file) {
+        const reader = new FileReader();
+        reader.onload = function(evt) {
+          const img = new Image();
+          img.onload = function() {
+            loadedImageObj = img;
+            processConversion();
+            statusMsg.style.display = 'none';
           };
-          reader.readAsDataURL(file);
-        }
-      });
+          img.src = evt.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
 
-      formatSelect.addEventListener('change', function() {
-        if (this.value === 'image/jpeg') {
-          qualityWrapper.style.display = 'block';
+      targetFormat.addEventListener('change', function() {
+        if (targetFormat.value === 'jpeg') {
+          bgColorPicker.disabled = false;
         } else {
-          qualityWrapper.style.display = 'none';
+          bgColorPicker.disabled = true;
         }
+        if (loadedImageObj) processConversion();
       });
 
-      qualityRange.addEventListener('input', function() {
-        qualityVal.textContent = Math.round(this.value * 100) + '%';
+      jpgQuality.addEventListener('input', () => {
+        qualityVal.textContent = jpgQuality.value;
+        if (loadedImageObj) processConversion();
       });
 
-      convertBtn.addEventListener('click', function() {
-        if (!loadedImage) return;
+      bgColorPicker.addEventListener('input', () => {
+        if (loadedImageObj) processConversion();
+      });
 
-        const ctx = canvas.getContext('2d');
-        canvas.width = loadedImage.width;
-        canvas.height = loadedImage.height;
+      function processConversion() {
+        if (!loadedImageObj) return;
 
-        const targetFormat = formatSelect.value;
-        const quality = parseFloat(qualityRange.value);
+        const w = loadedImageObj.naturalWidth;
+        const h = loadedImageObj.naturalHeight;
 
-        if (targetFormat === 'image/jpeg') {
-          ctx.fillStyle = '#FFFFFF';
-          ctx.fillRect(0, 0, canvas.width, canvas.height);
-        } else {
-          ctx.clearRect(0, 0, canvas.width, canvas.height);
+        procCanvas.width = w;
+        procCanvas.height = h;
+
+        const ctx = procCanvas.getContext('2d');
+        ctx.clearRect(0, 0, w, h);
+
+        if (targetFormat.value === 'jpeg') {
+          ctx.fillStyle = bgColorPicker.value;
+          ctx.fillRect(0, 0, w, h);
         }
 
-        ctx.drawImage(loadedImage, 0, 0);
+        ctx.drawImage(loadedImageObj, 0, 0, w, h);
 
-        const dataUrl = canvas.toDataURL(targetFormat, quality);
-        const ext = targetFormat === 'image/jpeg' ? 'jpg' : 'png';
-        const finalName = `${rawFileName}.${ext}`;
+        const fmt = targetFormat.value === 'jpeg' ? 'image/jpeg' : 'image/png';
+        const q = parseFloat(jpgQuality.value) / 100;
 
-        resultPreview.src = dataUrl;
-        resultFilename.textContent = finalName;
-        downloadBtn.href = dataUrl;
-        downloadBtn.download = finalName;
+        convertedDataUrl = procCanvas.toDataURL(fmt, q);
 
-        resultContainer.style.display = 'block';
+        previewImg.src = convertedDataUrl;
+        previewImg.style.display = 'block';
+
+        imgMeta.textContent = `Dimensions: ${w} x ${h} px | Output Format: ${targetFormat.value.toUpperCase()}`;
+        imgMeta.style.display = 'inline-block';
+      }
+
+      btnDownload.addEventListener('click', function() {
+        if (!convertedDataUrl) {
+          alert('Please upload a WEBP image first.');
+          return;
+        }
+
+        const ext = targetFormat.value === 'jpeg' ? 'jpg' : 'png';
+        const link = document.createElement('a');
+        link.href = convertedDataUrl;
+        link.download = `converted-photo.${ext}`;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      });
+
+      btnClear.addEventListener('click', function() {
+        loadedImageObj = null;
+        fileInput.value = '';
+        previewImg.style.display = 'none';
+        previewImg.src = '';
+        statusMsg.style.display = 'block';
+        imgMeta.style.display = 'none';
+        convertedDataUrl = '';
       });
     });
   </script>
