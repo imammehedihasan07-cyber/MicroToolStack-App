@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) - Deferred Load -->
+  <!-- Google tag (gtag.js) - Optimized Load -->
   <script>
     window.addEventListener('load', function() {
       setTimeout(function() {
@@ -20,18 +20,87 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>YouTube Embed Code Generator - Responsive iFrames | MicroToolStack</title>
-  <meta name="description" content="Free YouTube Embed Code Generator. Create custom, responsive iframe embed codes with autoplay, custom start time, loop, and privacy-enhanced mode.">
-  <meta name="keywords" content="youtube embed generator, responsive youtube iframe, embed youtube video, youtube nocookie embed, youtube start time embed">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>Free Online YouTube Embed Code Generator | Iframe Maker | MicroToolStack</title>
+  <meta name="description" content="Generate custom YouTube video embed HTML iframe codes online for free. Configure responsive sizing, autoplay, loop, controls, and copy clean embed code instantly.">
+  <meta name="keywords" content="youtube embed generator, youtube iframe maker, embed youtube video html, responsive youtube embed code, youtube player options, video tools, microtoolstack">
 
   <link rel="canonical" href="https://microtoolstack.com/tools/youtube/embed-generator.html">
   <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://microtoolstack.com/tools/youtube/embed-generator.html">
+  <meta property="og:title" content="Free Online YouTube Embed Generator | MicroToolStack">
+  <meta property="og:description" content="Generate responsive YouTube video iframe embed codes with customizable playback parameters instantly. 100% free web utility.">
+  <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
   <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
   <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
+  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "YouTube Embed Code Generator",
+        "operatingSystem": "All",
+        "applicationCategory": "UtilitiesApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "An essential client-side YouTube webmaster utility that generates customizable responsive iframe embed codes and player parameter configurations.",
+        "url": "https://microtoolstack.com/tools/youtube/embed-generator.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How do I embed a YouTube video in HTML?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Paste your YouTube video URL or ID into our free generator, configure dimensions and playback options like autoplay or loop, and copy the generated HTML <iframe> snippet."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How can I make a YouTube embed responsive?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "By wrapping the generated iframe inside a responsive CSS container with a 16:9 aspect ratio, the video scales smoothly across mobile phones, tablets, and desktop displays."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my video data saved on remote servers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No! All URL parsing and code generation execute 100% locally inside your web browser session using client-side JavaScript. Your data remains completely private."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this YouTube Embed Generator free to use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, MicroToolStack's YouTube Embed Generator is 100% free with unlimited code generations and no registration required."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Preconnect and Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -40,6 +109,150 @@
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
 
   <style>
+    .input-group {
+      margin-bottom: 1.25rem;
+    }
+    .input-label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.5rem;
+    }
+    .form-control, .form-select {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
+      color: var(--text-primary, #fff);
+      outline: none;
+      box-sizing: border-box;
+    }
+    .form-control:focus, .form-select:focus {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+
+    .code-textarea {
+      width: 100%;
+      min-height: 120px;
+      padding: 1rem;
+      font-size: 0.85rem;
+      font-family: 'Fira Code', Consolas, Monaco, monospace;
+      line-height: 1.5;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: #111827;
+      color: #38bdf8;
+      outline: none;
+      resize: vertical;
+      box-sizing: border-box;
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+
+    /* Options Checkbox Grid */
+    .options-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      background: #111827;
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .checkbox-label {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      color: var(--text-primary, #fff);
+      cursor: pointer;
+    }
+
+    .checkbox-label input {
+      width: 16px;
+      height: 16px;
+      accent-color: var(--accent-primary, #3b82f6);
+      cursor: pointer;
+    }
+
+    /* Live Preview Stage */
+    .preview-stage {
+      width: 100%;
+      background: #111827;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      box-sizing: border-box;
+      margin-bottom: 1.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .iframe-container {
+      position: relative;
+      width: 100%;
+      max-width: 640px;
+      aspect-ratio: 16 / 9;
+      background: #000;
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid #374151;
+    }
+
+    .iframe-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .controls-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .content-box {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .content-box h2 {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul {
+      color: var(--text-secondary, #9ca3af);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .content-box ul {
+      padding-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .content-box li {
+      margin-bottom: 0.5rem;
+    }
     .related-links {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -59,59 +272,10 @@
     .related-card:hover {
       border-color: var(--accent-primary, #3b82f6);
     }
-    .content-box {
-      background-color: var(--bg-card, #1e1e2e);
-      border: 1px solid var(--border-color, #333);
-      border-radius: var(--radius-md, 8px);
-      padding: 1.5rem;
-      margin-bottom: 2rem;
-    }
-    .content-box h2 {
-      font-size: 1.35rem;
-      margin-bottom: 1rem;
-      color: var(--text-primary, #fff);
-    }
-    .content-box p, .content-box ul, .content-box ol {
-      color: var(--text-secondary, #9ca3af);
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-    .content-box ul, .content-box ol {
-      padding-left: 1.25rem;
-      margin-bottom: 1rem;
-    }
-    .content-box li {
-      margin-bottom: 0.5rem;
-    }
   </style>
-
-  <!-- Schema.org FAQ Markup -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How do I make an embedded YouTube video responsive?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Our generator wraps the iframe in a responsive CSS container with a 16:9 aspect ratio, ensuring it scales perfectly on mobile screens, tablets, and desktops."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is YouTube Privacy-Enhanced Mode?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Privacy-enhanced mode uses the domain 'youtube-nocookie.com', preventing YouTube from storing tracking cookies about visitors until they click play."
-        }
-      }
-    ]
-  }
-  </script>
 </head>
 <body style="margin: 0; padding: 0;">
+
   <!-- Header Section -->
   <header class="custom-header">
     <a href="/" class="custom-logo">
@@ -125,206 +289,239 @@
     </nav>
   </header>
 
+  <!-- Main Container -->
   <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
-    <!-- Breadcrumb Navigation -->
-    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
-      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
-      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">YouTube Tools</a> / 
-      <span>Embed Generator</span>
-    </nav>
-
+    
     <!-- Tool Title & Description -->
-    <header style="margin-bottom: 2rem; text-align: center;">
-      <h1 class="hero" style="font-size: 2rem; margin-bottom: 0.5rem; color: #fff;">YouTube Embed Code Generator</h1>
-      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem; max-width: 650px; margin: 0 auto;">
-        Create customized, responsive YouTube embed codes with advanced parameters like privacy mode, start times, and loop.
-      </p>
-    </header>
-
-    <!-- Tool App Box -->
-    <section class="card" style="padding: 2rem; border-radius: 12px; background: var(--bg-card, #1e1e2e); border: 1px solid var(--border-color, #333); margin-bottom: 3rem;">
-      <div style="display: flex; flex-direction: column; gap: 1.2rem;">
-        <div>
-          <label for="url-input" style="font-weight: 600; font-size: 1rem; display: block; margin-bottom: 0.5rem; color: #fff;">YouTube Video URL:</label>
-          <input type="text" id="url-input" placeholder="e.g., https://www.youtube.com/watch?v=dQw4w9WgXcQ" style="width: 100%; padding: 0.8rem 1rem; border-radius: 6px; border: 1px solid var(--border-color, #333); background: var(--bg-card, #12121e); color: #fff; font-size: 1rem; box-sizing: border-box; outline: none;">
-        </div>
-
-        <!-- Options Grid -->
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 0.5rem;">
-          <div>
-            <label for="start-time" style="font-size: 0.88rem; color: var(--text-secondary, #9ca3af); display: block; margin-bottom: 0.3rem;">Start Time (seconds):</label>
-            <input type="number" id="start-time" placeholder="e.g. 30" min="0" style="width: 100%; padding: 0.6rem; border-radius: 6px; border: 1px solid var(--border-color, #333); background: var(--bg-card, #12121e); color: #fff; box-sizing: border-box; outline: none;">
-          </div>
-          <div style="display: flex; align-items: center; gap: 0.5rem; margin-top: 1.2rem; color: #fff;">
-            <input type="checkbox" id="opt-privacy" checked style="width: 18px; height: 18px; accent-color: var(--accent-primary, #3b82f6);">
-            <label for="opt-privacy" style="font-size: 0.9rem; cursor: pointer;">Privacy-Enhanced Mode</label>
-          </div>
-          <div style="display: flex; align-items: center; gap: 0.5rem; margin-top: 1.2rem; color: #fff;">
-            <input type="checkbox" id="opt-responsive" checked style="width: 18px; height: 18px; accent-color: var(--accent-primary, #3b82f6);">
-            <label for="opt-responsive" style="font-size: 0.9rem; cursor: pointer;">Make Responsive (16:9)</label>
-          </div>
-          <div style="display: flex; align-items: center; gap: 0.5rem; margin-top: 1.2rem; color: #fff;">
-            <input type="checkbox" id="opt-autoplay" style="width: 18px; height: 18px; accent-color: var(--accent-primary, #3b82f6);">
-            <label for="opt-autoplay" style="font-size: 0.9rem; cursor: pointer;">Autoplay (Muted)</label>
-          </div>
-        </div>
-
-        <button id="generate-btn" style="padding: 0.8rem 1.5rem; border-radius: 6px; border: none; background: var(--accent-primary, #3b82f6); color: #fff; font-weight: 600; cursor: pointer; margin-top: 1rem;">Generate Embed Code</button>
-      </div>
-
-      <!-- Result Box -->
-      <div id="result-box" style="display: none; margin-top: 2rem; border-top: 1px solid var(--border-color, #333); padding-top: 1.5rem;">
-        <h3 style="color: #fff; margin-bottom: 0.8rem; font-size: 1.1rem;">Generated Embed Code:</h3>
-        <div style="position: relative; margin-bottom: 1.5rem;">
-          <textarea id="code-output" readonly rows="5" style="width: 100%; padding: 1rem; border-radius: 6px; border: 1px solid var(--border-color, #333); background: rgba(0,0,0,0.4); color: #10b981; font-family: monospace; font-size: 0.9rem; resize: vertical; box-sizing: border-box; outline: none;"></textarea>
-          <button id="copy-btn" style="position: absolute; top: 10px; right: 10px; padding: 0.4rem 0.8rem; border-radius: 4px; border: 1px solid var(--border-color, #4b5563); background: var(--bg-card, #1f2937); color: #fff; cursor: pointer; font-size: 0.8rem;">Copy Code</button>
-        </div>
-
-        <h3 style="color: #fff; margin-bottom: 0.8rem; font-size: 1.1rem;">Live Preview:</h3>
-        <div id="preview-container" style="background: rgba(0,0,0,0.5); padding: 1rem; border-radius: 8px;"></div>
-      </div>
-
-      <div id="error-box" style="display: none; margin-top: 1rem; color: #ef4444; font-size: 0.95rem; text-align: center;"></div>
-    </section>
-
-    <!-- SEO Content Section 1 -->
-    <div class="content-box">
-      <h2>Why Use a Custom YouTube Embed Code Generator?</h2>
-      <p>
-        Default YouTube share embeds lack responsiveness and don't automatically adjust to mobile screen widths. Our <strong>YouTube Embed Code Generator</strong> creates fluid HTML/CSS containers that fit any blog layout (WordPress, Webflow, Blogger, or custom HTML) seamlessly while respecting user privacy standards.
-      </p>
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online YouTube Embed Code Generator</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Generate custom responsive YouTube iframe embed codes with playback parameters instantly.</p>
     </div>
 
-    <!-- SEO Content Section 2 -->
+    <!-- Live Preview Stage -->
+    <div class="preview-stage">
+      <div class="iframe-container" id="iframe-stage">
+        <iframe id="preview-iframe" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <!-- Settings Card -->
+    <div class="content-box" style="margin-bottom: 1.5rem;">
+      <div class="input-group">
+        <label for="url-input" class="input-label">YouTube Video URL or Video ID</label>
+        <input type="text" id="url-input" class="form-control" value="https://www.youtube.com/watch?v=dQw4w9WgXcQ" placeholder="https://www.youtube.com/watch?v=... or video ID">
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;" class="input-group">
+        <div>
+          <label for="input-width" class="input-label">Player Width (px or %)</label>
+          <input type="text" id="input-width" class="form-control" value="560">
+        </div>
+        <div>
+          <label for="input-height" class="input-label">Player Height (px)</label>
+          <input type="text" id="input-height" class="form-control" value="315">
+        </div>
+      </div>
+
+      <!-- Playback Options Checkboxes -->
+      <div class="options-grid">
+        <label class="checkbox-label">
+          <input type="checkbox" id="chk-autoplay"> Autoplay Video
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" id="chk-loop"> Loop Video
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" id="chk-controls" checked> Show Player Controls
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" id="chk-mute"> Start Muted
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" id="chk-modest"> Modest Branding
+        </label>
+      </div>
+    </div>
+
+    <!-- Generated HTML Code Box -->
+    <div class="content-box" style="margin-bottom: 1.5rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+        <label for="html-output" class="input-label" style="margin: 0;">Generated HTML Embed Code</label>
+        <button id="btn-copy-code" class="btn btn-secondary" style="padding: 0.35rem 0.8rem; font-size: 0.75rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 4px;">📋 Copy Embed Code</button>
+      </div>
+      <textarea id="html-output" class="code-textarea" readonly></textarea>
+    </div>
+
+    <!-- Controls Bar -->
+    <div class="controls-bar">
+      <div></div>
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-reset" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Reset Defaults</button>
+      </div>
+    </div>
+
+    <!-- SEO Article Content Box 1 -->
     <div class="content-box">
-      <h2>Key Features & Parameters</h2>
+      <h2>Why Embed YouTube Videos on Your Website?</h2>
+      <p>Embedding YouTube videos directly into your blog posts, landing pages, or online portfolios is one of the most effective ways to increase user engagement and dwell time. Rich video media breaks up dense text blocks and keeps visitors on your site significantly longer.</p>
+
+      <p>Our free <strong>Online YouTube Embed Code Generator</strong> lets you customize player parameters—such as autoplay, looping, player controls, and custom dimensions—without manually editing complex iframe parameters.</p>
+    </div>
+
+    <!-- SEO Article Content Box 2 -->
+    <div class="content-box">
+      <h2>Customizable YouTube Iframe Parameters</h2>
+      <p>Configure advanced player options easily:</p>
+
       <ul>
-        <li><strong>100% Mobile Responsive:</strong> Wraps the iframe in aspect-ratio CSS to eliminate side-scrolling issues.</li>
-        <li><strong>Privacy-Enhanced Mode (No-Cookie):</strong> Uses <code>youtube-nocookie.com</code> domain to improve GDPR compliance.</li>
-        <li><strong>Custom Timestamp Start:</strong> Force videos to begin playing at a specific second mark automatically.</li>
-        <li><strong>Muted Autoplay:</strong> Enable seamless background playback without sound disruption.</li>
+        <li><strong>Autoplay:</strong> Automatically starts playing the video when the webpage loads (note: modern browsers require <code>mute=1</code> for autoplay).</li>
+        <li><strong>Loop:</strong> Automatically replays the video from the beginning when it finishes.</li>
+        <li><strong>Player Controls:</strong> Hides or shows standard YouTube play/pause bars and timeline scrubbers.</li>
+        <li><strong>Modest Branding:</strong> Minimizes YouTube branding and hides the top video title bar until hovered.</li>
       </ul>
     </div>
 
-    <!-- Internal Linking Section (SEO Best Practice) -->
+    <!-- SEO Article Content Box 3 -->
     <div class="content-box">
-      <h2>Explore Related YouTube & Developer Tools</h2>
-      <p>Supercharge your video and web content with our free utilities:</p>
+      <h2>Features of MicroToolStack's Embed Generator</h2>
+      <ul>
+        <li><strong>Live Interactive Video Preview:</strong> Test your video playback and configuration parameters in real time before copying code.</li>
+        <li><strong>Clean HTML Snippets:</strong> Generates standards-compliant <code>&lt;iframe&gt;</code> code ready to paste into WordPress, HTML5, or React sites.</li>
+        <li><strong>100% Client-Side Privacy:</strong> All URL parsing and code generation execute locally in your web browser session using JavaScript. No video data is saved remotely.</li>
+        <li><strong>Free & Unlimited Usage:</strong> No generation limits or registration required.</li>
+      </ul>
+    </div>
+
+    <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
+    <div class="content-box">
+      <h2>Explore Related YouTube & Webmaster Tools</h2>
+      <p>Discover our complementary online webmaster utilities:</p>
       <div class="related-links">
+        <a href="/tools/youtube/thumbnail-downloader.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🖼️ YouTube Thumbnail Downloader</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Download high-res HD video thumbnails instantly.</span>
+        </a>
         <a href="/tools/youtube/channel-id-finder.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🆔 Channel ID Finder</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Extract 24-character YouTube Channel IDs.</span>
+          <strong style="display:block; margin-bottom: 0.25rem;">🔍 YouTube Channel ID Finder</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Retrieve unique channel IDs (UC...) from URLs.</span>
         </a>
-        <a href="/tools/text/word-counter.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">📝 Word Counter</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Analyze text length for YouTube descriptions.</span>
-        </a>
-        <a href="/tools/text/case-converter.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🔤 Case Converter</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Format titles in Title Case or Uppercase.</span>
+        <a href="/tools/seo/open-graph-generator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🌐 Open Graph Tag Generator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Build Facebook and Twitter social share meta tags.</span>
         </a>
       </div>
     </div>
 
     <!-- FAQ Section -->
     <div class="content-box">
-      <h2>Frequently Asked Questions (FAQ)</h2>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="color: #fff; font-size: 1.05rem; margin-bottom: 0.3rem;">How do I make an embedded YouTube video responsive?</h3>
-        <p>Our generator wraps the iframe in a responsive CSS container with a 16:9 aspect ratio, ensuring it scales perfectly on mobile screens, tablets, and desktops.</p>
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How do I get a YouTube video embed code?</h3>
+        <p>Paste your YouTube video URL or ID into the input box. Configure your preferred size and playback options, then copy the generated HTML iframe code.</p>
       </div>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="color: #fff; font-size: 1.05rem; margin-bottom: 0.3rem;">What is YouTube Privacy-Enhanced Mode?</h3>
-        <p>Privacy-enhanced mode uses the domain 'youtube-nocookie.com', preventing YouTube from storing tracking cookies about visitors until they click play.</p>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Why doesn't autoplay work on my embedded video?</h3>
+        <p>Most modern web browsers block unmuted autoplay to prevent disruptive user experiences. To ensure autoplay works reliably, check both "Autoplay Video" and "Start Muted".</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is my video data saved on remote servers?</h3>
+        <p>No. All calculations run client-side inside your browser session using JavaScript. Your inputs remain 100% private.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this YouTube Embed Generator free?</h3>
+        <p>Yes, MicroToolStack's YouTube Embed Generator is 100% free with no usage limits or sign-up required.</p>
       </div>
     </div>
+
   </main>
 
-  <!-- Footer Placeholder -->
+  <!-- Footer Container Placeholder -->
   <div id="footer-container"></div>
 
-  <!-- Core Scripts -->
+  <!-- JavaScript Utilities & Logic -->
   <script src="/assets/js/theme.js"></script>
   <script src="/assets/js/utils.js" defer></script>
-  <script src="/assets/js/search.js" defer></script>
   <script src="/assets/js/app.js" defer></script>
 
-  <!-- Tool Logic Script -->
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const input = document.getElementById('url-input');
-      const startTime = document.getElementById('start-time');
-      const optPrivacy = document.getElementById('opt-privacy');
-      const optResponsive = document.getElementById('opt-responsive');
-      const optAutoplay = document.getElementById('opt-autoplay');
+    document.addEventListener('DOMContentLoaded', function() {
+      const urlInput = document.getElementById('url-input');
+      const inputWidth = document.getElementById('input-width');
+      const inputHeight = document.getElementById('input-height');
 
-      const generateBtn = document.getElementById('generate-btn');
-      const resultBox = document.getElementById('result-box');
-      const codeOutput = document.getElementById('code-output');
-      const previewContainer = document.getElementById('preview-container');
-      const copyBtn = document.getElementById('copy-btn');
-      const errorBox = document.getElementById('error-box');
+      const chkAutoplay = document.getElementById('chk-autoplay');
+      const chkLoop = document.getElementById('chk-loop');
+      const chkControls = document.getElementById('chk-controls');
+      const chkMute = document.getElementById('chk-mute');
+      const chkModest = document.getElementById('chk-modest');
 
-      generateBtn.addEventListener('click', () => {
-        const url = input.value.trim();
-        resultBox.style.display = 'none';
-        errorBox.style.display = 'none';
+      const previewIframe = document.getElementById('preview-iframe');
+      const htmlOutput = document.getElementById('html-output');
+      const btnCopyCode = document.getElementById('btn-copy-code');
+      const btnReset = document.getElementById('btn-reset');
 
-        if (!url) {
-          showError('Please paste a valid YouTube URL.');
-          return;
+      function extractVideoId(urlOrId) {
+        if (!urlOrId) return 'dQw4w9WgXcQ';
+        const clean = urlOrId.trim();
+        if (clean.length === 11 && !clean.includes('/') && !clean.includes('.')) {
+          return clean;
         }
+        const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+        const match = clean.match(regExp);
+        return (match && match[2].length === 11) ? match[2] : 'dQw4w9WgXcQ';
+      }
 
-        const videoId = extractVideoID(url);
-        if (!videoId) {
-          showError('Invalid YouTube URL. Please check and try again.');
-          return;
-        }
-
-        const domain = optPrivacy.checked ? 'www.youtube-nocookie.com' : 'www.youtube.com';
-        let src = `https://${domain}/embed/${videoId}`;
+      function updateEmbedGenerator() {
+        const videoId = extractVideoId(urlInput.value);
+        const width = inputWidth.value.trim() || '560';
+        const height = inputHeight.value.trim() || '315';
 
         const params = [];
-        if (startTime.value && parseInt(startTime.value) > 0) {
-          params.push(`start=${parseInt(startTime.value)}`);
-        }
-        if (optAutoplay.checked) {
-          params.push('autoplay=1&mute=1');
-        }
+        if (chkAutoplay.checked) params.push('autoplay=1');
+        if (chkLoop.checked) params.push(`loop=1&playlist=${videoId}`);
+        if (!chkControls.checked) params.push('controls=0');
+        if (chkMute.checked || chkAutoplay.checked) params.push('mute=1'); // Autoplay usually requires mute
+        if (chkModest.checked) params.push('modestbranding=1');
 
+        let embedUrl = `https://www.youtube.com/embed/${videoId}`;
         if (params.length > 0) {
-          src += '?' + params.join('&');
+          embedUrl += '?' + params.join('&');
         }
 
-        let embedCode = '';
-        if (optResponsive.checked) {
-          embedCode = `<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">\n  <iframe src="${src}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 8px;"></iframe>\n</div>`;
-        } else {
-          embedCode = `<iframe width="560" height="315" src="${src}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 8px;"></iframe>`;
-        }
+        previewIframe.src = embedUrl;
 
-        codeOutput.value = embedCode;
-        previewContainer.innerHTML = embedCode;
-        resultBox.style.display = 'block';
-      });
-
-      function extractVideoID(url) {
-        const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|shorts\/|watch\?v=|\&v=)([^#\&\?]*).*/;
-        const match = url.match(regExp);
-        return (match && match[2].length === 11) ? match[2] : null;
+        const htmlSnippet = `<iframe width="${width}" height="${height}" src="${embedUrl}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+        htmlOutput.value = htmlSnippet;
       }
 
-      function showError(msg) {
-        errorBox.innerText = msg;
-        errorBox.style.display = 'block';
-      }
-
-      copyBtn.addEventListener('click', () => {
-        codeOutput.select();
-        navigator.clipboard.writeText(codeOutput.value);
-        copyBtn.innerText = 'Copied!';
-        setTimeout(() => copyBtn.innerText = 'Copy Code', 2000);
+      [urlInput, inputWidth, inputHeight, chkAutoplay, chkLoop, chkControls, chkMute, chkModest].forEach(el => {
+        el.addEventListener('input', updateEmbedGenerator);
+        el.addEventListener('change', updateEmbedGenerator);
       });
+
+      btnCopyCode.addEventListener('click', function() {
+        if (!htmlOutput.value) return;
+        navigator.clipboard.writeText(htmlOutput.value).then(() => {
+          const origText = btnCopyCode.textContent;
+          btnCopyCode.textContent = '✅ Copied!';
+          setTimeout(() => { btnCopyCode.textContent = origText; }, 2000);
+        });
+      });
+
+      btnReset.addEventListener('click', function() {
+        urlInput.value = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
+        inputWidth.value = '560';
+        inputHeight.value = '315';
+        chkAutoplay.checked = false;
+        chkLoop.checked = false;
+        chkControls.checked = true;
+        chkMute.checked = false;
+        chkModest.checked = false;
+        updateEmbedGenerator();
+      });
+
+      // Initial Update
+      updateEmbedGenerator();
     });
   </script>
 </body>
