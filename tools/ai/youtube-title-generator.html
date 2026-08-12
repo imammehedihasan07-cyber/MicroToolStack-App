@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <!-- Google tag (gtag.js) - Optimized Load -->
   <script>
     window.addEventListener('load', function() {
       setTimeout(function() {
-        var gTagScript = document.createElement('script');
-        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
-        gTagScript.async = true;
-        document.head.appendChild(gTagScript);
-
+        var gtagScript = document.createElement('script');
+        gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        gtagScript.async = true;
+        document.head.appendChild(gtagScript);
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
@@ -18,434 +20,309 @@
     });
   </script>
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
   <!-- Primary SEO Meta Tags -->
-  <title>Free AI YouTube Metadata Generator | Titles, Descriptions & Tags</title>
-  <meta name="description" content="Free online AI YouTube Metadata Generator to instantly create SEO optimized video titles, structured video descriptions, YouTube tags, and trending hashtags.">
-  <meta name="keywords" content="youtube metadata generator, youtube title generator, youtube description generator, youtube tag generator, video seo optimizer, youtube hashtag generator">
-
-  <link rel="canonical" href="https://microtoolstack.com/tools/ai/youtube-metadata-generator.html">
+  <title>Free AI YouTube Title Generator - Viral & Clickable Titles | MicroToolStack</title>
+  <meta name="description" content="Generate high CTR, viral, and SEO-optimized YouTube video titles using our free AI YouTube Title Generator. Boost views and subscriber growth instantly.">
+  <meta name="keywords" content="youtube title generator, ai youtube title maker, viral video titles, clickworthy youtube titles, youtube seo tool">
+  <link rel="canonical" href="https://microtoolstack.com/tools/ai/youtube-title-generator.html">
   <meta name="robots" content="index, follow">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://microtoolstack.com/tools/ai/youtube-metadata-generator.html">
-  <meta property="og:title" content="Free AI YouTube Metadata Generator | MicroToolStack">
-  <meta property="og:description" content="Generate high-CTR titles, structured video descriptions, and YouTube SEO tags in seconds. 100% free and private.">
-  <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
+  <meta property="og:url" content="https://microtoolstack.com/tools/ai/youtube-title-generator.html">
+  <meta property="og:title" content="Free AI YouTube Title Generator | MicroToolStack">
+  <meta property="og:description" content="Generate catchy, high CTR, and SEO-optimized video titles for your YouTube channel.">
 
-  <!-- Favicon Icon for Google & Devices -->
+  <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
-  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
-  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "SoftwareApplication",
-        "name": "AI YouTube Metadata Generator",
-        "operatingSystem": "All",
-        "applicationCategory": "UtilitiesApplication",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "description": "An online YouTube SEO utility that generates click-worthy titles, structured video descriptions, tags, and hashtags to boost video rankings.",
-        "url": "https://microtoolstack.com/tools/ai/youtube-metadata-generator.html"
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Why is YouTube video metadata important for SEO?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "YouTube's search algorithm uses titles, descriptions, and tags to understand your video topic, index it in search results, and recommend it to interested viewers."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How many tags should I include in a YouTube video?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "YouTube allows up to 500 characters for tags. It is recommended to use 10 to 15 highly relevant keywords including broad, specific, and long-tail terms."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Is this YouTube Metadata Generator tool completely free?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes! MicroToolStack's AI YouTube Metadata Generator is 100% free with no login or daily video limits required."
-            }
-          }
-        ]
-      }
-    ]
-  }
-  </script>
-
-  <!-- Preconnect and Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <!-- CSS Stylesheets -->
-  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/variables.css?v=10.0">
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
 
   <style>
-    .config-card {
+    .tool-card-box {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1.5rem;
       background: var(--bg-card, #1e1e2e);
-      padding: 1.25rem;
-      border-radius: var(--radius-md, 8px);
       border: 1px solid var(--border-color, #333);
-      margin-bottom: 1.5rem;
-    }
-    .form-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.25rem;
-      margin-bottom: 1rem;
+      border-radius: var(--radius-md, 12px);
     }
     .form-group {
+      margin-bottom: 1.2rem;
       display: flex;
       flex-direction: column;
-      gap: 0.4rem;
+      gap: 0.5rem;
     }
     .form-group label {
-      font-size: 0.88rem;
-      color: var(--text-primary, #fff);
       font-weight: 600;
-    }
-    .editor-input, .editor-select {
-      width: 100%;
-      padding: 0.75rem;
       font-size: 0.95rem;
-      border: 1px solid var(--border-color, #333);
-      border-radius: var(--radius-md, 6px);
-      background-color: var(--bg-body, #111827);
+    }
+    .form-control {
+      width: 100%;
+      padding: 0.8rem;
+      border-radius: 8px;
+      border: 1px solid var(--border-color, #444);
+      background: var(--bg-input, #121218);
       color: var(--text-primary, #fff);
+      font-size: 1rem;
       outline: none;
       box-sizing: border-box;
     }
-    .result-section {
-      background: var(--bg-card, #1e1e2e);
-      padding: 1.25rem;
-      border-radius: var(--radius-md, 8px);
-      border: 1px solid var(--border-color, #333);
-      margin-bottom: 1.25rem;
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
     }
-    .result-header {
+    .btn-action {
+      width: 100%;
+      padding: 0.9rem;
+      background: #3b82f6;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s ease;
+      margin-top: 0.5rem;
+    }
+    .btn-action:hover {
+      background: #2563eb;
+    }
+    .results-wrapper {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .title-result-card {
+      background: var(--bg-input, #121218);
+      border: 1px solid var(--border-color, #333);
+      padding: 1rem;
+      border-radius: 8px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 0.75rem;
-    }
-    .result-title {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--accent-primary, #3b82f6);
-    }
-    .btn-copy-sm {
-      background: #1f2937;
-      color: #fff;
-      border: 1px solid #4b5563;
-      padding: 0.35rem 0.75rem;
-      border-radius: 4px;
-      font-size: 0.8rem;
-      cursor: pointer;
-    }
-    .result-content {
-      width: 100%;
-      min-height: 90px;
-      padding: 0.75rem;
-      font-size: 0.95rem;
-      line-height: 1.5;
-      border: 1px solid var(--border-color, #333);
-      border-radius: var(--radius-md, 6px);
-      background-color: var(--bg-body, #111827);
-      color: var(--text-primary, #fff);
-      box-sizing: border-box;
-      white-space: pre-wrap;
-      word-break: break-word;
-    }
-    .content-box {
-      background-color: var(--bg-card, #1e1e2e);
-      border: 1px solid var(--border-color, #333);
-      border-radius: var(--radius-md, 8px);
-      padding: 1.5rem;
-      margin-bottom: 2rem;
-    }
-    .content-box h2 {
-      font-size: 1.35rem;
-      margin-bottom: 1rem;
-      color: var(--text-primary, #fff);
-    }
-    .content-box p, .content-box ul {
-      color: var(--text-secondary, #9ca3af);
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-    .content-box ul {
-      padding-left: 1.25rem;
-      margin-bottom: 1rem;
-    }
-    .content-box li {
-      margin-bottom: 0.5rem;
-    }
-    .related-links {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
       gap: 1rem;
-      margin-top: 1rem;
     }
-    .related-card {
-      display: block;
-      padding: 1rem;
+    .title-text {
+      font-size: 1.05rem;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+    .btn-copy {
+      padding: 0.5rem 1rem;
+      background: #10b981;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .seo-content-section {
+      max-width: 800px;
+      margin: 3.5rem auto;
+      line-height: 1.8;
+    }
+    .seo-content-section h2 {
+      margin-top: 2rem;
+      font-size: 1.5rem;
+      color: var(--text-primary, #fff);
+    }
+    .seo-content-section p {
+      margin-bottom: 1rem;
+    }
+    .faq-item {
       background: var(--bg-card, #1e1e2e);
       border: 1px solid var(--border-color, #333);
+      padding: 1.2rem;
       border-radius: 8px;
-      color: var(--text-primary, #fff);
-      text-decoration: none;
-      transition: border-color 0.2s;
+      margin-top: 1rem;
     }
-    .related-card:hover {
-      border-color: var(--accent-primary, #3b82f6);
+    .faq-item h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
     }
   </style>
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3023714618008515" crossorigin="anonymous"></script>
 </head>
-<body style="margin: 0; padding: 0;">
 
-  <!-- Header Section -->
-  <header class="custom-header">
-    <a href="/" class="custom-logo">
-      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
-    </a>
-    <nav class="custom-nav">
-      <a href="/#categories">Categories</a>
-      <a href="/about.html">About</a>
-      <a href="/contact.html">Contact</a>
-      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
-    </nav>
-  </header>
+<body>
 
-  <!-- Main Container -->
-  <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
-    <!-- Breadcrumb Navigation -->
-    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
-      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
-      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">AI Tools</a> / 
-      <span>YouTube Metadata Generator</span>
-    </nav>
-    
-    <!-- Title Section -->
-    <div style="text-align: center; margin-bottom: 2rem;">
-      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">AI YouTube Metadata Generator</h1>
-      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Generate high-CTR titles, structured video descriptions, tags, and hashtags instantly.</p>
-    </div>
+  <!-- Dynamic Header -->
+  <div id="header-container"></div>
 
-    <!-- Input Parameters Form -->
-    <div class="config-card">
+  <main class="container">
+    <section class="hero text-center">
+      <h1>Free AI YouTube Title Generator</h1>
+      <p>Generate high CTR, click-worthy, and SEO-optimized YouTube video titles to grow your channel views and subscribers.</p>
+    </section>
+
+    <!-- Interactive Tool Interface -->
+    <div class="tool-card-box">
+      <div class="form-group">
+        <label for="video-topic">What is your video about?</label>
+        <input type="text" id="video-topic" class="form-control" placeholder="e.g., How to edit videos on CapCut, Travel vlog in Mymensingh, Crypto trading for beginners...">
+      </div>
+
       <div class="form-grid">
-        <div class="form-group" style="grid-column: 1 / -1;">
-          <label>Video Topic or Main Idea:</label>
-          <input type="text" id="topic-input" class="editor-input" placeholder="e.g. How to edit viral shorts in CapCut for beginners..." autofocus>
-        </div>
-
         <div class="form-group">
-          <label>Video Category:</label>
-          <select id="category-select" class="editor-select">
-            <option value="tech" selected>Tech & Tutorials</option>
-            <option value="vlog">Vlogs & Travel</option>
-            <option value="gaming">Gaming & Esports</option>
-            <option value="finance">Finance & Crypto</option>
-            <option value="education">Education & Learning</option>
-            <option value="entertainment">Entertainment & Comedy</option>
+          <label for="video-niche">Channel Category:</label>
+          <select id="video-niche" class="form-control">
+            <option value="Gaming & Tech">Gaming & Tech</option>
+            <option value="Vlog & Lifestyle">Vlog & Lifestyle</option>
+            <option value="Education & Tutorial">Education & Tutorial</option>
+            <option value="Finance & Business">Finance & Business</option>
           </select>
         </div>
 
         <div class="form-group">
-          <label>Target Language:</label>
-          <select id="lang-select" class="editor-select">
-            <option value="english" selected>English</option>
-            <option value="bangla">Bangla (বাংলা)</option>
+          <label for="title-style">Title Style:</label>
+          <select id="title-style" class="form-control">
+            <option value="High CTR & Clickbait">High CTR / Viral Hook</option>
+            <option value="SEO & Search Focused">SEO & Search Ranked</option>
+            <option value="Listicle & Guide">Listicle / How-To Guide</option>
+            <option value="Curiosity & Story">Curiosity & Storytelling</option>
           </select>
         </div>
       </div>
-      <button id="btn-generate" class="btn btn-primary" style="width: 100%; padding: 0.8rem; font-size: 1rem; font-weight: 600; cursor: pointer;">✨ Generate Complete Metadata Package</button>
+
+      <button id="generate-title-btn" class="btn-action">✨ Generate Titles</button>
+
+      <!-- Output Container -->
+      <div id="title-results" class="results-wrapper" style="display: none;">
+        <!-- Generated titles will appear here dynamically -->
+      </div>
     </div>
 
-    <!-- Generated Results Container -->
-    <div id="results-container" style="display: none;">
+    <!-- AdSense Rich SEO Content with Internal Linking -->
+    <article class="seo-content-section">
+      <h2>Why Your YouTube Video Title Determines CTR and Views</h2>
+      <p>Your video title and thumbnail are the two most crucial factors that dictate your YouTube Click-Through Rate (CTR). Even if your video production quality is stellar, a boring title will prevent users from clicking on your video when it appears on the YouTube homepage or search feed. Crafting titles with psychological curiosity hooks and search keywords triggers the YouTube recommendation algorithm.</p>
       
-      <!-- Generated Titles -->
-      <div class="result-section">
-        <div class="result-header">
-          <span class="result-title">🎬 High-CTR Video Titles:</span>
-          <button class="btn-copy-sm" onclick="copyText('res-title')">📋 Copy Titles</button>
-        </div>
-        <div id="res-title" class="result-content"></div>
-      </div>
+      <p>Our free <strong>AI YouTube Title Generator</strong> at <a href="https://microtoolstack.com">MicroToolStack</a> uses viral title frameworks to produce engaging video titles in seconds. If you are building prompts for AI visual thumbnails, try our <a href="/tools/ai/prompt-builder.html">AI Prompt Builder</a>, and if you post content across social platforms, check out our <a href="/tools/ai/caption-generator.html">AI Caption Generator</a>.</p>
 
-      <!-- Generated Description -->
-      <div class="result-section">
-        <div class="result-header">
-          <span class="result-title">📝 Structured Video Description:</span>
-          <button class="btn-copy-sm" onclick="copyText('res-desc')">📋 Copy Description</button>
-        </div>
-        <div id="res-desc" class="result-content" style="min-height: 150px;"></div>
-      </div>
+      <h2>How to Generate High-CTR YouTube Titles</h2>
+      <ol>
+        <li><strong>Enter Your Core Subject:</strong> Briefly describe your video concept or target keyword in the prompt box above.</li>
+        <li><strong>Select Category & Title Hook Style:</strong> Choose your channel topic and pick a title framework like <em>High CTR</em>, <em>SEO Search Focused</em>, or <em>Curiosity Story</em>.</li>
+        <li><strong>Generate & Copy:</strong> Click <strong>Generate Titles</strong>, review the catchy suggestions, and click <strong>Copy Title</strong> to paste directly into YouTube Studio.</li>
+      </ol>
 
-      <!-- Generated Tags -->
-      <div class="result-section">
-        <div class="result-header">
-          <span class="result-title">🏷️ YouTube SEO Tags (Comma Separated):</span>
-          <button class="btn-copy-sm" onclick="copyText('res-tags')">📋 Copy Tags</button>
-        </div>
-        <div id="res-tags" class="result-content"></div>
-      </div>
-
-      <!-- Generated Hashtags -->
-      <div class="result-section">
-        <div class="result-header">
-          <span class="result-title">#️⃣ Viral YouTube Hashtags:</span>
-          <button class="btn-copy-sm" onclick="copyText('res-hashtags')">📋 Copy Hashtags</button>
-        </div>
-        <div id="res-hashtags" class="result-content"></div>
-      </div>
-
-    </div>
-
-    <!-- Global Status Toast -->
-    <div style="text-align: center; margin-bottom: 2rem;">
-      <span id="status-msg" style="font-size: 0.85rem; color: #10b981; font-weight: 500; display: none;">Copied to clipboard!</span>
-    </div>
-
-    <!-- SEO Article Content Box 1 -->
-    <div class="content-box">
-      <h2>Why YouTube Metadata Matters for Channel Growth</h2>
-      <p>YouTube is the world's second-largest search engine. When you publish a new video, the YouTube algorithm relies heavily on <strong>Metadata</strong> (Titles, Descriptions, Tags, and Hashtags) to determine who to recommend your video to. Optimizing these elements increases search rankings, organic click-through rate (CTR), and video impressions.</p>
-    </div>
-
-    <!-- SEO Article Content Box 2 -->
-    <div class="content-box">
-      <h2>Best Practices for YouTube Video Optimization</h2>
+      <h2>Key Features of MicroToolStack YouTube Title Generator</h2>
       <ul>
-        <li><strong>Catchy Title Tag:</strong> Include primary keywords near the start and keep titles under 60 characters to avoid truncation.</li>
-        <li><strong>First 2 Lines Matter Most:</strong> Place your main video summary and call-to-action (CTA) in the top 2 lines of the description box.</li>
-        <li><strong>Balanced SEO Tags:</strong> Combine exact-match target keywords with broad category tags.</li>
-        <li><strong>Hashtags in Description:</strong> Place 3 to 5 relevant hashtags above or below your description box.</li>
+        <li><strong>CTR Optimized Frameworks:</strong> Leverages proven YouTube creator strategies (Numbers, Power Words, Curiosity Gaps, and How-To questions).</li>
+        <li><strong>Search Engine Friendly:</strong> Ensures primary search keywords appear early in the title structure to help YouTube algorithm indexing.</li>
+        <li><strong>Character Limit Compliant:</strong> Keeps titles under 70 characters so they are never truncated on mobile devices or TV apps.</li>
+        <li><strong>100% Free & Unlimited:</strong> Generate unlimited video title ideas without registration, subscription plans, or daily limits. Have questions or feature requests? Contact our team on our <a href="/contact.html">Support Page</a>.</li>
       </ul>
-    </div>
 
-    <!-- Internal Linking Section (SEO Best Practice) -->
-    <div class="content-box">
-      <h2>Explore Related AI & Social Media Tools</h2>
-      <p>Enhance your content creation and social marketing workflow with our free utilities:</p>
-      <div class="related-links">
-        <a href="/tools/ai/caption-generator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">📝 AI Caption Generator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Craft engaging social media captions and hooks.</span>
-        </a>
-        <a href="/tools/ai/ai-bio-generator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">✨ AI Bio Generator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Craft catchy profile bios for Twitter and Instagram.</span>
-        </a>
-        <a href="/tools/ai/hashtag-generator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">#️⃣ AI Hashtag Generator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Generate trending niche hashtags for social media.</span>
-        </a>
-        <a href="/tools/developer/code-to-image.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">📷 Code Snippet to Image</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Turn source code into beautiful social media images.</span>
-        </a>
-      </div>
-    </div>
+      <h2>Frequently Asked Questions (FAQ)</h2>
 
-    <!-- FAQ Section -->
-    <div class="content-box">
-      <h2>Frequently Asked Questions</h2>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Does YouTube still use tags for ranking?</h3>
-        <p>While titles and thumbnails drive CTR, YouTube tags remain important for helping the algorithm understand misspellings, related topics, and niche search intent.</p>
+      <div class="faq-item">
+        <h3>What is a good Click-Through Rate (CTR) on YouTube?</h3>
+        <p>An average CTR on YouTube ranges between 2% and 10%. Highly viral videos with exceptional title and thumbnail synergy often see CTRs well above 10% within the first 24 hours of upload.</p>
       </div>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Can I generate Bangla YouTube metadata?</h3>
-        <p>Yes, selecting 'Bangla' in the language selector will generate Bangla titles and descriptions tailored for Bengali audience reach.</p>
-      </div>
-    </div>
 
+      <div class="faq-item">
+        <h3>Should I put numbers and emojis in my YouTube title?</h3>
+        <p>Yes! Adding numbers (e.g., <em>"Top 5 Tips"</em> or <em>"In 24 Hours"</em>) and strategic emojis can increase visual attention and boost clicks significantly on mobile screens.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Is my video concept saved on your servers?</h3>
+        <p>No. MicroToolStack processes all title generation requests instantly on the client side within your browser. Your ideas remain private and secure.</p>
+      </div>
+    </article>
   </main>
 
-  <!-- Footer Container Placeholder -->
+  <!-- Dynamic Footer -->
   <div id="footer-container"></div>
 
-  <!-- JavaScript Utilities & Logic -->
+  <!-- Core Scripts -->
   <script src="/assets/js/theme.js"></script>
   <script src="/assets/js/utils.js" defer></script>
-  <script src="/assets/js/app.js" defer></script>
 
+  <!-- Working Functional JavaScript for YouTube Title Generator -->
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const topicInput = document.getElementById('topic-input');
-      const categorySelect = document.getElementById('category-select');
-      const langSelect = document.getElementById('lang-select');
-      const btnGenerate = document.getElementById('btn-generate');
-      const resultsContainer = document.getElementById('results-container');
+    document.addEventListener('DOMContentLoaded', function () {
+      const topicInput = document.getElementById('video-topic');
+      const nicheSelect = document.getElementById('video-niche');
+      const styleSelect = document.getElementById('title-style');
+      const generateBtn = document.getElementById('generate-title-btn');
+      const resultsContainer = document.getElementById('title-results');
 
-      const resTitle = document.getElementById('res-title');
-      const resDesc = document.getElementById('res-desc');
-      const resTags = document.getElementById('res-tags');
-      const resHashtags = document.getElementById('res-hashtags');
-      const statusMsg = document.getElementById('status-msg');
-
-      function generateMetadata() {
-        const topic = topicInput.value.trim() || "Video Editing Tutorial";
-        const cat = categorySelect.value;
-        const lang = langSelect.value;
-
-        resultsContainer.style.display = 'block';
-
-        if (lang === 'bangla') {
-          // Bangla Generation Mode
-          resTitle.textContent = `1. ${topic} (সহজ বাংলায় সম্পূর্ণ গাইড! 🔥)\n2. কীভাবে ${topic} করবেন? Step-by-Step Tutorial\n3. ${topic} - সেরা টিপস ও ট্রিকস 2026`;
-          
-          resDesc.textContent = `আজকের ভিডিওতে আমরা আলোচনা করব: ${topic}।\nভিডিওটি ভালো লাগলে লাইক দিন এবং চ্যানেলটি সাবস্ক্রাইব করুন!\n\n📌 সময়সূচী (Timestamps):\n00:00 - Introduction\n01:30 - Main Tutorial\n05:00 - Pro Tips & Outro\n\n#BanglaTutorial #${cat} #YouTubeBangla`;
-
-          resTags.textContent = `${topic}, ${topic} bangla, ${topic} tutorial, ${cat} bangla, bangla video, video editing bangla, how to ${topic}`;
-
-          resHashtags.textContent = `#${topic.replace(/\s+/g, '')} #BanglaTutorial #${cat} #YouTubeSEO`;
-        } else {
-          // English Generation Mode
-          resTitle.textContent = `1. ${topic} (Step-By-Step Full Guide! 🚀)\n2. How to ${topic} in 2026 (Beginner Friendly)\n3. The Ultimate Secret to ${topic} Exposed! 🔥`;
-
-          resDesc.textContent = `In this video, we cover everything you need to know about: ${topic}.\nIf you found this video helpful, please LIKE, SHARE, and SUBSCRIBE for more content!\n\n📌 Timestamps:\n00:00 - Intro & Overview\n01:15 - Step 1: Getting Started\n04:30 - Step 2: Pro Tips & Best Practices\n07:00 - Conclusion & Next Steps\n\n#${cat.toUpperCase()} #YouTubeSEO #Tutorial`;
-
-          resTags.textContent = `${topic}, how to ${topic}, ${topic} tutorial, ${topic} guide, ${cat} tips, best ${topic} 2026, ${topic} for beginners, viral video tips`;
-
-          resHashtags.textContent = `#${topic.replace(/[^a-zA-Z0-9]/g, '')} #${cat} #YouTubeSEO #VideoTutorial #ViralShorts`;
-        }
-      }
-
-      btnGenerate.addEventListener('click', generateMetadata);
-
-      window.copyText = function(id) {
-        const text = document.getElementById(id).textContent;
-        if (!text) return;
-
-        navigator.clipboard.writeText(text).then(function() {
-          statusMsg.style.display = 'inline';
-          setTimeout(() => { statusMsg.style.display = 'none'; }, 2000);
-        });
+      const titleFrameworks = {
+        'High CTR & Clickbait': [
+          "I Tried {topic} For 24 Hours (UNBELIEVABLE RESULTS) 😱",
+          "DON'T Do {topic} Until You Watch This Video!",
+          "The TRUTH About {topic} Nobody Tells You...",
+          "Why Everyone Is Talking About {topic} Right Now! 🚀"
+        ],
+        'SEO & Search Focused': [
+          "How to Master {topic}: Step-by-Step Complete Guide for Beginners",
+          "{topic} Explained: Everything You Need to Know",
+          "The Ultimate {topic} Tutorial (Best Strategy)",
+          "How to Do {topic} Easily (Fastest Method)"
+        ],
+        'Listicle & Guide': [
+          "Top 5 Game-Changing {topic} Tips You Must Know!",
+          "7 Common {topic} Mistakes And How to Fix Them",
+          "10 Secret {topic} Hacks That Will Save You Hours",
+          "3 Simple Steps to Improve Your {topic} Today"
+        ],
+        'Curiosity & Story': [
+          "What Happened When I Finally Tried {topic}...",
+          "Is {topic} Actually Worth It? (Honest Review)",
+          "I Tested {topic} So You Don't Have To!",
+          "How {topic} Changed Everything (My Full Story)"
+        ]
       };
+
+      generateBtn.addEventListener('click', function () {
+        const rawTopic = topicInput.value.trim() || 'Video Creation';
+        const style = styleSelect.value;
+
+        const templates = titleFrameworks[style] || titleFrameworks['High CTR & Clickbait'];
+        resultsContainer.innerHTML = '';
+
+        templates.forEach((tpl) => {
+          let titleText = tpl.replace(/{topic}/g, rawTopic);
+
+          const card = document.createElement('div');
+          card.className = 'title-result-card';
+
+          const textSpan = document.createElement('div');
+          textSpan.className = 'title-text';
+          textSpan.innerText = titleText;
+
+          const copyBtn = document.createElement('button');
+          copyBtn.className = 'btn-copy';
+          copyBtn.innerText = '📋 Copy';
+
+          copyBtn.addEventListener('click', function () {
+            navigator.clipboard.writeText(titleText).then(() => {
+              copyBtn.innerText = '✅ Copied!';
+              setTimeout(() => copyBtn.innerText = '📋 Copy', 2000);
+            });
+          });
+
+          card.appendChild(textSpan);
+          card.appendChild(copyBtn);
+          resultsContainer.appendChild(card);
+        });
+
+        resultsContainer.style.display = 'flex';
+      });
     });
   </script>
+
 </body>
 </html>
