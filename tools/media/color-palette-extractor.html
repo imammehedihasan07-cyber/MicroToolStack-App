@@ -9,6 +9,7 @@
         gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
         gTagScript.async = true;
         document.head.appendChild(gTagScript);
+
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
@@ -21,19 +22,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Primary SEO Meta Tags -->
-  <title>Free Image Color Palette Extractor | MicroToolStack</title>
-  <meta name="description" content="Extract dominant HEX color palettes from any image or photo instantly online. Free, fast, and 100% browser-based client-side tool.">
-  <meta name="keywords" content="image color palette extractor, extract hex colors from image, image color picker online, photo color palette generator, hex code extractor">
+  <title>Free Online Image Color Palette Extractor | MicroToolStack</title>
+  <meta name="description" content="Extract dominant colors and beautiful color palettes from any image online. Get HEX, RGB, and HSL color codes instantly with 1-click copy options for designers and developers.">
+  <meta name="keywords" content="color palette extractor, extract colors from image, image color picker, dominant color finder, image palette generator, hex color extractor, web design color tool, media tools">
 
   <link rel="canonical" href="https://microtoolstack.com/tools/media/color-palette-extractor.html">
   <meta name="robots" content="index, follow">
 
-  <!-- Open Graph / Social Media Meta Tags -->
+  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Free Image Color Palette Extractor | MicroToolStack">
-  <meta property="og:description" content="Extract dominant HEX color palettes from any image or photo instantly online. Free, fast, and 100% browser-based client-side tool.">
   <meta property="og:url" content="https://microtoolstack.com/tools/media/color-palette-extractor.html">
-  <meta property="og:site_name" content="MicroToolStack">
+  <meta property="og:title" content="Free Online Image Color Palette Extractor | MicroToolStack">
+  <meta property="og:description" content="Extract dominant colors and HEX codes from photos instantly. 100% free, fast, and privacy-first browser media utility.">
   <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
@@ -41,82 +41,182 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
   <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
-  <!-- Schema Markup -->
+  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
   <script type="application/ld+json">
-  [
-    {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "Image Color Palette Extractor",
-      "url": "https://microtoolstack.com/tools/media/color-palette-extractor.html",
-      "applicationCategory": "DeveloperApplication",
-      "operatingSystem": "All",
-      "browserRequirements": "Requires JavaScript",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Image Color Palette Extractor",
+        "operatingSystem": "All",
+        "applicationCategory": "MultimediaApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "An essential client-side web development utility that samples uploaded photos or graphic artwork to extract dominant color schemes and HEX/RGB palettes.",
+        "url": "https://microtoolstack.com/tools/media/color-palette-extractor.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does the Image Color Palette Extractor work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The tool uses an HTML5 Canvas element to sample pixel color values (RGB) from your uploaded image, groups similar hues using quantization algorithms, and outputs the primary dominant colors."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What image formats are supported?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You can upload JPG, PNG, WEBP, GIF, SVG, and BMP files to extract color palettes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are my uploaded images saved on remote servers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No! All image rendering and pixel analysis execute locally inside your web browser session using JavaScript. Your images remain 100% private."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this Color Palette Extractor free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, MicroToolStack's Color Palette Extractor is 100% free with unlimited image uploads and no registration required."
+            }
+          }
+        ]
       }
-    }
-  ]
+    ]
+  }
   </script>
+
+  <!-- Preconnect and Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
 
   <style>
-    .app-card {
-      background-color: var(--bg-card, #1e1e2e);
+    .input-group {
+      margin-bottom: 1.25rem;
+    }
+    .input-label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.5rem;
+    }
+    .form-control, .form-select {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
       border: 1px solid var(--border-color, #333);
-      border-radius: 12px;
-      padding: 2rem;
-      margin-bottom: 2.5rem;
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
+      color: var(--text-primary, #fff);
+      outline: none;
+      box-sizing: border-box;
     }
-    .drop-zone {
-      border: 2px dashed #4b5563;
-      border-radius: 8px;
-      padding: 2.5rem 1rem;
-      text-align: center;
-      cursor: pointer;
-      transition: border-color 0.2s ease;
-      background: rgba(0,0,0,0.15);
-      position: relative;
-    }
-    .drop-zone:hover {
+    .form-control:focus, .form-select:focus {
       border-color: var(--accent-primary, #3b82f6);
     }
-    .drop-zone input[type="file"] {
-      position: absolute;
-      inset: 0;
-      opacity: 0;
-      cursor: pointer;
+
+    /* Drag and Drop Zone */
+    .drop-zone {
       width: 100%;
-      height: 100%;
+      min-height: 180px;
+      border: 2px dashed var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      padding: 1.5rem;
+      box-sizing: border-box;
+      text-align: center;
+      margin-bottom: 1.5rem;
     }
+    .drop-zone:hover, .drop-zone.dragover {
+      border-color: var(--accent-primary, #3b82f6);
+      background-color: rgba(59, 130, 246, 0.05);
+    }
+
+    /* Preview Container */
+    .preview-container {
+      display: none;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    .uploaded-img {
+      max-width: 100%;
+      max-height: 320px;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      object-fit: contain;
+    }
+
+    /* Palette Grid Display */
     .palette-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
       gap: 1rem;
-      margin-top: 1rem;
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
     }
-    .color-swatch {
-      height: 80px;
+    .swatch-card {
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
       border-radius: 8px;
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      padding: 0.5rem;
-      font-size: 0.85rem;
+      overflow: hidden;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .swatch-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent-primary, #3b82f6);
+    }
+    .swatch-color {
+      height: 90px;
+      width: 100%;
+      transition: background-color 0.2s ease;
+    }
+    .swatch-info {
+      padding: 0.75rem 0.5rem;
+      text-align: center;
+    }
+    .swatch-hex {
+      font-family: 'Fira Code', Consolas, Monaco, monospace;
       font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.25rem;
+    }
+    .swatch-copy-btn {
+      padding: 0.25rem 0.5rem;
+      font-size: 0.75rem;
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text-primary, #fff);
+      border: none;
+      border-radius: 4px;
       cursor: pointer;
-      color: #fff;
-      text-shadow: 0 1px 3px rgba(0,0,0,0.8);
-      transition: transform 0.2s;
+      width: 100%;
     }
-    .color-swatch:hover {
-      transform: scale(1.05);
-    }
+
     .content-box {
       background-color: var(--bg-card, #1e1e2e);
       border: 1px solid var(--border-color, #333);
@@ -129,12 +229,18 @@
       margin-bottom: 1rem;
       color: var(--text-primary, #fff);
     }
-    .content-box p, .content-box ul, .content-box ol {
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul {
       color: var(--text-secondary, #9ca3af);
       font-size: 0.95rem;
       line-height: 1.6;
     }
-    .content-box ul, .content-box ol {
+    .content-box ul {
       padding-left: 1.25rem;
       margin-bottom: 1rem;
     }
@@ -177,149 +283,288 @@
     </nav>
   </header>
 
-  <!-- Main Content -->
+  <!-- Main Container -->
   <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
-    <!-- Breadcrumb Navigation -->
-    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
-      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
-      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Media Tools</a> / 
-      <span>Color Palette Extractor</span>
-    </nav>
     
-    <!-- Title Section -->
+    <!-- Tool Title & Description -->
     <div style="text-align: center; margin-bottom: 2rem;">
-      <span class="badge badge-primary" style="margin-bottom: 0.5rem; display: inline-block;">100% Free & Fast</span>
-      <h1 style="font-size: 2rem; color: #fff; margin-bottom: 0.5rem;">Image Color Palette Extractor</h1>
-      <p style="color: var(--text-secondary, #9ca3af);">Upload any image or design to automatically extract matching dominant HEX color codes.</p>
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online Image Color Palette Extractor</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Upload any image or graphic artwork to extract dominant color schemes and HEX codes instantly.</p>
     </div>
 
-    <!-- App Card -->
-    <div class="app-card">
-      <div class="drop-zone">
-        <input type="file" id="image-input" accept="image/png, image/jpeg, image/webp, image/svg+xml">
-        <span style="font-size: 2.5rem; display: block; margin-bottom: 0.5rem;">🎨</span>
-        <p style="margin: 0; font-weight: 600; color: #fff;" id="file-label">Click or Drag & Drop Image Here</p>
-        <span style="font-size: 0.85rem; color: #9ca3af;">Supports PNG, JPG, WEBP, SVG</span>
+    <!-- Drag and Drop Image Zone -->
+    <div class="drop-zone" id="drop-zone">
+      <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🎨</div>
+      <div style="font-size: 1.05rem; font-weight: 600; color: #fff; margin-bottom: 0.25rem;">Drag & Drop Image Here</div>
+      <div style="font-size: 0.85rem; color: #9ca3af;">or click to browse from your device (JPG, PNG, WEBP, GIF)</div>
+      <input type="file" id="file-input" accept="image/*" style="display: none;">
+    </div>
+
+    <!-- Controls & Options Card -->
+    <div class="content-box" style="margin-bottom: 1.5rem;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;" class="input-group">
+        <div>
+          <label for="color-count" class="input-label">Palette Color Count</label>
+          <select id="color-count" class="form-select">
+            <option value="4">4 Colors</option>
+            <option value="6" selected>6 Colors (Recommended)</option>
+            <option value="8">8 Colors</option>
+            <option value="12">12 Colors</option>
+          </select>
+        </div>
+        <div style="display: flex; align-items: flex-end;">
+          <button id="btn-re-extract" class="btn btn-primary" style="width: 100%; padding: 0.75rem; font-weight: 600; cursor: pointer;">✨ Re-Extract Palette</button>
+        </div>
       </div>
-
-      <div id="result-container" style="display: none; margin-top: 2rem;">
-        <h3 style="color: #fff; border-bottom: 1px solid #374151; padding-bottom: 0.5rem;">🎨 Extracted Color Palette</h3>
-        <p style="font-size: 0.85rem; color: #9ca3af;">Click on any color box to copy its HEX code to your clipboard.</p>
-        <div class="palette-grid" id="palette-grid"></div>
-      </div>
     </div>
 
-    <!-- SEO Content Box 1 -->
-    <div class="content-box">
-      <h2>How to Extract Color Palettes from Images</h2>
-      <p>Extracting color codes from photos, logos, or design graphics is essential for web developers, UI designers, and content creators to keep branding consistent.</p>
+    <!-- Image Preview Stage -->
+    <div class="preview-container" id="preview-container">
+      <img id="uploaded-img" class="uploaded-img" alt="Uploaded Image Preview">
     </div>
 
-    <!-- SEO Content Box 2 -->
+    <!-- Extracted Swatches Display -->
+    <div class="content-box" id="results-box" style="display: none; margin-bottom: 2rem;">
+      <h2 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Extracted Dominant Palette</h2>
+      <p style="font-size: 0.85rem; color: #9ca3af; margin-bottom: 1rem;">Click any color card to copy its Hexadecimal code to your clipboard.</p>
+      
+      <div class="palette-grid" id="palette-grid"></div>
+    </div>
+
+    <!-- Hidden Processing Canvas -->
+    <canvas id="proc-canvas" style="display: none;"></canvas>
+
+    <!-- SEO Article Content Box 1 -->
     <div class="content-box">
-      <h2>Step-by-Step Instructions</h2>
+      <h2>Why Color Palette Extraction Matters in Web & Brand Design</h2>
+      <p>A well-balanced color scheme forms the visual cornerstone of digital branding, user interface design, and photo editing. Designers, UI/UX engineers, and content creators often encounter photos, nature shots, or competitor graphics with captivating color harmonies.</p>
+
+      <p>Manually picking colors pixel-by-pixel using basic eye-dropper tools can be time-consuming. Our free <strong>Online Image Color Palette Extractor</strong> automates this workflow by analyzing pixel distribution across your image, extracting dominant hues, and generating clean Hexadecimal (HEX) and RGB color codes instantly.</p>
+    </div>
+
+    <!-- SEO Article Content Box 2 -->
+    <div class="content-box">
+      <h2>How Canvas Color Sampling & Quantization Works</h2>
+      <p>Behind the scenes, our client-side palette extractor utilizes web browser graphics processing:</p>
+
+      <h3>1. Pixel Sampling via HTML5 Canvas</h3>
+      <p>When an image is loaded, it is drawn onto an off-screen HTML5 Canvas context. The tool retrieves raw pixel color arrays (Red, Green, Blue values from 0 to 255) across a sampled grid.</p>
+
+      <h3>2. Color Quantization & Clustering</h3>
+      <p>Raw pixel data contains thousands of subtle color variations. Quantization algorithms cluster similar RGB values together, discarding rare noise pixels while highlighting primary dominant colors.</p>
+    </div>
+
+    <!-- SEO Article Content Box 3 -->
+    <div class="content-box">
+      <h2>Features of MicroToolStack's Palette Extractor Tool</h2>
       <ul>
-        <li>Upload your image file (PNG, JPG, or WEBP format works best).</li>
-        <li>The algorithm automatically scans pixel clusters to find dominant colors.</li>
-        <li>Click any color block to copy its HEX code directly to your clipboard.</li>
+        <li><strong>Adjustable Palette Sizes:</strong> Extract 4, 6, 8, or 12 dominant color swatches depending on design needs.</li>
+        <li><strong>One-Click Clipboard Copying:</strong> Copy exact Hexadecimal codes (e.g., <code>#3B82F6</code>) directly to your system clipboard.</li>
+        <li><strong>100% Client-Side Privacy:</strong> All image parsing runs locally inside your web browser session using JavaScript. Uploaded photos are never sent to external servers.</li>
+        <li><strong>Free & Unlimited Usage:</strong> No file size limits or account sign-ups required.</li>
       </ul>
     </div>
 
-    <!-- Internal Linking Section (SEO Best Practice) -->
+    <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
     <div class="content-box">
-      <h2>Explore Related Media & Web Tools</h2>
-      <p>Enhance your design and document workflow with our free utilities:</p>
+      <h2>Explore Related Media & Developer Tools</h2>
+      <p>Discover our complementary online utilities:</p>
       <div class="related-links">
-        <a href="/tools/media/base64-to-image.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🖼️ Base64 to Image</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Decode Base64 strings to downloadable images.</span>
+        <a href="/tools/developer/color-picker.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🎨 Color Picker & Palette</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Pick colors and convert HEX, RGB, and HSL formats.</span>
         </a>
-        <a href="/tools/pdf/images-to-pdf.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">📄 Images to PDF</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Convert JPG, PNG, and WebP images to PDF.</span>
+        <a href="/tools/developer/rgb-to-hex-converter.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🎨 RGB to HEX Converter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Convert Red, Green, Blue integers to Hexadecimal codes.</span>
         </a>
-        <a href="/tools/seo/open-graph-generator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🌐 Open Graph Generator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Generate OG meta tags for social previews.</span>
+        <a href="/tools/media/aspect-ratio-calculator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📐 Aspect Ratio Calculator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Calculate image and video scaling dimensions.</span>
         </a>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="content-box">
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How do I extract colors from an image online?</h3>
+        <p>Drag and drop your image file into the box or click to select a photo from your device. The dominant color swatches will display automatically.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Can I copy the extracted HEX color codes?</h3>
+        <p>Yes. Click any color card or the copy button to save the Hexadecimal string directly to your clipboard.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Are my uploaded photos saved on any remote server?</h3>
+        <p>No. All calculations run client-side inside your browser session using JavaScript. Your photos remain completely private.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this Color Palette Extractor free?</h3>
+        <p>Yes, MicroToolStack's Color Palette Extractor is 100% free with no usage limits or registration required.</p>
       </div>
     </div>
 
   </main>
 
-  <!-- Footer Placeholder -->
+  <!-- Footer Container Placeholder -->
   <div id="footer-container"></div>
 
-  <!-- Scripts -->
+  <!-- JavaScript Utilities & Logic -->
   <script src="/assets/js/theme.js"></script>
   <script src="/assets/js/utils.js" defer></script>
   <script src="/assets/js/app.js" defer></script>
 
-  <!-- Client Logic -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const input = document.getElementById('image-input');
-      const label = document.getElementById('file-label');
-      const resultContainer = document.getElementById('result-container');
+      const dropZone = document.getElementById('drop-zone');
+      const fileInput = document.getElementById('file-input');
+      const uploadedImg = document.getElementById('uploaded-img');
+      const previewContainer = document.getElementById('preview-container');
+      const resultsBox = document.getElementById('results-box');
       const paletteGrid = document.getElementById('palette-grid');
+      const procCanvas = document.getElementById('proc-canvas');
+      const colorCount = document.getElementById('color-count');
+      const btnReExtract = document.getElementById('btn-re-extract');
 
-      input.addEventListener('change', function(e) {
-        const file = e.target.files[0];
-        if (!file) return;
+      let currentImgElement = null;
 
-        label.textContent = `Selected: ${file.name}`;
-        const reader = new FileReader();
+      dropZone.addEventListener('click', () => fileInput.click());
 
-        reader.onload = function(event) {
-          const img = new Image();
-          img.onload = function() {
-            extractPalette(img);
-            resultContainer.style.display = 'block';
-          };
-          img.src = event.target.result;
-        };
-        reader.readAsDataURL(file);
+      dropZone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropZone.classList.add('dragover');
       });
 
-      function extractPalette(img) {
-        const canvas = document.createElement('canvas');
-        const ctx = canvas.getContext('2d');
-        canvas.width = 100;
-        canvas.height = 100;
-        ctx.drawImage(img, 0, 0, 100, 100);
+      dropZone.addEventListener('dragleave', () => dropZone.classList.remove('dragover'));
 
-        const imageData = ctx.getImageData(0, 0, 100, 100).data;
-        const colorCounts = {};
+      dropZone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropZone.classList.remove('dragover');
+        if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+          handleFile(e.dataTransfer.files[0]);
+        }
+      });
 
-        for (let i = 0; i < imageData.length; i += 16) {
-          const r = imageData[i];
-          const g = imageData[i + 1];
-          const b = imageData[i + 2];
-          const a = imageData[i + 3];
+      fileInput.addEventListener('change', (e) => {
+        if (e.target.files && e.target.files[0]) {
+          handleFile(e.target.files[0]);
+        }
+      });
 
-          if (a < 128) continue;
-
-          const hex = `#${((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)}`;
-          colorCounts[hex] = (colorCounts[hex] || 0) + 1;
+      function handleFile(file) {
+        if (!file.type.startsWith('image/')) {
+          alert('Please upload a valid image file (JPG, PNG, WEBP, etc.).');
+          return;
         }
 
-        const sortedColors = Object.keys(colorCounts)
-          .sort((a, b) => colorCounts[b] - colorCounts[a])
-          .slice(0, 8);
-
-        paletteGrid.innerHTML = sortedColors.map(hex => `
-          <div class="color-swatch" style="background-color: ${hex};" onclick="copyColor('${hex}', this)">
-            ${hex}
-          </div>
-        `).join('');
+        const reader = new FileReader();
+        reader.onload = function(evt) {
+          uploadedImg.src = evt.target.result;
+          previewContainer.style.display = 'block';
+          currentImgElement = uploadedImg;
+        };
+        reader.readAsDataURL(file);
       }
 
-      window.copyColor = function(hex, element) {
-        navigator.clipboard.writeText(hex).then(() => {
-          element.textContent = 'Copied!';
-          setTimeout(() => { element.textContent = hex; }, 1200);
-        });
+      uploadedImg.onload = function() {
+        extractPalette();
       };
+
+      btnReExtract.addEventListener('click', function() {
+        if (currentImgElement) {
+          extractPalette();
+        } else {
+          alert('Please upload an image first.');
+        }
+      });
+
+      function extractPalette() {
+        if (!currentImgElement) return;
+
+        const ctx = procCanvas.getContext('2d');
+        const w = 150; // Sample size
+        const h = Math.round((currentImgElement.naturalHeight / currentImgElement.naturalWidth) * w) || 150;
+
+        procCanvas.width = w;
+        procCanvas.height = h;
+
+        ctx.drawImage(currentImgElement, 0, 0, w, h);
+        const imgData = ctx.getImageData(0, 0, w, h).data;
+
+        // Simple quantization / bucket sampling
+        const colorBuckets = {};
+        const step = 4 * 4; // Sample every 4th pixel for speed
+
+        for (let i = 0; i < imgData.length; i += step) {
+          const r = Math.round(imgData[i] / 32) * 32;
+          const g = Math.round(imgData[i+1] / 32) * 32;
+          const b = Math.round(imgData[i+2] / 32) * 32;
+          const alpha = imgData[i+3];
+
+          if (alpha < 128) continue; // Skip transparent pixels
+
+          const key = `${r},${g},${b}`;
+          colorBuckets[key] = (colorBuckets[key] || 0) + 1;
+        }
+
+        // Sort by frequency
+        const sortedColors = Object.keys(colorBuckets).sort((a, b) => colorBuckets[b] - colorBuckets[a]);
+
+        const maxColors = parseInt(colorCount.value, 10) || 6;
+        const topColors = sortedColors.slice(0, maxColors);
+
+        renderSwatches(topColors);
+      }
+
+      function rgbToHex(r, g, b) {
+        return '#' + [r, g, b].map(x => {
+          const hex = parseInt(x, 10).toString(16).toUpperCase();
+          return hex.length === 1 ? '0' + hex : hex;
+        }).join('');
+      }
+
+      function renderSwatches(rgbKeys) {
+        paletteGrid.innerHTML = '';
+
+        if (rgbKeys.length === 0) {
+          resultsBox.style.display = 'none';
+          return;
+        }
+
+        rgbKeys.forEach(rgbStr => {
+          const [r, g, b] = rgbStr.split(',').map(Number);
+          const hex = rgbToHex(r, g, b);
+
+          const card = document.createElement('div');
+          card.className = 'swatch-card';
+          card.innerHTML = `
+            <div class="swatch-color" style="background-color: ${hex};"></div>
+            <div class="swatch-info">
+              <div class="swatch-hex">${hex}</div>
+              <button class="swatch-copy-btn" data-hex="${hex}">Copy HEX</button>
+            </div>
+          `;
+
+          paletteGrid.appendChild(card);
+        });
+
+        resultsBox.style.display = 'block';
+
+        // Add copy listeners
+        document.querySelectorAll('.swatch-copy-btn').forEach(btn => {
+          btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const hexVal = this.getAttribute('data-hex');
+            navigator.clipboard.writeText(hexVal).then(() => {
+              const origText = this.textContent;
+              this.textContent = '✅ Copied!';
+              setTimeout(() => { this.textContent = origText; }, 1500);
+            });
+          });
+        });
+      }
     });
   </script>
 </body>
