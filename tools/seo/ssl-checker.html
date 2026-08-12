@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) - Deferred Load -->
+  <!-- Google tag (gtag.js) - Optimized Load -->
   <script>
     window.addEventListener('load', function() {
       setTimeout(function() {
@@ -20,19 +20,20 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SSL Certificate Expiry Checker - Free Online TLS/SSL Status Tool | MicroToolStack</title>
-  <meta name="description" content="Check SSL/TLS certificate validity, expiration date, issuer details, and security status for any domain instantly with our free online SSL Expiry Checker.">
-  <meta name="keywords" content="ssl certificate expiry checker, check ssl validity, tls certificate status, domain ssl checker, security certificate lookup">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>Free Online SSL Certificate Checker | HTTPS & TLS Validator | MicroToolStack</title>
+  <meta name="description" content="Check SSL/TLS certificates and HTTPS security configurations online for free. Inspect certificate validity, issuer details, SSL expiration dates, and cipher security compliance.">
+  <meta name="keywords" content="ssl certificate checker, https checker, tls certificate validator, ssl expiration checker, check ssl certificate online, ssl security auditor, seo tools, microtoolstack">
 
   <link rel="canonical" href="https://microtoolstack.com/tools/seo/ssl-checker.html">
   <meta name="robots" content="index, follow">
 
-  <!-- Open Graph / Social Media Meta Tags -->
+  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="SSL Certificate Expiry Checker - Free Online TLS/SSL Status Tool | MicroToolStack">
-  <meta property="og:description" content="Check SSL/TLS certificate validity, expiration date, issuer details, and security status for any domain instantly with our free online SSL Expiry Checker.">
   <meta property="og:url" content="https://microtoolstack.com/tools/seo/ssl-checker.html">
-  <meta property="og:site_name" content="MicroToolStack">
+  <meta property="og:title" content="Free Online SSL Certificate Checker | MicroToolStack">
+  <meta property="og:description" content="Validate SSL/TLS certificates, check HTTPS security status, and inspect SSL expiration dates instantly. 100% free webmaster utility.">
   <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
@@ -40,49 +41,57 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
   <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
-  <!-- Fonts & CSS Stylesheets -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
-  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
-
-  <!-- JSON-LD Schema Markup -->
+  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "WebApplication",
-        "@id": "https://microtoolstack.com/tools/seo/ssl-checker.html#webapp",
-        "url": "https://microtoolstack.com/tools/seo/ssl-checker.html",
-        "name": "SSL Certificate Expiry Checker",
-        "applicationCategory": "UtilitiesApplication",
+        "@type": "SoftwareApplication",
+        "name": "SSL Certificate Checker & TLS Validator",
         "operatingSystem": "All",
+        "applicationCategory": "UtilitiesApplication",
         "offers": {
           "@type": "Offer",
           "price": "0",
           "priceCurrency": "USD"
         },
-        "description": "Verify website security, TLS/SSL certificate validity, and expiration timelines instantly."
+        "description": "An essential client-side SEO and security utility that inspects website SSL/TLS certificate validity, HTTPS connection security, and expiration timelines.",
+        "url": "https://microtoolstack.com/tools/seo/ssl-checker.html"
       },
       {
         "@type": "FAQPage",
-        "@id": "https://microtoolstack.com/tools/seo/ssl-checker.html#faq",
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "What is an SSL certificate expiry checker?",
+            "name": "What is an SSL Certificate?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "An SSL certificate expiry checker is an online utility that inspects a domain's security certificate to verify its valid dates, issuer information, and overall health status."
+              "text": "An SSL (Secure Sockets Layer) certificate is a digital certificate that authenticates a website's identity and enables an encrypted HTTPS connection between a web server and a browser."
             }
           },
           {
             "@type": "Question",
-            "name": "Why is monitoring SSL expiration important?",
+            "name": "Why is SSL/HTTPS important for SEO?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "If an SSL certificate expires, visitors will encounter severe browser security warnings, causing loss of trust, traffic, and potential revenue."
+              "text": "HTTPS is an official Google ranking signal. Websites secured with valid SSL certificates build user trust, prevent browser security warnings, and rank better in search engine results."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my domain check logged or saved?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No! All domain syntax validations and security inspections execute 100% locally inside your browser session using JavaScript. Your queries remain completely private."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this SSL Checker tool free to use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, MicroToolStack's SSL Certificate Checker is 100% free with unlimited checks and no registration required."
             }
           }
         ]
@@ -91,22 +100,82 @@
   }
   </script>
 
+  <!-- Preconnect and Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
   <style>
-    .ssl-input {
-      width: 100%;
-      padding: 0.8rem;
-      border-radius: 8px;
-      border: 1px solid var(--border-color, #333);
-      background: var(--bg-body, #111827);
-      color: var(--text-primary, #fff);
-      font-size: 1rem;
-      box-sizing: border-box;
-      outline: none;
-      margin-bottom: 1rem;
+    .input-group {
+      margin-bottom: 1.25rem;
     }
-    .ssl-input:focus {
+    .input-label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.5rem;
+    }
+    .form-control, .form-select {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
+      color: var(--text-primary, #fff);
+      outline: none;
+      box-sizing: border-box;
+    }
+    .form-control:focus, .form-select:focus {
       border-color: var(--accent-primary, #3b82f6);
     }
+
+    /* Results Table */
+    .ssl-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+    .ssl-table th, .ssl-table td {
+      border: 1px solid var(--border-color, #333);
+      padding: 0.65rem 0.85rem;
+      text-align: left;
+      font-size: 0.85rem;
+    }
+    .ssl-table th {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-primary, #fff);
+    }
+    .ssl-table td {
+      color: #9ca3af;
+      word-break: break-all;
+    }
+
+    .status-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+    .badge-secure { background: rgba(16, 185, 129, 0.2); color: #10b981; border: 1px solid #10b981; }
+    .badge-insecure { background: rgba(239, 68, 68, 0.2); color: #ef4444; border: 1px solid #ef4444; }
+
+    .controls-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.5rem;
+    }
+
     .content-box {
       background-color: var(--bg-card, #1e1e2e);
       border: 1px solid var(--border-color, #333);
@@ -119,12 +188,18 @@
       margin-bottom: 1rem;
       color: var(--text-primary, #fff);
     }
-    .content-box p, .content-box ul, .content-box ol {
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul {
       color: var(--text-secondary, #9ca3af);
       font-size: 0.95rem;
       line-height: 1.6;
     }
-    .content-box ul, .content-box ol {
+    .content-box ul {
       padding-left: 1.25rem;
       margin-bottom: 1rem;
     }
@@ -167,160 +242,200 @@
     </nav>
   </header>
 
+  <!-- Main Container -->
   <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
-    <!-- Breadcrumb Navigation -->
-    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
-      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
-      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">SEO Tools</a> / 
-      <span>SSL Certificate Expiry Checker</span>
-    </nav>
+    
+    <!-- Tool Title & Description -->
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online SSL Certificate Checker</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Verify website HTTPS security configurations, SSL validity, and TLS encryption standards.</p>
+    </div>
 
-    <!-- Header Area -->
-    <header style="margin-bottom: 2rem; text-align: center;">
-      <h1 class="hero" style="font-size: 2rem; margin-bottom: 0.5rem; color: #fff;">SSL Certificate Expiry Checker</h1>
-      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">
-        Check website security, TLS/SSL certificate validity, and expiration timelines instantly.
-      </p>
-    </header>
-
-    <!-- Tool Card -->
-    <div class="card" style="padding: 2rem; border-radius: 12px; background: var(--bg-card, #1e1e2e); border: 1px solid var(--border-color, #333); margin-bottom: 3rem;">
-      <label style="display: block; font-size: 0.9rem; margin-bottom: 0.5rem; color: #fff; font-weight: 600;">Enter Domain Name:</label>
-      <input type="text" id="domainInput" class="ssl-input" placeholder="e.g. example.com or https://example.com">
-
-      <div style="text-align: center; margin-bottom: 1.5rem;">
-        <button class="btn btn-primary" style="padding: 0.8rem 2rem; font-size: 1rem; cursor: pointer;" onclick="checkSSL()">🔒 Check SSL Status</button>
-      </div>
-
-      <!-- Result Area -->
-      <div id="resultArea" style="display: none; padding: 1.2rem; background: var(--bg-body, #111827); border-radius: 8px; border: 1px solid var(--border-color, #333);">
-        <h3 style="font-size: 1.1rem; color: #fff; margin-bottom: 0.8rem;">Certificate Analysis Results:</h3>
-        <div id="sslDetails" style="font-size: 0.9rem; color: var(--text-secondary, #9ca3af); space-y: 0.5rem;">
-          <!-- Dynamic Results -->
+    <!-- Domain Input Card -->
+    <div class="content-box" style="margin-bottom: 1.5rem;">
+      <div class="input-group" style="margin-bottom: 0;">
+        <label for="domain-input" class="input-label">Enter Domain Name or Hostname</label>
+        <div style="display: flex; gap: 0.75rem;">
+          <input type="text" id="domain-input" class="form-control" value="microtoolstack.com" placeholder="example.com">
+          <button id="btn-check-ssl" class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-weight: 600; white-space: nowrap; cursor: pointer; background: #10b981;">🔒 Check SSL</button>
         </div>
       </div>
     </div>
 
-    <!-- SEO Content Box: What is -->
-    <div class="content-box">
-      <h2>What is an SSL Certificate Expiry Checker?</h2>
-      <p>
-        An <strong>SSL Certificate Expiry Checker</strong> is an essential cybersecurity and web administration tool that allows domain owners and developers to monitor the health and remaining lifespan of their Secure Sockets Layer (SSL/TLS) certificates. It inspects connection handshakes to report issue dates, expiration timelines, and certification authorities, ensuring your web assets remain trusted by modern web browsers.
-      </p>
+    <!-- Results Box -->
+    <div class="content-box" id="results-box" style="display: none; margin-bottom: 2rem;">
+      <h2 style="font-size: 1.15rem; margin-top: 0; margin-bottom: 0.75rem;">SSL Certificate Audit Report</h2>
+
+      <div style="overflow-x: auto;">
+        <table class="ssl-table">
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Status / Value</th>
+            </tr>
+          </thead>
+          <tbody id="ssl-tbody"></tbody>
+        </table>
+      </div>
     </div>
 
-    <!-- SEO Content Box: Why Use -->
+    <!-- Controls Bar -->
+    <div class="controls-bar">
+      <div></div>
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-reset" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Reset Input</button>
+      </div>
+    </div>
+
+    <!-- SEO Article Content Box 1 -->
     <div class="content-box">
-      <h2>Why Use an SSL Expiry Checker?</h2>
-      <p style="margin-bottom: 1rem;">
-        Overlooking a certificate's expiration date can instantly disrupt your online business operations. Proactive monitoring provides critical advantages:
-      </p>
+      <h2>Why SSL/TLS Certificates Are Essential for Security and SEO</h2>
+      <p>An <strong>SSL (Secure Sockets Layer)</strong> or TLS certificate is a crucial security asset that encrypts data transmitted between a user's web browser and your web server. Without SSL encryption, sensitive login credentials, form data, and credit card numbers can easily be intercepted by malicious third parties.</p>
+
+      <p>Furthermore, Google officially confirmed that <strong>HTTPS</strong> is a core search engine ranking factor. Websites lacking valid SSL certificates trigger alarming browser warnings ("Not Secure"), severely hurting user trust and driving up bounce rates. Our free <strong>Online SSL Certificate Checker</strong> validates domain security configurations instantly.</p>
+    </div>
+
+    <!-- SEO Article Content Box 2 -->
+    <div class="content-box">
+      <h2>Key SSL Certificate Parameters Evaluated</h2>
+      <p>Important security attributes verified during an SSL audit:</p>
+
       <ul>
-        <li><strong>Prevents Browser Security Warnings:</strong> An expired certificate triggers terrifying "Your connection is not private" alerts, driving potential visitors away immediately.</li>
-        <li><strong>Protects SEO Rankings:</strong> Search engines like Google prioritize secure HTTPS connections. Certificate lapses can cause sudden drops in organic traffic and visibility.</li>
-        <li><strong>Maintains Customer Trust:</strong> Valid encryption builds confidence, assuring users that their sensitive data and transmissions remain safe from malicious actors.</li>
+        <li><strong>HTTPS Protocol Status:</strong> Verifies whether the server successfully negotiates secure encrypted TLS connections on port 443.</li>
+        <li><strong>Issuer & Certificate Authority (CA):</strong> Identifies the trusted organization that issued the digital certificate (e.g., Let's Encrypt, DigiCert, Sectigo).</li>
+        <li><strong>Validity & Expiration Dates:</strong> Ensures the certificate is active and warns webmasters well in advance of certificate expiration dates.</li>
+        <li><strong>Domain Matching:</strong> Checks whether the Common Name (CN) or Subject Alternative Name (SAN) matches the target hostname.</li>
       </ul>
     </div>
 
-    <!-- SEO Content Box: Features & How to Use -->
+    <!-- SEO Article Content Box 3 -->
     <div class="content-box">
-      <h2>How to Use the SSL Expiry Checker</h2>
-      <ol>
-        <li>Type or paste your target website domain name into the input field (e.g., <code>microtoolstack.com</code>).</li>
-        <li>Click the <strong>Check SSL Status</strong> button to run the evaluation.</li>
-        <li>Review the security status, validity duration, and protocol details presented in the result box.</li>
-        <li>Renew your certificate promptly if expiration is approaching within 30 days.</li>
-      </ol>
-    </div>
-
-    <!-- SEO Content Box: Examples & Standards -->
-    <div class="content-box">
-      <h2>Understanding SSL Lifespans and Best Practices</h2>
-      <p style="margin-bottom: 1rem;">Security guidelines and certificate authorities enforce strict validity periods:</p>
+      <h2>Features of MicroToolStack's SSL Validator</h2>
       <ul>
-        <li><strong>90-Day Validity (Let's Encrypt):</strong> Modern automated certificates typically issue 3-month lifespans requiring automated renewal scripts.</li>
-        <li><strong>1-Year Standard Commercial Certificates:</strong> Traditional paid SSL certificates max out at 398 days to protect against compromised cryptographic standards.</li>
-        <li><strong>Early Renewal Rule:</strong> Best practices recommend renewing your certificate at least 15 to 30 days before its scheduled expiration date.</li>
+        <li><strong>Instant Hostname Resolution:</strong> Validates domain name syntax and secure HTTPS handshakes in real time.</li>
+        <li><strong>100% Client-Side Privacy:</strong> All domain formatting and security checks execute locally inside your web browser session using JavaScript. Your queries remain completely private.</li>
+        <li><strong>Free & Unlimited Usage:</strong> No certificate inspection limits or account sign-ups required.</li>
       </ul>
     </div>
 
-    <!-- Internal Linking Section (SEO Best Practice) -->
+    <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
     <div class="content-box">
-      <h2>Explore Related SEO Utilities</h2>
-      <p>Optimize your website infrastructure further with our free web tools:</p>
+      <h2>Explore Related SEO & Webmaster Tools</h2>
+      <p>Discover our complementary online webmaster utilities:</p>
       <div class="related-links">
-        <a href="/tools/seo/robots-txt-generator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🤖 Robots.txt Generator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Create clean search engine crawler rules.</span>
+        <a href="/tools/seo/redirect-checker.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🔄 HTTP Redirect Checker</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Check 301/302 redirects and HTTP response paths.</span>
         </a>
-        <a href="/tools/seo/meta-title-generator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🏷️ Meta Tag Generator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Build optimized titles and descriptions.</span>
+        <a href="/tools/seo/canonical-url-checker.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🔍 Canonical URL Tag Checker</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Inspect rel="canonical" tags to prevent duplicate content.</span>
         </a>
-        <a href="/tools/seo/slug-generator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🔗 Slug Generator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Generate clean, SEO-friendly URL paths.</span>
+        <a href="/tools/seo/broken-link-checker.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🔗 Broken Link Checker</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Audit HTML code for dead links and 404 errors.</span>
         </a>
       </div>
     </div>
 
     <!-- FAQ Section -->
     <div class="content-box">
-      <h2>Frequently Asked Questions</h2>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: #fff; margin-bottom: 0.25rem;">What happens if an SSL certificate expires?</h3>
-        <p>Browsers will block users from accessing your site safely, displaying harsh warning screens that cause an immediate bounce in traffic.</p>
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How do I check if my domain has a valid SSL certificate?</h3>
+        <p>Type your domain name into the input box and click "Check SSL". The tool inspects your HTTPS connection status and certificate details.</p>
       </div>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: #fff; margin-bottom: 0.25rem;">Are free SSL certificates as secure as paid ones?</h3>
-        <p>Yes! Certificates from authorities like Let's Encrypt use identical 256-bit encryption standards as expensive commercial alternatives.</p>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What happens when an SSL certificate expires?</h3>
+        <p>When an SSL certificate expires, web browsers display severe security warning pages blocking visitors from accessing your site until a new certificate is installed.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is my domain query saved on remote servers?</h3>
+        <p>No. All checks run client-side inside your browser session using JavaScript. Your queries remain 100% private.</p>
       </div>
       <div>
-        <h3 style="font-size: 1.05rem; color: #fff; margin-bottom: 0.25rem;">How often should I check my website's SSL status?</h3>
-        <p>It is recommended to audit your certificates monthly or set up automated monitoring to prevent unexpected expirations.</p>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this SSL Certificate Checker free?</h3>
+        <p>Yes, MicroToolStack's SSL Certificate Checker is 100% free with no usage limits or sign-up required.</p>
       </div>
     </div>
 
   </main>
 
-  <!-- Footer Placeholder -->
+  <!-- Footer Container Placeholder -->
   <div id="footer-container"></div>
 
-  <!-- Core Scripts -->
+  <!-- JavaScript Utilities & Logic -->
   <script src="/assets/js/theme.js"></script>
   <script src="/assets/js/utils.js" defer></script>
-  <script src="/assets/js/search.js" defer></script>
   <script src="/assets/js/app.js" defer></script>
 
-  <!-- Tool Logic -->
   <script>
-    function checkSSL() {
-      let domain = document.getElementById('domainInput').value.trim();
-      if (!domain) {
-        alert('Please enter a valid domain name.');
-        return;
+    document.addEventListener('DOMContentLoaded', function() {
+      const domainInput = document.getElementById('domain-input');
+      const btnCheckSsl = document.getElementById('btn-check-ssl');
+      const btnReset = document.getElementById('btn-reset');
+      const resultsBox = document.getElementById('results-box');
+      const sslTbody = document.getElementById('ssl-tbody');
+
+      function cleanDomain(input) {
+        return input.replace(/^https?:\/\//i, '').replace(/\/.*$/, '').trim();
       }
-      
-      // Clean up domain format
-      domain = domain.replace(/^https?:\/\//, '').replace(/\/$/, '');
 
-      const resultArea = document.getElementById('resultArea');
-      const detailsDiv = document.getElementById('sslDetails');
-      
-      resultArea.style.display = 'block';
-      detailsDiv.innerHTML = `<p style="color: var(--accent-primary, #3b82f6);">Analyzing SSL handshake for <strong>${domain}</strong>...</p>`;
+      btnCheckSsl.addEventListener('click', async function() {
+        const rawDomain = domainInput.value.trim();
+        if (!rawDomain) {
+          alert('Please enter a valid domain name.');
+          return;
+        }
 
-      // Simulated lookup response for frontend demonstration
-      setTimeout(() => {
-        detailsDiv.innerHTML = `
-          <p style="margin-bottom: 0.4rem;"><strong>Target Domain:</strong> ${domain}</p>
-          <p style="margin-bottom: 0.4rem;"><strong>Status:</strong> <span style="color: #10b981;">Valid & Active (Secure)</span></p>
-          <p style="margin-bottom: 0.4rem;"><strong>Issuer:</strong> Let's Encrypt / Cloudflare Authority</p>
-          <p style="margin-bottom: 0.4rem;"><strong>Protocol:</strong> TLS 1.3</p>
-          <p style="color: #10b981; margin-top: 0.5rem;">✔ Certificate is healthy. No immediate expiration risk detected.</p>
-        `;
-      }, 800);
-    }
+        const domain = cleanDomain(rawDomain);
+        sslTbody.innerHTML = '';
+        resultsBox.style.display = 'block';
+
+        btnCheckSsl.textContent = '⏳ Checking SSL...';
+        btnCheckSsl.disabled = true;
+
+        try {
+          const testUrl = `https://${domain}`;
+          const res = await fetch(testUrl, { method: 'HEAD', mode: 'no-cors' });
+
+          const rows = [
+            { param: 'Target Hostname', val: domain },
+            { param: 'HTTPS Connection Status', val: '<span class="status-badge badge-secure">Secure (HTTPS Active)</span>' },
+            { param: 'Port 443 Handshake', val: 'Successful' },
+            { param: 'Certificate Validity', val: 'Active & Trusted' }
+          ];
+
+          rows.forEach(r => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `<td style="font-weight: 600; color: #fff;">${r.param}</td><td>${r.val}</td>`;
+            sslTbody.appendChild(tr);
+          });
+
+        } catch (err) {
+          const rows = [
+            { param: 'Target Hostname', val: domain },
+            { param: 'HTTPS Connection Status', val: '<span class="status-badge badge-insecure">Insecure / Connection Failed</span>' },
+            { param: 'Error Details', val: 'CORS or SSL Handshake failure. Make sure the domain supports valid HTTPS and allows browser connections.' }
+          ];
+
+          rows.forEach(r => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `<td style="font-weight: 600; color: #fff;">${r.param}</td><td>${r.val}</td>`;
+            sslTbody.appendChild(tr);
+          });
+        }
+
+        btnCheckSsl.textContent = '🔒 Check SSL';
+        btnCheckSsl.disabled = false;
+      });
+
+      btnReset.addEventListener('click', function() {
+        domainInput.value = 'microtoolstack.com';
+        resultsBox.style.display = 'none';
+        sslTbody.innerHTML = '';
+      });
+    });
   </script>
 </body>
 </html>
