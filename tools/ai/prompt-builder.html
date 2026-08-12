@@ -1,442 +1,306 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) - Optimized Load -->
-  <script>
-    window.addEventListener('load', function() {
-      setTimeout(function() {
-        var gTagScript = document.createElement('script');
-        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
-        gTagScript.async = true;
-        document.head.appendChild(gTagScript);
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-F3WWR9KGB4');
-      }, 1000);
-    });
-  </script>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <!-- Primary SEO Meta Tags -->
-  <title>Free AI Prompt Builder for ChatGPT & Midjourney | MicroToolStack</title>
-  <meta name="description" content="Generate highly effective prompts for ChatGPT, Midjourney, and DALL-E. Build structured AI prompts with custom roles, tones, aspect ratios, and parameters.">
-  <meta name="keywords" content="ai prompt builder, chatgpt prompt generator, midjourney prompt helper, ai prompt engineer tool, dalle prompt builder, ai image prompt generator">
-
-  <link rel="canonical" href="https://microtoolstack.com/tools/ai/prompt-builder.html">
+  <title>Free AI Prompt Builder for ChatGPT, Midjourney & DALL-E | MicroToolStack</title>
+  <meta name="description" content="Build high-converting, detailed prompts for ChatGPT, Midjourney, DALL-E, and Stable Diffusion easily with our free AI Prompt Builder tool.">
   <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://microtoolstack.com/tools/ai/prompt-builder.html">
 
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://microtoolstack.com/tools/ai/prompt-builder.html">
-  <meta property="og:title" content="Free AI Prompt Builder for ChatGPT & Midjourney | MicroToolStack">
-  <meta property="og:description" content="Generate highly effective prompts for ChatGPT, Midjourney, and DALL-E. Build structured AI prompts instantly.">
-  <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
-
-  <!-- Favicon Icon for Google & Devices -->
+  <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
-  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
-  <!-- Schema -->
-  <script type="application/ld+json">
-  [
-    {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "ChatGPT & Midjourney Prompt Builder",
-      "url": "https://microtoolstack.com/tools/ai/prompt-builder.html",
-      "applicationCategory": "UtilitiesApplication",
-      "operatingSystem": "All",
-      "browserRequirements": "Requires JavaScript",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      }
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "How does a Prompt Builder improve AI outputs?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "By adding structured context like Persona Role, Tone, Constraints, and technical parameters (e.g., aspect ratios for Midjourney), AI models generate far more accurate and professional results."
-          }
-        }
-      ]
-    }
-  ]
-  </script>
-
-  <!-- Preconnect and Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <!-- CSS Stylesheets -->
-  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/variables.css?v=10.0">
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
 
   <style>
-    .app-card {
-      background-color: var(--bg-card, #1e1e2e);
+    .tool-card-box {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1.5rem;
+      background: var(--bg-card, #1e1e2e);
       border: 1px solid var(--border-color, #333);
-      border-radius: 12px;
-      padding: 2rem;
-      margin-bottom: 2.5rem;
-    }
-    .tab-btn {
-      padding: 0.75rem 1.25rem;
-      border: 1px solid var(--border-color, #374151);
-      background: var(--bg-body, #111827);
-      color: var(--text-secondary, #d1d5db);
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: 600;
-      transition: all 0.2s;
-    }
-    .tab-btn.active {
-      background: var(--accent-primary, #2563eb);
-      color: #fff;
-      border-color: var(--accent-primary, #2563eb);
+      border-radius: var(--radius-md, 12px);
     }
     .form-group {
-      margin-bottom: 1.25rem;
+      margin-bottom: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
     }
     .form-group label {
-      display: block;
-      margin-bottom: 0.5rem;
-      font-size: 0.9rem;
       font-weight: 600;
-      color: #e5e7eb;
+      font-size: 0.95rem;
     }
     .form-control {
       width: 100%;
-      padding: 0.75rem;
+      padding: 0.8rem;
       border-radius: 8px;
-      background: var(--bg-body, #111827);
-      border: 1px solid var(--border-color, #374151);
-      color: #fff;
-      font-size: 0.95rem;
-      box-sizing: border-box;
+      border: 1px solid var(--border-color, #444);
+      background: var(--bg-input, #121218);
+      color: var(--text-primary, #fff);
+      font-size: 1rem;
       outline: none;
+      box-sizing: border-box;
     }
-    .result-box {
-      background: var(--bg-body, #111827);
-      border: 1px solid var(--border-color, #374151);
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .btn-action {
+      width: 100%;
+      padding: 0.9rem;
+      background: #3b82f6;
+      color: #fff;
+      border: none;
       border-radius: 8px;
-      padding: 1.25rem;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s ease;
+      margin-top: 0.5rem;
+    }
+    .btn-action:hover {
+      background: #2563eb;
+    }
+    .results-wrapper {
       margin-top: 1.5rem;
-      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .prompt-result-card {
+      background: var(--bg-input, #121218);
+      border: 1px solid var(--border-color, #333);
+      padding: 1.2rem;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .prompt-text {
+      white-space: pre-line;
+      line-height: 1.6;
+      font-size: 1rem;
+      color: #60a5fa;
+      font-family: monospace;
+      background: var(--bg-card, #1e1e2e);
+      padding: 1rem;
+      border-radius: 6px;
+      border: 1px solid var(--border-color, #333);
+    }
+    .card-footer-action {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--border-color, #333);
+      padding-top: 0.8rem;
     }
     .btn-copy {
-      background-color: #16a34a;
+      padding: 0.5rem 1.2rem;
+      background: #10b981;
       color: #fff;
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
       border: none;
+      border-radius: 6px;
+      font-size: 0.85rem;
       font-weight: 600;
       cursor: pointer;
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
+      white-space: nowrap;
     }
-    .content-box {
-      background-color: var(--bg-card, #1e1e2e);
-      border: 1px solid var(--border-color, #333);
-      border-radius: var(--radius-md, 8px);
-      padding: 1.5rem;
-      margin-bottom: 2rem;
+    .seo-content-section {
+      max-width: 800px;
+      margin: 3.5rem auto;
+      line-height: 1.8;
     }
-    .content-box h2 {
-      font-size: 1.35rem;
-      margin-bottom: 1rem;
+    .seo-content-section h2 {
+      margin-top: 2rem;
+      font-size: 1.5rem;
       color: var(--text-primary, #fff);
     }
-    .content-box p, .content-box ul {
-      color: var(--text-secondary, #9ca3af);
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-    .content-box ul {
-      padding-left: 1.25rem;
+    .seo-content-section p {
       margin-bottom: 1rem;
     }
-    .content-box li {
-      margin-bottom: 0.5rem;
-    }
-    .related-links {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-    .related-card {
-      display: block;
-      padding: 1rem;
+    .faq-item {
       background: var(--bg-card, #1e1e2e);
       border: 1px solid var(--border-color, #333);
+      padding: 1.2rem;
       border-radius: 8px;
-      color: var(--text-primary, #fff);
-      text-decoration: none;
-      transition: border-color 0.2s;
+      margin-top: 1rem;
     }
-    .related-card:hover {
-      border-color: var(--accent-primary, #3b82f6);
+    .faq-item h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
     }
   </style>
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3023714618008515" crossorigin="anonymous"></script>
 </head>
-<body style="margin: 0; padding: 0;">
 
-  <!-- Header Section -->
-  <header class="custom-header">
-    <a href="/" class="custom-logo">
-      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
-    </a>
-    <nav class="custom-nav">
-      <a href="/#categories">Categories</a>
-      <a href="/about.html">About</a>
-      <a href="/contact.html">Contact</a>
-      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
-    </nav>
-  </header>
+<body>
 
-  <!-- Main Container -->
-  <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
-    <!-- Breadcrumb Navigation -->
-    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
-      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
-      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">AI Tools</a> / 
-      <span>Prompt Builder</span>
-    </nav>
-    
-    <!-- Title Section -->
-    <div style="text-align: center; margin-bottom: 2rem;">
-      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">ChatGPT & Midjourney Prompt Builder</h1>
-      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Construct high-converting text and image generation prompts with custom personas, tones, and technical parameters.</p>
+  <!-- Dynamic Header -->
+  <div id="header-container"></div>
+
+  <main class="container">
+    <section class="hero text-center">
+      <h1>Free AI Prompt Builder</h1>
+      <p>Craft detailed, structured, and high-quality prompts for ChatGPT, Midjourney, DALL-E, and Gemini effortlessly.</p>
+    </section>
+
+    <!-- Interactive Tool Interface -->
+    <div class="tool-card-box">
+      <div class="form-group">
+        <label for="prompt-concept">Core Topic or Visual Subject:</label>
+        <input type="text" id="prompt-concept" class="form-control" placeholder="e.g., Cyberpunk cat sitting in rain, Writing a marketing blog post for a dental clinic...">
+      </div>
+
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="prompt-target">Target AI Model:</label>
+          <select id="prompt-target" class="form-control">
+            <option value="ChatGPT">ChatGPT / Claude (Text & Content)</option>
+            <option value="Midjourney">Midjourney v6 (Photorealistic Art)</option>
+            <option value="DALL-E">DALL-E 3 (Digital Art & Illustrations)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="prompt-style">Style / Quality Modifier:</label>
+          <select id="prompt-style" class="form-control">
+            <option value="Cinematic & Detailed">Cinematic & Photorealistic</option>
+            <option value="Professional & Expert">Professional & Expert Tone</option>
+            <option value="Anime & Fantasy">Anime / Fantasy Concept Art</option>
+            <option value="Minimalist & Clean">Minimalist & Clean Design</option>
+          </select>
+        </div>
+      </div>
+
+      <button id="build-prompt-btn" class="btn-action">✨ Build AI Prompt</button>
+
+      <!-- Output Container -->
+      <div id="prompt-results" class="results-wrapper" style="display: none;">
+        <!-- Generated prompts will appear here dynamically -->
+      </div>
     </div>
 
-    <!-- App Card -->
-    <div class="app-card">
+    <!-- AdSense Rich SEO Content with Internal Linking -->
+    <article class="seo-content-section">
+      <h2>Why Effective AI Prompt Engineering Matters</h2>
+      <p>Generative Artificial Intelligence models like ChatGPT, Midjourney, and DALL-E are only as good as the instructions you feed them. Vague inputs yield generic, low-quality results. Prompt Engineering is the art of structuring subject, lighting, mood, tone, and formatting constraints into a clean command string that yields accurate AI outputs on the very first try.</p>
       
-      <!-- Mode Toggle Tabs -->
-      <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem; justify-content: center;">
-        <button id="tab-text" class="tab-btn active" onclick="switchMode('text')">🤖 ChatGPT / Claude (Text)</button>
-        <button id="tab-image" class="tab-btn" onclick="switchMode('image')">🎨 Midjourney / DALL-E (Image)</button>
+      <p>Our free <strong>AI Prompt Builder</strong> at <a href="https://microtoolstack.com">MicroToolStack</a> automatically formats raw ideas into optimized prompt structures. If you are generating text content, you can polish your output further using our <a href="/tools/ai/humanizer.html">AI Text Humanizer</a> and create social posts with our <a href="/tools/ai/caption-generator.html">AI Caption Generator</a>.</p>
+
+      <h2>How to Build Perfect AI Prompts in 3 Steps</h2>
+      <ol>
+        <li><strong>Describe Your Concept:</strong> Enter your core subject or text idea into the input field above.</li>
+        <li><strong>Select AI Model & Style:</strong> Choose whether you are prompting for text AI (ChatGPT/Claude) or image generators (Midjourney/DALL-E), and select a visual style modifier.</li>
+        <li><strong>Build & Copy:</strong> Click <strong>Build AI Prompt</strong>, review the structured prompt parameters, and click <strong>Copy Prompt</strong> to paste directly into your AI workspace.</li>
+      </ol>
+
+      <h2>Key Features of MicroToolStack AI Prompt Generator</h2>
+      <ul>
+        <li><strong>Model-Specific Formatting:</strong> Appends Midjourney parameters like <em>--ar 16:9, 8k resolution, Unreal Engine 5 rendering</em>, or ChatGPT role-playing context automatically.</li>
+        <li><strong>Improves AI Output Quality:</strong> Eliminates vague phrasing and adds lighting, camera angle, and perspective keywords for realistic art generation.</li>
+        <li><strong>Saves Time & Tokens:</strong> Helps you get desired outputs without wasting API credits or spending endless iterations adjusting inputs manually.</li>
+        <li><strong>100% Free & Unlimited:</strong> Build as many prompts as you need without accounts, paywalls, or daily limits. Combine this tool with our <a href="/tools/social/bio-generator.html">AI Bio Generator</a> for comprehensive profile setup.</li>
+      </ul>
+
+      <h2>Frequently Asked Questions (FAQ)</h2>
+
+      <div class="faq-item">
+        <h3>What makes a good Midjourney image prompt?</h3>
+        <p>A high-quality Midjourney prompt clearly states the core subject, environment, lighting conditions, photographic lens details, color palette, and rendering parameters (e.g., <em>--ar 16:9 --v 6.0</em>).</p>
       </div>
 
-      <!-- ChatGPT Builder Form -->
-      <div id="form-text">
-        <div class="form-group">
-          <label>Act as a (Persona Role)</label>
-          <input type="text" id="text-role" class="form-control" placeholder="e.g. Senior Copywriter, Python Developer, SEO Specialist">
-        </div>
-
-        <div class="form-group">
-          <label>Task / Objective *</label>
-          <textarea id="text-task" class="form-control" rows="3" placeholder="e.g. Write a catchy landing page headline for a productivity app"></textarea>
-        </div>
-
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-          <div class="form-group">
-            <label>Tone of Voice</label>
-            <select id="text-tone" class="form-control">
-              <option value="Professional & Clear">Professional & Clear</option>
-              <option value="Persuasive & High Energy">Persuasive & High Energy</option>
-              <option value="Casual & Conversational">Casual & Conversational</option>
-              <option value="Technical & Detailed">Technical & Detailed</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label>Output Format</label>
-            <input type="text" id="text-format" class="form-control" placeholder="e.g. Bullet points, Markdown table, 500 words">
-          </div>
-        </div>
+      <div class="faq-item">
+        <h3>Can I use these prompts for ChatGPT and Claude?</h3>
+        <p>Yes! Selecting the <strong>ChatGPT/Claude</strong> option wraps your request in a structured persona prompt (defining Role, Objective, Tone, and Step-by-Step constraints).</p>
       </div>
 
-      <!-- Midjourney Builder Form -->
-      <div id="form-image" style="display: none;">
-        <div class="form-group">
-          <label>Main Subject & Description *</label>
-          <textarea id="img-subject" class="form-control" rows="3" placeholder="e.g. Futuristic cybernetic cat sitting on a neon rooftop"></textarea>
-        </div>
-
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-          <div class="form-group">
-            <label>Art Style</label>
-            <select id="img-style" class="form-control">
-              <option value="Photorealistic, 8k resolution">Photorealistic (8K, Cinematic)</option>
-              <option value="Cyberpunk, Neon lighting">Cyberpunk</option>
-              <option value="3D Pixar Animation style">3D Pixar Style</option>
-              <option value="Minimalist Vector Art">Minimalist Vector</option>
-              <option value="Oil Painting, Impressionist">Oil Painting</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label>Aspect Ratio (--ar)</label>
-            <select id="img-ar" class="form-control">
-              <option value="--ar 16:9">16:9 (Landscape / YouTube)</option>
-              <option value="--ar 9:16">9:16 (Portrait / Reels / Shorts)</option>
-              <option value="--ar 1:1">1:1 (Square / Instagram)</option>
-              <option value="--ar 4:3">4:3 (Standard)</option>
-            </select>
-          </div>
-        </div>
-
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-          <div class="form-group">
-            <label>Lighting / Environment</label>
-            <input type="text" id="img-lighting" class="form-control" placeholder="e.g. Golden hour, Dramatic rim light, Volumetric fog">
-          </div>
-
-          <div class="form-group">
-            <label>Midjourney Version</label>
-            <select id="img-version" class="form-control">
-              <option value="--v 6.0">v 6.0 (Latest)</option>
-              <option value="--v 5.2">v 5.2</option>
-              <option value="--niji 6">Niji 6 (Anime style)</option>
-            </select>
-          </div>
-        </div>
+      <div class="faq-item">
+        <h3>Is my prompt data saved on MicroToolStack?</h3>
+        <p>No. All prompt building happens locally within your web browser. MicroToolStack values privacy and never logs your text entries. Have suggestions? Contact us on our <a href="/contact.html">Support Page</a>.</p>
       </div>
-
-      <!-- Generated Result Box -->
-      <div class="result-box">
-        <button id="copy-btn" class="btn-copy" onclick="copyPrompt()">📋 Copy Prompt</button>
-        <p style="margin: 0 0 0.5rem 0; font-size: 0.85rem; color: var(--text-secondary, #9ca3af); font-weight: 600;">Generated Prompt:</p>
-        <div id="prompt-output" style="color: #4ade80; font-family: monospace; font-size: 0.95rem; white-space: pre-wrap; word-break: break-word; padding-right: 7rem; min-height: 48px;">Fill in the details above to build your prompt.</div>
-      </div>
-    </div>
-
-    <!-- SEO Article Content Box 1 -->
-    <div class="content-box">
-      <h2>Why Use an AI Prompt Builder?</h2>
-      <p>Artificial Intelligence models like ChatGPT, Midjourney, and DALL-E rely heavily on prompt precision. Vague inputs lead to generic results, while structured prompts with specified roles, constraints, and parameters unleash the full power of AI generation.</p>
-    </div>
-
-    <!-- Internal Linking Section (SEO Best Practice) -->
-    <div class="content-box">
-      <h2>Explore Related AI & Text Tools</h2>
-      <p>Enhance your writing and content creation workflow with our free utilities:</p>
-      <div class="related-links">
-        <a href="/tools/ai/caption-generator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">📝 AI Caption Generator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Craft engaging social media captions and hooks.</span>
-        </a>
-        <a href="/tools/ai/ai-bio-generator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">✨ AI Bio Generator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Craft catchy profile bios for social media.</span>
-        </a>
-        <a href="/tools/ai/text-humanizer.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">👤 AI Text Humanizer</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Convert robotic AI content into human-like writing.</span>
-        </a>
-        <a href="/tools/ai/hashtag-generator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">#️⃣ AI Hashtag Generator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Generate trending niche hashtags for social media.</span>
-        </a>
-      </div>
-    </div>
-
-    <!-- FAQ Section -->
-    <div class="content-box">
-      <h2>Frequently Asked Questions</h2>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Does this prompt builder work with Claude or Gemini?</h3>
-        <p>Yes! The structured text prompts generated here work flawlessly with ChatGPT, Claude, Google Gemini, and Llama models.</p>
-      </div>
-    </div>
-
+    </article>
   </main>
 
-  <!-- Footer Container Placeholder -->
+  <!-- Dynamic Footer -->
   <div id="footer-container"></div>
 
-  <!-- Scripts -->
+  <!-- Core Scripts -->
   <script src="/assets/js/theme.js"></script>
   <script src="/assets/js/utils.js" defer></script>
-  <script src="/assets/js/app.js" defer></script>
 
-  <!-- Prompt Logic Script -->
+  <!-- Working Functional JavaScript for Prompt Builder -->
   <script>
-    let currentMode = 'text';
+    document.addEventListener('DOMContentLoaded', function () {
+      const conceptInput = document.getElementById('prompt-concept');
+      const targetSelect = document.getElementById('prompt-target');
+      const styleSelect = document.getElementById('prompt-style');
+      const buildBtn = document.getElementById('build-prompt-btn');
+      const resultsContainer = document.getElementById('prompt-results');
 
-    function switchMode(mode) {
-      currentMode = mode;
-      document.getElementById('tab-text').classList.toggle('active', mode === 'text');
-      document.getElementById('tab-image').classList.toggle('active', mode === 'image');
-      document.getElementById('form-text').style.display = mode === 'text' ? 'block' : 'none';
-      document.getElementById('form-image').style.display = mode === 'image' ? 'block' : 'none';
-      updatePrompt();
-    }
+      buildBtn.addEventListener('click', function () {
+        const rawConcept = conceptInput.value.trim() || 'A futuristic cybernetic city with neon lights';
+        const targetModel = targetSelect.value;
+        const styleModifier = styleSelect.value;
 
-    function updatePrompt() {
-      const output = document.getElementById('prompt-output');
+        let finalPrompt = "";
 
-      if (currentMode === 'text') {
-        const role = document.getElementById('text-role').value.trim();
-        const task = document.getElementById('text-task').value.trim();
-        const tone = document.getElementById('text-tone').value;
-        const format = document.getElementById('text-format').value.trim();
-
-        if (!task) {
-          output.textContent = "Please enter a Task / Objective above to construct your text prompt.";
-          return;
+        if (targetModel === "Midjourney") {
+          finalPrompt = `/imagine prompt: ${rawConcept}, ${styleModifier.toLowerCase()} style, dramatic lighting, highly detailed, 8k resolution, octane render, photorealistic, cinematic camera angle --ar 16:9 --v 6.0 --style raw`;
+        } else if (targetModel === "DALL-E") {
+          finalPrompt = `An ultra-detailed digital artwork depicting ${rawConcept}. Designed in a ${styleModifier.toLowerCase()} aesthetic with vibrant color harmony, crisp focus, and high artistic polish. High quality digital painting.`;
+        } else {
+          // ChatGPT / Claude Prompt Structure
+          finalPrompt = `Act as an expert content consultant. Your task is to provide a comprehensive response regarding: "${rawConcept}".\n\nWriting Style: ${styleModifier}\nFormat: Structured headings, concise bullet points, and actionable takeaways.\nConstraints: Avoid generic fluff, ensure 100% clarity, and provide practical examples where necessary.`;
         }
 
-        let prompt = "";
-        if (role) prompt += `Act as a ${role}.\n\n`;
-        prompt += `Task: ${task}\n\n`;
-        prompt += `Tone: ${tone}\n`;
-        if (format) prompt += `Format: ${format}`;
+        resultsContainer.innerHTML = '';
 
-        output.textContent = prompt;
+        const card = document.createElement('div');
+        card.className = 'prompt-result-card';
 
-      } else {
-        const subject = document.getElementById('img-subject').value.trim();
-        const style = document.getElementById('img-style').value;
-        const ar = document.getElementById('img-ar').value;
-        const lighting = document.getElementById('img-lighting').value.trim();
-        const version = document.getElementById('img-version').value;
+        const promptBox = document.createElement('div');
+        promptBox.className = 'prompt-text';
+        promptBox.innerText = finalPrompt;
 
-        if (!subject) {
-          output.textContent = "Please enter a Main Subject description above to construct your image prompt.";
-          return;
-        }
+        const footerAction = document.createElement('div');
+        footerAction.className = 'card-footer-action';
 
-        let prompt = `/imagine prompt: ${subject}, ${style}`;
-        if (lighting) prompt += `, ${lighting}`;
-        prompt += ` ${ar} ${version}`;
+        const infoSpan = document.createElement('span');
+        infoSpan.style.fontSize = '0.9rem';
+        infoSpan.style.color = 'var(--text-secondary, #aaa)';
+        infoSpan.innerText = `✨ Optimized for ${targetModel}`;
 
-        output.textContent = prompt;
-      }
-    }
+        const copyBtn = document.createElement('button');
+        copyBtn.className = 'btn-copy';
+        copyBtn.innerText = '📋 Copy Prompt';
 
-    document.addEventListener('DOMContentLoaded', function() {
-      const inputs = document.querySelectorAll('input, textarea, select');
-      inputs.forEach(input => {
-        input.addEventListener('input', updatePrompt);
-        input.addEventListener('change', updatePrompt);
+        copyBtn.addEventListener('click', function () {
+          navigator.clipboard.writeText(finalPrompt).then(() => {
+            copyBtn.innerText = '✅ Copied!';
+            setTimeout(() => copyBtn.innerText = '📋 Copy Prompt', 2000);
+          });
+        });
+
+        footerAction.appendChild(infoSpan);
+        footerAction.appendChild(copyBtn);
+
+        card.appendChild(promptBox);
+        card.appendChild(footerAction);
+
+        resultsContainer.appendChild(card);
+        resultsContainer.style.display = 'block';
       });
     });
-
-    function copyPrompt() {
-      const text = document.getElementById('prompt-output').textContent;
-      if (!text || text.startsWith("Please enter")) return;
-
-      navigator.clipboard.writeText(text).then(() => {
-        const btn = document.getElementById('copy-btn');
-        btn.textContent = '✅ Copied!';
-        setTimeout(() => { btn.textContent = '📋 Copy Prompt'; }, 1200);
-      });
-    }
   </script>
+
 </body>
 </html>
