@@ -22,9 +22,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Primary SEO Meta Tags -->
-  <title>Free Online BMI Calculator | Body Mass Index Health Check</title>
-  <meta name="description" content="Calculate your Body Mass Index (BMI) and health category based on height and weight. Free online BMI health calculator with instant weight status analysis.">
-  <meta name="keywords" content="bmi calculator, body mass index calculator, calculate bmi online, weight status calculator, healthy weight range, health calculator">
+  <title>Free Online BMI Calculator | Body Mass Index Chart & Health Check | MicroToolStack</title>
+  <meta name="description" content="Calculate your Body Mass Index (BMI) instantly with our free Online BMI Calculator. Supports both Metric (kg/cm) and Imperial (lbs/in) units with official WHO weight category benchmarks.">
+  <meta name="keywords" content="bmi calculator, body mass index calculator, calculate bmi online, healthy weight calculator, bmi chart, metric imperial bmi tool, ideal body weight">
 
   <link rel="canonical" href="https://microtoolstack.com/tools/calculator/bmi-calculator.html">
   <meta name="robots" content="index, follow">
@@ -33,7 +33,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://microtoolstack.com/tools/calculator/bmi-calculator.html">
   <meta property="og:title" content="Free Online BMI Calculator | MicroToolStack">
-  <meta property="og:description" content="Calculate your Body Mass Index (BMI) and health category based on height and weight. 100% free and private browser tool.">
+  <meta property="og:description" content="Calculate your exact Body Mass Index (BMI) and discover your ideal weight category instantly. 100% free and accurate health calculator.">
   <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
@@ -56,7 +56,7 @@
           "price": "0",
           "priceCurrency": "USD"
         },
-        "description": "An online health utility tool to calculate Body Mass Index (BMI) and determine weight categories.",
+        "description": "An accurate online Body Mass Index calculator supporting metric and imperial units with official WHO weight classification breakdowns.",
         "url": "https://microtoolstack.com/tools/calculator/bmi-calculator.html"
       },
       {
@@ -64,18 +64,34 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "What is a healthy BMI score range?",
+            "name": "What is Body Mass Index (BMI)?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "A BMI score between 18.5 and 24.9 is generally considered a normal, healthy weight range for adults according to World Health Organization (WHO) standards."
+              "text": "Body Mass Index (BMI) is a standardized health screening metric calculated using an individual's height and weight to estimate overall body fatness and classify weight categories."
             }
           },
           {
             "@type": "Question",
-            "name": "How is BMI calculated?",
+            "name": "What is a healthy BMI range for adults?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "BMI is calculated by taking an individual's weight in kilograms divided by the square of their height in meters (kg/m²)."
+              "text": "According to the World Health Organization (WHO), a healthy BMI for adults falls between 18.5 and 24.9. Below 18.5 is considered underweight, 25 to 29.9 is overweight, and 30 or above indicates obesity."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does this calculator support both Metric and Imperial units?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! You can seamlessly switch between Metric units (kilograms and centimeters) and Imperial units (pounds and inches)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my personal health data saved?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. All BMI calculations happen locally in your web browser using JavaScript. No personal weight, height, or health metrics are saved or transmitted to external servers."
             }
           }
         ]
@@ -93,47 +109,48 @@
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
 
   <style>
-    .input-card {
-      background: var(--bg-card, #1e1e2e);
-      padding: 1.5rem;
-      border-radius: var(--radius-md, 8px);
-      border: 1px solid var(--border-color, #333);
-      margin-bottom: 1.5rem;
+    .input-group {
+      margin-bottom: 1.25rem;
     }
-    .search-input {
+    .input-label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.5rem;
+    }
+    .form-control, .form-select {
       width: 100%;
-      padding: 0.75rem;
-      font-size: 0.95rem;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
       border: 1px solid var(--border-color, #333);
-      border-radius: var(--radius-md, 6px);
-      background-color: var(--bg-body, #111827);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
       color: var(--text-primary, #fff);
       outline: none;
       box-sizing: border-box;
     }
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1rem;
-      margin-top: 1.5rem;
+    .form-control:focus, .form-select:focus {
+      border-color: var(--accent-primary, #3b82f6);
     }
-    .stat-card {
+    .result-card {
       background-color: var(--bg-card, #1e1e2e);
       border: 1px solid var(--border-color, #333);
       border-radius: var(--radius-md, 8px);
-      padding: 1.25rem;
+      padding: 1.5rem;
       text-align: center;
+      margin-top: 1.5rem;
     }
-    .stat-value {
-      font-size: 1.8rem;
+    .bmi-value {
+      font-size: 2.5rem;
       font-weight: 800;
       color: var(--accent-primary, #3b82f6);
       margin-bottom: 0.25rem;
     }
-    .stat-label {
-      font-size: 0.85rem;
-      color: var(--text-secondary, #9ca3af);
-      font-weight: 500;
+    .bmi-category {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
     }
     .content-box {
       background-color: var(--bg-card, #1e1e2e);
@@ -147,7 +164,13 @@
       margin-bottom: 1rem;
       color: var(--text-primary, #fff);
     }
-    .content-box p, .content-box ul {
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul, .content-box table {
       color: var(--text-secondary, #9ca3af);
       font-size: 0.95rem;
       line-height: 1.6;
@@ -158,6 +181,21 @@
     }
     .content-box li {
       margin-bottom: 0.5rem;
+    }
+    .bmi-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+    .bmi-table th, .bmi-table td {
+      border: 1px solid var(--border-color, #333);
+      padding: 0.75rem;
+      text-align: left;
+    }
+    .bmi-table th {
+      background-color: rgba(255, 255, 255, 0.05);
+      color: var(--text-primary, #fff);
     }
     .related-links {
       display: grid;
@@ -197,97 +235,138 @@
 
   <!-- Main Container -->
   <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
-    <!-- Breadcrumb Navigation -->
-    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
-      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
-      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Calculators</a> / 
-      <span>BMI Calculator</span>
-    </nav>
     
     <!-- Tool Title & Description -->
     <div style="text-align: center; margin-bottom: 2rem;">
-      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">BMI Calculator</h1>
-      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Check your Body Mass Index (BMI) to understand your healthy weight range.</p>
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online Body Mass Index (BMI) Calculator</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Calculate your exact BMI score and evaluate your ideal body weight category instantly.</p>
     </div>
 
-    <!-- Input Card -->
-    <div class="input-card">
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
+    <!-- Calculator Input Card -->
+    <div class="content-box" style="margin-bottom: 2rem;">
+      <div class="input-group">
+        <label for="unit-system" class="input-label">Unit System</label>
+        <select id="unit-system" class="form-select">
+          <option value="metric">Metric System (kg, cm)</option>
+          <option value="imperial">Imperial System (lbs, inches)</option>
+        </select>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;" class="input-group">
         <div>
-          <label style="font-weight: 600; display: block; margin-bottom: 0.5rem; color: #fff;">Height (cm):</label>
-          <input type="number" id="height-cm" class="search-input" value="175">
+          <label for="height-input" class="input-label" id="height-label">Height (cm)</label>
+          <input type="number" id="height-input" class="form-control" placeholder="e.g., 175" step="any">
         </div>
         <div>
-          <label style="font-weight: 600; display: block; margin-bottom: 0.5rem; color: #fff;">Weight (kg):</label>
-          <input type="number" id="weight-kg" class="search-input" value="70">
+          <label for="weight-input" class="input-label" id="weight-label">Weight (kg)</label>
+          <input type="number" id="weight-input" class="form-control" placeholder="e.g., 70" step="any">
         </div>
       </div>
 
-      <button class="btn btn-primary" id="btn-calc-bmi" style="width: 100%; padding: 0.75rem; cursor: pointer; font-weight: 600;">⚖️ Calculate BMI</button>
+      <button id="btn-calc-bmi" class="btn btn-primary" style="width: 100%; padding: 0.85rem; font-size: 1rem; font-weight: 600; cursor: pointer;">⚖️ Calculate BMI</button>
 
-      <div class="stats-grid">
-        <div class="stat-card">
-          <div class="stat-value" id="res-bmi">22.9</div>
-          <div class="stat-label">BMI Score</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-value" id="res-status" style="color: #10b981;">Normal Weight</div>
-          <div class="stat-label">Category</div>
-        </div>
+      <!-- Results Card -->
+      <div id="bmi-result-wrapper" style="display: none;" class="result-card">
+        <div style="font-size: 0.9rem; color: var(--text-secondary, #9ca3af); margin-bottom: 0.25rem;">Your Body Mass Index (BMI)</div>
+        <div class="bmi-value" id="bmi-score">0.0</div>
+        <div class="bmi-category" id="bmi-status">Normal Weight</div>
       </div>
     </div>
 
     <!-- SEO Article Content Box 1 -->
     <div class="content-box">
-      <h2>What is Body Mass Index (BMI)?</h2>
-      <p>Body Mass Index (BMI) is a standardized measurement used to estimate whether a person has a healthy body weight for their height. By dividing your weight by the square of your height, our <strong>BMI Calculator</strong> instantly evaluates your score against international health categories (Underweight, Normal Weight, Overweight, and Obese).</p>
+      <h2>What is Body Mass Index (BMI) and Why Does It Matter?</h2>
+      <p>Body Mass Index (BMI) is an established diagnostic measurement used worldwide by medical practitioners, fitness experts, and global health organizations to classify weight categories in adult men and women. By comparing an individual's weight against their height, BMI offers a reliable screening score for potential weight-related health risks.</p>
+      <p>Using our <strong>Online BMI Calculator</strong> helps you monitor your body composition progress over time. Whether you are pursuing fitness goals, managing dietary habits, or tracking cardiovascular wellness, knowing your BMI score is a fundamental first step toward holistic health awareness.</p>
     </div>
 
     <!-- SEO Article Content Box 2 -->
     <div class="content-box">
-      <h2>BMI Classification Categories</h2>
-      <ul>
-        <li><strong>Below 18.5:</strong> Underweight</li>
-        <li><strong>18.5 – 24.9:</strong> Normal Weight (Healthy Range)</li>
-        <li><strong>25.0 – 29.9:</strong> Overweight</li>
-        <li><strong>30.0 and Above:</strong> Obese</li>
-      </ul>
+      <h2>Official WHO Body Mass Index (BMI) Categories</h2>
+      <p>The World Health Organization (WHO) defines standard weight classifications based on adult BMI scores:</p>
+
+      <table class="bmi-table">
+        <thead>
+          <tr>
+            <th>BMI Score Range</th>
+            <th>Weight Category</th>
+            <th>Health Risk Benchmark</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Below 18.5</td>
+            <td>Underweight</td>
+            <td>Higher risk of nutritional deficiency & weakened immunity</td>
+          </tr>
+          <tr>
+            <td>18.5 – 24.9</td>
+            <td>Normal / Healthy Weight</td>
+            <td>Optimal health balance & lowest statistical disease risk</td>
+          </tr>
+          <tr>
+            <td>25.0 – 29.9</td>
+            <td>Overweight</td>
+            <td>Moderate risk of cardiovascular disease & hypertension</td>
+          </tr>
+          <tr>
+            <td>30.0 and Above</td>
+            <td>Obesity (Class I, II, III)</td>
+            <td>High risk of type-2 diabetes, cardiovascular issues & strain</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
-    <!-- Internal Linking Section (SEO Best Practice) -->
+    <!-- SEO Article Content Box 3 -->
     <div class="content-box">
-      <h2>Explore Related Calculators & Utilities</h2>
-      <p>Enhance your health monitoring and daily productivity with our free tools:</p>
+      <h2>How the BMI Formula Works mathematically</h2>
+      <p>Our tool calculates BMI using standard international mathematical formulas:</p>
+      <ul>
+        <li><strong>Metric Formula:</strong> $BMI = \frac{\text{Weight (kg)}}{\text{Height (m)}^2}$</li>
+        <li><strong>Imperial Formula:</strong> $BMI = \frac{\text{Weight (lbs)} \times 703}{\text{Height (inches)}^2}$</li>
+      </ul>
+      <p>While BMI provides an excellent general health benchmark for the vast majority of adults, it is worth noting that it does not directly distinguish between muscle mass and bone density. Athletes or bodybuilders with high muscle mass may record higher BMI scores while maintaining low body fat percentages.</p>
+    </div>
+
+    <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
+    <div class="content-box">
+      <h2>Explore Related Calculators & Tools</h2>
+      <p>Discover our complementary everyday calculator utilities:</p>
       <div class="related-links">
         <a href="/tools/calculator/age-calculator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">📅 Age Calculator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Calculate exact chronological age in years and months.</span>
+          <strong style="display:block; margin-bottom: 0.25rem;">🗓️ Exact Age Calculator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Calculate chronological age in years, months, days, and hours.</span>
         </a>
-        <a href="/tools/pet-care/cat-age-converter.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🐱 Cat Age Converter</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Convert cat years into human equivalents.</span>
-        </a>
-        <a href="/tools/pet-care/dog-chocolate-calculator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🍫 Dog Chocolate Calculator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Check chocolate toxicity levels for dogs.</span>
+        <a href="/tools/calculator/emi-calculator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🏦 Loan EMI Calculator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Calculate monthly repayments and interest breakdown.</span>
         </a>
         <a href="/tools/text/word-counter.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">📝 Word Counter</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Count words, characters, and reading time.</span>
+          <strong style="display:block; margin-bottom: 0.25rem;">📊 Real-Time Word Counter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Analyze character counts, reading time, and text metrics.</span>
         </a>
       </div>
     </div>
 
     <!-- FAQ Section -->
     <div class="content-box">
-      <h2>Frequently Asked Questions</h2>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What is a healthy BMI score range?</h3>
-        <p>A BMI score between 18.5 and 24.9 is generally considered a normal, healthy weight range for adults according to World Health Organization (WHO) standards.</p>
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What is a normal, healthy BMI score?</h3>
+        <p>A normal BMI score for an adult ranges between 18.5 and 24.9 according to World Health Organization (WHO) standards.</p>
       </div>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is my health data private?</h3>
-        <p>Yes, all calculations run locally in your browser using JavaScript. No personal weight or height inputs are ever sent to external servers.</p>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Can I calculate BMI using imperial units (pounds and inches)?</h3>
+        <p>Yes! Switch the dropdown to "Imperial System" to enter your height in inches and weight in pounds.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is my health data saved or logged?</h3>
+        <p>No. All calculations run client-side inside your browser session. Your height and weight numbers remain 100% private.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this BMI calculator free?</h3>
+        <p>Yes, MicroToolStack's BMI Calculator is completely free with no usage limits or sign-up required.</p>
       </div>
     </div>
 
@@ -302,29 +381,74 @@
   <script src="/assets/js/app.js" defer></script>
 
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      function calcBMI() {
-        const h = parseFloat(document.getElementById('height-cm').value) / 100;
-        const w = parseFloat(document.getElementById('weight-kg').value);
+    document.addEventListener('DOMContentLoaded', function() {
+      const unitSystem = document.getElementById('unit-system');
+      const heightInput = document.getElementById('height-input');
+      const weightInput = document.getElementById('weight-input');
+      const heightLabel = document.getElementById('height-label');
+      const weightLabel = document.getElementById('weight-label');
+      const btnCalc = document.getElementById('btn-calc-bmi');
+      const bmiResultWrapper = document.getElementById('bmi-result-wrapper');
+      const bmiScoreEl = document.getElementById('bmi-score');
+      const bmiStatusEl = document.getElementById('bmi-status');
 
-        if (!h || !w) return;
+      // Unit Switch Handling
+      unitSystem.addEventListener('change', function() {
+        if (unitSystem.value === 'metric') {
+          heightLabel.textContent = 'Height (cm)';
+          weightLabel.textContent = 'Weight (kg)';
+          heightInput.placeholder = 'e.g., 175';
+          weightInput.placeholder = 'e.g., 70';
+        } else {
+          heightLabel.textContent = 'Height (inches)';
+          weightLabel.textContent = 'Weight (lbs)';
+          heightInput.placeholder = 'e.g., 69';
+          weightInput.placeholder = 'e.g., 154';
+        }
+      });
 
-        const bmi = (w / (h * h)).toFixed(1);
-        let status = 'Normal Weight';
-        let color = '#10b981';
+      btnCalc.addEventListener('click', function() {
+        const height = parseFloat(heightInput.value);
+        const weight = parseFloat(weightInput.value);
 
-        if (bmi < 18.5) { status = 'Underweight'; color = '#f59e0b'; }
-        else if (bmi >= 25 && bmi < 29.9) { status = 'Overweight'; color = '#f59e0b'; }
-        else if (bmi >= 30) { status = 'Obese'; color = '#ef4444'; }
+        if (!height || !weight || height <= 0 || weight <= 0) {
+          alert('Please enter valid positive numbers for height and weight.');
+          return;
+        }
 
-        document.getElementById('res-bmi').textContent = bmi;
-        const statusEl = document.getElementById('res-status');
-        statusEl.textContent = status;
-        statusEl.style.color = color;
-      }
+        let bmi = 0;
+        if (unitSystem.value === 'metric') {
+          const heightMeters = height / 100;
+          bmi = weight / (heightMeters * heightMeters);
+        } else {
+          bmi = (weight * 703) / (height * height);
+        }
 
-      document.getElementById('btn-calc-bmi').addEventListener('click', calcBMI);
-      calcBMI();
+        const formattedBmi = bmi.toFixed(1);
+        bmiScoreEl.textContent = formattedBmi;
+
+        // Category evaluation
+        let category = '';
+        let color = '#3b82f6';
+
+        if (bmi < 18.5) {
+          category = 'Underweight';
+          color = '#f59e0b';
+        } else if (bmi >= 18.5 && bmi <= 24.9) {
+          category = 'Normal / Healthy Weight';
+          color = '#10b981';
+        } else if (bmi >= 25.0 && bmi <= 29.9) {
+          category = 'Overweight';
+          color = '#f97316';
+        } else {
+          category = 'Obesity Class';
+          color = '#ef4444';
+        }
+
+        bmiStatusEl.textContent = category;
+        bmiScoreEl.style.color = color;
+        bmiResultWrapper.style.display = 'block';
+      });
     });
   </script>
 </body>
