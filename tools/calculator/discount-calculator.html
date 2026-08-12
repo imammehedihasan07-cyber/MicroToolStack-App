@@ -22,9 +22,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Primary SEO Meta Tags -->
-  <title>Free Online Discount Calculator | Calculate Savings & Final Price | MicroToolStack</title>
-  <meta name="description" content="Free online Discount Calculator. Calculate original prices, percentage discounts, total savings, and final prices with optional sales tax easily.">
-  <meta name="keywords" content="discount calculator, sale price calculator, calculate discount percentage, shopping discount tool, percentage off calculator, savings calculator">
+  <title>Free Online Discount Calculator | Calculate Sale Savings & Final Price | MicroToolStack</title>
+  <meta name="description" content="Calculate sale discounts, total savings, and final prices instantly with our free Online Discount Calculator. Supports double discounts and sales tax calculations with no sign-up required.">
+  <meta name="keywords" content="discount calculator, calculate sale price, percentage off calculator, savings calculator, shopping discount tool, sales tax calculator, double discount calculator">
 
   <link rel="canonical" href="https://microtoolstack.com/tools/calculator/discount-calculator.html">
   <meta name="robots" content="index, follow">
@@ -33,7 +33,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://microtoolstack.com/tools/calculator/discount-calculator.html">
   <meta property="og:title" content="Free Online Discount Calculator | MicroToolStack">
-  <meta property="og:description" content="Instantly compute discounted prices, percentage savings, and final checkout costs with optional tax additions.">
+  <meta property="og:description" content="Calculate exact price markdowns, promotional percentage savings, and final checkout prices instantly. 100% free shopping calculator.">
   <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
@@ -48,15 +48,15 @@
     "@graph": [
       {
         "@type": "SoftwareApplication",
-        "name": "Discount Calculator",
+        "name": "Shopping Discount Calculator",
         "operatingSystem": "All",
-        "applicationCategory": "EducationalApplication",
+        "applicationCategory": "ShoppingApplication",
         "offers": {
           "@type": "Offer",
           "price": "0",
           "priceCurrency": "USD"
         },
-        "description": "An online retail utility to calculate sale prices, net savings, and final payment amounts after applying percentage discounts and sales tax.",
+        "description": "An essential online shopping discount calculator that computes net price reductions, percentage off savings, stacked discounts, and applicable sales taxes.",
         "url": "https://microtoolstack.com/tools/calculator/discount-calculator.html"
       },
       {
@@ -64,26 +64,34 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "How to calculate a discounted price?",
+            "name": "How do you calculate a discount percentage?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Multiply the original price by the discount percentage divided by 100 to get the saved amount. Then subtract this saved amount from the original price."
+              "text": "To calculate a discount, multiply the original item price by the discount percentage divided by 100 to find total savings. Subtract that savings amount from the original price to get the final sale price."
             }
           },
           {
             "@type": "Question",
-            "name": "How does sales tax affect the discounted price?",
+            "name": "How do stacked or double discounts work?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Sales tax is usually applied to the discounted price (the price after taking off the sale percentage), not the original full retail price."
+              "text": "Stacked discounts are applied sequentially, not added together. The first discount percentage is subtracted from the original price, and the second discount percentage is then applied to the resulting reduced price."
             }
           },
           {
             "@type": "Question",
-            "name": "Is this discount calculator free with instant calculations?",
+            "name": "Is this Discount Calculator free?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes! All calculations are computed in real-time inside your web browser without requiring registration or server interaction."
+              "text": "Yes, MicroToolStack's Discount Calculator is 100% free with unlimited calculations and no registration required."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my shopping data saved or recorded?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. All price computations execute locally inside your web browser using client-side JavaScript. No prices, currency values, or inputs are stored or shared."
             }
           }
         ]
@@ -101,21 +109,15 @@
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
 
   <style>
-    .calc-card {
-      background-color: var(--bg-card, #1e1e2e);
-      border: 1px solid var(--border-color, #333);
-      border-radius: var(--radius-md, 8px);
-      padding: 1.5rem;
-      margin-bottom: 2rem;
-    }
-    .form-group {
+    .input-group {
       margin-bottom: 1.25rem;
     }
-    .form-group label {
+    .input-label {
       display: block;
+      font-size: 0.9rem;
       font-weight: 600;
+      color: var(--text-primary, #fff);
       margin-bottom: 0.5rem;
-      font-size: 0.95rem;
     }
     .form-control {
       width: 100%;
@@ -123,55 +125,37 @@
       font-size: 1rem;
       border: 1px solid var(--border-color, #333);
       border-radius: var(--radius-md, 8px);
-      background-color: #0d1117;
+      background-color: var(--bg-card, #1e1e2e);
       color: var(--text-primary, #fff);
       outline: none;
       box-sizing: border-box;
-      transition: border-color 0.2s;
     }
     .form-control:focus {
       border-color: var(--accent-primary, #3b82f6);
     }
-    .grid-2 {
+    .stats-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1rem;
-    }
-    .result-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
       gap: 1rem;
       margin-top: 1.5rem;
     }
-    .result-box {
-      background: rgba(59, 130, 246, 0.1);
-      border: 1px solid var(--accent-primary, #3b82f6);
-      border-radius: 8px;
-      padding: 1.25rem;
+    .stat-card {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1rem;
       text-align: center;
     }
-    .result-box.savings {
-      background: rgba(16, 185, 129, 0.1);
-      border-color: #10b981;
-    }
-    .result-value {
-      font-size: 2rem;
+    .stat-number {
+      font-size: 1.5rem;
       font-weight: 700;
       color: var(--accent-primary, #3b82f6);
-      margin: 0.25rem 0;
+      margin-bottom: 0.25rem;
     }
-    .result-box.savings .result-value {
-      color: #10b981;
-    }
-    .editor-controls {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 1.5rem;
-    }
-    .btn-group {
-      display: flex;
-      gap: 0.5rem;
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--text-secondary, #9ca3af);
+      font-weight: 500;
     }
     .content-box {
       background-color: var(--bg-card, #1e1e2e);
@@ -183,6 +167,12 @@
     .content-box h2 {
       font-size: 1.35rem;
       margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
       color: var(--text-primary, #fff);
     }
     .content-box p, .content-box ul {
@@ -235,107 +225,133 @@
 
   <!-- Main Container -->
   <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
-    <!-- Breadcrumb Navigation -->
-    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
-      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
-      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Calculators</a> / 
-      <span>Discount Calculator</span>
-    </nav>
     
     <!-- Tool Title & Description -->
     <div style="text-align: center; margin-bottom: 2rem;">
-      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Discount & Savings Calculator</h1>
-      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Calculate discounted price, total money saved, and optional sales tax amounts instantly.</p>
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online Sale Discount & Savings Calculator</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Calculate exact promotional percentage off, net savings, stacked discounts, and checkout tax totals.</p>
     </div>
 
-    <!-- Calculator Card -->
-    <div class="calc-card">
-      <div class="grid-2">
-        <div class="form-group">
-          <label for="price-input">Original Price ($)</label>
-          <input type="number" id="price-input" class="form-control" placeholder="e.g. 150" min="0" step="0.01" autofocus>
+    <!-- Calculator Input Card -->
+    <div class="content-box" style="margin-bottom: 2rem;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;" class="input-group">
+        <div>
+          <label for="orig-price" class="input-label">Original Price ($)</label>
+          <input type="number" id="orig-price" class="form-control" placeholder="e.g., 100" step="0.01" min="0">
         </div>
-
-        <div class="form-group">
-          <label for="discount-input">Discount Percentage (%)</label>
-          <input type="number" id="discount-input" class="form-control" placeholder="e.g. 20" min="0" max="100" step="0.1">
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="tax-input">Sales Tax / VAT (%) - Optional</label>
-        <input type="number" id="tax-input" class="form-control" placeholder="e.g. 5 (Leave blank if none)" min="0" step="0.1">
-      </div>
-
-      <!-- Live Calculated Output -->
-      <div class="result-grid">
-        <div class="result-box">
-          <div style="font-size: 0.85rem; color: var(--text-secondary, #9ca3af); text-transform: uppercase;">Final Price to Pay</div>
-          <div id="result-final" class="result-value">$0.00</div>
-        </div>
-
-        <div class="result-box savings">
-          <div style="font-size: 0.85rem; color: #10b981; text-transform: uppercase;">Total Savings</div>
-          <div id="result-saved" class="result-value">$0.00</div>
+        <div>
+          <label for="disc-percent" class="input-label">Primary Discount (% Off)</label>
+          <input type="number" id="disc-percent" class="form-control" placeholder="e.g., 20" step="0.1" min="0" max="100">
         </div>
       </div>
 
-      <!-- Controls -->
-      <div class="editor-controls">
-        <div class="btn-group">
-          <button id="btn-copy" class="btn btn-primary" style="padding: 0.65rem 1.2rem; cursor: pointer;">📋 Copy Results</button>
-          <button id="btn-reset" class="btn btn-secondary" style="padding: 0.65rem 1.2rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Reset</button>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;" class="input-group">
+        <div>
+          <label for="extra-disc" class="input-label">Extra / Stacked Discount (% Off) (Optional)</label>
+          <input type="number" id="extra-disc" class="form-control" placeholder="e.g., 10" step="0.1" min="0" max="100">
         </div>
-        <span id="status-msg" style="font-size: 0.85rem; color: #10b981; font-weight: 500; display: none;">Copied to clipboard!</span>
+        <div>
+          <label for="sales-tax" class="input-label">Sales Tax Rate (%) (Optional)</label>
+          <input type="number" id="sales-tax" class="form-control" placeholder="e.g., 5" step="0.1" min="0">
+        </div>
+      </div>
+
+      <button id="btn-calc-disc" class="btn btn-primary" style="width: 100%; padding: 0.85rem; font-size: 1rem; font-weight: 600; cursor: pointer;">🏷️ Calculate Final Price</button>
+
+      <!-- Results Grid -->
+      <div id="results-wrapper" style="display: none;">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number" id="res-final-price" style="color: #10b981;">$0.00</div>
+            <div class="stat-label">Final Checkout Price</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" id="res-savings" style="color: #3b82f6;">$0.00</div>
+            <div class="stat-label">You Save</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" id="res-tax-amount">$0.00</div>
+            <div class="stat-label">Sales Tax Amount</div>
+          </div>
+        </div>
       </div>
     </div>
 
     <!-- SEO Article Content Box 1 -->
     <div class="content-box">
-      <h2>How to Calculate Discounts & Sale Prices</h2>
-      <p>Whether shopping online, during Black Friday sales, or at retail stores, knowing how much you actually save with percentage discounts helps you make smarter purchasing decisions. Discounts are usually expressed as a percentage off the original price.</p>
+      <h2>Understanding Sales Discounts & Shopping Math</h2>
+      <p>Whether shopping online during Black Friday seasonal events, browsing local retail sales, or managing store inventory, quickly figuring out the final checkout price after promotional discounts is essential. Price tags frequently advertise percentage reductions (such as <em>25% Off</em> or <em>Extra 10% Off Clearance</em>), leaving shoppers to perform mental math on the spot.</p>
+      <p>Our free <strong>Online Discount Calculator</strong> eliminates guesswork by providing precise, instant price calculations. It factors in primary percentage markdowns, sequential stacked coupons, and local sales tax rates so you know the exact total before reaching the checkout counter.</p>
     </div>
 
     <!-- SEO Article Content Box 2 -->
     <div class="content-box">
-      <h2>Discount Calculation Formula</h2>
+      <h2>The Mathematical Formulas Behind Discount Calculations</h2>
+      <p>Calculating sales discounts involves straightforward percentage arithmetic:</p>
+
+      <h3>1. Standard Single Discount Formula</h3>
+      <p>To calculate the monetary savings and reduced price for a single discount percentage:</p>
+      <p>$$\text{Savings} = \text{Original Price} \times \left(\frac{\text{Discount \%}}{100}\right)$$</p>
+      <p>$$\text{Final Sale Price} = \text{Original Price} - \text{Savings}$$</p>
+      <p><em>Example:</em> An item originally priced at $80 with a 20% discount saves $80 \times 0.20 = $16, resulting in a final sale price of $64.</p>
+
+      <h3>2. Stacked / Double Discount Calculation Method</h3>
+      <p>Stores often advertise a main discount plus an additional coupon (e.g., <em>30% Off plus an extra 10% Off</em>). Note that stacked discounts are calculated sequentially rather than added together directly (30% + 10% $\neq$ 40%):</p>
       <ul>
-        <li><strong>Saved Amount:</strong> <code>Savings = Original Price × (Discount / 100)</code></li>
-        <li><strong>Discounted Price:</strong> <code>Sale Price = Original Price - Savings</code></li>
-        <li><strong>With Sales Tax:</strong> <code>Final Price = Sale Price + (Sale Price × (Tax / 100))</code></li>
+        <li><strong>Step 1:</strong> Apply the first discount to the original price to establish the intermediate price.</li>
+        <li><strong>Step 2:</strong> Apply the second discount percentage to that intermediate price to derive the final reduced price.</li>
       </ul>
     </div>
 
-    <!-- Internal Linking Section (SEO Best Practice) -->
+    <!-- SEO Article Content Box 3 -->
     <div class="content-box">
-      <h2>Explore Related Calculators</h2>
-      <p>Try out our other free math and shopping utilities:</p>
+      <h2>Features of MicroToolStack's Discount Calculator</h2>
+      <ul>
+        <li><strong>Stacked Coupon Support:</strong> Effortlessly calculate multiple promotional discount percentages applied in sequence.</li>
+        <li><strong>Built-In Tax Calculator:</strong> Add local sales tax percentages to see your exact out-of-pocket payment.</li>
+        <li><strong>100% Free & Unlimited:</strong> Perform unlimited shopping comparisons with zero fees or forced user accounts.</li>
+        <li><strong>Privacy Protected:</strong> All price calculations occur locally inside your web browser. No personal financial or shopping data is stored.</li>
+      </ul>
+    </div>
+
+    <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
+    <div class="content-box">
+      <h2>Explore Related Calculators & Utilities</h2>
+      <p>Discover our complementary everyday calculator tools:</p>
       <div class="related-links">
-        <a href="/tools/calculator/percentage-calculator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">📊 Percentage Calculator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Calculate percentage changes, ratios, and fractions.</span>
+        <a href="/tools/calculator/emi-calculator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🏦 Loan EMI Calculator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Calculate monthly loan EMI repayments and interest totals.</span>
         </a>
-        <a href="/tools/calculator/cgpa-to-percentage.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🎓 CGPA to Percentage</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Convert CGPA to percentage and total marks.</span>
+        <a href="/tools/calculator/bmi-calculator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">⚖️ Body Mass Index Calculator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Evaluate healthy weight categories using WHO benchmarks.</span>
         </a>
-        <a href="/tools/text/text-to-speech.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🔊 Text to Speech Generator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Convert written text into natural voice audio.</span>
+        <a href="/tools/text/word-counter.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📊 Real-Time Word Counter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Analyze character counts, reading time, and text stats.</span>
         </a>
       </div>
     </div>
 
     <!-- FAQ Section -->
     <div class="content-box">
-      <h2>Frequently Asked Questions</h2>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How do I calculate a 20% discount on $100?</h3>
-        <p>Multiply 100 by 0.20 to get $20 savings. Subtracting $20 from $100 leaves a final sale price of $80.</p>
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How do you calculate a discount percentage?</h3>
+        <p>Multiply the original price by the discount percentage divided by 100 to find your total savings. Subtract savings from the original price to get the final sale price.</p>
       </div>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is tax calculated before or after the discount?</h3>
-        <p>In almost all retail transactions, sales tax is applied to the final discounted price rather than the original item price.</p>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is a 20% discount plus an extra 10% discount equal to 30% off?</h3>
+        <p>No. Stacked discounts apply sequentially. The 10% extra discount is calculated on the already-reduced price after taking 20% off, resulting in a total discount of 28% off the original price.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is my input shopping data saved?</h3>
+        <p>No. All calculations run client-side inside your browser session. Your input prices remain completely private.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this Discount Calculator free to use?</h3>
+        <p>Yes, MicroToolStack's Discount Calculator is completely free with no usage limits or sign-up required.</p>
       </div>
     </div>
 
@@ -351,58 +367,43 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const priceInput = document.getElementById('price-input');
-      const discountInput = document.getElementById('discount-input');
-      const taxInput = document.getElementById('tax-input');
+      const origPriceInput = document.getElementById('orig-price');
+      const discPercentInput = document.getElementById('disc-percent');
+      const extraDiscInput = document.getElementById('extra-disc');
+      const salesTaxInput = document.getElementById('sales-tax');
+      const btnCalc = document.getElementById('btn-calc-disc');
+      const resultsWrapper = document.getElementById('results-wrapper');
 
-      const resultFinal = document.getElementById('result-final');
-      const resultSaved = document.getElementById('result-saved');
+      const resFinalPrice = document.getElementById('res-final-price');
+      const resSavings = document.getElementById('res-savings');
+      const resTaxAmount = document.getElementById('res-tax-amount');
 
-      const btnCopy = document.getElementById('btn-copy');
-      const btnReset = document.getElementById('btn-reset');
-      const statusMsg = document.getElementById('status-msg');
+      btnCalc.addEventListener('click', function() {
+        const price = parseFloat(origPriceInput.value);
+        const disc1 = parseFloat(discPercentInput.value) || 0;
+        const disc2 = parseFloat(extraDiscInput.value) || 0;
+        const taxRate = parseFloat(salesTaxInput.value) || 0;
 
-      function calculate() {
-        const price = parseFloat(priceInput.value);
-        const discount = parseFloat(discountInput.value) || 0;
-        const tax = parseFloat(taxInput.value) || 0;
-
-        if (isNaN(price) || price <= 0) {
-          resultFinal.textContent = '$0.00';
-          resultSaved.textContent = '$0.00';
+        if (isNaN(price) || price < 0) {
+          alert('Please enter a valid positive original price.');
           return;
         }
 
-        const savedAmount = price * (discount / 100);
-        const discountedPrice = price - savedAmount;
-        const taxAmount = discountedPrice * (tax / 100);
-        const finalPrice = discountedPrice + taxAmount;
+        // Sequential discount math
+        let priceAfterDisc1 = price - (price * (disc1 / 100));
+        let priceAfterDisc2 = priceAfterDisc1 - (priceAfterDisc1 * (disc2 / 100));
+        let totalSavings = price - priceAfterDisc2;
 
-        resultFinal.textContent = `$${finalPrice.toFixed(2)}`;
-        resultSaved.textContent = `$${savedAmount.toFixed(2)}`;
-      }
+        // Sales tax math
+        let taxAmount = priceAfterDisc2 * (taxRate / 100);
+        let finalCheckoutPrice = priceAfterDisc2 + taxAmount;
 
-      priceInput.addEventListener('input', calculate);
-      discountInput.addEventListener('input', calculate);
-      taxInput.addEventListener('input', calculate);
+        // Display update
+        resFinalPrice.textContent = '$' + finalCheckoutPrice.toFixed(2);
+        resSavings.textContent = '$' + totalSavings.toFixed(2);
+        resTaxAmount.textContent = '$' + taxAmount.toFixed(2);
 
-      // Copy Action
-      btnCopy.addEventListener('click', function() {
-        if (!priceInput.value.trim()) return;
-        const textToCopy = `Original Price: $${priceInput.value} | Discount: ${discountInput.value || 0}% | Saved: ${resultSaved.textContent} | Final Price: ${resultFinal.textContent}`;
-        navigator.clipboard.writeText(textToCopy).then(function() {
-          statusMsg.style.display = 'inline';
-          setTimeout(() => { statusMsg.style.display = 'none'; }, 2000);
-        });
-      });
-
-      // Reset Action
-      btnReset.addEventListener('click', function() {
-        priceInput.value = '';
-        discountInput.value = '';
-        taxInput.value = '';
-        calculate();
-        priceInput.focus();
+        resultsWrapper.style.display = 'block';
       });
     });
   </script>
