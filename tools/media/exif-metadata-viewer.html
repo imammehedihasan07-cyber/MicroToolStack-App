@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) - Deferred Load -->
+  <!-- Google tag (gtag.js) - Optimized Load -->
   <script>
     window.addEventListener('load', function() {
       setTimeout(function() {
@@ -20,19 +20,20 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EXIF Metadata Viewer - Inspect Photo Details | MicroToolStack</title>
-  <meta name="description" content="View EXIF photo metadata online for free. Inspect camera settings, resolution, exposure, and file info privately in your browser.">
-  <meta name="keywords" content="exif metadata viewer, photo metadata inspector, check image resolution, view photo info online, image exif reader">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>Free Online EXIF Metadata Viewer | Photo Metadata Inspector | MicroToolStack</title>
+  <meta name="description" content="View photo EXIF metadata online instantly. Extract camera settings, ISO, aperture, shutter speed, focal length, date taken, and GPS coordinates from your images with 100% privacy.">
+  <meta name="keywords" content="exif viewer, photo metadata inspector, image exif reader, camera settings viewer, view photo metadata, image info reader, photo gps location viewer, media tools">
 
   <link rel="canonical" href="https://microtoolstack.com/tools/media/exif-metadata-viewer.html">
   <meta name="robots" content="index, follow">
 
-  <!-- Open Graph / Social Media Meta Tags -->
+  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="EXIF Metadata Viewer - Inspect Photo Details | MicroToolStack">
-  <meta property="og:description" content="Inspect EXIF tags, resolution, file specifications, and camera details directly in your browser.">
   <meta property="og:url" content="https://microtoolstack.com/tools/media/exif-metadata-viewer.html">
-  <meta property="og:site_name" content="MicroToolStack">
+  <meta property="og:title" content="Free Online EXIF Metadata Viewer | MicroToolStack">
+  <meta property="og:description" content="Extract hidden camera settings, ISO, aperture, and metadata from your photos instantly. 100% free, fast, and privacy-first browser media utility.">
   <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
@@ -40,49 +41,57 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
   <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
-  <!-- Fonts & CSS Stylesheets -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
-  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
-
-  <!-- JSON-LD Schema Markup -->
+  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "WebApplication",
-        "@id": "https://microtoolstack.com/tools/media/exif-metadata-viewer.html#webapp",
-        "url": "https://microtoolstack.com/tools/media/exif-metadata-viewer.html",
-        "name": "EXIF Metadata Viewer",
-        "applicationCategory": "UtilitiesApplication",
+        "@type": "SoftwareApplication",
+        "name": "Photo EXIF Metadata Viewer",
         "operatingSystem": "All",
+        "applicationCategory": "MultimediaApplication",
         "offers": {
           "@type": "Offer",
           "price": "0",
           "priceCurrency": "USD"
         },
-        "description": "Inspect EXIF tags, resolution, file specifications, and camera details directly in your browser."
+        "description": "An essential client-side web utility that extracts hidden Exchangeable Image File Format (EXIF) metadata, camera specifications, and location data from digital photos.",
+        "url": "https://microtoolstack.com/tools/media/exif-metadata-viewer.html"
       },
       {
         "@type": "FAQPage",
-        "@id": "https://microtoolstack.com/tools/media/exif-metadata-viewer.html#faq",
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "Is my photo uploaded to any server?",
+            "name": "What is EXIF Metadata in digital photography?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "No. All metadata inspection is performed 100% locally inside your web browser."
+              "text": "EXIF (Exchangeable Image File Format) is standard metadata embedded directly inside image files (JPEG, TIFF) by digital cameras and smartphones. It records settings like shutter speed, aperture, ISO, focal length, date, and GPS coordinates."
             }
           },
           {
             "@type": "Question",
-            "name": "Which file formats are supported?",
+            "name": "Are my uploaded photos sent to remote servers?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Our EXIF viewer supports JPG, JPEG, PNG, and WebP image files."
+              "text": "No! All file processing and metadata extraction execute 100% locally inside your web browser session using client-side JavaScript. Your images remain completely private and are never uploaded."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why do some images lack EXIF data?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Social media platforms (like Facebook, WhatsApp, or Instagram), messaging apps, and web optimizers automatically strip EXIF metadata to protect user privacy and reduce file sizes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this EXIF Metadata Viewer free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, MicroToolStack's EXIF Metadata Viewer is 100% free with unlimited image inspections and no registration required."
             }
           }
         ]
@@ -91,47 +100,88 @@
   }
   </script>
 
+  <!-- Preconnect and Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <!-- Exif.js CDN for EXIF parsing -->
+  <script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
+
   <style>
-    .upload-box {
+    .input-group {
+      margin-bottom: 1.25rem;
+    }
+    .input-label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.5rem;
+    }
+
+    /* Drag and Drop Zone */
+    .drop-zone {
+      width: 100%;
+      min-height: 180px;
       border: 2px dashed var(--border-color, #333);
-      padding: 2.5rem 1.5rem;
-      text-align: center;
-      border-radius: 12px;
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       cursor: pointer;
-      background: var(--bg-card, #1e1e2e);
+      transition: all 0.2s ease;
+      padding: 1.5rem;
+      box-sizing: border-box;
+      text-align: center;
       margin-bottom: 1.5rem;
-      transition: border-color 0.3s;
     }
-    .upload-box:hover {
+    .drop-zone:hover, .drop-zone.dragover {
       border-color: var(--accent-primary, #3b82f6);
+      background-color: rgba(59, 130, 246, 0.05);
     }
-    .preview-container { 
-      margin-top: 1.5rem; 
-      display: none; 
+
+    /* Image & Results Container */
+    .preview-container {
+      display: none;
+      margin-bottom: 1.5rem;
+      text-align: center;
     }
-    .exif-table {
+    .uploaded-img {
+      max-width: 100%;
+      max-height: 320px;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      object-fit: contain;
+    }
+
+    .metadata-table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 1rem;
-      background: var(--bg-body, #111827);
-      border-radius: 8px;
-      overflow: hidden;
+      margin-bottom: 1rem;
+    }
+    .metadata-table th, .metadata-table td {
       border: 1px solid var(--border-color, #333);
-    }
-    .exif-table th, .exif-table td {
-      padding: 0.8rem 1rem;
+      padding: 0.75rem 1rem;
       text-align: left;
-      border-bottom: 1px solid var(--border-color, #333);
-      font-size: 0.9rem;
     }
-    .exif-table th { 
-      background: var(--bg-card, #1e1e2e); 
-      color: #fff; 
-      font-weight: 600; 
+    .metadata-table th {
+      background-color: rgba(255, 255, 255, 0.05);
+      color: var(--text-primary, #fff);
+      width: 35%;
     }
-    .exif-table td { 
-      color: var(--text-secondary, #9ca3af); 
+    .metadata-table td {
+      color: #38bdf8;
+      font-family: 'Fira Code', Consolas, Monaco, monospace;
+      word-break: break-all;
     }
+
     .content-box {
       background-color: var(--bg-card, #1e1e2e);
       border: 1px solid var(--border-color, #333);
@@ -144,12 +194,18 @@
       margin-bottom: 1rem;
       color: var(--text-primary, #fff);
     }
-    .content-box p, .content-box ul, .content-box ol {
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul {
       color: var(--text-secondary, #9ca3af);
       font-size: 0.95rem;
       line-height: 1.6;
     }
-    .content-box ul, .content-box ol {
+    .content-box ul {
       padding-left: 1.25rem;
       margin-bottom: 1rem;
     }
@@ -178,6 +234,7 @@
   </style>
 </head>
 <body style="margin: 0; padding: 0;">
+
   <!-- Header Section -->
   <header class="custom-header">
     <a href="/" class="custom-logo">
@@ -191,152 +248,255 @@
     </nav>
   </header>
 
+  <!-- Main Container -->
   <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
-    <!-- Breadcrumb Navigation -->
-    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
-      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
-      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Media Tools</a> / 
-      <span>EXIF Metadata Viewer</span>
-    </nav>
-
-    <!-- Header Area -->
-    <header style="margin-bottom: 2rem; text-align: center;">
-      <h1 class="hero" style="font-size: 2rem; margin-bottom: 0.5rem; color: #fff;">Free EXIF Metadata Viewer</h1>
-      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">
-        Inspect EXIF tags, resolution, file specifications, and camera details directly in your browser.
-      </p>
-    </header>
-
-    <!-- Tool Card -->
-    <div class="card" style="padding: 2rem; border-radius: 12px; background: var(--bg-card, #1e1e2e); border: 1px solid var(--border-color, #333); margin-bottom: 3rem;">
-      <div class="upload-box" id="dropZone" onclick="document.getElementById('imageInput').click()">
-        <span style="font-size: 2.5rem; display: block; margin-bottom: 0.5rem;">📷</span>
-        <p style="margin-bottom: 0.5rem; font-weight: 600; color: #fff;">Click or Drag & Drop Photo Here</p>
-        <p style="font-size: 0.85rem; color: var(--text-secondary, #9ca3af);">Supports JPG, PNG, WebP (100% Client-Side Privacy)</p>
-        <input type="file" id="imageInput" accept="image/*" style="display: none;" onchange="handleFileSelect(event)">
-      </div>
-
-      <div class="preview-container" id="previewArea">
-        <div style="text-align: center; margin-bottom: 1.5rem;">
-          <img id="photoPreview" style="max-height: 250px; border-radius: 8px; border: 1px solid var(--border-color, #333);" alt="Photo Preview">
-        </div>
-
-        <h3 style="font-size: 1.1rem; color: #fff;">File & Technical Metadata</h3>
-        <table class="exif-table">
-          <thead>
-            <tr>
-              <th>Property</th>
-              <th>Value</th>
-            </tr>
-          </thead>
-          <tbody id="exifTableBody"></tbody>
-        </table>
-      </div>
+    
+    <!-- Tool Title & Description -->
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online EXIF Metadata Viewer</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Inspect hidden camera settings, ISO, aperture, dimensions, and geolocation from your digital photos.</p>
     </div>
 
-    <!-- SEO Content Box 1 -->
-    <div class="content-box">
-      <h2>Understanding Photo EXIF Metadata</h2>
-      <p>
-        EXIF (Exchangeable Image File Format) metadata contains hidden technical parameters embedded within digital photos. These details include dimensions, color profiles, file sizes, creation timestamps, and camera hardware specifications.
-      </p>
+    <!-- Drag and Drop Image Zone -->
+    <div class="drop-zone" id="drop-zone">
+      <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📷</div>
+      <div style="font-size: 1.05rem; font-weight: 600; color: #fff; margin-bottom: 0.25rem;">Drag & Drop Photo Here</div>
+      <div style="font-size: 0.85rem; color: #9ca3af;">or click to select an image from your device (JPG, TIFF, PNG)</div>
+      <input type="file" id="file-input" accept="image/jpeg, image/tiff, image/jpg, image/png" style="display: none;">
     </div>
 
-    <!-- Internal Linking Section (SEO Best Practice) -->
+    <!-- Image Preview Stage -->
+    <div class="preview-container" id="preview-container">
+      <img id="uploaded-img" class="uploaded-img" alt="Uploaded Photo Preview">
+    </div>
+
+    <!-- Extracted EXIF Results Box -->
+    <div class="content-box" id="results-box" style="display: none; margin-bottom: 2rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h2 style="font-size: 1.2rem; margin: 0;">Extracted Image Metadata</h2>
+        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.4rem 0.85rem; font-size: 0.8rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 4px;">🗑️ Clear Image</button>
+      </div>
+
+      <table class="metadata-table">
+        <tbody id="metadata-tbody"></tbody>
+      </table>
+    </div>
+
+    <!-- SEO Article Content Box 1 -->
     <div class="content-box">
-      <h2>Explore Related Media & Web Tools</h2>
-      <p>Enhance your image and web workflow with our free utilities:</p>
+      <h2>Understanding Photo EXIF Metadata in Photography and Forensics</h2>
+      <p>Every time you take a photo with a DSLR camera, mirrorless system, or smartphone, the device automatically records a detailed log of technical parameters inside the image file header. This embedded information is called <strong>EXIF (Exchangeable Image File Format) Metadata</strong>.</p>
+
+      <p>EXIF data functions as a digital fingerprint for photographers, recording exposure triangle settings (ISO speed, aperture f-stop, shutter speed), camera hardware details (make, model, lens focal length), date/time stamps, and optional GPS geolocation coordinates. Our free <strong>Online EXIF Metadata Viewer</strong> lets you inspect these parameters instantly without needing heavy desktop photo editing software.</p>
+    </div>
+
+    <!-- SEO Article Content Box 2 -->
+    <div class="content-box">
+      <h2>Key EXIF Parameters Explained</h2>
+      <p>Here is what the primary metadata values reveal about your photograph:</p>
+
+      <h3>1. Camera Equipment & Hardware</h3>
+      <p>Identifies the camera body manufacturer (e.g., Canon, Nikon, Sony, Apple) and specific lens model used to capture the shot.</p>
+
+      <h3>2. Exposure Settings (The Exposure Triangle)</h3>
+      <ul>
+        <li><strong>Aperture (F-Number):</strong> Controls depth of field and lens opening (e.g., <code>f/1.8</code> for blurry backgrounds vs. <code>f/8</code> for sharp landscapes).</li>
+        <li><strong>Shutter Speed (Exposure Time):</strong> Measures exposure duration in fractions of a second (e.g., <code>1/1000s</code> to freeze action).</li>
+        <li><strong>ISO Speed:</strong> Indicates sensor light sensitivity (e.g., <code>ISO 100</code> for bright sunlight vs. <code>ISO 3200</code> for night scenes).</li>
+      </ul>
+
+      <h3>3. Timestamp & Geolocation (GPS)</h3>
+      <p>Records the exact date and time the shutter was pressed, along with latitude and longitude coordinates if location tagging was active on your smartphone or camera.</p>
+    </div>
+
+    <!-- SEO Article Content Box 3 -->
+    <div class="content-box">
+      <h2>Features of MicroToolStack's EXIF Inspector</h2>
+      <ul>
+        <li><strong>Instant Client-Side Parsing:</strong> Leverages high-speed JavaScript image parsing to read file headers instantly.</li>
+        <li><strong>Comprehensive Field Extraction:</strong> Inspects dimensions, file size, shutter speed, ISO, focal length, aperture, and camera model.</li>
+        <li><strong>100% Client-Side Privacy:</strong> All file processing runs locally in your web browser session. Photos are never uploaded or stored on external servers.</li>
+        <li><strong>Free & Unlimited Usage:</strong> No file size limits or registration required.</li>
+      </ul>
+    </div>
+
+    <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
+    <div class="content-box">
+      <h2>Explore Related Media Tools</h2>
+      <p>Discover our complementary online media utilities:</p>
       <div class="related-links">
         <a href="/tools/media/color-palette-extractor.html" class="related-card">
           <strong style="display:block; margin-bottom: 0.25rem;">🎨 Color Palette Extractor</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Extract matching HEX codes from photos.</span>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Extract dominant color schemes and HEX codes from photos.</span>
+        </a>
+        <a href="/tools/media/aspect-ratio-calculator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📐 Aspect Ratio Calculator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Calculate image and video scaling dimensions.</span>
         </a>
         <a href="/tools/media/base64-to-image.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🖼️ Base64 to Image</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Decode Base64 strings to downloadable images.</span>
-        </a>
-        <a href="/tools/pdf/images-to-pdf.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">📄 Images to PDF</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Convert JPG, PNG, and WebP images to PDF.</span>
+          <strong style="display:block; margin-bottom: 0.25rem;">🖼️ Base64 to Image Decoder</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Decode Base64 strings into downloadable images.</span>
         </a>
       </div>
     </div>
 
     <!-- FAQ Section -->
     <div class="content-box">
-      <h2>Frequently Asked Questions</h2>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: #fff; margin-bottom: 0.25rem;">Is my photo uploaded to any server?</h3>
-        <p>No. All metadata inspection is performed 100% locally inside your web browser.</p>
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How do I view EXIF metadata online?</h3>
+        <p>Drag and drop your photo into the drop zone or click to select an image from your device. The metadata table will populate automatically.</p>
       </div>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: #fff; margin-bottom: 0.25rem;">Which file formats are supported?</h3>
-        <p>Our EXIF viewer supports JPG, JPEG, PNG, and WebP image files.</p>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Why is EXIF metadata missing from my photo?</h3>
+        <p>Most social media networks (like Facebook, Instagram, Twitter) and chat apps (like WhatsApp) strip EXIF metadata to protect user privacy and save bandwidth.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is my uploaded photo saved on remote servers?</h3>
+        <p>No. All calculations run client-side inside your browser session using JavaScript. Your photos remain completely private.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this EXIF Viewer tool free?</h3>
+        <p>Yes, MicroToolStack's EXIF Metadata Viewer is 100% free with no usage limits or registration required.</p>
       </div>
     </div>
 
   </main>
 
-  <!-- Footer Placeholder -->
+  <!-- Footer Container Placeholder -->
   <div id="footer-container"></div>
 
-  <!-- Core Scripts -->
+  <!-- JavaScript Utilities & Logic -->
   <script src="/assets/js/theme.js"></script>
   <script src="/assets/js/utils.js" defer></script>
-  <script src="/assets/js/search.js" defer></script>
   <script src="/assets/js/app.js" defer></script>
 
   <script>
-    function handleFileSelect(e) {
-      const file = e.target.files[0];
-      if(!file) return;
+    document.addEventListener('DOMContentLoaded', function() {
+      const dropZone = document.getElementById('drop-zone');
+      const fileInput = document.getElementById('file-input');
+      const uploadedImg = document.getElementById('uploaded-img');
+      const previewContainer = document.getElementById('preview-container');
+      const resultsBox = document.getElementById('results-box');
+      const metadataTbody = document.getElementById('metadata-tbody');
+      const btnClear = document.getElementById('btn-clear');
 
-      const reader = new FileReader();
-      reader.onload = function(evt) {
-        const img = new Image();
-        img.onload = function() {
-          document.getElementById('photoPreview').src = evt.target.result;
-          displayMetadata(file, img);
-          document.getElementById('previewArea').style.display = 'block';
-        };
-        img.src = evt.target.result;
-      };
-      reader.readAsDataURL(file);
-    }
+      dropZone.addEventListener('click', () => fileInput.click());
 
-    function displayMetadata(file, img) {
-      const tbody = document.getElementById('exifTableBody');
-      tbody.innerHTML = '';
-
-      const data = [
-        { label: 'File Name', val: file.name },
-        { label: 'File Size', val: formatBytes(file.size) },
-        { label: 'File Type', val: file.type || 'Unknown' },
-        { label: 'Resolution', val: `${img.naturalWidth} x ${img.naturalHeight} pixels` },
-        { label: 'Aspect Ratio', val: calculateAspectRatio(img.naturalWidth, img.naturalHeight) },
-        { label: 'Last Modified', val: new Date(file.lastModified).toLocaleString() }
-      ];
-
-      data.forEach(item => {
-        const tr = document.createElement('tr');
-        tr.innerHTML = `<td><strong>${item.label}</strong></td><td>${item.val}</td>`;
-        tbody.appendChild(tr);
+      dropZone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropZone.classList.add('dragover');
       });
-    }
 
-    function formatBytes(bytes) {
-      if (bytes === 0) return '0 Bytes';
-      const k = 1024;
-      const sizes = ['Bytes', 'KB', 'MB', 'GB'];
-      const i = Math.floor(Math.log(bytes) / Math.log(k));
-      return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
-    }
+      dropZone.addEventListener('dragleave', () => dropZone.classList.remove('dragover'));
 
-    function calculateAspectRatio(w, h) {
-      const gcd = (a, b) => b ? gcd(b, a % b) : a;
-      const divisor = gcd(w, h);
-      return `${w / divisor}:${h / divisor}`;
-    }
+      dropZone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropZone.classList.remove('dragover');
+        if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+          handleFile(e.dataTransfer.files[0]);
+        }
+      });
+
+      fileInput.addEventListener('change', (e) => {
+        if (e.target.files && e.target.files[0]) {
+          handleFile(e.target.files[0]);
+        }
+      });
+
+      function formatBytes(bytes) {
+        if (bytes === 0) return '0 Bytes';
+        const k = 1024;
+        const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+        const i = Math.floor(Math.log(bytes) / Math.log(k));
+        return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+      }
+
+      function handleFile(file) {
+        const reader = new FileReader();
+        reader.onload = function(evt) {
+          uploadedImg.src = evt.target.result;
+          previewContainer.style.display = 'block';
+
+          // Extract basic file metadata
+          const baseData = {
+            "File Name": file.name,
+            "File Size": formatBytes(file.size),
+            "File Type": file.type || "image/jpeg"
+          };
+
+          // Extract EXIF data using Exif.js
+          EXIF.getData(file, function() {
+            const allExif = EXIF.getAllTags(this);
+            renderMetadataTable(baseData, allExif, file);
+          });
+        };
+        reader.readAsDataURL(file);
+      }
+
+      function renderMetadataTable(baseData, exifData, file) {
+        metadataTbody.innerHTML = '';
+
+        // Standard File Info
+        for (const [key, val] of Object.entries(baseData)) {
+          addTableRow(key, val);
+        }
+
+        // Image Dimensions from element
+        addTableRow("Image Dimensions", `${uploadedImg.naturalWidth} x ${uploadedImg.naturalHeight} px`);
+
+        if (exifData && Object.keys(exifData).length > 0) {
+          if (exifData.Make) addTableRow("Camera Manufacturer", exifData.Make);
+          if (exifData.Model) addTableRow("Camera Model", exifData.Model);
+          if (exifData.DateTimeOriginal || exifData.DateTime) addTableRow("Date & Time Taken", exifData.DateTimeOriginal || exifData.DateTime);
+          if (exifData.ISOSpeedRatings) addTableRow("ISO Speed Rating", `ISO ${exifData.ISOSpeedRatings}`);
+          if (exifData.FNumber) addTableRow("Aperture (F-Stop)", `f/${exifData.FNumber}`);
+          if (exifData.ExposureTime) {
+            const exp = exifData.ExposureTime;
+            const expText = exp < 1 ? `1/${Math.round(1/exp)}s` : `${exp}s`;
+            addTableRow("Shutter Speed (Exposure)", expText);
+          }
+          if (exifData.FocalLength) addTableRow("Focal Length", `${exifData.FocalLength} mm`);
+          if (exifData.ExposureProgram) addTableRow("Exposure Program", exifData.ExposureProgram);
+          if (exifData.MeteringMode) addTableRow("Metering Mode", exifData.MeteringMode);
+          if (exifData.Flash) addTableRow("Flash Status", exifData.Flash);
+          if (exifData.Software) addTableRow("Software / Firmware", exifData.Software);
+
+          // GPS Coordinates
+          if (exifData.GPSLatitude && exifData.GPSLongitude) {
+            const lat = convertDMSToDD(exifData.GPSLatitude, exifData.GPSLatitudeRef);
+            const lng = convertDMSToDD(exifData.GPSLongitude, exifData.GPSLongitudeRef);
+            addTableRow("GPS Location (Lat, Long)", `${lat.toFixed(6)}, ${lng.toFixed(6)}`);
+          }
+        } else {
+          addTableRow("EXIF Header Status", "No detailed EXIF camera tags found in this file (may have been stripped).");
+        }
+
+        resultsBox.style.display = 'block';
+      }
+
+      function addTableRow(label, value) {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `<th>${label}</th><td>${value}</td>`;
+        metadataTbody.appendChild(tr);
+      }
+
+      function convertDMSToDD(dms, ref) {
+        let dd = dms[0] + dms[1] / 60 + dms[2] / 3600;
+        if (ref === "S" || ref === "W") {
+          dd = dd * -1;
+        }
+        return dd;
+      }
+
+      btnClear.addEventListener('click', function() {
+        previewContainer.style.display = 'none';
+        resultsBox.style.display = 'none';
+        uploadedImg.src = '';
+        fileInput.value = '';
+        metadataTbody.innerHTML = '';
+      });
+    });
   </script>
 </body>
 </html>
