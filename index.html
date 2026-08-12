@@ -97,6 +97,41 @@
       margin-bottom: 0.75rem;
     }
 
+    .about-section {
+      margin-top: 4rem;
+      margin-bottom: 4rem;
+    }
+
+    .about-card {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 12px);
+      padding: 2rem;
+    }
+
+    .about-card h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .about-card h3 {
+      font-size: 1.3rem;
+      margin-top: 1.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .about-card p {
+      line-height: 1.7;
+      color: var(--text-secondary, #ccc);
+      margin-bottom: 1rem;
+    }
+
+    .about-card ul {
+      line-height: 1.8;
+      margin-left: 1.25rem;
+      color: var(--text-secondary, #ccc);
+    }
+
     .faq-section {
       margin-bottom: 4rem;
     }
@@ -137,7 +172,7 @@
       <h1>Essential Micro-Tools for Digital Creators</h1>
 
       <p>
-        Clean, private, and ultra-fast web utilities for content, SEO, code, and AI generation.
+        Clean, private, and ultra-fast web utilities for content, SEO, code, and AI productivity.
       </p>
 
       <!-- Search -->
@@ -146,7 +181,7 @@
           type="text"
           id="home-search"
           class="search-input"
-          placeholder="Search 20+ tools (e.g. Word Counter, JSON, Slug)..."
+          placeholder="Search online tools (e.g. Word Counter, JSON, Caption)..."
           aria-label="Search tools"
           autocomplete="off"
           spellcheck="false"
@@ -188,13 +223,56 @@
       <div class="grid-4" id="category-tools-grid"></div>
     </section>
 
-    <!-- FAQ -->
+    <!-- Substantial Explanatory Content Section (AdSense & Quality Optimization) -->
+    <section class="about-section">
+      <div class="about-card">
+        <h2>What is MicroToolStack?</h2>
+        <p>
+          <strong>MicroToolStack</strong> is a comprehensive, privacy-focused platform offering free, lightweight web utilities for content creators, software developers, SEO professionals, and digital marketers. Our mission is to provide lightning-fast, accessible web tools that eliminate the need for bloated software installations, subscription paywalls, or account registrations.
+        </p>
+
+        <h3>Free Online Tools for Everyday Tasks</h3>
+        <p>
+          Whether you need to format complex JSON files, convert PDF documents, generate viral social media captions, or optimize metadata for search engines, MicroToolStack provides dedicated utilities designed for seamless browser performance. Every tool is crafted with minimalism and efficiency in mind, enabling instant processing directly on your device.
+        </p>
+
+        <h3>Why Choose MicroToolStack?</h3>
+        <ul>
+          <li><strong>100% Free & Unlimited:</strong> Access all tools instantly without subscription plans, hidden fees, or usage limits.</li>
+          <li><strong>Client-Side Privacy:</strong> Most of our micro-tools process data locally inside your browser, ensuring your files and sensitive information never leave your device.</li>
+          <li><strong>No Registration Required:</strong> Enjoy immediate access to every feature without filling out registration forms or verifying email addresses.</li>
+          <li><strong>Ultra-Fast & Responsive:</strong> Optimized for low latency, smooth animation, and modern cross-platform compatibility across desktop, mobile, and tablet devices.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Static Pre-rendered FAQ Section -->
     <section class="faq-section">
       <div class="section-title">
         <h2>❓ Frequently Asked Questions</h2>
       </div>
 
-      <div id="faq-container"></div>
+      <div id="faq-container">
+        <div class="faq-item">
+          <h3>Are MicroToolStack tools completely free to use?</h3>
+          <p>Yes, every tool on MicroToolStack is 100% free to use. There are no registration requirements, premium paywalls, or hidden charges.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Do I need to create an account to access features?</h3>
+          <p>No, you do not need an account. You can use any utility instantly as soon as you visit the site.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Are my uploaded files and text data secure?</h3>
+          <p>Yes. The majority of MicroToolStack tools operate entirely on client-side JavaScript. This means your text and files are processed locally within your web browser and are never transmitted to external servers.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Which devices and operating systems are supported?</h3>
+          <p>MicroToolStack is fully responsive and compatible with all modern web browsers on Android, iOS, Windows, macOS, and Linux.</p>
+        </div>
+      </div>
     </section>
 
   </main>
@@ -371,9 +449,9 @@
           });
         }
 
-        // FAQ Render
+        // Dynamic FAQ Enhancement (retains static content if fetch is empty)
         const faqContainer = document.getElementById('faq-container');
-        if (faqContainer) {
+        if (faqContainer && Array.isArray(faqs) && faqs.length > 0) {
           faqContainer.innerHTML = faqs.map(function (faq) {
             return `
               <div class="faq-item">
