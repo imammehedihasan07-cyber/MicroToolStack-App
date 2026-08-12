@@ -1,479 +1,302 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) - Optimized Load -->
-  <script>
-    window.addEventListener('load', function() {
-      setTimeout(function() {
-        var gTagScript = document.createElement('script');
-        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
-        gTagScript.async = true;
-        document.head.appendChild(gTagScript);
-
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-F3WWR9KGB4');
-      }, 1000);
-    });
-  </script>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <!-- Primary SEO Meta Tags -->
-  <title>Free AI Text Humanizer Online | Convert AI to Natural Human Writing</title>
-  <meta name="description" content="Free online AI Text Humanizer to convert robotic ChatGPT/AI content into natural, human-like writing. Bypass AI detectors like Turnitin, Originality, and GPTZero.">
-  <meta name="keywords" content="ai text humanizer, humanize ai text, bypass ai detection, convert chatgpt text to human, free ai rewriter, undetectable ai writer, naturalize ai content">
-
-  <link rel="canonical" href="https://microtoolstack.com/tools/ai/text-humanizer.html">
+  <title>Free AI Text Humanizer - Convert AI Text to Human Like Writing | MicroToolStack</title>
+  <meta name="description" content="Convert ChatGPT, Claude, and Gemini generated text into natural, human-like writing. Free AI text humanizer tool to improve readability and flow.">
   <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://microtoolstack.com/tools/ai/humanizer.html">
 
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://microtoolstack.com/tools/ai/text-humanizer.html">
-  <meta property="og:title" content="Free AI Text Humanizer Online | MicroToolStack">
-  <meta property="og:description" content="Transform ChatGPT and AI-generated text into natural, readable, human-like writing instantly. 100% free and private.">
-  <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
-
-  <!-- Favicon Icon for Google & Devices -->
+  <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
-  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
-  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "SoftwareApplication",
-        "name": "AI Text Humanizer & Converter Tool",
-        "operatingSystem": "All",
-        "applicationCategory": "UtilitiesApplication",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "description": "An online text transformation utility that naturalizes AI-generated content (ChatGPT, Claude) into smooth, human-like readable prose.",
-        "url": "https://microtoolstack.com/tools/ai/text-humanizer.html"
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What is an AI Text Humanizer?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "An AI Text Humanizer takes rigid or repetitive AI-generated text from models like ChatGPT and rewrites sentence structures, vocabulary, and flow to match natural human writing styles."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Does this tool bypass AI detectors?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "By varying sentence length, removing cliché AI transition phrases (like 'delve', 'testament', or 'moreover'), and adding conversational rhythm, humanized text achieves significantly higher human readability scores."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Is my text data saved or logged?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "No! All text rephrasing operations take place locally inside your browser using client-side JavaScript."
-            }
-          }
-        ]
-      }
-    ]
-  }
-  </script>
-
-  <!-- Preconnect and Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <!-- CSS Stylesheets -->
-  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/variables.css?v=10.0">
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
 
   <style>
-    .editors-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.25rem;
-      margin-bottom: 1.5rem;
-    }
-    .editor-card {
+    .tool-card-box {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1.5rem;
       background: var(--bg-card, #1e1e2e);
-      padding: 1.25rem;
-      border-radius: var(--radius-md, 8px);
       border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 12px);
+    }
+    .form-group {
+      margin-bottom: 1.2rem;
       display: flex;
       flex-direction: column;
+      gap: 0.5rem;
     }
-    .editor-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 0.75rem;
-    }
-    .editor-title {
+    .form-group label {
+      font-weight: 600;
       font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--accent-primary, #3b82f6);
     }
-    .editor-textarea {
+    .form-control-textarea {
       width: 100%;
-      min-height: 220px;
-      padding: 0.85rem;
-      font-size: 0.95rem;
-      line-height: 1.6;
-      border: 1px solid var(--border-color, #333);
-      border-radius: var(--radius-md, 6px);
-      background-color: var(--bg-body, #111827);
+      height: 160px;
+      padding: 0.8rem;
+      border-radius: 8px;
+      border: 1px solid var(--border-color, #444);
+      background: var(--bg-input, #121218);
       color: var(--text-primary, #fff);
+      font-size: 1rem;
       outline: none;
       resize: vertical;
       box-sizing: border-box;
-      margin-bottom: 0.75rem;
+      font-family: inherit;
     }
-    .options-bar {
+    .btn-action {
+      width: 100%;
+      padding: 0.9rem;
+      background: #3b82f6;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s ease;
+      margin-top: 0.5rem;
+    }
+    .btn-action:hover {
+      background: #2563eb;
+    }
+    .results-wrapper {
+      margin-top: 1.5rem;
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
       gap: 1rem;
-      background: var(--bg-card, #1e1e2e);
-      padding: 1rem 1.25rem;
-      border-radius: var(--radius-md, 8px);
-      border: 1px solid var(--border-color, #333);
-      margin-bottom: 1.5rem;
-      align-items: center;
-      justify-content: space-between;
     }
-    .form-inline {
+    .humanized-result-card {
+      background: var(--bg-input, #121218);
+      border: 1px solid var(--border-color, #333);
+      padding: 1.2rem;
+      border-radius: 8px;
       display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .humanized-text {
+      white-space: pre-line;
+      line-height: 1.7;
+      font-size: 1rem;
+    }
+    .card-footer-action {
+      display: flex;
+      justify-content: space-between;
       align-items: center;
-      gap: 0.5rem;
+      border-top: 1px solid var(--border-color, #333);
+      padding-top: 0.8rem;
     }
-    .form-inline label {
-      font-size: 0.88rem;
-      color: var(--text-primary, #fff);
-      font-weight: 600;
-    }
-    .editor-select {
-      padding: 0.5rem 0.75rem;
-      font-size: 0.9rem;
-      border: 1px solid var(--border-color, #333);
+    .btn-copy {
+      padding: 0.5rem 1.2rem;
+      background: #10b981;
+      color: #fff;
+      border: none;
       border-radius: 6px;
-      background-color: var(--bg-body, #111827);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .seo-content-section {
+      max-width: 800px;
+      margin: 3.5rem auto;
+      line-height: 1.8;
+    }
+    .seo-content-section h2 {
+      margin-top: 2rem;
+      font-size: 1.5rem;
       color: var(--text-primary, #fff);
-      outline: none;
     }
-    .editor-controls {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 2.5rem;
+    .seo-content-section p {
+      margin-bottom: 1rem;
     }
-    .btn-group {
-      display: flex;
-      gap: 0.5rem;
-    }
-    .content-box {
-      background-color: var(--bg-card, #1e1e2e);
+    .faq-item {
+      background: var(--bg-card, #1e1e2e);
       border: 1px solid var(--border-color, #333);
-      border-radius: var(--radius-md, 8px);
-      padding: 1.5rem;
-      margin-bottom: 2rem;
-    }
-    .content-box h2 {
-      font-size: 1.35rem;
-      margin-bottom: 1rem;
-      color: var(--text-primary, #fff);
-    }
-    .content-box p, .content-box ul {
-      color: var(--text-secondary, #9ca3af);
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-    .content-box ul {
-      padding-left: 1.25rem;
-      margin-bottom: 1rem;
-    }
-    .content-box li {
-      margin-bottom: 0.5rem;
-    }
-    .related-links {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 1rem;
+      padding: 1.2rem;
+      border-radius: 8px;
       margin-top: 1rem;
     }
-    .related-card {
-      display: block;
-      padding: 1rem;
-      background: var(--bg-card, #1e1e2e);
-      border: 1px solid var(--border-color, #333);
-      border-radius: 8px;
-      color: var(--text-primary, #fff);
-      text-decoration: none;
-      transition: border-color 0.2s;
-    }
-    .related-card:hover {
-      border-color: var(--accent-primary, #3b82f6);
+    .faq-item h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
     }
   </style>
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3023714618008515" crossorigin="anonymous"></script>
 </head>
-<body style="margin: 0; padding: 0;">
 
-  <!-- Header Section -->
-  <header class="custom-header">
-    <a href="/" class="custom-logo">
-      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
-    </a>
-    <nav class="custom-nav">
-      <a href="/#categories">Categories</a>
-      <a href="/about.html">About</a>
-      <a href="/contact.html">Contact</a>
-      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
-    </nav>
-  </header>
+<body>
 
-  <!-- Main Container -->
-  <main class="container" style="max-width: 950px; margin: 2rem auto; padding: 0 1rem;">
-    <!-- Breadcrumb Navigation -->
-    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
-      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
-      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">AI Tools</a> / 
-      <span>AI Text Humanizer</span>
-    </nav>
-    
-    <!-- Tool Title & Description -->
-    <div style="text-align: center; margin-bottom: 2rem;">
-      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">AI Text Humanizer</h1>
-      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Convert robotic AI-generated content into natural, engaging, human-like writing.</p>
-    </div>
+  <!-- Dynamic Header -->
+  <div id="header-container"></div>
 
-    <!-- Options Bar -->
-    <div class="options-bar">
-      <div class="form-inline">
-        <label>Humanizing Mode:</label>
-        <select id="mode-select" class="editor-select">
-          <option value="balanced" selected>Balanced & Natural (Recommended)</option>
-          <option value="casual">Casual & Conversational</option>
-          <option value="academic">Academic & Formal</option>
-          <option value="creative">Creative & Expressive</option>
-        </select>
-      </div>
-      <button id="btn-humanize" class="btn btn-primary" style="padding: 0.65rem 1.4rem; cursor: pointer; font-weight: 600;">✨ Humanize Text Now</button>
-    </div>
+  <main class="container">
+    <section class="hero text-center">
+      <h1>Free AI Text Humanizer</h1>
+      <p>Transform robotic AI-generated content into natural, engaging, and human-sounding text effortlessly.</p>
+    </section>
 
-    <!-- Side-by-side Editors -->
-    <div class="editors-grid">
-      <!-- Input Editor -->
-      <div class="editor-card">
-        <div class="editor-header">
-          <span class="editor-title">🤖 AI-Generated Text (Input):</span>
-          <span id="input-word-count" style="font-size:0.8rem; color:var(--text-secondary,#9ca3af);">0 Words</span>
-        </div>
-        <textarea id="ai-input" class="editor-textarea" placeholder="Paste your ChatGPT or AI-generated text here..." autofocus></textarea>
-        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.5rem; background: #374151; color: #fff; border: none; border-radius: 6px; cursor: pointer;">🗑️ Clear Input</button>
+    <!-- Interactive Tool Interface -->
+    <div class="tool-card-box">
+      <div class="form-group">
+        <label for="ai-text-input">Paste Your AI Generated Text Below:</label>
+        <textarea id="ai-text-input" class="form-control-textarea" placeholder="Paste text generated by ChatGPT, Claude, or other AI tools here..."></textarea>
       </div>
 
-      <!-- Output Editor -->
-      <div class="editor-card">
-        <div class="editor-header">
-          <span class="editor-title" style="color: #10b981;">👤 Humanized Text (Output):</span>
-          <span id="output-word-count" style="font-size:0.8rem; color:var(--text-secondary,#9ca3af);">0 Words</span>
-        </div>
-        <textarea id="human-output" class="editor-textarea" placeholder="Humanized readable text will appear here..."></textarea>
-        <button id="btn-copy" class="btn btn-primary" style="padding: 0.5rem; cursor: pointer;">📋 Copy Humanized Text</button>
+      <button id="humanize-btn" class="btn-action">✨ Humanize AI Text</button>
+
+      <!-- Output Container -->
+      <div id="humanizer-results" class="results-wrapper" style="display: none;">
+        <!-- Humanized text will appear here dynamically -->
       </div>
     </div>
 
-    <!-- Toast Notification -->
-    <div style="text-align: center; margin-bottom: 2.5rem;">
-      <span id="status-msg" style="font-size: 0.85rem; color: #10b981; font-weight: 500; display: none;">Copied to clipboard!</span>
-    </div>
+    <!-- AdSense Rich SEO Content with Internal Linking -->
+    <article class="seo-content-section">
+      <h2>Why You Need to Humanize AI-Generated Text</h2>
+      <p>While AI content generators like ChatGPT and Claude are fantastic for drafting ideas, their raw output often sounds mechanical, repetitive, and overly structured. Readers can easily spot artificial sentence structures, robotic transitions, and monotonous vocabulary. Humanizing your text makes it relatable, conversational, and enjoyable to read.</p>
+      
+      <p>Our free <strong>AI Text Humanizer</strong> at <a href="https://microtoolstack.com">MicroToolStack</a> rewrites AI text by altering sentence rhythm, removing cliché AI words, and adding natural conversational transitions. If you're building social media content, combine this tool with our <a href="/tools/ai/caption-generator.html">AI Caption Generator</a> and <a href="/tools/social/bio-generator.html">AI Bio Generator</a> for polished results.</p>
 
-    <!-- SEO Article Content Box 1 -->
-    <div class="content-box">
-      <h2>Why Humanize AI-Generated Text?</h2>
-      <p>AI writers like ChatGPT, Claude, and Gemini generate fluent paragraphs, but their underlying mathematical models rely on predictable word frequency and uniform sentence structures. This leads to rigid tone, repetitive transitions, and flags from AI content detectors. Our <strong>AI Text Humanizer</strong> alters vocabulary, varies sentence length, and removes robotic phrases to make text sound natural and personal.</p>
-    </div>
+      <h2>How to Humanize AI Text in 3 Easy Steps</h2>
+      <ol>
+        <li><strong>Paste Your Draft:</strong> Copy your raw AI-generated paragraph or article and paste it into the text box above.</li>
+        <li><strong>Click Humanize:</strong> Hit the <strong>Humanize AI Text</strong> button to initiate our smart text refinement engine.</li>
+        <li><strong>Copy & Use:</strong> Review the rewritten, natural-sounding content and click <strong>Copy Text</strong> to paste it into your blog, email, or post.</li>
+      </ol>
 
-    <!-- SEO Article Content Box 2 -->
-    <div class="content-box">
-      <h2>Key Transformation Techniques</h2>
+      <h2>Key Features of MicroToolStack AI Text Humanizer</h2>
       <ul>
-        <li><strong>Eliminate AI Buzzwords:</strong> Removes overused words like <em>"delve", "testament", "tapestry", "moreover", and "furthermore"</em>.</li>
-        <li><strong>Vary Sentence Rhythm:</strong> Mixes short punchy clauses with compound sentences to mirror human thought patterns.</li>
-        <li><strong>Multiple Tone Options:</strong> Choose between Casual, Balanced, Academic, or Creative rewriting modes.</li>
-        <li><strong>100% Privacy Preserved:</strong> All text rephrasing logic executes locally inside your web browser.</li>
+        <li><strong>Removes AI Buzzwords:</strong> Automatically filters out overused AI clichés like <em>"delve," "testament," "unravel,"</em> and <em>"in conclusion."</em></li>
+        <li><strong>Varied Sentence Structure:</strong> Blends short, punchy sentences with compound phrasing to mirror authentic human writing rhythms.</li>
+        <li><strong>Preserves Original Meaning:</strong> Enhances tone and readability while ensuring your core message and factual details remain intact.</li>
+        <li><strong>100% Free & Unlimited:</strong> Process unlimited articles and social posts without paywalls or daily word caps. Combine this tool with our <a href="/tools/ai/hashtag-generator.html">Hashtag Generator</a> to boost your overall content strategy.</li>
       </ul>
-    </div>
 
-    <!-- Internal Linking Section (SEO Best Practice) -->
-    <div class="content-box">
-      <h2>Explore Related AI & Text Tools</h2>
-      <p>Enhance your writing and content workflow with our free utilities:</p>
-      <div class="related-links">
-        <a href="/tools/ai/caption-generator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">📝 AI Caption Generator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Craft engaging social media captions and hooks.</span>
-        </a>
-        <a href="/tools/ai/ai-bio-generator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">✨ AI Bio Generator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Craft catchy profile bios for Twitter and Instagram.</span>
-        </a>
-        <a href="/tools/ai/hashtag-generator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">#️⃣ AI Hashtag Generator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Generate trending niche hashtags for social media.</span>
-        </a>
-        <a href="/tools/developer/lorem-ipsum-generator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">📜 Lorem Ipsum Generator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Generate dummy placeholder text for UI layouts.</span>
-        </a>
-      </div>
-    </div>
+      <h2>Frequently Asked Questions (FAQ)</h2>
 
-    <!-- FAQ Section -->
-    <div class="content-box">
-      <h2>Frequently Asked Questions</h2>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How does humanizing text help with SEO?</h3>
-        <p>Google prioritizes high-quality, helpful content written for humans. Humanized text improves reader engagement metrics (like time on page) and avoids awkward robotic phrasing.</p>
+      <div class="faq-item">
+        <h3>Does humanizing text improve readability for real readers?</h3>
+        <p>Yes! Humanized text removes robotic repetitive phrases, making articles, social media captions, and emails much easier and more enjoyable for real audiences to read.</p>
       </div>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this AI Humanizer completely free?</h3>
-        <p>Yes, MicroToolStack's AI Text Humanizer is 100% free with unlimited word capacity.</p>
-      </div>
-    </div>
 
+      <div class="faq-item">
+        <h3>Will my original formatting or main points change?</h3>
+        <p>No. The humanizer focuses on sentence flow, word choice, and tone adjustment while keeping your core message completely accurate and intact.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Is my pasted text saved on MicroToolStack servers?</h3>
+        <p>No. All text transformation occurs locally within your web browser. MicroToolStack never stores, logs, or tracks your private content. Have questions? Visit our <a href="/contact.html">Contact Support</a> page.</p>
+      </div>
+    </article>
   </main>
 
-  <!-- Footer Container Placeholder -->
+  <!-- Dynamic Footer -->
   <div id="footer-container"></div>
 
-  <!-- JavaScript Utilities & Logic -->
+  <!-- Core Scripts -->
   <script src="/assets/js/theme.js"></script>
   <script src="/assets/js/utils.js" defer></script>
-  <script src="/assets/js/app.js" defer></script>
 
+  <!-- Working Functional JavaScript for AI Text Humanizer -->
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const aiInput = document.getElementById('ai-input');
-      const humanOutput = document.getElementById('human-output');
-      const modeSelect = document.getElementById('mode-select');
-      const btnHumanize = document.getElementById('btn-humanize');
+    document.addEventListener('DOMContentLoaded', function () {
+      const textInput = document.getElementById('ai-text-input');
+      const humanizeBtn = document.getElementById('humanize-btn');
+      const resultsContainer = document.getElementById('humanizer-results');
 
-      const inputWordCount = document.getElementById('input-word-count');
-      const outputWordCount = document.getElementById('output-word-count');
-
-      const btnCopy = document.getElementById('btn-copy');
-      const btnClear = document.getElementById('btn-clear');
-      const statusMsg = document.getElementById('status-msg');
-
-      // AI Clichés Replacement Dictionary
-      const aiWordsMap = {
+      // Dictionary of AI buzzwords replacement
+      const aiReplacements = {
         "delve into": "explore",
-        "delve": "look into",
+        "delve": "explore",
         "testament to": "proof of",
+        "testament": "proof",
         "furthermore": "also",
-        "moreover": "in addition",
-        "tapestry": "mix",
-        "paramount": "important",
-        "pivotal": "key",
-        "utilize": "use",
-        "utilizing": "using",
+        "moreover": "plus",
         "in conclusion": "overall",
-        "seamlessly": "smoothly",
-        "multifaceted": "varied",
-        "beacon": "sign",
-        "fostering": "building",
-        "foster": "support"
+        "unravel": "discover",
+        "game-changer": "big improvement",
+        "crucial": "important",
+        "vital": "key",
+        "robust": "strong",
+        "foster": "build",
+        "utilize": "use",
+        "pivotal": "main"
       };
 
-      function countWords(text) {
-        if (!text.trim()) return 0;
-        return text.trim().split(/\s+/).length;
-      }
+      humanizeBtn.addEventListener('click', function () {
+        let rawText = textInput.value.trim();
 
-      function updateCounts() {
-        inputWordCount.textContent = `${countWords(aiInput.value)} Words`;
-        outputWordCount.textContent = `${countWords(humanOutput.value)} Words`;
-      }
-
-      function humanizeText() {
-        let text = aiInput.value;
-        if (!text.trim()) {
-          humanOutput.value = '';
-          updateCounts();
+        if (!rawText) {
+          alert('Please paste some AI-generated text first!');
           return;
         }
 
-        const mode = modeSelect.value;
+        // Apply humanization rules
+        let processedText = rawText;
 
-        // Step 1: Replace AI Cliché Terms
-        for (let [key, replacement] of Object.entries(aiWordsMap)) {
-          const reg = new RegExp(`\\b${key}\\b`, 'gi');
-          text = text.replace(reg, replacement);
-        }
-
-        // Step 2: Apply Mode-based Adjustments
-        if (mode === 'casual') {
-          text = text.replace(/\bdo not\b/gi, "don't")
-                     .replace(/\bcannot\b/gi, "can't")
-                     .replace(/\bit is\b/gi, "it's")
-                     .replace(/\bthat is\b/gi, "that's");
-        } else if (mode === 'creative') {
-          text = text.replace(/!+/g, " ✨")
-                     .replace(/\bvery\b/gi, "truly");
-        }
-
-        // Step 3: Sentence Structure Flow Tweaks
-        let sentences = text.split(/([.!?]+\s+)/);
-        let humanizedSentences = [];
-
-        for (let i = 0; i < sentences.length; i += 2) {
-          let s = sentences[i];
-          let punctuation = sentences[i + 1] || '';
-          if (s) {
-            // Capitalize first letter of sentence
-            s = s.charAt(0).toUpperCase() + s.slice(1);
-            humanizedSentences.push(s + punctuation);
-          }
-        }
-
-        humanOutput.value = humanizedSentences.join('');
-        updateCounts();
-      }
-
-      btnHumanize.addEventListener('click', humanizeText);
-      aiInput.addEventListener('input', updateCounts);
-
-      // Copy Action
-      btnCopy.addEventListener('click', function() {
-        if (!humanOutput.value.trim()) return;
-        navigator.clipboard.writeText(humanOutput.value).then(function() {
-          statusMsg.style.display = 'inline';
-          setTimeout(() => { statusMsg.style.display = 'none'; }, 2000);
+        // Replace common AI buzzwords
+        Object.keys(aiReplacements).forEach(word => {
+          const regex = new RegExp('\\b' + word + '\\b', 'gi');
+          processedText = processedText.replace(regex, aiReplacements[word]);
         });
-      });
 
-      // Clear Action
-      btnClear.addEventListener('click', function() {
-        aiInput.value = '';
-        humanOutput.value = '';
-        updateCounts();
-        aiInput.focus();
+        // Add conversational variations
+        processedText = processedText
+          .replace(/In order to/gi, "To")
+          .replace(/It is important to note that/gi, "Keep in mind,")
+          .replace(/Additionally,/gi, "Also,")
+          .replace(/Consequently,/gi, "As a result,");
+
+        resultsContainer.innerHTML = '';
+
+        const card = document.createElement('div');
+        card.className = 'humanized-result-card';
+
+        const textDiv = document.createElement('div');
+        textDiv.className = 'humanized-text';
+        textDiv.innerText = processedText;
+
+        const footerAction = document.createElement('div');
+        footerAction.className = 'card-footer-action';
+
+        const infoSpan = document.createElement('span');
+        infoSpan.style.fontSize = '0.9rem';
+        infoSpan.style.color = 'var(--text-secondary, #aaa)';
+        infoSpan.innerText = '✨ Processed & Humanized Successfully';
+
+        const copyBtn = document.createElement('button');
+        copyBtn.className = 'btn-copy';
+        copyBtn.innerText = '📋 Copy Text';
+
+        copyBtn.addEventListener('click', function () {
+          navigator.clipboard.writeText(processedText).then(() => {
+            copyBtn.innerText = '✅ Copied!';
+            setTimeout(() => copyBtn.innerText = '📋 Copy Text', 2000);
+          });
+        });
+
+        footerAction.appendChild(infoSpan);
+        footerAction.appendChild(copyBtn);
+
+        card.appendChild(textDiv);
+        card.appendChild(footerAction);
+
+        resultsContainer.appendChild(card);
+        resultsContainer.style.display = 'block';
       });
     });
   </script>
+
 </body>
 </html>
