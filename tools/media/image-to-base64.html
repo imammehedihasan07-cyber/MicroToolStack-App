@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) - Deferred Load -->
+  <!-- Google tag (gtag.js) - Optimized Load -->
   <script>
     window.addEventListener('load', function() {
       setTimeout(function() {
@@ -22,19 +22,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Primary SEO Meta Tags -->
-  <title>Image to Base64 Converter - Free Online Tool | MicroToolStack</title>
-  <meta name="description" content="Convert images (PNG, JPG, SVG, WebP) to Base64 data strings instantly online. Private, fast, browser-based conversion with one-click copy.">
-  <meta name="keywords" content="image to base64 converter, encode image to base64, convert image to data uri, png to base64, jpg to base64 online">
+  <title>Free Online Image to Base64 Converter | MicroToolStack</title>
+  <meta name="description" content="Convert PNG, JPG, WEBP, and SVG images to Base64 strings online for free. Generate Data URI strings, CSS background-image code, and HTML img tags instantly.">
+  <meta name="keywords" content="image to base64, convert image to base64, base64 encoder, image to data uri, base64 image converter, inline css image base64, image to html string, media tools">
 
   <link rel="canonical" href="https://microtoolstack.com/tools/media/image-to-base64.html">
   <meta name="robots" content="index, follow">
 
-  <!-- Open Graph / Social Media Meta Tags -->
+  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Image to Base64 Converter - Free Online Tool | MicroToolStack">
-  <meta property="og:description" content="Convert images (PNG, JPG, SVG, WebP) to Base64 data strings instantly online. Private, fast, browser-based conversion with one-click copy.">
   <meta property="og:url" content="https://microtoolstack.com/tools/media/image-to-base64.html">
-  <meta property="og:site_name" content="MicroToolStack">
+  <meta property="og:title" content="Free Online Image to Base64 Converter | MicroToolStack">
+  <meta property="og:description" content="Convert images to Base64 strings, Data URIs, CSS code, and HTML img tags instantly. 100% free, fast, and privacy-first browser media utility.">
   <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
@@ -42,49 +41,57 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
   <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
-  <!-- Fonts & CSS Stylesheets -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
-  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
-
-  <!-- JSON-LD Schema Markup -->
+  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "WebApplication",
-        "@id": "https://microtoolstack.com/tools/media/image-to-base64.html#webapp",
-        "url": "https://microtoolstack.com/tools/media/image-to-base64.html",
+        "@type": "SoftwareApplication",
         "name": "Image to Base64 Converter",
-        "applicationCategory": "UtilitiesApplication",
         "operatingSystem": "All",
+        "applicationCategory": "MultimediaApplication",
         "offers": {
           "@type": "Offer",
           "price": "0",
           "priceCurrency": "USD"
         },
-        "description": "Convert image files directly into Base64 Data URI strings for HTML, CSS, and web embedding."
+        "description": "An essential client-side web utility that converts PNG, JPG, WEBP, GIF, and SVG images into Base64 encoded Data URIs, CSS background-image strings, and HTML img tags.",
+        "url": "https://microtoolstack.com/tools/media/image-to-base64.html"
       },
       {
         "@type": "FAQPage",
-        "@id": "https://microtoolstack.com/tools/media/image-to-base64.html#faq",
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "Why convert an image to Base64?",
+            "name": "What is Image to Base64 Encoding?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Base64 encoding allows you to embed images directly into HTML, CSS, or JSON files without sending separate HTTP requests for image assets."
+              "text": "Image to Base64 encoding converts binary image pixel data into a 64-character ASCII string format that can be embedded directly into HTML, CSS, JSON API payloads, or databases without external HTTP image requests."
             }
           },
           {
             "@type": "Question",
-            "name": "Is my image uploaded to any server?",
+            "name": "Does Base64 encoding increase file size?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "No. The encoding process happens 100% locally inside your web browser using JavaScript FileReader API."
+              "text": "Yes. Converting binary image files into Base64 strings increases raw file size by approximately 33% due to 6-bit to 8-bit ASCII character mapping."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are my uploaded photos sent to remote servers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No! All image reading and Base64 string encoding execute 100% locally inside your web browser session using client-side JavaScript FileReader APIs. Your photos remain completely private."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this Image to Base64 tool free to use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, MicroToolStack's Image to Base64 Converter is 100% free with unlimited photo conversions and no registration required."
             }
           }
         ]
@@ -93,45 +100,113 @@
   }
   </script>
 
+  <!-- Preconnect and Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
   <style>
-    .upload-box {
+    .input-group {
+      margin-bottom: 1.25rem;
+    }
+    .input-label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.5rem;
+    }
+
+    /* Drag and Drop Zone */
+    .drop-zone {
+      width: 100%;
+      min-height: 180px;
       border: 2px dashed var(--border-color, #333);
-      padding: 2.5rem 1.5rem;
-      text-align: center;
-      border-radius: 12px;
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       cursor: pointer;
-      background: var(--bg-card, #1e1e2e);
+      transition: all 0.2s ease;
+      padding: 1.5rem;
+      box-sizing: border-box;
+      text-align: center;
       margin-bottom: 1.5rem;
-      transition: border-color 0.3s;
     }
-    .upload-box:hover {
+    .drop-zone:hover, .drop-zone.dragover {
       border-color: var(--accent-primary, #3b82f6);
+      background-color: rgba(59, 130, 246, 0.05);
     }
-    .preview-container { 
-      margin-top: 1.5rem; 
-      display: none; 
+
+    /* Preview Workspace */
+    .preview-stage {
+      width: 100%;
+      min-height: 200px;
+      background: #111827;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1.5rem;
+      box-sizing: border-box;
+      margin-bottom: 1.5rem;
+      text-align: center;
     }
+
+    .preview-img {
+      max-width: 100%;
+      max-height: 280px;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      object-fit: contain;
+      display: none;
+    }
+
     .base64-textarea {
       width: 100%;
-      height: 160px;
-      padding: 0.8rem;
-      border-radius: 8px;
-      border: 1px solid var(--border-color, #333);
-      background: var(--bg-body, #111827);
-      color: #7ee787;
-      font-family: monospace;
+      min-height: 160px;
+      padding: 1rem;
       font-size: 0.85rem;
-      resize: vertical;
-      margin-bottom: 1rem;
-      box-sizing: border-box;
+      font-family: 'Fira Code', Consolas, Monaco, monospace;
+      line-height: 1.5;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
+      color: #38bdf8;
       outline: none;
+      resize: vertical;
+      box-sizing: border-box;
+      white-space: pre-wrap;
+      word-break: break-all;
     }
-    .btn-group { 
-      display: flex; 
-      gap: 0.8rem; 
-      justify-content: center; 
-      flex-wrap: wrap; 
+
+    .meta-badge {
+      display: inline-block;
+      font-size: 0.85rem;
+      color: var(--text-secondary, #9ca3af);
+      background: rgba(255, 255, 255, 0.05);
+      padding: 0.3rem 0.75rem;
+      border-radius: 6px;
+      border: 1px solid var(--border-color, #333);
+      margin-top: 0.75rem;
     }
+
+    .controls-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.5rem;
+    }
+
     .content-box {
       background-color: var(--bg-card, #1e1e2e);
       border: 1px solid var(--border-color, #333);
@@ -144,12 +219,18 @@
       margin-bottom: 1rem;
       color: var(--text-primary, #fff);
     }
-    .content-box p, .content-box ul, .content-box ol {
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul {
       color: var(--text-secondary, #9ca3af);
       font-size: 0.95rem;
       line-height: 1.6;
     }
-    .content-box ul, .content-box ol {
+    .content-box ul {
       padding-left: 1.25rem;
       margin-bottom: 1rem;
     }
@@ -178,6 +259,7 @@
   </style>
 </head>
 <body style="margin: 0; padding: 0;">
+
   <!-- Header Section -->
   <header class="custom-header">
     <a href="/" class="custom-logo">
@@ -191,129 +273,261 @@
     </nav>
   </header>
 
+  <!-- Main Container -->
   <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
-    <!-- Breadcrumb Navigation -->
-    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
-      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
-      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Media Tools</a> / 
-      <span>Image to Base64</span>
-    </nav>
+    
+    <!-- Tool Title & Description -->
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online Image to Base64 Converter</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Convert PNG, JPG, WEBP, GIF, and SVG images into Base64 Data URIs, CSS background code, and HTML tags.</p>
+    </div>
 
-    <!-- Header Area -->
-    <header style="margin-bottom: 2rem; text-align: center;">
-      <h1 class="hero" style="font-size: 2rem; margin-bottom: 0.5rem; color: #fff;">Free Image to Base64 Converter</h1>
-      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">
-        Convert image files directly into Base64 Data URI strings for HTML, CSS, and web embedding.
-      </p>
-    </header>
+    <!-- Drag and Drop Image Zone -->
+    <div class="drop-zone" id="drop-zone">
+      <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📥</div>
+      <div style="font-size: 1.05rem; font-weight: 600; color: #fff; margin-bottom: 0.25rem;">Drag & Drop Image File Here</div>
+      <div style="font-size: 0.85rem; color: #9ca3af;">or click to browse from device (PNG, JPG, WEBP, SVG)</div>
+      <input type="file" id="file-input" accept="image/*" style="display: none;">
+    </div>
 
-    <!-- Tool Card -->
-    <div class="card" style="padding: 2rem; border-radius: 12px; background: var(--bg-card, #1e1e2e); border: 1px solid var(--border-color, #333); margin-bottom: 3rem;">
-      <div class="upload-box" id="dropZone" onclick="document.getElementById('imageInput').click()">
-        <span style="font-size: 2.5rem; display: block; margin-bottom: 0.5rem;">📄</span>
-        <p style="margin-bottom: 0.5rem; font-weight: 600; color: #fff;">Click or Drag & Drop Image Here</p>
-        <p style="font-size: 0.85rem; color: var(--text-secondary, #9ca3af);">Supports PNG, JPG, WebP, SVG, GIF (100% Client-Side Processing)</p>
-        <input type="file" id="imageInput" accept="image/*" style="display: none;" onchange="handleFileSelect(event)">
+    <!-- Preview Stage -->
+    <div class="preview-stage">
+      <img id="preview-img" class="preview-img" alt="Uploaded Image Preview">
+      <div id="status-msg" style="color: #94a3b8; font-size: 0.95rem;">
+        📂 Upload an image to view Base64 encoded strings...
+      </div>
+      <div id="img-meta" class="meta-badge" style="display: none;">Dimensions: 0 x 0 px | Original Size: 0 KB</div>
+    </div>
+
+    <!-- Generated Base64 Outputs -->
+    <div class="content-box" id="results-box" style="display: none; margin-bottom: 1.5rem;">
+      <!-- Format 1: Data URI -->
+      <div class="input-group">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+          <label for="out-data-uri" class="input-label" style="margin: 0;">Base64 Data URI String</label>
+          <button class="btn btn-secondary btn-copy-out" data-target="out-data-uri" style="padding: 0.35rem 0.8rem; font-size: 0.75rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 4px;">📋 Copy Data URI</button>
+        </div>
+        <textarea id="out-data-uri" class="base64-textarea" readonly></textarea>
       </div>
 
-      <div class="preview-container" id="previewArea">
-        <div style="text-align: center; margin-bottom: 1rem;">
-          <img id="previewImg" style="max-height: 180px; border-radius: 8px; border: 1px solid var(--border-color, #333);" alt="Image Preview">
+      <!-- Format 2: HTML Image Tag -->
+      <div class="input-group">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+          <label for="out-html-tag" class="input-label" style="margin: 0;">HTML Image Tag (&lt;img&gt;)</label>
+          <button class="btn btn-secondary btn-copy-out" data-target="out-html-tag" style="padding: 0.35rem 0.8rem; font-size: 0.75rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 4px;">📋 Copy HTML Tag</button>
         </div>
+        <textarea id="out-html-tag" class="base64-textarea" style="min-height: 80px;" readonly></textarea>
+      </div>
 
-        <label style="display: block; font-size: 0.9rem; margin-bottom: 0.5rem; color: var(--text-secondary, #9ca3af);">Base64 Output String:</label>
-        <textarea id="base64Output" class="base64-textarea" readonly></textarea>
-
-        <div class="btn-group">
-          <button class="btn btn-primary" style="padding: 0.8rem 1.8rem; font-size: 1rem; cursor: pointer;" onclick="copyBase64()">📋 Copy Base64 String</button>
-          <button class="btn btn-secondary" style="padding: 0.8rem 1.8rem; font-size: 1rem; cursor: pointer; background: var(--bg-body, #111827); border: 1px solid var(--border-color, #333); color: #fff;" onclick="copyHTMLImg()">🏷️ Copy HTML &lt;img&gt; Tag</button>
+      <!-- Format 3: CSS Background Image -->
+      <div class="input-group" style="margin-bottom: 0;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+          <label for="out-css-bg" class="input-label" style="margin: 0;">CSS Background Image Rule</label>
+          <button class="btn btn-secondary btn-copy-out" data-target="out-css-bg" style="padding: 0.35rem 0.8rem; font-size: 0.75rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 4px;">📋 Copy CSS Code</button>
         </div>
+        <textarea id="out-css-bg" class="base64-textarea" style="min-height: 80px;" readonly></textarea>
       </div>
     </div>
 
-    <!-- SEO Content Box 1 -->
-    <div class="content-box">
-      <h2>Why Convert Images to Base64 Strings?</h2>
-      <p>
-        Base64 Data URIs allow developers to inline small images directly inside HTML or CSS files. This eliminates separate HTTP requests, speeds up initial rendering for icons, and simplifies file portability in standalone web projects.
-      </p>
+    <!-- Controls Bar -->
+    <div class="controls-bar">
+      <div></div>
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear</button>
+      </div>
     </div>
 
-    <!-- Internal Linking Section (SEO Best Practice) -->
+    <!-- SEO Article Content Box 1 -->
     <div class="content-box">
-      <h2>Explore Related Media & Web Tools</h2>
-      <p>Enhance your image assets with our free utilities:</p>
+      <h2>Why Web Developers Embed Images Using Base64 Encoding</h2>
+      <p>In web architecture and front-end engineering, delivering high-speed web pages requires minimizing HTTP network requests. Traditional image files (PNG, JPEG, WEBP) require separate browser server roundtrips. Converting small graphics—such as UI icons, background patterns, or brand logos—into <strong>Base64 Strings</strong> allows developers to embed image data directly inline within HTML documents or CSS stylesheets.</p>
+
+      <p>Embedded Base64 Data URIs eliminate external asset loading latency, preventing layout shifts and improving Google Core Web Vitals scores. Our free <strong>Online Image to Base64 Converter</strong> transforms graphics into client-ready Data URIs, CSS background code, and HTML tags instantly.</p>
+    </div>
+
+    <!-- SEO Article Content Box 2 -->
+    <div class="content-box">
+      <h2>Understanding Data URI Schemes and Base64 Formats</h2>
+      <p>When you convert an image into Base64, the output is formatted as a standardized Data URI scheme:</p>
+
+      <h3>1. Data URI Structure</h3>
+      <p><code>data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA...</code></p>
+      <p>The prefix <code>data:[MIME-type];base64,</code> informs the web browser how to decode the character sequence back into visual pixels.</p>
+
+      <h3>2. Ideal Use Cases for Base64 Images</h3>
+      <ul>
+        <li><strong>Small Web Icons & Logos:</strong> Eliminate extra HTTP requests for UI icons, site logos, and button graphics.</li>
+        <li><strong>Offline Web Applications (PWA):</strong> Package visual assets inside offline single-page applications.</li>
+        <li><strong>Email Templates:</strong> Embed inline header images into HTML email newsletters to bypass external image-blocking filters.</li>
+      </ul>
+    </div>
+
+    <!-- SEO Article Content Box 3 -->
+    <div class="content-box">
+      <h2>Features of MicroToolStack's Image to Base64 Converter</h2>
+      <ul>
+        <li><strong>Multi-Format Encoding:</strong> Converts PNG, JPG, WEBP, GIF, SVG, and ICO image formats.</li>
+        <li><strong>Multi-Code Output Formats:</strong> Generates raw Data URIs, HTML <code>&lt;img&gt;</code> tags, and CSS <code>background-image</code> rules automatically.</li>
+        <li><strong>100% Client-Side Privacy:</strong> All file reading and Base64 encoding execute locally inside your browser session using JavaScript. Photos are never uploaded or stored on remote servers.</li>
+        <li><strong>Free & Unlimited Usage:</strong> No file size caps or registration required.</li>
+      </ul>
+    </div>
+
+    <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
+    <div class="content-box">
+      <h2>Explore Related Media Tools</h2>
+      <p>Discover our complementary online media utilities:</p>
       <div class="related-links">
         <a href="/tools/media/base64-to-image.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🖼️ Base64 to Image</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Decode Base64 strings to downloadable images.</span>
+          <strong style="display:block; margin-bottom: 0.25rem;">🖼️ Base64 to Image Decoder</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Decode Base64 strings into downloadable images.</span>
         </a>
-        <a href="/tools/media/favicon-generator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🌟 Favicon Generator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Generate multi-size web favicons instantly.</span>
+        <a href="/tools/media/color-palette-extractor.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🎨 Color Palette Extractor</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Extract dominant color schemes from photos.</span>
         </a>
-        <a href="/tools/pdf/images-to-pdf.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">📄 Images to PDF</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Convert JPG, PNG, and WebP images to PDF.</span>
+        <a href="/tools/media/aspect-ratio-calculator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📐 Aspect Ratio Calculator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Calculate image and video scaling dimensions.</span>
         </a>
       </div>
     </div>
 
     <!-- FAQ Section -->
     <div class="content-box">
-      <h2>Frequently Asked Questions</h2>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: #fff; margin-bottom: 0.25rem;">Is my image uploaded to any server?</h3>
-        <p>No. The encoding process happens 100% locally inside your web browser using JavaScript FileReader API.</p>
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How do I convert an image to Base64?</h3>
+        <p>Drag and drop your image file into the drop zone. The tool encodes the file into a Base64 Data URI, HTML tag, and CSS background rule instantly.</p>
       </div>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: #fff; margin-bottom: 0.25rem;">Does Base64 increase file size?</h3>
-        <p>Yes, Base64 encoding increases raw binary image data size by roughly 33%. It is recommended mainly for small icons and critical assets.</p>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Does Base64 encoding increase image file size?</h3>
+        <p>Yes. Converting binary image files into ASCII Base64 strings increases file size by approximately 33%. It is recommended primarily for small graphics (&lt;100 KB).</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Are my uploaded photos saved on remote servers?</h3>
+        <p>No. All calculations run client-side inside your browser session using JavaScript. Your photos remain completely private.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this Image to Base64 tool free?</h3>
+        <p>Yes, MicroToolStack's Image to Base64 Converter is 100% free with no usage limits or sign-up required.</p>
       </div>
     </div>
 
   </main>
 
-  <!-- Footer Placeholder -->
+  <!-- Footer Container Placeholder -->
   <div id="footer-container"></div>
 
-  <!-- Core Scripts -->
+  <!-- JavaScript Utilities & Logic -->
   <script src="/assets/js/theme.js"></script>
   <script src="/assets/js/utils.js" defer></script>
-  <script src="/assets/js/search.js" defer></script>
   <script src="/assets/js/app.js" defer></script>
 
   <script>
-    let base64Result = '';
+    document.addEventListener('DOMContentLoaded', function() {
+      const dropZone = document.getElementById('drop-zone');
+      const fileInput = document.getElementById('file-input');
+      const previewImg = document.getElementById('preview-img');
+      const statusMsg = document.getElementById('status-msg');
+      const imgMeta = document.getElementById('img-meta');
+      const resultsBox = document.getElementById('results-box');
 
-    function handleFileSelect(e) {
-      const file = e.target.files[0];
-      if(!file) return;
+      const outDataUri = document.getElementById('out-data-uri');
+      const outHtmlTag = document.getElementById('out-html-tag');
+      const outCssBg = document.getElementById('out-css-bg');
+      const btnClear = document.getElementById('btn-clear');
 
-      const reader = new FileReader();
-      reader.onload = function(evt) {
-        base64Result = evt.target.result;
-        document.getElementById('base64Output').value = base64Result;
-        document.getElementById('previewImg').src = base64Result;
-        document.getElementById('previewArea').style.display = 'block';
-      };
-      reader.readAsDataURL(file);
-    }
+      dropZone.addEventListener('click', () => fileInput.click());
 
-    function copyBase64() {
-      if(!base64Result) return;
-      navigator.clipboard.writeText(base64Result).then(() => {
-        alert('Base64 string copied to clipboard!');
+      dropZone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropZone.classList.add('dragover');
       });
-    }
 
-    function copyHTMLImg() {
-      if(!base64Result) return;
-      const htmlTag = `<img src="${base64Result}" alt="Embedded Image" />`;
-      navigator.clipboard.writeText(htmlTag).then(() => {
-        alert('HTML <img> tag copied to clipboard!');
+      dropZone.addEventListener('dragleave', () => dropZone.classList.remove('dragover'));
+
+      dropZone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropZone.classList.remove('dragover');
+        if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+          handleFile(e.dataTransfer.files[0]);
+        }
       });
-    }
+
+      fileInput.addEventListener('change', (e) => {
+        if (e.target.files && e.target.files[0]) {
+          handleFile(e.target.files[0]);
+        }
+      });
+
+      function formatBytes(bytes) {
+        if (bytes === 0) return '0 Bytes';
+        const k = 1024;
+        const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+        const i = Math.floor(Math.log(bytes) / Math.log(k));
+        return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+      }
+
+      function handleFile(file) {
+        if (!file.type.startsWith('image/')) {
+          alert('Please upload a valid image file.');
+          return;
+        }
+
+        const reader = new FileReader();
+        reader.onload = function(evt) {
+          const base64Str = evt.target.result;
+
+          const img = new Image();
+          img.onload = function() {
+            previewImg.src = base64Str;
+            previewImg.style.display = 'block';
+            statusMsg.style.display = 'none';
+
+            imgMeta.textContent = `Dimensions: ${img.naturalWidth} x ${img.naturalHeight} px | Size: ${formatBytes(file.size)}`;
+            imgMeta.style.display = 'inline-block';
+
+            // Populate Output Fields
+            outDataUri.value = base64Str;
+            outHtmlTag.value = `<img src="${base64Str}" alt="${file.name}">`;
+            outCssBg.value = `background-image: url("${base64Str}");`;
+
+            resultsBox.style.display = 'block';
+          };
+          img.src = base64Str;
+        };
+        reader.readAsDataURL(file);
+      }
+
+      // Copy buttons logic
+      document.querySelectorAll('.btn-copy-out').forEach(btn => {
+        btn.addEventListener('click', function() {
+          const targetId = this.getAttribute('data-target');
+          const targetEl = document.getElementById(targetId);
+          if (targetEl && targetEl.value) {
+            navigator.clipboard.writeText(targetEl.value).then(() => {
+              const origText = this.textContent;
+              this.textContent = '✅ Copied!';
+              setTimeout(() => { this.textContent = origText; }, 2000);
+            });
+          }
+        });
+      });
+
+      btnClear.addEventListener('click', function() {
+        fileInput.value = '';
+        previewImg.src = '';
+        previewImg.style.display = 'none';
+        statusMsg.style.display = 'block';
+        imgMeta.style.display = 'none';
+        resultsBox.style.display = 'none';
+
+        outDataUri.value = '';
+        outHtmlTag.value = '';
+        outCssBg.value = '';
+      });
+    });
   </script>
 </body>
 </html>
