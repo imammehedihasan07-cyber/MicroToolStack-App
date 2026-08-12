@@ -22,9 +22,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Primary SEO Meta Tags -->
-  <title>Free Online CSS Formatter & Beautifier | MicroToolStack</title>
-  <meta name="description" content="Free Online CSS Formatter & Beautifier. Format, indent, and clean up minified or unformatted CSS stylesheets instantly for better code readability.">
-  <meta name="keywords" content="css formatter, css beautifier, format css online, clean css code, css indenter, css code prettifier, unminify css">
+  <title>Free Online CSS Formatter, Beautifier & Minifier | MicroToolStack</title>
+  <meta name="description" content="Format, beautify, clean up, or minify your CSS stylesheets instantly with our free online CSS Formatter tool. Improve code readability and page load speed with no sign-up required.">
+  <meta name="keywords" content="css formatter, css beautifier, css minifier, format css online, beautify css, compress css stylesheet, css code cleaner, developer css tool">
 
   <link rel="canonical" href="https://microtoolstack.com/tools/developer/css-formatter.html">
   <meta name="robots" content="index, follow">
@@ -32,8 +32,8 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://microtoolstack.com/tools/developer/css-formatter.html">
-  <meta property="og:title" content="Free Online CSS Formatter & Beautifier | MicroToolStack">
-  <meta property="og:description" content="Beautify, auto-indent, and un-minify CSS stylesheets in real-time for free.">
+  <meta property="og:title" content="Free Online CSS Formatter & Minifier | MicroToolStack">
+  <meta property="og:description" content="Format messy CSS code into clean, readable stylesheets or compress it into minified code for faster web loading. 100% free developer utility.">
   <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
@@ -48,7 +48,7 @@
     "@graph": [
       {
         "@type": "SoftwareApplication",
-        "name": "CSS Formatter & Beautifier",
+        "name": "CSS Formatter & Minifier Utility",
         "operatingSystem": "All",
         "applicationCategory": "DeveloperApplication",
         "offers": {
@@ -56,7 +56,7 @@
           "price": "0",
           "priceCurrency": "USD"
         },
-        "description": "An online developer tool that formats, beautifies, and indents CSS stylesheets for improved readability.",
+        "description": "An essential client-side web development utility for formatting messy CSS code, indenting rules, and minifying stylesheets for production deployment.",
         "url": "https://microtoolstack.com/tools/developer/css-formatter.html"
       },
       {
@@ -64,26 +64,34 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "What does a CSS Formatter do?",
+            "name": "What is the difference between CSS Beautifying and CSS Minifying?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "A CSS Formatter takes compressed, minified, or disorganized CSS code and restructures it with consistent indentations, line breaks, and selector spacing."
+              "text": "CSS Beautifying adds proper indentation, line breaks, and spacing to make stylesheets easy to read and maintain for developers. CSS Minifying removes all unnecessary spaces, comments, and line breaks to compress file size for faster web page load speeds."
             }
           },
           {
             "@type": "Question",
-            "name": "Can I use this tool to un-minify CSS?",
+            "name": "Does CSS minification improve website PageSpeed scores?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes! It instantly converts single-line minified CSS back into structured, readable multi-line stylesheets."
+              "text": "Yes! Minifying CSS reduces payload file size, speeds up browser parsing, and reduces render-blocking resources, directly improving Google Core Web Vitals and PageSpeed scores."
             }
           },
           {
             "@type": "Question",
-            "name": "Is my CSS code safe and private?",
+            "name": "Is this CSS Formatter tool free?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes, 100%. Formatting is performed entirely within your local browser. No code is transmitted to external servers."
+              "text": "Yes, MicroToolStack's CSS Formatter & Minifier is 100% free with no file limits or account registration required."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my CSS code uploaded or saved on remote servers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. All formatting and compression operations run locally inside your web browser using client-side JavaScript. Your stylesheets remain 100% private."
             }
           }
         ]
@@ -101,54 +109,45 @@
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
 
   <style>
-    .editor-textarea {
+    .editor-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .editor-label {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.5rem;
+    }
+    .css-textarea {
       width: 100%;
-      min-height: 240px;
+      min-height: 250px;
       padding: 1rem;
-      font-family: monospace;
-      font-size: 0.9rem;
-      line-height: 1.5;
+      font-size: 0.95rem;
+      font-family: 'Fira Code', Consolas, Monaco, monospace;
+      line-height: 1.6;
       border: 1px solid var(--border-color, #333);
       border-radius: var(--radius-md, 8px);
-      background-color: #0d1117;
-      color: #7ee787;
+      background-color: var(--bg-card, #1e1e2e);
+      color: var(--text-primary, #fff);
       outline: none;
       resize: vertical;
       box-sizing: border-box;
-      margin-bottom: 1.25rem;
+      white-space: pre;
     }
-    .controls-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-      background: var(--bg-card, #1e1e2e);
-      border: 1px solid var(--border-color, #333);
-      border-radius: 8px;
-      padding: 1rem;
-      margin-bottom: 1.25rem;
+    .css-textarea:focus {
+      border-color: var(--accent-primary, #3b82f6);
     }
-    .form-control {
-      width: 100%;
-      padding: 0.6rem 0.75rem;
-      border: 1px solid var(--border-color, #333);
-      border-radius: 6px;
-      background-color: #0d1117;
-      color: var(--text-primary, #fff);
-      outline: none;
-      box-sizing: border-box;
-    }
-    .editor-controls {
+    .controls-bar {
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 2.5rem;
-    }
-    .btn-group {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
     }
     .content-box {
       background-color: var(--bg-card, #1e1e2e);
@@ -160,6 +159,12 @@
     .content-box h2 {
       font-size: 1.35rem;
       margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
       color: var(--text-primary, #fff);
     }
     .content-box p, .content-box ul {
@@ -212,91 +217,105 @@
 
   <!-- Main Container -->
   <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
-    <!-- Breadcrumb Navigation -->
-    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
-      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
-      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Developer Tools</a> / 
-      <span>CSS Formatter</span>
-    </nav>
     
     <!-- Tool Title & Description -->
     <div style="text-align: center; margin-bottom: 2rem;">
-      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online CSS Formatter & Beautifier</h1>
-      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Un-minify, format, and indent raw or compressed CSS stylesheets into clean, readable code.</p>
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online CSS Formatter & Minifier</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Beautify unformatted CSS for readability or minify stylesheets to boost web page load speeds.</p>
     </div>
 
-    <!-- Formatting Options -->
-    <div class="controls-grid">
+    <!-- Dual Textarea Editor Grid -->
+    <div class="editor-grid">
       <div>
-        <label style="font-size:0.85rem; font-weight:600; color:var(--text-primary, #fff); display:block; margin-bottom:0.25rem;">Indent Size:</label>
-        <select id="sel-indent" class="form-control">
-          <option value="2" selected>2 Spaces</option>
-          <option value="4">4 Spaces</option>
-          <option value="tab">1 Tab</option>
-        </select>
+        <label for="input-css" class="editor-label">Raw / Unformatted CSS Input</label>
+        <textarea id="input-css" class="css-textarea" placeholder="Paste unformatted or minified CSS code here...&#10;e.g., body{color:#fff;background-color:#1e1e2e;}"></textarea>
+      </div>
+      <div>
+        <label for="output-css" class="editor-label">Formatted / Minified CSS Output</label>
+        <textarea id="output-css" class="css-textarea" placeholder="Processed CSS result will appear here..." readonly></textarea>
       </div>
     </div>
 
-    <!-- Textarea Input Editor -->
-    <textarea id="css-input" class="editor-textarea" placeholder="Paste minified or unformatted CSS code here..." autofocus></textarea>
-
-    <!-- Action Buttons -->
-    <div class="editor-controls">
-      <div class="btn-group">
-        <button id="btn-format" class="btn btn-primary" style="padding: 0.68rem 1.4rem; cursor: pointer; background: #3b82f6; border: none;">✨ Format CSS</button>
-        <button id="btn-copy" class="btn btn-secondary" style="padding: 0.68rem 1.2rem; cursor: pointer; background: #1f2937; color: #fff; border: 1px solid #4b5563; border-radius: 6px;">📋 Copy Formatted CSS</button>
-        <button id="btn-sample" class="btn btn-secondary" style="padding: 0.68rem 1.2rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">📝 Load Sample</button>
-        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.68rem 1.2rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear</button>
+    <!-- Action Bar -->
+    <div class="controls-bar">
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-beautify" class="btn btn-primary" style="padding: 0.75rem 1.25rem; font-weight: 600; cursor: pointer;">✨ Beautify CSS</button>
+        <button id="btn-minify" class="btn btn-primary" style="padding: 0.75rem 1.25rem; font-weight: 600; cursor: pointer; background: #10b981;">⚡ Minify CSS</button>
       </div>
-      <span id="status-msg" style="font-size: 0.85rem; color: #10b981; font-weight: 500; display: none;">Copied to clipboard!</span>
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-copy" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">📋 Copy Output</button>
+        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear</button>
+      </div>
     </div>
 
     <!-- SEO Article Content Box 1 -->
     <div class="content-box">
-      <h2>Why You Need a CSS Formatter</h2>
-      <p>When working with third-party CSS libraries, framework bundles, or legacy codebase assets, stylesheets are often compressed into single-line minified files. A <strong>CSS Beautifier</strong> transforms dense, unreadable code into clean, well-indented rulesets with proper property spacing—making styling rules easy to edit and maintain.</p>
+      <h2>Why CSS Formatting and Minification Matter in Web Development</h2>
+      <p>Cascading Style Sheets (CSS) control the visual presentation, typography, layout, and responsiveness of modern websites. During the development phase, writing clean, well-indented CSS with proper line breaks helps developers inspect, debug, and maintain code effortlessly.</p>
+      <p>However, when deploying websites to live production environments, serving large, uncompressed CSS files increases bandwidth usage and slows down site performance. Our free <strong>Online CSS Formatter & Minifier</strong> offers a dual solution: it beautifies messy code for easy editing and compresses production stylesheets to accelerate website rendering times.</p>
     </div>
 
     <!-- SEO Article Content Box 2 -->
     <div class="content-box">
-      <h2>Key Benefits of Clean CSS Formatting</h2>
+      <h2>CSS Beautifying vs. CSS Minifying: Which One Should You Use?</h2>
+      <p>Understanding when to use formatting versus compression is a key web engineering practice:</p>
+
+      <h3>1. CSS Beautifying (For Development & Debugging)</h3>
+      <p>Beautifying structures CSS rules by placing selectors, property-value pairs, and curly braces on dedicated indented lines. It preserves comments, organizes nested media queries, and makes complex stylesheets human-readable.</p>
+
+      <h3>2. CSS Minification (For Live Production Deployment)</h3>
+      <p>Minification strips out all non-essential characters—such as extra spaces, tab indents, line breaks, and multi-line CSS comments—without changing how browsers render styles. This reduces overall file size by 20% to 40%, directly improving Google Core Web Vitals (FID, LCP) and PageSpeed performance scores.</p>
+    </div>
+
+    <!-- SEO Article Content Box 3 -->
+    <div class="content-box">
+      <h2>Features of MicroToolStack's CSS Formatter Tool</h2>
       <ul>
-        <li><strong>Improves Readability:</strong> Distinct indentation for selector blocks and properties simplifies visual inspection.</li>
-        <li><strong>Simplifies Debugging:</strong> Effortlessly trace CSS specificity bugs, missing semicolons, or unclosed curly braces.</li>
-        <li><strong>Standardizes Codebases:</strong> Ensures consistent coding standards across development teams.</li>
+        <li><strong>Instant Dual-Mode Processing:</strong> Switch between formatting messy CSS into clean indentation and compressing it into a single minified line with one click.</li>
+        <li><strong>Syntax-Aware Cleaning:</strong> Removes duplicate semicolons and extra whitespace while preserving selector integrity and media query structures.</li>
+        <li><strong>100% Client-Side Privacy:</strong> All CSS parsing and string manipulation execute locally inside your web browser using JavaScript. No code is uploaded to remote servers.</li>
+        <li><strong>Free & Unlimited Usage:</strong> No file size caps, rate restrictions, or account sign-ups required.</li>
       </ul>
     </div>
 
-    <!-- Internal Linking Section -->
+    <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
     <div class="content-box">
-      <h2>Explore Related Developer Utilities</h2>
-      <p>Enhance your development workflow with our tools:</p>
+      <h2>Explore Related Developer Tools</h2>
+      <p>Discover our complementary online developer utilities:</p>
       <div class="related-links">
-        <a href="/tools/developer/css-minifier.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">⚡ CSS Minifier</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Compress raw CSS stylesheets for production.</span>
+        <a href="/tools/developer/code-to-image.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🖼️ Code to Image Converter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Export styled code screenshots for social media & blogs.</span>
         </a>
-        <a href="/tools/developer/html-formatter.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">✨ HTML Formatter</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Beautify and indent HTML markup.</span>
+        <a href="/tools/developer/color-picker.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🎨 Color Picker & Palette</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Pick colors and convert HEX, RGB, and HSL formats.</span>
         </a>
-        <a href="/tools/developer/glassmorphism-claymorphism-generator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">✨ CSS Glass Generator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Design modern glass translucent UI elements.</span>
+        <a href="/tools/developer/base64-encoder-decoder.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🔒 Base64 Encoder / Decoder</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Convert plain text to Base64 or decode Base64 strings.</span>
         </a>
       </div>
     </div>
 
     <!-- FAQ Section -->
     <div class="content-box">
-      <h2>Frequently Asked Questions</h2>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Does formatting CSS affect how styles render on my website?</h3>
-        <p>No. CSS formatting adds line breaks and indentations, which are ignored by web browser rendering engines.</p>
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How do I beautify messy CSS code?</h3>
+        <p>Paste your raw or minified CSS stylesheet into the left editor box and click "Beautify CSS". The tool will instantly reformat the code with clean indentation and line breaks.</p>
       </div>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Can I choose custom indentation?</h3>
-        <p>Yes! You can choose between 2 spaces, 4 spaces, or 1 tab indentation settings.</p>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How does CSS minification improve website load speed?</h3>
+        <p>By removing whitespace, comments, and empty lines, minification significantly shrinks file download sizes, reducing network latency and improving page rendering speeds.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is my CSS code uploaded to any server?</h3>
+        <p>No. All formatting logic executes locally inside your web browser session using JavaScript. Your code remains completely private.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this CSS Formatter tool free to use?</h3>
+        <p>Yes, MicroToolStack's CSS Formatter & Minifier is completely free with no usage limits or sign-up required.</p>
       </div>
     </div>
 
@@ -312,71 +331,57 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const cssInput = document.getElementById('css-input');
-      const selIndent = document.getElementById('sel-indent');
-
-      const btnFormat = document.getElementById('btn-format');
+      const inputCss = document.getElementById('input-css');
+      const outputCss = document.getElementById('output-css');
+      const btnBeautify = document.getElementById('btn-beautify');
+      const btnMinify = document.getElementById('btn-minify');
       const btnCopy = document.getElementById('btn-copy');
-      const btnSample = document.getElementById('btn-sample');
       const btnClear = document.getElementById('btn-clear');
-      const statusMsg = document.getElementById('status-msg');
 
-      function formatCss() {
-        let code = cssInput.value.trim();
-
-        if (!code) return;
-
-        let indentStr = '  ';
-        if (selIndent.value === '4') indentStr = '    ';
-        if (selIndent.value === 'tab') indentStr = '\t';
-
-        // Clean up extra whitespace
-        code = code.replace(/\s+/g, ' ');
-        code = code.replace(/\s*\{\s*/g, ' {\n');
-        code = code.replace(/\s*;\s*/g, ';\n');
-        code = code.replace(/\s*\}\s*/g, '\n}\n\n');
-        code = code.replace(/\s*:\s*/g, ': ');
-
-        const lines = code.split('\n');
-        let formatted = '';
-        let currentIndent = 0;
-
-        lines.forEach(line => {
-          let trimmed = line.trim();
-          if (!trimmed) return;
-
-          if (trimmed.endsWith('}')) {
-            currentIndent = Math.max(0, currentIndent - 1);
-            formatted += indentStr.repeat(currentIndent) + trimmed + '\n\n';
-          } else if (trimmed.endsWith('{')) {
-            formatted += indentStr.repeat(currentIndent) + trimmed + '\n';
-            currentIndent++;
-          } else {
-            formatted += indentStr.repeat(currentIndent) + trimmed + '\n';
-          }
-        });
-
-        cssInput.value = formatted.trim();
+      // CSS Beautifier Logic
+      function beautifyCSS(css) {
+        if (!css.trim()) return '';
+        let formatted = css;
+        formatted = formatted.replace(/\s*\{\s*/g, " {\n  ");
+        formatted = formatted.replace(/;\s*/g, ";\n  ");
+        formatted = formatted.replace(/\s*\}\s*/g, "\n}\n\n");
+        formatted = formatted.replace(/\n\s*\n/g, "\n");
+        formatted = formatted.replace(/  \}/g, "}");
+        return formatted.trim();
       }
 
-      btnFormat.addEventListener('click', formatCss);
+      // CSS Minifier Logic
+      function minifyCSS(css) {
+        if (!css.trim()) return '';
+        return css
+          .replace(/\/\*[\s\S]*?\*\//g, "") // Remove comments
+          .replace(/\s+/g, " ")             // Collapse multiple spaces
+          .replace(/\s*([\r\n\{\}\:\;\,])\s*/g, "$1") // Remove space around symbols
+          .replace(/;\}/g, "}")            // Remove trailing semicolons
+          .trim();
+      }
 
-      btnCopy.addEventListener('click', function() {
-        if (!cssInput.value.trim()) return;
-        navigator.clipboard.writeText(cssInput.value).then(function() {
-          statusMsg.style.display = 'inline';
-          setTimeout(() => { statusMsg.style.display = 'none'; }, 2000);
-        });
+      btnBeautify.addEventListener('click', function() {
+        outputCss.value = beautifyCSS(inputCss.value);
       });
 
-      btnSample.addEventListener('click', function() {
-        cssInput.value = `.custom-header{display:flex;justify-content:space-between;align-items:center;padding:1rem 2rem;background-color:#1e1e2e;border-bottom:1px solid #333}.custom-nav a{color:#ffffff;text-decoration:none;margin-right:1.5rem;font-weight:600}`;
-        formatCss();
+      btnMinify.addEventListener('click', function() {
+        outputCss.value = minifyCSS(inputCss.value);
+      });
+
+      btnCopy.addEventListener('click', function() {
+        if (!outputCss.value.trim()) return;
+        navigator.clipboard.writeText(outputCss.value).then(() => {
+          const originalText = btnCopy.textContent;
+          btnCopy.textContent = '✅ Copied!';
+          setTimeout(() => { btnCopy.textContent = originalText; }, 2000);
+        });
       });
 
       btnClear.addEventListener('click', function() {
-        cssInput.value = '';
-        cssInput.focus();
+        inputCss.value = '';
+        outputCss.value = '';
+        inputCss.focus();
       });
     });
   </script>
