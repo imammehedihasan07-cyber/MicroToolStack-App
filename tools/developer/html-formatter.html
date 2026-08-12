@@ -22,9 +22,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Primary SEO Meta Tags -->
-  <title>Free Online HTML Formatter & Beautifier | MicroToolStack</title>
-  <meta name="description" content="Free Online HTML Formatter & Beautifier. Format, indent, and clean up messy or minified HTML code instantly for better readability.">
-  <meta name="keywords" content="html formatter, html beautifier, format html online, clean html code, html indenter, html code prettifier">
+  <title>Free Online HTML Formatter, Beautifier & Minifier | MicroToolStack</title>
+  <meta name="description" content="Format, beautify, clean up, or minify your HTML code instantly with our free online HTML Formatter tool. Improve code readability, fix DOM indentation, and optimize page load speed.">
+  <meta name="keywords" content="html formatter, html beautifier, html minifier, format html online, beautify html code, compress html code, html indentation tool, developer html tools">
 
   <link rel="canonical" href="https://microtoolstack.com/tools/developer/html-formatter.html">
   <meta name="robots" content="index, follow">
@@ -32,8 +32,8 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://microtoolstack.com/tools/developer/html-formatter.html">
-  <meta property="og:title" content="Free Online HTML Formatter & Beautifier | MicroToolStack">
-  <meta property="og:description" content="Beautify and auto-indent minified or unformatted HTML code in real-time for free.">
+  <meta property="og:title" content="Free Online HTML Formatter & Minifier | MicroToolStack">
+  <meta property="og:description" content="Format unformatted HTML code into clean, perfectly indented DOM trees or minify code for faster web loading. 100% free developer utility.">
   <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
@@ -48,7 +48,7 @@
     "@graph": [
       {
         "@type": "SoftwareApplication",
-        "name": "HTML Formatter & Beautifier",
+        "name": "HTML Formatter & Minifier Utility",
         "operatingSystem": "All",
         "applicationCategory": "DeveloperApplication",
         "offers": {
@@ -56,7 +56,7 @@
           "price": "0",
           "priceCurrency": "USD"
         },
-        "description": "An online developer tool that beautifies, formats, and indents HTML code for improved code readability.",
+        "description": "An essential client-side web development utility for reformatting unaligned HTML markup, beautifying nested DOM elements, and minifying web documents.",
         "url": "https://microtoolstack.com/tools/developer/html-formatter.html"
       },
       {
@@ -64,26 +64,34 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "What is HTML formatting?",
+            "name": "What is HTML Beautifying?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "HTML formatting is the process of restructuring raw or minified HTML markup with consistent indentations, nested tags, and line breaks to make code human-readable."
+              "text": "HTML Beautifying is the process of reformatting messy or unindented HTML code into a clean, hierarchical structure with proper tab indents, nested tags, and line breaks for better readability."
             }
           },
           {
             "@type": "Question",
-            "name": "Why should I format my HTML code?",
+            "name": "What is HTML Minification?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Properly formatted HTML simplifies debugging, improves developer collaboration, and helps spot unclosed HTML tags quickly."
+              "text": "HTML Minification removes all unnecessary characters—such as extra spaces, tab indents, newlines, and HTML comments—to reduce document file size and speed up page loading speeds."
             }
           },
           {
             "@type": "Question",
-            "name": "Is my HTML code kept private?",
+            "name": "Is my HTML code uploaded or stored on any server?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes, 100%. All formatting logic runs locally inside your client web browser instance. No data is stored or transmitted."
+              "text": "No. All formatting and minification operations run locally inside your web browser using JavaScript. Your source code remains 100% private."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this HTML Formatter tool completely free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, MicroToolStack's HTML Formatter & Minifier is 100% free with unlimited usage and no account registration required."
             }
           }
         ]
@@ -101,54 +109,45 @@
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
 
   <style>
-    .editor-textarea {
+    .editor-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .editor-label {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.5rem;
+    }
+    .html-textarea {
       width: 100%;
-      min-height: 240px;
+      min-height: 250px;
       padding: 1rem;
-      font-family: monospace;
-      font-size: 0.9rem;
-      line-height: 1.5;
+      font-size: 0.95rem;
+      font-family: 'Fira Code', Consolas, Monaco, monospace;
+      line-height: 1.6;
       border: 1px solid var(--border-color, #333);
       border-radius: var(--radius-md, 8px);
-      background-color: #0d1117;
-      color: #7ee787;
+      background-color: var(--bg-card, #1e1e2e);
+      color: var(--text-primary, #fff);
       outline: none;
       resize: vertical;
       box-sizing: border-box;
-      margin-bottom: 1.25rem;
+      white-space: pre;
     }
-    .controls-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-      background: var(--bg-card, #1e1e2e);
-      border: 1px solid var(--border-color, #333);
-      border-radius: 8px;
-      padding: 1rem;
-      margin-bottom: 1.25rem;
+    .html-textarea:focus {
+      border-color: var(--accent-primary, #3b82f6);
     }
-    .form-control {
-      width: 100%;
-      padding: 0.6rem 0.75rem;
-      border: 1px solid var(--border-color, #333);
-      border-radius: 6px;
-      background-color: #0d1117;
-      color: var(--text-primary, #fff);
-      outline: none;
-      box-sizing: border-box;
-    }
-    .editor-controls {
+    .controls-bar {
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 2.5rem;
-    }
-    .btn-group {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
     }
     .content-box {
       background-color: var(--bg-card, #1e1e2e);
@@ -160,6 +159,12 @@
     .content-box h2 {
       font-size: 1.35rem;
       margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
       color: var(--text-primary, #fff);
     }
     .content-box p, .content-box ul {
@@ -212,91 +217,105 @@
 
   <!-- Main Container -->
   <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
-    <!-- Breadcrumb Navigation -->
-    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
-      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
-      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Developer Tools</a> / 
-      <span>HTML Formatter</span>
-    </nav>
     
     <!-- Tool Title & Description -->
     <div style="text-align: center; margin-bottom: 2rem;">
-      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online HTML Formatter & Beautifier</h1>
-      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Beautify, indent, and format minified or unorganized HTML code into clean, readable markup.</p>
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online HTML Formatter, Beautifier & Minifier</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Clean up unformatted HTML markup with proper DOM indentation or minify code for faster web performance.</p>
     </div>
 
-    <!-- Formatting Options -->
-    <div class="controls-grid">
+    <!-- Dual Textarea Editor Grid -->
+    <div class="editor-grid">
       <div>
-        <label style="font-size:0.85rem; font-weight:600; color:var(--text-primary, #fff); display:block; margin-bottom:0.25rem;">Indent Size:</label>
-        <select id="sel-indent" class="form-control">
-          <option value="2" selected>2 Spaces</option>
-          <option value="4">4 Spaces</option>
-          <option value="tab">1 Tab</option>
-        </select>
+        <label for="input-html" class="editor-label">Raw / Unformatted HTML Input</label>
+        <textarea id="input-html" class="html-textarea" placeholder="Paste unformatted or minified HTML code here...&#10;e.g., <div><h1>Title</h1><p>Hello World</p></div>"></textarea>
+      </div>
+      <div>
+        <label for="output-html" class="editor-label">Formatted / Minified HTML Output</label>
+        <textarea id="output-html" class="html-textarea" placeholder="Processed HTML result will appear here..." readonly></textarea>
       </div>
     </div>
 
-    <!-- Textarea Input Editor -->
-    <textarea id="html-input" class="editor-textarea" placeholder="Paste unformatted or minified HTML code here..." autofocus></textarea>
-
-    <!-- Action Buttons -->
-    <div class="editor-controls">
-      <div class="btn-group">
-        <button id="btn-format" class="btn btn-primary" style="padding: 0.68rem 1.4rem; cursor: pointer; background: #3b82f6; border: none;">✨ Format HTML</button>
-        <button id="btn-copy" class="btn btn-secondary" style="padding: 0.68rem 1.2rem; cursor: pointer; background: #1f2937; color: #fff; border: 1px solid #4b5563; border-radius: 6px;">📋 Copy Formatted HTML</button>
-        <button id="btn-sample" class="btn btn-secondary" style="padding: 0.68rem 1.2rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">📝 Load Sample</button>
-        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.68rem 1.2rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear</button>
+    <!-- Action Controls Bar -->
+    <div class="controls-bar">
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-beautify" class="btn btn-primary" style="padding: 0.75rem 1.25rem; font-weight: 600; cursor: pointer;">✨ Beautify HTML</button>
+        <button id="btn-minify" class="btn btn-primary" style="padding: 0.75rem 1.25rem; font-weight: 600; cursor: pointer; background: #10b981;">⚡ Minify HTML</button>
       </div>
-      <span id="status-msg" style="font-size: 0.85rem; color: #10b981; font-weight: 500; display: none;">Copied to clipboard!</span>
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-copy" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">📋 Copy Output</button>
+        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear</button>
+      </div>
     </div>
 
     <!-- SEO Article Content Box 1 -->
     <div class="content-box">
-      <h2>Why HTML Formatting and Beautification Matters</h2>
-      <p>Clean HTML structure is foundational to modern web development. When code is extracted from production builds or compiled templates, it is frequently minified into a single line. Beautifying HTML code introduces consistent <strong>nested tag indentations</strong> and line breaks, making it drastically easier to inspect layout elements, edit attributes, and eliminate syntax bugs.</p>
+      <h2>Why HTML Formatting and DOM Structure Matter for Developers</h2>
+      <p>HyperText Markup Language (HTML) forms the structural backbone of every web page on the internet. As web applications grow, nested elements (such as <code>&lt;div&gt;</code> wrappers, semantic sections, forms, and tables) can quickly become messy, leading to unaligned code that is difficult to read and debug.</p>
+      <p>Our free <strong>Online HTML Formatter & Beautifier</strong> reorganizes unformatted markup into a clean, hierarchical DOM tree structure. Proper code formatting simplifies collaboration, makes identifying unclosed tags easier, and keeps your project repository organized.</p>
     </div>
 
     <!-- SEO Article Content Box 2 -->
     <div class="content-box">
-      <h2>Key Benefits of Formatted Code</h2>
+      <h2>HTML Beautifying vs. HTML Minification Explained</h2>
+      <p>Depending on whether you are developing locally or deploying to live web servers, choose the appropriate mode:</p>
+
+      <h3>1. HTML Beautifying (For Reading & Maintenance)</h3>
+      <p>Beautifying structures HTML markup by applying consistent 2-space or 4-space tab indentations for every nested child node. It places block-level tags on dedicated lines and organizes attributes cleanly, making complex templates easy to read.</p>
+
+      <h3>2. HTML Minification (For Production Deployment)</h3>
+      <p>Minification strips out all non-essential white spaces, empty lines, tab indents, and HTML comment blocks (<code>&lt;!-- comment --&gt;</code>). Removing this extra data compresses document file size, resulting in faster HTTP downloads and improved PageSpeed performance scores.</p>
+    </div>
+
+    <!-- SEO Article Content Box 3 -->
+    <div class="content-box">
+      <h2>Features of MicroToolStack's HTML Formatter Utility</h2>
       <ul>
-        <li><strong>Enhanced Code Readability:</strong> Nested indentations instantly convey parent-child HTML DOM hierarchies.</li>
-        <li><strong>Easier Bug Detection:</strong> Quick identification of unclosed tags or misplaced HTML attributes.</li>
-        <li><strong>Seamless Team Collaboration:</strong> Standardized code formatting across development teams.</li>
+        <li><strong>Instant Dual-Mode Processing:</strong> Reformat unaligned HTML templates or compress markup into minified production strings in one click.</li>
+        <li><strong>Smart Tag Indentation:</strong> Recognizes block and inline elements to construct well-balanced DOM hierarchies.</li>
+        <li><strong>100% Client-Side Privacy:</strong> All string transformations execute locally inside your web browser session using JavaScript. No source code is uploaded to remote databases.</li>
+        <li><strong>Free & Unlimited Usage:</strong> No file size caps, rate restrictions, or account sign-ups required.</li>
       </ul>
     </div>
 
-    <!-- Internal Linking Section -->
+    <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
     <div class="content-box">
-      <h2>Explore Related Developer Utilities</h2>
-      <p>Enhance your development workflow with our tools:</p>
+      <h2>Explore Related Developer Tools</h2>
+      <p>Discover our complementary online developer utilities:</p>
       <div class="related-links">
-        <a href="/tools/developer/html-minifier.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">⚡ HTML Minifier</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Compress raw HTML markup for production.</span>
+        <a href="/tools/developer/html-entity-encoder-decoder.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🔒 HTML Entity Encoder / Decoder</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Convert special characters to entities or decode escaped HTML.</span>
         </a>
-        <a href="/tools/developer/json-formatter.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">📦 JSON Formatter</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Validate and format raw JSON objects.</span>
+        <a href="/tools/developer/css-formatter.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">✨ CSS Formatter & Beautifier</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Format and clean up unformatted CSS code.</span>
         </a>
-        <a href="/tools/developer/js-minifier.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">⚡ JS Minifier</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Compress raw JavaScript scripts.</span>
+        <a href="/tools/developer/code-to-image.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🖼️ Code to Image Converter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Export styled code screenshots for social media & blogs.</span>
         </a>
       </div>
     </div>
 
     <!-- FAQ Section -->
     <div class="content-box">
-      <h2>Frequently Asked Questions</h2>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Does formatting HTML alter how the page displays in browsers?</h3>
-        <p>No. Formatting adds indentation and line breaks, which are ignored by browser layout engines during rendering.</p>
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How do I beautify messy HTML code?</h3>
+        <p>Paste your raw HTML code into the left editor box and click "Beautify HTML". The tool will instantly reformat the document with proper DOM indentation.</p>
       </div>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Can I choose custom indent spacing?</h3>
-        <p>Yes. You can select between 2 spaces, 4 spaces, or tab indentation sizes.</p>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What is the benefit of minifying HTML files?</h3>
+        <p>Minification strips whitespace and comments to reduce file size, decreasing network transfer times and speeding up webpage rendering.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is my HTML markup saved on remote servers?</h3>
+        <p>No. All parsing runs client-side inside your browser using JavaScript. Your code remains private.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this HTML Formatter free to use?</h3>
+        <p>Yes, MicroToolStack's HTML Formatter & Minifier is completely free with no usage limits or sign-up required.</p>
       </div>
     </div>
 
@@ -312,81 +331,88 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const htmlInput = document.getElementById('html-input');
-      const selIndent = document.getElementById('sel-indent');
-
-      const btnFormat = document.getElementById('btn-format');
+      const inputHtml = document.getElementById('input-html');
+      const outputHtml = document.getElementById('output-html');
+      const btnBeautify = document.getElementById('btn-beautify');
+      const btnMinify = document.getElementById('btn-minify');
       const btnCopy = document.getElementById('btn-copy');
-      const btnSample = document.getElementById('btn-sample');
       const btnClear = document.getElementById('btn-clear');
-      const statusMsg = document.getElementById('status-msg');
 
-      function formatHtml() {
-        let code = htmlInput.value.trim();
-
-        if (!code) return;
-
-        let indentStr = '  ';
-        if (selIndent.value === '4') indentStr = '    ';
-        if (selIndent.value === 'tab') indentStr = '\t';
-
-        // Clean tokens
-        code = code.replace(/>\s+</g, '><');
-
-        const tokens = code.split(/(</?[\w\s="'-/\.:;]+>)/g).filter(t => t.trim().length > 0);
-
+      // HTML Beautifier Engine
+      function beautifyHTML(html) {
+        if (!html.trim()) return '';
         let formatted = '';
-        let indentLevel = 0;
+        let indent = '';
+        const tab = '  '; // 2-spaces
 
-        const voidTags = new Set(['area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'param', 'source', 'track', 'wbr']);
+        // Normalize string whitespace
+        let cleaned = html.replace(/>\s+</g, '><').trim();
+
+        // Split tags
+        const tokens = cleaned.split(/(</?[\w\s="'-]+>/g);
 
         tokens.forEach(token => {
+          if (!token.trim()) return;
+
           if (token.startsWith('</')) {
-            // Closing Tag
-            indentLevel = Math.max(0, indentLevel - 1);
-            formatted += indentStr.repeat(indentLevel) + token + '\n';
-          } else if (token.startsWith('<') && !token.startsWith('<!')) {
-            // Opening or Self-Closing Tag
-            const tagNameMatch = token.match(/<([a-zA-Z0-9]+)/);
-            const tagName = tagNameMatch ? tagNameMatch[1].toLowerCase() : '';
-
-            const isSelfClosing = token.endsWith('/>') || voidTags.has(tagName);
-
-            formatted += indentStr.repeat(indentLevel) + token + '\n';
-
-            if (!isSelfClosing && !token.startsWith('<?')) {
-              indentLevel++;
+            // Closing tag
+            if (indent.length >= tab.length) {
+              indent = indent.substring(tab.length);
             }
+            formatted += '\n' + indent + token;
+          } else if (token.startsWith('<') && !token.startsWith('<!') && !token.endsWith('/>') && !isSelfClosing(token)) {
+            // Opening tag
+            formatted += '\n' + indent + token;
+            indent += tab;
+          } else if (token.startsWith('<')) {
+            // Self closing or DOCTYPE tag
+            formatted += '\n' + indent + token;
           } else {
-            // Text or Comment Content
-            const textContent = token.trim();
-            if (textContent) {
-              formatted += indentStr.repeat(indentLevel) + textContent + '\n';
-            }
+            // Text node
+            formatted += token.trim();
           }
         });
 
-        htmlInput.value = formatted.trim();
+        return formatted.trim();
       }
 
-      btnFormat.addEventListener('click', formatHtml);
+      function isSelfClosing(tag) {
+        const selfClosingTags = ['<img', '<input', '<br', '<hr', '<meta', '<link', '<col', '<base'];
+        const lower = tag.toLowerCase();
+        return selfClosingTags.some(t => lower.startsWith(t));
+      }
+
+      // HTML Minifier Engine
+      function minifyHTML(html) {
+        if (!html.trim()) return '';
+        return html
+          .replace(/<!--[\s\S]*?-->/g, '') // Remove HTML comments
+          .replace(/\s+/g, ' ')            // Collapse extra spaces
+          .replace(/>\s+</g, '><')         // Remove spaces between tags
+          .trim();
+      }
+
+      btnBeautify.addEventListener('click', function() {
+        outputHtml.value = beautifyHTML(inputHtml.value);
+      });
+
+      btnMinify.addEventListener('click', function() {
+        outputHtml.value = minifyHTML(inputHtml.value);
+      });
 
       btnCopy.addEventListener('click', function() {
-        if (!htmlInput.value.trim()) return;
-        navigator.clipboard.writeText(htmlInput.value).then(function() {
-          statusMsg.style.display = 'inline';
-          setTimeout(() => { statusMsg.style.display = 'none'; }, 2000);
+        if (!outputHtml.value.trim()) return;
+        navigator.clipboard.writeText(outputHtml.value).then(() => {
+          const originalText = btnCopy.textContent;
+          btnCopy.textContent = '✅ Copied!';
+          setTimeout(() => { btnCopy.textContent = originalText; }, 2000);
         });
       });
 
-      btnSample.addEventListener('click', function() {
-        htmlInput.value = `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Formatted Page</title></head><body><div class="container"><h1>Hello World</h1><p>Welcome to MicroToolStack HTML Beautifier.</p></div></body></html>`;
-        formatHtml();
-      });
-
       btnClear.addEventListener('click', function() {
-        htmlInput.value = '';
-        htmlInput.focus();
+        inputHtml.value = '';
+        outputHtml.value = '';
+        inputHtml.focus();
       });
     });
   </script>
