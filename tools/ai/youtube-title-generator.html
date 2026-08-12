@@ -274,7 +274,7 @@
 
       <h2>Key Features of MicroToolStack YouTube Creator Suite</h2>
       <ul>
-        <li><strong>Smart Grammar Cleaner:</strong> Converts raw query entries into clean English title subjects automatically.</li>
+        <li><strong>Smart Grammar Engine:</strong> Formats input text naturally without creating awkward sentence structures.</li>
         <li><strong>Complete SEO Package:</strong> Generates titles, structured video chapters placeholder, social links section, and tags in a single click.</li>
         <li><strong>Copy-Ready Formatting:</strong> Formatted specifically for seamless pasting into YouTube Studio's title, description, and tags input boxes.</li>
         <li><strong>100% Free & Unlimited:</strong> Create metadata for unlimited videos without accounts or daily quotas. Have questions? Visit our <a href="/contact.html">Support Page</a>.</li>
@@ -322,50 +322,55 @@
       const copyDescBtn = document.getElementById('copy-desc-btn');
       const copyTagsBtn = document.getElementById('copy-tags-btn');
 
-      // Helper function to convert raw input to clean English subject
-      function cleanSubject(raw) {
-        if (!raw) return "Earning Money Online";
-        
-        let cleaned = raw.trim();
-        // Remove question marks, leading 'how to', 'how'
-        cleaned = cleaned.replace(/\?/g, '');
-        cleaned = cleaned.replace(/^how\s+to\s+/i, '');
-        cleaned = cleaned.replace(/^how\s+/i, '');
-        
-        // Capitalize Title Case
-        return cleaned.replace(/\w\S*/g, function(txt){
+      // Smart Title Case Formatter
+      function toTitleCase(str) {
+        if (!str) return "Earning Money Online";
+        return str.trim().replace(/\w\S*/g, function(txt){
           return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
         });
       }
 
       generateBtn.addEventListener('click', function () {
-        const rawInput = topicInput.value;
-        const cleanTopic = cleanSubject(rawInput);
+        const rawInput = topicInput.value.trim() || "How to earn money online";
+        const topicTitle = toTitleCase(rawInput);
         const style = styleSelect.value;
         const niche = nicheSelect.value;
 
-        // 1. Generate Smart Titles
+        // 1. Generate Natural Titles
         let titles = [];
+        
+        // Detect if input is already a 'How to' or question style
+        const isHowTo = /^how\s+/i.test(rawInput);
+
         if (style === 'High CTR & Clickbait') {
-          titles = [
-            `I Tried ${cleanTopic} For 30 Days (UNBELIEVABLE RESULTS) 😱`,
-            `DON'T Start ${cleanTopic} Until You Watch This Video!`,
-            `The TRUTH About ${cleanTopic} Nobody Tells You...`,
-            `Why Everyone Is Talking About ${cleanTopic} Right Now! 🚀`
-          ];
+          if (isHowTo) {
+            titles = [
+              `I Tried ${topicTitle} For 30 Days (UNBELIEVABLE RESULTS) 😱`,
+              `DON'T Try ${topicTitle} Until You Watch This Video!`,
+              `The TRUTH About ${topicTitle} Nobody Tells You...`,
+              `Why Everyone Is Talking About "${topicTitle}" Right Now! 🚀`
+            ];
+          } else {
+            titles = [
+              `I Tried ${topicTitle} For 30 Days (UNBELIEVABLE RESULTS) 😱`,
+              `DON'T Start ${topicTitle} Until You Watch This Video!`,
+              `The TRUTH About ${topicTitle} Nobody Tells You...`,
+              `Why Everyone Is Talking About ${topicTitle} Right Now! 🚀`
+            ];
+          }
         } else if (style === 'SEO & Search Focused') {
           titles = [
-            `How to Master ${cleanTopic}: Complete Guide for Beginners`,
-            `${cleanTopic} Explained: Everything You Need to Know`,
-            `The Ultimate ${cleanTopic} Strategy (Step-by-Step)`,
-            `How to Achieve ${cleanTopic} Fast (Proven Method)`
+            `${topicTitle}: Complete Guide for Beginners`,
+            `${topicTitle} Explained: Everything You Need to Know`,
+            `The Ultimate ${topicTitle} Strategy (Step-by-Step)`,
+            `${topicTitle} - Fast & Proven Method`
           ];
         } else {
           titles = [
-            `Top 5 Game-Changing ${cleanTopic} Tips You Must Know!`,
-            `7 Common ${cleanTopic} Mistakes And How to Avoid Them`,
-            `10 Secret ${cleanTopic} Hacks That Will Save You Time`,
-            `3 Simple Steps to Master ${cleanTopic} Today`
+            `Top 5 Game-Changing ${topicTitle} Tips You Must Know!`,
+            `7 Common ${topicTitle} Mistakes And How to Avoid Them`,
+            `10 Secret ${topicTitle} Hacks That Will Save You Time`,
+            `3 Simple Steps to Master ${topicTitle} Today`
           ];
         }
 
@@ -393,15 +398,11 @@
           titlesContainer.appendChild(div);
         });
 
-        // 2. Generate Full Description
-        const cleanWords = cleanTopic.toLowerCase().split(' ').filter(w => w.length > 2);
-        const keyword1 = cleanWords[0] || 'guide';
-        const keyword2 = cleanWords[1] || 'tips';
-
-        const descriptionTemplate = `Welcome to this complete guide on ${cleanTopic}! In this video, we cover everything you need to know about ${cleanTopic}, including essential strategies, tips, and practical insights.
+        // 2. Generate Natural Description
+        const descriptionTemplate = `Welcome to this complete guide on ${rawInput.toLowerCase()}! In this video, we cover everything you need to know about ${rawInput.toLowerCase()}, including essential strategies, step-by-step tips, and practical insights.
 
 📌 Timestamps / Chapters:
-00:00 - Introduction to ${cleanTopic}
+00:00 - Introduction to ${topicTitle}
 01:30 - Key Concepts & Basics
 04:15 - Step-by-Step Tutorial
 08:00 - Pro Tips & Common Mistakes
@@ -410,26 +411,28 @@
 🔔 Subscribe to the channel for more videos on ${niche}!
 👍 If you found this video helpful, please like, share, and leave a comment below.
 
-#${keyword1} #${keyword2} #${niche.replace(/[^a-zA-Z]/g, '')} #YouTubeSEO`;
+#youtube #seo #${niche.replace(/[^a-zA-Z]/g, '')} #video`;
 
         descBox.innerText = descriptionTemplate;
 
-        // 3. Generate Comma-Separated Tags
+        // 3. Generate Clean Tags
+        const cleanWords = rawInput.toLowerCase().replace(/[^a-z0-9 ]/gi, '').split(' ').filter(w => w.length > 1);
+        
         const tags = [
-          cleanTopic.toLowerCase(),
-          `how to ${cleanTopic.toLowerCase()}`,
-          `${cleanTopic.toLowerCase()} tutorial`,
-          `${cleanTopic.toLowerCase()} guide`,
-          `${cleanTopic.toLowerCase()} 2026`,
-          `${cleanTopic.toLowerCase()} tips`,
-          `${cleanTopic.toLowerCase()} for beginners`,
-          `best ${cleanTopic.toLowerCase()} strategy`,
-          `${keyword1}`,
-          `${keyword2}`,
-          `${niche.toLowerCase()}`
+          rawInput.toLowerCase(),
+          topicTitle.toLowerCase(),
+          `${rawInput.toLowerCase()} tutorial`,
+          `${rawInput.toLowerCase()} guide`,
+          `${rawInput.toLowerCase()} 2026`,
+          `${rawInput.toLowerCase()} tips`,
+          `${rawInput.toLowerCase()} for beginners`,
+          ...cleanWords,
+          niche.toLowerCase()
         ];
 
-        const tagsString = tags.join(', ');
+        // Unique tags only
+        const uniqueTags = Array.from(new Set(tags));
+        const tagsString = uniqueTags.join(', ');
         tagsBox.innerText = tagsString;
 
         // Event listeners for full copy buttons
