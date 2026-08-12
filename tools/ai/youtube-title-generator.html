@@ -59,6 +59,7 @@
     .form-group label {
       font-weight: 600;
       font-size: 0.95rem;
+      color: #ffffff !important;
     }
     .form-control {
       width: 100%;
@@ -66,7 +67,7 @@
       border-radius: 8px;
       border: 1px solid var(--border-color, #444);
       background: var(--bg-input, #121218);
-      color: var(--text-primary, #fff);
+      color: #ffffff !important;
       font-size: 1rem;
       outline: none;
       box-sizing: border-box;
@@ -80,7 +81,7 @@
       width: 100%;
       padding: 0.9rem;
       background: #3b82f6;
-      color: #fff;
+      color: #ffffff !important;
       border: none;
       border-radius: 8px;
       font-weight: bold;
@@ -99,9 +100,9 @@
       gap: 1rem;
     }
     .title-result-card {
-      background: var(--bg-input, #121218);
-      border: 1px solid var(--border-color, #333);
-      padding: 1rem;
+      background: #121218 !important;
+      border: 1px solid #333344;
+      padding: 1rem 1.2rem;
       border-radius: 8px;
       display: flex;
       justify-content: space-between;
@@ -111,12 +112,14 @@
     .title-text {
       font-size: 1.05rem;
       font-weight: 600;
-      line-height: 1.4;
+      line-height: 1.5;
+      color: #ffffff !important; /* Forces crystal clear white text */
+      flex-grow: 1;
     }
     .btn-copy {
-      padding: 0.5rem 1rem;
+      padding: 0.6rem 1.2rem;
       background: #10b981;
-      color: #fff;
+      color: #ffffff !important;
       border: none;
       border-radius: 6px;
       font-size: 0.85rem;
@@ -128,11 +131,12 @@
       max-width: 800px;
       margin: 3.5rem auto;
       line-height: 1.8;
+      color: #dddddd;
     }
     .seo-content-section h2 {
       margin-top: 2rem;
       font-size: 1.5rem;
-      color: var(--text-primary, #fff);
+      color: #ffffff !important;
     }
     .seo-content-section p {
       margin-bottom: 1rem;
@@ -147,6 +151,7 @@
     .faq-item h3 {
       font-size: 1.1rem;
       margin-bottom: 0.5rem;
+      color: #ffffff !important;
     }
   </style>
 
@@ -162,29 +167,29 @@
   <main class="container">
     <section class="hero text-center">
       <h1>Free AI YouTube Title Generator</h1>
-      <p>Generate high CTR, click-worthy, and SEO-optimized YouTube video titles to grow your channel views and subscribers.</p>
+      <p>Generate high CTR, click-worthy, and grammatically smart YouTube video titles to grow your channel views.</p>
     </section>
 
     <!-- Interactive Tool Interface -->
     <div class="tool-card-box">
       <div class="form-group">
-        <label for="video-topic">What is your video about?</label>
-        <input type="text" id="video-topic" class="form-control" placeholder="e.g., How to edit videos on CapCut, Travel vlog in Mymensingh, Crypto trading for beginners...">
+        <label for="video-topic">What is your video topic or primary keyword?</label>
+        <input type="text" id="video-topic" class="form-control" placeholder="e.g., Success in life, How to edit videos on CapCut, Crypto trading...">
       </div>
 
       <div class="form-grid">
         <div class="form-group">
           <label for="video-niche">Channel Category:</label>
           <select id="video-niche" class="form-control">
+            <option value="Education & Tutorial">Education & Tutorial</option>
             <option value="Gaming & Tech">Gaming & Tech</option>
             <option value="Vlog & Lifestyle">Vlog & Lifestyle</option>
-            <option value="Education & Tutorial">Education & Tutorial</option>
             <option value="Finance & Business">Finance & Business</option>
           </select>
         </div>
 
         <div class="form-group">
-          <label for="title-style">Title Style:</label>
+          <label for="title-style">Title Style Framework:</label>
           <select id="title-style" class="form-control">
             <option value="High CTR & Clickbait">High CTR / Viral Hook</option>
             <option value="SEO & Search Focused">SEO & Search Ranked</option>
@@ -218,8 +223,8 @@
 
       <h2>Key Features of MicroToolStack YouTube Title Generator</h2>
       <ul>
+        <li><strong>Smart Grammar Parsing:</strong> Automatically cleans up phrase inputs like "how to" to construct natural, high-performing English sentences.</li>
         <li><strong>CTR Optimized Frameworks:</strong> Leverages proven YouTube creator strategies (Numbers, Power Words, Curiosity Gaps, and How-To questions).</li>
-        <li><strong>Search Engine Friendly:</strong> Ensures primary search keywords appear early in the title structure to help YouTube algorithm indexing.</li>
         <li><strong>Character Limit Compliant:</strong> Keeps titles under 70 characters so they are never truncated on mobile devices or TV apps.</li>
         <li><strong>100% Free & Unlimited:</strong> Generate unlimited video title ideas without registration, subscription plans, or daily limits. Have questions or feature requests? Contact our team on our <a href="/contact.html">Support Page</a>.</li>
       </ul>
@@ -250,52 +255,69 @@
   <script src="/assets/js/theme.js"></script>
   <script src="/assets/js/utils.js" defer></script>
 
-  <!-- Working Functional JavaScript for YouTube Title Generator -->
+  <!-- Smart Functional JavaScript for YouTube Title Generator -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const topicInput = document.getElementById('video-topic');
-      const nicheSelect = document.getElementById('video-niche');
       const styleSelect = document.getElementById('title-style');
       const generateBtn = document.getElementById('generate-title-btn');
       const resultsContainer = document.getElementById('title-results');
 
-      const titleFrameworks = {
-        'High CTR & Clickbait': [
-          "I Tried {topic} For 24 Hours (UNBELIEVABLE RESULTS) 😱",
-          "DON'T Do {topic} Until You Watch This Video!",
-          "The TRUTH About {topic} Nobody Tells You...",
-          "Why Everyone Is Talking About {topic} Right Now! 🚀"
-        ],
-        'SEO & Search Focused': [
-          "How to Master {topic}: Step-by-Step Complete Guide for Beginners",
-          "{topic} Explained: Everything You Need to Know",
-          "The Ultimate {topic} Tutorial (Best Strategy)",
-          "How to Do {topic} Easily (Fastest Method)"
-        ],
-        'Listicle & Guide': [
-          "Top 5 Game-Changing {topic} Tips You Must Know!",
-          "7 Common {topic} Mistakes And How to Fix Them",
-          "10 Secret {topic} Hacks That Will Save You Hours",
-          "3 Simple Steps to Improve Your {topic} Today"
-        ],
-        'Curiosity & Story': [
-          "What Happened When I Finally Tried {topic}...",
-          "Is {topic} Actually Worth It? (Honest Review)",
-          "I Tested {topic} So You Don't Have To!",
-          "How {topic} Changed Everything (My Full Story)"
-        ]
-      };
+      // Helper function to clean and capitalize input
+      function cleanSubject(raw) {
+        if (!raw) return "Success in Life";
+        
+        let cleaned = raw.trim();
+        // Remove leading 'how to' if user typed it, to prevent 'I tried how to...' bugs
+        cleaned = cleaned.replace(/^how\s+to\s+/i, '');
+        
+        // Capitalize Title Case
+        return cleaned.replace(/\w\S*/g, function(txt){
+          return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+        });
+      }
 
       generateBtn.addEventListener('click', function () {
-        const rawTopic = topicInput.value.trim() || 'Video Creation';
+        const rawInput = topicInput.value;
+        const cleanTopic = cleanSubject(rawInput);
         const style = styleSelect.value;
 
-        const templates = titleFrameworks[style] || titleFrameworks['High CTR & Clickbait'];
+        let templates = [];
+
+        if (style === 'High CTR & Clickbait') {
+          templates = [
+            `I Tested ${cleanTopic} For 30 Days (UNBELIEVABLE RESULTS) 😱`,
+            `DON'T Start ${cleanTopic} Until You Watch This Video!`,
+            `The TRUTH About ${cleanTopic} Nobody Tells You...`,
+            `Why Everyone Is Secretly Obsessed With ${cleanTopic} Right Now! 🚀`
+          ];
+        } else if (style === 'SEO & Search Focused') {
+          templates = [
+            `How to Master ${cleanTopic}: Step-by-Step Complete Guide`,
+            `${cleanTopic} Explained: Everything You Need to Know`,
+            `The Ultimate ${cleanTopic} Tutorial for Beginners`,
+            `How to Achieve ${cleanTopic} Fast (Proven Method)`
+          ];
+        } else if (style === 'Listicle & Guide') {
+          templates = [
+            `Top 5 Game-Changing ${cleanTopic} Tips You Must Know!`,
+            `7 Common ${cleanTopic} Mistakes And How to Avoid Them`,
+            `10 Secret ${cleanTopic} Hacks That Will Save You Time`,
+            `3 Simple Steps to Improve Your ${cleanTopic} Today`
+          ];
+        } else {
+          // Curiosity & Story
+          templates = [
+            `What Happened When I Finally Mastered ${cleanTopic}...`,
+            `Is ${cleanTopic} Actually Worth It? (Honest Truth)`,
+            `I Tried ${cleanTopic} So You Don't Have To!`,
+            `How ${cleanTopic} Changed Everything (My Full Experience)`
+          ];
+        }
+
         resultsContainer.innerHTML = '';
 
-        templates.forEach((tpl) => {
-          let titleText = tpl.replace(/{topic}/g, rawTopic);
-
+        templates.forEach((titleText) => {
           const card = document.createElement('div');
           card.className = 'title-result-card';
 
