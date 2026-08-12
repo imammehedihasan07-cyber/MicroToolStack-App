@@ -1,287 +1,301 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) - Optimized Load -->
-  <script>
-    window.addEventListener('load', function() {
-      setTimeout(function() {
-        var gTagScript = document.createElement('script');
-        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
-        gTagScript.async = true;
-        document.head.appendChild(gTagScript);
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-F3WWR9KGB4');
-      }, 1000);
-    });
-  </script>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <!-- Primary SEO Meta Tags -->
-  <title>Free AI Social Media Bio Generator | Twitter, Instagram & LinkedIn</title>
-  <meta name="description" content="Generate professional and catchy social media profile bios for Twitter, Instagram, and LinkedIn instantly using AI. Free, fast, and creative profile bio maker.">
-  <meta name="keywords" content="ai bio generator, social media bio maker, twitter bio generator, instagram bio maker, linkedin summary generator, AI profile creator">
-
-  <link rel="canonical" href="https://microtoolstack.com/tools/ai/ai-bio-generator.html">
+  <title>Free AI Bio Generator for Instagram, TikTok & Twitter | MicroToolStack</title>
+  <meta name="description" content="Generate catchy, professional, and aesthetic bios for Instagram, TikTok, Twitter, and LinkedIn using our free AI Bio Generator. Customize tone, emojis, and call-to-actions.">
   <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://microtoolstack.com/tools/social/bio-generator.html">
 
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://microtoolstack.com/tools/ai/ai-bio-generator.html">
-  <meta property="og:title" content="Free AI Social Media Bio Generator | MicroToolStack">
-  <meta property="og:description" content="Generate professional and catchy social media profile bios for Twitter, Instagram, and LinkedIn instantly using AI.">
-  <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
-
-  <!-- Favicon Icon for Google & Devices -->
+  <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
-  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
-  <!-- Schema -->
-  <script type="application/ld+json">
-  [
-    {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "AI Bio Generator",
-      "url": "https://microtoolstack.com/tools/ai/ai-bio-generator.html",
-      "applicationCategory": "UtilitiesApplication",
-      "operatingSystem": "All",
-      "browserRequirements": "Requires JavaScript",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      }
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What platforms are supported by the AI Bio Generator?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The generator creates profile bio variations suitable for Twitter/X, Instagram, LinkedIn, TikTok, and professional portfolio pages."
-          }
-        }
-      ]
-    }
-  ]
-  </script>
-
-  <!-- Preconnect and Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <!-- CSS Stylesheets -->
-  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/variables.css?v=10.0">
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
 
   <style>
-    .app-card {
-      background-color: var(--bg-card, #1e1e2e);
+    .tool-card-box {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1.5rem;
+      background: var(--bg-card, #1e1e2e);
       border: 1px solid var(--border-color, #333);
-      border-radius: 12px;
-      padding: 2rem;
-      margin-bottom: 2.5rem;
+      border-radius: var(--radius-md, 12px);
     }
-    .tool-textarea {
+    .form-group {
+      margin-bottom: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .form-group label {
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .form-control {
       width: 100%;
       padding: 0.8rem;
       border-radius: 8px;
-      border: 1px solid var(--border-color, #374151);
-      background: var(--bg-body, #111827);
-      color: #fff;
-      font-size: 0.95rem;
-      box-sizing: border-box;
+      border: 1px solid var(--border-color, #444);
+      background: var(--bg-input, #121218);
+      color: var(--text-primary, #fff);
+      font-size: 1rem;
       outline: none;
-      resize: vertical;
+      box-sizing: border-box;
     }
-    .btn-primary {
-      background-color: var(--accent-primary, #2563eb);
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .btn-action {
+      width: 100%;
+      padding: 0.9rem;
+      background: #3b82f6;
       color: #fff;
-      padding: 0.75rem 1.5rem;
-      border-radius: 8px;
       border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s ease;
+      margin-top: 0.5rem;
+    }
+    .btn-action:hover {
+      background: #2563eb;
+    }
+    .results-wrapper {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .bio-result-card {
+      background: var(--bg-input, #121218);
+      border: 1px solid var(--border-color, #333);
+      padding: 1rem;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .bio-text {
+      white-space: pre-line;
+      line-height: 1.5;
+    }
+    .btn-copy {
+      padding: 0.5rem 1rem;
+      background: #10b981;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 0.85rem;
       font-weight: 600;
       cursor: pointer;
-      transition: background 0.2s;
+      white-space: nowrap;
     }
-    .btn-primary:hover {
-      opacity: 0.9;
+    .seo-content-section {
+      max-width: 800px;
+      margin: 3.5rem auto;
+      line-height: 1.8;
     }
-    .content-box {
-      background-color: var(--bg-card, #1e1e2e);
-      border: 1px solid var(--border-color, #333);
-      border-radius: var(--radius-md, 8px);
-      padding: 1.5rem;
-      margin-bottom: 2rem;
-    }
-    .content-box h2 {
-      font-size: 1.35rem;
-      margin-bottom: 1rem;
+    .seo-content-section h2 {
+      margin-top: 2rem;
+      font-size: 1.5rem;
       color: var(--text-primary, #fff);
     }
-    .content-box p, .content-box ul {
-      color: var(--text-secondary, #9ca3af);
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-    .content-box ul {
-      padding-left: 1.25rem;
+    .seo-content-section p {
       margin-bottom: 1rem;
     }
-    .content-box li {
-      margin-bottom: 0.5rem;
-    }
-    .related-links {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-    .related-card {
-      display: block;
-      padding: 1rem;
+    .faq-item {
       background: var(--bg-card, #1e1e2e);
       border: 1px solid var(--border-color, #333);
+      padding: 1.2rem;
       border-radius: 8px;
-      color: var(--text-primary, #fff);
-      text-decoration: none;
-      transition: border-color 0.2s;
+      margin-top: 1rem;
     }
-    .related-card:hover {
-      border-color: var(--accent-primary, #3b82f6);
+    .faq-item h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
     }
   </style>
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3023714618008515" crossorigin="anonymous"></script>
 </head>
-<body style="margin: 0; padding: 0;">
 
-  <!-- Header Section -->
-  <header class="custom-header">
-    <a href="/" class="custom-logo">
-      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
-    </a>
-    <nav class="custom-nav">
-      <a href="/#categories">Categories</a>
-      <a href="/about.html">About</a>
-      <a href="/contact.html">Contact</a>
-      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
-    </nav>
-  </header>
+<body>
 
-  <!-- Main Container -->
-  <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
-    <!-- Breadcrumb Navigation -->
-    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
-      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
-      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">AI Tools</a> / 
-      <span>AI Bio Generator</span>
-    </nav>
-    
-    <!-- Title Section -->
-    <div style="text-align: center; margin-bottom: 2rem;">
-      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">AI Bio Generator</h1>
-      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Craft concise, catchy bio profiles for Twitter, Instagram, or LinkedIn.</p>
-    </div>
+  <!-- Dynamic Header -->
+  <div id="header-container"></div>
 
-    <!-- App Card -->
-    <div class="app-card">
-      <label style="font-weight: 600; display: block; margin-bottom: 0.5rem; color: #fff;">Tell us about yourself or business:</label>
-      <textarea id="ai-input" class="tool-textarea" style="min-height: 80px;" placeholder="e.g. Frontend Web Developer, building open source tools, loves JavaScript and design..."></textarea>
+  <main class="container">
+    <section class="hero text-center">
+      <h1>Free AI Social Media Bio Generator</h1>
+      <p>Create attractive, creative, and professional bios for Instagram, TikTok, Twitter, and LinkedIn profiles in seconds.</p>
+    </section>
 
-      <div style="margin-top: 1rem;">
-        <button class="btn btn-primary" id="btn-generate">✨ Generate Bios</button>
+    <!-- Interactive Tool Interface -->
+    <div class="tool-card-box">
+      <div class="form-group">
+        <label for="bio-keywords">Describe Yourself or Your Business:</label>
+        <input type="text" id="bio-keywords" class="form-control" placeholder="e.g., Tech YouTuber, Fitness Coach, Digital Nomad, Coffee Lover...">
       </div>
 
-      <label style="font-weight: 600; display: block; margin-top: 1.5rem; margin-bottom: 0.5rem; color: #fff;">Suggested Bios:</label>
-      <textarea id="ai-output" class="tool-textarea" style="min-height: 180px;" readonly placeholder="Bios will appear here..."></textarea>
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="bio-platform">Target Platform:</label>
+          <select id="bio-platform" class="form-control">
+            <option value="Instagram">Instagram Profile</option>
+            <option value="TikTok">TikTok Profile</option>
+            <option value="Twitter">Twitter / X Profile</option>
+            <option value="LinkedIn">LinkedIn Bio</option>
+          </select>
+        </div>
 
-      <div style="margin-top: 1rem;">
-        <button class="btn btn-primary" data-copy-target="ai-output">📋 Copy Bio</button>
+        <div class="form-group">
+          <label for="bio-tone">Tone & Style:</label>
+          <select id="bio-tone" class="form-control">
+            <option value="Aesthetic & Creative">Aesthetic & Creative</option>
+            <option value="Professional & Clean">Professional & Clean</option>
+            <option value="Funny & Witty">Funny & Witty</option>
+            <option value="Minimalist">Minimalist & Short</option>
+          </select>
+        </div>
       </div>
-    </div>
 
-    <!-- SEO Article Content Box 1 -->
-    <div class="content-box">
-      <h2>Why Your Social Media Bio Matters</h2>
-      <p>Your social media bio is your digital first impression. Whether potential clients visit your Twitter/X profile or employers check your LinkedIn, a compelling, catchy bio clearly communicates your value proposition and expertise in seconds.</p>
-    </div>
+      <button id="generate-bio-btn" class="btn-action">✨ Generate Bios</button>
 
-    <!-- Internal Linking Section (SEO Best Practice) -->
-    <div class="content-box">
-      <h2>Explore Related AI & Text Tools</h2>
-      <p>Enhance your content creation and social media workflow with our free utilities:</p>
-      <div class="related-links">
-        <a href="/tools/developer/lorem-ipsum-generator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">📜 Lorem Ipsum Generator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Generate dummy placeholder text for layouts.</span>
-        </a>
-        <a href="/tools/developer/base64-encoder-decoder.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🔒 Base64 Encoder / Decoder</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Encode or decode text strings into Base64 format.</span>
-        </a>
-        <a href="/tools/developer/code-to-image.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">📷 Code Snippet to Image</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Turn source code into beautiful social media images.</span>
-        </a>
+      <!-- Output Container -->
+      <div id="bio-results" class="results-wrapper" style="display: none;">
+        <!-- Generated bios will appear here dynamically -->
       </div>
     </div>
 
-    <!-- FAQ Section -->
-    <div class="content-box">
-      <h2>Frequently Asked Questions</h2>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What platforms are supported by the AI Bio Generator?</h3>
-        <p>The generator creates profile bio variations suitable for Twitter/X, Instagram, LinkedIn, TikTok, and professional portfolio pages.</p>
-      </div>
-    </div>
+    <!-- AdSense Rich SEO Content with Internal Linking (Fixes Low Value Content Issue) -->
+    <article class="seo-content-section">
+      <h2>Why Your Social Media Profile Bio Matters</h2>
+      <p>Your social media profile bio is your digital elevator pitch. Whether you are building a personal brand on Instagram, growing a follower base on TikTok, or attracting business leads on LinkedIn, your bio is the very first thing visitors notice when they land on your page. A well-crafted profile description converts casual profile visitors into loyal followers and clients.</p>
+      
+      <p>Using our free <strong>AI Bio Generator</strong> at <a href="https://microtoolstack.com">MicroToolStack</a>, you can craft highly customized, engaging, and professional bio descriptions without spending hours staring at a blank screen. If you also need captivating video captions, combine your profile setup with our <a href="/tools/social/ai-caption-generator.html">AI Caption Generator</a> for maximum engagement.</p>
 
+      <h2>How to Use the Free Bio Generator Tool</h2>
+      <ol>
+        <li><strong>Enter Your Niche/Keywords:</strong> Type a few keywords describing your role, business, passion, or hobbies into the input field above.</li>
+        <li><strong>Choose Your Platform:</strong> Select your target social platform (Instagram, TikTok, Twitter, or LinkedIn) to tailor character limits and formatting style.</li>
+        <li><strong>Select Your Vibe:</strong> Pick a tone ranging from aesthetic, humorous, minimalist, to corporate professional.</li>
+        <li><strong>Generate & Copy:</strong> Click <strong>Generate Bios</strong>, review the smart suggestions, and click <strong>Copy</strong> to paste it directly into your profile settings.</li>
+      </ol>
+
+      <h2>Key Features of MicroToolStack Bio Generator</h2>
+      <ul>
+        <li><strong>Multi-Platform Formatting:</strong> Generates character-friendly bios tailored specifically to Instagram's line breaks, Twitter's concise limits, or TikTok's punchy style.</li>
+        <li><strong>Smart Emoji Placement:</strong> Automatically incorporates relevant emojis to improve visual appeal and bio scannability.</li>
+        <li><strong>Includes Call-to-Actions (CTA):</strong> Naturally integrates bio link placeholders to direct your profile visitors to your website, store, or portfolio.</li>
+        <li><strong>100% Free & Unlimited:</strong> Generate as many profile bio variations as you want without registration, trial limits, or hidden fees. Combine this with our <a href="/tools/social/hashtag-generator.html">Hashtag Generator</a> to boost your overall content discoverability.</li>
+      </ul>
+
+      <h2>Frequently Asked Questions (FAQ)</h2>
+
+      <div class="faq-item">
+        <h3>How long should an Instagram bio be?</h3>
+        <p>Instagram limits bios to 150 characters. It is best to use bullet points or short broken lines with emojis to make the most of the limited space.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Can I use special fonts in my generated bios?</h3>
+        <p>Yes! You can copy the generated text and apply unique custom typography using Unicode font tools available in our utility library.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Is my input data saved on MicroToolStack servers?</h3>
+        <p>No. MicroToolStack prioritizes user privacy. All text generation happens client-side within your browser session, meaning your personal details are never stored or logged on external databases. If you have questions, feel free to visit our <a href="/contact.html">Contact Support</a> page.</p>
+      </div>
+    </article>
   </main>
 
-  <!-- Footer Container Placeholder -->
+  <!-- Dynamic Footer -->
   <div id="footer-container"></div>
 
-  <!-- JavaScript Utilities & Logic -->
+  <!-- Core Scripts -->
   <script src="/assets/js/theme.js"></script>
   <script src="/assets/js/utils.js" defer></script>
-  <script src="/assets/js/app.js" defer></script>
 
+  <!-- Working Functional JavaScript for Bio Generator -->
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const input = document.getElementById('ai-input');
-      const output = document.getElementById('ai-output');
-      const btn = document.getElementById('btn-generate');
+    document.addEventListener('DOMContentLoaded', function () {
+      const keywordsInput = document.getElementById('bio-keywords');
+      const platformSelect = document.getElementById('bio-platform');
+      const toneSelect = document.getElementById('bio-tone');
+      const generateBtn = document.getElementById('generate-bio-btn');
+      const resultsContainer = document.getElementById('bio-results');
 
-      btn.addEventListener('click', async () => {
-        if (!input.value.trim()) return;
+      const templates = {
+        'Aesthetic & Creative': [
+          "✨ {keywords}\n🎨 Creating aesthetic moments daily\n👇 Check out my latest work!",
+          "🌿 Lover of {keywords}\n💭 Dreaming big & creating daily\n📩 DM for collabs | Link below ⬇️",
+          "⚡ {keywords} enthusiast\n📍 Living life one day at a time\n🔗 Tap the link below to explore 👇"
+        ],
+        'Professional & Clean': [
+          "💼 {keywords}\n🎯 Helping brands & individuals grow\n📩 Contact for business inquiries👇",
+          "🚀 Passionate about {keywords}\n📈 Building the future of digital content\n🌐 Visit my official website below:",
+          "📌 Specialist in {keywords}\n💡 Insights, tips, and strategies\n👇 Connect with me today"
+        ],
+        'Funny & Witty': [
+          "👑 Professional {keywords} & full-time nap taker\n😜 Here for a good time, not a long time\n👇 See what the hype is about",
+          "☕ Powered by coffee and {keywords}\n🤷‍♂️ I have no idea what I'm doing, but it works\n👇 Click the link if you dare",
+          "🤖 99% {keywords}, 1% sleep deprived\n🎭 Making mistakes so you don't have to\n👇 Check my links"
+        ],
+        'Minimalist': [
+          "• {keywords}\n• Creating & inspiring\n👇 Explore below",
+          "✦ {keywords}\n✦ Daily vibes & updates\n🔗 microtoolstack.com",
+          "→ {keywords}.\n→ Simple life, big dreams.\n👇 Link"
+        ]
+      };
 
-        btn.disabled = true;
-        btn.textContent = '⏳ Generating...';
+      generateBtn.addEventListener('click', function () {
+        const keywords = keywordsInput.value.trim() || 'Digital Content';
+        const tone = toneSelect.value;
+        const platform = platformSelect.value;
 
-        try {
-          const prompt = `Generate 4 distinct social media bio variations (1 Professional, 1 Creative, 1 Short & Punchy, 1 Minimalist) based on this details: "${input.value}"`;
-          const res = await fetch('/api/generate', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ prompt, type: 'bio' })
+        const selectedTemplates = templates[tone] || templates['Aesthetic & Creative'];
+        resultsContainer.innerHTML = '';
+
+        selectedTemplates.forEach((tpl, index) => {
+          let bioText = tpl.replace(/{keywords}/g, keywords);
+          
+          const card = document.createElement('div');
+          card.className = 'bio-result-card';
+
+          const textSpan = document.createElement('div');
+          textSpan.className = 'bio-text';
+          textSpan.innerText = bioText;
+
+          const copyBtn = document.createElement('button');
+          copyBtn.className = 'btn-copy';
+          copyBtn.innerText = '📋 Copy';
+
+          copyBtn.addEventListener('click', function () {
+            navigator.clipboard.writeText(bioText).then(() => {
+              copyBtn.innerText = '✅ Copied!';
+              setTimeout(() => copyBtn.innerText = '📋 Copy', 2000);
+            });
           });
 
-          const data = await res.json();
-          output.value = res.ok ? data.result : 'Error: ' + data.error;
-        } catch (err) {
-          output.value = 'Failed to connect to API.';
-        } finally {
-          btn.disabled = false;
-          btn.textContent = '✨ Generate Bios';
-        }
+          card.appendChild(textSpan);
+          card.appendChild(copyBtn);
+          resultsContainer.appendChild(card);
+        });
+
+        resultsContainer.style.display = 'flex';
       });
     });
   </script>
+
 </body>
 </html>
