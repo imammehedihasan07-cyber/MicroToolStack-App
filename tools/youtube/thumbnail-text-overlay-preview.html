@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) - Deferred Load -->
+  <!-- Google tag (gtag.js) - Optimized Load -->
   <script>
     window.addEventListener('load', function() {
       setTimeout(function() {
@@ -20,19 +20,20 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thumbnail Text Overlay Preview Tool - Free YouTube Tool | MicroToolStack</title>
-  <meta name="description" content="Preview how text and titles look on your YouTube video thumbnails before publishing. Optimize readability and click-through rates instantly online.">
-  <meta name="keywords" content="thumbnail text overlay preview, youtube thumbnail maker, thumbnail text checker, yt thumbnail font preview, click-through rate tool">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>Free Online YouTube Thumbnail Text Overlay Preview | Click-Through Rate Simulator | MicroToolStack</title>
+  <meta name="description" content="Preview YouTube video thumbnail text overlays and play button badge placements online for free. Test CTR appeal, typography, and image cropping before publishing.">
+  <meta name="keywords" content="youtube thumbnail text overlay preview, thumbnail ctr simulator, yt thumbnail editor online, preview youtube thumbnail with text, video thumbnail tester, youtube tools, microtoolstack">
 
   <link rel="canonical" href="https://microtoolstack.com/tools/youtube/thumbnail-text-overlay-preview.html">
   <meta name="robots" content="index, follow">
 
-  <!-- Open Graph / Social Media Meta Tags -->
+  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Thumbnail Text Overlay Preview Tool - Free YouTube Tool | MicroToolStack">
-  <meta property="og:description" content="Preview how text and titles look on your YouTube video thumbnails before publishing. Optimize readability and click-through rates instantly online.">
   <meta property="og:url" content="https://microtoolstack.com/tools/youtube/thumbnail-text-overlay-preview.html">
-  <meta property="og:site_name" content="MicroToolStack">
+  <meta property="og:title" content="Free Online YouTube Thumbnail Text Overlay Preview | MicroToolStack">
+  <meta property="og:description" content="Simulate how text overlays and play button badges look on your YouTube thumbnails in real time. 100% free web utility.">
   <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
@@ -40,49 +41,57 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
   <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
-  <!-- Fonts & CSS Stylesheets -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
-  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
-
-  <!-- JSON-LD Schema Markup -->
+  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "WebApplication",
-        "@id": "https://microtoolstack.com/tools/youtube/thumbnail-text-overlay-preview.html#webapp",
-        "url": "https://microtoolstack.com/tools/youtube/thumbnail-text-overlay-preview.html",
-        "name": "Thumbnail Text Overlay Preview Tool",
-        "applicationCategory": "UtilitiesApplication",
+        "@type": "SoftwareApplication",
+        "name": "YouTube Thumbnail Text Overlay Preview Tool",
         "operatingSystem": "All",
+        "applicationCategory": "UtilitiesApplication",
         "offers": {
           "@type": "Offer",
           "price": "0",
           "priceCurrency": "USD"
         },
-        "description": "Preview and test how text titles appear over YouTube thumbnails to maximize click-through rates."
+        "description": "An essential client-side YouTube creator utility that overlays headline text and simulates player time badge placements on thumbnail artwork.",
+        "url": "https://microtoolstack.com/tools/youtube/thumbnail-text-overlay-preview.html"
       },
       {
         "@type": "FAQPage",
-        "@id": "https://microtoolstack.com/tools/youtube/thumbnail-text-overlay-preview.html#faq",
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "Why is testing thumbnail text important?",
+            "name": "Why is thumbnail text overlay important for YouTube CTR?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Most viewers browse YouTube on mobile screens where small text can become unreadable. Previewing text overlay helps ensure bold legibility."
+              "text": "Thumbnails are a creator's primary advertising billboard on YouTube. Adding bold, readable text overlays helps viewers quickly understand video value, increasing click-through rates (CTR)."
             }
           },
           {
             "@type": "Question",
-            "name": "What is the best font size for YouTube thumbnails?",
+            "name": "What areas should I avoid putting text on a YouTube thumbnail?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Using short, punchy phrases with large, bold text styles (usually above 60px equivalent on desktop) works best for high click-through rates."
+              "text": "Avoid placing important text in the bottom-right corner of your thumbnail, as YouTube renders the video length duration badge over this area."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my thumbnail image saved on remote servers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No! All image rendering, text overlays, and canvas manipulations execute 100% locally inside your web browser session using HTML5 Canvas. Your files remain completely private."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this Thumbnail Text Overlay Preview tool free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, MicroToolStack's Thumbnail Text Overlay Preview is 100% free with unlimited previews and no registration required."
             }
           }
         ]
@@ -91,47 +100,74 @@
   }
   </script>
 
+  <!-- Preconnect and Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
   <style>
-    .tool-input {
-      width: 100%;
-      padding: 0.8rem;
-      border-radius: 8px;
-      border: 1px solid var(--border-color, #333);
-      background: var(--bg-body, #111827);
-      color: var(--text-primary, #fff);
-      font-size: 1rem;
-      box-sizing: border-box;
-      outline: none;
-      margin-bottom: 1rem;
+    .input-group {
+      margin-bottom: 1.25rem;
     }
-    .tool-input:focus {
+    .input-label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.5rem;
+    }
+    .form-control, .form-select {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
+      color: var(--text-primary, #fff);
+      outline: none;
+      box-sizing: border-box;
+    }
+    .form-control:focus, .form-select:focus {
       border-color: var(--accent-primary, #3b82f6);
     }
-    .preview-box {
+
+    /* Canvas Stage Container */
+    .preview-stage {
       width: 100%;
-      aspect-ratio: 16 / 9;
-      background-size: cover;
-      background-position: center;
-      background-color: #1f2937;
-      border-radius: 10px;
-      border: 2px dashed var(--border-color, #4b5563);
+      background: #111827;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      box-sizing: border-box;
+      margin-bottom: 1.5rem;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-      margin-top: 1rem;
+      overflow-x: auto;
     }
-    .overlay-text {
-      font-weight: 900;
-      text-transform: uppercase;
-      text-align: center;
-      padding: 0.5rem 1rem;
-      max-width: 90%;
-      word-break: break-word;
-      line-height: 1.1;
-      text-shadow: 3px 3px 0px #000, -2px -2px 0px #000, 2px -2px 0px #000, -2px 2px 0px #000;
+
+    #thumbnail-canvas {
+      width: 100%;
+      max-width: 640px;
+      height: auto;
+      aspect-ratio: 16 / 9;
+      border-radius: 6px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+      border: 1px solid #374151;
     }
+
+    .controls-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.5rem;
+    }
+
     .content-box {
       background-color: var(--bg-card, #1e1e2e);
       border: 1px solid var(--border-color, #333);
@@ -144,12 +180,18 @@
       margin-bottom: 1rem;
       color: var(--text-primary, #fff);
     }
-    .content-box p, .content-box ul, .content-box ol {
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul {
       color: var(--text-secondary, #9ca3af);
       font-size: 0.95rem;
       line-height: 1.6;
     }
-    .content-box ul, .content-box ol {
+    .content-box ul {
       padding-left: 1.25rem;
       margin-bottom: 1rem;
     }
@@ -192,161 +234,281 @@
     </nav>
   </header>
 
+  <!-- Main Container -->
   <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
-    <!-- Breadcrumb Navigation -->
-    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
-      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
-      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">YouTube Tools</a> / 
-      <span>Thumbnail Text Overlay Preview</span>
-    </nav>
+    
+    <!-- Tool Title & Description -->
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">YouTube Thumbnail Text Overlay Preview</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Test thumbnail text overlays, typography, and YouTube duration badge placements before publishing.</p>
+    </div>
 
-    <!-- Header Area -->
-    <header style="margin-bottom: 2rem; text-align: center;">
-      <h1 class="hero" style="font-size: 2rem; margin-bottom: 0.5rem; color: #fff;">Thumbnail Text Overlay Preview Tool</h1>
-      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">
-        Preview how text and titles look on your YouTube video thumbnails before publishing.
-      </p>
-    </header>
+    <!-- Canvas Preview Stage -->
+    <div class="preview-stage">
+      <canvas id="thumbnail-canvas" width="1280" height="720"></canvas>
+      <div style="font-size: 0.8rem; color: #9ca3af; margin-top: 0.75rem;">Standard YouTube HD Resolution: 1280 × 720 Pixels (16:9 Ratio)</div>
+    </div>
 
-    <!-- Tool Card -->
-    <div class="card" style="padding: 2rem; border-radius: 12px; background: var(--bg-card, #1e1e2e); border: 1px solid var(--border-color, #333); margin-bottom: 3rem;">
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+    <!-- Inputs Settings Card -->
+    <div class="content-box" style="margin-bottom: 1.5rem;">
+      <div class="input-group">
+        <label for="input-overlay-text" class="input-label">Thumbnail Overlay Text</label>
+        <input type="text" id="input-overlay-text" class="form-control" value="HOW TO GET 1M VIEWS!" placeholder="Enter bold thumbnail headline...">
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;" class="input-group">
         <div>
-          <label style="display: block; font-size: 0.9rem; margin-bottom: 0.4rem; color: #fff; font-weight: 600;">Thumbnail Text:</label>
-          <input type="text" id="thumbText" class="tool-input" value="HUGE MISTAKE!" oninput="updatePreview()">
+          <label for="text-color" class="input-label">Text Color</label>
+          <select id="text-color" class="form-select">
+            <option value="#ffffff" selected>White</option>
+            <option value="#facc15">Yellow</option>
+            <option value="#38bdf8">Cyan Blue</option>
+            <option value="#ef4444">Bright Red</option>
+          </select>
         </div>
         <div>
-          <label style="display: block; font-size: 0.9rem; margin-bottom: 0.4rem; color: #fff; font-weight: 600;">Text Color:</label>
-          <input type="color" id="textColor" value="#ffff00" style="width: 100%; height: 42px; border-radius: 8px; border: 1px solid var(--border-color, #333); background: var(--bg-body, #111827); cursor: pointer;" oninput="updatePreview()">
+          <label for="bg-theme" class="input-label">Background Base Theme</label>
+          <select id="bg-theme" class="form-select">
+            <option value="gradient-dark" selected>Dark Studio Gradient</option>
+            <option value="gradient-blue">Blue Tech Gradient</option>
+            <option value="solid-black">Solid Dark Studio</option>
+          </select>
         </div>
       </div>
 
-      <div style="margin-top: 1rem;">
-        <label style="display: block; font-size: 0.9rem; margin-bottom: 0.4rem; color: #fff; font-weight: 600;">Upload Background Image (Optional):</label>
-        <input type="file" id="bgImageInput" accept="image/*" class="tool-input" style="padding: 0.5rem;" onchange="loadBgImage(event)">
-      </div>
-
-      <!-- Live Preview Area -->
-      <div style="margin-top: 1.5rem;">
-        <label style="display: block; font-size: 0.9rem; margin-bottom: 0.4rem; color: var(--text-secondary, #9ca3af);">Live 16:9 Thumbnail Preview:</label>
-        <div id="previewContainer" class="preview-box">
-          <div id="previewText" class="overlay-text" style="color: #ffff00; font-size: 2.2rem;">HUGE MISTAKE!</div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;" class="input-group" style="margin-bottom: 0;">
+        <div>
+          <label for="text-align" class="input-label">Text Position</label>
+          <select id="text-align" class="form-select">
+            <option value="left" selected>Left Aligned</option>
+            <option value="center">Centered</option>
+          </select>
+        </div>
+        <div>
+          <label for="show-badge" class="input-label">YouTube Time Badge</label>
+          <select id="show-badge" class="form-select">
+            <option value="yes" selected>Show Duration Badge (10:24)</option>
+            <option value="no">Hide Badge</option>
+          </select>
         </div>
       </div>
     </div>
 
-    <!-- SEO Content Box: What is -->
-    <div class="content-box">
-      <h2>What is a Thumbnail Text Overlay Preview Tool?</h2>
-      <p>
-        A <strong>Thumbnail Text Overlay Preview Tool</strong> is a specialized creation utility that allows YouTube content creators to test typography, readability, and placement over thumbnail graphics before exporting or publishing. Since click-through rates (CTR) heavily depend on how easily a viewer can read your title words on small mobile screens, this preview simulation prevents low-performing thumbnail layouts.
-      </p>
+    <!-- Controls Bar -->
+    <div class="controls-bar">
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-download" class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-weight: 600; cursor: pointer; background: #10b981;">💾 Download Thumbnail (HD PNG)</button>
+      </div>
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-reset" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Reset Defaults</button>
+      </div>
     </div>
 
-    <!-- SEO Content Box: Why Use -->
+    <!-- SEO Article Content Box 1 -->
     <div class="content-box">
-      <h2>Why Use a Thumbnail Text Previewer?</h2>
-      <p style="margin-bottom: 1rem;">
-        Designing compelling visual assets requires strict attention to detail. Utilizing a dedicated preview tester offers distinct strategic advantages:
-      </p>
+      <h2>Why Thumbnail Text Overlays Drive YouTube Click-Through Rates</h2>
+      <p>On YouTube, your video thumbnail is your most powerful marketing asset. Viewers scroll through feeds in seconds, and bold, easily readable text overlays help communicate your video's core value proposition instantly.</p>
+
+      <p>However, creators often make mistakes such as placing crucial text in the bottom-right corner, where YouTube overlays its dark timestamp duration badge. Our free <strong>YouTube Thumbnail Text Overlay Preview</strong> lets you test typography, color contrast, and badge placement before uploading.</p>
+    </div>
+
+    <!-- SEO Article Content Box 2 -->
+    <div class="content-box">
+      <h2>Best Practices for High-CTR YouTube Thumbnails</h2>
+      <p>Key design considerations for optimizing video impressions:</p>
+
       <ul>
-        <li><strong>Optimizes Mobile Legibility:</strong> Most YouTube traffic originates from mobile devices where small text gets easily obscured. Testing text scale ensures clarity.</li>
-        <li><strong>Enhances Color Contrast:</strong> Checking text colors against varied background photos prevents color blending and visibility issues.</li>
-        <li><strong>Boosts Click-Through Rates (CTR):</strong> Clear, impactful phrasing directly grabs viewer attention in competitive recommended sidebars.</li>
+        <li><strong>Keep Text Short:</strong> Limit thumbnail text to 3 to 5 large words. Viewers look at thumbnails for less than a second on mobile screens.</li>
+        <li><strong>High Color Contrast:</strong> Pair bright white or yellow text against dark contrasting backgrounds to ensure readability on small phone displays.</li>
+        <li><strong>Avoid the Bottom-Right Corner:</strong> Never place important text or branding in the bottom-right corner, as the YouTube player timestamp badge covers it.</li>
       </ul>
     </div>
 
-    <!-- SEO Content Box: Features & How to Use -->
+    <!-- SEO Article Content Box 3 -->
     <div class="content-box">
-      <h2>How to Use the Thumbnail Preview Tool</h2>
-      <ol>
-        <li>Type your catchy video headline or keyword phrase into the <strong>Thumbnail Text</strong> box.</li>
-        <li>Select a contrasting high-visibility text color using the color picker tool.</li>
-        <li>Upload a custom background image or preview against the default template canvas.</li>
-        <li>Inspect the live preview to verify that your message reads clearly at a glance.</li>
-      </ol>
-    </div>
-
-    <!-- SEO Content Box: Examples -->
-    <div class="content-box">
-      <h2>Best Practices for High-Converting Thumbnail Text</h2>
-      <p style="margin-bottom: 1rem;">Top creators follow specific psychological and design rules for thumbnail text:</p>
+      <h2>Features of MicroToolStack's Thumbnail Preview Tool</h2>
       <ul>
-        <li><strong>Keep it Under 4 Words:</strong> Short phrases like "I WAS WRONG" or "STOP DOING THIS" perform significantly better than long sentences.</li>
-        <li><strong>Use Contrasting Colors:</strong> Yellow, white, and bright green text stand out powerfully against dark or outdoor photographic backgrounds.</li>
-        <li><strong>Avoid Repeating Video Titles:</strong> Your thumbnail text should complement your main video title rather than duplicating word-for-word.</li>
+        <li><strong>Instant HTML5 Canvas Preview:</strong> Renders high-definition 1280x720 previews directly in browser memory.</li>
+        <li><strong>Duration Badge Simulation:</strong> Tests how your text interacts with the simulated YouTube player time badge.</li>
+        <li><strong>100% Client-Side Privacy:</strong> All graphic rendering executes locally in your browser session. Your images and text remain completely private.</li>
+        <li><strong>Free & Unlimited Usage:</strong> No download caps or account sign-ups required.</li>
       </ul>
     </div>
 
-    <!-- Internal Linking Section (SEO Best Practice) -->
+    <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
     <div class="content-box">
-      <h2>Explore Related YouTube & SEO Tools</h2>
-      <p>Supercharge your video channel growth with our free digital tools:</p>
+      <h2>Explore Related YouTube & Creator Tools</h2>
+      <p>Discover our complementary online webmaster utilities:</p>
       <div class="related-links">
         <a href="/tools/youtube/thumbnail-downloader.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🖼️ Thumbnail Downloader</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Extract high-res video thumbnails instantly.</span>
+          <strong style="display:block; margin-bottom: 0.25rem;">🖼️ YouTube Thumbnail Downloader</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Download high-res HD video thumbnails instantly.</span>
         </a>
-        <a href="/tools/youtube/youtube-title-generator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">📝 YouTube Title Generator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Generate high-ranking catchy video titles.</span>
+        <a href="/tools/youtube/embed-generator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">💻 YouTube Embed Generator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Generate responsive video iframe embed codes.</span>
         </a>
-        <a href="/tools/seo/meta-title-generator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🏷️ Meta Title Generator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Optimize title tags for search engine results.</span>
+        <a href="/tools/social-media/linkedin-banner-creator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🎨 LinkedIn Banner Creator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Design custom 1584x396 profile header banners.</span>
         </a>
       </div>
     </div>
 
     <!-- FAQ Section -->
     <div class="content-box">
-      <h2>Frequently Asked Questions</h2>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: #fff; margin-bottom: 0.25rem;">Why is testing thumbnail text important?</h3>
-        <p>Most viewers browse YouTube on mobile screens where small text can become unreadable. Previewing text overlay helps ensure bold legibility.</p>
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What is the recommended size for YouTube thumbnails?</h3>
+        <p>YouTube recommends uploading thumbnails at 1280 x 720 pixels (16:9 aspect ratio) in JPG or PNG format under 2MB.</p>
       </div>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: #fff; margin-bottom: 0.25rem;">What is the best font size for YouTube thumbnails?</h3>
-        <p>Using short, punchy phrases with large, bold text styles (usually above 60px equivalent on desktop) works best for high click-through rates.</p>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Why should I avoid the bottom-right corner of my thumbnail?</h3>
+        <p>YouTube overlays the video length badge (e.g., '10:24') over the bottom-right corner across all search and home feed cards.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is my image data saved on remote servers?</h3>
+        <p>No. All rendering runs client-side inside your browser session using HTML5 Canvas. Your designs remain 100% private.</p>
       </div>
       <div>
-        <h3 style="font-size: 1.05rem; color: #fff; margin-bottom: 0.25rem;">Does this tool upload my images to a server?</h3>
-        <p>No! All image rendering and text preview processes run 100% locally inside your web browser for complete privacy.</p>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this Thumbnail Preview Tool free?</h3>
+        <p>Yes, MicroToolStack's Thumbnail Preview Tool is 100% free with no usage limits or sign-up required.</p>
       </div>
     </div>
 
   </main>
 
-  <!-- Footer Placeholder -->
+  <!-- Footer Container Placeholder -->
   <div id="footer-container"></div>
 
-  <!-- Core Scripts -->
+  <!-- JavaScript Utilities & Logic -->
   <script src="/assets/js/theme.js"></script>
   <script src="/assets/js/utils.js" defer></script>
-  <script src="/assets/js/search.js" defer></script>
   <script src="/assets/js/app.js" defer></script>
 
-  <!-- Tool Logic -->
   <script>
-    function updatePreview() {
-      const text = document.getElementById('thumbText').value || 'YOUR TEXT HERE';
-      const color = document.getElementById('textColor').value;
-      const previewText = document.getElementById('previewText');
-      
-      previewText.innerText = text;
-      previewText.style.color = color;
-    }
+    document.addEventListener('DOMContentLoaded', function() {
+      const canvas = document.getElementById('thumbnail-canvas');
+      const ctx = canvas.getContext('2d');
 
-    function loadBgImage(event) {
-      const file = event.target.files[0];
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-          document.getElementById('previewContainer').style.backgroundImage = `url('${e.target.result}')`;
+      const inputOverlayText = document.getElementById('input-overlay-text');
+      const textColorSelect = document.getElementById('text-color');
+      const bgThemeSelect = document.getElementById('bg-theme');
+      const textAlignSelect = document.getElementById('text-align');
+      const showBadgeSelect = document.getElementById('show-badge');
+
+      const btnDownload = document.getElementById('btn-download');
+      const btnReset = document.getElementById('btn-reset');
+
+      function drawThumbnail() {
+        const width = canvas.width;  // 1280
+        const height = canvas.height; // 720
+
+        // 1. Background Base
+        const theme = bgThemeSelect.value;
+        let grad;
+        if (theme === 'gradient-dark') {
+          grad = ctx.createLinearGradient(0, 0, width, height);
+          grad.addColorStop(0, '#1e293b');
+          grad.addColorStop(1, '#0f172a');
+        } else if (theme === 'gradient-blue') {
+          grad = ctx.createLinearGradient(0, 0, width, height);
+          grad.addColorStop(0, '#1d4ed8');
+          grad.addColorStop(1, '#0284c7');
+        } else {
+          // solid-black
+          ctx.fillStyle = '#090d16';
+          ctx.fillRect(0, 0, width, height);
         }
-        reader.readAsDataURL(file);
+
+        if (theme !== 'solid-black') {
+          ctx.fillStyle = grad;
+          ctx.fillRect(0, 0, width, height);
+        }
+
+        // Add subtle studio lighting graphic
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.04)';
+        ctx.beginPath();
+        ctx.arc(width / 2, height / 2, 450, 0, Math.PI * 2);
+        ctx.fill();
+
+        // 2. Overlay Text
+        const text = inputOverlayText.value.trim() || 'YOUR THUMBNAIL TEXT';
+        const color = textColorSelect.value;
+        const align = textAlignSelect.value;
+
+        ctx.fillStyle = color;
+        ctx.font = 'bold 82px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+        ctx.textBaseline = 'middle';
+
+        const lines = text.split('
+');
+        const lineHeight = 96;
+        const totalTextHeight = lines.length * lineHeight;
+        let startY = (height / 2) - (totalTextHeight / 2) + 20;
+
+        lines.forEach((line, idx) => {
+          const currentY = startY + (idx * lineHeight);
+          if (align === 'center') {
+            ctx.textAlign = 'center';
+            ctx.fillText(line, width / 2, currentY);
+          } else {
+            ctx.textAlign = 'left';
+            ctx.fillText(line, 100, currentY);
+          }
+        });
+
+        // 3. YouTube Time Badge Simulation
+        if (showBadgeSelect.value === 'yes') {
+          const badgeWidth = 110;
+          const badgeHeight = 44;
+          const badgeX = width - badgeWidth - 24;
+          const badgeY = height - badgeHeight - 24;
+
+          ctx.fillStyle = 'rgba(0, 0, 0, 0.8)';
+          if (ctx.roundRect) {
+            ctx.beginPath();
+            ctx.roundRect(badgeX, badgeY, badgeWidth, badgeHeight, 6);
+            ctx.fill();
+          } else {
+            ctx.fillRect(badgeX, badgeY, badgeWidth, badgeHeight);
+          }
+
+          ctx.fillStyle = '#ffffff';
+          ctx.font = 'bold 22px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          ctx.fillText('10:24', badgeX + (badgeWidth / 2), badgeY + (badgeHeight / 2));
+        }
       }
-    }
+
+      [inputOverlayText, textColorSelect, bgThemeSelect, textAlignSelect, showBadgeSelect].forEach(el => {
+        el.addEventListener('input', drawThumbnail);
+        el.addEventListener('change', drawThumbnail);
+      });
+
+      btnDownload.addEventListener('click', function() {
+        drawThumbnail();
+        const link = document.createElement('a');
+        link.download = 'youtube-thumbnail-preview.png';
+        link.href = canvas.toDataURL('image/png');
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      });
+
+      btnReset.addEventListener('click', function() {
+        inputOverlayText.value = 'HOW TO GET 1M VIEWS!';
+        textColorSelect.value = '#ffffff';
+        bgThemeSelect.value = 'gradient-dark';
+        textAlignSelect.value = 'left';
+        showBadgeSelect.value = 'yes';
+        drawThumbnail();
+      });
+
+      // Initial Render
+      drawThumbnail();
+    });
   </script>
 </body>
 </html>
