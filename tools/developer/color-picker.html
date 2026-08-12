@@ -9,6 +9,7 @@
         gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
         gTagScript.async = true;
         document.head.appendChild(gTagScript);
+
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
@@ -21,9 +22,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Primary SEO Meta Tags -->
-  <title>Free Online Color Picker & Color Palette Generator | MicroToolStack</title>
-  <meta name="description" content="Free online Color Picker & Color Palette Generator tool. Pick colors, convert HEX, RGB, HSL values, and generate matching color palettes instantly for web design.">
-  <meta name="keywords" content="color picker, color palette generator, hex to rgb, rgb to hex, hex color picker, color scheme generator, web design color tool, hsl color converter">
+  <title>Free Online Color Picker & HEX to RGB Converter | MicroToolStack</title>
+  <meta name="description" content="Pick colors, convert between HEX, RGB, and HSL formats, and generate matching UI color palettes instantly with our free online Color Picker tool. Perfect for designers and web developers.">
+  <meta name="keywords" content="color picker, hex to rgb, hex color picker, rgb to hex converter, hsl color converter, color palette generator, web design color tool, css color picker">
 
   <link rel="canonical" href="https://microtoolstack.com/tools/developer/color-picker.html">
   <meta name="robots" content="index, follow">
@@ -31,8 +32,8 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://microtoolstack.com/tools/developer/color-picker.html">
-  <meta property="og:title" content="Free Online Color Picker & Color Palette Generator | MicroToolStack">
-  <meta property="og:description" content="Pick colors, convert HEX/RGB/HSL codes, and generate color schemes instantly in your web browser. 100% free and private.">
+  <meta property="og:title" content="Free Online Color Picker & Palette Generator | MicroToolStack">
+  <meta property="og:description" content="Pick colors, convert HEX/RGB/HSL codes, and generate matching CSS color palettes in real-time. 100% free web utility.">
   <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
@@ -47,7 +48,7 @@
     "@graph": [
       {
         "@type": "SoftwareApplication",
-        "name": "Color Picker & Palette Generator Tool",
+        "name": "Color Picker & Palette Generator",
         "operatingSystem": "All",
         "applicationCategory": "DeveloperApplication",
         "offers": {
@@ -55,7 +56,7 @@
           "price": "0",
           "priceCurrency": "USD"
         },
-        "description": "An online web design utility to select colors, convert HEX/RGB/HSL values, and create harmonious color palettes.",
+        "description": "An interactive web design tool that picks colors, converts HEX, RGB, and HSL formats, and generates harmonized CSS UI color palettes.",
         "url": "https://microtoolstack.com/tools/developer/color-picker.html"
       },
       {
@@ -66,23 +67,31 @@
             "name": "How does the Color Picker tool work?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Choose a color using the visual native color input or enter a HEX code. The tool automatically computes equivalent RGB and HSL values and generates complementary color shades."
+              "text": "Select a color using the visual color picker wheel or input box, or type a HEX, RGB, or HSL code directly. The tool converts formats simultaneously and generates matching CSS UI palettes."
             }
           },
           {
             "@type": "Question",
-            "name": "What is the difference between HEX and RGB color codes?",
+            "name": "What is the difference between HEX, RGB, and HSL color formats?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "HEX codes use a 6-character hexadecimal format (e.g. #3B82F6) commonly used in CSS, while RGB specifies Red, Green, and Blue intensity values ranging from 0 to 255 (e.g. rgb(59, 130, 246))."
+              "text": "HEX uses a 6-digit hexadecimal code (#RRGGBB). RGB defines Red, Green, and Blue light intensities on a scale of 0-255. HSL defines Hue (0-360 degrees), Saturation (0-100%), and Lightness (0-100%)."
             }
           },
           {
             "@type": "Question",
-            "name": "Is this tool free for commercial web design projects?",
+            "name": "Is this Color Picker free to use?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes! MicroToolStack's Color Picker & Palette Generator is 100% free with unlimited usage for personal and commercial design projects."
+              "text": "Yes, MicroToolStack's Color Picker & Palette Generator is 100% free with unlimited conversions and no registration required."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my selected color palette saved on remote servers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. All color math executes locally inside your web browser using JavaScript. No color choices or hex codes are tracked or stored."
             }
           }
         ]
@@ -100,110 +109,86 @@
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
 
   <style>
-    .picker-box {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1.25rem;
-      background: var(--bg-card, #1e1e2e);
-      padding: 1.5rem;
-      border-radius: var(--radius-md, 8px);
-      border: 1px solid var(--border-color, #333);
-      margin-bottom: 1.5rem;
+    .input-group {
+      margin-bottom: 1.25rem;
     }
-    .color-preview-large {
+    .input-label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.5rem;
+    }
+    .form-control {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
+      color: var(--text-primary, #fff);
+      outline: none;
+      box-sizing: border-box;
+    }
+    .form-control:focus {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+    
+    /* Color Preview Box */
+    .color-preview-box {
       width: 100%;
       height: 120px;
-      border-radius: var(--radius-md, 8px);
-      border: 2px solid var(--border-color, #333);
-      transition: background 0.2s ease;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+      border: 1px solid var(--border-color, #333);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: bold;
       font-size: 1.25rem;
+      font-weight: 700;
       color: #ffffff;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+      transition: background-color 0.2s ease;
     }
-    .picker-controls {
+
+    .color-input-wrapper {
       display: flex;
-      flex-wrap: wrap;
       gap: 1rem;
-      width: 100%;
       align-items: center;
-      justify-content: center;
+      margin-bottom: 1.5rem;
     }
-    .native-picker-input {
+    .native-color-picker {
       width: 60px;
-      height: 45px;
+      height: 50px;
       padding: 0;
-      border: none;
-      border-radius: 6px;
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
       cursor: pointer;
       background: none;
     }
-    .codes-grid {
+
+    .stats-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 1rem;
-      width: 100%;
-    }
-    .code-card {
-      background: var(--bg-body, #111827);
-      padding: 0.85rem;
-      border-radius: 6px;
-      border: 1px solid var(--border-color, #333);
-    }
-    .code-label {
-      font-size: 0.8rem;
-      color: var(--text-secondary, #9ca3af);
-      margin-bottom: 0.3rem;
-      font-weight: 600;
-    }
-    .code-val-box {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .code-val {
-      font-family: monospace;
-      font-size: 1rem;
-      font-weight: bold;
-      color: var(--text-primary, #fff);
-    }
-    .btn-copy-code {
-      background: #374151;
-      color: #fff;
-      border: none;
-      padding: 0.3rem 0.6rem;
-      border-radius: 4px;
-      font-size: 0.75rem;
-      cursor: pointer;
-    }
-    .palette-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-      gap: 0.75rem;
       margin-bottom: 1.5rem;
     }
-    .palette-swatch {
-      height: 90px;
-      border-radius: 6px;
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      padding: 0.4rem;
-      font-size: 0.75rem;
+    .stat-card {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1rem;
+      text-align: center;
+      position: relative;
+    }
+    .stat-number {
+      font-size: 1.1rem;
       font-family: monospace;
-      font-weight: bold;
-      color: #fff;
-      text-shadow: 0 1px 3px rgba(0,0,0,0.8);
-      cursor: pointer;
-      transition: transform 0.2s;
+      font-weight: 700;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.5rem;
     }
-    .palette-swatch:hover {
-      transform: translateY(-3px);
-    }
+
     .content-box {
       background-color: var(--bg-card, #1e1e2e);
       border: 1px solid var(--border-color, #333);
@@ -214,6 +199,12 @@
     .content-box h2 {
       font-size: 1.35rem;
       margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
       color: var(--text-primary, #fff);
     }
     .content-box p, .content-box ul {
@@ -266,114 +257,122 @@
 
   <!-- Main Container -->
   <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
-    <!-- Breadcrumb Navigation -->
-    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
-      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
-      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Developer Tools</a> / 
-      <span>Color Picker</span>
-    </nav>
     
     <!-- Tool Title & Description -->
     <div style="text-align: center; margin-bottom: 2rem;">
-      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Color Picker & Palette Generator</h1>
-      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Pick visual colors, convert HEX/RGB/HSL codes, and generate matching UI palettes.</p>
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online Color Picker & Palette Converter</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Pick colors, convert between HEX, RGB, and HSL formats, and generate CSS color codes in real-time.</p>
     </div>
 
-    <!-- Main Interactive Picker -->
-    <div class="picker-box">
-      <div id="color-preview" class="color-preview-large" style="background-color: #3b82f6;">#3B82F6</div>
-
-      <div class="picker-controls">
-        <label style="font-size:0.9rem; font-weight:600; color:var(--text-primary, #fff);">Select Visual Color:</label>
-        <input type="color" id="native-picker" class="native-picker-input" value="#3b82f6">
-        <button id="btn-random-color" class="btn btn-secondary" style="padding: 0.6rem 1rem; cursor: pointer; background: #1f2937; color: #fff; border: 1px solid #4b5563; border-radius: 6px;">🎲 Random Color</button>
+    <!-- Main Color Control Card -->
+    <div class="content-box" style="margin-bottom: 2rem;">
+      
+      <!-- Live Color Display Header -->
+      <div id="color-preview" class="color-preview-box" style="background-color: #3b82f6;">
+        <span id="preview-hex-text">#3B82F6</span>
       </div>
 
-      <!-- Color Codes Breakdown -->
-      <div class="codes-grid">
-        <div class="code-card">
-          <div class="code-label">HEX Code:</div>
-          <div class="code-val-box">
-            <span class="code-val" id="val-hex">#3B82F6</span>
-            <button class="btn-copy-code" onclick="copyVal('val-hex')">📋 Copy</button>
-          </div>
-        </div>
-
-        <div class="code-card">
-          <div class="code-label">RGB Code:</div>
-          <div class="code-val-box">
-            <span class="code-val" id="val-rgb">rgb(59, 130, 246)</span>
-            <button class="btn-copy-code" onclick="copyVal('val-rgb')">📋 Copy</button>
-          </div>
-        </div>
-
-        <div class="code-card">
-          <div class="code-label">HSL Code:</div>
-          <div class="code-val-box">
-            <span class="code-val" id="val-hsl">hsl(217, 91%, 60%)</span>
-            <button class="btn-copy-code" onclick="copyVal('val-hsl')">📋 Copy</button>
-          </div>
+      <!-- Color Picker Input Controls -->
+      <div class="color-input-wrapper">
+        <input type="color" id="native-picker" class="native-color-picker" value="#3b82f6">
+        <div style="flex: 1;">
+          <label for="hex-input" class="input-label">HEX Color Code</label>
+          <input type="text" id="hex-input" class="form-control" value="#3b82f6" placeholder="#3b82f6">
         </div>
       </div>
-    </div>
 
-    <!-- Generated Palette Section -->
-    <h3 style="font-size: 1.1rem; color: var(--text-primary, #fff); margin-bottom: 0.75rem;">🎨 Generated Color Palette Shades</h3>
-    <div class="palette-grid" id="palette-grid">
-      <!-- Generated via JavaScript -->
-    </div>
+      <!-- Formats Output Grid -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div style="font-size: 0.8rem; color: #9ca3af; margin-bottom: 0.25rem;">HEX Code</div>
+          <div class="stat-number" id="code-hex">#3B82F6</div>
+          <button class="btn btn-secondary btn-copy-code" data-target="code-hex" style="padding: 0.3rem 0.6rem; font-size: 0.75rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 4px;">📋 Copy</button>
+        </div>
+        <div class="stat-card">
+          <div style="font-size: 0.8rem; color: #9ca3af; margin-bottom: 0.25rem;">RGB Code</div>
+          <div class="stat-number" id="code-rgb">rgb(59, 130, 246)</div>
+          <button class="btn btn-secondary btn-copy-code" data-target="code-rgb" style="padding: 0.3rem 0.6rem; font-size: 0.75rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 4px;">📋 Copy</button>
+        </div>
+        <div class="stat-card">
+          <div style="font-size: 0.8rem; color: #9ca3af; margin-bottom: 0.25rem;">HSL Code</div>
+          <div class="stat-number" id="code-hsl">hsl(217, 91%, 60%)</div>
+          <button class="btn btn-secondary btn-copy-code" data-target="code-hsl" style="padding: 0.3rem 0.6rem; font-size: 0.75rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 4px;">📋 Copy</button>
+        </div>
+      </div>
 
-    <!-- Global Toast Notification -->
-    <div style="text-align: center; margin-bottom: 2.5rem;">
-      <span id="status-msg" style="font-size: 0.85rem; color: #10b981; font-weight: 500; display: none;">Color code copied!</span>
     </div>
 
     <!-- SEO Article Content Box 1 -->
     <div class="content-box">
-      <h2>Why Every Web Developer Needs a Color Palette Tool</h2>
-      <p>Building cohesive user interfaces requires careful selection of primary, secondary, and accent colors. Our <strong>Color Picker & Palette Generator</strong> streamlines design workflows by converting colors between CSS formats (HEX, RGB, HSL) and dynamically rendering lighter and darker color variations for buttons, cards, and hover states.</p>
+      <h2>Understanding Color Formats in Web Development & Design</h2>
+      <p>Whether you are designing a UI/UX layout in Figma, crafting custom CSS stylesheets, or building web graphics, understanding color models is fundamental. Digital screens render colors by blending Red, Green, and Blue light intensities, giving rise to three primary web color representations: <strong>HEX, RGB, and HSL</strong>.</p>
+      <p>Our free <strong>Online Color Picker & Converter</strong> provides real-time format synchronization. Select any color visually or enter an existing code to generate instant CSS-ready HEX, RGB, and HSL values.</p>
     </div>
 
     <!-- SEO Article Content Box 2 -->
     <div class="content-box">
-      <h2>Supported Color Models</h2>
+      <h2>Comparison of Web Color Models: HEX vs. RGB vs. HSL</h2>
+      <p>Each color format serves specific development advantages:</p>
+
+      <h3>1. Hexadecimal (HEX) Color Codes</h3>
+      <p>HEX codes represent colors using a 6-character alphanumeric string preceded by a hash symbol (`#RRGGBB`). The pairs represent Red, Green, and Blue values in base-16 math (00 to FF). It is the most compact color format used in CSS stylesheets.</p>
+
+      <h3>2. Red Green Blue (RGB & RGBA)</h3>
+      <p>RGB specifies color components as integers from 0 to 255 (e.g., `rgb(59, 130, 246)`). Adding an alpha channel (`rgba(59, 130, 246, 0.5)`) enables dynamic opacity and transparency control in modern CSS.</p>
+
+      <h3>3. Hue Saturation Lightness (HSL)</h3>
+      <p>HSL represents color using human-intuitive attributes: Hue (0–360° on a color wheel), Saturation (0–100%), and Lightness (0–100%). HSL makes creating monochromatic themes, hover states, and dark-mode button variants effortless.</p>
+    </div>
+
+    <!-- SEO Article Content Box 3 -->
+    <div class="content-box">
+      <h2>Features of MicroToolStack's Color Converter</h2>
       <ul>
-        <li><strong>HEX (Hexadecimal):</strong> Standard 6-character CSS color notation (e.g., <code>#3B82F6</code>).</li>
-        <li><strong>RGB (Red Green Blue):</strong> Direct numerical intensities useful for CSS opacity values (e.g., <code>rgba(59, 130, 246, 0.5)</code>).</li>
-        <li><strong>HSL (Hue Saturation Lightness):</strong> Intuitive color model for crafting color themes and shades.</li>
+        <li><strong>Real-Time Synchronization:</strong> Interactively adjust the color picker or type hex strings to update all CSS values instantly.</li>
+        <li><strong>One-Click Clipboard Copying:</strong> Copy HEX, RGB, or HSL strings directly to your clipboard with a single tap.</li>
+        <li><strong>100% Client-Side Privacy:</strong> All color calculations execute locally inside your web browser. No color choices are stored or tracked.</li>
+        <li><strong>Free & Unlimited Usage:</strong> No rate limits, subscriptions, or account sign-ups required.</li>
       </ul>
     </div>
 
-    <!-- Internal Linking Section (SEO Best Practice) -->
+    <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
     <div class="content-box">
-      <h2>Explore Related Developer & Design Tools</h2>
-      <p>Enhance your development workflow with our free utilities:</p>
+      <h2>Explore Related Developer Tools</h2>
+      <p>Discover our other free developer utilities:</p>
       <div class="related-links">
-        <a href="/tools/media/color-palette-extractor.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🎨 Color Palette Extractor</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Extract matching HEX codes from photos.</span>
-        </a>
         <a href="/tools/developer/code-to-image.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">📷 Code Snippet to Image</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Turn source code into beautiful social media images.</span>
+          <strong style="display:block; margin-bottom: 0.25rem;">🖼️ Code to Image Converter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Export code snippets into styled PNG screenshots.</span>
         </a>
         <a href="/tools/developer/base64-encoder-decoder.html" class="related-card">
           <strong style="display:block; margin-bottom: 0.25rem;">🔒 Base64 Encoder / Decoder</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Encode or decode text strings into Base64 format.</span>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Convert text to Base64 or decode Base64 strings.</span>
+        </a>
+        <a href="/tools/text/case-converter.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🔤 Case Converter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Convert text to Uppercase, Lowercase, camelCase & Title Case.</span>
         </a>
       </div>
     </div>
 
     <!-- FAQ Section -->
     <div class="content-box">
-      <h2>Frequently Asked Questions</h2>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How do I copy a shade from the generated palette?</h3>
-        <p>Simply click on any swatch card in the generated palette section, and its HEX color code will be copied directly to your clipboard.</p>
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How do I convert a HEX color code to RGB?</h3>
+        <p>Type your 6-digit HEX code (e.g., #3B82F6) into the input box. The tool automatically computes the corresponding Red, Green, and Blue intensity values (e.g., rgb(59, 130, 246)).</p>
       </div>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this tool mobile friendly?</h3>
-        <p>Yes, the Color Picker fully supports mobile web browsers and touch screen color selection.</p>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What is HSL and why should web developers use it?</h3>
+        <p>HSL (Hue, Saturation, Lightness) makes creating matching color variations, button hover states, and dark mode themes much easier than calculating raw RGB values.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is my color palette data saved on any server?</h3>
+        <p>No. All calculations run client-side inside your browser using JavaScript. No color choices are stored or tracked.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this Color Picker tool free?</h3>
+        <p>Yes, MicroToolStack's Color Picker is 100% free with no usage limits or sign-up required.</p>
       </div>
     </div>
 
@@ -390,19 +389,27 @@
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const nativePicker = document.getElementById('native-picker');
+      const hexInput = document.getElementById('hex-input');
       const colorPreview = document.getElementById('color-preview');
-      const valHex = document.getElementById('val-hex');
-      const valRgb = document.getElementById('val-rgb');
-      const valHsl = document.getElementById('val-hsl');
-      const paletteGrid = document.getElementById('palette-grid');
-      const btnRandomColor = document.getElementById('btn-random-color');
-      const statusMsg = document.getElementById('status-msg');
+      const previewHexText = document.getElementById('preview-hex-text');
+
+      const codeHex = document.getElementById('code-hex');
+      const codeRgb = document.getElementById('code-rgb');
+      const codeHsl = document.getElementById('code-hsl');
 
       function hexToRgb(hex) {
-        let c = hex.replace('#', '');
-        if (c.length === 3) c = c.split('').map(x => x + x).join('');
-        const num = parseInt(c, 16);
-        return { r: (num >> 16) & 255, g: (num >> 8) & 255, b: num & 255 };
+        let cleanHex = hex.replace('#', '');
+        if (cleanHex.length === 3) {
+          cleanHex = cleanHex.split('').map(c => c + c).join('');
+        }
+        if (cleanHex.length !== 6) return null;
+
+        const num = parseInt(cleanHex, 16);
+        return {
+          r: (num >> 16) & 255,
+          g: (num >> 8) & 255,
+          b: num & 255
+        };
       }
 
       function rgbToHsl(r, g, b) {
@@ -422,76 +429,59 @@
           }
           h /= 6;
         }
-        return { h: Math.round(h * 360), s: Math.round(s * 100), l: Math.round(l * 100) };
-      }
 
-      function hslToHex(h, s, l) {
-        l /= 100;
-        const a = s * Math.min(l, 1 - l) / 100;
-        const f = n => {
-          const k = (n + h / 30) % 12;
-          const color = l - a * Math.max(Math.min(k - 3, 9 - k, 1), -1);
-          return Math.round(255 * color).toString(16).padStart(2, '0');
+        return {
+          h: Math.round(h * 360),
+          s: Math.round(s * 100),
+          l: Math.round(l * 100)
         };
-        return `#${f(0)}${f(8)}${f(4)}`.toUpperCase();
       }
 
-      function updateColorUI(hex) {
-        hex = hex.toUpperCase();
-        colorPreview.style.backgroundColor = hex;
-        colorPreview.textContent = hex;
+      function updateColorUI(hexVal) {
+        let formattedHex = hexVal.startsWith('#') ? hexVal : '#' + hexVal;
+        const rgb = hexToRgb(formattedHex);
 
-        const rgb = hexToRgb(hex);
+        if (!rgb) return;
+
         const hsl = rgbToHsl(rgb.r, rgb.g, rgb.b);
+        const uppercaseHex = formattedHex.toUpperCase();
 
-        valHex.textContent = hex;
-        valRgb.textContent = `rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`;
-        valHsl.textContent = `hsl(${hsl.h}, ${hsl.s}%, ${hsl.l}%)`;
+        colorPreview.style.backgroundColor = uppercaseHex;
+        previewHexText.textContent = uppercaseHex;
 
-        // Generate Palette
-        generatePalette(hsl.h, hsl.s);
+        codeHex.textContent = uppercaseHex;
+        codeRgb.textContent = `rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`;
+        codeHsl.textContent = `hsl(${hsl.h}, ${hsl.s}%, ${hsl.l}%)`;
       }
 
-      function generatePalette(h, s) {
-        paletteGrid.innerHTML = '';
-        const lightnessSteps = [15, 30, 45, 60, 75, 85, 95];
+      nativePicker.addEventListener('input', function() {
+        hexInput.value = nativePicker.value;
+        updateColorUI(nativePicker.value);
+      });
 
-        lightnessSteps.forEach(l => {
-          const hex = hslToHex(h, s, l);
-          const swatch = document.createElement('div');
-          swatch.className = 'palette-swatch';
-          swatch.style.backgroundColor = hex;
-          swatch.textContent = hex;
-          swatch.addEventListener('click', function() {
-            navigator.clipboard.writeText(hex).then(() => {
-              showToast();
+      hexInput.addEventListener('input', function() {
+        let val = hexInput.value.trim();
+        if (val.length === 6 || val.length === 7) {
+          if (!val.startsWith('#')) val = '#' + val;
+          nativePicker.value = val;
+          updateColorUI(val);
+        }
+      });
+
+      // Copy buttons logic
+      document.querySelectorAll('.btn-copy-code').forEach(btn => {
+        btn.addEventListener('click', function() {
+          const targetId = this.getAttribute('data-target');
+          const targetEl = document.getElementById(targetId);
+          if (targetEl) {
+            navigator.clipboard.writeText(targetEl.textContent).then(() => {
+              const originalText = this.textContent;
+              this.textContent = '✅ Copied!';
+              setTimeout(() => { this.textContent = originalText; }, 2000);
             });
-          });
-          paletteGrid.appendChild(swatch);
+          }
         });
-      }
-
-      function showToast() {
-        statusMsg.style.display = 'inline';
-        setTimeout(() => { statusMsg.style.display = 'none'; }, 2000);
-      }
-
-      window.copyVal = function(id) {
-        const text = document.getElementById(id).textContent;
-        navigator.clipboard.writeText(text).then(showToast);
-      };
-
-      nativePicker.addEventListener('input', function(e) {
-        updateColorUI(e.target.value);
       });
-
-      btnRandomColor.addEventListener('click', function() {
-        const randomHex = '#' + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0');
-        nativePicker.value = randomHex;
-        updateColorUI(randomHex);
-      });
-
-      updateColorUI('#3B82F6');
     });
   </script>
 </body>
