@@ -22,9 +22,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Primary SEO Meta Tags -->
-  <title>Free Online RGB to HEX Color Converter | MicroToolStack</title>
-  <meta name="description" content="Free Online RGB to HEX Color Converter. Convert RGB color channels (0-255) into valid Hexadecimal CSS color codes with live preview instantly.">
-  <meta name="keywords" content="rgb to hex, rgb to hex converter, convert rgb to hex, rgb color to hex, css color converter, rgb to hex code">
+  <title>Free Online RGB to HEX Converter | MicroToolStack</title>
+  <meta name="description" content="Convert RGB and RGBA color values to Hexadecimal (#RRGGBB) color codes instantly. Free online color converter with interactive color sliders and real-time CSS code preview.">
+  <meta name="keywords" content="rgb to hex, rgb to hex converter, convert rgb to hex, rgba to hex, css color converter, hex color code generator, web design color tool, rgb to hexadecimal">
 
   <link rel="canonical" href="https://microtoolstack.com/tools/developer/rgb-to-hex-converter.html">
   <meta name="robots" content="index, follow">
@@ -32,8 +32,8 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://microtoolstack.com/tools/developer/rgb-to-hex-converter.html">
-  <meta property="og:title" content="Free Online RGB to HEX Color Converter | MicroToolStack">
-  <meta property="og:description" content="Convert Red, Green, and Blue color values into hexadecimal CSS codes with live previews and instant copy options.">
+  <meta property="og:title" content="Free Online RGB to HEX Converter | MicroToolStack">
+  <meta property="og:description" content="Convert Red, Green, Blue decimal values into Hexadecimal CSS color codes instantly. 100% free developer utility.">
   <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
@@ -56,7 +56,7 @@
           "price": "0",
           "priceCurrency": "USD"
         },
-        "description": "An online web design utility that converts RGB integer channel values to Hexadecimal CSS color codes.",
+        "description": "An instant client-side web development utility that converts Red, Green, and Blue (RGB/RGBA) color intensity values into Hexadecimal (#RRGGBB) CSS color codes.",
         "url": "https://microtoolstack.com/tools/developer/rgb-to-hex-converter.html"
       },
       {
@@ -64,26 +64,34 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "How does RGB to HEX conversion work?",
+            "name": "How do you convert RGB to HEX manually?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "RGB channels (Red, Green, Blue) accept values between 0 and 255. Each channel value is converted into a 2-digit base-16 hexadecimal number, combined to form a 6-character hex code."
+              "text": "To convert RGB to HEX manually, take each integer value (0-255) for Red, Green, and Blue, divide it by 16 to find the base-16 quotient and remainder, and convert those into hexadecimal characters (0-9, A-F)."
             }
           },
           {
             "@type": "Question",
-            "name": "What is the RGB range limit?",
+            "name": "What is the difference between RGB and HEX color codes?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "RGB channels must be integers between 0 and 255 (where 0 is dark/black and 255 is maximum channel intensity)."
+              "text": "RGB represents colors as three decimal integers from 0 to 255 (e.g. rgb(59, 130, 246)). HEX represents the exact same color using a 6-character hexadecimal string preceded by a hash (e.g. #3B82F6)."
             }
           },
           {
             "@type": "Question",
-            "name": "Is this converter free to use?",
+            "name": "Is my color choice stored or tracked on any server?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes, 100% free with no registration required."
+              "text": "No. All conversion operations execute locally inside your web browser using JavaScript. No input numbers or color selections are saved or uploaded."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this RGB to HEX converter free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, MicroToolStack's RGB to HEX Converter is 100% free with unlimited color conversions and no account sign-up required."
             }
           }
         ]
@@ -101,98 +109,84 @@
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
 
   <style>
-    .rgb-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 1rem;
+    .input-group {
       margin-bottom: 1.25rem;
     }
-    .editor-input {
+    .input-label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.5rem;
+    }
+    .form-control {
       width: 100%;
-      padding: 0.85rem 1rem;
-      font-family: monospace;
-      font-size: 1.1rem;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
       border: 1px solid var(--border-color, #333);
       border-radius: var(--radius-md, 8px);
-      background-color: #0d1117;
-      color: #7ee787;
+      background-color: var(--bg-card, #1e1e2e);
+      color: var(--text-primary, #fff);
       outline: none;
       box-sizing: border-box;
     }
-    .preview-card {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      background: var(--bg-card, #1e1e2e);
-      border: 1px solid var(--border-color, #333);
-      border-radius: 8px;
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-      align-items: center;
+    .form-control:focus {
+      border-color: var(--accent-primary, #3b82f6);
     }
-    .color-box {
+    
+    /* Color Preview Swatch */
+    .color-preview-box {
       width: 100%;
-      height: 140px;
+      height: 120px;
       border-radius: 8px;
+      margin-bottom: 1.5rem;
       border: 1px solid var(--border-color, #333);
-      box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
-      transition: background-color 0.2s;
-    }
-    .report-item {
-      margin-bottom: 0.75rem;
-    }
-    .report-item:last-child {
-      margin-bottom: 0;
-    }
-    .report-label {
-      font-size: 0.85rem;
-      color: var(--text-secondary, #9ca3af);
-      display: block;
-      margin-bottom: 0.25rem;
-    }
-    .report-value-group {
       display: flex;
-      gap: 0.5rem;
       align-items: center;
-    }
-    .report-value {
-      flex: 1;
-      font-size: 1.1rem;
-      color: #7ee787;
+      justify-content: center;
+      font-size: 1.25rem;
       font-weight: 700;
-      font-family: monospace;
-      background: #0d1117;
-      padding: 0.6rem 0.75rem;
-      border-radius: 6px;
-      border: 1px solid var(--border-color, #333);
-      word-break: break-all;
+      color: #ffffff;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+      transition: background-color 0.2s ease;
     }
-    .btn-copy-small {
-      padding: 0.6rem 0.85rem;
-      font-size: 0.85rem;
-      background: #374151;
-      color: #fff;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      white-space: nowrap;
-    }
-    .btn-copy-small:hover {
-      background: var(--accent-primary, #3b82f6);
-    }
-    .editor-controls {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      justify-content: space-between;
+
+    .slider-row {
+      display: grid;
+      grid-template-columns: 80px 1fr 60px;
+      gap: 1rem;
       align-items: center;
-      margin-bottom: 2.5rem;
+      margin-bottom: 1rem;
     }
-    .btn-group {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
+
+    .range-input {
+      width: 100%;
+      accent-color: var(--accent-primary, #3b82f6);
+      cursor: pointer;
     }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .stat-card {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1rem;
+      text-align: center;
+      position: relative;
+    }
+    .stat-number {
+      font-size: 1.05rem;
+      font-family: monospace;
+      font-weight: 700;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.5rem;
+    }
+
     .content-box {
       background-color: var(--bg-card, #1e1e2e);
       border: 1px solid var(--border-color, #333);
@@ -203,6 +197,12 @@
     .content-box h2 {
       font-size: 1.35rem;
       margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
       color: var(--text-primary, #fff);
     }
     .content-box p, .content-box ul {
@@ -255,118 +255,139 @@
 
   <!-- Main Container -->
   <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
-    <!-- Breadcrumb Navigation -->
-    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
-      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
-      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Developer Tools</a> / 
-      <span>RGB to HEX Converter</span>
-    </nav>
     
     <!-- Tool Title & Description -->
     <div style="text-align: center; margin-bottom: 2rem;">
-      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online RGB to HEX Color Converter</h1>
-      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Convert RGB (Red, Green, Blue) color channel values into Hexadecimal CSS codes.</p>
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online RGB to HEX Converter</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Convert RGB and RGBA color intensity values into Hexadecimal CSS color codes.</p>
     </div>
 
-    <!-- RGB Channels Input -->
-    <div class="rgb-grid">
-      <div>
-        <label style="display:block; font-weight:600; margin-bottom:0.35rem; color: #ef4444;">Red (0 - 255):</label>
-        <input type="number" id="in-r" class="editor-input" min="0" max="255" value="59" autofocus>
-      </div>
-      <div>
-        <label style="display:block; font-weight:600; margin-bottom:0.35rem; color: #10b981;">Green (0 - 255):</label>
-        <input type="number" id="in-g" class="editor-input" min="0" max="255" value="130">
-      </div>
-      <div>
-        <label style="display:block; font-weight:600; margin-bottom:0.35rem; color: #3b82f6;">Blue (0 - 255):</label>
-        <input type="number" id="in-b" class="editor-input" min="0" max="255" value="246">
-      </div>
-    </div>
-
-    <!-- Visual Preview & Results Grid -->
-    <div class="preview-card">
-      <div>
-        <span class="report-label" style="margin-bottom: 0.5rem;">Color Preview:</span>
-        <div id="color-box" class="color-box" style="background-color: rgb(59, 130, 246);"></div>
+    <!-- Main Converter Card -->
+    <div class="content-box" style="margin-bottom: 2rem;">
+      
+      <!-- Live Swatch Preview -->
+      <div id="color-preview" class="color-preview-box" style="background-color: #3b82f6;">
+        <span id="preview-hex-text">#3B82F6</span>
       </div>
 
-      <div>
-        <div class="report-item">
-          <span class="report-label">Generated HEX Code:</span>
-          <div class="report-value-group">
-            <div id="val-hex" class="report-value">#3B82F6</div>
-            <button class="btn-copy-small" data-target="val-hex">📋 Copy HEX</button>
-          </div>
+      <!-- Sliders for Red, Green, Blue -->
+      <div style="margin-bottom: 1.5rem;">
+        <div class="slider-row">
+          <label for="range-r" class="input-label" style="margin: 0; color: #ef4444;">Red (R)</label>
+          <input type="range" id="range-r" min="0" max="255" value="59" class="range-input">
+          <input type="number" id="num-r" min="0" max="255" value="59" class="form-control" style="padding: 0.3rem 0.5rem; text-align: center;">
         </div>
 
-        <div style="height: 0.75rem;"></div>
+        <div class="slider-row">
+          <label for="range-g" class="input-label" style="margin: 0; color: #10b981;">Green (G)</label>
+          <input type="range" id="range-g" min="0" max="255" value="130" class="range-input">
+          <input type="number" id="num-g" min="0" max="255" value="130" class="form-control" style="padding: 0.3rem 0.5rem; text-align: center;">
+        </div>
 
-        <div class="report-item">
-          <span class="report-label">Generated Short CSS Function:</span>
-          <div class="report-value-group">
-            <div id="val-rgb-str" class="report-value">rgb(59, 130, 246)</div>
-            <button class="btn-copy-small" data-target="val-rgb-str">📋 Copy RGB</button>
-          </div>
+        <div class="slider-row">
+          <label for="range-b" class="input-label" style="margin: 0; color: #3b82f6;">Blue (B)</label>
+          <input type="range" id="range-b" min="0" max="255" value="246" class="range-input">
+          <input type="number" id="num-b" min="0" max="255" value="246" class="form-control" style="padding: 0.3rem 0.5rem; text-align: center;">
         </div>
       </div>
-    </div>
 
-    <!-- Action Buttons -->
-    <div class="editor-controls">
-      <div class="btn-group">
-        <button id="btn-random" class="btn btn-primary" style="padding: 0.68rem 1.4rem; cursor: pointer; background: #3b82f6; border: none;">🎲 Random Color</button>
-        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.68rem 1.2rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear</button>
+      <!-- Converted Code Outputs -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div style="font-size: 0.8rem; color: #9ca3af; margin-bottom: 0.25rem;">HEX Code</div>
+          <div class="stat-number" id="res-hex">#3B82F6</div>
+          <button class="btn btn-secondary btn-copy-code" data-target="res-hex" style="padding: 0.3rem 0.6rem; font-size: 0.75rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 4px;">📋 Copy HEX</button>
+        </div>
+        <div class="stat-card">
+          <div style="font-size: 0.8rem; color: #9ca3af; margin-bottom: 0.25rem;">RGB CSS String</div>
+          <div class="stat-number" id="res-rgb">rgb(59, 130, 246)</div>
+          <button class="btn btn-secondary btn-copy-code" data-target="res-rgb" style="padding: 0.3rem 0.6rem; font-size: 0.75rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 4px;">📋 Copy RGB</button>
+        </div>
+        <div class="stat-card">
+          <div style="font-size: 0.8rem; color: #9ca3af; margin-bottom: 0.25rem;">HSL CSS String</div>
+          <div class="stat-number" id="res-hsl">hsl(217, 91%, 60%)</div>
+          <button class="btn btn-secondary btn-copy-code" data-target="res-hsl" style="padding: 0.3rem 0.6rem; font-size: 0.75rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 4px;">📋 Copy HSL</button>
+        </div>
       </div>
-      <span id="status-msg" style="font-size: 0.85rem; color: #10b981; font-weight: 500; display: none;">Copied to clipboard!</span>
+
     </div>
 
     <!-- SEO Article Content Box 1 -->
     <div class="content-box">
-      <h2>Why Convert RGB Color Values to HEX?</h2>
-      <p>While design applications (like Photoshop, Figma, or Canvas APIs) frequently output color channels as separate <strong>Red, Green, and Blue integer values</strong> (0-255), web developers prefer <strong>HEX color codes</strong> (e.g., <code>#3B82F6</code>) for clean, concise, and lightweight CSS stylesheets.</p>
+      <h2>Understanding RGB and Hexadecimal Color Codes in CSS</h2>
+      <p>Digital computer monitors and smartphone screens emit color through Red, Green, and Blue light channels. In web development, graphics design, and UI engineering, two standard notation models represent these light channels: <strong>Red-Green-Blue (RGB)</strong> and <strong>Hexadecimal (HEX)</strong>.</p>
+
+      <p>While RGB represents color intensity using three decimal numbers from 0 to 255 (e.g., <code>rgb(59, 130, 246)</code>), Hexadecimal condenses those same numbers into a compact 6-character alphanumeric string (e.g., <code>#3B82F6</code>). Our free <strong>Online RGB to HEX Converter</strong> provides real-time conversion and interactive color sliders for seamless front-end design workflows.</p>
     </div>
 
     <!-- SEO Article Content Box 2 -->
     <div class="content-box">
-      <h2>RGB to HEX Calculation Formula</h2>
+      <h2>The Mathematics Behind Converting RGB to HEX</h2>
+      <p>Converting a decimal RGB value (0-255) to a 2-character Hexadecimal string requires base-10 to base-16 mathematical conversion:</p>
+
+      <h3>1. Base-16 Hexadecimal Character Mapping</h3>
+      <p>Hexadecimal math uses 16 digits: <code>0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F</code> (where A=10, B=11, C=12, D=13, E=14, F=15).</p>
+
+      <h3>2. Calculation Steps</h3>
+      <p>To convert an RGB channel integer (such as Red = 59) into HEX:</p>
       <ul>
-        <li>Each RGB channel (0 to 255) maps directly to a 2-digit hexadecimal pair.</li>
-        <li>For example, Red value <code>59</code> divided by 16 gives <code>3</code> with remainder <code>11 (B)</code> &rarr; <code>3B</code>.</li>
-        <li>Combining Red (<code>3B</code>), Green (<code>82</code>), and Blue (<code>F6</code>) forms <code>#3B82F6</code>.</li>
+        <li>Divide the integer by 16: $59 / 16 = 3$ remainder $11$.</li>
+        <li>The quotient (3) becomes the first hex digit: <code>3</code>.</li>
+        <li>The remainder (11) corresponds to the second hex digit: <code>B</code>.</li>
+        <li>Combining both yields <code>3B</code>.</li>
+      </ul>
+      <p>Repeating this process for Green (130 ➔ <code>82</code>) and Blue (246 ➔ <code>F6</code>) yields the final Hexadecimal code: <code>#3B82F6</code>.</p>
+    </div>
+
+    <!-- SEO Article Content Box 3 -->
+    <div class="content-box">
+      <h2>Features of MicroToolStack's RGB to HEX Tool</h2>
+      <ul>
+        <li><strong>Interactive Color Sliders:</strong> Fine-tune Red, Green, and Blue channels dynamically with instant live swatch previews.</li>
+        <li><strong>Multi-Format Output:</strong> Generates CSS-ready HEX, RGB, and HSL strings simultaneously.</li>
+        <li><strong>100% Client-Side Privacy:</strong> All color calculations run locally in your web browser using JavaScript. No color choices are saved or tracked.</li>
+        <li><strong>Free & Unlimited Usage:</strong> Perform unlimited color conversions with zero registration required.</li>
       </ul>
     </div>
 
-    <!-- Internal Linking Section -->
+    <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
     <div class="content-box">
-      <h2>Explore Related Developer Utilities</h2>
-      <p>Enhance your development workflow with our tools:</p>
+      <h2>Explore Related Developer Tools</h2>
+      <p>Discover our complementary online developer utilities:</p>
       <div class="related-links">
         <a href="/tools/developer/hex-to-rgb-converter.html" class="related-card">
           <strong style="display:block; margin-bottom: 0.25rem;">🎨 HEX to RGB Converter</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Convert HEX codes to RGB and RGBA values.</span>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Convert Hexadecimal codes into RGB and RGBA strings.</span>
+        </a>
+        <a href="/tools/developer/color-picker.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🎨 Color Picker & Palette</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Pick colors and convert HEX, RGB, and HSL formats.</span>
         </a>
         <a href="/tools/developer/glassmorphism-claymorphism-generator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">✨ CSS Glass Generator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Design translucent glass UI components.</span>
-        </a>
-        <a href="/tools/developer/css-formatter.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">✨ CSS Formatter</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Format and beautify CSS stylesheets.</span>
+          <strong style="display:block; margin-bottom: 0.25rem;">✨ Glassmorphism UI Generator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Design frosted glass and 3D clay UI components.</span>
         </a>
       </div>
     </div>
 
     <!-- FAQ Section -->
     <div class="content-box">
-      <h2>Frequently Asked Questions</h2>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What happens if I enter values outside 0 to 255?</h3>
-        <p>Values below 0 are automatically clamped to 0, and values above 255 are automatically clamped to 255.</p>
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How do I convert RGB to HEX online?</h3>
+        <p>Adjust the Red, Green, and Blue sliders or enter numbers (0-255). The Hexadecimal code updates automatically in real-time.</p>
       </div>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Are uppercase and lowercase HEX codes identical in CSS?</h3>
-        <p>Yes, CSS treats #3b82f6 and #3B82F6 as completely identical colors.</p>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What is the highest possible value for an RGB channel?</h3>
+        <p>255. In 8-bit color channels, 255 represents 100% full color intensity (FF in Hexadecimal).</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is my color selection stored on remote servers?</h3>
+        <p>No. All conversions run client-side inside your browser session using JavaScript. Your color selections remain private.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this RGB to HEX converter free?</h3>
+        <p>Yes, MicroToolStack's RGB to HEX Converter is 100% free with no usage limits or sign-up required.</p>
       </div>
     </div>
 
@@ -382,81 +403,105 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const inR = document.getElementById('in-r');
-      const inG = document.getElementById('in-g');
-      const inB = document.getElementById('in-b');
+      const rangeR = document.getElementById('range-r');
+      const rangeG = document.getElementById('range-g');
+      const rangeB = document.getElementById('range-b');
 
-      const colorBox = document.getElementById('color-box');
-      const valHex = document.getElementById('val-hex');
-      const valRgbStr = document.getElementById('val-rgb-str');
+      const numR = document.getElementById('num-r');
+      const numG = document.getElementById('num-g');
+      const numB = document.getElementById('num-b');
 
-      const btnRandom = document.getElementById('btn-random');
-      const btnClear = document.getElementById('btn-clear');
-      const statusMsg = document.getElementById('status-msg');
+      const colorPreview = document.getElementById('color-preview');
+      const previewHexText = document.getElementById('preview-hex-text');
+
+      const resHex = document.getElementById('res-hex');
+      const resRgb = document.getElementById('res-rgb');
+      const resHsl = document.getElementById('res-hsl');
 
       function componentToHex(c) {
-        let val = parseInt(c, 10);
-        if (isNaN(val)) val = 0;
-        val = Math.max(0, Math.min(255, val));
-        const hex = val.toString(16).toUpperCase();
+        const hex = c.toString(16).toUpperCase();
         return hex.length === 1 ? "0" + hex : hex;
       }
 
-      function convertRgbToHex() {
-        let r = parseInt(inR.value, 10);
-        let g = parseInt(inG.value, 10);
-        let b = parseInt(inB.value, 10);
+      function rgbToHsl(r, g, b) {
+        r /= 255; g /= 255; b /= 255;
+        const max = Math.max(r, g, b), min = Math.min(r, g, b);
+        let h, s, l = (max + min) / 2;
 
-        if (isNaN(r)) r = 0;
-        if (isNaN(g)) g = 0;
-        if (isNaN(b)) b = 0;
+        if (max === min) {
+          h = s = 0;
+        } else {
+          const d = max - min;
+          s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+          switch (max) {
+            case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+            case g: h = (b - r) / d + 2; break;
+            case b: h = (r - g) / d + 4; break;
+          }
+          h /= 6;
+        }
+
+        return {
+          h: Math.round(h * 360),
+          s: Math.round(s * 100),
+          l: Math.round(l * 100)
+        };
+      }
+
+      function updateColorUI() {
+        let r = parseInt(numR.value, 10) || 0;
+        let g = parseInt(numG.value, 10) || 0;
+        let b = parseInt(numB.value, 10) || 0;
 
         r = Math.max(0, Math.min(255, r));
         g = Math.max(0, Math.min(255, g));
         b = Math.max(0, Math.min(255, b));
 
-        const hexCode = "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
-        const rgbStr = `rgb(${r}, ${g}, ${b})`;
+        rangeR.value = r;
+        rangeG.value = g;
+        rangeB.value = b;
 
-        colorBox.style.backgroundColor = hexCode;
-        valHex.textContent = hexCode;
-        valRgbStr.textContent = rgbStr;
+        const hexCode = "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+        const hsl = rgbToHsl(r, g, b);
+
+        colorPreview.style.backgroundColor = hexCode;
+        previewHexText.textContent = hexCode;
+
+        resHex.textContent = hexCode;
+        resRgb.textContent = `rgb(${r}, ${g}, ${b})`;
+        resHsl.textContent = `hsl(${hsl.h}, ${hsl.s}%, ${hsl.l}%)`;
       }
 
-      inR.addEventListener('input', convertRgbToHex);
-      inG.addEventListener('input', convertRgbToHex);
-      inB.addEventListener('input', convertRgbToHex);
-
-      btnRandom.addEventListener('click', function() {
-        inR.value = Math.floor(Math.random() * 256);
-        inG.value = Math.floor(Math.random() * 256);
-        inB.value = Math.floor(Math.random() * 256);
-        convertRgbToHex();
+      [rangeR, rangeG, rangeB].forEach(slider => {
+        slider.addEventListener('input', function() {
+          numR.value = rangeR.value;
+          numG.value = rangeG.value;
+          numB.value = rangeB.value;
+          updateColorUI();
+        });
       });
 
-      btnClear.addEventListener('click', function() {
-        inR.value = 0;
-        inG.value = 0;
-        inB.value = 0;
-        convertRgbToHex();
-        inR.focus();
+      [numR, numG, numB].forEach(input => {
+        input.addEventListener('input', updateColorUI);
       });
 
-      document.querySelectorAll('.btn-copy-small').forEach(btn => {
+      // Copy buttons
+      document.querySelectorAll('.btn-copy-code').forEach(btn => {
         btn.addEventListener('click', function() {
-          const targetId = btn.getAttribute('data-target');
+          const targetId = this.getAttribute('data-target');
           const targetEl = document.getElementById(targetId);
-          if (targetEl && targetEl.textContent) {
+          if (targetEl) {
             navigator.clipboard.writeText(targetEl.textContent).then(() => {
-              statusMsg.style.display = 'inline';
-              setTimeout(() => { statusMsg.style.display = 'none'; }, 2000);
+              const originalText = this.textContent;
+              this.textContent = '✅ Copied!';
+              setTimeout(() => { this.textContent = originalText; }, 2000);
             });
           }
         });
       });
 
-      // Initial conversion
-      convertRgbToHex();
+      // Initial Update
+      updateColorUI();
     });
   </script>
 </body>
