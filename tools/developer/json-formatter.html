@@ -22,9 +22,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Primary SEO Meta Tags -->
-  <title>Free Online JSON Formatter, Validator & Minifier | MicroToolStack</title>
-  <meta name="description" content="Free online JSON Formatter tool to format, validate, beautify, and minify JSON code instantly. Fix JSON syntax errors with real-time error detection in your browser.">
-  <meta name="keywords" content="json formatter, json validator, json prettifier, json minifier, format json online, validate json, json viewer, clean json online">
+  <title>Free Online JSON Formatter, Beautifier & Minifier | MicroToolStack</title>
+  <meta name="description" content="Format, beautify, validate, and minify JSON data online with our free JSON Formatter tool. Easily clean up unindented API payloads, fix syntax errors, and convert JSON strings.">
+  <meta name="keywords" content="json formatter, json beautifier, json minifier, format json online, json cleaner, REST API json tool, json viewer, developer json tools">
 
   <link rel="canonical" href="https://microtoolstack.com/tools/developer/json-formatter.html">
   <meta name="robots" content="index, follow">
@@ -32,8 +32,8 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://microtoolstack.com/tools/developer/json-formatter.html">
-  <meta property="og:title" content="Free Online JSON Formatter, Validator & Minifier | MicroToolStack">
-  <meta property="og:description" content="Instantly format, validate, and minify JSON data with real-time syntax error checking. 100% free and private.">
+  <meta property="og:title" content="Free Online JSON Formatter, Beautifier & Minifier | MicroToolStack">
+  <meta property="og:description" content="Beautify messy JSON data, validate syntax errors, or compress JSON into minified strings instantly. 100% free developer utility.">
   <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
@@ -48,7 +48,7 @@
     "@graph": [
       {
         "@type": "SoftwareApplication",
-        "name": "JSON Formatter, Validator & Minifier Tool",
+        "name": "JSON Formatter & Beautifier Utility",
         "operatingSystem": "All",
         "applicationCategory": "DeveloperApplication",
         "offers": {
@@ -56,7 +56,7 @@
           "price": "0",
           "priceCurrency": "USD"
         },
-        "description": "An online developer utility tool designed to validate JSON syntax, format unorganized JSON arrays, and compress JSON payloads.",
+        "description": "An essential client-side web development tool for formatting, validating, beautifying, and minifying JSON data structures and REST API payloads.",
         "url": "https://microtoolstack.com/tools/developer/json-formatter.html"
       },
       {
@@ -64,26 +64,34 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "What is a JSON Formatter used for?",
+            "name": "What is JSON Beautifying?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "A JSON Formatter takes unformatted or minified JSON strings and structures them into a human-readable format with proper indentation, line breaks, and syntax validation."
+              "text": "JSON Beautifying is the process of reformatting raw or minified JSON strings into a human-readable structure with proper indentation (2-space or 4-space), line breaks, and aligned key-value pairs."
             }
           },
           {
             "@type": "Question",
-            "name": "What is the difference between JSON formatting and JSON minifying?",
+            "name": "What is JSON Minification?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Formatting adds spacing and indentation to make JSON easier for humans to read, while minifying strips all unnecessary spaces and line breaks to minimize file size for web APIs."
+              "text": "JSON Minification removes all unnecessary whitespace, newlines, and indents from a JSON object to compress file payload size for faster network API transfers."
             }
           },
           {
             "@type": "Question",
-            "name": "Is my API JSON data safe and secure?",
+            "name": "Is my JSON data uploaded or stored on any remote server?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes! All processing happens locally in your web browser using JavaScript. No confidential JSON payloads are ever stored or uploaded to any server."
+              "text": "No. All JSON parsing, formatting, and validation execute locally inside your web browser using JavaScript. No payload data is transmitted or saved."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this JSON Formatter tool free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, MicroToolStack's JSON Formatter is 100% free with no file size limits or account registration required."
             }
           }
         ]
@@ -101,41 +109,39 @@
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
 
   <style>
-    .editor-textarea {
-      width: 100%;
-      min-height: 250px;
-      padding: 1rem;
-      font-family: monospace;
+    .editor-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .editor-label {
+      display: block;
       font-size: 0.95rem;
-      line-height: 1.5;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.5rem;
+    }
+    .json-textarea {
+      width: 100%;
+      min-height: 260px;
+      padding: 1rem;
+      font-size: 0.95rem;
+      font-family: 'Fira Code', Consolas, Monaco, monospace;
+      line-height: 1.6;
       border: 1px solid var(--border-color, #333);
       border-radius: var(--radius-md, 8px);
-      background-color: #0d1117;
-      color: #7ee787;
+      background-color: var(--bg-card, #1e1e2e);
+      color: var(--text-primary, #fff);
       outline: none;
       resize: vertical;
       box-sizing: border-box;
-      margin-bottom: 1rem;
+      white-space: pre;
     }
-    .status-banner {
-      padding: 0.75rem 1rem;
-      border-radius: 6px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      margin-bottom: 1.25rem;
-      display: none;
+    .json-textarea:focus {
+      border-color: var(--accent-primary, #3b82f6);
     }
-    .status-banner.success {
-      background: rgba(16, 185, 129, 0.15);
-      border: 1px solid #10b981;
-      color: #10b981;
-    }
-    .status-banner.error {
-      background: rgba(239, 68, 68, 0.15);
-      border: 1px solid #ef4444;
-      color: #ef4444;
-    }
-    .editor-controls {
+    .controls-bar {
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
@@ -143,10 +149,16 @@
       align-items: center;
       margin-bottom: 2.5rem;
     }
-    .btn-group {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
+    .error-banner {
+      display: none;
+      padding: 0.85rem 1.25rem;
+      background-color: rgba(239, 68, 68, 0.15);
+      border: 1px solid #ef4444;
+      border-radius: 8px;
+      color: #fca5a5;
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+      font-family: monospace;
     }
     .content-box {
       background-color: var(--bg-card, #1e1e2e);
@@ -158,6 +170,12 @@
     .content-box h2 {
       font-size: 1.35rem;
       margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
       color: var(--text-primary, #fff);
     }
     .content-box p, .content-box ul {
@@ -210,83 +228,110 @@
 
   <!-- Main Container -->
   <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
-    <!-- Breadcrumb Navigation -->
-    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
-      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
-      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Developer Tools</a> / 
-      <span>JSON Formatter</span>
-    </nav>
     
     <!-- Tool Title & Description -->
     <div style="text-align: center; margin-bottom: 2rem;">
-      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online JSON Formatter & Validator</h1>
-      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Format, beautify, validate, and minify JSON data with real-time error detection.</p>
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online JSON Formatter & Beautifier</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Beautify unformatted JSON strings into clean, indented data structures or minify payload sizes.</p>
     </div>
 
-    <!-- Real-time Status Banner -->
-    <div id="status-banner" class="status-banner"></div>
+    <!-- Error Alert Box -->
+    <div id="error-box" class="error-banner"></div>
 
-    <!-- Textarea Code Input Editor -->
-    <textarea id="json-input" class="editor-textarea" placeholder='Paste raw JSON here (e.g. {"name":"MicroToolStack","version":1.0,"free":true})...' autofocus></textarea>
-
-    <!-- Action Buttons -->
-    <div class="editor-controls">
-      <div class="btn-group">
-        <button id="btn-format" class="btn btn-primary" style="padding: 0.68rem 1.4rem; cursor: pointer;">✨ Format (Beautify)</button>
-        <button id="btn-minify" class="btn btn-secondary" style="padding: 0.68rem 1.2rem; cursor: pointer; background: #1f2937; color: #fff; border: 1px solid #4b5563; border-radius: 6px;">⚡ Minify JSON</button>
-        <button id="btn-copy" class="btn btn-secondary" style="padding: 0.68rem 1.2rem; cursor: pointer; background: #1f2937; color: #fff; border: 1px solid #4b5563; border-radius: 6px;">📋 Copy JSON</button>
-        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.68rem 1.2rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear</button>
+    <!-- Dual Textarea Editor Grid -->
+    <div class="editor-grid">
+      <div>
+        <label for="input-json" class="editor-label">Raw / Unformatted JSON Input</label>
+        <textarea id="input-json" class="json-textarea" placeholder="Paste raw JSON here...&#10;e.g., {&quot;name&quot;:&quot;MicroToolStack&quot;,&quot;status&quot;:&quot;active&quot;}"></textarea>
       </div>
-      <span id="status-msg" style="font-size: 0.85rem; color: #10b981; font-weight: 500; display: none;">Copied to clipboard!</span>
+      <div>
+        <label for="output-json" class="editor-label">Formatted / Minified JSON Output</label>
+        <textarea id="output-json" class="json-textarea" placeholder="Processed JSON output will appear here..." readonly></textarea>
+      </div>
+    </div>
+
+    <!-- Action Controls Bar -->
+    <div class="controls-bar">
+      <div style="display: flex; gap: 0.75rem; align-items: center;">
+        <button id="btn-beautify-2" class="btn btn-primary" style="padding: 0.75rem 1.25rem; font-weight: 600; cursor: pointer;">✨ Beautify (2 Spaces)</button>
+        <button id="btn-beautify-4" class="btn btn-primary" style="padding: 0.75rem 1.25rem; font-weight: 600; cursor: pointer; background: #8b5cf6;">✨ Beautify (4 Spaces)</button>
+        <button id="btn-minify" class="btn btn-primary" style="padding: 0.75rem 1.25rem; font-weight: 600; cursor: pointer; background: #10b981;">⚡ Minify</button>
+      </div>
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-copy" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">📋 Copy Output</button>
+        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear</button>
+      </div>
     </div>
 
     <!-- SEO Article Content Box 1 -->
     <div class="content-box">
-      <h2>Why Use an Online JSON Formatter & Validator?</h2>
-      <p>JSON (JavaScript Object Notation) is the standard data format used by web REST APIs, databases, and configuration files. Working with compressed or raw API JSON strings makes debugging difficult. Our free <strong>JSON Formatter</strong> validates syntax in real-time, highlights syntax errors, and applies clean 2-space indentation for effortless reading.</p>
+      <h2>Why JSON Formatting and Validation Matter for Developers</h2>
+      <p>JavaScript Object Notation (JSON) is the universal data-interchange standard across modern web engineering, microservices, REST APIs, and NoSQL databases. When APIs send responses over HTTP, the data is frequently minified into a dense, unformatted single-line string to conserve network bandwidth.</p>
+
+      <p>While minified JSON is optimal for machine processing, reading unformatted JSON structures during API integration or debugging is extremely difficult. Our free <strong>Online JSON Formatter & Beautifier</strong> reorganizes raw JSON strings into clean, beautifully indented hierarchies, instantly highlighting key-value pairs, arrays, and nested objects.</p>
     </div>
 
     <!-- SEO Article Content Box 2 -->
     <div class="content-box">
-      <h2>Key Features of JSON Formatter</h2>
+      <h2>JSON Beautifying vs. JSON Minification</h2>
+      <p>Depending on your current task in the software development lifecycle, choose the right transformation mode:</p>
+
+      <h3>1. JSON Beautifying (For Debugging & Inspection)</h3>
+      <p>Beautifying structures raw JSON data using uniform 2-space or 4-space tab indentations. It aligns nested arrays, formats object key pairs, and formats long JSON documents so engineers can analyze API data easily.</p>
+
+      <h3>2. JSON Minification (For Production API Requests)</h3>
+      <p>Minification removes all cosmetic whitespace, newlines, and tab spacing from a JSON payload. Compressing JSON payload sizes reduces network latency and accelerates HTTP API processing times.</p>
+    </div>
+
+    <!-- SEO Article Content Box 3 -->
+    <div class="content-box">
+      <h2>Features of MicroToolStack's JSON Formatter Tool</h2>
       <ul>
-        <li><strong>Syntax Error Detection:</strong> Pinpoints exact syntax error locations (missing commas, unquoted keys, or bracket mismatches).</li>
-        <li><strong>Beautify & Minify:</strong> Toggle between human-readable formatted JSON and compressed minified JSON strings.</li>
-        <li><strong>Client-Side Execution:</strong> Ensures 100% security by parsing JSON locally inside your browser without API network calls.</li>
-        <li><strong>One-Click Clipboard Action:</strong> Fast copy and clear controls for efficient web developer workflows.</li>
+        <li><strong>Real-Time Syntax Validation:</strong> Automatically parses JSON syntax and reports exact error messages if trailing commas or quote errors exist.</li>
+        <li><strong>Flexible Indentation Modes:</strong> Switch seamlessly between 2-space formatting, 4-space formatting, and single-line minification.</li>
+        <li><strong>100% Client-Side Privacy:</strong> All JSON parsing runs locally in your web browser using JavaScript. No confidential API keys or customer payload data are stored or transmitted.</li>
+        <li><strong>Free & Unlimited Usage:</strong> No file size limits, rate restrictions, or forced user accounts.</li>
       </ul>
     </div>
 
-    <!-- Internal Linking Section (SEO Best Practice) -->
+    <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
     <div class="content-box">
       <h2>Explore Related Developer Tools</h2>
-      <p>Enhance your development workflow with our free utilities:</p>
+      <p>Discover our complementary online developer utilities:</p>
       <div class="related-links">
         <a href="/tools/developer/base64-encoder-decoder.html" class="related-card">
           <strong style="display:block; margin-bottom: 0.25rem;">🔒 Base64 Encoder / Decoder</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Encode or decode text strings into Base64 format.</span>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Convert text to Base64 or decode Base64 strings.</span>
         </a>
-        <a href="/tools/developer/code-to-image.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">📷 Code Snippet to Image</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Turn source code into beautiful social media images.</span>
+        <a href="/tools/developer/html-formatter.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">✨ HTML Formatter & Beautifier</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Format and clean up unaligned HTML DOM markup.</span>
         </a>
-        <a href="/tools/seo/slug-generator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🔗 Slug Generator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Generate clean, SEO-friendly URL slugs.</span>
+        <a href="/tools/developer/css-formatter.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">✨ CSS Formatter & Beautifier</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Format and clean up unformatted CSS code.</span>
         </a>
       </div>
     </div>
 
     <!-- FAQ Section -->
     <div class="content-box">
-      <h2>Frequently Asked Questions</h2>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Why is my JSON failing validation?</h3>
-        <p>Common JSON errors include trailing commas after the last item, single quotes instead of double quotes around keys/values, or missing closing curly brackets <code>}</code>.</p>
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How do I format a JSON string online?</h3>
+        <p>Paste your raw JSON into the left input box and click "Beautify (2 Spaces)" or "Beautify (4 Spaces)". The formatted output will render immediately on the right.</p>
       </div>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this tool free with no limits?</h3>
-        <p>Yes, MicroToolStack's JSON Formatter is 100% free with unlimited usage for software engineers, testers, and web developers.</p>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What happens if my JSON has a syntax error?</h3>
+        <p>The tool will display a red error notification specifying the exact parsing issue (such as a missing quote or trailing comma).</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is my JSON data uploaded to any server?</h3>
+        <p>No. All parsing logic executes locally inside your web browser session using JavaScript. Your data remains completely private.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this JSON Formatter tool free?</h3>
+        <p>Yes, MicroToolStack's JSON Formatter is completely free with no usage limits or sign-up required.</p>
       </div>
     </div>
 
@@ -302,80 +347,72 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const jsonInput = document.getElementById('json-input');
-      const statusBanner = document.getElementById('status-banner');
-
-      const btnFormat = document.getElementById('btn-format');
+      const inputJson = document.getElementById('input-json');
+      const outputJson = document.getElementById('output-json');
+      const btnBeautify2 = document.getElementById('btn-beautify-2');
+      const btnBeautify4 = document.getElementById('btn-beautify-4');
       const btnMinify = document.getElementById('btn-minify');
       const btnCopy = document.getElementById('btn-copy');
       const btnClear = document.getElementById('btn-clear');
-      const statusMsg = document.getElementById('status-msg');
+      const errorBox = document.getElementById('error-box');
 
-      function showBanner(type, message) {
-        statusBanner.className = `status-banner ${type}`;
-        statusBanner.textContent = message;
-        statusBanner.style.display = 'block';
+      function hideError() {
+        errorBox.style.display = 'none';
+        errorBox.textContent = '';
       }
 
-      function hideBanner() {
-        statusBanner.style.display = 'none';
+      function showError(msg) {
+        errorBox.textContent = '❌ Invalid JSON: ' + msg;
+        errorBox.style.display = 'block';
+        outputJson.value = '';
       }
 
-      function formatJson() {
-        const raw = jsonInput.value.trim();
+      function processJSON(indent) {
+        hideError();
+        const raw = inputJson.value.trim();
         if (!raw) {
-          hideBanner();
+          outputJson.value = '';
           return;
         }
 
         try {
           const parsed = JSON.parse(raw);
-          jsonInput.value = JSON.stringify(parsed, null, 2);
-          showBanner('success', '✓ Valid JSON - Formatted successfully!');
-        } catch (err) {
-          showBanner('error', `❌ Invalid JSON Syntax: ${err.message}`);
+          if (indent === 0) {
+            outputJson.value = JSON.stringify(parsed);
+          } else {
+            outputJson.value = JSON.stringify(parsed, null, indent);
+          }
+        } catch (e) {
+          showError(e.message);
         }
       }
 
-      function minifyJson() {
-        const raw = jsonInput.value.trim();
-        if (!raw) {
-          hideBanner();
-          return;
-        }
-
-        try {
-          const parsed = JSON.parse(raw);
-          jsonInput.value = JSON.stringify(parsed);
-          showBanner('success', '✓ Valid JSON - Minified successfully!');
-        } catch (err) {
-          showBanner('error', `❌ Invalid JSON Syntax: ${err.message}`);
-        }
-      }
-
-      btnFormat.addEventListener('click', formatJson);
-      btnMinify.addEventListener('click', minifyJson);
-
-      jsonInput.addEventListener('input', function() {
-        if (!jsonInput.value.trim()) {
-          hideBanner();
-        }
+      btnBeautify2.addEventListener('click', function() {
+        processJSON(2);
       });
 
-      // Copy Action
+      btnBeautify4.addEventListener('click', function() {
+        processJSON(4);
+      });
+
+      btnMinify.addEventListener('click', function() {
+        processJSON(0);
+      });
+
       btnCopy.addEventListener('click', function() {
-        if (!jsonInput.value.trim()) return;
-        navigator.clipboard.writeText(jsonInput.value).then(function() {
-          statusMsg.style.display = 'inline';
-          setTimeout(() => { statusMsg.style.display = 'none'; }, 2000);
+        if (!outputJson.value.trim()) return;
+        navigator.clipboard.writeText(outputJson.value).then(() => {
+          const originalText = btnCopy.textContent;
+          btnCopy.textContent = '✅ Copied!';
+          setTimeout(() => { btnCopy.textContent = originalText; }, 2000);
         });
       });
 
-      // Clear Action
       btnClear.addEventListener('click', function() {
-        jsonInput.value = '';
-        hideBanner();
-        jsonInput.focus();
+        inputJson.value = '';
+        outputJson.value = '';
+        hideError();
+        inputJson.focus();
       });
     });
   </script>
