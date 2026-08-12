@@ -22,9 +22,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Primary SEO Meta Tags -->
-  <title>Free Online Meta Tag Analyzer & Inspector | MicroToolStack</title>
-  <meta name="description" content="Free online Meta Tag Analyzer tool. Inspect HTML meta tags, check meta title and description character lengths, Open Graph tags, and SEO tags instantly.">
-  <meta name="keywords" content="meta tag analyzer, inspect meta tags, meta description length checker, og tag inspector, canonical tag checker, html meta tag auditor">
+  <title>Free Online Meta Tag Analyzer | HTML Head SEO Auditor | MicroToolStack</title>
+  <meta name="description" content="Analyze webpage HTML meta tags online for free. Inspect title tags, meta descriptions, Open Graph, Twitter Cards, robots directives, canonical URLs, and viewport meta tags.">
+  <meta name="keywords" content="meta tag analyzer, check meta tags, html head auditor, open graph checker, twitter card inspector, seo meta tag auditor, meta tag analyzer online, seo tools, microtoolstack">
 
   <link rel="canonical" href="https://microtoolstack.com/tools/seo/meta-tag-analyzer.html">
   <meta name="robots" content="index, follow">
@@ -32,8 +32,8 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://microtoolstack.com/tools/seo/meta-tag-analyzer.html">
-  <meta property="og:title" content="Free Online Meta Tag Analyzer & Inspector | MicroToolStack">
-  <meta property="og:description" content="Audit your website HTML head tags, Open Graph meta elements, canonical URLs, and character counts in real-time for optimal SEO performance.">
+  <meta property="og:title" content="Free Online Meta Tag Analyzer | MicroToolStack">
+  <meta property="og:description" content="Audit HTML meta tags, Open Graph social tags, and robots directives instantly. 100% free, fast, and privacy-first webmaster utility.">
   <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
@@ -48,15 +48,15 @@
     "@graph": [
       {
         "@type": "SoftwareApplication",
-        "name": "Meta Tag Analyzer",
+        "name": "HTML Meta Tag Analyzer & Auditor",
         "operatingSystem": "All",
-        "applicationCategory": "SEOApplication",
+        "applicationCategory": "UtilitiesApplication",
         "offers": {
           "@type": "Offer",
           "price": "0",
           "priceCurrency": "USD"
         },
-        "description": "An online developer tool that inspects HTML head metadata, audits Open Graph tags, and validates SEO title and description character limits.",
+        "description": "An essential client-side SEO utility that audits HTML source code head sections, extracting meta titles, descriptions, Open Graph tags, Twitter Cards, robots directives, and canonical tags.",
         "url": "https://microtoolstack.com/tools/seo/meta-tag-analyzer.html"
       },
       {
@@ -64,26 +64,34 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "Why are meta tags important for SEO?",
+            "name": "What are HTML Meta Tags?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Meta tags provide search engine crawlers and social media platforms with essential context about your webpage topic, title, description, and preview image."
+              "text": "Meta tags are snippet tags placed in the <head> section of an HTML document that provide metadata about a webpage to search engines, web crawlers, and social media platforms."
             }
           },
           {
             "@type": "Question",
-            "name": "How do I inspect my page meta tags using this tool?",
+            "name": "Which meta tags are most important for SEO?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Simply copy your page source HTML <head> code and paste it into the editor. The tool automatically parses and extracts all title, meta, canonical, and Open Graph tags."
+              "text": "The most critical meta tags for SEO and social sharing include the Meta Title, Meta Description, Canonical Tag (rel='canonical'), Robots Meta Tag, and Open Graph / Twitter Card tags."
             }
           },
           {
             "@type": "Question",
-            "name": "Is my HTML code safe?",
+            "name": "Is my HTML source code saved on remote servers?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes, 100%. Analysis is conducted purely inside your local browser instance without transmitting code to external servers."
+              "text": "No! All HTML DOM parsing and meta tag extractions execute 100% locally inside your web browser session using client-side JavaScript. Your code remains completely private."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this Meta Tag Analyzer free to use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, MicroToolStack's Meta Tag Analyzer is 100% free with unlimited audits and no registration required."
             }
           }
         ]
@@ -101,67 +109,84 @@
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
 
   <style>
-    .editor-textarea {
-      width: 100%;
-      min-height: 200px;
-      padding: 1rem;
-      font-family: monospace;
+    .input-group {
+      margin-bottom: 1.25rem;
+    }
+    .input-label {
+      display: block;
       font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.5rem;
+    }
+    .form-control, .form-select {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
+      color: var(--text-primary, #fff);
+      outline: none;
+      box-sizing: border-box;
+    }
+    .form-control:focus, .form-select:focus {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+
+    .code-textarea {
+      width: 100%;
+      min-height: 180px;
+      padding: 1rem;
+      font-size: 0.85rem;
+      font-family: 'Fira Code', Consolas, Monaco, monospace;
       line-height: 1.5;
       border: 1px solid var(--border-color, #333);
       border-radius: var(--radius-md, 8px);
-      background-color: #0d1117;
-      color: #7ee787;
+      background-color: var(--bg-card, #1e1e2e);
+      color: var(--text-primary, #fff);
       outline: none;
       resize: vertical;
       box-sizing: border-box;
-      margin-bottom: 1.25rem;
+      white-space: pre-wrap;
+      word-break: break-all;
     }
-    .report-card {
-      background: var(--bg-card, #1e1e2e);
-      border: 1px solid var(--border-color, #333);
-      border-radius: 8px;
-      padding: 1.25rem;
+
+    /* Results Table */
+    .audit-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
       margin-bottom: 1rem;
     }
-    .report-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 0.5rem;
+    .audit-table th, .audit-table td {
+      border: 1px solid var(--border-color, #333);
+      padding: 0.65rem 0.85rem;
+      text-align: left;
+      font-size: 0.85rem;
     }
-    .report-title {
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--accent-primary, #3b82f6);
+    .audit-table th {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-primary, #fff);
     }
-    .badge {
-      padding: 0.25rem 0.6rem;
-      border-radius: 4px;
+    .audit-table td {
+      color: #9ca3af;
+      word-break: break-all;
+    }
+
+    .status-badge {
+      display: inline-block;
       font-size: 0.75rem;
       font-weight: 700;
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
       text-transform: uppercase;
     }
-    .badge.success { background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid #10b981; }
-    .badge.warning { background: rgba(245, 158, 11, 0.15); color: #f59e0b; border: 1px solid #f59e0b; }
-    .badge.error { background: rgba(239, 68, 68, 0.15); color: #ef4444; border: 1px solid #ef4444; }
-    .report-value {
-      font-size: 0.95rem;
-      color: var(--text-primary, #fff);
-      word-break: break-all;
-      margin: 0.25rem 0;
-      font-family: monospace;
-      background: #0d1117;
-      padding: 0.6rem 0.75rem;
-      border-radius: 6px;
-      border: 1px solid var(--border-color, #333);
-    }
-    .report-desc {
-      font-size: 0.85rem;
-      color: var(--text-secondary, #9ca3af);
-      margin-top: 0.35rem;
-    }
-    .editor-controls {
+    .badge-ok { background: rgba(16, 185, 129, 0.2); color: #10b981; border: 1px solid #10b981; }
+    .badge-warn { background: rgba(245, 158, 11, 0.2); color: #f59e0b; border: 1px solid #f59e0b; }
+    .badge-missing { background: rgba(239, 68, 68, 0.2); color: #ef4444; border: 1px solid #ef4444; }
+
+    .controls-bar {
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
@@ -169,11 +194,7 @@
       align-items: center;
       margin-bottom: 2.5rem;
     }
-    .btn-group {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-    }
+
     .content-box {
       background-color: var(--bg-card, #1e1e2e);
       border: 1px solid var(--border-color, #333);
@@ -184,6 +205,12 @@
     .content-box h2 {
       font-size: 1.35rem;
       margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
       color: var(--text-primary, #fff);
     }
     .content-box p, .content-box ul {
@@ -236,142 +263,119 @@
 
   <!-- Main Container -->
   <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
-    <!-- Breadcrumb Navigation -->
-    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
-      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
-      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">SEO Tools</a> / 
-      <span>Meta Tag Analyzer</span>
-    </nav>
     
     <!-- Tool Title & Description -->
     <div style="text-align: center; margin-bottom: 2rem;">
-      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Meta Tag Analyzer & Inspector</h1>
-      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Paste HTML head code to audit meta titles, descriptions, canonical links, and Open Graph metadata.</p>
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online Meta Tag Analyzer & HTML Head Auditor</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Audit webpage HTML head code for meta titles, descriptions, Open Graph social tags, and robots directives.</p>
     </div>
 
-    <!-- HTML Input Textarea -->
-    <textarea id="html-input" class="editor-textarea" placeholder="Paste your HTML <head> code here to analyze meta tags (e.g. <title>Page Title</title><meta name='description' content='...'>)..." autofocus></textarea>
-
-    <!-- Real-time Analysis Report Output -->
-    <div id="report-container" style="display: none; margin-bottom: 2rem;">
-      
-      <!-- Meta Title Card -->
-      <div class="report-card">
-        <div class="report-header">
-          <span class="report-title">Meta Title Tag</span>
-          <span id="badge-title" class="badge success">Found</span>
-        </div>
-        <div id="val-title" class="report-value">Not Specified</div>
-        <div id="info-title" class="report-desc">Length: 0 characters (Recommended: 50–60 characters)</div>
-      </div>
-
-      <!-- Meta Description Card -->
-      <div class="report-card">
-        <div class="report-header">
-          <span class="report-title">Meta Description Tag</span>
-          <span id="badge-desc" class="badge success">Found</span>
-        </div>
-        <div id="val-desc" class="report-value">Not Specified</div>
-        <div id="info-desc" class="report-desc">Length: 0 characters (Recommended: 150–160 characters)</div>
-      </div>
-
-      <!-- Canonical Tag Card -->
-      <div class="report-card">
-        <div class="report-header">
-          <span class="report-title">Canonical URL Tag</span>
-          <span id="badge-canonical" class="badge success">Found</span>
-        </div>
-        <div id="val-canonical" class="report-value">Not Specified</div>
-        <div id="info-canonical" class="report-desc">Ensures original source URL indexing to prevent duplicate content issues.</div>
-      </div>
-
-      <!-- Robots Tag Card -->
-      <div class="report-card">
-        <div class="report-header">
-          <span class="report-title">Robots Meta Tag</span>
-          <span id="badge-robots" class="badge success">Found</span>
-        </div>
-        <div id="val-robots" class="report-value">Not Specified</div>
-        <div id="info-robots" class="report-desc">Instructs search engine crawlers whether to index or follow page links.</div>
-      </div>
-
-      <!-- Open Graph Title Card -->
-      <div class="report-card">
-        <div class="report-header">
-          <span class="report-title">Open Graph Title (og:title)</span>
-          <span id="badge-ogtitle" class="badge success">Found</span>
-        </div>
-        <div id="val-ogtitle" class="report-value">Not Specified</div>
-        <div id="info-ogtitle" class="report-desc">Used by social media sites like Facebook and LinkedIn when your link is shared.</div>
-      </div>
-
-      <!-- Open Graph Image Card -->
-      <div class="report-card">
-        <div class="report-header">
-          <span class="report-title">Open Graph Image (og:image)</span>
-          <span id="badge-ogimg" class="badge success">Found</span>
-        </div>
-        <div id="val-ogimg" class="report-value">Not Specified</div>
-        <div id="info-ogimg" class="report-desc">Preview thumbnail banner image URL displayed on social channels.</div>
-      </div>
-
+    <!-- Input HTML Source Code -->
+    <div class="input-group">
+      <label for="html-input" class="input-label">Paste Webpage HTML Source Code (including &lt;head&gt; section)</label>
+      <textarea id="html-input" class="code-textarea" placeholder="Paste HTML code containing <head> meta tags to audit..."></textarea>
     </div>
 
-    <!-- Action Buttons -->
-    <div class="editor-controls">
-      <div class="btn-group">
-        <button id="btn-sample" class="btn btn-primary" style="padding: 0.68rem 1.4rem; cursor: pointer;">📝 Load Sample Code</button>
-        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.68rem 1.2rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear</button>
+    <!-- Controls Bar -->
+    <div class="controls-bar">
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-analyze" class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-weight: 600; cursor: pointer; background: #10b981;">🔍 Audit Meta Tags</button>
+      </div>
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear</button>
+      </div>
+    </div>
+
+    <!-- Audit Results Box -->
+    <div class="content-box" id="results-box" style="display: none; margin-bottom: 2rem;">
+      <h2 style="font-size: 1.15rem; margin-top: 0; margin-bottom: 0.75rem;">Meta Tag Audit Breakdown</h2>
+
+      <div style="overflow-x: auto;">
+        <table class="audit-table">
+          <thead>
+            <tr>
+              <th>Tag Name / Property</th>
+              <th>Status</th>
+              <th>Detected Content Value / Details</th>
+            </tr>
+          </thead>
+          <tbody id="audit-tbody"></tbody>
+        </table>
       </div>
     </div>
 
     <!-- SEO Article Content Box 1 -->
     <div class="content-box">
-      <h2>Why Meta Tag Auditing is Essential for SEO & Social Media</h2>
-      <p>Meta tags are invisible HTML code elements residing within your webpage's <code>&lt;head&gt;</code> section. Search engines (like Google) and social networks rely on these tags to understand your page title, content summary, canonical URL, and social preview cards. Auditing meta tags ensures your pages display attractively across search engine results and social platforms.</p>
+      <h2>Why Auditing Meta Tags is Fundamental for Search Engine Optimization</h2>
+      <p>HTML <strong>Meta Tags</strong> are embedded code directives located inside a webpage's <code>&lt;head&gt;</code> element. They communicate directly with search engine crawlers (Googlebot, Bingbot) and social media platforms (Facebook, Twitter, LinkedIn) to explain page context, indexing rules, and display snippets.</p>
+
+      <p>Missing or improperly formatted meta tags can lead to truncated search snippets, duplicate content indexing penalties, or unappealing social media previews. Our free <strong>Online Meta Tag Analyzer</strong> extracts and audits all essential meta elements directly from your HTML source code.</p>
     </div>
 
     <!-- SEO Article Content Box 2 -->
     <div class="content-box">
-      <h2>Essential Meta Tags Checklist for Every Web Page</h2>
+      <h2>Essential Meta Tags Inspected by This Tool</h2>
+      <p>Key HTML head tags evaluated during an SEO meta audit:</p>
+
       <ul>
-        <li><strong>Title Tag (&lt;title&gt;):</strong> Keep titles between 50 and 60 characters for optimal display.</li>
-        <li><strong>Meta Description (&lt;meta name="description"&gt;):</strong> Write compelling summaries between 150 and 160 characters.</li>
-        <li><strong>Canonical Link (&lt;link rel="canonical"&gt;):</strong> Specify definitive URL versions to avoid duplicate content penalties.</li>
-        <li><strong>Open Graph Tags (og:title, og:image):</strong> Optimize social media share snippets on Facebook and Twitter.</li>
+        <li><strong>Meta Title (&lt;title&gt;):</strong> The primary headline displayed on Search Engine Result Pages (SERPs). Ideal length is 50-60 characters (under 580 pixels).</li>
+        <li><strong>Meta Description (&lt;meta name="description"&gt;):</strong> The descriptive summary snippet under the SERP title. Ideal length is 120-155 characters.</li>
+        <li><strong>Canonical Tag (&lt;link rel="canonical"&gt;):</strong> Specifies the authoritative master URL to prevent duplicate content issues.</li>
+        <li><strong>Robots Directives (&lt;meta name="robots"&gt;):</strong> Controls crawler indexing and link-following permissions (e.g., <code>index, follow</code>).</li>
+        <li><strong>Open Graph & Twitter Cards:</strong> Controls social share title, description, and preview image thumbnails across Facebook and Twitter.</li>
+        <li><strong>Viewport Meta Tag:</strong> Ensures mobile-responsive rendering on smartphone devices.</li>
       </ul>
     </div>
 
-    <!-- Internal Linking Section -->
+    <!-- SEO Article Content Box 3 -->
     <div class="content-box">
-      <h2>Explore Related SEO Utilities</h2>
-      <p>Enhance your search engine optimization workflow with our tools:</p>
+      <h2>Features of MicroToolStack's Meta Auditor</h2>
+      <ul>
+        <li><strong>Client-Side DOM Parsing:</strong> Parses HTML head sections dynamically using DOMParser to extract standard, Open Graph, and Twitter metadata.</li>
+        <li><strong>Color-Coded Status Warnings:</strong> Displays clear status badges (OK, Warning, Missing) alongside character count validation.</li>
+        <li><strong>100% Client-Side Privacy:</strong> All DOM parsing executes locally in your web browser session using JavaScript. No source code is stored or transmitted remotely.</li>
+        <li><strong>Free & Unlimited Usage:</strong> No audit limits or account registration required.</li>
+      </ul>
+    </div>
+
+    <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
+    <div class="content-box">
+      <h2>Explore Related SEO & Webmaster Tools</h2>
+      <p>Discover our complementary online webmaster utilities:</p>
       <div class="related-links">
-        <a href="/tools/seo/seo-title-preview.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🏷️ SEO Title Preview Tool</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Check title pixel widths and SERP truncation limits.</span>
+        <a href="/tools/seo/google-serp-preview.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🖥️ Google SERP Preview Tool</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Simulate search result snippets and calculate pixel widths.</span>
         </a>
-        <a href="/tools/seo/keyword-density-checker.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">📊 Keyword Density Checker</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Analyze keyword ratios and word frequency.</span>
+        <a href="/tools/seo/canonical-url-checker.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🔍 Canonical URL Tag Checker</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Inspect rel="canonical" tags to prevent duplicate content.</span>
         </a>
-        <a href="/tools/seo/slug-generator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🔗 URL Slug Generator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Convert headlines into clean, SEO-friendly URL slugs.</span>
+        <a href="/tools/seo/broken-link-checker.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🔗 Broken Link Checker</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Audit HTML code for dead links and 404 errors.</span>
         </a>
       </div>
     </div>
 
     <!-- FAQ Section -->
     <div class="content-box">
-      <h2>Frequently Asked Questions</h2>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What happens if my meta description is too long?</h3>
-        <p>If a meta description exceeds 160 characters, Google automatically truncates the trailing text with an ellipsis (...), which can harm your click-through rate.</p>
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How do I analyze a webpage's meta tags?</h3>
+        <p>Paste your webpage HTML source code into the text area and click "Audit Meta Tags". The tool extracts all head tags and displays a status report.</p>
       </div>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Are Open Graph tags necessary for Google Search ranking?</h3>
-        <p>Open Graph tags do not directly influence Google Search rankings, but they significantly improve click-through rates and branding when links are shared on Facebook, Twitter, and LinkedIn.</p>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What happens if a webpage is missing a meta description?</h3>
+        <p>If a meta description is missing, search engines like Google will automatically extract arbitrary text from your page body, which may not present an engaging summary to searchers.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is my HTML source code saved on remote servers?</h3>
+        <p>No. All calculations run client-side inside your browser session using JavaScript. Your source code remains 100% private.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this Meta Tag Analyzer free?</h3>
+        <p>Yes, MicroToolStack's Meta Tag Analyzer is 100% free with no usage limits or sign-up required.</p>
       </div>
     </div>
 
@@ -388,121 +392,115 @@
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const htmlInput = document.getElementById('html-input');
-      const reportContainer = document.getElementById('report-container');
-
-      const btnSample = document.getElementById('btn-sample');
+      const btnAnalyze = document.getElementById('btn-analyze');
       const btnClear = document.getElementById('btn-clear');
+      const resultsBox = document.getElementById('results-box');
+      const auditTbody = document.getElementById('audit-tbody');
 
-      const elTitleVal = document.getElementById('val-title');
-      const elTitleBadge = document.getElementById('badge-title');
-      const elTitleInfo = document.getElementById('info-title');
-
-      const elDescVal = document.getElementById('val-desc');
-      const elDescBadge = document.getElementById('badge-desc');
-      const elDescInfo = document.getElementById('info-desc');
-
-      const elCanonVal = document.getElementById('val-canonical');
-      const elCanonBadge = document.getElementById('badge-canonical');
-
-      const elRobotsVal = document.getElementById('val-robots');
-      const elRobotsBadge = document.getElementById('badge-robots');
-
-      const elOgTitleVal = document.getElementById('val-ogtitle');
-      const elOgTitleBadge = document.getElementById('badge-ogtitle');
-
-      const elOgImgVal = document.getElementById('val-ogimg');
-      const elOgImgBadge = document.getElementById('badge-ogimg');
-
-      function setCardStatus(elVal, elBadge, valText, isMissing, warnMsg = '') {
-        if (isMissing) {
-          elVal.textContent = 'Not Found';
-          elVal.style.color = '#ef4444';
-          elBadge.className = 'badge error';
-          elBadge.textContent = 'Missing';
-        } else {
-          elVal.textContent = valText;
-          elVal.style.color = 'var(--text-primary, #fff)';
-          if (warnMsg) {
-            elBadge.className = 'badge warning';
-            elBadge.textContent = 'Warning';
-          } else {
-            elBadge.className = 'badge success';
-            elBadge.textContent = 'Valid';
-          }
-        }
-      }
-
-      function analyzeMetaTags() {
-        const rawCode = htmlInput.value.trim();
-
-        if (!rawCode) {
-          reportContainer.style.display = 'none';
+      btnAnalyze.addEventListener('click', function() {
+        const text = htmlInput.value.trim();
+        if (!text) {
+          alert('Please paste HTML source code first.');
           return;
         }
 
-        reportContainer.style.display = 'block';
+        auditTbody.innerHTML = '';
+        resultsBox.style.display = 'block';
 
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(rawCode, 'text/html');
-
-        // 1. Meta Title
-        const titleTag = doc.querySelector('title');
-        const titleText = titleTag ? titleTag.innerText.trim() : '';
-        if (!titleText) {
-          setCardStatus(elTitleVal, elTitleBadge, '', true);
-          elTitleInfo.textContent = 'Missing <title> tag in HTML head section.';
-        } else {
-          const len = titleText.length;
-          const isWarn = len < 50 || len > 60;
-          setCardStatus(elTitleVal, elTitleBadge, titleText, false, isWarn);
-          elTitleInfo.textContent = `Length: ${len} characters (${isWarn ? 'Recommended range: 50–60 characters' : 'Optimal length'})`;
+        let doc;
+        try {
+          const parser = new DOMParser();
+          doc = parser.parseFromString(text, 'text/html');
+        } catch (e) {
+          alert('Invalid HTML markup.');
+          return;
         }
 
-        // 2. Meta Description
-        const descTag = doc.querySelector('meta[name="description" i]') || doc.querySelector('meta[name="Description" i]');
-        const descText = descTag ? (descTag.getAttribute('content') || '').trim() : '';
-        if (!descText) {
-          setCardStatus(elDescVal, elDescBadge, '', true);
-          elDescInfo.textContent = 'Missing <meta name="description"> tag.';
-        } else {
-          const len = descText.length;
-          const isWarn = len < 140 || len > 160;
-          setCardStatus(elDescVal, elDescBadge, descText, false, isWarn);
-          elDescInfo.textContent = `Length: ${len} characters (${isWarn ? 'Recommended range: 150–160 characters' : 'Optimal length'})`;
-        }
+        const checks = [
+          {
+            name: 'Meta Title (<title>)',
+            getValue: () => doc.querySelector('title')?.textContent.trim() || '',
+            validate: (val) => {
+              if (!val) return { status: 'badge-missing', label: 'Missing', note: 'No <title> tag found in HTML head.' };
+              const len = val.length;
+              if (len >= 50 && len <= 60) return { status: 'badge-ok', label: 'Optimal', note: `${len} chars (Ideal 50-60 chars)` };
+              return { status: 'badge-warn', label: 'Warning', note: `${len} chars (${len < 50 ? 'Too short' : 'May truncate'})` };
+            }
+          },
+          {
+            name: 'Meta Description',
+            getValue: () => doc.querySelector('meta[name="description" i]')?.getAttribute('content')?.trim() || '',
+            validate: (val) => {
+              if (!val) return { status: 'badge-missing', label: 'Missing', note: 'No meta description tag found.' };
+              const len = val.length;
+              if (len >= 120 && len <= 160) return { status: 'badge-ok', label: 'Optimal', note: `${len} chars (Ideal 120-160 chars)` };
+              return { status: 'badge-warn', label: 'Warning', note: `${len} chars (${len < 120 ? 'Too short' : 'May truncate'})` };
+            }
+          },
+          {
+            name: 'Canonical URL (rel="canonical")',
+            getValue: () => doc.querySelector('link[rel~="canonical" i]')?.getAttribute('href')?.trim() || '',
+            validate: (val) => {
+              if (!val) return { status: 'badge-missing', label: 'Missing', note: 'No canonical link tag found.' };
+              if (val.startsWith('http://') || val.startsWith('https://')) return { status: 'badge-ok', label: 'Valid Absolute', note: val };
+              return { status: 'badge-warn', label: 'Relative Path', note: 'Recommended to use full absolute HTTPS URL.' };
+            }
+          },
+          {
+            name: 'Robots Directives',
+            getValue: () => doc.querySelector('meta[name="robots" i]')?.getAttribute('content')?.trim() || '',
+            validate: (val) => {
+              if (!val) return { status: 'badge-warn', label: 'Default (Index)', note: 'No explicit robots tag (defaults to index, follow).' };
+              return { status: 'badge-ok', label: 'Defined', note: val };
+            }
+          },
+          {
+            name: 'Viewport Tag (Mobile)',
+            getValue: () => doc.querySelector('meta[name="viewport" i]')?.getAttribute('content')?.trim() || '',
+            validate: (val) => {
+              if (!val) return { status: 'badge-missing', label: 'Missing', note: 'Missing mobile responsive viewport tag.' };
+              return { status: 'badge-ok', label: 'Present', note: val };
+            }
+          },
+          {
+            name: 'Open Graph Title (og:title)',
+            getValue: () => doc.querySelector('meta[property="og:title" i]')?.getAttribute('content')?.trim() || '',
+            validate: (val) => val ? { status: 'badge-ok', label: 'Present', note: val } : { status: 'badge-missing', label: 'Missing', note: 'Optional social share title.' }
+          },
+          {
+            name: 'Open Graph Image (og:image)',
+            getValue: () => doc.querySelector('meta[property="og:image" i]')?.getAttribute('content')?.trim() || '',
+            validate: (val) => val ? { status: 'badge-ok', label: 'Present', note: val } : { status: 'badge-missing', label: 'Missing', note: 'Optional social share thumbnail.' }
+          },
+          {
+            name: 'Twitter Card (twitter:card)',
+            getValue: () => doc.querySelector('meta[name="twitter:card" i], meta[property="twitter:card" i]')?.getAttribute('content')?.trim() || '',
+            validate: (val) => val ? { status: 'badge-ok', label: 'Present', note: val } : { status: 'badge-missing', label: 'Missing', note: 'Optional Twitter summary card tag.' }
+          }
+        ];
 
-        // 3. Canonical Tag
-        const canonTag = doc.querySelector('link[rel="canonical" i]');
-        const canonHref = canonTag ? (canonTag.getAttribute('href') || '').trim() : '';
-        setCardStatus(elCanonVal, elCanonBadge, canonHref, !canonHref);
+        checks.forEach(check => {
+          const val = check.getValue();
+          const res = check.validate(val);
 
-        // 4. Robots Tag
-        const robotsTag = doc.querySelector('meta[name="robots" i]');
-        const robotsContent = robotsTag ? (robotsTag.getAttribute('content') || '').trim() : '';
-        setCardStatus(elRobotsVal, elRobotsBadge, robotsContent, !robotsContent);
-
-        // 5. Open Graph Title
-        const ogTitleTag = doc.querySelector('meta[property="og:title" i]');
-        const ogTitleText = ogTitleTag ? (ogTitleTag.getAttribute('content') || '').trim() : '';
-        setCardStatus(elOgTitleVal, elOgTitleBadge, ogTitleText, !ogTitleText);
-
-        // 6. Open Graph Image
-        const ogImgTag = doc.querySelector('meta[property="og:image" i]');
-        const ogImgText = ogImgTag ? (ogImgTag.getAttribute('content') || '').trim() : '';
-        setCardStatus(elOgImgVal, elOgImgBadge, ogImgText, !ogImgText);
-      }
-
-      htmlInput.addEventListener('input', analyzeMetaTags);
-
-      btnSample.addEventListener('click', function() {
-        htmlInput.value = `<head>\n  <title>Free Online JSON Formatter & Validator | MicroToolStack</title>\n  <meta name="description" content="Validate, prettify, and format raw JSON data seamlessly in your web browser for free. Fast, private, and developer-friendly.">\n  <link rel="canonical" href="https://microtoolstack.com/tools/developer/json-formatter.html">\n  <meta name="robots" content="index, follow">\n  <meta property="og:title" content="Free Online JSON Formatter & Validator">\n  <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">\n</head>`;
-        analyzeMetaTags();
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+            <td style="font-weight: 600; color: #fff;">${check.name}</td>
+            <td><span class="status-badge ${res.status}">${res.label}</span></td>
+            <td>${escapeHtml(val || res.note)}</td>
+          `;
+          auditTbody.appendChild(tr);
+        });
       });
+
+      function escapeHtml(str) {
+        return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+      }
 
       btnClear.addEventListener('click', function() {
         htmlInput.value = '';
-        analyzeMetaTags();
-        htmlInput.focus();
+        auditTbody.innerHTML = '';
+        resultsBox.style.display = 'none';
       });
     });
   </script>
