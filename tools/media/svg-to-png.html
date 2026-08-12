@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) - Deferred Load -->
+  <!-- Google tag (gtag.js) - Optimized Load -->
   <script>
     window.addEventListener('load', function() {
       setTimeout(function() {
@@ -22,19 +22,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Primary SEO Meta Tags -->
-  <title>SVG to PNG Converter - Free & High Resolution | MicroToolStack</title>
-  <meta name="description" content="Convert SVG vector graphics to High-Resolution PNG images online for free. Custom scaling, instant preview, 100% private browser processing.">
-  <meta name="keywords" content="svg to png converter, convert svg to png online, high res svg to png, vector to raster converter, free svg to png tool">
+  <title>Free Online SVG to PNG Converter | High-Res Rasterizer | MicroToolStack</title>
+  <meta name="description" content="Convert SVG vector files or raw XML code into PNG, JPG, or WEBP raster images online for free. Custom scale resolutions (1x to 4x Retina), transparent background toggles, and instant downloads.">
+  <meta name="keywords" content="svg to png, convert svg to png, svg converter, svg rasterizer, convert vector to png, svg to jpg online, high res svg to png, media tools">
 
   <link rel="canonical" href="https://microtoolstack.com/tools/media/svg-to-png.html">
   <meta name="robots" content="index, follow">
 
-  <!-- Open Graph / Social Media Meta Tags -->
+  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="SVG to PNG Converter - Free & High Resolution | MicroToolStack">
-  <meta property="og:description" content="Convert SVG vector graphics to High-Resolution PNG images online for free. Custom scaling, instant preview, 100% private browser processing.">
   <meta property="og:url" content="https://microtoolstack.com/tools/media/svg-to-png.html">
-  <meta property="og:site_name" content="MicroToolStack">
+  <meta property="og:title" content="Free Online SVG to PNG Converter | MicroToolStack">
+  <meta property="og:description" content="Convert SVG vector files or code into high-res PNG, JPG, or WEBP images with custom scaling. 100% free, fast, and privacy-first media utility.">
   <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
@@ -42,49 +41,57 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
   <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
-  <!-- Fonts & CSS Stylesheets -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
-  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
-
-  <!-- JSON-LD Schema Markup -->
+  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "WebApplication",
-        "@id": "https://microtoolstack.com/tools/media/svg-to-png.html#webapp",
-        "url": "https://microtoolstack.com/tools/media/svg-to-png.html",
-        "name": "SVG to PNG Converter",
-        "applicationCategory": "UtilitiesApplication",
+        "@type": "SoftwareApplication",
+        "name": "SVG to PNG Converter Tool",
         "operatingSystem": "All",
+        "applicationCategory": "MultimediaApplication",
         "offers": {
           "@type": "Offer",
           "price": "0",
           "priceCurrency": "USD"
         },
-        "description": "Convert scalable SVG vector files into high-quality PNG raster images instantly inside your browser."
+        "description": "An essential client-side web utility that converts SVG vector documents or inline XML markup into high-resolution PNG, JPG, and WEBP raster images with custom scaling.",
+        "url": "https://microtoolstack.com/tools/media/svg-to-png.html"
       },
       {
         "@type": "FAQPage",
-        "@id": "https://microtoolstack.com/tools/media/svg-to-png.html#faq",
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "Are my SVG files uploaded to any server?",
+            "name": "Why convert SVG vector files to PNG?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "No. The SVG rendering and conversion process happens 100% locally inside your web browser."
+              "text": "Converting SVG to PNG is essential when importing icons or logos into image editing software, social media platforms, presentation slides, or legacy systems that do not support vector SVG documents."
             }
           },
           {
             "@type": "Question",
-            "name": "Can I export high DPI or 4K PNG images?",
+            "name": "Does converting SVG to PNG preserve transparency?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes, you can select scaling multipliers up to 4x (Ultra HD) for crisp resolution."
+              "text": "Yes! When exporting to PNG or WEBP formats, background transparency is 100% preserved. You can also select a custom solid background color if desired."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are my uploaded SVG files sent to remote servers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No! All vector rendering, canvas scaling, and image exports execute 100% locally inside your web browser session using client-side JavaScript. Your files remain completely private."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this SVG to PNG Converter free to use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, MicroToolStack's SVG to PNG Converter is 100% free with unlimited conversions and no registration required."
             }
           }
         ]
@@ -93,56 +100,137 @@
   }
   </script>
 
+  <!-- Preconnect and Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
   <style>
-    .upload-box {
-      border: 2px dashed var(--border-color, #333);
-      padding: 2.5rem 1.5rem;
-      text-align: center;
-      border-radius: 12px;
-      cursor: pointer;
-      background: var(--bg-card, #1e1e2e);
-      transition: border-color 0.3s;
-      margin-bottom: 1.5rem;
+    .input-group {
+      margin-bottom: 1.25rem;
     }
-    .upload-box:hover {
+    .input-label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.5rem;
+    }
+    .form-control, .form-select {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
+      color: var(--text-primary, #fff);
+      outline: none;
+      box-sizing: border-box;
+    }
+    .form-control:focus, .form-select:focus {
       border-color: var(--accent-primary, #3b82f6);
     }
-    .preview-container {
-      margin-top: 1.5rem;
-      text-align: center;
-      display: none;
+
+    /* Mode Tabs */
+    .tab-bar {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
     }
-    .preview-img {
-      max-width: 100%;
-      max-height: 350px;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-      background: repeating-conic-gradient(#808080 0% 25%, transparent 0% 50%) 50% / 16px 16px;
+    .tab-btn {
+      padding: 0.6rem 1.25rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      background: var(--bg-card, #1e1e2e);
+      color: var(--text-secondary, #9ca3af);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s ease;
     }
-    .controls-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-      margin: 1.5rem 0;
+    .tab-btn.active {
+      background: var(--accent-primary, #3b82f6);
+      color: #fff;
+      border-color: var(--accent-primary, #3b82f6);
     }
-    .control-group {
+
+    /* Drag and Drop Zone */
+    .drop-zone {
+      width: 100%;
+      min-height: 160px;
+      border: 2px dashed var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
       display: flex;
       flex-direction: column;
-      gap: 0.5rem;
-      text-align: left;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      padding: 1.5rem;
+      box-sizing: border-box;
+      text-align: center;
+      margin-bottom: 1.5rem;
     }
-    .control-group label {
-      font-size: 0.9rem;
+    .drop-zone:hover, .drop-zone.dragover {
+      border-color: var(--accent-primary, #3b82f6);
+      background-color: rgba(59, 130, 246, 0.05);
+    }
+
+    /* Converter Workspace Stage */
+    .converter-stage {
+      width: 100%;
+      min-height: 260px;
+      background: #111827;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1.5rem;
+      box-sizing: border-box;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .svg-preview-wrapper {
+      max-width: 100%;
+      max-height: 320px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .svg-preview-wrapper img {
+      max-width: 100%;
+      max-height: 280px;
+      object-fit: contain;
+    }
+
+    .meta-badge {
+      display: inline-block;
+      font-size: 0.85rem;
       color: var(--text-secondary, #9ca3af);
-    }
-    .control-group input, .control-group select {
-      padding: 0.6rem 0.8rem;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 0.3rem 0.75rem;
       border-radius: 6px;
       border: 1px solid var(--border-color, #333);
-      background: var(--bg-body, #111827);
-      color: #fff;
-      outline: none;
+      margin-top: 0.75rem;
     }
+
+    .controls-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.5rem;
+    }
+
     .content-box {
       background-color: var(--bg-card, #1e1e2e);
       border: 1px solid var(--border-color, #333);
@@ -155,12 +243,18 @@
       margin-bottom: 1rem;
       color: var(--text-primary, #fff);
     }
-    .content-box p, .content-box ul, .content-box ol {
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul {
       color: var(--text-secondary, #9ca3af);
       font-size: 0.95rem;
       line-height: 1.6;
     }
-    .content-box ul, .content-box ol {
+    .content-box ul {
       padding-left: 1.25rem;
       margin-bottom: 1rem;
     }
@@ -189,6 +283,7 @@
   </style>
 </head>
 <body style="margin: 0; padding: 0;">
+
   <!-- Header Section -->
   <header class="custom-header">
     <a href="/" class="custom-logo">
@@ -202,234 +297,346 @@
     </nav>
   </header>
 
+  <!-- Main Container -->
   <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
-    <!-- Breadcrumb Navigation -->
-    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
-      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
-      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Media Tools</a> / 
-      <span>SVG to PNG</span>
-    </nav>
+    
+    <!-- Tool Title & Description -->
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online SVG to PNG Converter</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Rasterize SVG vector documents or inline XML markup into high-resolution PNG, JPG, or WEBP images.</p>
+    </div>
 
-    <!-- Tool Header -->
-    <header style="margin-bottom: 2rem; text-align: center;">
-      <h1 class="hero" style="font-size: 2rem; margin-bottom: 0.5rem; color: #fff;">Free SVG to PNG Converter</h1>
-      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">
-        Convert scalable SVG vector files into high-quality PNG raster images instantly inside your browser.
-      </p>
-    </header>
+    <!-- Mode Selector Tabs -->
+    <div class="tab-bar">
+      <button class="tab-btn active" id="tab-file">📁 Upload SVG File</button>
+      <button class="tab-btn" id="tab-code">💻 Paste SVG Code</button>
+    </div>
 
-    <!-- Tool Main Card -->
-    <div class="card" style="padding: 2rem; border-radius: 12px; background: var(--bg-card, #1e1e2e); border: 1px solid var(--border-color, #333); margin-bottom: 3rem;">
-      
-      <!-- Upload Drop Zone -->
-      <div class="upload-box" id="dropZone" onclick="document.getElementById('svgInput').click()">
-        <span style="font-size: 2.5rem; display: block; margin-bottom: 0.5rem;">📂</span>
-        <p style="margin-bottom: 0.5rem; font-weight: 600; color: #fff;">Click or Drag & Drop SVG File Here</p>
-        <p style="font-size: 0.85rem; color: var(--text-secondary, #9ca3af);">Supports .svg vector files only (100% Client-Side Processing)</p>
-        <input type="file" id="svgInput" accept=".svg" style="display: none;" onchange="handleFileSelect(event)">
+    <!-- Mode 1: File Drop Zone -->
+    <div id="mode-file-box">
+      <div class="drop-zone" id="drop-zone">
+        <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🎨</div>
+        <div style="font-size: 1.05rem; font-weight: 600; color: #fff; margin-bottom: 0.25rem;">Drag & Drop SVG File Here</div>
+        <div style="font-size: 0.85rem; color: #9ca3af;">or click to browse from device (.SVG)</div>
+        <input type="file" id="file-input" accept="image/svg+xml" style="display: none;">
       </div>
+    </div>
 
-      <!-- Controls & Preview (Hidden by default) -->
-      <div class="preview-container" id="previewArea">
-        <img id="imagePreview" class="preview-img" alt="SVG Preview">
+    <!-- Mode 2: Code Textarea -->
+    <div id="mode-code-box" class="content-box" style="display: none; margin-bottom: 1.5rem;">
+      <label for="svg-code-input" class="input-label">Paste Raw SVG XML Code</label>
+      <textarea id="svg-code-input" class="form-control" style="min-height: 120px; font-family: monospace;" placeholder="<svg xmlns='http://www.w3.org/2000/svg' ...> ... </svg>"></textarea>
+    </div>
 
-        <div class="controls-grid">
-          <div class="control-group">
-            <label for="scaleFactor">Scale Resolution Multiplier:</label>
-            <select id="scaleFactor" onchange="renderPNG()">
-              <option value="1">1x (Original SVG Size)</option>
-              <option value="2" selected>2x (High DPI / Retina)</option>
-              <option value="4">4x (Ultra HD 4K Quality)</option>
-            </select>
-          </div>
-          <div class="control-group">
-            <label for="bgColor">Background Style:</label>
-            <select id="bgColor" onchange="renderPNG()">
-              <option value="transparent" selected>Transparent Background</option>
-              <option value="#ffffff">White Background</option>
-              <option value="#000000">Black Background</option>
-            </select>
-          </div>
+    <!-- Rasterization Settings Card -->
+    <div class="content-box" style="margin-bottom: 1.5rem;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem;" class="input-group">
+        <div>
+          <label for="output-format" class="input-label">Export Format</label>
+          <select id="output-format" class="form-select">
+            <option value="png" selected>PNG (Transparent)</option>
+            <option value="jpeg">JPG / JPEG (Solid BG)</option>
+            <option value="webp">WEBP (High Compression)</option>
+          </select>
         </div>
-
-        <button id="downloadBtn" class="btn btn-primary" style="padding: 0.8rem 2rem; font-size: 1rem; cursor: pointer;" onclick="downloadPNG()">
-          ⬇️ Download PNG Image
-        </button>
+        <div>
+          <label for="output-scale" class="input-label">Scale Multiplier (Resolution)</label>
+          <select id="output-scale" class="form-select">
+            <option value="1">1x Standard Resolution</option>
+            <option value="2" selected>2x HD Retina</option>
+            <option value="3">3x Ultra HD</option>
+            <option value="4">4x Max Resolution (300+ DPI)</option>
+          </select>
+        </div>
+        <div>
+          <label for="bg-color-picker" class="input-label">Background Color</label>
+          <input type="color" id="bg-color-picker" class="form-control" value="#ffffff" style="height: 42px; padding: 0.2rem;" disabled>
+        </div>
       </div>
-
     </div>
 
-    <!-- Hidden Canvas for Rendering -->
-    <canvas id="conversionCanvas" style="display: none;"></canvas>
-
-    <!-- SEO Content Box 1 -->
-    <div class="content-box">
-      <h2>How to Convert SVG to PNG Online</h2>
-      <ol>
-        <li>Upload your SVG file by dragging it into the box or clicking to browse.</li>
-        <li>Select your preferred resolution scaling (1x, 2x, or 4x for Ultra HD).</li>
-        <li>Choose a transparent, white, or black background for your PNG.</li>
-        <li>Click <strong>Download PNG Image</strong> to save your rendered image file instantly.</li>
-      </ol>
+    <!-- Converter Workspace Stage -->
+    <div class="converter-stage">
+      <div id="svg-preview-container" class="svg-preview-wrapper">
+        <img id="preview-img" style="display: none;" alt="Rasterized PNG Preview">
+      </div>
+      <div id="status-msg" style="color: #94a3b8; font-size: 0.95rem;">
+        📂 Upload an SVG file or paste XML code to rasterize...
+      </div>
+      <div id="img-meta" class="meta-badge" style="display: none;">Output Resolution: 0 x 0 px</div>
     </div>
 
-    <!-- SEO Content Box 2 -->
-    <div class="content-box">
-      <h2>Why Use MicroToolStack SVG Converter?</h2>
-      <p>
-        Unlike traditional online converters that upload your vector graphics to remote servers, our tool processes everything directly inside your browser using HTML5 Canvas rendering. Your files remain 100% private and never leave your device.
-      </p>
+    <!-- Controls Bar -->
+    <div class="controls-bar">
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-download" class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-weight: 600; cursor: pointer; background: #10b981;">💾 Download Rasterized Image</button>
+      </div>
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear</button>
+      </div>
     </div>
 
-    <!-- Internal Linking Section (SEO Best Practice) -->
+    <!-- Offscreen Processing Canvas -->
+    <canvas id="proc-canvas" style="display: none;"></canvas>
+
+    <!-- SEO Article Content Box 1 -->
     <div class="content-box">
-      <h2>Explore Related Media & Web Tools</h2>
-      <p>Enhance your graphics workflow with our free utilities:</p>
+      <h2>Why Converting SVG Vectors to PNG Raster Images is Essential</h2>
+      <p><strong>Scalable Vector Graphics (SVG)</strong> are the ideal visual format for modern responsive web development. SVG graphics scale infinitely without pixelation, carry tiny file sizes, and support CSS animations. However, many desktop publishing tools, social media platforms (Facebook, Instagram, LinkedIn), presentation software (PowerPoint, Keynote), and legacy image editors do not support vector SVG documents natively.</p>
+
+      <p>Converting SVG vector files into high-resolution <strong>PNG (Portable Network Graphics)</strong> or JPEG images solves compatibility issues while maintaining sharp edges and transparent backgrounds. Our free <strong>Online SVG to PNG Converter</strong> rasterizes vector documents directly inside your web browser with 1x to 4x scaling multiplier controls.</p>
+    </div>
+
+    <!-- SEO Article Content Box 2 -->
+    <div class="content-box">
+      <h2>Key Features & Format Trade-Offs</h2>
+      <p>Choosing the right export format for your rasterized vector graphic:</p>
+
+      <ul>
+        <li><strong>PNG (Transparent Background):</strong> Preserves 100% transparent backgrounds and sharp line edges, making it the ideal choice for logos, icons, and UI buttons.</li>
+        <li><strong>JPEG / JPG (Solid Background):</strong> Fills transparent areas with a customizable solid background color, reducing file sizes for print graphics.</li>
+        <li><strong>WEBP (Modern Web Format):</strong> Offers high compression ratios with full alpha channel transparency for web publishing.</li>
+      </ul>
+    </div>
+
+    <!-- SEO Article Content Box 3 -->
+    <div class="content-box">
+      <h2>Features of MicroToolStack's SVG Rasterizer</h2>
+      <ul>
+        <li><strong>Dual Input Modes:</strong> Upload <code>.svg</code> files or paste raw inline XML markup strings directly.</li>
+        <li><strong>High-DPI Scale Multipliers:</strong> Scale output image resolutions up to 4x (300+ DPI equivalent) for print-ready graphics.</li>
+        <li><strong>100% Client-Side Privacy:</strong> All canvas rendering and image rasterization execute locally inside your web browser session using JavaScript. Vector files are never uploaded remotely.</li>
+        <li><strong>Free & Unlimited Usage:</strong> No conversion limits or account sign-ups required.</li>
+      </ul>
+    </div>
+
+    <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
+    <div class="content-box">
+      <h2>Explore Related Media Tools</h2>
+      <p>Discover our complementary online media utilities:</p>
       <div class="related-links">
         <a href="/tools/media/png-to-svg.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🎨 PNG to SVG Converter</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Trace raster PNG images into SVG vectors.</span>
+          <strong style="display:block; margin-bottom: 0.25rem;">📐 PNG to SVG Vectorizer</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Convert raster PNG images into scalable SVG vectors.</span>
+        </a>
+        <a href="/tools/media/ico-converter.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🌐 Image to ICO Converter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Convert PNG and JPG images into website favicons.</span>
         </a>
         <a href="/tools/media/image-cropper.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">✂️ Image Cropper</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Crop images with custom aspect ratios.</span>
-        </a>
-        <a href="/tools/media/base64-to-image.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🖼️ Base64 to Image</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Decode Base64 strings to downloadable images.</span>
+          <strong style="display:block; margin-bottom: 0.25rem;">✂️ Interactive Image Cropper</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Crop, rotate, and scale photos into exact aspect ratios.</span>
         </a>
       </div>
     </div>
 
     <!-- FAQ Section -->
     <div class="content-box">
-      <h2>Frequently Asked Questions</h2>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: #fff; margin-bottom: 0.25rem;">Are my SVG files uploaded to any server?</h3>
-        <p>No. The SVG rendering and conversion process happens 100% locally inside your web browser.</p>
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How do I convert an SVG file to PNG online?</h3>
+        <p>Drag and drop your SVG file into the drop zone, choose your export scale (e.g., 2x HD Retina), and click "Download Rasterized Image".</p>
       </div>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: #fff; margin-bottom: 0.25rem;">Can I export high DPI or 4K PNG images?</h3>
-        <p>Yes, you can select scaling multipliers up to 4x (Ultra HD) for crisp resolution.</p>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Can I convert raw SVG code without uploading a file?</h3>
+        <p>Yes! Switch to the "Paste SVG Code" tab, enter your XML <code>&lt;svg&gt;</code> markup, and download your converted PNG image.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Are my uploaded SVG files saved on remote servers?</h3>
+        <p>No. All calculations run client-side inside your browser session using JavaScript. Your files remain completely private.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this SVG to PNG Converter free?</h3>
+        <p>Yes, MicroToolStack's SVG to PNG Converter is 100% free with no usage limits or sign-up required.</p>
       </div>
     </div>
 
   </main>
 
-  <!-- Footer Placeholder -->
+  <!-- Footer Container Placeholder -->
   <div id="footer-container"></div>
 
-  <!-- Core Scripts -->
+  <!-- JavaScript Utilities & Logic -->
   <script src="/assets/js/theme.js"></script>
   <script src="/assets/js/utils.js" defer></script>
-  <script src="/assets/js/search.js" defer></script>
   <script src="/assets/js/app.js" defer></script>
 
-  <!-- SVG Conversion Script -->
   <script>
-    let currentSvgText = '';
-    let svgWidth = 300;
-    let svgHeight = 300;
-    let originalFileName = 'converted-image';
+    document.addEventListener('DOMContentLoaded', function() {
+      const tabFile = document.getElementById('tab-file');
+      const tabCode = document.getElementById('tab-code');
+      const modeFileBox = document.getElementById('mode-file-box');
+      const modeCodeBox = document.getElementById('mode-code-box');
 
-    function handleFileSelect(event) {
-      const file = event.target.files[0];
-      if (!file) return;
+      const dropZone = document.getElementById('drop-zone');
+      const fileInput = document.getElementById('file-input');
+      const svgCodeInput = document.getElementById('svg-code-input');
 
-      originalFileName = file.name.replace(/\.[^/.]+$/, "");
-      const reader = new FileReader();
+      const outputFormat = document.getElementById('output-format');
+      const outputScale = document.getElementById('output-scale');
+      const bgColorPicker = document.getElementById('bg-color-picker');
 
-      reader.onload = function(e) {
-        currentSvgText = e.target.result;
-        parseAndPreviewSVG(currentSvgText);
-      };
-      reader.readAsText(file);
-    }
+      const previewImg = document.getElementById('preview-img');
+      const statusMsg = document.getElementById('status-msg');
+      const imgMeta = document.getElementById('img-meta');
 
-    // Drag & Drop handlers
-    const dropZone = document.getElementById('dropZone');
-    dropZone.addEventListener('dragover', (e) => { e.preventDefault(); dropZone.style.borderColor = 'var(--accent-primary, #3b82f6)'; });
-    dropZone.addEventListener('dragleave', () => { dropZone.style.borderColor = 'var(--border-color, #333)'; });
-    dropZone.addEventListener('drop', (e) => {
-      e.preventDefault();
-      dropZone.style.borderColor = 'var(--border-color, #333)';
-      if (e.dataTransfer.files.length) {
-        document.getElementById('svgInput').files = e.dataTransfer.files;
-        handleFileSelect({ target: { files: e.dataTransfer.files } });
+      const btnDownload = document.getElementById('btn-download');
+      const btnClear = document.getElementById('btn-clear');
+      const procCanvas = document.getElementById('proc-canvas');
+
+      let currentMode = 'file';
+      let svgDataUrl = '';
+      let nativeWidth = 300;
+      let nativeHeight = 300;
+
+      // Tab Switch
+      tabFile.addEventListener('click', () => {
+        tabFile.classList.add('active');
+        tabCode.classList.remove('active');
+        modeFileBox.style.display = 'block';
+        modeCodeBox.style.display = 'none';
+        currentMode = 'file';
+        processSvg();
+      });
+
+      tabCode.addEventListener('click', () => {
+        tabCode.classList.add('active');
+        tabFile.classList.remove('active');
+        modeCodeBox.style.display = 'block';
+        modeFileBox.style.display = 'none';
+        currentMode = 'code';
+        processSvg();
+      });
+
+      // Background color toggle
+      outputFormat.addEventListener('change', function() {
+        if (outputFormat.value === 'jpeg') {
+          bgColorPicker.disabled = false;
+        } else {
+          bgColorPicker.disabled = true;
+        }
+        processSvg();
+      });
+
+      // File Handlers
+      dropZone.addEventListener('click', () => fileInput.click());
+
+      dropZone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropZone.classList.add('dragover');
+      });
+
+      dropZone.addEventListener('dragleave', () => dropZone.classList.remove('dragover'));
+
+      dropZone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropZone.classList.remove('dragover');
+        if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+          handleFile(e.dataTransfer.files[0]);
+        }
+      });
+
+      fileInput.addEventListener('change', (e) => {
+        if (e.target.files && e.target.files[0]) {
+          handleFile(e.target.files[0]);
+        }
+      });
+
+      svgCodeInput.addEventListener('input', processSvg);
+      outputScale.addEventListener('change', processSvg);
+      bgColorPicker.addEventListener('input', processSvg);
+
+      function handleFile(file) {
+        const reader = new FileReader();
+        reader.onload = function(evt) {
+          const content = evt.target.result;
+          svgDataUrl = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(content);
+          renderPreview();
+        };
+        reader.readAsText(file);
       }
-    });
 
-    function parseAndPreviewSVG(svgText) {
-      const parser = new DOMParser();
-      const svgDoc = parser.parseFromString(svgText, "image/svg+xml");
-      const svgElement = svgDoc.documentElement;
-
-      // Extract width & height
-      let w = parseFloat(svgElement.getAttribute('width'));
-      let h = parseFloat(svgElement.getAttribute('height'));
-
-      if (!w || !h) {
-        const viewBox = svgElement.getAttribute('viewBox');
-        if (viewBox) {
-          const parts = viewBox.split(/[\s,]+/).map(Number);
-          if (parts.length === 4) {
-            w = parts[2];
-            h = parts[3];
+      function processSvg() {
+        if (currentMode === 'code') {
+          const xml = svgCodeInput.value.trim();
+          if (!xml) {
+            resetState();
+            return;
           }
+          svgDataUrl = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(xml);
+          renderPreview();
+        } else {
+          if (svgDataUrl) renderPreview();
         }
       }
 
-      svgWidth = w || 300;
-      svgHeight = h || 300;
+      function renderPreview() {
+        if (!svgDataUrl) return;
 
-      document.getElementById('previewArea').style.display = 'block';
-      renderPNG();
-    }
+        const img = new Image();
+        img.onload = function() {
+          nativeWidth = img.naturalWidth || 300;
+          nativeHeight = img.naturalHeight || 300;
 
-    function renderPNG() {
-      if (!currentSvgText) return;
+          const scale = parseInt(outputScale.value, 10) || 2;
+          const outW = nativeWidth * scale;
+          const outH = nativeHeight * scale;
 
-      const scale = parseFloat(document.getElementById('scaleFactor').value);
-      const bg = document.getElementById('bgColor').value;
+          procCanvas.width = outW;
+          procCanvas.height = outH;
 
-      const canvas = document.getElementById('conversionCanvas');
-      const ctx = canvas.getContext('2d');
+          const ctx = procCanvas.getContext('2d');
+          ctx.clearRect(0, 0, outW, outH);
 
-      const targetW = svgWidth * scale;
-      const targetH = svgHeight * scale;
+          if (outputFormat.value === 'jpeg') {
+            ctx.fillStyle = bgColorPicker.value;
+            ctx.fillRect(0, 0, outW, outH);
+          }
 
-      canvas.width = targetW;
-      canvas.height = targetH;
+          ctx.drawImage(img, 0, 0, outW, outH);
 
-      ctx.clearRect(0, 0, targetW, targetH);
+          const fmt = outputFormat.value === 'jpeg' ? 'image/jpeg' : (outputFormat.value === 'webp' ? 'image/webp' : 'image/png');
+          const rasterUrl = procCanvas.toDataURL(fmt, 0.95);
 
-      if (bg !== 'transparent') {
-        ctx.fillStyle = bg;
-        ctx.fillRect(0, 0, targetW, targetH);
+          previewImg.src = rasterUrl;
+          previewImg.style.display = 'block';
+          statusMsg.style.display = 'none';
+
+          imgMeta.textContent = `Output Resolution: ${outW} x ${outH} px (${scale}x Scale)`;
+          imgMeta.style.display = 'inline-block';
+        };
+        img.src = svgDataUrl;
       }
 
-      const img = new Image();
-      const svgBlob = new Blob([currentSvgText], { type: 'image/svg+xml;charset=utf-8' });
-      const url = URL.createObjectURL(svgBlob);
+      function resetState() {
+        previewImg.style.display = 'none';
+        previewImg.src = '';
+        statusMsg.style.display = 'block';
+        imgMeta.style.display = 'none';
+        svgDataUrl = '';
+      }
 
-      img.onload = function() {
-        ctx.drawImage(img, 0, 0, targetW, targetH);
-        URL.revokeObjectURL(url);
-        
-        // Show in Preview Image tag
-        const previewImg = document.getElementById('imagePreview');
-        previewImg.src = canvas.toDataURL('image/png');
-      };
-      img.src = url;
-    }
+      btnDownload.addEventListener('click', function() {
+        if (!previewImg.src || previewImg.style.display === 'none') {
+          alert('Please upload an SVG file or enter XML code first.');
+          return;
+        }
 
-    function downloadPNG() {
-      const canvas = document.getElementById('conversionCanvas');
-      const link = document.createElement('a');
-      link.download = `${originalFileName}.png`;
-      link.href = canvas.toDataURL('image/png');
-      link.click();
-    }
+        const ext = outputFormat.value === 'jpeg' ? 'jpg' : outputFormat.value;
+        const link = document.createElement('a');
+        link.href = previewImg.src;
+        link.download = `rasterized-graphic.${ext}`;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      });
+
+      btnClear.addEventListener('click', function() {
+        fileInput.value = '';
+        svgCodeInput.value = '';
+        resetState();
+      });
+    });
   </script>
 </body>
 </html>
