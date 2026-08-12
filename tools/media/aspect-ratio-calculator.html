@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) - Deferred Load -->
+  <!-- Google tag (gtag.js) - Optimized Load -->
   <script>
     window.addEventListener('load', function() {
       setTimeout(function() {
@@ -20,19 +20,20 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aspect Ratio Calculator - Free Image & Video Dimension Resizer | MicroToolStack</title>
-  <meta name="description" content="Calculate image dimensions and maintain aspect ratios easily with our free online Aspect Ratio Calculator. Perfect for designers, video editors, and developers.">
-  <meta name="keywords" content="aspect ratio calculator, image dimension resizer, 16:9 ratio calculator, screen resolution scale, photo proportions">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>Free Online Aspect Ratio Calculator | Image & Video Resizer Tool | MicroToolStack</title>
+  <meta name="description" content="Calculate missing image and video dimensions based on aspect ratios (16:9, 4:3, 1:1, 9:16, 21:9) instantly. Free online aspect ratio calculator for web designers, video editors, and photographers.">
+  <meta name="keywords" content="aspect ratio calculator, image dimension calculator, 16 9 ratio calculator, calculate aspect ratio, video resolution scaling, image resizer ratio, screen resolution ratio, media tools">
 
-  <link rel="canonical" href="https://microtoolstack.com/tools/image/aspect-ratio-calculator.html">
+  <link rel="canonical" href="https://microtoolstack.com/tools/media/aspect-ratio-calculator.html">
   <meta name="robots" content="index, follow">
 
-  <!-- Open Graph / Social Media Meta Tags -->
+  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Aspect Ratio Calculator - Free Image & Video Dimension Resizer | MicroToolStack">
-  <meta property="og:description" content="Calculate image dimensions and maintain aspect ratios easily with our free online Aspect Ratio Calculator. Perfect for designers, video editors, and developers.">
-  <meta property="og:url" content="https://microtoolstack.com/tools/image/aspect-ratio-calculator.html">
-  <meta property="og:site_name" content="MicroToolStack">
+  <meta property="og:url" content="https://microtoolstack.com/tools/media/aspect-ratio-calculator.html">
+  <meta property="og:title" content="Free Online Aspect Ratio Calculator | MicroToolStack">
+  <meta property="og:description" content="Calculate image and video dimension scaling based on aspect ratios instantly. 100% free, browser-based media utility.">
   <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
@@ -40,57 +41,57 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
   <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
-  <!-- Fonts & CSS Stylesheets -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
-  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
-
-  <!-- JSON-LD Schema Markup -->
+  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "WebApplication",
-        "@id": "https://microtoolstack.com/tools/image/aspect-ratio-calculator.html#webapp",
-        "url": "https://microtoolstack.com/tools/image/aspect-ratio-calculator.html",
+        "@type": "SoftwareApplication",
         "name": "Aspect Ratio Calculator",
-        "applicationCategory": "UtilitiesApplication",
         "operatingSystem": "All",
+        "applicationCategory": "MultimediaApplication",
         "offers": {
           "@type": "Offer",
           "price": "0",
           "priceCurrency": "USD"
         },
-        "description": "Calculate proportions and scale your image or video dimensions accurately in real-time."
+        "description": "An essential client-side web utility that calculates missing pixel dimensions for images, videos, and UI layouts based on custom or standard aspect ratios.",
+        "url": "https://microtoolstack.com/tools/media/aspect-ratio-calculator.html"
       },
       {
         "@type": "FAQPage",
-        "@id": "https://microtoolstack.com/tools/image/aspect-ratio-calculator.html#faq",
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "What is an aspect ratio calculator?",
+            "name": "What is an Aspect Ratio?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "An aspect ratio calculator is an online tool designed to compute the proportional relationship between the width and height of an image or video, allowing users to resize dimensions without distortion."
+              "text": "An aspect ratio is the proportional relationship between an image or display screen's width and height, expressed as two numbers separated by a colon (e.g., 16:9)."
             }
           },
           {
             "@type": "Question",
-            "name": "How do I calculate aspect ratio manually?",
+            "name": "What is the standard aspect ratio for YouTube videos and modern monitors?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "You can calculate aspect ratio manually by dividing both the width and height by their greatest common divisor (GCD), or you can use our instant online calculator to do it automatically."
+              "text": "16:9 (Widescreen) is the universal standard aspect ratio for HDTV, YouTube videos, desktop monitors, and modern digital media."
             }
           },
           {
             "@type": "Question",
-            "name": "What is the standard video aspect ratio?",
+            "name": "How does the missing dimension calculation work?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The 16:9 aspect ratio is the worldwide standard for high-definition televisions, YouTube videos, and modern computer displays."
+              "text": "The calculator uses simple cross-multiplication: (New Width * Original Height) / Original Width = New Height, maintaining exact visual proportion without image distortion."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this aspect ratio calculator free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, MicroToolStack's Aspect Ratio Calculator is 100% free with unlimited calculations and no registration required."
             }
           }
         ]
@@ -99,21 +100,101 @@
   }
   </script>
 
+  <!-- Preconnect and Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
   <style>
-    .ratio-input {
-      width: 100%;
-      padding: 0.8rem;
-      border-radius: 8px;
-      border: 1px solid var(--border-color, #333);
-      background: var(--bg-body, #111827);
-      color: var(--text-primary, #fff);
-      font-size: 1rem;
-      box-sizing: border-box;
-      outline: none;
+    .input-group {
+      margin-bottom: 1.25rem;
     }
-    .ratio-input:focus {
+    .input-label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.5rem;
+    }
+    .form-control, .form-select {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
+      color: var(--text-primary, #fff);
+      outline: none;
+      box-sizing: border-box;
+      font-family: 'Fira Code', Consolas, Monaco, monospace;
+    }
+    .form-control:focus, .form-select:focus {
       border-color: var(--accent-primary, #3b82f6);
     }
+
+    .preset-btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .preset-btn {
+      padding: 0.4rem 0.85rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-primary, #fff);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .preset-btn:hover, .preset-btn.active {
+      background: var(--accent-primary, #3b82f6);
+      border-color: var(--accent-primary, #3b82f6);
+      color: #fff;
+    }
+
+    .calc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Aspect Ratio Box Preview */
+    .ratio-preview-wrapper {
+      width: 100%;
+      height: 220px;
+      background: #111827;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      box-sizing: border-box;
+    }
+
+    .ratio-visual-box {
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      border-radius: 6px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      max-width: 100%;
+      max-height: 100%;
+    }
+
     .content-box {
       background-color: var(--bg-card, #1e1e2e);
       border: 1px solid var(--border-color, #333);
@@ -126,17 +207,38 @@
       margin-bottom: 1rem;
       color: var(--text-primary, #fff);
     }
-    .content-box p, .content-box ul, .content-box ol {
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul, .content-box table {
       color: var(--text-secondary, #9ca3af);
       font-size: 0.95rem;
       line-height: 1.6;
     }
-    .content-box ul, .content-box ol {
+    .content-box ul {
       padding-left: 1.25rem;
       margin-bottom: 1rem;
     }
     .content-box li {
       margin-bottom: 0.5rem;
+    }
+    .ratio-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+    .ratio-table th, .ratio-table td {
+      border: 1px solid var(--border-color, #333);
+      padding: 0.75rem;
+      text-align: left;
+    }
+    .ratio-table th {
+      background-color: rgba(255, 255, 255, 0.05);
+      color: var(--text-primary, #fff);
     }
     .related-links {
       display: grid;
@@ -174,194 +276,255 @@
     </nav>
   </header>
 
+  <!-- Main Container -->
   <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
-    <!-- Breadcrumb Navigation -->
-    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
-      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
-      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Image Tools</a> / 
-      <span>Aspect Ratio Calculator</span>
-    </nav>
+    
+    <!-- Tool Title & Description -->
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online Aspect Ratio Calculator</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Calculate missing width or height dimensions for images, videos, and responsive UI screens.</p>
+    </div>
 
-    <!-- Header Area -->
-    <header style="margin-bottom: 2rem; text-align: center;">
-      <h1 class="hero" style="font-size: 2rem; margin-bottom: 0.5rem; color: #fff;">Aspect Ratio Calculator</h1>
-      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">
-        Calculate proportions and scale your image or video dimensions accurately in real-time.
-      </p>
-    </header>
-
-    <!-- Tool Card -->
-    <div class="card" style="padding: 2rem; border-radius: 12px; background: var(--bg-card, #1e1e2e); border: 1px solid var(--border-color, #333); margin-bottom: 3rem;">
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: center;">
-        
-        <!-- Original Dimensions -->
-        <div>
-          <h3 style="color: var(--accent-primary, #3b82f6); font-size: 1.1rem; margin-bottom: 1rem;">Original Dimensions</h3>
-          <div style="margin-bottom: 1rem;">
-            <label style="display: block; font-size: 0.9rem; margin-bottom: 0.4rem; color: #fff; font-weight: 600;">Width (px)</label>
-            <input type="number" id="origWidth" value="1920" class="ratio-input" oninput="calculate('width')">
-          </div>
-          <div>
-            <label style="display: block; font-size: 0.9rem; margin-bottom: 0.4rem; color: #fff; font-weight: 600;">Height (px)</label>
-            <input type="number" id="origHeight" value="1080" class="ratio-input" oninput="calculate('height')">
-          </div>
-        </div>
-
-        <!-- Scaled Dimensions -->
-        <div>
-          <h3 style="color: #10b981; font-size: 1.1rem; margin-bottom: 1rem;">New / Scaled Dimensions</h3>
-          <div style="margin-bottom: 1rem;">
-            <label style="display: block; font-size: 0.9rem; margin-bottom: 0.4rem; color: #fff; font-weight: 600;">New Width (px)</label>
-            <input type="number" id="newWidth" value="1280" class="ratio-input" oninput="calculate('newWidth')">
-          </div>
-          <div>
-            <label style="display: block; font-size: 0.9rem; margin-bottom: 0.4rem; color: #fff; font-weight: 600;">New Height (px)</label>
-            <input type="number" id="newHeight" value="720" class="ratio-input" oninput="calculate('newHeight')">
-          </div>
-        </div>
-
+    <!-- Presets Selection Bar -->
+    <div class="content-box" style="margin-bottom: 1.5rem;">
+      <label class="input-label">Quick Ratio Presets</label>
+      <div class="preset-btn-group">
+        <button class="preset-btn active" data-w="16" data-h="9">16:9 (HD Video)</button>
+        <button class="preset-btn" data-w="4" data-h="3">4:3 (Standard TV)</button>
+        <button class="preset-btn" data-w="1" data-h="1">1:1 (Square / Instagram)</button>
+        <button class="preset-btn" data-w="9" data-h="16">9:16 (Reels / Shorts)</button>
+        <button class="preset-btn" data-w="21" data-h="9">21:9 (Ultrawide Cinema)</button>
       </div>
 
-      <!-- Result Section -->
-      <div style="margin-top: 2rem; padding: 1.2rem; background: var(--bg-body, #111827); border-radius: 8px; border: 1px solid var(--border-color, #333); display: flex; align-items: center; justify-content: space-between;">
+      <!-- Ratio Inputs -->
+      <div class="calc-grid">
         <div>
-          <span style="font-size: 0.85rem; color: var(--text-secondary, #9ca3af);">Calculated Aspect Ratio:</span>
-          <div id="aspectRatioResult" style="font-size: 1.8rem; font-weight: bold; color: var(--accent-primary, #3b82f6);">16:9</div>
+          <label for="ratio-w" class="input-label">Aspect Ratio Width (W1)</label>
+          <input type="number" id="ratio-w" class="form-control" value="16" min="1">
         </div>
-        <button class="btn btn-secondary" style="padding: 0.6rem 1.5rem; font-size: 0.9rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;" onclick="resetValues()">🔄 Reset</button>
+        <div>
+          <label for="ratio-h" class="input-label">Aspect Ratio Height (H1)</label>
+          <input type="number" id="ratio-h" class="form-control" value="9" min="1">
+        </div>
+      </div>
+
+      <hr style="border-color: var(--border-color, #333); margin: 1.5rem 0;">
+
+      <!-- Pixel Dimension Inputs -->
+      <div class="calc-grid">
+        <div>
+          <label for="pixel-w" class="input-label">Pixel Width (W2)</label>
+          <input type="number" id="pixel-w" class="form-control" value="1920" placeholder="e.g. 1920">
+        </div>
+        <div>
+          <label for="pixel-h" class="input-label">Pixel Height (H2)</label>
+          <input type="number" id="pixel-h" class="form-control" value="1080" placeholder="e.g. 1080">
+        </div>
       </div>
     </div>
 
-    <!-- SEO Content Box: What is -->
-    <div class="content-box">
-      <h2>What is an Aspect Ratio Calculator?</h2>
-      <p>
-        An <strong>Aspect Ratio Calculator</strong> is a specialized online utility built for graphic designers, web developers, video editors, and digital creators. It computes the proportional relationship between the width and height of an image, video, or canvas element. By expressing this relationship as two numbers separated by a colon (such as 16:9 or 4:3), this tool ensures that whenever you resize visual media, it never stretches, warps, or loses its natural geometric proportions.
-      </p>
+    <!-- Visual Aspect Ratio Preview Box -->
+    <div class="ratio-preview-wrapper">
+      <div id="visual-box" class="ratio-visual-box" style="width: 200px; height: 112.5px;">
+        <span id="visual-text">1920 x 1080 (16:9)</span>
+      </div>
     </div>
 
-    <!-- SEO Content Box: Why Use -->
+    <!-- Calculated Output Badge -->
+    <div class="content-box" style="margin-bottom: 2rem; text-align: center;">
+      <div style="font-size: 0.85rem; color: #9ca3af; margin-bottom: 0.25rem;">Simplified Ratio Formula</div>
+      <div id="formula-badge" style="font-size: 1.2rem; font-weight: 700; color: #38bdf8; font-family: monospace;">16 : 9 Ratio (1.78 : 1)</div>
+    </div>
+
+    <!-- SEO Article Content Box 1 -->
     <div class="content-box">
-      <h2>Why Use an Aspect Ratio Calculator?</h2>
-      <p style="margin-bottom: 1rem;">
-        When building responsive user interfaces or preparing marketing visuals across multiple social media platforms, maintaining precise dimensions is critical. Here is why professionals rely on automated ratio calculation:
-      </p>
+      <h2>Understanding Aspect Ratios in Media, Photography, and Web Design</h2>
+      <p>An <strong>Aspect Ratio</strong> describes the proportional relationship between an image, video frame, or display screen's width and height. Regardless of whether an image is measured in inches, centimeters, or digital pixels, the aspect ratio remains constant.</p>
+
+      <p>When resizing images for responsive websites, editing YouTube videos, or preparing graphics for social media (such as Instagram, TikTok, or LinkedIn), maintaining exact aspect ratios prevents distorted, stretched, or squished visuals. Our free <strong>Online Aspect Ratio Calculator</strong> enables photographers, videographers, and front-end developers to compute proportional dimensions instantly.</p>
+    </div>
+
+    <!-- SEO Article Content Box 2 -->
+    <div class="content-box">
+      <h2>Popular Standard Aspect Ratios Quick Reference</h2>
+      <p>Different digital publishing platforms require specific visual proportions:</p>
+
+      <table class="ratio-table">
+        <thead>
+          <tr>
+            <th>Aspect Ratio</th>
+            <th>Common Pixel Resolutions</th>
+            <th>Primary Media Application</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>16:9</strong></td>
+            <td>1920x1080 (FHD), 3840x2160 (4K)</td>
+            <td>YouTube videos, HDTV, desktop displays</td>
+          </tr>
+          <tr>
+            <td><strong>9:16</strong></td>
+            <td>1080x1920, 720x1280</td>
+            <td>TikTok videos, Instagram Reels, YouTube Shorts</td>
+          </tr>
+          <tr>
+            <td><strong>1:1</strong></td>
+            <td>1080x1080, 500x500</td>
+            <td>Instagram grid posts, profile avatars, product icons</td>
+          </tr>
+          <tr>
+            <td><strong>4:3</strong></td>
+            <td>1024x768, 1440x1080</td>
+            <td>Classic television broadcasts, iPad displays, photography</td>
+          </tr>
+          <tr>
+            <td><strong>21:9</strong></td>
+            <td>2560x1080, 3440x1440</td>
+            <td>Anamorphic cinema films, ultrawide gaming monitors</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- SEO Article Content Box 3 -->
+    <div class="content-box">
+      <h2>Features of MicroToolStack's Aspect Ratio Calculator</h2>
       <ul>
-        <li><strong>Prevents Image Distortion:</strong> Manually guessing pixel dimensions often results in stretched or compressed graphics that look unprofessional.</li>
-        <li><strong>Saves Valuable Time:</strong> Instead of performing complex math and division formulas manually, you get instant scaled values.</li>
-        <li><strong>Multi-Platform Compatibility:</strong> Different platforms like YouTube, Instagram, and TikTok require strict ratios (e.g., 9:16 for reels, 16:9 for videos). This tool helps adapt assets effortlessly.</li>
+        <li><strong>Bidirectional Dimension Scaling:</strong> Change pixel width to automatically calculate scaled height, or change height to compute width.</li>
+        <li><strong>Interactive Visual Box Preview:</strong> Displays a real-time scaled box representing exact visual proportions.</li>
+        <li><strong>100% Client-Side Privacy:</strong> All calculations execute locally inside your web browser session using JavaScript. No image dimensions or media data are stored remotely.</li>
+        <li><strong>Free & Unlimited Usage:</strong> No rate limits or account registration required.</li>
       </ul>
     </div>
 
-    <!-- SEO Content Box: Features & How to Use -->
+    <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
     <div class="content-box">
-      <h2>How to Use the Aspect Ratio Calculator</h2>
-      <ol>
-        <li>Enter your media's original width and height in pixels under the <strong>Original Dimensions</strong> section.</li>
-        <li>Observe the automatically simplified aspect ratio displayed at the bottom (e.g., 16:9).</li>
-        <li>Enter your desired new width or height under the <strong>New / Scaled Dimensions</strong> section, and the counter-dimension will adjust automatically to maintain the exact proportion.</li>
-        <li>Use the <strong>Reset</strong> button anytime to clear and start fresh with standard 1920x1080 dimensions.</li>
-      </ol>
-    </div>
-
-    <!-- SEO Content Box: Examples -->
-    <div class="content-box">
-      <h2>Practical Examples of Aspect Ratios</h2>
-      <p style="margin-bottom: 1rem;">Different digital mediums rely on specific standard ratios:</p>
-      <ul>
-        <li><strong>16:9 Widescreen:</strong> Standard for YouTube videos, computer monitors, and modern HDTVs (e.g., 1920x1080px).</li>
-        <li><strong>1:1 Square:</strong> Perfect for standard Instagram feed posts and profile pictures (e.g., 1080x1080px).</li>
-        <li><strong>9:16 Vertical:</strong> Ideal for TikTok videos, Instagram Reels, and YouTube Shorts (e.g., 1080x1920px).</li>
-        <li><strong>4:3 Standard:</strong> Classic photography and older television formats (e.g., 800x600px).</li>
-      </ul>
-    </div>
-
-    <!-- Internal Linking Section (SEO Best Practice) -->
-    <div class="content-box">
-      <h2>Explore Related Media Tools</h2>
-      <p>Enhance your graphic and media workflow with our other free utilities:</p>
+      <h2>Explore Related Developer Tools</h2>
+      <p>Discover our complementary online developer utilities:</p>
       <div class="related-links">
-        <a href="/tools/media/image-cropper.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">✂️ Image Cropper</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Crop images to custom dimensions online.</span>
+        <a href="/tools/developer/code-to-image.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🖼️ Code to Image Converter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Export styled code screenshots for social media & blogs.</span>
         </a>
-        <a href="/tools/media/image-rotator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🔄 Image Rotator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Rotate and flip images instantly.</span>
+        <a href="/tools/developer/color-picker.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🎨 Color Picker & Palette</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Pick colors and convert HEX, RGB, and HSL formats.</span>
         </a>
-        <a href="/tools/media/favicon-generator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🌐 Favicon Generator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Create website favicons from any image.</span>
+        <a href="/tools/developer/glassmorphism-claymorphism-generator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">✨ Glassmorphism UI Generator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Design frosted glass and 3D clay UI components.</span>
         </a>
       </div>
     </div>
 
     <!-- FAQ Section -->
     <div class="content-box">
-      <h2>Frequently Asked Questions</h2>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: #fff; margin-bottom: 0.25rem;">What is an aspect ratio calculator?</h3>
-        <p>An aspect ratio calculator is an online tool designed to compute the proportional relationship between the width and height of an image or video, allowing users to resize dimensions without distortion.</p>
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How do I calculate missing image dimensions?</h3>
+        <p>Enter your target aspect ratio (e.g., 16 and 9) and type your known width or height value into W2 or H2. The calculator fills in the missing dimension automatically.</p>
       </div>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: #fff; margin-bottom: 0.25rem;">How do I calculate aspect ratio manually?</h3>
-        <p>You can calculate aspect ratio manually by dividing both the width and height by their greatest common divisor (GCD), or you can use our instant online calculator to do it automatically.</p>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What is the mathematical formula for aspect ratio resizing?</h3>
+        <p>Formula: $\text{New Height} = \frac{\text{New Width} \times \text{Ratio Height}}{\text{Ratio Width}}$.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is my data saved on remote servers?</h3>
+        <p>No. All calculations run client-side inside your browser session using JavaScript. Your inputs remain private.</p>
       </div>
       <div>
-        <h3 style="font-size: 1.05rem; color: #fff; margin-bottom: 0.25rem;">What is the standard video aspect ratio?</h3>
-        <p>The 16:9 aspect ratio is the worldwide standard for high-definition televisions, YouTube videos, and modern computer displays.</p>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this tool free to use?</h3>
+        <p>Yes, MicroToolStack's Aspect Ratio Calculator is 100% free with no usage limits or sign-up required.</p>
       </div>
     </div>
 
   </main>
 
-  <!-- Footer Placeholder -->
+  <!-- Footer Container Placeholder -->
   <div id="footer-container"></div>
 
-  <!-- Core Scripts -->
+  <!-- JavaScript Utilities & Logic -->
   <script src="/assets/js/theme.js"></script>
   <script src="/assets/js/utils.js" defer></script>
-  <script src="/assets/js/search.js" defer></script>
   <script src="/assets/js/app.js" defer></script>
 
-  <!-- Calculation Logic -->
   <script>
-    function gcd(a, b) {
-      return b === 0 ? a : gcd(b, a % b);
-    }
+    document.addEventListener('DOMContentLoaded', function() {
+      const ratioW = document.getElementById('ratio-w');
+      const ratioH = document.getElementById('ratio-h');
+      const pixelW = document.getElementById('pixel-w');
+      const pixelH = document.getElementById('pixel-h');
+      const visualBox = document.getElementById('visual-box');
+      const visualText = document.getElementById('visual-text');
+      const formulaBadge = document.getElementById('formula-badge');
+      const presetBtns = document.querySelectorAll('.preset-btn');
 
-    function calculate(changed) {
-      let ow = parseFloat(document.getElementById('origWidth').value) || 0;
-      let oh = parseFloat(document.getElementById('origHeight').value) || 0;
-      let nw = parseFloat(document.getElementById('newWidth').value) || 0;
-      let nh = parseFloat(document.getElementById('newHeight').value) || 0;
-
-      if (ow <= 0 || oh <= 0) return;
-
-      let divisor = gcd(Math.round(ow), Math.round(oh));
-      let rW = ow / divisor;
-      let rH = oh / divisor;
-      document.getElementById('aspectRatioResult').innerText = `${rW}:${rH}`;
-
-      if (changed === 'width' || changed === 'height') {
-        nh = (nw * (oh / ow)).toFixed(2);
-        document.getElementById('newHeight').value = Math.round(nh);
-      } else if (changed === 'newWidth') {
-        nh = (nw * (oh / ow)).toFixed(2);
-        document.getElementById('newHeight').value = Math.round(nh);
-      } else if (changed === 'newHeight') {
-        nw = (nh * (ow / oh)).toFixed(2);
-        document.getElementById('newWidth').value = Math.round(nw);
+      function gcd(a, b) {
+        return b === 0 ? a : gcd(b, a % b);
       }
-    }
 
-    function resetValues() {
-      document.getElementById('origWidth').value = 1920;
-      document.getElementById('origHeight').value = 1080;
-      document.getElementById('newWidth').value = 1280;
-      document.getElementById('newHeight').value = 720;
-      calculate('width');
-    }
+      function updateCalculation(changedSource) {
+        let rw = parseFloat(ratioW.value) || 16;
+        let rh = parseFloat(ratioH.value) || 9;
+        let pw = parseFloat(pixelW.value) || 0;
+        let ph = parseFloat(pixelH.value) || 0;
+
+        if (changedSource === 'pixelW' && rw > 0) {
+          ph = Math.round((pw * rh) / rw);
+          pixelH.value = ph;
+        } else if (changedSource === 'pixelH' && rh > 0) {
+          pw = Math.round((ph * rw) / rh);
+          pixelW.value = pw;
+        } else if (changedSource === 'ratio') {
+          if (pw > 0 && rw > 0) {
+            ph = Math.round((pw * rh) / rw);
+            pixelH.value = ph;
+          }
+        }
+
+        // Simplify formula display
+        const divisor = gcd(rw, rh);
+        const simpW = rw / divisor;
+        const simpH = rh / divisor;
+        const decimalRatio = (rw / rh).toFixed(2);
+
+        formulaBadge.textContent = `${simpW} : ${simpH} Ratio (${decimalRatio} : 1)`;
+
+        // Update Visual Box
+        let boxWidth = 200;
+        let boxHeight = (boxWidth * rh) / rw;
+
+        if (boxHeight > 180) {
+          boxHeight = 180;
+          boxWidth = (boxHeight * rw) / rh;
+        }
+
+        visualBox.style.width = `${boxWidth}px`;
+        visualBox.style.height = `${boxHeight}px`;
+        visualText.textContent = `${pw} x ${ph} (${simpW}:${simpH})`;
+      }
+
+      // Preset button clicks
+      presetBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          presetBtns.forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+
+          ratioW.value = this.getAttribute('data-w');
+          ratioH.value = this.getAttribute('data-h');
+          updateCalculation('ratio');
+        });
+      });
+
+      ratioW.addEventListener('input', () => updateCalculation('ratio'));
+      ratioH.addEventListener('input', () => updateCalculation('ratio'));
+      pixelW.addEventListener('input', () => updateCalculation('pixelW'));
+      pixelH.addEventListener('input', () => updateCalculation('pixelH'));
+
+      // Initial Call
+      updateCalculation('pixelW');
+    });
   </script>
 </body>
 </html>
