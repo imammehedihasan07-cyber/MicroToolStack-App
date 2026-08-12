@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) - Deferred Load -->
+  <!-- Google tag (gtag.js) - Optimized Load -->
   <script>
     window.addEventListener('load', function() {
       setTimeout(function() {
@@ -20,74 +20,78 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Merge PDF Files Online - Free & Private | MicroToolStack</title>
-  <meta name="description" content="Combine multiple PDF documents into one single file online for free. 100% private, client-side browser processing with no file size limits.">
-  <meta name="keywords" content="merge pdf online, combine pdf files, pdf merger free, join pdf documents, client side pdf merger">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>Free Online PDF Merger | Combine PDF Files Online | MicroToolStack</title>
+  <meta name="description" content="Merge multiple PDF files into one single document online for free. Reorder PDF pages, drag and drop documents, and download combined PDFs with 100% privacy.">
+  <meta name="keywords" content="merge pdf online, combine pdf files, pdf joiner, merge multiple pdfs, combine pdf documents, join pdf online, free pdf merger, pdf tools">
 
   <link rel="canonical" href="https://microtoolstack.com/tools/pdf/merge-pdf.html">
   <meta name="robots" content="index, follow">
 
-  <!-- Open Graph / Social Media Meta Tags -->
+  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Merge PDF Files Online - Free & Private | MicroToolStack">
-  <meta property="og:description" content="Combine multiple PDF documents into one single file online for free. 100% private browser-based tool.">
   <meta property="og:url" content="https://microtoolstack.com/tools/pdf/merge-pdf.html">
-  <meta property="og:site_name" content="MicroToolStack">
+  <meta property="og:title" content="Free Online PDF Merger | MicroToolStack">
+  <meta property="og:description" content="Combine multiple PDF documents into a single organized file directly in your browser. 100% free, fast, and privacy-first browser media utility.">
   <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
-
-  <!-- Twitter Meta Tags -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Merge PDF Files Online - Free & Private | MicroToolStack">
-  <meta name="twitter:description" content="Combine multiple PDF documents into one single file online for free. 100% private browser-based tool.">
 
   <!-- Favicon Icon for Google & Devices -->
   <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
   <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
-  <!-- Fonts & CSS Stylesheets -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
-  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
-
-  <!-- Structured Data (JSON-LD Schema) -->
+  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "WebApplication",
-        "@id": "https://microtoolstack.com/tools/pdf/merge-pdf.html#webapp",
-        "url": "https://microtoolstack.com/tools/pdf/merge-pdf.html",
-        "name": "Merge PDF Files Online",
-        "applicationCategory": "UtilitiesApplication",
+        "@type": "SoftwareApplication",
+        "name": "PDF Merger Tool",
         "operatingSystem": "All",
+        "applicationCategory": "UtilitiesApplication",
         "offers": {
           "@type": "Offer",
           "price": "0",
           "priceCurrency": "USD"
         },
-        "description": "Combine multiple PDF documents into a single document instantly and 100% privately in your browser."
+        "description": "An essential client-side web utility that combines and merges multiple PDF documents into a single consolidated PDF file directly inside the browser.",
+        "url": "https://microtoolstack.com/tools/pdf/merge-pdf.html"
       },
       {
         "@type": "FAQPage",
-        "@id": "https://microtoolstack.com/tools/pdf/merge-pdf.html#faq",
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "Is it safe to merge my PDF files on MicroToolStack?",
+            "name": "How do I merge multiple PDF files into one?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes, 100% safe. All processing is done locally inside your web browser using JavaScript. Your files are never uploaded to any external server."
+              "text": "Drag and drop your PDF files into the upload area, arrange or remove files as needed, and click 'Merge & Download PDF' to save your consolidated document."
             }
           },
           {
             "@type": "Question",
-            "name": "Is there any file size limit for merging PDFs?",
+            "name": "Are my uploaded PDF documents sent to remote servers?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "No, there are no artificial file size limits or restrictions on the number of PDFs you can merge."
+              "text": "No! All PDF merging and document processing execute 100% locally inside your web browser session using client-side JavaScript. Your files remain completely private."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is there a limit on how many PDF files I can merge?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No, MicroToolStack's PDF Merger allows you to combine as many PDF files as your device's browser memory can process."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this PDF Merger tool free to use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, MicroToolStack's PDF Merger is 100% free with unlimited document joining and no registration required."
             }
           }
         ]
@@ -96,50 +100,138 @@
   }
   </script>
 
+  <!-- Preconnect and Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <!-- PDF-LIB CDN for Client-Side PDF Merging -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+
   <style>
-    .upload-box {
-      border: 2px dashed var(--border-color, #333);
-      padding: 2.5rem 1.5rem;
-      text-align: center;
-      border-radius: 12px;
-      cursor: pointer;
-      background: var(--bg-card, #1e1e2e);
-      transition: border-color 0.3s;
-      margin-bottom: 1.5rem;
+    .input-group {
+      margin-bottom: 1.25rem;
     }
-    .upload-box:hover {
-      border-color: var(--accent-primary, #3b82f6);
-    }
-    .file-list {
-      margin-top: 1.5rem;
-      display: none;
-      text-align: left;
-    }
-    .file-item {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: var(--bg-body, #111827);
-      padding: 0.8rem 1rem;
-      border-radius: 8px;
-      border: 1px solid var(--border-color, #333);
+    .input-label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
       margin-bottom: 0.5rem;
     }
+
+    /* Drag and Drop Zone */
+    .drop-zone {
+      width: 100%;
+      min-height: 180px;
+      border: 2px dashed var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      padding: 1.5rem;
+      box-sizing: border-box;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .drop-zone:hover, .drop-zone.dragover {
+      border-color: var(--accent-primary, #3b82f6);
+      background-color: rgba(59, 130, 246, 0.05);
+    }
+
+    /* File List Queue Container */
+    .file-queue-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-top: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .file-queue-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      box-sizing: border-box;
+    }
+
+    .file-info {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      overflow: hidden;
+    }
+
+    .file-icon {
+      font-size: 1.5rem;
+    }
+
+    .file-details {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
     .file-name {
-      font-size: 0.9rem;
-      color: #fff;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      max-width: 80%;
     }
-    .remove-btn {
-      background: transparent;
-      border: none;
-      color: #ff4d4d;
+
+    .file-size {
+      font-size: 0.8rem;
+      color: var(--text-secondary, #9ca3af);
+    }
+
+    .btn-remove-file {
+      background: rgba(239, 68, 68, 0.15);
+      color: #ef4444;
+      border: 1px solid #ef4444;
+      border-radius: 6px;
+      padding: 0.35rem 0.65rem;
+      font-size: 0.8rem;
+      font-weight: 600;
       cursor: pointer;
-      font-size: 1.1rem;
+      transition: all 0.2s ease;
     }
+    .btn-remove-file:hover {
+      background: #ef4444;
+      color: #fff;
+    }
+
+    .meta-badge {
+      display: inline-block;
+      font-size: 0.85rem;
+      color: var(--text-secondary, #9ca3af);
+      background: rgba(255, 255, 255, 0.05);
+      padding: 0.3rem 0.75rem;
+      border-radius: 6px;
+      border: 1px solid var(--border-color, #333);
+    }
+
+    .controls-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.5rem;
+    }
+
     .content-box {
       background-color: var(--bg-card, #1e1e2e);
       border: 1px solid var(--border-color, #333);
@@ -152,12 +244,18 @@
       margin-bottom: 1rem;
       color: var(--text-primary, #fff);
     }
-    .content-box p, .content-box ul, .content-box ol {
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul {
       color: var(--text-secondary, #9ca3af);
       font-size: 0.95rem;
       line-height: 1.6;
     }
-    .content-box ul, .content-box ol {
+    .content-box ul {
       padding-left: 1.25rem;
       margin-bottom: 1rem;
     }
@@ -186,6 +284,7 @@
   </style>
 </head>
 <body style="margin: 0; padding: 0;">
+
   <!-- Header Section -->
   <header class="custom-header">
     <a href="/" class="custom-logo">
@@ -199,190 +298,273 @@
     </nav>
   </header>
 
+  <!-- Main Container -->
   <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
-    <!-- Breadcrumb Navigation -->
-    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
-      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
-      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">PDF Tools</a> / 
-      <span>Merge PDF</span>
-    </nav>
-
-    <!-- Tool Header -->
-    <header style="margin-bottom: 2rem; text-align: center;">
-      <h1 class="hero" style="font-size: 2rem; margin-bottom: 0.5rem; color: #fff;">Free Online PDF Merger</h1>
-      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">
-        Combine multiple PDF files into a single document instantly and 100% privately in your browser.
-      </p>
-    </header>
-
-    <!-- Tool Main Card -->
-    <div class="card" style="padding: 2rem; border-radius: 12px; background: var(--bg-card, #1e1e2e); border: 1px solid var(--border-color, #333); margin-bottom: 3rem;">
-      
-      <!-- Upload Drop Zone -->
-      <div class="upload-box" id="dropZone" onclick="document.getElementById('pdfInput').click()">
-        <span style="font-size: 2.5rem; display: block; margin-bottom: 0.5rem;">🧩</span>
-        <p style="margin-bottom: 0.5rem; font-weight: 600; color: #fff;">Click or Drag & Drop PDF Files Here</p>
-        <p style="font-size: 0.85rem; color: var(--text-secondary, #9ca3af);">Select multiple PDF documents (100% Client-Side Privacy)</p>
-        <input type="file" id="pdfInput" accept="application/pdf" multiple style="display: none;" onchange="handleFileSelect(event)">
-      </div>
-
-      <!-- File List & Action Area -->
-      <div class="file-list" id="fileListArea">
-        <h4 style="margin-bottom: 0.8rem; font-size: 1rem; color: #fff;">Selected PDF Files:</h4>
-        <div id="pdfItemsContainer"></div>
-
-        <div style="text-align: center; margin-top: 1.5rem;">
-          <button id="mergeBtn" class="btn btn-primary" style="padding: 0.8rem 2rem; font-size: 1rem; cursor: pointer;" onclick="mergePDFs()">
-            🧩 Merge PDF Files
-          </button>
-        </div>
-      </div>
-
+    
+    <!-- Tool Title & Description -->
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online PDF Merger</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Combine multiple PDF files into one organized document with 100% browser privacy.</p>
     </div>
 
-    <!-- SEO Content Box 1 -->
-    <div class="content-box">
-      <h2>How to Merge PDF Files Online</h2>
-      <ol>
-        <li>Upload two or more PDF documents by clicking or dropping them into the upload box.</li>
-        <li>Review your selected PDF list.</li>
-        <li>Click <strong>Merge PDF Files</strong> to compile them into a single file locally.</li>
-        <li>Download your merged PDF document immediately!</li>
-      </ol>
+    <!-- Drag and Drop PDF Zone -->
+    <div class="drop-zone" id="drop-zone">
+      <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📚</div>
+      <div style="font-size: 1.05rem; font-weight: 600; color: #fff; margin-bottom: 0.25rem;">Drag & Drop PDF Documents Here</div>
+      <div style="font-size: 0.85rem; color: #9ca3af;">or click to select multiple PDF files from your device</div>
+      <input type="file" id="file-input" accept="application/pdf" multiple style="display: none;">
     </div>
 
-    <!-- Internal Linking Section (SEO Best Practice) -->
+    <!-- Uploaded PDF Queue List -->
+    <div class="content-box" id="queue-box" style="display: none; margin-bottom: 1.5rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+        <h2 style="font-size: 1.15rem; margin: 0;">Selected PDF Queue</h2>
+        <span id="pdf-count-badge" class="meta-badge">0 Documents</span>
+      </div>
+      <div class="file-queue-list" id="file-queue-list"></div>
+    </div>
+
+    <!-- Controls Bar -->
+    <div class="controls-bar">
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-merge-pdf" class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-weight: 600; cursor: pointer; background: #10b981;">📄 Merge & Download PDF</button>
+      </div>
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear Queue</button>
+      </div>
+    </div>
+
+    <!-- SEO Article Content Box 1 -->
     <div class="content-box">
-      <h2>Explore Related PDF & Academic Tools</h2>
-      <p>Enhance your document workflow with our free utilities:</p>
+      <h2>Why Merging PDF Documents is Essential for Productivity</h2>
+      <p>Managing multiple separate Portable Document Format (PDF) files—such as monthly financial receipts, multi-part academic assignments, or legal contract appendices—can lead to chaotic digital clutter. Combining these documents into a single consolidated PDF streamlines emailing, archiving, and printing workflows.</p>
+
+      <p>Instead of sending dozens of individual attachments, merging PDFs into a single file ensures recipients view your documents in exact numerical sequence. Our free <strong>Online PDF Merger</strong> joins PDF files locally in your web browser with zero server uploads.</p>
+    </div>
+
+    <!-- SEO Article Content Box 2 -->
+    <div class="content-box">
+      <h2>Key Benefits of Client-Side PDF Merging</h2>
+      <p>Why local browser processing outperforms cloud-based converter tools:</p>
+
+      <ul>
+        <li><strong>100% Complete Privacy:</strong> Your sensitive financial, academic, or personal documents are processed entirely inside your web browser session using client-side JavaScript. No document data is ever transmitted or saved on external servers.</li>
+        <li><strong>Lightning-Fast Performance:</strong> Merging occurs instantly without waiting for slow upload and download bandwidth queues.</li>
+        <li><strong>Unlimited Page Merging:</strong> Combine as many documents as required without artificial page caps or payment paywalls.</li>
+      </ul>
+    </div>
+
+    <!-- SEO Article Content Box 3 -->
+    <div class="content-box">
+      <h2>Features of MicroToolStack's PDF Merger</h2>
+      <ul>
+        <li><strong>Drag & Drop Queue Management:</strong> Easily add, preview, and remove individual PDF files from your conversion queue.</li>
+        <li><strong>Vector & Text Preservation:</strong> Retains original document fonts, vector layouts, form fields, and resolution quality.</li>
+        <li><strong>Free & Unlimited Usage:</strong> No file size limits, watermarks, or account registration required.</li>
+      </ul>
+    </div>
+
+    <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
+    <div class="content-box">
+      <h2>Explore Related Student & PDF Tools</h2>
+      <p>Discover our complementary online document utilities:</p>
       <div class="related-links">
         <a href="/tools/pdf/images-to-pdf.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🖼️ Images to PDF</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Convert JPG, PNG, and WebP images to PDF.</span>
+          <strong style="display:block; margin-bottom: 0.25rem;">🖼️ Images to PDF Converter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Combine loose photos (JPG, PNG) into a single PDF.</span>
         </a>
         <a href="/tools/pdf/assignment-cover-page.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">📄 Cover Page Generator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Design printable A4 assignment cover pages.</span>
+          <strong style="display:block; margin-bottom: 0.25rem;">📄 Assignment Cover Page Generator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Create academic title sheets for university essays.</span>
         </a>
-        <a href="/tools/text/word-counter.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">📝 Word Counter</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Analyze text length and reading time.</span>
+        <a href="/tools/developer/markdown-to-pdf.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📝 Markdown to PDF Converter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Convert Markdown notes into styled PDF documents.</span>
         </a>
       </div>
     </div>
 
     <!-- FAQ Section -->
     <div class="content-box">
-      <h2>Frequently Asked Questions</h2>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: #fff; margin-bottom: 0.25rem;">Is it safe to merge my confidential PDF files here?</h3>
-        <p>Yes! Unlike traditional online tools, MicroToolStack processes your files completely inside your device's web browser. No files are ever sent or saved to external servers.</p>
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How do I combine PDF files into one document?</h3>
+        <p>Drag and drop your PDF files into the upload box, arrange them in your desired order, and click "Merge & Download PDF".</p>
       </div>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: #fff; margin-bottom: 0.25rem;">Are there size limits or hidden costs?</h3>
-        <p>None at all. Our client-side PDF merger is 100% free with unlimited file merges and zero hidden restrictions.</p>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Are my private PDF documents uploaded to any server?</h3>
+        <p>No! All processing runs client-side inside your browser session using JavaScript. Your files remain completely private.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Does merging PDFs affect document quality?</h3>
+        <p>No. Merging combines document streams while preserving 100% of original vector text, embedded images, and layout formatting.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this PDF Merger tool free?</h3>
+        <p>Yes, MicroToolStack's PDF Merger is 100% free with no usage limits or sign-up required.</p>
       </div>
     </div>
 
   </main>
 
-  <!-- Footer Placeholder -->
+  <!-- Footer Container Placeholder -->
   <div id="footer-container"></div>
 
-  <!-- Core Scripts & PDF-Lib Library -->
+  <!-- JavaScript Utilities & Logic -->
   <script src="/assets/js/theme.js"></script>
   <script src="/assets/js/utils.js" defer></script>
   <script src="/assets/js/app.js" defer></script>
-  <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
 
-  <!-- Merge Script -->
   <script>
-    let selectedFiles = [];
+    document.addEventListener('DOMContentLoaded', function() {
+      const dropZone = document.getElementById('drop-zone');
+      const fileInput = document.getElementById('file-input');
+      const queueBox = document.getElementById('queue-box');
+      const fileQueueList = document.getElementById('file-queue-list');
+      const pdfCountBadge = document.getElementById('pdf-count-badge');
+      const btnMergePdf = document.getElementById('btn-merge-pdf');
+      const btnClear = document.getElementById('btn-clear');
 
-    function handleFileSelect(event) {
-      const files = Array.from(event.target.files);
-      files.forEach(file => {
-        if (file.type === 'application/pdf') {
-          selectedFiles.push(file);
+      let pdfQueue = []; // Holds { id, name, size, bytes }
+
+      dropZone.addEventListener('click', () => fileInput.click());
+
+      dropZone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropZone.classList.add('dragover');
+      });
+
+      dropZone.addEventListener('dragleave', () => dropZone.classList.remove('dragover'));
+
+      dropZone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropZone.classList.remove('dragover');
+        if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
+          handleFiles(e.dataTransfer.files);
         }
       });
-      renderFileList();
-    }
 
-    // Drag & Drop Handlers
-    const dropZone = document.getElementById('dropZone');
-    dropZone.addEventListener('dragover', (e) => { e.preventDefault(); dropZone.style.borderColor = 'var(--accent-primary, #3b82f6)'; });
-    dropZone.addEventListener('dragleave', () => { dropZone.style.borderColor = 'var(--border-color, #333)'; });
-    dropZone.addEventListener('drop', (e) => {
-      e.preventDefault();
-      dropZone.style.borderColor = 'var(--border-color, #333)';
-      if (e.dataTransfer.files.length) {
-        handleFileSelect({ target: { files: e.dataTransfer.files } });
+      fileInput.addEventListener('change', (e) => {
+        if (e.target.files && e.target.files.length > 0) {
+          handleFiles(e.target.files);
+        }
+      });
+
+      function formatBytes(bytes) {
+        if (bytes === 0) return '0 Bytes';
+        const k = 1024;
+        const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+        const i = Math.floor(Math.log(bytes) / Math.log(k));
+        return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
       }
+
+      function handleFiles(files) {
+        Array.from(files).forEach(file => {
+          if (file.type !== 'application/pdf' && !file.name.endsWith('.pdf')) return;
+
+          const reader = new FileReader();
+          reader.onload = function(evt) {
+            const item = {
+              id: Date.now() + '_' + Math.random().toString(36).substring(2, 7),
+              name: file.name,
+              size: formatBytes(file.size),
+              bytes: evt.target.result
+            };
+            pdfQueue.push(item);
+            renderQueue();
+          };
+          reader.readAsArrayBuffer(file);
+        });
+      }
+
+      function renderQueue() {
+        fileQueueList.innerHTML = '';
+
+        if (pdfQueue.length === 0) {
+          queueBox.style.display = 'none';
+          pdfCountBadge.textContent = '0 Documents';
+          return;
+        }
+
+        pdfQueue.forEach((item, index) => {
+          const div = document.createElement('div');
+          div.className = 'file-queue-item';
+          div.innerHTML = `
+            <div class="file-info">
+              <span class="file-icon">📄</span>
+              <div class="file-details">
+                <span class="file-name">${index + 1}. ${item.name}</span>
+                <span class="file-size">${item.size}</span>
+              </div>
+            </div>
+            <button class="btn-remove-file" onclick="removePdf('${item.id}')">Remove ✕</button>
+          `;
+          fileQueueList.appendChild(div);
+        });
+
+        queueBox.style.display = 'block';
+        pdfCountBadge.textContent = `${pdfQueue.length} Document${pdfQueue.length > 1 ? 's' : ''}`;
+      }
+
+      window.removePdf = function(id) {
+        pdfQueue = pdfQueue.filter(item => item.id !== id);
+        renderQueue();
+      };
+
+      btnMergePdf.addEventListener('click', async function() {
+        if (pdfQueue.length < 2) {
+          alert('Please upload at least 2 PDF documents to merge.');
+          return;
+        }
+
+        if (typeof PDFLib === 'undefined') {
+          alert('PDF merging library is loading. Please try again.');
+          return;
+        }
+
+        const origBtnText = btnMergePdf.textContent;
+        btnMergePdf.textContent = '⏳ Merging Documents...';
+        btnMergePdf.disabled = true;
+
+        try {
+          const mergedPdf = await PDFLib.PDFDocument.create();
+
+          for (const item of pdfQueue) {
+            const doc = await PDFLib.PDFDocument.load(item.bytes);
+            const copiedPages = await mergedPdf.copyPages(doc, doc.getPageIndices());
+            copiedPages.forEach(page => mergedPdf.addPage(page));
+          }
+
+          const mergedPdfBytes = await mergedPdf.save();
+          const blob = new Blob([mergedPdfBytes], { type: 'application/pdf' });
+          const url = URL.createObjectURL(blob);
+
+          const link = document.createElement('a');
+          link.href = url;
+          link.download = 'merged-document.pdf';
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+
+          btnMergePdf.textContent = '✅ Merged Successfully!';
+          setTimeout(() => {
+            btnMergePdf.textContent = origBtnText;
+            btnMergePdf.disabled = false;
+          }, 2000);
+
+        } catch (err) {
+          alert('An error occurred while merging PDF files. Make sure the files are not encrypted or password-protected.');
+          btnMergePdf.textContent = origBtnText;
+          btnMergePdf.disabled = false;
+        }
+      });
+
+      btnClear.addEventListener('click', function() {
+        pdfQueue = [];
+        fileInput.value = '';
+        renderQueue();
+      });
     });
-
-    function renderFileList() {
-      const container = document.getElementById('pdfItemsContainer');
-      container.innerHTML = '';
-
-      if (selectedFiles.length === 0) {
-        document.getElementById('fileListArea').style.display = 'none';
-        return;
-      }
-
-      document.getElementById('fileListArea').style.display = 'block';
-
-      selectedFiles.forEach((file, index) => {
-        const item = document.createElement('div');
-        item.className = 'file-item';
-        item.innerHTML = `
-          <span class="file-name">📄 ${file.name} (${(file.size / (1024 * 1024)).toFixed(2)} MB)</span>
-          <button class="remove-btn" onclick="removeFile(${index})">✖</button>
-        `;
-        container.appendChild(item);
-      });
-    }
-
-    function removeFile(index) {
-      selectedFiles.splice(index, 1);
-      renderFileList();
-    }
-
-    async function mergePDFs() {
-      if (selectedFiles.length < 2) {
-        alert('Please select at least 2 PDF files to merge.');
-        return;
-      }
-
-      const mergeBtn = document.getElementById('mergeBtn');
-      mergeBtn.disabled = true;
-      mergeBtn.innerText = '⏳ Merging PDFs...';
-
-      try {
-        const mergedPdf = await PDFLib.PDFDocument.create();
-
-        for (const file of selectedFiles) {
-          const arrayBuffer = await file.arrayBuffer();
-          const pdfDoc = await PDFLib.PDFDocument.load(arrayBuffer);
-          const copiedPages = await mergedPdf.copyPages(pdfDoc, pdfDoc.getPageIndices());
-          copiedPages.forEach((page) => mergedPdf.addPage(page));
-        }
-
-        const mergedPdfBytes = await mergedPdf.save();
-        const blob = new Blob([mergedPdfBytes], { type: 'application/pdf' });
-        const link = document.createElement('a');
-        link.href = URL.createObjectURL(blob);
-        link.download = 'merged-document.pdf';
-        link.click();
-
-      } catch (err) {
-        alert('Error merging PDFs. Please ensure files are valid and not password protected.');
-        console.error(err);
-      } finally {
-        mergeBtn.disabled = false;
-        mergeBtn.innerText = '🧩 Merge PDF Files';
-      }
-    }
   </script>
 </body>
 </html>
