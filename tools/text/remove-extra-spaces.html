@@ -22,18 +22,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Primary SEO Meta Tags -->
-  <title>Free Extra Spaces Remover & Text Cleaner Online | MicroToolStack</title>
-  <meta name="description" content="Free online tool to remove extra spaces, multiple spaces, trailing/leading spaces, and empty lines from text instantly. Clean up raw text and code snippets privately in browser.">
-  <meta name="keywords" content="remove extra spaces, space remover online, clean text spaces, remove multiple spaces, strip white space, clean duplicate spaces, text cleaner tool">
+  <title>Free Online Remove Extra Spaces Tool | Whitespace Cleaner | MicroToolStack</title>
+  <meta name="description" content="Remove extra spaces, double spaces, tabs, and unnecessary line breaks from text online for free. Clean and format messy paragraphs instantly.">
+  <meta name="keywords" content="remove extra spaces, whitespace remover, clean text tool, strip extra spaces online, remove double spaces, text formatter, text tools, microtoolstack">
 
   <link rel="canonical" href="https://microtoolstack.com/tools/text/remove-extra-spaces.html">
   <meta name="robots" content="index, follow">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://microtoolstack.com/tools/text/remove-extra-spaces.html">
-  <meta property="og:title" content="Free Extra Spaces Remover & Text Cleaner Online | MicroToolStack">
-  <meta property="og:description" content="Instantly clean messy text by removing duplicate spaces, line breaks, and whitespace in your browser. 100% free and private.">
+  <meta property="og:url" content="https://microtoolstack.com/tools/seo/remove-extra-spaces.html">
+  <meta property="og:title" content="Free Online Remove Extra Spaces Tool | MicroToolStack">
+  <meta property="og:description" content="Clean and remove extra whitespace, double spaces, and blank lines from text instantly. 100% free web utility.">
   <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
@@ -48,7 +48,7 @@
     "@graph": [
       {
         "@type": "SoftwareApplication",
-        "name": "Extra Spaces Remover & Text Cleaner",
+        "name": "Remove Extra Spaces & Whitespace Cleaner",
         "operatingSystem": "All",
         "applicationCategory": "UtilitiesApplication",
         "offers": {
@@ -56,7 +56,7 @@
           "price": "0",
           "priceCurrency": "USD"
         },
-        "description": "An online utility tool designed to normalize whitespace, eliminate extra space gaps, and clean formatted text snippets instantly.",
+        "description": "An essential client-side text utility that cleans paragraphs by stripping extra spaces, multiple consecutive spaces, tabs, and redundant line breaks.",
         "url": "https://microtoolstack.com/tools/text/remove-extra-spaces.html"
       },
       {
@@ -64,26 +64,34 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "What does removing extra spaces do?",
+            "name": "How do I remove extra spaces from text?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "This tool replaces multiple consecutive spaces with a single space, strips leading/trailing spaces from paragraphs, and optionally removes unnecessary empty lines."
+              "text": "Paste your messy text into the editor box, and the tool instantly strips out multiple consecutive spaces, leading/trailing whitespace, and redundant line breaks."
             }
           },
           {
             "@type": "Question",
-            "name": "Can I remove all spaces or new lines using this tool?",
+            "name": "Does this tool remove extra line breaks as well?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes! The tool offers flexible options to remove extra spaces, strip line breaks, or turn multi-line text into a single continuous sentence."
+              "text": "Yes! You can choose to clean extra spaces between words as well as collapse multiple blank lines into single paragraphs."
             }
           },
           {
             "@type": "Question",
-            "name": "Is my text saved on any server?",
+            "name": "Is my text data saved on remote servers?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "No. All text manipulations are executed directly inside your web browser via client-side JavaScript."
+              "text": "No! All text formatting and whitespace cleaning execute 100% locally inside your web browser session using client-side JavaScript. Your text remains completely private."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this Remove Extra Spaces tool free to use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, MicroToolStack's Remove Extra Spaces tool is 100% free with unlimited text cleaning and no registration required."
             }
           }
         ]
@@ -101,11 +109,28 @@
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
 
   <style>
-    .editor-textarea {
+    .input-group {
+      margin-bottom: 1.25rem;
+    }
+    .input-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.5rem;
+    }
+    .counter-info {
+      font-size: 0.8rem;
+      color: var(--text-secondary, #9ca3af);
+      font-weight: 400;
+    }
+    .form-control {
       width: 100%;
-      min-height: 200px;
+      min-height: 180px;
       padding: 1rem;
-      font-size: 1rem;
+      font-size: 0.95rem;
       line-height: 1.6;
       border: 1px solid var(--border-color, #333);
       border-radius: var(--radius-md, 8px);
@@ -114,33 +139,41 @@
       outline: none;
       resize: vertical;
       box-sizing: border-box;
-      margin-bottom: 1rem;
     }
-    .options-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 0.75rem;
-      margin-bottom: 1.5rem;
-      background: var(--bg-card, #1e1e2e);
-      padding: 1.25rem;
-      border-radius: var(--radius-md, 8px);
+    .form-control:focus {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+
+    /* Options bar */
+    .options-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      background: #111827;
       border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1.5rem;
+      align-items: center;
     }
-    .option-item {
+
+    .checkbox-label {
       display: flex;
       align-items: center;
       gap: 0.5rem;
+      font-size: 0.9rem;
       color: var(--text-primary, #fff);
-      font-size: 0.95rem;
       cursor: pointer;
     }
-    .option-item input[type="checkbox"] {
+
+    .checkbox-label input {
       width: 16px;
       height: 16px;
       accent-color: var(--accent-primary, #3b82f6);
       cursor: pointer;
     }
-    .editor-controls {
+
+    .controls-bar {
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
@@ -148,11 +181,7 @@
       align-items: center;
       margin-bottom: 2.5rem;
     }
-    .btn-group {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-    }
+
     .content-box {
       background-color: var(--bg-card, #1e1e2e);
       border: 1px solid var(--border-color, #333);
@@ -163,6 +192,12 @@
     .content-box h2 {
       font-size: 1.35rem;
       margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
       color: var(--text-primary, #fff);
     }
     .content-box p, .content-box ul {
@@ -218,86 +253,108 @@
     
     <!-- Tool Title & Description -->
     <div style="text-align: center; margin-bottom: 2rem;">
-      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Remove Extra Spaces Online</h1>
-      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Clean messy text, eliminate double spaces, and remove unneeded line breaks in seconds.</p>
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online Remove Extra Spaces Tool</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Clean up messy text, strip double spaces, tabs, and redundant line breaks instantly.</p>
     </div>
 
-    <!-- Text Input Area -->
-    <textarea id="text-input" class="editor-textarea" placeholder="Paste your messy text with duplicate spaces here..." autofocus></textarea>
-
-    <!-- Interactive Cleaning Options -->
-    <div class="options-grid">
-      <label class="option-item">
-        <input type="checkbox" id="opt-single-space" checked> Remove Duplicate Spaces
-      </label>
-      <label class="option-item">
-        <input type="checkbox" id="opt-trim-lines" checked> Trim Leading & Trailing Spaces
-      </label>
-      <label class="option-item">
-        <input type="checkbox" id="opt-empty-lines"> Remove Empty Lines
-      </label>
-      <label class="option-item">
-        <input type="checkbox" id="opt-all-linebreaks"> Remove All Line Breaks (Single Line)
-      </label>
-    </div>
-
-    <!-- Action Buttons -->
-    <div class="editor-controls">
-      <div class="btn-group">
-        <button id="btn-clean" class="btn btn-primary" style="padding: 0.68rem 1.4rem; cursor: pointer;">✨ Clean Text Now</button>
-        <button id="btn-copy" class="btn btn-secondary" style="padding: 0.68rem 1.2rem; cursor: pointer; background: #1f2937; color: #fff; border: 1px solid #4b5563; border-radius: 6px;">📋 Copy Result</button>
-        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.68rem 1.2rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear</button>
+    <!-- Text Input Editor Card -->
+    <div class="content-box" style="margin-bottom: 1rem;">
+      <div class="input-group" style="margin-bottom: 0;">
+        <div class="input-label">
+          <span>Enter or Paste Messy Text</span>
+          <span class="counter-info" id="char-word-counter">0 Characters | 0 Words</span>
+        </div>
+        <textarea id="text-input" class="form-control" placeholder="Paste text with extra spaces, tabs, or blank lines here...">This   is   an   example    text   with   too   many     spaces,   tabs,   and   uneven   spacing.</textarea>
       </div>
-      <span id="status-msg" style="font-size: 0.85rem; color: #10b981; font-weight: 500; display: none;">Text cleaned and copied!</span>
+    </div>
+
+    <!-- Options Bar -->
+    <div class="options-bar">
+      <label class="checkbox-label">
+        <input type="checkbox" id="chk-double" checked> Collapse Double Spaces
+      </label>
+      <label class="checkbox-label">
+        <input type="checkbox" id="chk-lines" checked> Remove Extra Blank Lines
+      </label>
+      <label class="checkbox-label">
+        <input type="checkbox" id="chk-trim" checked> Trim Leading/Trailing Spaces
+      </label>
+    </div>
+
+    <!-- Controls Bar -->
+    <div class="controls-bar">
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-copy" class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-weight: 600; cursor: pointer; background: #10b981;">📋 Copy Cleaned Text</button>
+      </div>
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-reset" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear Text</button>
+      </div>
     </div>
 
     <!-- SEO Article Content Box 1 -->
     <div class="content-box">
-      <h2>Why Clean Extra Spaces in Text?</h2>
-      <p>When copying text from PDFs, emails, scanned documents, or code editors, unwanted extra spaces and irregular spacing often clutter the text. This non-standard formatting causes issues in blog posts, social media updates, and professional emails. Our <strong>Remove Extra Spaces</strong> tool instantly formats your content into clean, standard text with a single click.</p>
+      <h2>Why Use an Online Remove Extra Spaces Tool?</h2>
+      <p>When copying and pasting text from PDF documents, scanned files, or web pages, hidden whitespace issues frequently appear. Multiple consecutive spaces, uneven tab indents, and redundant line breaks clutter paragraphs and disrupt clean typography.</p>
+
+      <p>Manually deleting these extra spaces character by character is tedious. Our free <strong>Online Remove Extra Spaces Tool</strong> sanitizes and formats your text paragraphs instantly inside your browser.</p>
     </div>
 
     <!-- SEO Article Content Box 2 -->
     <div class="content-box">
-      <h2>Features of Extra Space Remover Tool</h2>
+      <h2>Key Features of Our Whitespace Cleaner</h2>
+      <p>Explore the powerful text formatting options:</p>
+
       <ul>
-        <li><strong>Eliminate Duplicate Spaces:</strong> Replaces consecutive multiple spaces with a single neat space.</li>
-        <li><strong>Trim Paragraph Edges:</strong> Automatically removes whitespace at the beginning and end of every line.</li>
-        <li><strong>Empty Line Removal:</strong> Strips blank paragraph breaks to create compact content.</li>
-        <li><strong>Instant One-Click Copy:</strong> Effortlessly copy your cleaned text directly to your clipboard.</li>
+        <li><strong>Collapse Multiple Spaces:</strong> Automatically replaces double and triple spaces between words with a single clean space.</li>
+        <li><strong>Remove Extra Blank Lines:</strong> Eliminates excessive line breaks and condenses paragraphs for neat reading layout.</li>
+        <li><strong>Trim Edges:</strong> Strips leading and trailing whitespace from the beginning and end of text blocks.</li>
       </ul>
+    </div>
+
+    <!-- SEO Article Content Box 3 -->
+    <div class="content-box">
+      <h2>100% Privacy & Client-Side Processing</h2>
+      <p>Unlike cloud-based converters that transmit your private text to external servers, MicroToolStack's Remove Extra Spaces tool executes 100% locally inside your web browser session using JavaScript. Your text remains completely private and secure.</p>
     </div>
 
     <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
     <div class="content-box">
-      <h2>Explore Related Text & Developer Tools</h2>
-      <p>Clean and format your text efficiently with our other free utilities:</p>
+      <h2>Explore Related Text & SEO Utilities</h2>
+      <p>Discover our complementary online text tools:</p>
       <div class="related-links">
+        <a href="/tools/text/word-counter.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📊 Real-Time Word Counter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Analyze character counts, reading time, and sentence stats.</span>
+        </a>
         <a href="/tools/text/duplicate-line-remover.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🧹 Duplicate Line Remover</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Strip repeated lines from lists and code.</span>
+          <strong style="display:block; margin-bottom: 0.25rem;">📝 Duplicate Line Remover</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Remove duplicate lines from lists and data sets.</span>
         </a>
         <a href="/tools/text/case-converter.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🔤 Case Converter</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Convert text to Uppercase, Lowercase, and Title Case.</span>
-        </a>
-        <a href="/tools/text/character-counter.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🔢 Character Counter</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Track Twitter and Meta SEO character limits.</span>
+          <strong style="display:block; margin-bottom: 0.25rem;">🔠 Online Case Converter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Transform text into UPPERCASE, lowercase, Title Case, etc.</span>
         </a>
       </div>
     </div>
 
     <!-- FAQ Section -->
     <div class="content-box">
-      <h2>Frequently Asked Questions</h2>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How do I remove double spaces between words?</h3>
-        <p>Simply paste your content into the editor above, ensure 'Remove Duplicate Spaces' is checked, and click 'Clean Text Now'.</p>
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How do I remove extra spaces from a paragraph?</h3>
+        <p>Paste your messy text into the text area. The tool automatically collapses multiple consecutive spaces into single spaces in real time.</p>
       </div>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this tool safe for confidential code or documents?</h3>
-        <p>Yes! Our tool functions entirely inside your browser. Your input text is never saved or transmitted over the internet.</p>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Can I remove empty lines as well?</h3>
+        <p>Yes! Simply check the "Remove Extra Blank Lines" option to condense multiple line breaks into clean paragraph spacing.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is my text data saved on remote servers?</h3>
+        <p>No. All calculations run client-side inside your browser session using JavaScript. Your text remains 100% private.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this Remove Extra Spaces tool free?</h3>
+        <p>Yes, MicroToolStack's Remove Extra Spaces tool is 100% free with no usage limits or sign-up required.</p>
       </div>
     </div>
 
@@ -314,60 +371,70 @@
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const textInput = document.getElementById('text-input');
-      const optSingleSpace = document.getElementById('opt-single-space');
-      const optTrimLines = document.getElementById('opt-trim-lines');
-      const optEmptyLines = document.getElementById('opt-empty-lines');
-      const optAllLinebreaks = document.getElementById('opt-all-linebreaks');
+      const charWordCounter = document.getElementById('char-word-counter');
+      const chkDouble = document.getElementById('chk-double');
+      const chkLines = document.getElementById('chk-lines');
+      const chkTrim = document.getElementById('chk-trim');
 
-      const btnClean = document.getElementById('btn-clean');
       const btnCopy = document.getElementById('btn-copy');
-      const btnClear = document.getElementById('btn-clear');
-      const statusMsg = document.getElementById('status-msg');
+      const btnReset = document.getElementById('btn-reset');
 
-      function cleanText() {
+      function processText() {
         let text = textInput.value;
-        if (!text) return;
 
-        // Option: Remove empty lines
-        if (optEmptyLines.checked) {
-          text = text.split('\n').filter(line => line.trim() !== '').join('\n');
+        // 1. Collapse double spaces / tabs
+        if (chkDouble.checked) {
+          text = text.replace(/[ 	]+/g, ' ');
         }
 
-        // Option: Remove all line breaks
-        if (optAllLinebreaks.checked) {
-          text = text.replace(/[\r\n]+/g, ' ');
+        // 2. Remove extra blank lines
+        if (chkLines.checked) {
+          text = text.split('
+').map(line => line.trim()).join('
+');
+          text = text.replace(/
+\s*
+/g, '
+');
         }
 
-        // Option: Trim leading and trailing spaces per line
-        if (optTrimLines.checked) {
-          text = text.split('\n').map(line => line.trim()).join('\n');
+        // 3. Trim edges
+        if (chkTrim.checked) {
+          text = text.trim();
         }
 
-        // Option: Replace multiple spaces with a single space
-        if (optSingleSpace.checked) {
-          text = text.replace(/ +/g, ' ');
-        }
-
-        textInput.value = text.trim();
+        textInput.value = text;
+        updateCounters();
       }
 
-      btnClean.addEventListener('click', cleanText);
+      function updateCounters() {
+        const val = textInput.value;
+        const charCount = val.length;
+        const wordCount = val.trim() ? val.trim().split(/\s+/).length : 0;
+        charWordCounter.textContent = `${charCount} Characters | ${wordCount} Words`;
+      }
 
-      // Copy Cleaned Text
+      [textInput, chkDouble, chkLines, chkTrim].forEach(el => {
+        el.addEventListener('input', processText);
+        el.addEventListener('change', processText);
+      });
+
       btnCopy.addEventListener('click', function() {
-        if (!textInput.value.trim()) return;
-        cleanText();
-        navigator.clipboard.writeText(textInput.value).then(function() {
-          statusMsg.style.display = 'inline';
-          setTimeout(() => { statusMsg.style.display = 'none'; }, 2000);
+        if (!textInput.value) return;
+        navigator.clipboard.writeText(textInput.value).then(() => {
+          const origText = btnCopy.textContent;
+          btnCopy.textContent = '✅ Copied!';
+          setTimeout(() => { btnCopy.textContent = origText; }, 2000);
         });
       });
 
-      // Clear Text
-      btnClear.addEventListener('click', function() {
+      btnReset.addEventListener('click', function() {
         textInput.value = '';
-        textInput.focus();
+        updateCounters();
       });
+
+      // Initial run
+      processText();
     });
   </script>
 </body>
