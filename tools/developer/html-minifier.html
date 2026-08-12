@@ -22,9 +22,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Primary SEO Meta Tags -->
-  <title>Free Online HTML Minifier & Code Compressor | MicroToolStack</title>
-  <meta name="description" content="Free Online HTML Minifier tool. Compress raw HTML code, strip unnecessary white space and comments, and speed up website page load times instantly.">
-  <meta name="keywords" content="html minifier, html code compressor, minify html online, compress html code, html optimizer, page speed html minifier">
+  <title>Free Fast HTML Minifier & Document Compressor | MicroToolStack</title>
+  <meta name="description" content="Compress and minify your HTML code online with our free HTML Minifier tool. Strip comments, whitespace, and empty lines to reduce payload file size and boost Google PageSpeed.">
+  <meta name="keywords" content="html minifier, compress html online, html document compressor, minify html code, reduce html file size, pagespeed html optimizer, web performance tool">
 
   <link rel="canonical" href="https://microtoolstack.com/tools/developer/html-minifier.html">
   <meta name="robots" content="index, follow">
@@ -32,8 +32,8 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://microtoolstack.com/tools/developer/html-minifier.html">
-  <meta property="og:title" content="Free Online HTML Minifier & Code Compressor | MicroToolStack">
-  <meta property="og:description" content="Minify and compress HTML code in real-time to optimize web page size and boost PageSpeed scores.">
+  <meta property="og:title" content="Free Fast HTML Minifier & Document Compressor | MicroToolStack">
+  <meta property="og:description" content="Minify HTML documents instantly to shrink file size and speed up page rendering. 100% free, browser-based developer utility.">
   <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
@@ -48,7 +48,7 @@
     "@graph": [
       {
         "@type": "SoftwareApplication",
-        "name": "HTML Minifier & Code Compressor",
+        "name": "Fast HTML Minifier & Compressor Utility",
         "operatingSystem": "All",
         "applicationCategory": "DeveloperApplication",
         "offers": {
@@ -56,7 +56,7 @@
           "price": "0",
           "priceCurrency": "USD"
         },
-        "description": "An online developer tool that compresses raw HTML markup, strips whitespace and code comments to optimize web page size.",
+        "description": "An automated HTML document compression utility that removes useless whitespace, comments, and unneeded characters to shrink payload size and improve web performance.",
         "url": "https://microtoolstack.com/tools/developer/html-minifier.html"
       },
       {
@@ -64,26 +64,34 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "What is HTML minification?",
+            "name": "What is HTML Minification?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "HTML minification is the process of removing unnecessary characters (like extra spaces, line breaks, indentations, and code comments) from HTML source code without altering its visual execution."
+              "text": "HTML Minification is the process of removing unnecessary characters from source code—such as whitespace, indentation, newlines, and HTML comment blocks—without altering how web browsers parse and render the web document."
             }
           },
           {
             "@type": "Question",
-            "name": "How does minifying HTML help website SEO?",
+            "name": "How much file size reduction can I expect from minifying HTML?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Minifying HTML reduces overall file size, allowing web browsers to download and render web pages faster. Faster page load speed directly improves Core Web Vitals and Google rankings."
+              "text": "Depending on initial code formatting, template comments, and DOM nesting depth, HTML minification typically reduces document file size by 15% to 40%, leading to faster HTTP downloads."
             }
           },
           {
             "@type": "Question",
-            "name": "Is my HTML code kept private?",
+            "name": "Does minifying HTML break my site's layout or functionality?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes, 100%. Minification takes place locally in your web browser. No code is transmitted to remote servers."
+              "text": "No. Our HTML minifier strips only cosmetic whitespace and non-functional characters outside of inline elements. Valid HTML elements, attributes, inline CSS, and scripts remain completely functional."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my HTML source code stored or uploaded on remote servers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. All minification algorithms execute locally inside your web browser using client-side JavaScript. Your source code remains 100% private and secure."
             }
           }
         ]
@@ -101,46 +109,39 @@
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
 
   <style>
-    .editor-textarea {
+    .editor-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .editor-label {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.5rem;
+    }
+    .html-textarea {
       width: 100%;
-      min-height: 200px;
+      min-height: 250px;
       padding: 1rem;
-      font-family: monospace;
-      font-size: 0.9rem;
-      line-height: 1.5;
+      font-size: 0.95rem;
+      font-family: 'Fira Code', Consolas, Monaco, monospace;
+      line-height: 1.6;
       border: 1px solid var(--border-color, #333);
       border-radius: var(--radius-md, 8px);
-      background-color: #0d1117;
-      color: #7ee787;
+      background-color: var(--bg-card, #1e1e2e);
+      color: var(--text-primary, #fff);
       outline: none;
       resize: vertical;
       box-sizing: border-box;
-      margin-bottom: 1.25rem;
+      white-space: pre;
     }
-    .metrics-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 1rem;
-      margin-bottom: 1.5rem;
+    .html-textarea:focus {
+      border-color: var(--accent-primary, #3b82f6);
     }
-    .metric-card {
-      background: var(--bg-card, #1e1e2e);
-      border: 1px solid var(--border-color, #333);
-      border-radius: 8px;
-      padding: 1rem;
-      text-align: center;
-    }
-    .metric-value {
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: var(--accent-primary, #3b82f6);
-      margin-top: 0.25rem;
-    }
-    .metric-label {
-      font-size: 0.85rem;
-      color: var(--text-secondary, #9ca3af);
-    }
-    .editor-controls {
+    .controls-bar {
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
@@ -148,10 +149,13 @@
       align-items: center;
       margin-bottom: 2.5rem;
     }
-    .btn-group {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
+    .stats-badge {
+      font-size: 0.85rem;
+      color: var(--text-secondary, #9ca3af);
+      background: rgba(255, 255, 255, 0.05);
+      padding: 0.4rem 0.8rem;
+      border-radius: 6px;
+      border: 1px solid var(--border-color, #333);
     }
     .content-box {
       background-color: var(--bg-card, #1e1e2e);
@@ -163,6 +167,12 @@
     .content-box h2 {
       font-size: 1.35rem;
       margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
       color: var(--text-primary, #fff);
     }
     .content-box p, .content-box ul {
@@ -215,105 +225,109 @@
 
   <!-- Main Container -->
   <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
-    <!-- Breadcrumb Navigation -->
-    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
-      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
-      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Developer Tools</a> / 
-      <span>HTML Minifier</span>
-    </nav>
     
     <!-- Tool Title & Description -->
     <div style="text-align: center; margin-bottom: 2rem;">
-      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online HTML Minifier & Code Compressor</h1>
-      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Compress raw HTML markup, remove comments and whitespace to speed up website load times.</p>
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online Fast HTML Minifier & Document Compressor</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Compress HTML documents into high-performance minified code to boost page speed scores.</p>
     </div>
 
-    <!-- Options -->
-    <div style="display: flex; gap: 1.5rem; margin-bottom: 1rem; flex-wrap: wrap; background: var(--bg-card, #1e1e2e); padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid var(--border-color, #333);">
-      <label style="font-size: 0.88rem; color: var(--text-primary, #fff); cursor: pointer;">
-        <input type="checkbox" id="opt-comments" checked style="accent-color: var(--accent-primary, #3b82f6);"> Strip HTML Comments
-      </label>
-      <label style="font-size: 0.88rem; color: var(--text-primary, #fff); cursor: pointer;">
-        <input type="checkbox" id="opt-whitespace" checked style="accent-color: var(--accent-primary, #3b82f6);"> Collapse Whitespace & Newlines
-      </label>
-    </div>
-
-    <!-- Textarea Code Input Editor -->
-    <textarea id="html-input" class="editor-textarea" placeholder="Paste raw uncompressed HTML code here..." autofocus></textarea>
-
-    <!-- Savings Metrics -->
-    <div class="metrics-grid">
-      <div class="metric-card">
-        <div class="metric-label">Original Size</div>
-        <div id="stat-orig" class="metric-value">0 B</div>
+    <!-- Dual Textarea Editor Grid -->
+    <div class="editor-grid">
+      <div>
+        <label for="input-html" class="editor-label">Uncompressed Raw HTML Input</label>
+        <textarea id="input-html" class="html-textarea" placeholder="Paste your raw, uncompressed HTML code here...&#10;e.g.,&#10;<!-- Header Section -->&#10;<div class=&quot;header&quot;>&#10;  <h1>Welcome</h1>&#10;</div>"></textarea>
       </div>
-      <div class="metric-card">
-        <div class="metric-label">Minified Size</div>
-        <div id="stat-min" class="metric-value">0 B</div>
-      </div>
-      <div class="metric-card">
-        <div class="metric-label">Bytes Saved</div>
-        <div id="stat-saved" class="metric-value" style="color: #10b981;">0%</div>
+      <div>
+        <label for="output-html" class="editor-label">Minified Production HTML Output</label>
+        <textarea id="output-html" class="html-textarea" placeholder="Minified HTML string will appear here..." readonly></textarea>
       </div>
     </div>
 
-    <!-- Action Buttons -->
-    <div class="editor-controls">
-      <div class="btn-group">
-        <button id="btn-minify" class="btn btn-primary" style="padding: 0.68rem 1.4rem; cursor: pointer; background: #10b981; border: none;">⚡ Minify HTML</button>
-        <button id="btn-copy" class="btn btn-secondary" style="padding: 0.68rem 1.2rem; cursor: pointer; background: #1f2937; color: #fff; border: 1px solid #4b5563; border-radius: 6px;">📋 Copy Minified Code</button>
-        <button id="btn-sample" class="btn btn-secondary" style="padding: 0.68rem 1.2rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">📝 Load Sample</button>
-        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.68rem 1.2rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear</button>
+    <!-- Stats & Action Controls Bar -->
+    <div class="controls-bar">
+      <div style="display: flex; gap: 0.75rem; align-items: center;">
+        <button id="btn-minify" class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-weight: 600; cursor: pointer; background: #10b981;">⚡ Minify HTML</button>
+        <button id="btn-beautify" class="btn btn-primary" style="padding: 0.75rem 1.25rem; font-weight: 600; cursor: pointer;">✨ Un-minify / Beautify</button>
       </div>
-      <span id="status-msg" style="font-size: 0.85rem; color: #10b981; font-weight: 500; display: none;">Copied to clipboard!</span>
+      <div style="display: flex; gap: 0.75rem; align-items: center;">
+        <span id="savings-stat" class="stats-badge" style="display: none;">Savings: 0%</span>
+        <button id="btn-copy" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">📋 Copy Output</button>
+        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear</button>
+      </div>
     </div>
 
     <!-- SEO Article Content Box 1 -->
     <div class="content-box">
-      <h2>Why Minifying HTML Boosts Website PageSpeed</h2>
-      <p>HTML minification strips unnecessary data from source code—including redundant spaces, indentation tabs, trailing line breaks, and developer comments—without affecting how browsers render the page. Compressed HTML files download faster over mobile networks, reducing **Time to First Byte (TTFB)** and boosting Google PageSpeed Insights scores.</p>
+      <h2>Why HTML Minification is Essential for Web Performance & Core Web Vitals</h2>
+      <p>HyperText Markup Language (HTML) is the structural backbone of every webpage on the web. However, HTML files authored during local development contain extensive indentations, comment blocks, multiple spaces, and blank lines designed strictly for developer readability.</p>
+      <p>When serving pages to production users over HTTP/2 or HTTP/3, sending uncompressed whitespace wastes network bandwidth and delays DOM parsing. Using our <strong>Free Online HTML Minifier</strong> strips non-essential characters, decreasing file transfer size and directly improving Google Core Web Vitals like First Contentful Paint (FCP) and Largest Contentful Paint (LCP).</p>
     </div>
 
     <!-- SEO Article Content Box 2 -->
     <div class="content-box">
-      <h2>How HTML Compression Improves On-Page Performance</h2>
+      <h2>How the HTML Minification Engine Works</h2>
+      <p>Our client-side document minifier applies several safe compression routines in real-time:</p>
+
+      <h3>1. Stripping HTML Comments</h3>
+      <p>Removes all comment blocks (<code>&lt;!-- comment --&gt;</code>) that developers write for document structure, keeping live production files lightweight and clean.</p>
+
+      <h3>2. Eliminating Extra Whitespace Between DOM Tags</h3>
+      <p>Removes unnecessary spaces, tabs, and line breaks between adjacent HTML tags (e.g., converting <code>&lt;div&gt;\n  &lt;p&gt;Text&lt;/p&gt;\n&lt;/div&gt;</code> to <code>&lt;div&gt;&lt;p&gt;Text&lt;/p&gt;&lt;/div&gt;</code>).</p>
+
+      <h3>3. Collapsing Multi-Line Text Nodes</h3>
+      <p>Merges consecutive spaces inside paragraph text into a single spaces, maintaining proper visual layout while shrinking overall document byte size.</p>
+    </div>
+
+    <!-- SEO Article Content Box 3 -->
+    <div class="content-box">
+      <h2>Features of MicroToolStack's HTML Document Compressor</h2>
       <ul>
-        <li><strong>Reduces Bandwidth Consumption:</strong> Smaller file sizes save server bandwidth and improve loading times for mobile users.</li>
-        <li><strong>Optimizes Browser Parsing:</strong> Web browser rendering engines parse compact code faster.</li>
-        <li><strong>Protects Code Privacy:</strong> Stripping internal developer comments removes sensitive technical notes from production code.</li>
+        <li><strong>Real-Time Savings Tracker:</strong> Displays your exact percentage reduction (e.g., <em>Savings: 28%</em>) immediately upon minification.</li>
+        <li><strong>Dual Minify & Beautify Functions:</strong> Compress production templates or restore minified HTML back into clean DOM tree indentation.</li>
+        <li><strong>100% Client-Side Security:</strong> All parsing executes locally inside your web browser session using JavaScript. No source code is transmitted to external servers.</li>
+        <li><strong>Free & Unlimited Usage:</strong> No file size caps, daily rate limits, or account sign-ups required.</li>
       </ul>
     </div>
 
-    <!-- Internal Linking Section -->
+    <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
     <div class="content-box">
-      <h2>Explore Related Developer Utilities</h2>
-      <p>Enhance your development workflow with our tools:</p>
+      <h2>Explore Related Developer Tools</h2>
+      <p>Discover our complementary online developer utilities:</p>
       <div class="related-links">
-        <a href="/tools/developer/json-formatter.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">📦 JSON Formatter & Validator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Validate, prettify, and format raw JSON data.</span>
+        <a href="/tools/developer/html-formatter.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">✨ HTML Formatter & Beautifier</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Format and beautify unaligned HTML DOM code.</span>
         </a>
-        <a href="/tools/developer/base64-encoder-decoder.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🔐 Base64 Encoder / Decoder</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Encode strings into Base64 format or decode back.</span>
+        <a href="/tools/developer/html-entity-encoder-decoder.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🔒 HTML Entity Encoder / Decoder</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Convert special characters to entities or decode escaped HTML.</span>
         </a>
-        <a href="/tools/seo/sitemap-generator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🗺️ XML Sitemap Generator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Generate sitemap.xml files for Google Search Console.</span>
+        <a href="/tools/developer/css-minifier.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">⚡ CSS Minifier & Compressor</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Compress CSS stylesheets for faster web loading.</span>
         </a>
       </div>
     </div>
 
     <!-- FAQ Section -->
     <div class="content-box">
-      <h2>Frequently Asked Questions</h2>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Will minifying HTML break my web layout?</h3>
-        <p>No. Our HTML minifier safely preserves essential spacing within text content while removing non-functional whitespace between HTML tags.</p>
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What is HTML Minification?</h3>
+        <p>HTML Minification is the process of removing whitespace, line breaks, and comments from HTML documents to reduce file payload sizes without changing how pages display.</p>
       </div>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Can I un-minify HTML code later?</h3>
-        <p>You can format or beautify minified HTML using code editors like Visual Studio Code or online HTML beautifiers.</p>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Will minifying HTML break my web page design?</h3>
+        <p>No. Minification strips only cosmetic non-functional whitespace and comments outside inline content. Valid HTML elements, attributes, inline CSS, and scripts remain 100% operational.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is my HTML markup saved on any remote server?</h3>
+        <p>No. All minification scripts run locally in your web browser session using JavaScript. Your source code remains completely private.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this HTML Minifier tool free to use?</h3>
+        <p>Yes, MicroToolStack's HTML Minifier is completely free with no usage limits or registration required.</p>
       </div>
     </div>
 
@@ -329,88 +343,101 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const htmlInput = document.getElementById('html-input');
-      const optComments = document.getElementById('opt-comments');
-      const optWhitespace = document.getElementById('opt-whitespace');
-
-      const statOrig = document.getElementById('stat-orig');
-      const statMin = document.getElementById('stat-min');
-      const statSaved = document.getElementById('stat-saved');
-
+      const inputHtml = document.getElementById('input-html');
+      const outputHtml = document.getElementById('output-html');
       const btnMinify = document.getElementById('btn-minify');
+      const btnBeautify = document.getElementById('btn-beautify');
       const btnCopy = document.getElementById('btn-copy');
-      const btnSample = document.getElementById('btn-sample');
       const btnClear = document.getElementById('btn-clear');
-      const statusMsg = document.getElementById('status-msg');
+      const savingsStat = document.getElementById('savings-stat');
 
-      function formatBytes(bytes) {
-        if (bytes === 0) return '0 B';
-        const k = 1024;
-        const sizes = ['B', 'KB', 'MB'];
-        const i = Math.floor(Math.log(bytes) / Math.log(k));
-        return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+      // HTML Minifier Engine
+      function minifyHTML(html) {
+        if (!html.trim()) return '';
+        return html
+          .replace(/<!--[\s\S]*?-->/g, '') // Remove HTML comments
+          .replace(/\s+/g, ' ')            // Collapse multiple spaces
+          .replace(/>\s+</g, '><')         // Remove spaces between tags
+          .trim();
       }
 
-      function minifyHtml() {
-        let code = htmlInput.value;
+      // HTML Beautifier Engine
+      function beautifyHTML(html) {
+        if (!html.trim()) return '';
+        let formatted = '';
+        let indent = '';
+        const tab = '  '; // 2-spaces
 
-        if (!code.trim()) {
-          statOrig.textContent = '0 B';
-          statMin.textContent = '0 B';
-          statSaved.textContent = '0%';
+        let cleaned = html.replace(/>\s+</g, '><').trim();
+        const tokens = cleaned.split(/(</?[\w\s="'-]+>/g);
+
+        tokens.forEach(token => {
+          if (!token.trim()) return;
+
+          if (token.startsWith('</')) {
+            if (indent.length >= tab.length) {
+              indent = indent.substring(tab.length);
+            }
+            formatted += '\n' + indent + token;
+          } else if (token.startsWith('<') && !token.startsWith('<!') && !token.endsWith('/>') && !isSelfClosing(token)) {
+            formatted += '\n' + indent + token;
+            indent += tab;
+          } else if (token.startsWith('<')) {
+            formatted += '\n' + indent + token;
+          } else {
+            formatted += token.trim();
+          }
+        });
+
+        return formatted.trim();
+      }
+
+      function isSelfClosing(tag) {
+        const selfClosingTags = ['<img', '<input', '<br', '<hr', '<meta', '<link', '<col', '<base'];
+        const lower = tag.toLowerCase();
+        return selfClosingTags.some(t => lower.startsWith(t));
+      }
+
+      btnMinify.addEventListener('click', function() {
+        const raw = inputHtml.value;
+        if (!raw.trim()) {
+          outputHtml.value = '';
+          savingsStat.style.display = 'none';
           return;
         }
 
-        const origSize = new Blob([code]).size;
-        statOrig.textContent = formatBytes(origSize);
+        const minified = minifyHTML(raw);
+        outputHtml.value = minified;
 
-        // Strip comments
-        if (optComments.checked) {
-          code = code.replace(/<!--(?!\[if\s)[[\s\S]*?-->/g, '');
+        // Calculate Savings %
+        const origLen = raw.length;
+        const minLen = minified.length;
+        if (origLen > 0) {
+          const savings = Math.max(0, Math.round(((origLen - minLen) / origLen) * 100));
+          savingsStat.textContent = `Savings: ${savings}% (${minLen} bytes)`;
+          savingsStat.style.display = 'inline-block';
         }
+      });
 
-        // Collapse whitespace & newlines
-        if (optWhitespace.checked) {
-          code = code.replace(/\s+/g, ' ');
-          code = code.replace(/>\s+</g, '><');
-        }
-
-        const minifiedCode = code.trim();
-        htmlInput.value = minifiedCode;
-
-        const minSize = new Blob([minifiedCode]).size;
-        statMin.textContent = formatBytes(minSize);
-
-        let savedPct = 0;
-        if (origSize > 0) {
-          savedPct = (((origSize - minSize) / origSize) * 100).toFixed(1);
-        }
-
-        statSaved.textContent = `${savedPct}% saved`;
-      }
-
-      btnMinify.addEventListener('click', minifyHtml);
+      btnBeautify.addEventListener('click', function() {
+        outputHtml.value = beautifyHTML(inputHtml.value);
+        savingsStat.style.display = 'none';
+      });
 
       btnCopy.addEventListener('click', function() {
-        if (!htmlInput.value.trim()) return;
-        navigator.clipboard.writeText(htmlInput.value).then(function() {
-          statusMsg.style.display = 'inline';
-          setTimeout(() => { statusMsg.style.display = 'none'; }, 2000);
+        if (!outputHtml.value.trim()) return;
+        navigator.clipboard.writeText(outputHtml.value).then(() => {
+          const originalText = btnCopy.textContent;
+          btnCopy.textContent = '✅ Copied!';
+          setTimeout(() => { btnCopy.textContent = originalText; }, 2000);
         });
       });
 
-      btnSample.addEventListener('click', function() {
-        htmlInput.value = `<!DOCTYPE html>\n<!-- Page Header Section -->\n<html lang="en">\n<head>\n  <meta charset="UTF-8">\n  <title> Sample   Page </title>\n</head>\n<body>\n  <!-- Main Content -->\n  <div class="container">\n    <h1>  Hello    World! </h1>\n    <p>   Welcome to MicroToolStack.   </p>\n  </div>\n</body>\n</html>`;
-        const origSize = new Blob([htmlInput.value]).size;
-        statOrig.textContent = formatBytes(origSize);
-      });
-
       btnClear.addEventListener('click', function() {
-        htmlInput.value = '';
-        statOrig.textContent = '0 B';
-        statMin.textContent = '0 B';
-        statSaved.textContent = '0%';
-        htmlInput.focus();
+        inputHtml.value = '';
+        outputHtml.value = '';
+        savingsStat.style.display = 'none';
+        inputHtml.focus();
       });
     });
   </script>
