@@ -22,9 +22,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Primary SEO Meta Tags -->
-  <title>Free Online Raw Dog Food Portion Calculator | BARF Diet Planner</title>
-  <meta name="description" content="Free online raw dog food portion calculator. Instantly calculate daily BARF diet intake (meat, bone, organs) based on your dog's weight and activity level.">
-  <meta name="keywords" content="raw dog food calculator, barf diet calculator, dog food portion calculator, raw feeding guide for dogs, daily raw feeding amounts">
+  <title>Free Raw Dog Food Calculator | BARF & PMR Diet Portion Calculator | MicroToolStack</title>
+  <meta name="description" content="Calculate daily raw feeding portions for dogs online for free. Get exact meal breakdowns for BARF (Biologically Appropriate Raw Food) and PMR (Prey Model Raw) diets based on dog weight and activity level.">
+  <meta name="keywords" content="raw dog food calculator, barf diet calculator, pmr raw feeding calculator, daily raw food portion dog, raw feeding ratios, raw diet for dogs, pet care tools">
 
   <link rel="canonical" href="https://microtoolstack.com/tools/pet-care/raw-dog-food-calculator.html">
   <meta name="robots" content="index, follow">
@@ -32,8 +32,8 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://microtoolstack.com/tools/pet-care/raw-dog-food-calculator.html">
-  <meta property="og:title" content="Free Online Raw Dog Food Portion Calculator | MicroToolStack">
-  <meta property="og:description" content="Instantly calculate daily raw food portions for your dog based on weight and activity level. 100% free and easy to use.">
+  <meta property="og:title" content="Free Raw Dog Food Calculator | MicroToolStack">
+  <meta property="og:description" content="Calculate daily raw feeding portions and meal breakdowns for BARF and PMR dog diets accurately. 100% free, fast, and privacy-first pet utility.">
   <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
@@ -48,7 +48,7 @@
     "@graph": [
       {
         "@type": "SoftwareApplication",
-        "name": "Raw Dog Food Portion Calculator",
+        "name": "Raw Dog Food Calculator",
         "operatingSystem": "All",
         "applicationCategory": "UtilitiesApplication",
         "offers": {
@@ -56,7 +56,7 @@
           "price": "0",
           "priceCurrency": "USD"
         },
-        "description": "An online pet health utility to calculate daily raw feeding portions based on the BARF diet model for dogs.",
+        "description": "An essential client-side pet care utility that calculates daily raw feeding quantities and component ratios (muscle meat, raw edible bone, organ, seeds/veggies) for BARF and Prey Model Raw (PMR) diets.",
         "url": "https://microtoolstack.com/tools/pet-care/raw-dog-food-calculator.html"
       },
       {
@@ -64,18 +64,34 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "What is the BARF diet for dogs?",
+            "name": "How much raw food should I feed my dog daily?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "BARF stands for 'Biologically Appropriate Raw Food'. It focuses on feeding dogs raw meat, bones, and organs, mimicking the diet of their wild ancestors."
+              "text": "An adult dog typically requires between 2% and 3% of its ideal body weight in raw food per day. Highly active working dogs may need up to 4%, while senior or overweight dogs may require 1.5% to 2%."
             }
           },
           {
             "@type": "Question",
-            "name": "How much raw food should I feed my dog?",
+            "name": "What is the difference between BARF and PMR raw diets?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "A standard recommendation is 2-3% of your adult dog's body weight per day, though this varies based on age, activity level, and metabolic rate."
+              "text": "The BARF (Biologically Appropriate Raw Food) model consists of 70% muscle meat, 10% raw edible bone, 10% organ (5% liver, 5% other organ), 7% vegetables, 2% fruit, and 1% seeds/nuts. The PMR (Prey Model Raw) diet consists of 80% muscle meat, 10% raw edible bone, and 10% organ (5% liver, 5% other organ), excluding plant matter."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are my pet details saved on remote servers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No! All portion and ratio calculations execute 100% locally inside your web browser session using JavaScript. Your data remains completely private."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this Raw Dog Food Calculator free to use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, MicroToolStack's Raw Dog Food Calculator is 100% free with unlimited calculations and no sign-up required."
             }
           }
         ]
@@ -93,55 +109,94 @@
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
 
   <style>
-    .calculator-card {
-      max-width: 600px;
-      margin: 2rem auto;
-      padding: 2rem;
-      background: var(--bg-card, #1e1e2e);
-      border-radius: 12px;
-      border: 1px solid var(--border-color, #333);
+    .input-group {
+      margin-bottom: 1.25rem;
     }
-    .form-group {
-      margin-bottom: 1.2rem;
-    }
-    .form-group label {
+    .input-label {
       display: block;
-      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
       font-weight: 600;
-      color: #fff;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.5rem;
     }
-    .form-control {
+    .form-control, .form-select {
       width: 100%;
-      padding: 0.8rem;
-      border-radius: 6px;
-      border: 1px solid var(--border-color, #444);
-      background: var(--bg-body, #111827);
-      color: #fff;
+      padding: 0.75rem 1rem;
       font-size: 1rem;
-      box-sizing: border-box;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
+      color: var(--text-primary, #fff);
       outline: none;
+      box-sizing: border-box;
     }
-    .btn-calc {
+    .form-control:focus, .form-select:focus {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+
+    /* Calculator Workspace */
+    .calculator-stage {
       width: 100%;
-      padding: 0.9rem;
-      background: var(--accent-primary, #3b82f6);
-      color: #fff;
-      border: none;
-      border-radius: 6px;
-      font-weight: bold;
-      cursor: pointer;
-      font-size: 1rem;
-      transition: background-color 0.2s;
-    }
-    .result-box {
-      margin-top: 1.5rem;
-      padding: 1.2rem;
-      border-radius: 8px;
+      min-height: 220px;
+      background: #111827;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1.5rem;
+      box-sizing: border-box;
+      margin-bottom: 1.5rem;
       text-align: center;
-      display: none;
-      background: rgba(59, 130, 246, 0.1);
-      border: 1px solid var(--accent-primary, #3b82f6);
     }
+
+    .total-portion-display {
+      font-size: 2.8rem;
+      font-family: 'Fira Code', Consolas, Monaco, monospace;
+      font-weight: 800;
+      color: #38bdf8;
+      margin-bottom: 0.25rem;
+    }
+
+    .breakdown-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 1rem;
+      width: 100%;
+      margin-top: 1.25rem;
+    }
+
+    .breakdown-card {
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      padding: 0.85rem;
+      text-align: center;
+    }
+
+    .breakdown-value {
+      font-family: 'Fira Code', Consolas, Monaco, monospace;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #10b981;
+      margin-top: 0.25rem;
+    }
+
+    .breakdown-label {
+      font-size: 0.8rem;
+      color: #9ca3af;
+    }
+
+    .controls-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.5rem;
+    }
+
     .content-box {
       background-color: var(--bg-card, #1e1e2e);
       border: 1px solid var(--border-color, #333);
@@ -154,7 +209,13 @@
       margin-bottom: 1rem;
       color: var(--text-primary, #fff);
     }
-    .content-box p, .content-box ul {
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul, .content-box table {
       color: var(--text-secondary, #9ca3af);
       font-size: 0.95rem;
       line-height: 1.6;
@@ -166,6 +227,23 @@
     .content-box li {
       margin-bottom: 0.5rem;
     }
+
+    .diet-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+    .diet-table th, .diet-table td {
+      border: 1px solid var(--border-color, #333);
+      padding: 0.65rem 0.85rem;
+      text-align: left;
+    }
+    .diet-table th {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-primary, #fff);
+    }
+
     .related-links {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -202,85 +280,285 @@
     </nav>
   </header>
 
+  <!-- Main Container -->
   <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
-    <!-- Calculator Card -->
-    <div class="calculator-card">
-      <h1 style="text-align: center; margin-bottom: 1rem; color: #fff;">🥩 Raw Dog Food Portion Calculator</h1>
-      <div class="form-group">
-        <label for="dogWeightRaw">Dog's Weight (in kg):</label>
-        <input type="number" id="dogWeightRaw" class="form-control" placeholder="e.g. 15" autofocus>
-      </div>
-      <div class="form-group">
-        <label for="activityLevel">Activity Level / Goal:</label>
-        <select id="activityLevel" class="form-control">
-          <option value="0.02">Weight Loss / Senior (2%)</option>
-          <option value="0.025" selected>Normal Adult / Moderate Activity (2.5%)</option>
-          <option value="0.03">Active Adult (3%)</option>
-          <option value="0.04">Working Dog / Very Active (4%)</option>
-          <option value="0.06">Puppy (6%)</option>
-        </select>
-      </div>
-      <button onclick="calculateRawFood()" class="btn-calc">Calculate Daily Food</button>
-      
-      <div id="resultRaw" class="result-box">
-        <h3 style="margin: 0; color: #fff;">Daily Portion: <span id="dailyGrams" style="color:var(--accent-primary, #3b82f6);"></span> grams</h3>
-        <p style="margin-top: 8px; font-size: 0.9rem; color: var(--text-secondary, #9ca3af);">Recommendation (BARF Diet): 80% Meat, 10% Bone, 10% Organ Meat.</p>
+    
+    <!-- Tool Title & Description -->
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online Raw Dog Food Portion Calculator</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Calculate daily raw feeding portions and exact ingredient ratios for BARF and Prey Model Raw (PMR) diets.</p>
+    </div>
+
+    <!-- Inputs Settings Card -->
+    <div class="content-box" style="margin-bottom: 1.5rem;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem;" class="input-group">
+        <div>
+          <label for="dog-weight" class="input-label">Dog Weight</label>
+          <div style="display: flex; gap: 0.5rem;">
+            <input type="number" id="dog-weight" class="form-control" min="1" max="250" value="45">
+            <select id="weight-unit" class="form-select" style="width: 90px;">
+              <option value="lbs" selected>lbs</option>
+              <option value="kg">kg</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label for="activity-level" class="input-label">Activity & Body Condition</label>
+          <select id="activity-level" class="form-select">
+            <option value="0.015">Weight Loss / Senior (1.5%)</option>
+            <option value="0.020">Inactive / Adult Low Activity (2.0%)</option>
+            <option value="0.025" selected>Adult Standard Maintenance (2.5%)</option>
+            <option value="0.030">Active / Working Dog (3.0%)</option>
+            <option value="0.040">High Performance / Puppy Growth (4.0%)</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="diet-model" class="input-label">Raw Diet Framework</label>
+          <select id="diet-model" class="form-select">
+            <option value="barf" selected>BARF (Biologically Appropriate)</option>
+            <option value="pmr">PMR (Prey Model Raw)</option>
+          </select>
+        </div>
       </div>
     </div>
 
-    <!-- SEO Article Content -->
-    <div class="content-box">
-      <h2>Why Choose the BARF Diet for Your Dog?</h2>
-      <p>The <strong>BARF Diet</strong> (Biologically Appropriate Raw Food) aims to provide dogs with a nutrition profile similar to their ancestral diet. Many pet owners switch to raw feeding to improve coat health, dental hygiene, and overall energy levels.</p>
+    <!-- Output Display Stage -->
+    <div class="calculator-stage">
+      <div style="font-size: 0.9rem; color: #94a3b8; margin-bottom: 0.25rem;">Total Daily Raw Food Requirement</div>
+      <div id="total-portion-display" class="total-portion-display">1.13 lbs / day</div>
+      <div id="total-oz-display" style="font-size: 0.95rem; color: #9ca3af;">(approx. 18.0 oz or 510 grams)</div>
+
+      <!-- Ingredient Ratio Breakdown Grid -->
+      <div class="breakdown-grid" id="breakdown-grid"></div>
     </div>
 
+    <!-- Controls Bar -->
+    <div class="controls-bar">
+      <div></div>
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-reset" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Reset Calculator</button>
+      </div>
+    </div>
+
+    <!-- SEO Article Content Box 1 -->
     <div class="content-box">
-      <h2>BARF Diet Breakdown</h2>
+      <h2>Understanding Raw Feeding: BARF vs. Prey Model Raw (PMR)</h2>
+      <p>Raw feeding is a species-appropriate canine nutrition approach designed to mimic the natural dietary composition of wild ancestors. Raw feeding enthusiasts and holistic veterinarians generally follow two primary diet frameworks: <strong>BARF</strong> and <strong>PMR</strong>.</p>
+
+      <p>Our free <strong>Online Raw Dog Food Portion Calculator</strong> calculates the total daily food weight needed based on your dog's ideal target body weight and daily activity level, then breaks down exact ingredient weights for both BARF and PMR models.</p>
+    </div>
+
+    <!-- SEO Article Content Box 2 -->
+    <div class="content-box">
+      <h2>Dietary Component Ratios Compared</h2>
+      <p>The structural difference between BARF and PMR raw feeding guidelines:</p>
+
+      <table class="diet-table">
+        <thead>
+          <tr>
+            <th>Component</th>
+            <th>BARF Model (Includes Plant Matter)</th>
+            <th>PMR Model (Prey Model Raw)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Muscle Meat</td>
+            <td>70%</td>
+            <td>80%</td>
+          </tr>
+          <tr>
+            <td>Raw Edible Bone</td>
+            <td>10%</td>
+            <td>10%</td>
+          </tr>
+          <tr>
+            <td>Liver (Essential Organ)</td>
+            <td>5%</td>
+            <td>5%</td>
+          </tr>
+          <tr>
+            <td>Other Secreting Organs</td>
+            <td>5% (Kidney, Spleen, Pancreas)</td>
+            <td>5% (Kidney, Spleen, Pancreas)</td>
+          </tr>
+          <tr>
+            <td>Vegetables & Fruits</td>
+            <td>7% Veggies + 2% Fruit (9%)</td>
+            <td>0% (Carnivore model)</td>
+          </tr>
+          <tr>
+            <td>Seeds & Nuts</td>
+            <td>1% (Pureed/Soaked)</td>
+            <td>0%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- SEO Article Content Box 3 -->
+    <div class="content-box">
+      <h2>Features of MicroToolStack's Raw Feeding Calculator</h2>
       <ul>
-        <li><strong>Meat (80%):</strong> Lean muscle meat provides protein and essential amino acids.</li>
-        <li><strong>Bone (10%):</strong> Raw, meaty bones provide calcium and phosphorus (Never cook bones!).</li>
-        <li><strong>Organ Meat (10%):</strong> Liver and other secreting organs provide essential vitamins and minerals.</li>
+        <li><strong>Flexible Unit Conversions:</strong> Supports dog weights in pounds (lbs) or kilograms (kg) and converts daily portion results into ounces (oz) and grams (g).</li>
+        <li><strong>Custom Activity Factors:</strong> Adjusts feeding percentages from 1.5% (weight loss/senior) up to 4.0% (puppies and working dogs).</li>
+        <li><strong>100% Client-Side Privacy:</strong> All portion and ratio calculations execute locally in your web browser session using JavaScript. No pet data is saved or transmitted.</li>
+        <li><strong>Free & Unlimited Usage:</strong> No sign-up, registration, or hidden fees required.</li>
       </ul>
     </div>
 
-    <!-- Internal Linking Section -->
+    <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
     <div class="content-box">
-      <h2>Explore Related Pet Care & Web Tools</h2>
-      <p>Try our other free online utilities:</p>
+      <h2>Explore Related Pet & Emergency Tools</h2>
+      <p>Discover our complementary online utilities:</p>
       <div class="related-links">
-        <a href="/tools/pet-care/cat-age-converter.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🐱 Cat Age Converter</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Convert cat years into human age equivalents.</span>
+        <a href="/tools/pet-care/dog-chocolate-toxicity-calculator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🐶 Dog Chocolate Toxicity Calculator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Estimate theobromine toxicity risk levels for dogs.</span>
         </a>
-        <a href="/tools/pet-care/dog-chocolate-calculator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🍫 Chocolate Toxicity</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Check if chocolate amount is safe for dogs.</span>
+        <a href="/tools/pet-care/cat-age-converter.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🐱 Cat Age Calculator & Converter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Convert cat age to human years using AAHA life stages.</span>
         </a>
         <a href="/tools/text/word-counter.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">📝 Word Counter</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Analyze text length and estimated reading time.</span>
+          <strong style="display:block; margin-bottom: 0.25rem;">📊 Real-Time Word Counter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Analyze text character counts and reading time.</span>
         </a>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="content-box">
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What percentage of body weight should a dog eat on a raw diet?</h3>
+        <p>Most healthy adult dogs thrive on 2.5% of their ideal target body weight per day. Inactive or overweight dogs need about 1.5% to 2.0%, while active or working dogs require 3.0% to 4.0%.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Why are secreting organs necessary in a raw dog diet?</h3>
+        <p>Secreting organs (such as liver, kidney, spleen, and pancreas) are nutrient-dense powerhouses providing critical vitamins A, D, E, B-complex, iron, and trace minerals that muscle meat lacks.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is my pet data saved on remote servers?</h3>
+        <p>No. All calculations run client-side inside your browser session using JavaScript. Your inputs remain 100% private.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this Raw Dog Food Calculator free?</h3>
+        <p>Yes, MicroToolStack's Raw Dog Food Calculator is 100% free with no usage limits or account registration required.</p>
       </div>
     </div>
 
   </main>
 
-  <!-- Footer Placeholder -->
+  <!-- Footer Container Placeholder -->
   <div id="footer-container"></div>
 
-  <!-- Scripts -->
+  <!-- JavaScript Utilities & Logic -->
   <script src="/assets/js/theme.js"></script>
-  <script src="/assets/js/utils.js"></script>
-  <script src="/assets/js/app.js"></script>
+  <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
+
   <script>
-    function calculateRawFood() {
-      const weight = parseFloat(document.getElementById('dogWeightRaw').value);
-      const ratio = parseFloat(document.getElementById('activityLevel').value);
-      if (!weight || weight <= 0) { alert("Please enter a valid weight."); return; }
-      const totalGrams = Math.round((weight * ratio) * 1000);
-      document.getElementById('dailyGrams').innerText = totalGrams;
-      document.getElementById('resultRaw').style.display = "block";
-    }
+    document.addEventListener('DOMContentLoaded', function() {
+      const dogWeightInput = document.getElementById('dog-weight');
+      const weightUnit = document.getElementById('weight-unit');
+      const activityLevel = document.getElementById('activity-level');
+      const dietModel = document.getElementById('diet-model');
+
+      const totalPortionDisplay = document.getElementById('total-portion-display');
+      const totalOzDisplay = document.getElementById('total-oz-display');
+      const breakdownGrid = document.getElementById('breakdown-grid');
+      const btnReset = document.getElementById('btn-reset');
+
+      function calculateRawPortions() {
+        let weight = parseFloat(dogWeightInput.value) || 0;
+        const factor = parseFloat(activityLevel.value) || 0.025;
+        const model = dietModel.value;
+
+        if (weight <= 0) {
+          totalPortionDisplay.textContent = '0 lbs / day';
+          totalOzDisplay.textContent = '(0 oz / 0 g)';
+          breakdownGrid.innerHTML = '';
+          return;
+        }
+
+        // Convert weight to lbs for internal math
+        let weightLbs = weightUnit.value === 'kg' ? weight * 2.20462 : weight;
+
+        // Daily total weight in lbs
+        const totalLbs = weightLbs * factor;
+        const totalOz = totalLbs * 16;
+        const totalGrams = totalLbs * 453.592;
+
+        if (weightUnit.value === 'kg') {
+          const totalKg = totalLbs / 2.20462;
+          totalPortionDisplay.textContent = `${totalKg.toFixed(2)} kg / day`;
+        } else {
+          totalPortionDisplay.textContent = `${totalLbs.toFixed(2)} lbs / day`;
+        }
+
+        totalOzDisplay.textContent = `(approx. ${totalOz.toFixed(1)} oz or ${Math.round(totalGrams)} grams)`;
+
+        // Ratios
+        let ratios = [];
+        if (model === 'barf') {
+          ratios = [
+            { label: 'Muscle Meat (70%)', pct: 0.70 },
+            { label: 'Raw Edible Bone (10%)', pct: 0.10 },
+            { label: 'Liver Organ (5%)', pct: 0.05 },
+            { label: 'Other Organ (5%)', pct: 0.05 },
+            { label: 'Vegetables & Fruit (9%)', pct: 0.09 },
+            { label: 'Seeds & Nuts (1%)', pct: 0.01 }
+          ];
+        } else {
+          // PMR
+          ratios = [
+            { label: 'Muscle Meat (80%)', pct: 0.80 },
+            { label: 'Raw Edible Bone (10%)', pct: 0.10 },
+            { label: 'Liver Organ (5%)', pct: 0.05 },
+            { label: 'Other Organ (5%)', pct: 0.05 }
+          ];
+        }
+
+        renderBreakdownCards(ratios, totalOz, totalGrams);
+      }
+
+      function renderBreakdownCards(ratios, totalOz, totalGrams) {
+        breakdownGrid.innerHTML = '';
+
+        ratios.forEach(item => {
+          const ozVal = (totalOz * item.pct).toFixed(1);
+          const gVal = Math.round(totalGrams * item.pct);
+
+          const card = document.createElement('div');
+          card.className = 'breakdown-card';
+          card.innerHTML = `
+            <div class="breakdown-label">${item.label}</div>
+            <div class="breakdown-value">${ozVal} oz</div>
+            <div style="font-size: 0.75rem; color: #9ca3af; margin-top: 0.1rem;">${gVal} g</div>
+          `;
+          breakdownGrid.appendChild(card);
+        });
+      }
+
+      [dogWeightInput, weightUnit, activityLevel, dietModel].forEach(el => {
+        el.addEventListener('input', calculateRawPortions);
+        el.addEventListener('change', calculateRawPortions);
+      });
+
+      btnReset.addEventListener('click', function() {
+        dogWeightInput.value = '45';
+        weightUnit.value = 'lbs';
+        activityLevel.value = '0.025';
+        dietModel.value = 'barf';
+        calculateRawPortions();
+      });
+
+      // Initial Calculation
+      calculateRawPortions();
+    });
   </script>
 </body>
 </html>
