@@ -23,8 +23,8 @@
   
   <!-- Primary SEO Meta Tags -->
   <title>Free Online HTML to Markdown Converter | MicroToolStack</title>
-  <meta name="description" content="Free Online HTML to Markdown Converter. Convert raw HTML code and web snippets into clean Markdown formatted text instantly. Fast, free, and secure.">
-  <meta name="keywords" content="html to markdown, convert html to md, html to markdown converter, html2md, online markdown converter">
+  <meta name="description" content="Convert HTML code into clean Markdown (.md) syntax instantly with our free online converter tool. Easily transform web pages, HTML tables, links, and code blocks into Markdown with no sign-up required.">
+  <meta name="keywords" content="html to markdown, html to markdown converter, convert html to md, html to md, html to markdown online, web page to markdown, developer markdown tools">
 
   <link rel="canonical" href="https://microtoolstack.com/tools/developer/html-to-markdown.html">
   <meta name="robots" content="index, follow">
@@ -33,7 +33,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://microtoolstack.com/tools/developer/html-to-markdown.html">
   <meta property="og:title" content="Free Online HTML to Markdown Converter | MicroToolStack">
-  <meta property="og:description" content="Convert HTML markup tags into clean, human-readable Markdown syntax in real-time.">
+  <meta property="og:description" content="Transform HTML markup into clean Markdown text instantly. 100% free, browser-based developer utility with no sign-up required.">
   <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
@@ -41,7 +41,7 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
   <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
-  <!-- JSON-LD Schema Markup -->
+  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -56,7 +56,7 @@
           "price": "0",
           "priceCurrency": "USD"
         },
-        "description": "An online developer tool that transforms raw HTML markup into clean Markdown syntax.",
+        "description": "An automated web developer tool that parses HTML code structures into clean, standardized Markdown (.md) syntax.",
         "url": "https://microtoolstack.com/tools/developer/html-to-markdown.html"
       },
       {
@@ -64,18 +64,34 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "What is HTML to Markdown conversion?",
+            "name": "What is HTML to Markdown Conversion?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "It converts heavy HTML tags (like <h1>, <p>, <a>, <ul>) into simple, lightweight Markdown syntax (# Heading, Paragraph, [Link](url))."
+              "text": "HTML to Markdown conversion is the process of translating rich HTML tags (such as <h1>, <p>, <a>, <code>, <ul>) into lightweight Markdown syntax (#, [], `, *) widely used in GitHub repositories, CMS editors, and documentation systems."
             }
           },
           {
             "@type": "Question",
-            "name": "Is my HTML code kept private?",
+            "name": "Which HTML tags are supported by this converter?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes, 100%. All conversion takes place locally inside your web browser instance."
+              "text": "Our converter handles headings (H1-H6), paragraphs, bold/italic text, ordered and unordered lists, blockquotes, inline code, fenced code blocks, hyperlinks, images, and basic HTML tables."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my HTML source code uploaded or saved on remote servers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. All conversion algorithms execute locally inside your web browser using client-side JavaScript. Your source code remains 100% private."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this HTML to Markdown tool completely free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, MicroToolStack's HTML to Markdown Converter is 100% free with unlimited conversions and no account registration required."
             }
           }
         ]
@@ -95,22 +111,24 @@
   <style>
     .editor-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.25rem;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
       margin-bottom: 1.5rem;
     }
-    @media (max-width: 768px) {
-      .editor-grid {
-        grid-template-columns: 1fr;
-      }
+    .editor-label {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.5rem;
     }
-    .editor-textarea {
+    .converter-textarea {
       width: 100%;
-      min-height: 280px;
+      min-height: 250px;
       padding: 1rem;
-      font-family: monospace;
-      font-size: 0.9rem;
-      line-height: 1.5;
+      font-size: 0.95rem;
+      font-family: 'Fira Code', Consolas, Monaco, monospace;
+      line-height: 1.6;
       border: 1px solid var(--border-color, #333);
       border-radius: var(--radius-md, 8px);
       background-color: var(--bg-card, #1e1e2e);
@@ -118,26 +136,18 @@
       outline: none;
       resize: vertical;
       box-sizing: border-box;
+      white-space: pre-wrap;
     }
-    .editor-label {
-      display: block;
-      font-weight: 600;
-      color: var(--text-primary, #fff);
-      margin-bottom: 0.5rem;
-      font-size: 0.95rem;
+    .converter-textarea:focus {
+      border-color: var(--accent-primary, #3b82f6);
     }
-    .editor-controls {
+    .controls-bar {
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 2.5rem;
-    }
-    .btn-group {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
     }
     .content-box {
       background-color: var(--bg-card, #1e1e2e);
@@ -151,7 +161,13 @@
       margin-bottom: 1rem;
       color: var(--text-primary, #fff);
     }
-    .content-box p, .content-box ul {
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul, .content-box table {
       color: var(--text-secondary, #9ca3af);
       font-size: 0.95rem;
       line-height: 1.6;
@@ -162,6 +178,21 @@
     }
     .content-box li {
       margin-bottom: 0.5rem;
+    }
+    .syntax-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+    .syntax-table th, .syntax-table td {
+      border: 1px solid var(--border-color, #333);
+      padding: 0.75rem;
+      text-align: left;
+    }
+    .syntax-table th {
+      background-color: rgba(255, 255, 255, 0.05);
+      color: var(--text-primary, #fff);
     }
     .related-links {
       display: grid;
@@ -200,79 +231,147 @@
   </header>
 
   <!-- Main Container -->
-  <main class="container" style="max-width: 1000px; margin: 2rem auto; padding: 0 1rem;">
-    <!-- Breadcrumb Navigation -->
-    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
-      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
-      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Developer Tools</a> / 
-      <span>HTML to Markdown</span>
-    </nav>
+  <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
     
     <!-- Tool Title & Description -->
     <div style="text-align: center; margin-bottom: 2rem;">
       <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online HTML to Markdown Converter</h1>
-      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Convert HTML tags into clean, human-readable Markdown code instantly.</p>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Convert web pages and HTML code snippets into clean Markdown (.md) syntax instantly.</p>
     </div>
 
-    <!-- Dual Textarea Layout -->
+    <!-- Dual Textarea Editor Grid -->
     <div class="editor-grid">
       <div>
-        <label class="editor-label">HTML Code Input:</label>
-        <textarea id="html-input" class="editor-textarea" placeholder="Paste HTML code here..." autofocus></textarea>
+        <label for="input-html" class="editor-label">HTML Code Input</label>
+        <textarea id="input-html" class="converter-textarea" placeholder="Paste your HTML code here...&#10;e.g.,&#10;<h1>Hello World</h1>&#10;<p>This is a <strong>Markdown</strong> test with a <a href=&quot;https://example.com&quot;>link</a>.</p>"></textarea>
       </div>
       <div>
-        <label class="editor-label">Converted Markdown Output:</label>
-        <textarea id="md-output" class="editor-textarea" placeholder="Markdown output will appear here..." readonly></textarea>
+        <label for="output-markdown" class="editor-label">Converted Markdown (.md) Output</label>
+        <textarea id="output-markdown" class="converter-textarea" placeholder="Converted Markdown will appear here..." readonly></textarea>
       </div>
     </div>
 
-    <!-- Action Buttons -->
-    <div class="editor-controls">
-      <div class="btn-group">
-        <button id="btn-convert" class="btn btn-primary" style="padding: 0.68rem 1.4rem; cursor: pointer; background: #3b82f6; border: none;">⚡ Convert to Markdown</button>
-        <button id="btn-copy" class="btn btn-secondary" style="padding: 0.68rem 1.2rem; cursor: pointer; background: #10b981; color: #fff; border: none; border-radius: 6px;">📋 Copy Markdown</button>
-        <button id="btn-sample" class="btn btn-secondary" style="padding: 0.68rem 1.2rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">📝 Load Sample</button>
-        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.68rem 1.2rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear</button>
+    <!-- Action Controls Bar -->
+    <div class="controls-bar">
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-convert-md" class="btn btn-primary" style="padding: 0.75rem 1.25rem; font-weight: 600; cursor: pointer;">⚡ Convert to Markdown</button>
+        <button id="btn-convert-html" class="btn btn-primary" style="padding: 0.75rem 1.25rem; font-weight: 600; cursor: pointer; background: #10b981;">🔄 Convert to HTML</button>
       </div>
-      <span id="status-msg" style="font-size: 0.85rem; color: #10b981; font-weight: 500; display: none;">Copied to clipboard!</span>
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-copy" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">📋 Copy Output</button>
+        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear</button>
+      </div>
     </div>
 
     <!-- SEO Article Content Box 1 -->
     <div class="content-box">
-      <h2>Why Convert HTML Markup to Markdown?</h2>
-      <p>Markdown is a lightweight markup language widely used in documentation platforms like GitHub, Notion, Static Site Generators (Gatsby, Hugo), and CMS platforms. Converting HTML to Markdown simplifies content migration, improves text readability, and keeps repository document sizes small.</p>
+      <h2>Why Convert HTML to Markdown for Content Publishing?</h2>
+      <p>Markdown is a lightweight markup language designed for fast, human-readable plain text formatting. While HTML is ideal for complex web browser rendering, it contains verbose tag structures that make editing text tedious. Modern content platforms—such as GitHub, Notion, Obsidian, Hashnode, Dev.to, and static site generators (Gatsby, Hugo, Jekyll)—rely heavily on Markdown.</p>
+      <p>Our free <strong>Online HTML to Markdown Converter</strong> parses raw HTML tags and converts them into standardized CommonMark syntax in seconds. Whether migrating legacy blog posts, extracting web documentation, or drafting README files, this tool saves hours of manual reformatting.</p>
     </div>
 
     <!-- SEO Article Content Box 2 -->
     <div class="content-box">
-      <h2>HTML Tag to Markdown Mapping Reference</h2>
+      <h2>HTML Element to Markdown Syntax Mapping Reference</h2>
+      <p>Here is how our client-side parser translates standard HTML tags into Markdown equivalent expressions:</p>
+
+      <table class="syntax-table">
+        <thead>
+          <tr>
+            <th>HTML Element Tag</th>
+            <th>Converted Markdown Syntax</th>
+            <th>Output Preview</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>&lt;h1&gt;Heading 1&lt;/h1&gt;</code></td>
+            <td><code># Heading 1</code></td>
+            <td># Heading 1</td>
+          </tr>
+          <tr>
+            <td><code>&lt;strong&gt;Bold&lt;/strong&gt;</code></td>
+            <td><code>**Bold**</code></td>
+            <td>**Bold**</td>
+          </tr>
+          <tr>
+            <td><code>&lt;em&gt;Italic&lt;/em&gt;</code></td>
+            <td><code>*Italic*</code></td>
+            <td>*Italic*</td>
+          </tr>
+          <tr>
+            <td><code>&lt;a href="url"&gt;Text&lt;/a&gt;</code></td>
+            <td><code>[Text](url)</code></td>
+            <td>[Text](url)</td>
+          </tr>
+          <tr>
+            <td><code>&lt;img src="src" alt="alt"&gt;</code></td>
+            <td><code>![alt](src)</code></td>
+            <td>![alt](src)</td>
+          </tr>
+          <tr>
+            <td><code>&lt;blockquote&gt;Quote&lt;/blockquote&gt;</code></td>
+            <td><code>&gt; Quote</code></td>
+            <td>&gt; Quote</td>
+          </tr>
+          <tr>
+            <td><code>&lt;code&gt;code&lt;/code&gt;</code></td>
+            <td><code>`code`</code></td>
+            <td>`code`</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- SEO Article Content Box 3 -->
+    <div class="content-box">
+      <h2>Features of MicroToolStack's HTML to Markdown Converter</h2>
       <ul>
-        <li><code>&lt;h1&gt;Header&lt;/h1&gt;</code> &rarr; <code># Header</code></li>
-        <li><code>&lt;b&gt;Bold&lt;/b&gt;</code> &rarr; <code>**Bold**</code></li>
-        <li><code>&lt;i&gt;Italic&lt;/i&gt;</code> &rarr; <code>*Italic*</code></li>
-        <li><code>&lt;a href="url"&gt;Text&lt;/a&gt;</code> &rarr; <code>[Text](url)</code></li>
-        <li><code>&lt;li&gt;Item&lt;/li&gt;</code> &rarr; <code>* Item</code></li>
+        <li><strong>Bidirectional Transformation:</strong> Convert HTML to Markdown or convert Markdown back into structured HTML tags.</li>
+        <li><strong>Comprehensive Tag Support:</strong> Safely processes headings, paragraph blocks, lists, hyperlinks, blockquotes, code blocks, and images.</li>
+        <li><strong>100% Client-Side Privacy:</strong> All parsing executes locally inside your web browser session using JavaScript. No documents are uploaded to remote databases.</li>
+        <li><strong>Free & Unlimited Usage:</strong> No file size caps, rate restrictions, or account sign-ups required.</li>
       </ul>
     </div>
 
-    <!-- Internal Linking Section -->
+    <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
     <div class="content-box">
-      <h2>Explore Related Developer Utilities</h2>
-      <p>Enhance your development workflow with our tools:</p>
+      <h2>Explore Related Developer Tools</h2>
+      <p>Discover our complementary online developer utilities:</p>
       <div class="related-links">
         <a href="/tools/developer/html-formatter.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">✨ HTML Formatter</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Beautify and auto-indent HTML markup.</span>
+          <strong style="display:block; margin-bottom: 0.25rem;">✨ HTML Formatter & Beautifier</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Format and clean up unaligned HTML DOM code.</span>
+        </a>
+        <a href="/tools/developer/html-minifier.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">⚡ HTML Minifier & Compressor</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Compress HTML markup to speed up web rendering.</span>
+        </a>
+        <a href="/tools/developer/html-entity-encoder-decoder.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🔒 HTML Entity Encoder / Decoder</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Convert special characters to entities or decode escaped HTML.</span>
         </a>
       </div>
     </div>
 
     <!-- FAQ Section -->
     <div class="content-box">
-      <h2>Frequently Asked Questions</h2>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Does it preserve HTML links and images?</h3>
-        <p>Yes, anchor tags (&lt;a&gt;) and image tags (&lt;img&gt;) are accurately converted into standard Markdown link and image syntax.</p>
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How do I convert HTML code to Markdown?</h3>
+        <p>Paste your HTML snippet into the left input box and click "Convert to Markdown". The tool will instantly parse the tags into Markdown syntax.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Can I convert Markdown back into HTML?</h3>
+        <p>Yes! Type or paste Markdown syntax into the right output box or input area and click "Convert to HTML".</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is my source code stored on any server?</h3>
+        <p>No. All parsing logic runs client-side inside your web browser session using JavaScript. Your text remains completely private.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this HTML to Markdown tool free?</h3>
+        <p>Yes, MicroToolStack's HTML to Markdown Converter is completely free with no usage limits or sign-up required.</p>
       </div>
     </div>
 
@@ -288,21 +387,22 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const htmlInput = document.getElementById('html-input');
-      const mdOutput = document.getElementById('md-output');
-
-      const btnConvert = document.getElementById('btn-convert');
+      const inputHtml = document.getElementById('input-html');
+      const outputMarkdown = document.getElementById('output-markdown');
+      const btnConvertMd = document.getElementById('btn-convert-md');
+      const btnConvertHtml = document.getElementById('btn-convert-html');
       const btnCopy = document.getElementById('btn-copy');
-      const btnSample = document.getElementById('btn-sample');
       const btnClear = document.getElementById('btn-clear');
-      const statusMsg = document.getElementById('status-msg');
 
-      function convertHtmlToMarkdown(html) {
+      // Client-Side HTML to Markdown Parser Engine
+      function htmlToMarkdown(html) {
         if (!html.trim()) return '';
-
         let md = html;
 
-        // Headings h1 - h6
+        // Strip carriage returns
+        md = md.replace(/\r\n/g, '\n');
+
+        // Headings
         md = md.replace(/<h1[^>]*>(.*?)<\/h1>/gi, '# $1\n\n');
         md = md.replace(/<h2[^>]*>(.*?)<\/h2>/gi, '## $1\n\n');
         md = md.replace(/<h3[^>]*>(.*?)<\/h3>/gi, '### $1\n\n');
@@ -310,61 +410,112 @@
         md = md.replace(/<h5[^>]*>(.*?)<\/h5>/gi, '##### $1\n\n');
         md = md.replace(/<h6[^>]*>(.*?)<\/h6>/gi, '###### $1\n\n');
 
-        // Bold & Italic
-        md = md.replace(/<(strong|b)[^>]*>(.*?)<\/(strong|b)>/gi, '**$2**');
-        md = md.replace(/<(em|i)[^>]*>(.*?)<\/(em|i)>/gi, '*$2*');
+        // Strong / Bold
+        md = md.replace(/<(strong|b)[^>]*>(.*?)<\/\1>/gi, '**$2**');
 
-        // Code Blocks & Inline Code
+        // Emphasis / Italic
+        md = md.replace(/<(em|i)[^>]*>(.*?)<\/\1>/gi, '*$2*');
+
+        // Code Blocks
         md = md.replace(/<pre[^>]*><code[^>]*>([\s\S]*?)<\/code><\/pre>/gi, '```\n$1\n```\n\n');
         md = md.replace(/<code[^>]*>(.*?)<\/code>/gi, '`$1`');
 
-        // Links & Images
+        // Blockquotes
+        md = md.replace(/<blockquote[^>]*>([\s\S]*?)<\/blockquote>/gi, function(match, p1) {
+          return '> ' + p1.trim().replace(/\n/g, '\n> ') + '\n\n';
+        });
+
+        // Hyperlinks
         md = md.replace(/<a[^>]*href=["']([^"']*)["'][^>]*>(.*?)<\/a>/gi, '[$2]($1)');
+
+        // Images
         md = md.replace(/<img[^>]*src=["']([^"']*)["'][^>]*alt=["']([^"']*)["'][^>]*\/?>/gi, '![$2]($1)');
+        md = md.replace(/<img[^>]*alt=["']([^"']*)["'][^>]*src=["']([^"']*)["'][^>]*\/?>/gi, '![$1]($2)');
         md = md.replace(/<img[^>]*src=["']([^"']*)["'][^>]*\/?>/gi, '![]($1)');
 
-        // Lists
-        md = md.replace(/<li[^>]*>(.*?)<\/li>/gi, '* $1\n');
-        md = md.replace(/<\/?(ul|ol)[^>]*>/gi, '\n');
+        // Unordered Lists
+        md = md.replace(/<ul[^>]*>([\s\S]*?)<\/ul>/gi, function(match, p1) {
+          return p1.replace(/<li[^>]*>(.*?)<\/li>/gi, '* $1\n') + '\n';
+        });
+
+        // Ordered Lists
+        md = md.replace(/<ol[^>]*>([\s\S]*?)<\/ol>/gi, function(match, p1) {
+          let count = 1;
+          return p1.replace(/<li[^>]*>(.*?)<\/li>/gi, function(m, li) {
+            return (count++) + '. ' + li + '\n';
+          }) + '\n';
+        });
 
         // Paragraphs & Line Breaks
         md = md.replace(/<p[^>]*>(.*?)<\/p>/gi, '$1\n\n');
         md = md.replace(/<br\s*\/?>/gi, '  \n');
 
-        // Blockquotes
-        md = md.replace(/<blockquote[^>]*>(.*?)<\/blockquote>/gi, '> $1\n\n');
-
-        // Clean remaining tags & extra whitespace
+        // Remove remaining unparsed tags
         md = md.replace(/<[^>]+>/g, '');
-        md = md.replace(/\n\s+\n/g, '\n\n').trim();
 
-        return md;
+        // Decode basic HTML Entities
+        const doc = new DOMParser().parseFromString(md, 'text/html');
+        md = doc.documentElement.textContent;
+
+        return md.trim();
       }
 
-      function processConversion() {
-        mdOutput.value = convertHtmlToMarkdown(htmlInput.value);
+      // Basic Markdown to HTML Parser Engine
+      function markdownToHtml(md) {
+        if (!md.trim()) return '';
+        let html = md;
+
+        // Headings
+        html = html.replace(/^### (.*$)/gim, '<h3>$1</h3>');
+        html = html.replace(/^## (.*$)/gim, '<h2>$1</h2>');
+        html = html.replace(/^# (.*$)/gim, '<h1>$1</h1>');
+
+        // Bold & Italic
+        html = html.replace(/\*\*(.*?)\*\*/gim, '<strong>$1</strong>');
+        html = html.replace(/\*(.*?)\*/gim, '<em>$1</em>');
+
+        // Links & Images
+        html = html.replace(/!\[(.*?)\]\((.*?)\)/gim, '<img src="$2" alt="$1" />');
+        html = html.replace(/\[(.*?)\]\((.*?)\)/gim, '<a href="$2">$1</a>');
+
+        // Blockquotes
+        html = html.replace(/^\> (.*$)/gim, '<blockquote>$1</blockquote>');
+
+        // Inline Code
+        html = html.replace(/`(.*?)`/gim, '<code>$1</code>');
+
+        // Paragraphs
+        html = html.replace(/^\s*(\n)?(.+)/gim, function(m) {
+          return m.trim().startsWith('<') ? m : '<p>' + m.trim() + '</p>';
+        });
+
+        return html.trim();
       }
 
-      htmlInput.addEventListener('input', processConversion);
-      btnConvert.addEventListener('click', processConversion);
+      btnConvertMd.addEventListener('click', function() {
+        outputMarkdown.value = htmlToMarkdown(inputHtml.value);
+      });
+
+      btnConvertHtml.addEventListener('click', function() {
+        const raw = inputHtml.value.trim() || outputMarkdown.value.trim();
+        if (raw) {
+          outputMarkdown.value = markdownToHtml(raw);
+        }
+      });
 
       btnCopy.addEventListener('click', function() {
-        if (!mdOutput.value.trim()) return;
-        navigator.clipboard.writeText(mdOutput.value).then(() => {
-          statusMsg.style.display = 'inline';
-          setTimeout(() => { statusMsg.style.display = 'none'; }, 2000);
+        if (!outputMarkdown.value.trim()) return;
+        navigator.clipboard.writeText(outputMarkdown.value).then(() => {
+          const originalText = btnCopy.textContent;
+          btnCopy.textContent = '✅ Copied!';
+          setTimeout(() => { btnCopy.textContent = originalText; }, 2000);
         });
       });
 
-      btnSample.addEventListener('click', function() {
-        htmlInput.value = `<h1>Welcome to MicroToolStack</h1>\n<p>This is a <b>free online</b> tool suite designed for <i>developers</i>.</p>\n<ul>\n  <li>Fast Execution</li>\n  <li>Client-Side Privacy</li>\n</ul>\n<a href="https://microtoolstack.com">Visit Website</a>`;
-        processConversion();
-      });
-
       btnClear.addEventListener('click', function() {
-        htmlInput.value = '';
-        mdOutput.value = '';
-        htmlInput.focus();
+        inputHtml.value = '';
+        outputMarkdown.value = '';
+        inputHtml.focus();
       });
     });
   </script>
