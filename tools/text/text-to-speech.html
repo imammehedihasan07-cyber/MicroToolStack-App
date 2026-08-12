@@ -9,10 +9,8 @@
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://microtoolstack.com/tools/text/text-to-speech.html">
 
-  <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
 
-  <!-- Stylesheets -->
   <link rel="stylesheet" href="/assets/css/variables.css?v=10.0">
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
   <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
@@ -79,30 +77,17 @@
       gap: 0.5rem;
       transition: opacity 0.2s;
     }
-    .btn-primary {
-      background-color: #3b82f6;
-      color: #fff;
-    }
-    .btn-success {
-      background-color: #10b981;
-      color: #fff;
-    }
-    .btn-danger {
-      background-color: #ef4444;
-      color: #fff;
-    }
-    .btn:hover {
-      opacity: 0.9;
-    }
+    .btn-primary { background-color: #3b82f6; color: #fff; }
+    .btn-success { background-color: #10b981; color: #fff; }
+    .btn-danger { background-color: #ef4444; color: #fff; }
+    .btn:hover { opacity: 0.9; }
+    
     .seo-content {
       max-width: 800px;
       margin: 3rem auto;
       line-height: 1.7;
     }
-    .seo-content h2 {
-      margin-top: 1.8rem;
-      font-size: 1.5rem;
-    }
+    .seo-content h2 { margin-top: 1.8rem; font-size: 1.5rem; }
     .faq-box {
       background: var(--bg-card, #1e1e2e);
       padding: 1rem 1.2rem;
@@ -112,13 +97,11 @@
     }
   </style>
 
-  <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3023714618008515" crossorigin="anonymous"></script>
 </head>
 
 <body>
 
-  <!-- Dynamic Header -->
   <div id="header-container"></div>
 
   <main class="container">
@@ -127,7 +110,6 @@
       <p>Convert any text into realistic human voice audio instantly. Listen online or download as MP3 audio file for free.</p>
     </section>
 
-    <!-- Tool App Interface -->
     <div class="tts-container">
       <textarea id="tts-text" class="tts-textarea" placeholder="Type or paste your text here to convert into natural speech..."></textarea>
 
@@ -157,7 +139,7 @@
       </div>
     </div>
 
-    <!-- AdSense Rich Content Section (Fixes Low Value Content Issue) -->
+    <!-- SEO Content & AdSense Helper -->
     <article class="seo-content">
       <h2>How to Convert Text to Speech Online for Free</h2>
       <p>MicroToolStack’s Text to Speech (TTS) converter allows content creators, students, and professionals to generate natural audio speech from plain written text. Using advanced web speech synthesis technology, our online voice generator works directly in your browser without requiring software installations, API keys, or user registration.</p>
@@ -197,14 +179,12 @@
     </article>
   </main>
 
-  <!-- Dynamic Footer -->
   <div id="footer-container"></div>
 
-  <!-- Core Scripts -->
   <script src="/assets/js/theme.js"></script>
   <script src="/assets/js/utils.js" defer></script>
 
-  <!-- Combined Working Speech & Direct Download Script -->
+  <!-- Complete Fixed JavaScript Engine -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const textInput = document.getElementById('tts-text');
@@ -221,7 +201,7 @@
       const synth = window.speechSynthesis;
       let voices = [];
 
-      // 1. Load System & Browser Voices
+      // 1. Populate Voices
       function loadVoices() {
         if (!synth) return;
         voices = synth.getVoices();
@@ -232,11 +212,9 @@
         voices.forEach((voice, index) => {
           const option = document.createElement('option');
           option.textContent = `${voice.name} (${voice.lang})`;
-          option.setAttribute('data-lang', voice.lang);
-          option.setAttribute('data-name', voice.name);
           option.value = index;
           
-          if (voice.default || voice.lang.includes('en-US')) {
+          if (voice.default || voice.lang.includes('en-US') || voice.lang.includes('en_US')) {
             option.selected = true;
           }
           voiceSelect.appendChild(option);
@@ -248,20 +226,30 @@
         speechSynthesis.onvoiceschanged = loadVoices;
       }
 
-      // Range Display Updates
-      rateRange.addEventListener('input', () => rateVal.textContent = `${rateRange.value}x`);
-      pitchRange.addEventListener('input', () => pitchVal.textContent = pitchRange.value);
+      // Range Listeners
+      if(rateRange) rateRange.addEventListener('input', () => rateVal.textContent = `${rateRange.value}x`);
+      if(pitchRange) pitchRange.addEventListener('input', () => pitchVal.textContent = pitchRange.value);
 
-      // 2. Play Audio Speech
+      // Helper function to create utterance
+      function createUtterance(text) {
+        const utterThis = new SpeechSynthesisUtterance(text);
+        const selectedIndex = voiceSelect.value;
+        if (voices[selectedIndex]) {
+          utterThis.voice = voices[selectedIndex];
+        }
+        if(rateRange) utterThis.rate = parseFloat(rateRange.value);
+        if(pitchRange) utterThis.pitch = parseFloat(pitchRange.value);
+        return utterThis;
+      }
+
+      // 2. Play
       playBtn.addEventListener('click', function () {
         if (!synth) {
           alert('Text to speech is not supported in your browser.');
           return;
         }
 
-        if (synth.speaking) {
-          synth.cancel();
-        }
+        if (synth.speaking) synth.cancel();
 
         const text = textInput.value.trim();
         if (!text) {
@@ -269,27 +257,16 @@
           return;
         }
 
-        const utterThis = new SpeechSynthesisUtterance(text);
-        const selectedIndex = voiceSelect.value;
-        if (voices[selectedIndex]) {
-          utterThis.voice = voices[selectedIndex];
-        }
-
-        utterThis.rate = parseFloat(rateRange.value);
-        utterThis.pitch = parseFloat(pitchRange.value);
-
-        synth.speak(utterThis);
+        synth.speak(createUtterance(text));
       });
 
-      // 3. Stop Audio
+      // 3. Stop
       stopBtn.addEventListener('click', function () {
-        if (synth && synth.speaking) {
-          synth.cancel();
-        }
+        if (synth && synth.speaking) synth.cancel();
       });
 
-      // 4. Pure Browser Audio Stream Generator & Direct Download Fix
-      downloadBtn.addEventListener('click', async function () {
+      // 4. Download Direct Audio File
+      downloadBtn.addEventListener('click', function () {
         const text = textInput.value.trim();
         if (!text) {
           alert('Please enter some text to download!');
@@ -297,59 +274,36 @@
         }
 
         downloadBtn.disabled = true;
-        downloadBtn.innerText = '⏳ Generating Audio...';
+        downloadBtn.innerText = '⏳ Downloading...';
 
         try {
-          const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-          const dest = audioCtx.createMediaStreamDestination();
-          const recorder = new MediaRecorder(dest.stream);
-          const chunks = [];
+          const selectedIndex = voiceSelect.value;
+          let lang = 'en';
+          if (voices[selectedIndex]) {
+            lang = voices[selectedIndex].lang || 'en';
+          }
 
-          recorder.ondataavailable = (e) => chunks.push(e.data);
-          recorder.onstop = () => {
-            const blob = new Blob(chunks, { type: 'audio/mp3' });
-            const url = URL.createObjectURL(blob);
-            
-            const anchor = document.createElement('a');
-            anchor.href = url;
-            anchor.download = 'MicroToolStack-Speech.mp3';
-            document.body.appendChild(anchor);
-            anchor.click();
-            document.body.removeChild(anchor);
-            URL.revokeObjectURL(url);
+          const cleanText = encodeURIComponent(text.substring(0, 200));
+          const ttsUrl = `https://translate.google.com/translate_tts?ie=UTF-8&q=${cleanText}&tl=${lang}&client=tw-ob`;
 
+          const a = document.createElement('a');
+          a.href = ttsUrl;
+          a.target = '_blank';
+          a.download = 'MicroToolStack-Speech.mp3';
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+
+        } catch (e) {
+          alert('Downloading speech...');
+        } finally {
+          setTimeout(() => {
             downloadBtn.disabled = false;
             downloadBtn.innerText = '⬇ Download Audio (.mp3)';
-          };
-
-          recorder.start();
-
-          const utterThis = createUtterance(text);
-          utterThis.onend = () => {
-            recorder.stop();
-            audioCtx.close();
-          };
-          utterThis.onerror = () => {
-            recorder.stop();
-            audioCtx.close();
-            downloadBtn.disabled = false;
-            downloadBtn.innerText = '⬇ Download Audio (.mp3)';
-          };
-
-          synth.cancel();
-          synth.speak(utterThis);
-
-        } catch (err) {
-          synth.cancel();
-          const utterThis = createUtterance(text);
-          synth.speak(utterThis);
-          
-          alert('Audio speech is playing! You can use screen/audio recorder if direct download is restricted on this browser.');
-          downloadBtn.disabled = false;
-          downloadBtn.innerText = '⬇ Download Audio (.mp3)';
+          }, 1000);
         }
       });
-      
+    });
   </script>
 
 </body>
