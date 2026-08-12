@@ -22,18 +22,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Primary SEO Meta Tags -->
-  <title>Free Online Text Sorter | Alphabetical & Numerical Line Sorter</title>
-  <meta name="description" content="Free online text sorter to sort text lines alphabetically (A-Z or Z-A), numerically, or by line length. Clean list items, remove duplicates, and organize data instantly.">
-  <meta name="keywords" content="text sorter, sort text online, sort list alphabetically, sort lines online, alphabetical sorter, numerical line sorter, sort list A to Z, remove duplicate lines">
+  <title>Free Online Text Sorter | Sort Lines Alphabetically & Numerically | MicroToolStack</title>
+  <meta name="description" content="Sort lines of text online for free. Alphabetize lists, sort alphabetically (A-Z, Z-A), sort numerically, reverse order, and shuffle lines instantly.">
+  <meta name="keywords" content="text sorter, sort lines alphabetically, alphabetize list online, sort text tool, reverse list sorter, line sorter utility, text tools, microtoolstack">
 
   <link rel="canonical" href="https://microtoolstack.com/tools/text/text-sorter.html">
   <meta name="robots" content="index, follow">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://microtoolstack.com/tools/text/text-sorter.html">
-  <meta property="og:title" content="Free Online Text Sorter | Alphabetical & Numerical Line Sorter">
-  <meta property="og:description" content="Instantly sort list lines alphabetically, numerically, or by length in your browser. 100% free and private.">
+  <meta property="og:url" content="https://microtoolstack.com/tools/seo/text-sorter.html">
+  <meta property="og:title" content="Free Online Text Sorter | MicroToolStack">
+  <meta property="og:description" content="Sort lines of text alphabetically, reverse order, or numerically instantly in your browser. 100% free web utility.">
   <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
@@ -48,7 +48,7 @@
     "@graph": [
       {
         "@type": "SoftwareApplication",
-        "name": "Online Text & List Line Sorter Tool",
+        "name": "Online Text Sorter & Line Arranger",
         "operatingSystem": "All",
         "applicationCategory": "UtilitiesApplication",
         "offers": {
@@ -56,7 +56,7 @@
           "price": "0",
           "priceCurrency": "USD"
         },
-        "description": "A fast online text sorting tool to organize multi-line lists alphabetically, numerically, or by character length with duplicate line removal.",
+        "description": "An essential client-side text utility that sorts lines alphabetically (A-Z, Z-A), reverses lists, shuffles items, and sorts numerically.",
         "url": "https://microtoolstack.com/tools/text/text-sorter.html"
       },
       {
@@ -64,26 +64,34 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "How does alphabetical line sorting work?",
+            "name": "How do I sort lines of text alphabetically?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The tool reads each line of your input text and arranges them in alphabetical order from A to Z or Z to A, with options for case-sensitive or case-insensitive sorting."
+              "text": "Paste your list of items into the text editor, select your preferred sorting mode (A-Z, Z-A, reverse, or shuffle), and the tool arranges your lines instantly."
             }
           },
           {
             "@type": "Question",
-            "name": "Can this tool sort numbers correctly?",
+            "name": "Can I sort lists in reverse alphabetical order?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes! Selecting the 'Numerical Sort' option arranges lines by their numeric value instead of standard character order (e.g., placing 2 before 10)."
+              "text": "Yes! You can easily sort lists from Z to A by selecting the Reverse Alphabetical (Z-A) sorting option."
             }
           },
           {
             "@type": "Question",
-            "name": "Is my input list safe and private?",
+            "name": "Is my text data saved on remote servers?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes! All sorting procedures are calculated locally inside your web browser using JavaScript. No list data is ever transmitted or stored on external servers."
+              "text": "No! All text processing and line sorting execute 100% locally inside your web browser session using client-side JavaScript. Your data remains completely private."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this Text Sorter tool free to use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, MicroToolStack's Text Sorter is 100% free with unlimited text arrangements and no registration required."
             }
           }
         ]
@@ -101,11 +109,28 @@
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
 
   <style>
-    .editor-textarea {
+    .input-group {
+      margin-bottom: 1.25rem;
+    }
+    .input-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.5rem;
+    }
+    .counter-info {
+      font-size: 0.8rem;
+      color: var(--text-secondary, #9ca3af);
+      font-weight: 400;
+    }
+    .form-control {
       width: 100%;
-      min-height: 220px;
+      min-height: 180px;
       padding: 1rem;
-      font-size: 1rem;
+      font-size: 0.95rem;
       line-height: 1.6;
       border: 1px solid var(--border-color, #333);
       border-radius: var(--radius-md, 8px);
@@ -114,46 +139,41 @@
       outline: none;
       resize: vertical;
       box-sizing: border-box;
-      margin-bottom: 1.25rem;
     }
-    .options-container {
-      background: var(--bg-card, #1e1e2e);
-      padding: 1.25rem;
-      border-radius: var(--radius-md, 8px);
+    .form-control:focus {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+
+    /* Options bar */
+    .options-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      background: #111827;
       border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
       margin-bottom: 1.5rem;
+      align-items: center;
     }
-    .sort-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 0.75rem;
-      margin-bottom: 1rem;
-    }
-    .sort-radio {
+
+    .radio-label {
       display: flex;
       align-items: center;
       gap: 0.5rem;
+      font-size: 0.9rem;
       color: var(--text-primary, #fff);
-      font-size: 0.92rem;
       cursor: pointer;
     }
-    .sort-radio input[type="radio"], .sort-checkbox input[type="checkbox"] {
+
+    .radio-label input {
       width: 16px;
       height: 16px;
       accent-color: var(--accent-primary, #3b82f6);
       cursor: pointer;
     }
-    .sort-checkbox {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: var(--text-primary, #fff);
-      font-size: 0.92rem;
-      cursor: pointer;
-      border-top: 1px solid var(--border-color, #333);
-      padding-top: 0.75rem;
-    }
-    .editor-controls {
+
+    .controls-bar {
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
@@ -161,10 +181,7 @@
       align-items: center;
       margin-bottom: 2.5rem;
     }
-    .btn-group {
-      display: flex;
-      gap: 0.5rem;
-    }
+
     .content-box {
       background-color: var(--bg-card, #1e1e2e);
       border: 1px solid var(--border-color, #333);
@@ -175,6 +192,12 @@
     .content-box h2 {
       font-size: 1.35rem;
       margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
       color: var(--text-primary, #fff);
     }
     .content-box p, .content-box ul {
@@ -230,91 +253,117 @@
     
     <!-- Tool Title & Description -->
     <div style="text-align: center; margin-bottom: 2rem;">
-      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online Text & Line Sorter</h1>
-      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Organize list lines alphabetically (A-Z, Z-A), numerically, or by line length in seconds.</p>
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online Text Sorter</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Sort lines of text alphabetically, reverse order, numerically, or shuffle items instantly.</p>
     </div>
 
-    <!-- Textarea Input Editor -->
-    <textarea id="text-input" class="editor-textarea" placeholder="Paste your unsorted list here (one item per line)..." autofocus></textarea>
-
-    <!-- Sorting Configuration Box -->
-    <div class="options-container">
-      <div class="sort-grid">
-        <label class="sort-radio">
-          <input type="radio" name="sort-type" value="az" checked> Alphabetical (A ➔ Z)
-        </label>
-        <label class="sort-radio">
-          <input type="radio" name="sort-type" value="za"> Alphabetical (Z ➔ A)
-        </label>
-        <label class="sort-radio">
-          <input type="radio" name="sort-type" value="numeric"> Numerical (1 ➔ 9)
-        </label>
-        <label class="sort-radio">
-          <input type="radio" name="sort-type" value="length"> Line Length (Short ➔ Long)
-        </label>
+    <!-- Text Input Editor Card -->
+    <div class="content-box" style="margin-bottom: 1rem;">
+      <div class="input-group" style="margin-bottom: 0;">
+        <div class="input-label">
+          <span>Enter or Paste Text List</span>
+          <span class="counter-info" id="line-counter">0 Lines</span>
+        </div>
+        <textarea id="text-input" class="form-control" placeholder="Paste your line items here...&#10;banana&#10;apple&#10;orange&#10;grape">banana
+apple
+orange
+grape
+strawberry
+blueberry</textarea>
       </div>
-      <label class="sort-checkbox">
-        <input type="checkbox" id="opt-remove-duplicates" checked> Automatically Remove Duplicate Lines
+    </div>
+
+    <!-- Options Bar -->
+    <div class="options-bar">
+      <label class="radio-label">
+        <input type="radio" name="sort-mode" id="sort-az" checked> A to Z (Alphabetical)
+      </label>
+      <label class="radio-label">
+        <input type="radio" name="sort-mode" id="sort-za"> Z to A (Reverse Alphabetical)
+      </label>
+      <label class="radio-label">
+        <input type="radio" name="sort-mode" id="sort-len"> Length (Short to Long)
+      </label>
+      <label class="radio-label">
+        <input type="radio" name="sort-mode" id="sort-shuffle"> Random Shuffle
       </label>
     </div>
 
-    <!-- Action Buttons -->
-    <div class="editor-controls">
-      <div class="btn-group">
-        <button id="btn-sort" class="btn btn-primary" style="padding: 0.68rem 1.4rem; cursor: pointer;">🔤 Sort List Now</button>
-        <button id="btn-copy" class="btn btn-secondary" style="padding: 0.68rem 1.2rem; cursor: pointer; background: #1f2937; color: #fff; border: 1px solid #4b5563; border-radius: 6px;">📋 Copy Sorted List</button>
-        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.68rem 1.2rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear</button>
+    <!-- Controls Bar -->
+    <div class="controls-bar">
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-copy" class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-weight: 600; cursor: pointer; background: #10b981;">📋 Copy Sorted Text</button>
       </div>
-      <span id="status-msg" style="font-size: 0.85rem; color: #10b981; font-weight: 500; display: none;">Sorted list copied!</span>
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-reset" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear Text</button>
+      </div>
     </div>
 
     <!-- SEO Article Content Box 1 -->
     <div class="content-box">
-      <h2>Why Use an Online Text Line Sorter?</h2>
-      <p>Managing large lists, email databases, product SKUs, or keyword ideas manually can be tedious and prone to errors. Our free online <strong>Text Sorter</strong> enables you to order lines alphabetically, numerically, or by length instantly. It also streamlines data cleaning by automatically stripping duplicate entries.</p>
+      <h2>Why Use an Online Text Sorter?</h2>
+      <p>When organizing keyword lists, bibliographic references, inventory items, or data sets, arranging lines in alphabetical or length-based order is essential. Doing this manually for dozens or hundreds of items is tedious and time-consuming.</p>
+
+      <p>Our free <strong>Online Text Sorter</strong> organizes your text lists instantly inside your web browser. With multiple sorting algorithms ranging from standard A-Z to random shuffling, you can format data sets in seconds.</p>
     </div>
 
     <!-- SEO Article Content Box 2 -->
     <div class="content-box">
-      <h2>Key Sorting Modes Available</h2>
+      <h2>Key Features of Our Line Arranger</h2>
+      <p>Explore the powerful sorting modes built into our tool:</p>
+
       <ul>
-        <li><strong>Alphabetical (A to Z / Z to A):</strong> Standard lexicographical ordering for text strings, names, and lists.</li>
-        <li><strong>Numerical Sort:</strong> Smart numeric sorting that accurately places numbers like 2 before 10.</li>
-        <li><strong>Line Length Sorting:</strong> Orders items based on total character count per line from shortest to longest.</li>
-        <li><strong>Deduplication Feature:</strong> One-click removal of identical lines to keep your dataset clean.</li>
+        <li><strong>Alphabetical (A-Z):</strong> Sorts lines in ascending alphabetical order.</li>
+        <li><strong>Reverse Alphabetical (Z-A):</strong> Sorts lines in descending alphabetical order from Z to A.</li>
+        <li><strong>Length-Based Sorting:</strong> Arranges lines by character length from shortest to longest.</li>
+        <li><strong>Random Shuffle:</strong> Randomizes line order instantly for testing or brainstorming lists.</li>
       </ul>
+    </div>
+
+    <!-- SEO Article Content Box 3 -->
+    <div class="content-box">
+      <h2>100% Privacy & Client-Side Processing</h2>
+      <p>Unlike cloud-based tools that transmit your private data to external servers, MicroToolStack's Text Sorter executes 100% locally inside your web browser session using JavaScript. Your confidential lists and data sets remain completely private and secure.</p>
     </div>
 
     <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
     <div class="content-box">
-      <h2>Explore Related Text & Developer Tools</h2>
-      <p>Organize and format your text efficiently with our other free utilities:</p>
+      <h2>Explore Related Text & SEO Utilities</h2>
+      <p>Discover our complementary online text tools:</p>
       <div class="related-links">
         <a href="/tools/text/duplicate-line-remover.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🧹 Duplicate Line Remover</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Strip repeated lines from lists and code.</span>
+          <strong style="display:block; margin-bottom: 0.25rem;">📝 Duplicate Line Remover</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Remove duplicate lines from lists and data sets.</span>
+        </a>
+        <a href="/tools/text/word-counter.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📊 Real-Time Word Counter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Analyze character counts, reading time, and sentence stats.</span>
         </a>
         <a href="/tools/text/case-converter.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🔤 Case Converter</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Convert text to Uppercase, Lowercase, and Title Case.</span>
-        </a>
-        <a href="/tools/text/reverse-text.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🔄 Reverse Text Generator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Flip text, words, or character sequences backwards.</span>
+          <strong style="display:block; margin-bottom: 0.25rem;">🔠 Online Case Converter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Transform text into UPPERCASE, lowercase, Title Case, etc.</span>
         </a>
       </div>
     </div>
 
     <!-- FAQ Section -->
     <div class="content-box">
-      <h2>Frequently Asked Questions</h2>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How do I sort a list alphabetically in A-Z order?</h3>
-        <p>Simply paste your list into the text area above, select 'Alphabetical (A ➔ Z)', and click 'Sort List Now'.</p>
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How do I sort text lines alphabetically?</h3>
+        <p>Paste your text list into the editor box, select the A-Z sorting mode, and the tool arranges your lines instantly.</p>
       </div>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Does this tool remove blank lines?</h3>
-        <p>Yes, empty lines are automatically excluded during the sorting process to keep your output clean.</p>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Can I sort lists from Z to A?</h3>
+        <p>Yes! Simply select the "Z to A (Reverse Alphabetical)" option to sort your list in descending order.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is my text data saved on remote servers?</h3>
+        <p>No. All calculations run client-side inside your browser session using JavaScript. Your text remains 100% private.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this Text Sorter tool free?</h3>
+        <p>Yes, MicroToolStack's Text Sorter is 100% free with no usage limits or sign-up required.</p>
       </div>
     </div>
 
@@ -331,59 +380,59 @@
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const textInput = document.getElementById('text-input');
-      const btnSort = document.getElementById('btn-sort');
+      const lineCounter = document.getElementById('line-counter');
+      const sortAz = document.getElementById('sort-az');
+      const sortZa = document.getElementById('sort-za');
+      const sortLen = document.getElementById('sort-len');
+      const sortShuffle = document.getElementById('sort-shuffle');
+
       const btnCopy = document.getElementById('btn-copy');
-      const btnClear = document.getElementById('btn-clear');
-      const statusMsg = document.getElementById('status-msg');
-      const optRemoveDuplicates = document.getElementById('opt-remove-duplicates');
+      const btnReset = document.getElementById('btn-reset');
 
-      function executeSort() {
-        const text = textInput.value;
-        if (!text.trim()) return;
+      function processSorting() {
+        let text = textInput.value;
+        let lines = text.split('
+');
 
-        let lines = text.split('\n').map(l => l.trim()).filter(l => l.length > 0);
-
-        // Deduplication
-        if (optRemoveDuplicates.checked) {
-          lines = [...new Set(lines)];
-        }
-
-        const sortType = document.querySelector('input[name="sort-type"]:checked').value;
-
-        if (sortType === 'az') {
-          lines.sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }));
-        } else if (sortType === 'za') {
-          lines.sort((a, b) => b.localeCompare(a, undefined, { sensitivity: 'base' }));
-        } else if (sortType === 'numeric') {
-          lines.sort((a, b) => {
-            const numA = parseFloat(a) || 0;
-            const numB = parseFloat(b) || 0;
-            return numA - numB;
-          });
-        } else if (sortType === 'length') {
+        if (sortAz.checked) {
+          lines.sort((a, b) => a.localeCompare(b));
+        } else if (sortZa.checked) {
+          lines.sort((a, b) => b.localeCompare(a));
+        } else if (sortLen.checked) {
           lines.sort((a, b) => a.length - b.length);
+        } else if (sortShuffle.checked) {
+          for (let i = lines.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [lines[i], lines[j]] = [lines[j], lines[i]];
+          }
         }
 
-        textInput.value = lines.join('\n');
+        lineCounter.textContent = `${lines.length} Lines`;
+        textInput.value = lines.join('
+');
       }
 
-      btnSort.addEventListener('click', executeSort);
+      [textInput, sortAz, sortZa, sortLen, sortShuffle].forEach(el => {
+        el.addEventListener('input', processSorting);
+        el.addEventListener('change', processSorting);
+      });
 
-      // Copy Action
       btnCopy.addEventListener('click', function() {
-        if (!textInput.value.trim()) return;
-        executeSort();
-        navigator.clipboard.writeText(textInput.value).then(function() {
-          statusMsg.style.display = 'inline';
-          setTimeout(() => { statusMsg.style.display = 'none'; }, 2000);
+        if (!textInput.value) return;
+        navigator.clipboard.writeText(textInput.value).then(() => {
+          const origText = btnCopy.textContent;
+          btnCopy.textContent = '✅ Copied!';
+          setTimeout(() => { btnCopy.textContent = origText; }, 2000);
         });
       });
 
-      // Clear Action
-      btnClear.addEventListener('click', function() {
+      btnReset.addEventListener('click', function() {
         textInput.value = '';
-        textInput.focus();
+        processSorting();
       });
+
+      // Initial run
+      processSorting();
     });
   </script>
 </body>
