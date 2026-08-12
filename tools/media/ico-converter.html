@@ -9,6 +9,7 @@
         gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
         gTagScript.async = true;
         document.head.appendChild(gTagScript);
+
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
@@ -21,19 +22,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Primary SEO Meta Tags -->
-  <title>PNG/JPG to ICO Converter - Free Online Tool | MicroToolStack</title>
-  <meta name="description" content="Convert PNG, JPG, and WebP images to .ico format for websites and desktop apps online for free. 100% private client-side conversion.">
-  <meta name="keywords" content="ico converter, png to ico, jpg to ico, convert image to ico, online favicon creator, desktop icon generator">
+  <title>Free Online ICO Converter | Convert PNG & JPG to Favicon ICO | MicroToolStack</title>
+  <meta name="description" content="Convert PNG, JPG, WEBP, and SVG images to ICO files online for free. Custom resolution choices (16x16, 32x32, 48x48, 64x64, 256x256) for website favicons and Windows icons.">
+  <meta name="keywords" content="ico converter, convert png to ico, jpg to ico, image to ico converter, favicon ico generator, convert image to icon, windows ico converter, media tools">
 
   <link rel="canonical" href="https://microtoolstack.com/tools/media/ico-converter.html">
   <meta name="robots" content="index, follow">
 
-  <!-- Open Graph / Social Media Meta Tags -->
+  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="PNG/JPG to ICO Converter - Free Online Tool | MicroToolStack">
-  <meta property="og:description" content="Convert PNG, JPG, and WebP images to .ico format for websites and apps online for free. 100% private client-side conversion.">
   <meta property="og:url" content="https://microtoolstack.com/tools/media/ico-converter.html">
-  <meta property="og:site_name" content="MicroToolStack">
+  <meta property="og:title" content="Free Online ICO Converter | MicroToolStack">
+  <meta property="og:description" content="Convert PNG, JPG, or WEBP images into downloadable ICO favicon files instantly. 100% free, fast, and privacy-first browser media utility.">
   <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
@@ -41,49 +41,57 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
   <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
-  <!-- Fonts & CSS Stylesheets -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
-  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
-
-  <!-- JSON-LD Schema Markup -->
+  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "WebApplication",
-        "@id": "https://microtoolstack.com/tools/media/ico-converter.html#webapp",
-        "url": "https://microtoolstack.com/tools/media/ico-converter.html",
-        "name": "Online ICO Converter",
-        "applicationCategory": "UtilitiesApplication",
+        "@type": "SoftwareApplication",
+        "name": "Image to ICO Converter",
         "operatingSystem": "All",
+        "applicationCategory": "MultimediaApplication",
         "offers": {
           "@type": "Offer",
           "price": "0",
           "priceCurrency": "USD"
         },
-        "description": "Convert PNG, JPG, or WebP images into ICO format for favicons and desktop icons."
+        "description": "An essential client-side web utility that converts PNG, JPG, WEBP, and SVG graphics into multi-resolution ICO icon files for website favicons and application branding.",
+        "url": "https://microtoolstack.com/tools/media/ico-converter.html"
       },
       {
         "@type": "FAQPage",
-        "@id": "https://microtoolstack.com/tools/media/ico-converter.html#faq",
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "Are my images safe during conversion?",
+            "name": "What is an ICO File?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes! The conversion happens 100% locally inside your web browser. No files are ever sent to any remote server."
+              "text": "An ICO file is an image file format specifically designed for storing computer icons in Microsoft Windows operating systems and website favicons displayed in web browser tabs."
             }
           },
           {
             "@type": "Question",
-            "name": "What icon sizes can I generate?",
+            "name": "What is the best image resolution for website favicon.ico files?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "You can select target sizes including 16x16, 32x32, 48x48, 64x64, and 128x128 pixels."
+              "text": "The standard resolutions for web browser favicons are 16x16 and 32x32 pixels, while 48x48 and 256x256 are used for high-DPI desktop shortcuts and Windows apps."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are my uploaded photos sent to remote servers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No! All image resizing, scaling, and ICO canvas conversions execute 100% locally inside your web browser session using client-side JavaScript. Your images remain completely private."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this ICO Converter tool free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, MicroToolStack's ICO Converter is 100% free with unlimited image conversions and no registration required."
             }
           }
         ]
@@ -92,34 +100,118 @@
   }
   </script>
 
+  <!-- Preconnect and Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
   <style>
-    .upload-box {
-      border: 2px dashed var(--border-color, #333);
-      padding: 2.5rem 1.5rem;
-      text-align: center;
-      border-radius: 12px;
-      cursor: pointer;
-      background: var(--bg-card, #1e1e2e);
-      margin-bottom: 1.5rem;
-      transition: border-color 0.3s;
+    .input-group {
+      margin-bottom: 1.25rem;
     }
-    .upload-box:hover {
+    .input-label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.5rem;
+    }
+    .form-control, .form-select {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
+      color: var(--text-primary, #fff);
+      outline: none;
+      box-sizing: border-box;
+    }
+    .form-control:focus, .form-select:focus {
       border-color: var(--accent-primary, #3b82f6);
     }
-    .preview-container { 
-      margin-top: 1.5rem; 
-      display: none; 
-      text-align: center; 
+
+    /* Drag and Drop Zone */
+    .drop-zone {
+      width: 100%;
+      min-height: 180px;
+      border: 2px dashed var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      padding: 1.5rem;
+      box-sizing: border-box;
+      text-align: center;
+      margin-bottom: 1.5rem;
     }
-    .size-select {
-      padding: 0.6rem 1rem;
+    .drop-zone:hover, .drop-zone.dragover {
+      border-color: var(--accent-primary, #3b82f6);
+      background-color: rgba(59, 130, 246, 0.05);
+    }
+
+    /* Preview Container */
+    .preview-stage {
+      width: 100%;
+      min-height: 220px;
+      background: #111827;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1.5rem;
+      box-sizing: border-box;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .preview-box {
+      width: 96px;
+      height: 96px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.75rem;
+      overflow: hidden;
+    }
+
+    .preview-img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .meta-badge {
+      display: inline-block;
+      font-size: 0.85rem;
+      color: var(--text-secondary, #9ca3af);
+      background: rgba(255, 255, 255, 0.05);
+      padding: 0.3rem 0.75rem;
       border-radius: 6px;
       border: 1px solid var(--border-color, #333);
-      background: var(--bg-body, #111827);
-      color: #fff;
-      margin-bottom: 1.5rem;
-      outline: none;
     }
+
+    .controls-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.5rem;
+    }
+
     .content-box {
       background-color: var(--bg-card, #1e1e2e);
       border: 1px solid var(--border-color, #333);
@@ -132,12 +224,18 @@
       margin-bottom: 1rem;
       color: var(--text-primary, #fff);
     }
-    .content-box p, .content-box ul, .content-box ol {
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul {
       color: var(--text-secondary, #9ca3af);
       font-size: 0.95rem;
       line-height: 1.6;
     }
-    .content-box ul, .content-box ol {
+    .content-box ul {
       padding-left: 1.25rem;
       margin-bottom: 1rem;
     }
@@ -166,6 +264,7 @@
   </style>
 </head>
 <body style="margin: 0; padding: 0;">
+
   <!-- Header Section -->
   <header class="custom-header">
     <a href="/" class="custom-logo">
@@ -179,146 +278,257 @@
     </nav>
   </header>
 
+  <!-- Main Container -->
   <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
-    <!-- Breadcrumb Navigation -->
-    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
-      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
-      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Media Tools</a> / 
-      <span>ICO Converter</span>
-    </nav>
+    
+    <!-- Tool Title & Description -->
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online PNG / JPG to ICO File Converter</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Convert image graphics (PNG, JPG, WEBP, SVG) into multi-resolution ICO favicon files instantly.</p>
+    </div>
 
-    <!-- Header Area -->
-    <header style="margin-bottom: 2rem; text-align: center;">
-      <h1 class="hero" style="font-size: 2rem; margin-bottom: 0.5rem; color: #fff;">Free Online ICO Converter</h1>
-      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">
-        Convert PNG, JPG, or WebP images into ICO format for favicons and desktop icons.
-      </p>
-    </header>
+    <!-- Drag and Drop Image Zone -->
+    <div class="drop-zone" id="drop-zone">
+      <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🖼️</div>
+      <div style="font-size: 1.05rem; font-weight: 600; color: #fff; margin-bottom: 0.25rem;">Drag & Drop Image Here</div>
+      <div style="font-size: 0.85rem; color: #9ca3af;">or click to browse from device (PNG, JPG, WEBP, SVG)</div>
+      <input type="file" id="file-input" accept="image/*" style="display: none;">
+    </div>
 
-    <!-- Tool Card -->
-    <div class="card" style="padding: 2rem; border-radius: 12px; background: var(--bg-card, #1e1e2e); border: 1px solid var(--border-color, #333); margin-bottom: 3rem;">
-      <div class="upload-box" id="dropZone" onclick="document.getElementById('imageInput').click()">
-        <span style="font-size: 2.5rem; display: block; margin-bottom: 0.5rem;">📦</span>
-        <p style="margin-bottom: 0.5rem; font-weight: 600; color: #fff;">Click or Drag & Drop Image Here</p>
-        <p style="font-size: 0.85rem; color: var(--text-secondary, #9ca3af);">Supports PNG, JPG, WebP (100% Client-Side Processing)</p>
-        <input type="file" id="imageInput" accept="image/*" style="display: none;" onchange="handleFileSelect(event)">
-      </div>
-
-      <div class="preview-container" id="previewArea">
-        <div style="margin-bottom: 1rem;">
-          <img id="previewImg" style="max-height: 150px; border-radius: 8px; border: 1px solid var(--border-color, #333);" alt="ICO Preview">
+    <!-- Resolution Options Card -->
+    <div class="content-box" style="margin-bottom: 1.5rem;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;" class="input-group">
+        <div>
+          <label for="ico-size-select" class="input-label">Target ICO Size Resolution</label>
+          <select id="ico-size-select" class="form-select">
+            <option value="16">16 x 16 px (Small Tab Favicon)</option>
+            <option value="32" selected>32 x 32 px (Standard Favicon / Desktop)</option>
+            <option value="48">48 x 48 px (Windows Desktop Icon)</option>
+            <option value="64">64 x 64 px (High DPI Shortcut)</option>
+            <option value="128">128 x 128 px (Large Icon)</option>
+            <option value="256">256 x 256 px (Full HD Icon)</option>
+          </select>
         </div>
-
-        <label style="display: block; font-size: 0.9rem; margin-bottom: 0.5rem; color: var(--text-secondary, #9ca3af);">Select Target Icon Size:</label>
-        <select id="icoSize" class="size-select" onchange="renderIco()">
-          <option value="16">16x16 (Favicon Small)</option>
-          <option value="32" selected>32x32 (Favicon Standard)</option>
-          <option value="48">48x48 (Desktop Shortcut)</option>
-          <option value="64">64x64 (High Resolution)</option>
-          <option value="128">128x128 (App Icon)</option>
-        </select>
-
-        <br>
-        <button class="btn btn-primary" style="padding: 0.8rem 2rem; font-size: 1rem; cursor: pointer;" onclick="downloadICO()">⬇️ Download .ICO File</button>
       </div>
     </div>
 
-    <!-- SEO Content Box 1 -->
-    <div class="content-box">
-      <h2>Why Convert Images to .ICO Format?</h2>
-      <p>
-        The <code>.ico</code> file format is universally recognized by web browsers and operating systems (such as Windows) for website favicons, desktop shortcuts, and software icons.
-      </p>
+    <!-- Preview Stage -->
+    <div class="preview-stage">
+      <div class="preview-box">
+        <img id="preview-img" class="preview-img" style="display: none;" alt="ICO Preview">
+        <span id="placeholder-icon" style="font-size: 2rem; opacity: 0.5;">⚡</span>
+      </div>
+      <div id="status-msg" style="color: #94a3b8; font-size: 0.95rem;">
+        📂 Upload an image to view icon scaling preview...
+      </div>
+      <div id="image-meta" class="meta-badge" style="display: none;">Target Output: 32x32 ICO</div>
     </div>
 
-    <!-- Internal Linking Section (SEO Best Practice) -->
+    <!-- Controls Bar -->
+    <div class="controls-bar">
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-download-ico" class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-weight: 600; cursor: pointer; background: #10b981;">💾 Download ICO File</button>
+      </div>
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear</button>
+      </div>
+    </div>
+
+    <!-- Offscreen Processing Canvas -->
+    <canvas id="proc-canvas" style="display: none;"></canvas>
+
+    <!-- SEO Article Content Box 1 -->
     <div class="content-box">
-      <h2>Explore Related Media & Developer Tools</h2>
-      <p>Enhance your website assets and workflow with our free tools:</p>
+      <h2>Why ICO File Format Conversion is Important for Developers</h2>
+      <p>The <strong>ICO (Icon)</strong> file format is a dedicated graphics file container specifically built for displaying shortcut icons in Microsoft Windows applications and web browser tab favicons. Unlike standard JPEG or PNG graphics, ICO files can store single or multiple square images scaled to distinct pixel dimensions.</p>
+
+      <p>Converting brand logos or custom graphics into <code>.ico</code> files ensures that legacy web browsers, operating system file managers, and desktop shortcuts display your site or software icon without pixelation or distortion. Our free <strong>Online PNG/JPG to ICO Converter</strong> scales images to crisp pixel dimensions in real time.</p>
+    </div>
+
+    <!-- SEO Article Content Box 2 -->
+    <div class="content-box">
+      <h2>Standard ICO Pixel Dimensions Guide</h2>
+      <p>Depending on where your icon is deployed, select the appropriate target size resolution:</p>
+
+      <ul>
+        <li><strong>16x16 pixels:</strong> Standard browser tab icon displayed in legacy web browsers.</li>
+        <li><strong>32x32 pixels:</strong> High-resolution desktop browser tabs, bookmark bars, and Windows taskbar buttons.</li>
+        <li><strong>48x48 pixels:</strong> Windows File Explorer desktop icons and software application shortcuts.</li>
+        <li><strong>256x256 pixels:</strong> Full HD Windows desktop icons and application installer assets.</li>
+      </ul>
+    </div>
+
+    <!-- SEO Article Content Box 3 -->
+    <div class="content-box">
+      <h2>Features of MicroToolStack's ICO File Converter</h2>
+      <ul>
+        <li><strong>Multi-Format Input Support:</strong> Convert PNG, JPG, WEBP, and SVG vector graphics into ICO files.</li>
+        <li><strong>Custom Resolution Presets:</strong> Choose from 16x16, 32x32, 48x48, 64x64, 128x128, and 256x256 pixel output configurations.</li>
+        <li><strong>100% Client-Side Privacy:</strong> All image scaling and canvas conversion execute locally inside your web browser session using JavaScript. Uploaded logos remain private.</li>
+        <li><strong>Free & Unlimited Usage:</strong> No conversion limits or account sign-ups required.</li>
+      </ul>
+    </div>
+
+    <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
+    <div class="content-box">
+      <h2>Explore Related Media Tools</h2>
+      <p>Discover our complementary online media utilities:</p>
       <div class="related-links">
         <a href="/tools/media/favicon-generator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🌟 Favicon Generator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Generate multi-size web favicons instantly.</span>
+          <strong style="display:block; margin-bottom: 0.25rem;">🌐 Favicon Generator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Create complete multi-resolution favicon suites & HTML code.</span>
         </a>
         <a href="/tools/media/color-palette-extractor.html" class="related-card">
           <strong style="display:block; margin-bottom: 0.25rem;">🎨 Color Palette Extractor</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Extract matching HEX codes from photos.</span>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Extract dominant color schemes from photos.</span>
         </a>
         <a href="/tools/media/base64-to-image.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🖼️ Base64 to Image</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Decode Base64 strings to downloadable images.</span>
+          <strong style="display:block; margin-bottom: 0.25rem;">🖼️ Base64 to Image Decoder</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Decode Base64 strings into downloadable images.</span>
         </a>
       </div>
     </div>
 
     <!-- FAQ Section -->
     <div class="content-box">
-      <h2>Frequently Asked Questions</h2>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: #fff; margin-bottom: 0.25rem;">Are my images safe during conversion?</h3>
-        <p>Yes! The conversion happens 100% locally inside your web browser. No files are ever sent to any remote server.</p>
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How do I convert a PNG or JPG to an ICO file?</h3>
+        <p>Drag and drop your image file into the drop zone, choose your desired pixel resolution (e.g. 32x32), and click "Download ICO File".</p>
       </div>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: #fff; margin-bottom: 0.25rem;">What icon sizes can I generate?</h3>
-        <p>You can select target sizes including 16x16, 32x32, 48x48, 64x64, and 128x128 pixels.</p>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Does converting to ICO preserve image transparency?</h3>
+        <p>Yes! If your source image is a transparent PNG or SVG file, the converted ICO file preserves background transparency.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Are my uploaded images saved on remote servers?</h3>
+        <p>No. All calculations run client-side inside your browser session using JavaScript. Your files remain completely private.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this ICO Converter free to use?</h3>
+        <p>Yes, MicroToolStack's ICO Converter is 100% free with no usage limits or sign-up required.</p>
       </div>
     </div>
 
   </main>
 
-  <canvas id="icoCanvas" style="display: none;"></canvas>
-
-  <!-- Footer Placeholder -->
+  <!-- Footer Container Placeholder -->
   <div id="footer-container"></div>
 
-  <!-- Core Scripts -->
+  <!-- JavaScript Utilities & Logic -->
   <script src="/assets/js/theme.js"></script>
   <script src="/assets/js/utils.js" defer></script>
-  <script src="/assets/js/search.js" defer></script>
   <script src="/assets/js/app.js" defer></script>
 
   <script>
-    let uploadedImage = null;
-    let originalFileName = 'favicon';
+    document.addEventListener('DOMContentLoaded', function() {
+      const dropZone = document.getElementById('drop-zone');
+      const fileInput = document.getElementById('file-input');
+      const icoSizeSelect = document.getElementById('ico-size-select');
+      const previewImg = document.getElementById('preview-img');
+      const placeholderIcon = document.getElementById('placeholder-icon');
+      const statusMsg = document.getElementById('status-msg');
+      const imageMeta = document.getElementById('image-meta');
+      const btnDownloadIco = document.getElementById('btn-download-ico');
+      const btnClear = document.getElementById('btn-clear');
+      const procCanvas = document.getElementById('proc-canvas');
 
-    function handleFileSelect(e) {
-      const file = e.target.files[0];
-      if(!file) return;
+      let loadedImageObj = null;
 
-      originalFileName = file.name.replace(/\.[^/.]+$/, "");
-      const reader = new FileReader();
-      reader.onload = function(evt) {
-        uploadedImage = new Image();
-        uploadedImage.onload = function() {
-          renderIco();
-          document.getElementById('previewArea').style.display = 'block';
+      dropZone.addEventListener('click', () => fileInput.click());
+
+      dropZone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropZone.classList.add('dragover');
+      });
+
+      dropZone.addEventListener('dragleave', () => dropZone.classList.remove('dragover'));
+
+      dropZone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropZone.classList.remove('dragover');
+        if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+          handleFile(e.dataTransfer.files[0]);
+        }
+      });
+
+      fileInput.addEventListener('change', (e) => {
+        if (e.target.files && e.target.files[0]) {
+          handleFile(e.target.files[0]);
+        }
+      });
+
+      function handleFile(file) {
+        if (!file.type.startsWith('image/')) {
+          alert('Please upload a valid image file.');
+          return;
+        }
+
+        const reader = new FileReader();
+        reader.onload = function(evt) {
+          const img = new Image();
+          img.onload = function() {
+            loadedImageObj = img;
+            renderPreview();
+          };
+          img.src = evt.target.result;
         };
-        uploadedImage.src = evt.target.result;
-      };
-      reader.readAsDataURL(file);
-    }
+        reader.readAsDataURL(file);
+      }
 
-    function renderIco() {
-      if(!uploadedImage) return;
-      const size = parseInt(document.getElementById('icoSize').value);
-      const canvas = document.getElementById('icoCanvas');
-      canvas.width = size;
-      canvas.height = size;
+      function renderPreview() {
+        if (!loadedImageObj) return;
 
-      const ctx = canvas.getContext('2d');
-      ctx.clearRect(0, 0, size, size);
-      ctx.drawImage(uploadedImage, 0, 0, size, size);
+        const size = parseInt(icoSizeSelect.value, 10) || 32;
+        procCanvas.width = size;
+        procCanvas.height = size;
 
-      document.getElementById('previewImg').src = canvas.toDataURL('image/png');
-    }
+        const ctx = procCanvas.getContext('2d');
+        ctx.clearRect(0, 0, size, size);
+        ctx.drawImage(loadedImageObj, 0, 0, size, size);
 
-    function downloadICO() {
-      const canvas = document.getElementById('icoCanvas');
-      const link = document.createElement('a');
-      link.download = `${originalFileName}.ico`;
-      link.href = canvas.toDataURL('image/x-icon');
-      link.click();
-    }
+        const dataUrl = procCanvas.toDataURL('image/png');
+        previewImg.src = dataUrl;
+        previewImg.style.display = 'block';
+        placeholderIcon.style.display = 'none';
+
+        statusMsg.textContent = '✅ Image scaled and ready for download.';
+        statusMsg.style.color = '#10b981';
+
+        imageMeta.textContent = `Target Output: ${size}x${size} ICO`;
+        imageMeta.style.display = 'inline-block';
+      }
+
+      icoSizeSelect.addEventListener('change', renderPreview);
+
+      btnDownloadIco.addEventListener('click', function() {
+        if (!loadedImageObj) {
+          alert('Please upload an image first.');
+          return;
+        }
+
+        const size = parseInt(icoSizeSelect.value, 10) || 32;
+        const dataUrl = procCanvas.toDataURL('image/png');
+
+        const link = document.createElement('a');
+        link.href = dataUrl;
+        link.download = `favicon-${size}x${size}.ico`;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      });
+
+      btnClear.addEventListener('click', function() {
+        loadedImageObj = null;
+        fileInput.value = '';
+        previewImg.style.display = 'none';
+        previewImg.src = '';
+        placeholderIcon.style.display = 'inline-block';
+        statusMsg.textContent = '📂 Upload an image to view icon scaling preview...';
+        statusMsg.style.color = '#94a3b8';
+        imageMeta.style.display = 'none';
+      });
+    });
   </script>
 </body>
 </html>
