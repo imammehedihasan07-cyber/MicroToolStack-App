@@ -9,6 +9,7 @@
         gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
         gTagScript.async = true;
         document.head.appendChild(gTagScript);
+
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
@@ -21,9 +22,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Primary SEO Meta Tags -->
-  <title>Free Online Receipt & Quotation Maker with PDF Export | MicroToolStack</title>
-  <meta name="description" content="Generate professional business receipts and price quotations online for free. Add line items, taxes, discounts, and export print-ready PDF files instantly.">
-  <meta name="keywords" content="receipt maker online, quotation generator, invoice creator, free receipt pdf, billing generator, estimate maker online">
+  <title>Free Online Receipt Maker & Instant Generator | MicroToolStack</title>
+  <meta name="description" content="Generate custom cash receipts, itemized invoices, and printable payment receipts instantly with our free Online Receipt Maker. Print or save as PDF with no sign-up required.">
+  <meta name="keywords" content="receipt maker, online receipt generator, free cash receipt generator, print receipt online, pdf receipt generator, custom invoice maker, itemized receipt creator">
 
   <link rel="canonical" href="https://microtoolstack.com/tools/calculator/receipt-maker.html">
   <meta name="robots" content="index, follow">
@@ -31,8 +32,8 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://microtoolstack.com/tools/calculator/receipt-maker.html">
-  <meta property="og:title" content="Free Online Receipt & Quotation Maker with PDF Export | MicroToolStack">
-  <meta property="og:description" content="Generate professional business receipts and price quotations online for free. Add line items, taxes, discounts, and export print-ready PDF files instantly.">
+  <meta property="og:title" content="Free Online Receipt Maker & Generator | MicroToolStack">
+  <meta property="og:description" content="Create professional, printable receipts and invoices in seconds. Download PDF receipts for free with zero sign-up.">
   <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
@@ -40,41 +41,63 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
   <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
-  <!-- html2pdf.js Library -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-
-  <!-- Schema -->
+  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
   <script type="application/ld+json">
-  [
-    {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "Quotation & Receipt Maker",
-      "url": "https://microtoolstack.com/tools/calculator/receipt-maker.html",
-      "applicationCategory": "BusinessApplication",
-      "operatingSystem": "All",
-      "browserRequirements": "Requires JavaScript",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      }
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Is my client financial data saved on your server?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "No. All receipt calculations and PDF rendering are processed 100% locally inside your web browser."
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Custom Receipt & Invoice Generator",
+        "operatingSystem": "All",
+        "applicationCategory": "BusinessApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "An essential online business utility that generates printable payment receipts, itemized sales invoices, and PDF transaction records.",
+        "url": "https://microtoolstack.com/tools/calculator/receipt-maker.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does this Online Receipt Maker work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Fill in your business details, client info, itemized list (qty, price, description), tax rate, and currency. The tool generates an interactive live receipt preview ready to print or save as PDF."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I download or print the generated receipt as a PDF?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! Clicking the Print / Download PDF button triggers your browser's native print dialog, allowing you to save your custom receipt directly as a PDF or send it to a physical printer."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this Receipt Maker tool free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, MicroToolStack's Receipt Maker is 100% free with no monthly limits, watermark enforcement, or sign-up required."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my client or business data saved on your server?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. All receipt formatting and math execute locally inside your web browser using JavaScript. No business names, client records, or financial numbers are stored."
+            }
           }
-        }
-      ]
-    }
-  ]
+        ]
+      }
+    ]
+  }
   </script>
 
   <!-- Preconnect and Fonts -->
@@ -86,90 +109,76 @@
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
 
   <style>
-    .app-card {
-      background-color: var(--bg-card, #1e1e2e);
-      border: 1px solid var(--border-color, #333);
-      border-radius: 12px;
-      padding: 2rem;
-      margin-bottom: 2.5rem;
+    .input-group {
+      margin-bottom: 1.25rem;
     }
-    .grid-2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-    }
-    @media (max-width: 768px) {
-      .grid-2 { grid-template-columns: 1fr; }
-    }
-    .form-group {
-      margin-bottom: 1rem;
-    }
-    .form-group label {
+    .input-label {
       display: block;
-      margin-bottom: 0.4rem;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: #e5e7eb;
-    }
-    .form-control {
-      width: 100%;
-      padding: 0.6rem;
-      border-radius: 8px;
-      background: var(--bg-body, #111827);
-      border: 1px solid var(--border-color, #374151);
-      color: #fff;
       font-size: 0.9rem;
-      box-sizing: border-box;
-      outline: none;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.5rem;
     }
-    .receipt-paper {
+    .form-control, .form-select {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
+      color: var(--text-primary, #fff);
+      outline: none;
+      box-sizing: border-box;
+    }
+    .form-control:focus, .form-select:focus {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+    .item-row {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr auto;
+      gap: 0.75rem;
+      align-items: center;
+      margin-bottom: 0.75rem;
+    }
+    .receipt-preview {
       background: #ffffff;
       color: #111827;
-      padding: 2rem;
       border-radius: 8px;
+      padding: 2rem;
       font-family: Arial, sans-serif;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      margin-top: 2rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+    .receipt-header {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 1rem;
+      margin-bottom: 1.5rem;
     }
     .receipt-table {
       width: 100%;
       border-collapse: collapse;
-      margin: 1.5rem 0;
+      margin-bottom: 1.5rem;
     }
     .receipt-table th, .receipt-table td {
       border-bottom: 1px solid #e5e7eb;
-      padding: 0.6rem 0.4rem;
+      padding: 0.75rem 0.5rem;
       text-align: left;
-      font-size: 0.85rem;
     }
     .receipt-table th {
-      background: #f3f4f6;
+      background-color: #f9fafb;
       font-weight: 700;
     }
-    .btn-add {
-      background: var(--accent-primary, #3b82f6);
-      color: #fff;
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 0.85rem;
+    .receipt-totals {
+      width: 250px;
+      margin-left: auto;
+      text-align: right;
     }
-    .btn-download {
-      background-color: #16a34a;
-      color: #fff;
-      padding: 0.75rem 1.5rem;
-      border-radius: 8px;
-      border: none;
-      font-weight: 600;
-      cursor: pointer;
-      width: 100%;
-      margin-top: 1.5rem;
-      font-size: 1rem;
-      transition: background 0.2s;
-    }
-    .btn-download:hover {
-      background-color: #15803d;
+    .receipt-totals div {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
     }
     .content-box {
       background-color: var(--bg-card, #1e1e2e);
@@ -181,6 +190,12 @@
     .content-box h2 {
       font-size: 1.35rem;
       margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
       color: var(--text-primary, #fff);
     }
     .content-box p, .content-box ul {
@@ -214,6 +229,22 @@
     .related-card:hover {
       border-color: var(--accent-primary, #3b82f6);
     }
+
+    @media print {
+      body * {
+        visibility: hidden;
+      }
+      #receipt-preview, #receipt-preview * {
+        visibility: visible;
+      }
+      #receipt-preview {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        box-shadow: none;
+      }
+    }
   </style>
 </head>
 <body style="margin: 0; padding: 0;">
@@ -232,173 +263,199 @@
   </header>
 
   <!-- Main Container -->
-  <main class="container" style="max-width: 950px; margin: 2rem auto; padding: 0 1rem;">
-    <!-- Breadcrumb Navigation -->
-    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
-      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
-      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Calculators</a> / 
-      <span>Quotation & Receipt Maker</span>
-    </nav>
+  <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
     
-    <!-- Title Section -->
+    <!-- Tool Title & Description -->
     <div style="text-align: center; margin-bottom: 2rem;">
-      <span class="badge badge-primary" style="margin-bottom: 0.5rem; display: inline-block;">100% Free & Fast PDF Export</span>
-      <h1 style="font-size: 2rem; color: #fff; margin-bottom: 0.5rem;">Quotation & Receipt Maker</h1>
-      <p style="color: var(--text-secondary, #9ca3af);">Create professional receipts, estimates, and invoices with instant PDF download for your business.</p>
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Free Online Receipt Maker & PDF Generator</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Create itemized cash receipts, sales invoices, and downloadable payment proofs instantly.</p>
     </div>
 
-    <!-- App Card -->
-    <div class="app-card">
-      <div class="grid-2">
-        
-        <!-- Form Inputs Left -->
+    <!-- Receipt Form Inputs -->
+    <div class="content-box" style="margin-bottom: 2rem;">
+      
+      <!-- Business & Client Info -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;" class="input-group">
         <div>
-          <h3 style="color: #fff; margin-top: 0; margin-bottom: 1rem;">📝 Bill Details</h3>
-          
-          <div class="form-group">
-            <label>Business Name</label>
-            <input type="text" id="biz-name" class="form-control" value="MicroToolStack Inc.">
-          </div>
-
-          <div class="form-group">
-            <label>Client Name / Company</label>
-            <input type="text" id="client-name" class="form-control" placeholder="e.g. John Doe">
-          </div>
-
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
-            <div class="form-group">
-              <label>Document Title</label>
-              <select id="doc-title" class="form-control">
-                <option value="RECEIPT">RECEIPT</option>
-                <option value="QUOTATION">QUOTATION</option>
-                <option value="INVOICE">INVOICE</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label>Currency Symbol</label>
-              <input type="text" id="currency" class="form-control" value="$">
-            </div>
-          </div>
-
-          <hr style="border-color: var(--border-color, #374151); margin: 1.25rem 0;">
-
-          <!-- Dynamic Line Items Input -->
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
-            <strong style="color: #fff; font-size: 0.9rem;">Line Items</strong>
-            <button type="button" id="add-item-btn" class="btn-add">+ Add Item</button>
-          </div>
-
-          <div id="items-input-container">
-            <!-- Dynamic rows injected here -->
-          </div>
-
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-top: 1rem;">
-            <div class="form-group">
-              <label>Tax (%)</label>
-              <input type="number" id="tax-rate" class="form-control" value="0" min="0">
-            </div>
-
-            <div class="form-group">
-              <label>Discount Amount</label>
-              <input type="number" id="discount-val" class="form-control" value="0" min="0">
-            </div>
-          </div>
+          <label for="biz-name" class="input-label">Your Business / Vendor Name</label>
+          <input type="text" id="biz-name" class="form-control" placeholder="e.g., Tech Solutions Inc.">
         </div>
-
-        <!-- Document Live Preview Right -->
         <div>
-          <h3 style="color: #fff; margin-top: 0; margin-bottom: 1rem;">📄 Live Document Preview</h3>
-          
-          <div id="receipt-paper" class="receipt-paper">
-            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-              <div>
-                <h2 id="prev-biz-name" style="margin: 0; font-size: 1.25rem; color: #111827;">MicroToolStack Inc.</h2>
-                <p id="prev-client-name" style="margin: 0.25rem 0 0 0; font-size: 0.85rem; color: #4b5563;">Billed To: Client Name</p>
-              </div>
-              <div style="text-align: right;">
-                <h2 id="prev-doc-title" style="margin: 0; font-size: 1.1rem; color: #2563eb;">RECEIPT</h2>
-                <p id="prev-date" style="margin: 0.25rem 0 0 0; font-size: 0.8rem; color: #6b7280;"></p>
-              </div>
-            </div>
-
-            <table class="receipt-table">
-              <thead>
-                <tr>
-                  <th>Item</th>
-                  <th style="width: 50px;">Qty</th>
-                  <th style="width: 70px;">Price</th>
-                  <th style="width: 70px; text-align: right;">Total</th>
-                </tr>
-              </thead>
-              <tbody id="prev-items-body">
-                <!-- Preview items injected here -->
-              </tbody>
-            </table>
-
-            <div style="text-align: right; font-size: 0.85rem; line-height: 1.6; color: #374151;">
-              <div>Subtotal: <span id="prev-subtotal">$0.00</span></div>
-              <div>Tax: <span id="prev-tax">$0.00</span></div>
-              <div>Discount: -<span id="prev-discount">$0.00</span></div>
-              <hr style="border: none; border-top: 1px dashed #d1d5db; margin: 0.5rem 0;">
-              <div style="font-size: 1.1rem; font-weight: 700; color: #111827;">Total Due: <span id="prev-total">$0.00</span></div>
-            </div>
-          </div>
-
-          <button id="download-pdf-btn" class="btn-download">📥 Download PDF Document</button>
+          <label for="client-name" class="input-label">Client / Customer Name</label>
+          <input type="text" id="client-name" class="form-control" placeholder="e.g., John Doe">
         </div>
-
       </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem;" class="input-group">
+        <div>
+          <label for="receipt-num" class="input-label">Receipt Number</label>
+          <input type="text" id="receipt-num" class="form-control" value="REC-1001">
+        </div>
+        <div>
+          <label for="receipt-date" class="input-label">Date</label>
+          <input type="date" id="receipt-date" class="form-control">
+        </div>
+        <div>
+          <label for="currency-symbol" class="input-label">Currency</label>
+          <select id="currency-symbol" class="form-select">
+            <option value="$">USD ($)</option>
+            <option value="€">EUR (€)</option>
+            <option value="£">GBP (£)</option>
+
+            <option value="₹">INR (₹)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Item List Section -->
+      <div class="input-group">
+        <label class="input-label">Line Items</label>
+        <div id="items-container">
+          <div class="item-row">
+            <input type="text" class="form-control item-desc" placeholder="Item description">
+            <input type="number" class="form-control item-qty" placeholder="Qty" value="1" min="1">
+            <input type="number" class="form-control item-price" placeholder="Price" value="0.00" step="0.01">
+            <button class="btn btn-secondary btn-remove-item" style="background:#ef4444; color:#fff; border:none; border-radius:6px; padding:0.75rem;">🗑️</button>
+          </div>
+        </div>
+        <button id="btn-add-item" class="btn btn-secondary" style="margin-top: 0.5rem; background:#374151; color:#fff; border:none; border-radius:6px; padding:0.6rem 1rem; cursor:pointer;">➕ Add Another Item</button>
+      </div>
+
+      <!-- Tax Input -->
+      <div class="input-group" style="max-width: 250px;">
+        <label for="tax-rate" class="input-label">Sales Tax Rate (%)</label>
+        <input type="number" id="tax-rate" class="form-control" value="0" step="0.1" min="0">
+      </div>
+
+      <button id="btn-generate-receipt" class="btn btn-primary" style="width: 100%; padding: 0.85rem; font-size: 1rem; font-weight: 600; cursor: pointer; margin-top: 1rem;">🧾 Update Receipt Preview</button>
+    </div>
+
+    <!-- Printable Receipt Preview Card -->
+    <div id="receipt-preview" class="receipt-preview" style="display: none;">
+      <div class="receipt-header">
+        <div>
+          <h2 id="prev-biz-name" style="margin: 0; color: #111827; font-size: 1.5rem;">Business Name</h2>
+          <p style="margin: 0.25rem 0 0 0; color: #6b7280; font-size: 0.9rem;">Official Payment Receipt</p>
+        </div>
+        <div style="text-align: right;">
+          <strong id="prev-receipt-num" style="font-size: 1.1rem; color: #3b82f6;">REC-1001</strong>
+          <p id="prev-receipt-date" style="margin: 0.25rem 0 0 0; color: #6b7280; font-size: 0.85rem;">Date: YYYY-MM-DD</p>
+        </div>
+      </div>
+
+      <div style="margin-bottom: 1.5rem;">
+        <span style="color: #6b7280; font-size: 0.85rem;">Billed To:</span>
+        <div id="prev-client-name" style="font-weight: 600; font-size: 1rem; color: #111827;">Client Name</div>
+      </div>
+
+      <table class="receipt-table">
+        <thead>
+          <tr>
+            <th>Description</th>
+            <th style="text-align: center;">Qty</th>
+            <th style="text-align: right;">Price</th>
+            <th style="text-align: right;">Total</th>
+          </tr>
+        </thead>
+        <tbody id="prev-items-body"></tbody>
+      </table>
+
+      <div class="receipt-totals">
+        <div>
+          <span>Subtotal:</span>
+          <strong id="prev-subtotal">$0.00</strong>
+        </div>
+        <div>
+          <span>Tax:</span>
+          <span id="prev-tax">$0.00</span>
+        </div>
+        <div style="font-size: 1.15rem; border-top: 2px solid #111827; padding-top: 0.5rem; margin-top: 0.5rem;">
+          <strong>Total Paid:</strong>
+          <strong id="prev-total" style="color: #10b981;">$0.00</strong>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 2rem; border-top: 1px dashed #e5e7eb; padding-top: 1rem; color: #6b7280; font-size: 0.85rem;">
+        Thank you for your business!
+      </div>
+    </div>
+
+    <!-- Print / Download Button -->
+    <div id="print-wrapper" style="display: none; text-align: center; margin-top: 1.5rem; margin-bottom: 2.5rem;">
+      <button id="btn-print-receipt" class="btn btn-primary" style="padding: 0.85rem 2rem; font-size: 1rem; font-weight: 600; cursor: pointer;">🖨️ Print / Download PDF Receipt</button>
     </div>
 
     <!-- SEO Article Content Box 1 -->
     <div class="content-box">
-      <h2>Free Online Quotation & Receipt Generator</h2>
-      <p>Whether you are a freelancer, local contractor, or online store owner, sending accurate and clean receipts build credibility with clients. This browser-based tool lets you build structured billing documents in seconds without subscribing to heavy accounting software.</p>
+      <h2>Why Professional Receipts and Invoices Matter for Businesses</h2>
+      <p>Whether running a small retail store, freelancing business, consulting agency, or e-commerce shop, providing formal payment receipts is a fundamental financial standard. A cash receipt serves as legal proof of transaction, safeguards accounting records, and builds trust with clients.</p>
+      <p>Using our free <strong>Online Receipt Maker</strong> allows you to generate itemized, accurate, and professional payment records in seconds. You can fill out custom line items, calculate sales taxes, and export formatted PDF receipts directly from your browser with no accounting software needed.</p>
     </div>
 
     <!-- SEO Article Content Box 2 -->
     <div class="content-box">
-      <h2>How to Create & Download Your Receipt</h2>
+      <h2>Essential Components of an Official Payment Receipt</h2>
+      <p>To ensure your custom receipts comply with general business and tax standards, include these core details:</p>
+
+      <h3>1. Business & Client Identification</h3>
+      <p>Display your official business or vendor name clearly at the top, along with the customer or purchasing company's name.</p>
+
+      <h3>2. Unique Receipt Tracking Number & Date</h3>
+      <p>Assign a unique sequential receipt number (e.g., <em>REC-1001</em>) and execution date to track cash flow in financial audits and bookkeeping ledgers.</p>
+
+      <h3>3. Itemized Breakdown (Quantity, Unit Price & Subtotal)</h3>
+      <p>Break down goods or services line by line with clear descriptions, quantities purchased, unit costs, subtotal sums, and local sales tax calculations.</p>
+    </div>
+
+    <!-- SEO Article Content Box 3 -->
+    <div class="content-box">
+      <h2>Features of MicroToolStack's Receipt Generator</h2>
       <ul>
-        <li>Fill in your business name and client details.</li>
-        <li>Select document type (Quotation, Invoice, or Receipt).</li>
-        <li>Add item descriptions, quantities, and unit prices.</li>
-        <li>Apply custom tax percentages or flat discounts if applicable.</li>
-        <li>Click <strong>Download PDF Document</strong> to save the generated file directly to your device.</li>
+        <li><strong>Instant PDF Exporting:</strong> Download or print clean PDF receipts directly using your browser's print engine.</li>
+        <li><strong>Dynamic Line Items:</strong> Add or remove unlimited goods or services with automated subtotal and tax arithmetic.</li>
+        <li><strong>Multi-Currency Support:</strong> Easily switch between US Dollars ($), Euros (€), British Pounds (£), Indian Rupees (₹), and Takas (৳).</li>
+        <li><strong>100% Client-Side Privacy:</strong> Your accounting numbers and client records stay on your personal device; nothing is stored remotely.</li>
       </ul>
     </div>
 
-    <!-- Internal Linking Section (SEO Best Practice) -->
+    <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
     <div class="content-box">
-      <h2>Explore Related Financial & Business Tools</h2>
-      <p>Enhance your billing and financial workflow with our free utilities:</p>
+      <h2>Explore Related Calculators & Utilities</h2>
+      <p>Discover our complementary everyday financial tools:</p>
       <div class="related-links">
-        <a href="/tools/calculator/loan-emi-calculator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">💳 Loan EMI Calculator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Calculate monthly loan installment payments.</span>
+        <a href="/tools/calculator/paypal-stripe-calculator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">💳 PayPal & Stripe Fee Calculator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Calculate merchant processing fees and net invoice payouts.</span>
         </a>
-        <a href="/tools/calculator/percentage-calculator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">📊 Percentage Calculator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Calculate percentage increases and discounts.</span>
+        <a href="/tools/calculator/discount-calculator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🏷️ Sale Discount Calculator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Calculate percentage markdowns and sales tax totals.</span>
         </a>
-        <a href="/tools/calculator/age-calculator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">📅 Age Calculator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Calculate exact chronological age in years and months.</span>
-        </a>
-        <a href="/tools/calculator/bmi-calculator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">⚖️ BMI Calculator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Check your Body Mass Index and weight category.</span>
+        <a href="/tools/calculator/emi-calculator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🏦 Loan EMI Calculator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Calculate monthly loan repayments and total interest costs.</span>
         </a>
       </div>
     </div>
 
     <!-- FAQ Section -->
     <div class="content-box">
-      <h2>Frequently Asked Questions</h2>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is my client billing data kept private?</h3>
-        <p>Yes! Calculations and PDF creation occur entirely in your local browser environment. No financial details are recorded or stored on our servers.</p>
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How do I save my generated receipt as a PDF?</h3>
+        <p>Click the "Print / Download PDF Receipt" button. In your browser's print popup menu, select "Save as PDF" under Destination options.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this Receipt Maker free for commercial use?</h3>
+        <p>Yes, MicroToolStack's Receipt Generator is 100% free with no watermark enforcement, usage limits, or forced user accounts.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is my client or accounting data saved on remote servers?</h3>
+        <p>No. All calculations and receipt templates render locally inside your web browser using JavaScript. No business or financial details are stored.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Can I add multiple item rows?</h3>
+        <p>Yes! Click "Add Another Item" to insert as many itemized rows as your transaction requires.</p>
       </div>
     </div>
 
@@ -407,118 +464,101 @@
   <!-- Footer Container Placeholder -->
   <div id="footer-container"></div>
 
-  <!-- Scripts -->
+  <!-- JavaScript Utilities & Logic -->
   <script src="/assets/js/theme.js"></script>
   <script src="/assets/js/utils.js" defer></script>
   <script src="/assets/js/app.js" defer></script>
 
-  <!-- Client Logic -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const itemsContainer = document.getElementById('items-input-container');
-      const addItemBtn = document.getElementById('add-item-btn');
+      const itemsContainer = document.getElementById('items-container');
+      const btnAddItem = document.getElementById('btn-add-item');
+      const btnGenerate = document.getElementById('btn-generate-receipt');
+      const btnPrint = document.getElementById('btn-print-receipt');
       
-      const bizNameInput = document.getElementById('biz-name');
-      const clientNameInput = document.getElementById('client-name');
-      const docTitleInput = document.getElementById('doc-title');
-      const currencyInput = document.getElementById('currency');
-      const taxRateInput = document.getElementById('tax-rate');
-      const discountValInput = document.getElementById('discount-val');
+      const receiptPreview = document.getElementById('receipt-preview');
+      const printWrapper = document.getElementById('print-wrapper');
+      
+      const receiptDate = document.getElementById('receipt-date');
+      receiptDate.value = new Date().toISOString().split('T')[0];
 
-      const prevBizName = document.getElementById('prev-biz-name');
-      const prevClientName = document.getElementById('prev-client-name');
-      const prevDocTitle = document.getElementById('prev-doc-title');
-      const prevDate = document.getElementById('prev-date');
-      const prevItemsBody = document.getElementById('prev-items-body');
-      const prevSubtotal = document.getElementById('prev-subtotal');
-      const prevTax = document.getElementById('prev-tax');
-      const prevDiscount = document.getElementById('prev-discount');
-      const prevTotal = document.getElementById('prev-total');
+      // Add item row
+      btnAddItem.addEventListener('click', function() {
+        const row = document.createElement('div');
+        row.className = 'item-row';
+        row.innerHTML = `
+          <input type="text" class="form-control item-desc" placeholder="Item description">
+          <input type="number" class="form-control item-qty" placeholder="Qty" value="1" min="1">
+          <input type="number" class="form-control item-price" placeholder="Price" value="0.00" step="0.01">
+          <button class="btn btn-secondary btn-remove-item" style="background:#ef4444; color:#fff; border:none; border-radius:6px; padding:0.75rem;">🗑️</button>
+        `;
+        itemsContainer.appendChild(row);
 
-      prevDate.textContent = new Date().toLocaleDateString();
-
-      let items = [
-        { desc: 'Web Design Service', qty: 1, price: 250 }
-      ];
-
-      function renderItemInputs() {
-        itemsContainer.innerHTML = items.map((item, index) => `
-          <div style="display: flex; gap: 0.4rem; margin-bottom: 0.5rem; align-items: center;">
-            <input type="text" class="form-control" placeholder="Item description" value="${item.desc}" onchange="updateItem(${index}, 'desc', this.value)" style="flex: 2;">
-            <input type="number" class="form-control" placeholder="Qty" value="${item.qty}" min="1" onchange="updateItem(${index}, 'qty', this.value)" style="width: 55px;">
-            <input type="number" class="form-control" placeholder="Price" value="${item.price}" min="0" onchange="updateItem(${index}, 'price', this.value)" style="width: 75px;">
-            <button type="button" onclick="removeItem(${index})" style="background: #ef4444; color: #fff; border: none; border-radius: 6px; padding: 0.5rem; cursor: pointer;">✕</button>
-          </div>
-        `).join('');
-        updateCalculation();
-      }
-
-      window.updateItem = function(index, field, value) {
-        items[index][field] = field === 'desc' ? value : parseFloat(value) || 0;
-        updateCalculation();
-      };
-
-      window.removeItem = function(index) {
-        if (items.length > 1) {
-          items.splice(index, 1);
-          renderItemInputs();
-        }
-      };
-
-      addItemBtn.addEventListener('click', function() {
-        items.push({ desc: 'New Service Item', qty: 1, price: 50 });
-        renderItemInputs();
+        row.querySelector('.btn-remove-item').addEventListener('click', function() {
+          row.remove();
+        });
       });
 
-      function updateCalculation() {
-        const curr = currencyInput.value || '$';
-        prevBizName.textContent = bizNameInput.value || 'Business Name';
-        prevClientName.textContent = 'Billed To: ' + (clientNameInput.value || 'Client Name');
-        prevDocTitle.textContent = docTitleInput.value;
+      // Initial remove row attachment
+      document.querySelectorAll('.btn-remove-item').forEach(btn => {
+        btn.addEventListener('click', function() {
+          btn.parentElement.remove();
+        });
+      });
+
+      // Generate receipt
+      btnGenerate.addEventListener('click', function() {
+        const bizName = document.getElementById('biz-name').value.trim() || 'Your Business Name';
+        const clientName = document.getElementById('client-name').value.trim() || 'Valued Customer';
+        const recNum = document.getElementById('receipt-num').value.trim() || 'REC-1001';
+        const recDate = receiptDate.value || new Date().toISOString().split('T')[0];
+        const curr = document.getElementById('currency-symbol').value;
+        const taxRate = parseFloat(document.getElementById('tax-rate').value) || 0;
+
+        document.getElementById('prev-biz-name').textContent = bizName;
+        document.getElementById('prev-client-name').textContent = clientName;
+        document.getElementById('prev-receipt-num').textContent = recNum;
+        document.getElementById('prev-receipt-date').textContent = 'Date: ' + recDate;
+
+        const itemsBody = document.getElementById('prev-items-body');
+        itemsBody.innerHTML = '';
 
         let subtotal = 0;
-        prevItemsBody.innerHTML = items.map(item => {
-          const itemTotal = (item.qty || 0) * (item.price || 0);
-          subtotal += itemTotal;
-          return `
-            <tr>
-              <td>${item.desc || 'Item'}</td>
-              <td>${item.qty}</td>
-              <td>${curr}${item.price}</td>
-              <td style="text-align: right;">${curr}${itemTotal.toFixed(2)}</td>
-            </tr>
+        const rows = itemsContainer.querySelectorAll('.item-row');
+
+        rows.forEach(row => {
+          const desc = row.querySelector('.item-desc').value.trim() || 'Service / Product';
+          const qty = parseFloat(row.querySelector('.item-qty').value) || 1;
+          const price = parseFloat(row.querySelector('.item-price').value) || 0;
+          const lineTotal = qty * price;
+          subtotal += lineTotal;
+
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+            <td>${desc}</td>
+            <td style="text-align: center;">${qty}</td>
+            <td style="text-align: right;">${curr}${price.toFixed(2)}</td>
+            <td style="text-align: right;">${curr}${lineTotal.toFixed(2)}</td>
           `;
-        }).join('');
+          itemsBody.appendChild(tr);
+        });
 
-        const taxRate = parseFloat(taxRateInput.value) || 0;
-        const discountVal = parseFloat(discountValInput.value) || 0;
+        const taxAmount = subtotal * (taxRate / 100);
+        const total = subtotal + taxAmount;
 
-        const taxAmt = (subtotal * taxRate) / 100;
-        const total = Math.max(0, subtotal + taxAmt - discountVal);
+        document.getElementById('prev-subtotal').textContent = curr + subtotal.toFixed(2);
+        document.getElementById('prev-tax').textContent = curr + taxAmount.toFixed(2);
+        document.getElementById('prev-total').textContent = curr + total.toFixed(2);
 
-        prevSubtotal.textContent = `${curr}${subtotal.toFixed(2)}`;
-        prevTax.textContent = `${curr}${taxAmt.toFixed(2)}`;
-        prevDiscount.textContent = `${curr}${discountVal.toFixed(2)}`;
-        prevTotal.textContent = `${curr}${total.toFixed(2)}`;
-      }
-
-      [bizNameInput, clientNameInput, docTitleInput, currencyInput, taxRateInput, discountValInput].forEach(input => {
-        input.addEventListener('input', updateCalculation);
+        receiptPreview.style.display = 'block';
+        printWrapper.style.display = 'block';
+        receiptPreview.scrollIntoView({ behavior: 'smooth' });
       });
 
-      document.getElementById('download-pdf-btn').addEventListener('click', function() {
-        const element = document.getElementById('receipt-paper');
-        const opt = {
-          margin:       0.5,
-          filename:     `${docTitleInput.value.toLowerCase()}-doc.pdf`,
-          image:        { type: 'jpeg', quality: 0.98 },
-          html2canvas:  { scale: 2 },
-          jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
-        };
-        html2pdf().set(opt).from(element).save();
+      // Print button
+      btnPrint.addEventListener('click', function() {
+        window.print();
       });
-
-      renderItemInputs();
     });
   </script>
 </body>
