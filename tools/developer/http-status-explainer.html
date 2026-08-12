@@ -22,9 +22,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Primary SEO Meta Tags -->
-  <title>Free Online HTTP Status Code Explainer & Tester | MicroToolStack</title>
-  <meta name="description" content="Free Online HTTP Status Code Explainer & Tester. Test web URL status codes in real-time, measure response latency, and inspect explanations for 200, 301, 404, 500 codes.">
-  <meta name="keywords" content="http status code tester, http response code checker, url status code tester, 404 checker, 301 redirect tester, http headers explainer">
+  <title>Free Online HTTP Status Code Explainer & Fix Guide | MicroToolStack</title>
+  <meta name="description" content="Understand and fix any HTTP status code instantly with our free HTTP Status Explainer tool. Get clear explanations, troubleshooting steps, and REST API fixes for 1xx, 2xx, 3xx, 4xx, and 5xx response codes.">
+  <meta name="keywords" content="http status code explainer, http status code meanings, fix 500 internal server error, fix 404 not found, 403 forbidden explanation, REST API response codes, web developer HTTP guide">
 
   <link rel="canonical" href="https://microtoolstack.com/tools/developer/http-status-explainer.html">
   <meta name="robots" content="index, follow">
@@ -32,8 +32,8 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://microtoolstack.com/tools/developer/http-status-explainer.html">
-  <meta property="og:title" content="Free Online HTTP Status Code Explainer & Tester | MicroToolStack">
-  <meta property="og:description" content="Test live website URLs for HTTP status codes, response headers, and latency performance instantly.">
+  <meta property="og:title" content="Free Online HTTP Status Code Explainer & Fix Guide | MicroToolStack">
+  <meta property="og:description" content="Instant plain-English explanations and developer troubleshooting steps for all HTTP response status codes. 100% free developer utility.">
   <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
@@ -41,14 +41,14 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
   <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
-  <!-- JSON-LD Schema Markup -->
+  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "SoftwareApplication",
-        "name": "HTTP Status Code Explainer & Tester",
+        "name": "HTTP Status Code Explainer & Fix Guide",
         "operatingSystem": "All",
         "applicationCategory": "DeveloperApplication",
         "offers": {
@@ -56,7 +56,7 @@
           "price": "0",
           "priceCurrency": "USD"
         },
-        "description": "An online web developer utility to test live website URL status codes, response latency, and inspect HTTP headers.",
+        "description": "An interactive web developer utility that decodes HTTP response status codes into plain English explanations, cause diagnoses, and practical troubleshooting steps.",
         "url": "https://microtoolstack.com/tools/developer/http-status-explainer.html"
       },
       {
@@ -64,18 +64,34 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "How does live HTTP status testing work?",
+            "name": "What is an HTTP status code?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The tool sends an asynchronous HTTP fetch request to the specified target URL, analyzing the status response code (e.g. 200 OK) and network latency."
+              "text": "An HTTP status code is a 3-digit response sent by a web server to indicate the status of a requested resource, communicating whether a request succeeded, redirected, or encountered a client/server error."
             }
           },
           {
             "@type": "Question",
-            "name": "Why do some URLs fail due to CORS?",
+            "name": "How do I fix a 500 Internal Server Error?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Cross-Origin Resource Sharing (CORS) security policies enforced by certain web servers restrict browser-based requests from third-party domains."
+              "text": "To resolve a 500 Internal Server Error, check web server application logs, review file system permissions, inspect .htaccess or server configurations, and verify script execution limits."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between a 401 and a 403 HTTP status code?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A 401 Unauthorized status code means the user is not authenticated and needs to log in, whereas a 403 Forbidden status code means the user is authenticated but lacks permission to access the requested resource."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this HTTP Status Explainer free to use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, MicroToolStack's HTTP Status Explainer is 100% free with unlimited searches and no registration required."
             }
           }
         ]
@@ -93,10 +109,19 @@
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
 
   <style>
-    .editor-input {
+    .input-group {
+      margin-bottom: 1.25rem;
+    }
+    .input-label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.5rem;
+    }
+    .form-control, .form-select {
       width: 100%;
-      padding: 0.85rem 1rem;
-      font-family: monospace;
+      padding: 0.75rem 1rem;
       font-size: 1rem;
       border: 1px solid var(--border-color, #333);
       border-radius: var(--radius-md, 8px);
@@ -104,62 +129,34 @@
       color: var(--text-primary, #fff);
       outline: none;
       box-sizing: border-box;
-      margin-bottom: 1.25rem;
     }
-    .report-card {
-      background: var(--bg-card, #1e1e2e);
-      border: 1px solid var(--border-color, #333);
-      border-radius: 10px;
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-      display: none;
+    .form-control:focus, .form-select:focus {
+      border-color: var(--accent-primary, #3b82f6);
     }
-    .status-badge {
+
+    .badge-code {
       display: inline-block;
-      padding: 0.35rem 0.85rem;
+      padding: 0.25rem 0.75rem;
       border-radius: 6px;
-      font-size: 1.5rem;
       font-weight: 700;
       font-family: monospace;
+      font-size: 1rem;
       margin-bottom: 0.75rem;
     }
-    .badge-2xx { background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid #10b981; }
-    .badge-3xx { background: rgba(59, 130, 246, 0.15); color: #3b82f6; border: 1px solid #3b82f6; }
-    .badge-4xx { background: rgba(245, 158, 11, 0.15); color: #f59e0b; border: 1px solid #f59e0b; }
-    .badge-5xx { background: rgba(239, 68, 68, 0.15); color: #ef4444; border: 1px solid #ef4444; }
+    .b-2xx { background: rgba(16, 185, 129, 0.2); color: #10b981; border: 1px solid #10b981; }
+    .b-3xx { background: rgba(59, 130, 246, 0.2); color: #3b82f6; border: 1px solid #3b82f6; }
+    .b-4xx { background: rgba(245, 158, 11, 0.2); color: #f59e0b; border: 1px solid #f59e0b; }
+    .b-5xx { background: rgba(239, 68, 68, 0.2); color: #ef4444; border: 1px solid #ef4444; }
+    .b-1xx { background: rgba(168, 85, 247, 0.2); color: #a855f7; border: 1px solid #a855f7; }
 
-    .metrics-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 1rem;
-      margin-top: 1rem;
-      padding: 0.85rem;
-      background: var(--bg-body, #0d1117);
-      border-radius: 8px;
+    .explainer-display-card {
+      background-color: var(--bg-card, #1e1e2e);
       border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
     }
-    .metric-item {
-      font-size: 0.88rem;
-      color: var(--text-secondary, #9ca3af);
-    }
-    .metric-val {
-      font-weight: 700;
-      color: var(--text-primary, #fff);
-      font-family: monospace;
-    }
-    .editor-controls {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 2.5rem;
-    }
-    .btn-group {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-    }
+
     .content-box {
       background-color: var(--bg-card, #1e1e2e);
       border: 1px solid var(--border-color, #333);
@@ -170,6 +167,12 @@
     .content-box h2 {
       font-size: 1.35rem;
       margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
       color: var(--text-primary, #fff);
     }
     .content-box p, .content-box ul {
@@ -222,80 +225,148 @@
 
   <!-- Main Container -->
   <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
-    <!-- Breadcrumb Navigation -->
-    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
-      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
-      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Developer Tools</a> / 
-      <span>HTTP Status Explainer & Tester</span>
-    </nav>
     
     <!-- Tool Title & Description -->
     <div style="text-align: center; margin-bottom: 2rem;">
-      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">HTTP Status Code Explainer & Tester</h1>
-      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Test live target URLs for HTTP response status codes, latency, and server explanations.</p>
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">HTTP Status Code Explainer & Fix Guide</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Lookup any HTTP response status code for plain-English explanations, causes, and developer fixes.</p>
     </div>
 
-    <!-- URL Input -->
-    <label style="display:block; font-weight:600; margin-bottom: 0.4rem; color: var(--text-primary, #fff);">Enter Web Page URL to Test:</label>
-    <input type="url" id="in-url" class="editor-input" placeholder="e.g. https://microtoolstack.com" value="https://microtoolstack.com" autofocus>
-
-    <!-- Results Display -->
-    <div id="report-card" class="report-card">
-      <div id="badge-container"></div>
-      <h3 id="res-title" style="color: var(--text-primary, #fff); font-size: 1.2rem; margin-bottom: 0.5rem;"></h3>
-      <p id="res-desc" style="color: var(--text-secondary, #9ca3af); font-size: 0.95rem; line-height: 1.5;"></p>
-
-      <div class="metrics-grid">
-        <div class="metric-item">Target URL: <br><span id="m-url" class="metric-val">-</span></div>
-        <div class="metric-item">Response Time: <br><span id="m-time" class="metric-val">-</span></div>
-        <div class="metric-item">CORS Status: <br><span id="m-cors" class="metric-val">-</span></div>
+    <!-- Lookup Controls Card -->
+    <div class="content-box" style="margin-bottom: 1.5rem;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;" class="input-group">
+        <div>
+          <label for="status-select" class="input-label">Select HTTP Status Code</label>
+          <select id="status-select" class="form-select">
+            <option value="200">200 - OK</option>
+            <option value="201">201 - Created</option>
+            <option value="204">204 - No Content</option>
+            <option value="301">301 - Moved Permanently</option>
+            <option value="302">302 - Found (Temporary Redirect)</option>
+            <option value="304">304 - Not Modified</option>
+            <option value="400">400 - Bad Request</option>
+            <option value="401">401 - Unauthorized</option>
+            <option value="403">403 - Forbidden</option>
+            <option value="404" selected>404 - Not Found</option>
+            <option value="405">405 - Method Not Allowed</option>
+            <option value="422">422 - Unprocessable Entity</option>
+            <option value="429">429 - Too Many Requests</option>
+            <option value="500">500 - Internal Server Error</option>
+            <option value="502">502 - Bad Gateway</option>
+            <option value="503">503 - Service Unavailable</option>
+            <option value="504">504 - Gateway Timeout</option>
+          </select>
+        </div>
+        <div>
+          <label for="status-search" class="input-label">Or Type Status Number / Name</label>
+          <input type="text" id="status-search" class="form-control" placeholder="e.g., 500, Forbidden, Gateway">
+        </div>
       </div>
     </div>
 
-    <!-- Action Buttons -->
-    <div class="editor-controls">
-      <div class="btn-group">
-        <button id="btn-test" class="btn btn-primary" style="padding: 0.75rem 1.6rem; cursor: pointer; background: #3b82f6; border: none;">📡 Test URL Response</button>
-        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.75rem 1.2rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear</button>
+    <!-- Active Code Explanation Card -->
+    <div class="explainer-display-card" id="explainer-card">
+      <span class="badge-code b-4xx" id="card-badge">404 CLIENT ERROR</span>
+      <h2 style="font-size: 1.6rem; color: #fff; margin: 0 0 0.75rem 0;" id="card-title">404 - Not Found</h2>
+      
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: #38bdf8; margin-bottom: 0.25rem;">📌 What Does This Code Mean?</h3>
+        <p style="margin: 0; color: #9ca3af; line-height: 1.6;" id="card-meaning">The server cannot locate the requested resource URL. The link may be broken, removed, or typed incorrectly.</p>
       </div>
-      <span id="status-msg" style="font-size: 0.85rem; color: #3b82f6; font-weight: 500; display: none;">Testing target endpoint...</span>
+
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: #f59e0b; margin-bottom: 0.25rem;">❓ Common Causes</h3>
+        <p style="margin: 0; color: #9ca3af; line-height: 1.6;" id="card-causes">Mistyped URL, deleted web page, altered permalink structure, or missing server route configuration.</p>
+      </div>
+
+      <div>
+        <h3 style="font-size: 1.05rem; color: #10b981; margin-bottom: 0.25rem;">🛠️ How Developers Fix It</h3>
+        <p style="margin: 0; color: #9ca3af; line-height: 1.6;" id="card-fix">Check URL spelling, configure a 301 redirect for moved pages, update route definitions, or check server file system paths.</p>
+      </div>
     </div>
+
+    <Image src="image_agent_tag_14352585346526017026" alt="HTTP Status Codes Cheat Sheet showing 1xx, 2xx, 3xx, 4xx, and 5xx categories" caption="HTTP Status Code cheatsheet overview" />
+
+    ---
 
     <!-- SEO Article Content Box 1 -->
     <div class="content-box">
-      <h2>Why Live HTTP Status Testing Matters for SEO & DevOps</h2>
-      <p>HTTP status codes are the foundation of client-server communication. Testing target endpoints allows webmasters and DevOps engineers to detect **404 Broken Links**, verify **301 Permanent Redirects**, and ensure server infrastructure handles web traffic without returning **500 Server Errors**.</p>
+      <h2>Why Understanding HTTP Response Status Codes is Essential</h2>
+      <p>In client-server web architecture, every HTTP request sent by a browser, mobile application, or API client receives a 3-digit numerical status code from the server. These codes serve as a standardized communication language between servers and clients, signaling whether a request succeeded, encountered a client authorization issue, or failed due to backend infrastructure errors.</p>
+
+      <p>Our free <strong>Online HTTP Status Code Explainer</strong> demystifies complex network status codes into plain-English explanations. Designed for web developers, backend engineers, DevOps specialists, and SEO consultants, this tool highlights primary root causes and actionable troubleshooting steps for every response code.</p>
     </div>
 
     <!-- SEO Article Content Box 2 -->
     <div class="content-box">
-      <h2>Common HTTP Status Response Codes</h2>
+      <h2>Understanding the 5 Classes of HTTP Status Codes</h2>
+      <p>HTTP status codes are grouped into five distinct functional categories based on their leading digit:</p>
+
+      <h3>1. 1xx Informational Responses</h3>
+      <p>Indicates that the server received request headers and the client should proceed to send the request payload (e.g., <code>100 Continue</code>, <code>101 Switching Protocols</code>).</p>
+
+      <h3>2. 2xx Success Responses</h3>
+      <p>Confirms that the client request was successfully processed by the server (e.g., <code>200 OK</code>, <code>201 Created</code>, <code>204 No Content</code>).</p>
+
+      <h3>3. 3xx Redirection Responses</h3>
+      <p>Signals that the client must perform additional redirection steps to reach the resource (e.g., <code>301 Moved Permanently</code>, <code>302 Found</code>, <code>304 Not Modified</code>).</p>
+
+      <h3>4. 4xx Client Error Responses</h3>
+      <p>Indicates a problem with the client's request, such as invalid syntax, missing authentication, or non-existent URLs (e.g., <code>400 Bad Request</code>, <code>401 Unauthorized</code>, <code>403 Forbidden</code>, <code>404 Not Found</code>, <code>429 Too Many Requests</code>).</p>
+
+      <h3>5. 5xx Server Error Responses</h3>
+      <p>Indicates that the web server failed to fulfill a valid request due to internal application errors or gateway timeouts (e.g., <code>500 Internal Server Error</code>, <code>502 Bad Gateway</code>, <code>503 Service Unavailable</code>, <code>504 Gateway Timeout</code>).</p>
+    </div>
+
+    <!-- SEO Article Content Box 3 -->
+    <div class="content-box">
+      <h2>Features of MicroToolStack's HTTP Status Explainer</h2>
       <ul>
-        <li><strong>200 OK:</strong> Request succeeded. Target webpage is operational.</li>
-        <li><strong>301 Moved Permanently:</strong> Page permanently redirected to a new URL. Passes SEO PageRank link equity.</li>
-        <li><strong>404 Not Found:</strong> Server cannot find requested resource URL.</li>
-        <li><strong>500 Internal Server Error:</strong> Server encountered an unexpected execution error.</li>
+        <li><strong>Developer Troubleshooting Guides:</strong> Outlines specific developer steps to fix broken server endpoints and API errors.</li>
+        <li><strong>Instant Search & Dropdown Navigation:</strong> Search by status code number (e.g., <code>502</code>) or keyword (e.g., <code>Forbidden</code>).</li>
+        <li><strong>100% Client-Side Privacy:</strong> All explanations execute locally inside your browser session using JavaScript. No network data is stored.</li>
+        <li><strong>Free & Unlimited Usage:</strong> No rate limits or account registration required.</li>
       </ul>
     </div>
 
-    <!-- Internal Linking Section -->
+    <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
     <div class="content-box">
-      <h2>Explore Related Developer Utilities</h2>
-      <p>Enhance your backend debugging workflow with our tools:</p>
+      <h2>Explore Related Developer Tools</h2>
+      <p>Discover our complementary online developer utilities:</p>
       <div class="related-links">
         <a href="/tools/developer/http-status-code-checker.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">📡 HTTP Status Code Checker</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Reference guide for server status codes.</span>
+          <strong style="display:block; margin-bottom: 0.25rem;">🔍 HTTP Status Code Checker</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Check live URL headers and explore status code lists.</span>
+        </a>
+        <a href="/tools/developer/base64-encoder-decoder.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🔒 Base64 Encoder / Decoder</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Convert plain text to Base64 or decode Base64 strings.</span>
+        </a>
+        <a href="/tools/developer/cron-job-generator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">⏰ Cron Job Generator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Build valid Crontab schedules and human-readable text.</span>
         </a>
       </div>
     </div>
 
     <!-- FAQ Section -->
     <div class="content-box">
-      <h2>Frequently Asked Questions</h2>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Why do some servers fail with CORS errors?</h3>
-        <p>Browsers restrict cross-origin requests unless the target server includes proper Access-Control-Allow-Origin HTTP headers.</p>
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What is an HTTP status code?</h3>
+        <p>An HTTP status code is a 3-digit numerical code issued by a web server in response to a client HTTP request.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What is the difference between 401 Unauthorized and 403 Forbidden?</h3>
+        <p>401 means the client is unauthenticated (needs to log in), while 403 means the client is authenticated but lacks required access permissions.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is my search data stored on remote servers?</h3>
+        <p>No. All calculations run client-side inside your browser session using JavaScript. Your inputs remain private.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this tool free to use?</h3>
+        <p>Yes, MicroToolStack's HTTP Status Explainer is completely free with no usage limits or sign-up required.</p>
       </div>
     </div>
 
@@ -311,96 +382,64 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const inUrl = document.getElementById('in-url');
-      const reportCard = document.getElementById('report-card');
-      const badgeContainer = document.getElementById('badge-container');
-      const resTitle = document.getElementById('res-title');
-      const resDesc = document.getElementById('res-desc');
-
-      const mUrl = document.getElementById('m-url');
-      const mTime = document.getElementById('m-time');
-      const mCors = document.getElementById('m-cors');
-
-      const btnTest = document.getElementById('btn-test');
-      const btnClear = document.getElementById('btn-clear');
-      const statusMsg = document.getElementById('status-msg');
-
-      const statusExplanations = {
-        200: { title: "200 OK - Success", desc: "The request succeeded. Target resource was retrieved successfully." },
-        301: { title: "301 Moved Permanently", desc: "Target resource has been assigned a new permanent URI. Essential for SEO canonicalization." },
-        302: { title: "302 Found (Temporary Redirect)", desc: "Target resource resides temporarily under a different URI." },
-        400: { title: "400 Bad Request", desc: "The server cannot process request due to client syntax error." },
-        401: { title: "401 Unauthorized", desc: "Request requires HTTP authentication credentials." },
-        403: { title: "403 Forbidden", desc: "Server refused to authorize client request access." },
-        404: { title: "404 Not Found", desc: "The server cannot find requested resource URL. Common broken link." },
-        500: { title: "500 Internal Server Error", desc: "Server encountered an unexpected internal error." },
-        502: { title: "502 Bad Gateway", desc: "Invalid response received from upstream backend server." },
-        503: { title: "503 Service Unavailable", desc: "Server overloaded or offline for maintenance." }
+      const explainerDb = {
+        '200': { title: '200 - OK', cat: '2xx', meaning: 'The request succeeded. The requested resource has been fetched and transmitted in the message body.', causes: 'Standard successful HTTP response for GET, POST, or PUT requests.', fix: 'No fix needed! Everything is operating normally.' },
+        '201': { title: '201 - Created', cat: '2xx', meaning: 'The request succeeded and a new resource was created as a result.', causes: 'Typically returned after a successful POST request creating a database entry.', fix: 'Ensure response Location headers point to the newly created resource URI.' },
+        '204': { title: '204 - No Content', cat: '2xx', meaning: 'The server successfully processed the request, but is not returning any content in the response body.', causes: 'Common in REST APIs after a successful DELETE or PUT action.', fix: 'Verify API clients handle empty response bodies gracefully.' },
+        '301': { title: '301 - Moved Permanently', cat: '3xx', meaning: 'The requested resource has been permanently assigned a new URI.', causes: 'URL restructuring, domain migration, or HTTPS redirect rules.', fix: 'Update inbound links or configure server 301 redirects to pass SEO link equity.' },
+        '302': { title: '302 - Found (Temporary Redirect)', cat: '3xx', meaning: 'The resource resides temporarily under a different URI.', causes: 'Temporary page redirects or authentication login loops.', fix: 'Use 301 redirects for permanent page moves to preserve search engine rankings.' },
+        '304': { title: '304 - Not Modified', cat: '3xx', meaning: 'The resource has not been modified since the last request.', causes: 'Browser conditional GET requests using If-Modified-Since headers.', fix: 'Ensures client browser uses cached assets, saving bandwidth.' },
+        '400': { title: '400 - Bad Request', cat: '4xx', meaning: 'The server cannot process the request due to a client-side error.', causes: 'Malformed JSON payload, invalid request parameters, or bad URL syntax.', fix: 'Validate request body JSON schema and query string parameters.' },
+        '401': { title: '401 - Unauthorized', cat: '4xx', meaning: 'The request lacks valid authentication credentials for the target resource.', causes: 'Missing or expired Bearer API token, invalid session cookie, or incorrect password.', fix: 'Pass valid HTTP Authorization headers or log the user in again.' },
+        '403': { title: '403 - Forbidden', cat: '4xx', meaning: 'The server understands the request but refuses to authorize it.', causes: 'Insufficient user role permissions, restricted IP addresses, or misconfigured file system access.', fix: 'Check server file permissions (chmod 644/755) and verify CORS or user role policies.' },
+        '404': { title: '404 - Not Found', cat: '4xx', meaning: 'The server cannot locate the requested resource URL.', causes: 'Mistyped URL, deleted web page, altered permalink structure, or missing server route configuration.', fix: 'Check URL spelling, configure a 301 redirect for moved pages, update route definitions, or check server file system paths.' },
+        '405': { title: '405 - Method Not Allowed', cat: '4xx', meaning: 'The request method is known by the server but not supported by the target resource.', causes: 'Sending a POST request to an endpoint that accepts only GET requests.', fix: 'Verify API route handlers support the HTTP method (GET, POST, PUT, DELETE).' },
+        '422': { title: '422 - Unprocessable Entity', cat: '4xx', meaning: 'The request was well-formed but contained semantic validation errors.', causes: 'Failed form input validations (e.g., missing required fields or invalid email formats).', fix: 'Check response error details and fix client form input validation.' },
+        '429': { title: '429 - Too Many Requests', cat: '4xx', meaning: 'The user has sent too many requests in a given amount of time.', causes: 'Exceeding API rate limits or aggressive web scraping.', fix: 'Implement exponential backoff in client requests or increase API rate limits.' },
+        '500': { title: '500 - Internal Server Error', cat: '5xx', meaning: 'The server encountered an unexpected condition that prevented it from fulfilling the request.', causes: 'Unhandled application exceptions, database connection drops, syntax errors in backend scripts, or bad .htaccess rules.', fix: 'Check web server error logs (Nginx/Apache), verify database credentials, and debug application error traces.' },
+        '502': { title: '502 - Bad Gateway', cat: '5xx', meaning: 'The server acting as a gateway or proxy received an invalid response from the upstream server.', causes: 'Upstream application server (e.g. Node.js, PHP-FPM) crashed or is unreachable by proxy (Nginx).', fix: 'Restart backend service processes and check upstream server health.' },
+        '503': { title: '503 - Service Unavailable', cat: '5xx', meaning: 'The server is currently unable to handle the request due to temporary maintenance or server overload.', causes: 'Server CPU/RAM spikes, scheduled maintenance windows, or DDoS attacks.', fix: 'Scale server resources, optimize database queries, or check load balancer health.' },
+        '504': { title: '504 - Gateway Timeout', cat: '5xx', meaning: 'The gateway or proxy server timed out waiting for a response from the upstream server.', causes: 'Slow database queries, heavy backend script processing, or network firewall blocks.', fix: 'Increase proxy timeout limits (e.g. Nginx proxy_read_timeout) and optimize slow backend functions.' }
       };
 
-      async function testUrl() {
-        let url = inUrl.value.trim();
-        if (!url) return;
+      const statusSelect = document.getElementById('status-select');
+      const statusSearch = document.getElementById('status-search');
+      const cardBadge = document.getElementById('card-badge');
+      const cardTitle = document.getElementById('card-title');
+      const cardMeaning = document.getElementById('card-meaning');
+      const cardCauses = document.getElementById('card-causes');
+      const cardFix = document.getElementById('card-fix');
 
-        if (!/^https?:\/\//i.test(url)) {
-          url = 'https://' + url;
-          inUrl.value = url;
-        }
-
-        statusMsg.style.display = 'inline';
-        btnTest.disabled = true;
-
-        const startTime = performance.now();
-
-        try {
-          const response = await fetch(url, { method: 'HEAD', mode: 'cors' });
-          const endTime = performance.now();
-          const latency = Math.round(endTime - startTime);
-
-          renderReport(response.status, url, `${latency} ms`, 'Allowed');
-
-        } catch (err) {
-          const endTime = performance.now();
-          const latency = Math.round(endTime - startTime);
-
-          // Fallback fetch mode
-          renderReport(200, url, `${latency} ms`, 'CORS Restricted / Success Fallback');
-        } finally {
-          statusMsg.style.display = 'none';
-          btnTest.disabled = false;
-        }
+      function updateCard(code) {
+        const item = explainerDb[code] || explainerDb['404'];
+        
+        cardBadge.textContent = `${item.cat.toUpperCase()} RESPONSE`;
+        cardBadge.className = `badge-code b-${item.cat}`;
+        cardTitle.textContent = item.title;
+        cardMeaning.textContent = item.meaning;
+        cardCauses.textContent = item.causes;
+        cardFix.textContent = item.fix;
       }
 
-      function renderReport(code, url, timeStr, corsStr) {
-        let badgeClass = 'badge-2xx';
-        if (code >= 300 && code < 400) badgeClass = 'badge-3xx';
-        if (code >= 400 && code < 500) badgeClass = 'badge-4xx';
-        if (code >= 500) badgeClass = 'badge-5xx';
-
-        badgeContainer.innerHTML = `<span class="status-badge ${badgeClass}">${code} HTTP STATUS</span>`;
-
-        const exp = statusExplanations[code] || {
-          title: `${code} HTTP Response`,
-          desc: "Target server responded to HTTP request payload."
-        };
-
-        resTitle.textContent = exp.title;
-        resDesc.textContent = exp.desc;
-
-        mUrl.textContent = url;
-        mTime.textContent = timeStr;
-        mCors.textContent = corsStr;
-
-        reportCard.style.display = 'block';
-      }
-
-      btnTest.addEventListener('click', testUrl);
-
-      btnClear.addEventListener('click', () => {
-        inUrl.value = '';
-        reportCard.style.display = 'none';
-        inUrl.focus();
+      statusSelect.addEventListener('change', function() {
+        updateCard(statusSelect.value);
       });
+
+      statusSearch.addEventListener('input', function() {
+        const q = statusSearch.value.toLowerCase().trim();
+        if (!q) return;
+
+        for (const code in explainerDb) {
+          if (code.includes(q) || explainerDb[code].title.toLowerCase().includes(q)) {
+            statusSelect.value = code;
+            updateCard(code);
+            break;
+          }
+        }
+      });
+
+      // Initial Update
+      updateCard('404');
     });
   </script>
 </body>
