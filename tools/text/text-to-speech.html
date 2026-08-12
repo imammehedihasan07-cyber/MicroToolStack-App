@@ -288,34 +288,68 @@
         }
       });
 
-      // 4. Guaranteed MP3 Download Handler
-      downloadBtn.addEventListener('click', function () {
+      // 4. Pure Browser Audio Stream Generator & Direct Download Fix
+      downloadBtn.addEventListener('click', async function () {
         const text = textInput.value.trim();
         if (!text) {
           alert('Please enter some text to download!');
           return;
         }
 
-        const selectedIndex = voiceSelect.value;
-        let lang = 'en';
-        if (voices[selectedIndex]) {
-          lang = voices[selectedIndex].lang || 'en';
+        downloadBtn.disabled = true;
+        downloadBtn.innerText = '⏳ Generating Audio...';
+
+        try {
+          const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+          const dest = audioCtx.createMediaStreamDestination();
+          const recorder = new MediaRecorder(dest.stream);
+          const chunks = [];
+
+          recorder.ondataavailable = (e) => chunks.push(e.data);
+          recorder.onstop = () => {
+            const blob = new Blob(chunks, { type: 'audio/mp3' });
+            const url = URL.createObjectURL(blob);
+            
+            const anchor = document.createElement('a');
+            anchor.href = url;
+            anchor.download = 'MicroToolStack-Speech.mp3';
+            document.body.appendChild(anchor);
+            anchor.click();
+            document.body.removeChild(anchor);
+            URL.revokeObjectURL(url);
+
+            downloadBtn.disabled = false;
+            downloadBtn.innerText = '⬇ Download Audio (.mp3)';
+          };
+
+          recorder.start();
+
+          const utterThis = createUtterance(text);
+          utterThis.onend = () => {
+            recorder.stop();
+            audioCtx.close();
+          };
+          utterThis.onerror = () => {
+            recorder.stop();
+            audioCtx.close();
+            downloadBtn.disabled = false;
+            downloadBtn.innerText = '⬇ Download Audio (.mp3)';
+          };
+
+          synth.cancel();
+          synth.speak(utterThis);
+
+        } catch (err) {
+          synth.cancel();
+          const utterThis = createUtterance(text);
+          synth.speak(utterThis);
+          
+          alert('Audio speech is playing! You can use screen/audio recorder if direct download is restricted on this browser.');
+          downloadBtn.disabled = false;
+          downloadBtn.innerText = '⬇ Download Audio (.mp3)';
         }
-
-        // Clean & truncate for URL safety
-        const cleanText = encodeURIComponent(text.substring(0, 300));
-        const downloadUrl = `https://translate.google.com/translate_tts?ie=UTF-8&q=${cleanText}&tl=${lang}&client=tw-ob`;
-
-        // Direct Browser Download Action
-        const anchor = document.createElement('a');
-        anchor.href = downloadUrl;
-        anchor.target = '_blank';
-        anchor.download = 'MicroToolStack-Speech.mp3';
-        document.body.appendChild(anchor);
-        anchor.click();
-        document.body.removeChild(anchor);
       });
-    });
+      
   </script>
 
 </body>
