@@ -22,9 +22,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Primary SEO Meta Tags -->
-  <title>Free Online WEBP Converter with Custom Resolution | MicroToolStack</title>
-  <meta name="description" content="Free Online WEBP Image Converter with Custom Resolution. Convert JPG, PNG to WEBP, resize image dimensions, adjust compression quality, and reduce file size.">
-  <meta name="keywords" content="webp converter, image to webp, png to webp, jpg to webp, resize webp, image resizer online, custom resolution webp">
+  <title>Free Online WEBP Converter | Convert PNG & JPG to WEBP | MicroToolStack</title>
+  <meta name="description" content="Convert PNG, JPG, and GIF images to next-gen WEBP format online for free. Compress image file sizes up to 80% with adjustable quality sliders and 1-click WEBP downloads.">
+  <meta name="keywords" content="webp converter, convert png to webp, jpg to webp converter, webp image compressor, webp image converter, online image optimizer, next gen image format, media tools">
 
   <link rel="canonical" href="https://microtoolstack.com/tools/media/webp-converter.html">
   <meta name="robots" content="index, follow">
@@ -32,8 +32,8 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://microtoolstack.com/tools/media/webp-converter.html">
-  <meta property="og:title" content="Free Online WEBP Converter with Custom Resolution | MicroToolStack">
-  <meta property="og:description" content="Convert PNG, JPG images to WebP format, adjust resolution and quality settings directly in your browser.">
+  <meta property="og:title" content="Free Online WEBP Converter | MicroToolStack">
+  <meta property="og:description" content="Convert PNG and JPG photos into next-gen WEBP images with custom compression sliders. 100% free, fast, and privacy-first media utility.">
   <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
@@ -41,14 +41,14 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
   <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
-  <!-- JSON-LD Schema Markup -->
+  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "SoftwareApplication",
-        "name": "WEBP Converter with Custom Resolution",
+        "name": "Online WEBP Image Converter",
         "operatingSystem": "All",
         "applicationCategory": "MultimediaApplication",
         "offers": {
@@ -56,7 +56,7 @@
           "price": "0",
           "priceCurrency": "USD"
         },
-        "description": "An online image converter tool that transforms PNG/JPG to WebP format with custom width and height resolution controls.",
+        "description": "An essential client-side web utility that converts PNG, JPG, and GIF graphics into next-generation WEBP image formats with adjustable compression sliders.",
         "url": "https://microtoolstack.com/tools/media/webp-converter.html"
       },
       {
@@ -64,18 +64,34 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "Why convert images to WEBP format?",
+            "name": "What is the WEBP image format?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "WEBP provides superior lossless and lossy compression for images on the web, significantly reducing file size compared to PNG or JPG while preserving crisp visual quality."
+              "text": "WEBP is a modern next-generation image format developed by Google that provides superior lossy and lossless compression for web graphics, reducing file sizes by up to 30% compared to JPEG and PNG."
             }
           },
           {
             "@type": "Question",
-            "name": "Are my uploaded photos sent to external servers?",
+            "name": "Does WEBP support transparent image backgrounds?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "No! All image conversion and resizing runs 100% locally using HTML5 Canvas inside your web browser instance."
+              "text": "Yes! WEBP supports full alpha channel transparency (like PNG) while delivering significantly smaller file sizes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are my uploaded photos sent to remote servers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No! All image rendering and WEBP compression execute 100% locally inside your web browser session using client-side JavaScript canvas APIs. Your photos remain completely private."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this WEBP Converter tool free to use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, MicroToolStack's WEBP Converter is 100% free with unlimited image conversions and no registration required."
             }
           }
         ]
@@ -93,87 +109,92 @@
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
 
   <style>
-    .upload-box {
-      border: 2px dashed var(--border-color, #4b5563);
-      border-radius: 12px;
-      padding: 2.5rem 1.5rem;
-      text-align: center;
-      background: var(--bg-card, #1e1e2e);
-      cursor: pointer;
-      transition: border-color 0.2s, background 0.2s;
-      margin-bottom: 1.5rem;
+    .input-group {
+      margin-bottom: 1.25rem;
     }
-    .upload-box:hover {
-      border-color: var(--accent-primary, #3b82f6);
-      background: rgba(59, 130, 246, 0.05);
-    }
-    .controls-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.25rem;
-      background: var(--bg-card, #1e1e2e);
-      border: 1px solid var(--border-color, #333);
-      border-radius: 10px;
-      padding: 1.25rem;
-      margin-bottom: 1.5rem;
-    }
-    .form-group {
-      display: flex;
-      flex-direction: column;
-    }
-    .form-label {
-      font-size: 0.85rem;
+    .input-label {
+      display: block;
+      font-size: 0.9rem;
       font-weight: 600;
       color: var(--text-primary, #fff);
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.5rem;
     }
-    .form-input {
+    .form-control, .form-select {
       width: 100%;
-      padding: 0.65rem 0.85rem;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
       border: 1px solid var(--border-color, #333);
-      border-radius: 6px;
-      background-color: var(--bg-body, #0d1117);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
       color: var(--text-primary, #fff);
       outline: none;
       box-sizing: border-box;
-      font-family: inherit;
     }
-    .preview-card {
-      background: var(--bg-card, #1e1e2e);
-      border: 1px solid var(--border-color, #333);
-      border-radius: 10px;
-      padding: 1.25rem;
+    .form-control:focus, .form-select:focus {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+
+    /* Drag and Drop Zone */
+    .drop-zone {
+      width: 100%;
+      min-height: 180px;
+      border: 2px dashed var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      padding: 1.5rem;
+      box-sizing: border-box;
       text-align: center;
       margin-bottom: 1.5rem;
-      display: none;
     }
+    .drop-zone:hover, .drop-zone.dragover {
+      border-color: var(--accent-primary, #3b82f6);
+      background-color: rgba(59, 130, 246, 0.05);
+    }
+
+    /* Converter Stage Workspace */
+    .converter-stage {
+      width: 100%;
+      min-height: 260px;
+      background: #111827;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1.5rem;
+      box-sizing: border-box;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
     .preview-img {
       max-width: 100%;
-      max-height: 350px;
+      max-height: 320px;
       border-radius: 8px;
-      border: 1px solid var(--border-color, #333);
-      margin-top: 1rem;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      object-fit: contain;
+      display: none;
     }
-    .metrics-row {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-top: 1rem;
-      padding: 0.85rem;
-      background: var(--bg-body, #0d1117);
-      border-radius: 8px;
-      border: 1px solid var(--border-color, #333);
-    }
-    .metric-item {
-      font-size: 0.9rem;
+
+    .meta-badge {
+      display: inline-block;
+      font-size: 0.85rem;
       color: var(--text-secondary, #9ca3af);
+      background: rgba(255, 255, 255, 0.05);
+      padding: 0.3rem 0.75rem;
+      border-radius: 6px;
+      border: 1px solid var(--border-color, #333);
+      margin-top: 0.75rem;
     }
-    .metric-val {
-      font-weight: 700;
-      color: var(--accent-primary, #3b82f6);
-    }
-    .editor-controls {
+
+    .controls-bar {
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
@@ -181,11 +202,7 @@
       align-items: center;
       margin-bottom: 2.5rem;
     }
-    .btn-group {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-    }
+
     .content-box {
       background-color: var(--bg-card, #1e1e2e);
       border: 1px solid var(--border-color, #333);
@@ -196,6 +213,12 @@
     .content-box h2 {
       font-size: 1.35rem;
       margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
       color: var(--text-primary, #fff);
     }
     .content-box p, .content-box ul {
@@ -248,107 +271,122 @@
 
   <!-- Main Container -->
   <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
-    <!-- Breadcrumb Navigation -->
-    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
-      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
-      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Media Tools</a> / 
-      <span>WEBP Converter with Custom Resolution</span>
-    </nav>
     
     <!-- Tool Title & Description -->
     <div style="text-align: center; margin-bottom: 2rem;">
-      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">WEBP Converter with Custom Resolution</h1>
-      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Convert PNG/JPG images to WEBP format, resize dimensions, and optimize image speed for SEO.</p>
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online WEBP Image Converter</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Convert PNG, JPG, and GIF images to next-generation WEBP format with custom compression controls.</p>
     </div>
 
-    <!-- Drag & Drop Upload Container -->
-    <div id="drop-zone" class="upload-box">
+    <!-- Drag and Drop Image Zone -->
+    <div class="drop-zone" id="drop-zone">
+      <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">⚡</div>
+      <div style="font-size: 1.05rem; font-weight: 600; color: #fff; margin-bottom: 0.25rem;">Drag & Drop Image Here to Convert to WEBP</div>
+      <div style="font-size: 0.85rem; color: #9ca3af;">or click to browse from device (PNG, JPG, WEBP, GIF)</div>
       <input type="file" id="file-input" accept="image/*" style="display: none;">
-      <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🖼️</div>
-      <div style="font-weight: 600; color: var(--text-primary, #fff); font-size: 1.05rem;">Click to upload or drag & drop an image</div>
-      <div style="font-size: 0.85rem; color: var(--text-secondary, #9ca3af); margin-top: 0.25rem;">Supports JPG, PNG, GIF, BMP</div>
     </div>
 
-    <!-- Custom Resolution & Quality Settings -->
-    <div class="controls-grid">
-      <div class="form-group">
-        <label class="form-label">Width (px):</label>
-        <input type="number" id="in-width" class="form-input" placeholder="Auto">
-      </div>
-      <div class="form-group">
-        <label class="form-label">Height (px):</label>
-        <input type="number" id="in-height" class="form-input" placeholder="Auto">
-      </div>
-      <div class="form-group">
-        <label class="form-label">Image Quality (1 - 100%): <span id="lbl-quality" style="color: var(--accent-primary, #3b82f6);">85%</span></label>
-        <input type="range" id="in-quality" min="10" max="100" value="85" style="margin-top: 0.5rem; accent-color: var(--accent-primary, #3b82f6);">
-      </div>
-      <div class="form-group" style="justify-content: flex-end;">
-        <label style="font-size:0.85rem; color:var(--text-primary, #fff); cursor:pointer; margin-top: auto; padding-bottom: 0.5rem;">
-          <input type="checkbox" id="chk-aspect" checked style="accent-color: var(--accent-primary, #3b82f6);"> Lock Aspect Ratio
-        </label>
+    <!-- WEBP Compression Settings Card -->
+    <div class="content-box" style="margin-bottom: 1.5rem;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;" class="input-group">
+        <div>
+          <label for="quality-slider" class="input-label">WEBP Compression Quality (<span id="quality-val">80</span>%)</label>
+          <input type="range" id="quality-slider" min="10" max="100" value="80" style="width: 100%; accent-color: #3b82f6;">
+        </div>
       </div>
     </div>
 
-    <!-- Live Preview Card -->
-    <div id="preview-card" class="preview-card">
-      <h3 style="color: var(--text-primary, #fff); margin-bottom: 0.5rem; font-size: 1.1rem;">Converted WEBP Preview</h3>
-      <img id="converted-img" class="preview-img" alt="Converted WEBP Preview">
-      
-      <div class="metrics-row">
-        <div class="metric-item">Original Size: <span id="m-orig-size" class="metric-val">0 KB</span></div>
-        <div class="metric-item">WEBP Size: <span id="m-new-size" class="metric-val">0 KB</span></div>
-        <div class="metric-item">Dimensions: <span id="m-dims" class="metric-val">0x0</span></div>
+    <!-- Converter Stage Workspace -->
+    <div class="converter-stage">
+      <img id="preview-img" class="preview-img" alt="Converted WEBP Preview">
+      <div id="status-msg" style="color: #94a3b8; font-size: 0.95rem;">
+        📂 Upload a PNG or JPG image to view converted WEBP compressed result...
+      </div>
+      <div id="img-meta" class="meta-badge" style="display: none;">Original: 0 KB ➔ WEBP: 0 KB (0% Saved)</div>
+    </div>
+
+    <!-- Controls Bar -->
+    <div class="controls-bar">
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-download-webp" class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-weight: 600; cursor: pointer; background: #10b981;">💾 Download WEBP Image</button>
+      </div>
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear</button>
       </div>
     </div>
 
-    <!-- Action Buttons -->
-    <div class="editor-controls">
-      <div class="btn-group">
-        <button id="btn-convert" class="btn btn-primary" style="padding: 0.75rem 1.6rem; cursor: pointer; background: #3b82f6; border: none;" disabled>⚡ Convert to WEBP</button>
-        <button id="btn-download" class="btn btn-primary" style="padding: 0.75rem 1.6rem; cursor: pointer; background: #10b981; border: none; display: none;">💾 Download WEBP</button>
-        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.75rem 1.2rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear</button>
-      </div>
-    </div>
+    <!-- Offscreen Processing Canvas -->
+    <canvas id="proc-canvas" style="display: none;"></canvas>
 
     <!-- SEO Article Content Box 1 -->
     <div class="content-box">
-      <h2>Why WEBP Format is Essential for Website Performance</h2>
-      <p>WEBP is a modern web image format developed by Google. It offers superior **lossless and lossy compression**, reducing image file sizes by 25% to 35% compared to JPEG and PNG formats without compromising visual quality. Utilizing WEBP directly enhances your website's **Largest Contentful Paint (LCP)** Core Web Vitals score.</p>
+      <h2>Why Webmasters and Developers Are Switching to WEBP Images</h2>
+      <p>Developed by Google, <strong>WEBP</strong> is a modern next-generation digital image format built specifically to accelerate web page loading speeds. Compared to legacy JPEG and PNG formats, WEBP offers superior lossy and lossless compression algorithms, reducing image file sizes by 25% to 35% without visible quality loss.</p>
+
+      <p>Compressing website graphics into WEBP format improves Google Core Web Vitals, reduces Largest Contentful Paint (LCP) delays, and conserves server bandwidth. Our free <strong>Online WEBP Converter</strong> converts PNG, JPG, and GIF images into optimized WEBP files directly in your web browser.</p>
     </div>
 
     <!-- SEO Article Content Box 2 -->
     <div class="content-box">
-      <h2>Benefits of Custom Resolution Image Resizing</h2>
+      <h2>WEBP Advantages Over PNG and JPEG</h2>
+      <p>Highlights of the WEBP image specification:</p>
+
       <ul>
-        <li><strong>Prevent Layout Shifts:</strong> Outputting exact image dimensions reduces CLS (Cumulative Layout Shift) issues.</li>
-        <li><strong>Bandwidth Savings:</strong> Lower pixel density for thumbnail previews saves mobile user data.</li>
-        <li><strong>Cross-Browser Support:</strong> WEBP is natively supported by modern web browsers including Chrome, Safari, Firefox, and Edge.</li>
+        <li><strong>Alpha Channel Transparency:</strong> Supports full 8-bit transparent backgrounds (like PNG) at a fraction of the file size footprint.</li>
+        <li><strong>Lossy & Lossless Compression:</strong> Delivers flexible compression choices suited for detailed photograph portraits or simple vector web icons.</li>
+        <li><strong>Universal Browser Support:</strong> Supported across all modern web browsers including Chrome, Safari, Firefox, Edge, and mobile operating systems.</li>
       </ul>
     </div>
 
-    <!-- Internal Linking Section -->
+    <!-- SEO Article Content Box 3 -->
     <div class="content-box">
-      <h2>Explore Related Media Utilities</h2>
-      <p>Enhance your digital assets with our tools:</p>
+      <h2>Features of MicroToolStack's WEBP Converter</h2>
+      <ul>
+        <li><strong>Adjustable Quality Slider:</strong> Fine-tune compression quality from 10% to 100% to balance file size against visual sharpness.</li>
+        <li><strong>Real-Time Size Comparison:</strong> View exact original vs. converted WEBP file size savings instantly before downloading.</li>
+        <li><strong>100% Client-Side Privacy:</strong> All canvas rendering and WEBP compression execute locally inside your web browser session using JavaScript. Photos are never uploaded to remote servers.</li>
+        <li><strong>Free & Unlimited Usage:</strong> No file size caps or account sign-ups required.</li>
+      </ul>
+    </div>
+
+    <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
+    <div class="content-box">
+      <h2>Explore Related Media Tools</h2>
+      <p>Discover our complementary online media utilities:</p>
       <div class="related-links">
-        <a href="/tools/developer/html-formatter.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">✨ HTML Formatter</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Beautify and indent web code.</span>
+        <a href="/tools/media/png-to-svg.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📐 PNG to SVG Vectorizer</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Convert raster PNG images into scalable SVG vectors.</span>
+        </a>
+        <a href="/tools/media/ico-converter.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🌐 Image to ICO Converter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Convert PNG and JPG images into website favicons.</span>
+        </a>
+        <a href="/tools/media/image-cropper.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">✂️ Interactive Image Cropper</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Crop, rotate, and scale photos into exact aspect ratios.</span>
         </a>
       </div>
     </div>
 
     <!-- FAQ Section -->
     <div class="content-box">
-      <h2>Frequently Asked Questions</h2>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Does WEBP support transparent backgrounds?</h3>
-        <p>Yes! WEBP fully supports alpha channel transparency, making it a perfect lightweight replacement for heavy transparent PNG images.</p>
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How do I convert a PNG or JPG to WEBP?</h3>
+        <p>Drag and drop your image file into the drop zone, adjust the quality slider (e.g., 80%), and click "Download WEBP Image".</p>
       </div>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What is the recommended image quality setting?</h3>
-        <p>An image quality setting between 80% and 85% provides the optimal balance between high visual fidelity and small file payload size.</p>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Does converting to WEBP preserve PNG transparency?</h3>
+        <p>Yes! WEBP supports full alpha channel transparency, so PNG transparent backgrounds remain transparent.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Are my uploaded photos saved on remote servers?</h3>
+        <p>No. All calculations run client-side inside your browser session using JavaScript. Your photos remain completely private.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this WEBP Converter free to use?</h3>
+        <p>Yes, MicroToolStack's WEBP Converter is 100% free with no usage limits or sign-up required.</p>
       </div>
     </div>
 
@@ -366,50 +404,33 @@
     document.addEventListener('DOMContentLoaded', function() {
       const dropZone = document.getElementById('drop-zone');
       const fileInput = document.getElementById('file-input');
+      const qualitySlider = document.getElementById('quality-slider');
+      const qualityVal = document.getElementById('quality-val');
 
-      const inWidth = document.getElementById('in-width');
-      const inHeight = document.getElementById('in-height');
-      const inQuality = document.getElementById('in-quality');
-      const lblQuality = document.getElementById('lbl-quality');
-      const chkAspect = document.getElementById('chk-aspect');
+      const previewImg = document.getElementById('preview-img');
+      const statusMsg = document.getElementById('status-msg');
+      const imgMeta = document.getElementById('img-meta');
 
-      const previewCard = document.getElementById('preview-card');
-      const convertedImg = document.getElementById('converted-img');
-
-      const mOrigSize = document.getElementById('m-orig-size');
-      const mNewSize = document.getElementById('m-new-size');
-      const mDims = document.getElementById('m-dims');
-
-      const btnConvert = document.getElementById('btn-convert');
-      const btnDownload = document.getElementById('btn-download');
+      const btnDownloadWebp = document.getElementById('btn-download-webp');
       const btnClear = document.getElementById('btn-clear');
+      const procCanvas = document.getElementById('proc-canvas');
 
-      let originalImage = null;
-      let originalFile = null;
-      let convertedBlobUrl = null;
-
-      function formatBytes(bytes) {
-        if (bytes === 0) return '0 B';
-        const k = 1024;
-        const sizes = ['B', 'KB', 'MB'];
-        const i = Math.floor(Math.log(bytes) / Math.log(k));
-        return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
-      }
+      let loadedImageObj = null;
+      let originalFileSize = 0;
+      let webpDataUrl = '';
 
       dropZone.addEventListener('click', () => fileInput.click());
 
       dropZone.addEventListener('dragover', (e) => {
         e.preventDefault();
-        dropZone.style.borderColor = 'var(--accent-primary, #3b82f6)';
+        dropZone.classList.add('dragover');
       });
 
-      dropZone.addEventListener('dragleave', () => {
-        dropZone.style.borderColor = 'var(--border-color, #4b5563)';
-      });
+      dropZone.addEventListener('dragleave', () => dropZone.classList.remove('dragover'));
 
       dropZone.addEventListener('drop', (e) => {
         e.preventDefault();
-        dropZone.style.borderColor = 'var(--border-color, #4b5563)';
+        dropZone.classList.remove('dragover');
         if (e.dataTransfer.files && e.dataTransfer.files[0]) {
           handleFile(e.dataTransfer.files[0]);
         }
@@ -421,98 +442,90 @@
         }
       });
 
+      function formatBytes(bytes) {
+        if (bytes === 0) return '0 Bytes';
+        const k = 1024;
+        const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+        const i = Math.floor(Math.log(bytes) / Math.log(k));
+        return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+      }
+
       function handleFile(file) {
-        if (!file.type.startsWith('image/')) return;
+        if (!file.type.startsWith('image/')) {
+          alert('Please upload a valid image file.');
+          return;
+        }
 
-        originalFile = file;
+        originalFileSize = file.size;
+
         const reader = new FileReader();
-
         reader.onload = function(evt) {
           const img = new Image();
           img.onload = function() {
-            originalImage = img;
-            inWidth.value = img.width;
-            inHeight.value = img.height;
-            btnConvert.disabled = false;
-            processConversion();
+            loadedImageObj = img;
+            processWebpConversion();
+            statusMsg.style.display = 'none';
           };
           img.src = evt.target.result;
         };
-
         reader.readAsDataURL(file);
       }
 
-      inWidth.addEventListener('input', () => {
-        if (chkAspect.checked && originalImage && inWidth.value) {
-          const ratio = originalImage.height / originalImage.width;
-          inHeight.value = Math.round(inWidth.value * ratio);
-        }
+      qualitySlider.addEventListener('input', () => {
+        qualityVal.textContent = qualitySlider.value;
+        if (loadedImageObj) processWebpConversion();
       });
 
-      inHeight.addEventListener('input', () => {
-        if (chkAspect.checked && originalImage && inHeight.value) {
-          const ratio = originalImage.width / originalImage.height;
-          inWidth.value = Math.round(inHeight.value * ratio);
-        }
-      });
+      function processWebpConversion() {
+        if (!loadedImageObj) return;
 
-      inQuality.addEventListener('input', () => {
-        lblQuality.textContent = `${inQuality.value}%`;
-      });
+        const w = loadedImageObj.naturalWidth;
+        const h = loadedImageObj.naturalHeight;
 
-      btnConvert.addEventListener('click', processConversion);
+        procCanvas.width = w;
+        procCanvas.height = h;
 
-      function processConversion() {
-        if (!originalImage) return;
+        const ctx = procCanvas.getContext('2d');
+        ctx.clearRect(0, 0, w, h);
+        ctx.drawImage(loadedImageObj, 0, 0, w, h);
 
-        const canvas = document.createElement('canvas');
-        const targetW = parseInt(inWidth.value) || originalImage.width;
-        const targetH = parseInt(inHeight.value) || originalImage.height;
+        const q = parseFloat(qualitySlider.value) / 100;
+        webpDataUrl = procCanvas.toDataURL('image/webp', q);
 
-        canvas.width = targetW;
-        canvas.height = targetH;
+        previewImg.src = webpDataUrl;
+        previewImg.style.display = 'block';
 
-        const ctx = canvas.getContext('2d');
-        ctx.drawImage(originalImage, 0, 0, targetW, targetH);
+        // Calculate approximate WEBP size from Data URI
+        const head = 'data:image/webp;base64,';
+        const webpBytes = Math.round((webpDataUrl.length - head.length) * 3 / 4);
+        const savedPercent = Math.round(((originalFileSize - webpBytes) / originalFileSize) * 100);
 
-        const qualityVal = parseFloat(inQuality.value) / 100;
-
-        canvas.toBlob((blob) => {
-          if (!blob) return;
-
-          if (convertedBlobUrl) URL.revokeObjectURL(convertedBlobUrl);
-          convertedBlobUrl = URL.createObjectURL(blob);
-
-          convertedImg.src = convertedBlobUrl;
-          mOrigSize.textContent = formatBytes(originalFile.size);
-          mNewSize.textContent = formatBytes(blob.size);
-          mDims.textContent = `${targetW}x${targetH} px`;
-
-          previewCard.style.display = 'block';
-          btnDownload.style.display = 'inline-block';
-        }, 'image/webp', qualityVal);
+        imgMeta.textContent = `Original: ${formatBytes(originalFileSize)} ➔ WEBP: ${formatBytes(webpBytes)} (${savedPercent > 0 ? savedPercent + '% Saved' : 'Optimized'})`;
+        imgMeta.style.display = 'inline-block';
       }
 
-      btnDownload.addEventListener('click', () => {
-        if (!convertedBlobUrl) return;
-        const a = document.createElement('a');
-        a.href = convertedBlobUrl;
-        a.download = (originalFile.name.replace(/\.[^/.]+$/, "") || "converted") + ".webp";
-        a.click();
+      btnDownloadWebp.addEventListener('click', function() {
+        if (!webpDataUrl) {
+          alert('Please upload an image first.');
+          return;
+        }
+
+        const link = document.createElement('a');
+        link.href = webpDataUrl;
+        link.download = 'converted-image.webp';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
       });
 
-      btnClear.addEventListener('click', () => {
-        originalImage = null;
-        originalFile = null;
-        if (convertedBlobUrl) URL.revokeObjectURL(convertedBlobUrl);
-        convertedBlobUrl = null;
-
+      btnClear.addEventListener('click', function() {
+        loadedImageObj = null;
         fileInput.value = '';
-        inWidth.value = '';
-        inHeight.value = '';
-        previewCard.style.display = 'none';
-        btnDownload.style.display = 'none';
-        btnConvert.disabled = true;
+        previewImg.style.display = 'none';
+        previewImg.src = '';
+        statusMsg.style.display = 'block';
+        imgMeta.style.display = 'none';
+        webpDataUrl = '';
       });
     });
   </script>
