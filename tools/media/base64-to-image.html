@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) - Deferred Load -->
+  <!-- Google tag (gtag.js) - Optimized Load -->
   <script>
     window.addEventListener('load', function() {
       setTimeout(function() {
@@ -20,19 +20,20 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Base64 to Image Converter - Free Online Decoder | MicroToolStack</title>
-  <meta name="description" content="Convert Base64 strings back to downloadable image files (PNG, JPG, WebP) instantly online. Private, fast, browser-based decoding.">
-  <meta name="keywords" content="base64 to image converter, decode base64 to image, base64 data uri decoder, convert base64 string to png, base64 image viewer">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>Free Online Base64 to Image Decoder | MicroToolStack</title>
+  <meta name="description" content="Convert Base64 strings to images online instantly. Decode Data URIs into PNG, JPG, or WEBP image files with real-time preview and 1-click download options.">
+  <meta name="keywords" content="base64 to image, convert base64 to image, base64 image decoder, decode base64 string, base64 data uri to png, online base64 picture viewer, media developer tools">
 
   <link rel="canonical" href="https://microtoolstack.com/tools/media/base64-to-image.html">
   <meta name="robots" content="index, follow">
 
-  <!-- Open Graph / Social Media Meta Tags -->
+  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Base64 to Image Converter - Free Online Decoder | MicroToolStack">
-  <meta property="og:description" content="Convert Base64 strings back to downloadable image files (PNG, JPG, WebP) instantly online. Private, fast, browser-based decoding.">
   <meta property="og:url" content="https://microtoolstack.com/tools/media/base64-to-image.html">
-  <meta property="og:site_name" content="MicroToolStack">
+  <meta property="og:title" content="Free Online Base64 to Image Decoder | MicroToolStack">
+  <meta property="og:description" content="Decode Base64 strings into downloadable PNG, JPG, or WEBP images with live visual previews. 100% free, fast, and secure developer utility.">
   <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
@@ -40,49 +41,57 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
   <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
-  <!-- Fonts & CSS Stylesheets -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
-  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
-
-  <!-- JSON-LD Schema Markup -->
+  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "WebApplication",
-        "@id": "https://microtoolstack.com/tools/media/base64-to-image.html#webapp",
-        "url": "https://microtoolstack.com/tools/media/base64-to-image.html",
-        "name": "Base64 to Image Converter",
-        "applicationCategory": "UtilitiesApplication",
+        "@type": "SoftwareApplication",
+        "name": "Base64 to Image Decoder",
         "operatingSystem": "All",
+        "applicationCategory": "MultimediaApplication",
         "offers": {
           "@type": "Offer",
           "price": "0",
           "priceCurrency": "USD"
         },
-        "description": "Decode Base64 Data URI strings back into viewable and downloadable image files."
+        "description": "An essential client-side web development utility that converts Base64 encoded strings and Data URIs into downloadable image files (PNG, JPG, WEBP).",
+        "url": "https://microtoolstack.com/tools/media/base64-to-image.html"
       },
       {
         "@type": "FAQPage",
-        "@id": "https://microtoolstack.com/tools/media/base64-to-image.html#faq",
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "Is my Base64 data uploaded to any server?",
+            "name": "What is Base64 Image Decoding?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "No. The decoding process is executed 100% locally inside your browser using client-side JavaScript."
+              "text": "Base64 image decoding is the process of translating a 64-character ASCII text string back into binary image pixel data that web browsers can render or download as image files."
             }
           },
           {
             "@type": "Question",
-            "name": "What image formats can be decoded?",
+            "name": "Does this tool support raw Base64 strings without Data URI headers?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Our converter supports standard web image formats including PNG, JPG, JPEG, WebP, GIF, and SVG."
+              "text": "Yes! The tool automatically detects whether your input string starts with 'data:image/...' or raw Base64 data, adding missing header prefixes automatically."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my Base64 string or decoded image uploaded to any server?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. All decoding and canvas rendering execute locally inside your web browser session using client-side JavaScript. Your data remains 100% private."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this Base64 to Image tool free to use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, MicroToolStack's Base64 to Image Decoder is 100% free with no file size limits or account sign-up required."
             }
           }
         ]
@@ -91,27 +100,92 @@
   }
   </script>
 
+  <!-- Preconnect and Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
   <style>
+    .input-group {
+      margin-bottom: 1.25rem;
+    }
+    .input-label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.5rem;
+    }
     .base64-textarea {
       width: 100%;
-      height: 160px;
-      padding: 0.8rem;
-      border-radius: 8px;
-      border: 1px solid var(--border-color, #333);
-      background: var(--bg-body, #111827);
-      color: #7ee787;
-      font-family: monospace;
+      min-height: 220px;
+      padding: 1rem;
       font-size: 0.85rem;
-      resize: vertical;
-      margin-bottom: 1rem;
-      box-sizing: border-box;
+      font-family: 'Fira Code', Consolas, Monaco, monospace;
+      line-height: 1.5;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
+      color: var(--text-primary, #fff);
       outline: none;
+      resize: vertical;
+      box-sizing: border-box;
+      white-space: pre-wrap;
+      word-break: break-all;
     }
-    .preview-container { 
-      margin-top: 1.5rem; 
-      display: none; 
-      text-align: center; 
+    .base64-textarea:focus {
+      border-color: var(--accent-primary, #3b82f6);
     }
+
+    /* Live Preview Box */
+    .preview-stage {
+      width: 100%;
+      min-height: 250px;
+      background: #111827;
+      border: 1px dashed var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1.5rem;
+      box-sizing: border-box;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .preview-img {
+      max-width: 100%;
+      max-height: 380px;
+      border-radius: 6px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      object-fit: contain;
+      display: none;
+    }
+
+    .meta-badge {
+      display: inline-block;
+      font-size: 0.85rem;
+      color: var(--text-secondary, #9ca3af);
+      background: rgba(255, 255, 255, 0.05);
+      padding: 0.3rem 0.75rem;
+      border-radius: 6px;
+      border: 1px solid var(--border-color, #333);
+      margin-top: 0.75rem;
+    }
+
+    .controls-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.5rem;
+    }
+
     .content-box {
       background-color: var(--bg-card, #1e1e2e);
       border: 1px solid var(--border-color, #333);
@@ -124,12 +198,18 @@
       margin-bottom: 1rem;
       color: var(--text-primary, #fff);
     }
-    .content-box p, .content-box ul, .content-box ol {
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul {
       color: var(--text-secondary, #9ca3af);
       font-size: 0.95rem;
       line-height: 1.6;
     }
-    .content-box ul, .content-box ol {
+    .content-box ul {
       padding-left: 1.25rem;
       margin-bottom: 1rem;
     }
@@ -158,6 +238,7 @@
   </style>
 </head>
 <body style="margin: 0; padding: 0;">
+
   <!-- Header Section -->
   <header class="custom-header">
     <a href="/" class="custom-logo">
@@ -171,128 +252,196 @@
     </nav>
   </header>
 
+  <!-- Main Container -->
   <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
-    <!-- Breadcrumb Navigation -->
-    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
-      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
-      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Media Tools</a> / 
-      <span>Base64 to Image</span>
-    </nav>
+    
+    <!-- Tool Title & Description -->
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online Base64 to Image Decoder</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Decode Base64 strings and Data URIs into visual images with 1-click download options.</p>
+    </div>
 
-    <!-- Header Area -->
-    <header style="margin-bottom: 2rem; text-align: center;">
-      <h1 class="hero" style="font-size: 2rem; margin-bottom: 0.5rem; color: #fff;">Free Base64 to Image Converter</h1>
-      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">
-        Decode Base64 Data URI strings back into viewable and downloadable image files.
-      </p>
-    </header>
+    <!-- Base64 String Input Box -->
+    <div class="input-group">
+      <label for="base64-input" class="input-label">Paste Base64 Encoded Image String / Data URI</label>
+      <textarea id="base64-input" class="base64-textarea" placeholder="Paste string starting with data:image/png;base64, or raw base64 string here..."></textarea>
+    </div>
 
-    <!-- Tool Card -->
-    <div class="card" style="padding: 2rem; border-radius: 12px; background: var(--bg-card, #1e1e2e); border: 1px solid var(--border-color, #333); margin-bottom: 3rem;">
-      <label style="display: block; font-size: 0.9rem; margin-bottom: 0.5rem; color: #fff; font-weight: 600;">Paste Base64 Data String Here:</label>
-      <textarea id="base64Input" class="base64-textarea" placeholder="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA..."></textarea>
-
-      <div style="text-align: center;">
-        <button class="btn btn-primary" style="padding: 0.8rem 2rem; font-size: 1rem; cursor: pointer;" onclick="decodeBase64()">🖼️ Decode & Preview Image</button>
+    <!-- Live Image Preview Canvas -->
+    <div class="preview-stage">
+      <img id="decoded-img" class="preview-img" alt="Decoded Base64 Preview">
+      <div id="placeholder-text" style="color: #94a3b8; font-size: 0.95rem;">
+        🖼️ Decoded image preview will appear here automatically...
       </div>
+      <div id="image-meta" class="meta-badge" style="display: none;">Dimensions: 0 x 0 px</div>
+    </div>
 
-      <div class="preview-container" id="previewArea">
-        <div style="margin: 1.5rem 0;">
-          <img id="decodedImg" style="max-height: 300px; border-radius: 8px; border: 1px solid var(--border-color, #333);" alt="Decoded Image Preview">
-        </div>
-        <button class="btn btn-primary" style="padding: 0.8rem 2rem; font-size: 1rem; cursor: pointer; background: #10b981; border: none;" onclick="downloadDecodedImage()">⬇️ Download Image</button>
+    <!-- Controls Bar -->
+    <div class="controls-bar">
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-download" class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-weight: 600; cursor: pointer; background: #10b981;">💾 Download Image</button>
+      </div>
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear</button>
       </div>
     </div>
 
-    <!-- SEO Content Box 1 -->
+    <!-- SEO Article Content Box 1 -->
     <div class="content-box">
-      <h2>How Base64 to Image Conversion Works</h2>
-      <p>
-        Base64 is a binary-to-text encoding scheme that represents binary image data in an ASCII string format. This tool parses the raw Base64 string, validates the MIME type (PNG, JPG, WebP), and reconstructs it back into an image file inside your browser.
-      </p>
+      <h2>Why Web Developers and Designers Use Base64 Image Decoding</h2>
+      <p>Base64 encoding represents binary image data using a set of 64 ASCII characters. Web applications, REST APIs, JSON database payloads, and inline CSS stylesheets frequently embed images using Base64 strings to reduce HTTP request roundtrips.</p>
+
+      <p>However, inspecting raw Base64 strings directly in code is impossible without decoding them back into visual pixels. Our free <strong>Online Base64 to Image Decoder</strong> extracts encoded binary data, renders a visual preview in real time, and exports the image as a standard PNG file ready for download.</p>
     </div>
 
-    <!-- Internal Linking Section (SEO Best Practice) -->
+    <!-- SEO Article Content Box 2 -->
     <div class="content-box">
-      <h2>Explore Related Media & PDF Tools</h2>
-      <p>Enhance your document and file workflow with our free utilities:</p>
+      <h2>Understanding Data URI Schemes and Base64 Formats</h2>
+      <p>A standard Base64 image string often includes a Data URI scheme prefix specifying the MIME content type:</p>
+
+      <h3>1. Standard Data URI Format</h3>
+      <p><code>data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA...</code></p>
+      <p>The prefix <code>data:image/png;base64,</code> informs web browsers how to parse the following binary character sequence.</p>
+
+      <h3>2. Raw Base64 Strings</h3>
+      <p><code>iVBORw0KGgoAAAANSUhEUgAA...</code></p>
+      <p>Even if your input string lacks the initial <code>data:image/...</code> header, our smart decoder detects raw data strings and constructs the appropriate image preview automatically.</p>
+    </div>
+
+    <!-- SEO Article Content Box 3 -->
+    <div class="content-box">
+      <h2>Features of MicroToolStack's Base64 Image Decoder</h2>
+      <ul>
+        <li><strong>Smart Header Auto-Detection:</strong> Parses both complete Data URIs and raw Base64 strings seamlessly.</li>
+        <li><strong>Real-Time Visual Preview & Metadata:</strong> View instant image rendering along with exact pixel dimensions.</li>
+        <li><strong>100% Client-Side Privacy:</strong> All string decoding and image rendering execute locally inside your web browser using JavaScript. No graphics or strings are uploaded to remote servers.</li>
+        <li><strong>Free & Unlimited Usage:</strong> No file size caps or account registration required.</li>
+      </ul>
+    </div>
+
+    <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
+    <div class="content-box">
+      <h2>Explore Related Developer Tools</h2>
+      <p>Discover our complementary online developer utilities:</p>
       <div class="related-links">
-        <a href="/tools/pdf/images-to-pdf.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🖼️ Images to PDF</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Convert JPG, PNG, and WebP images to PDF.</span>
+        <a href="/tools/developer/base64-encoder-decoder.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🔒 Base64 Text Encoder / Decoder</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Convert plain text strings to Base64 or decode Base64.</span>
         </a>
-        <a href="/tools/text/case-converter.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🔤 Case Converter</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Convert text to Uppercase, Lowercase, and Title Case.</span>
+        <a href="/tools/developer/code-to-image.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🖼️ Code to Image Converter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Export styled code screenshots for social media & blogs.</span>
         </a>
-        <a href="/tools/seo/slug-generator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🔗 Slug Generator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Generate clean, SEO-friendly URL slugs.</span>
+        <a href="/tools/media/aspect-ratio-calculator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📐 Aspect Ratio Calculator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Calculate image and video scaling dimensions.</span>
         </a>
       </div>
     </div>
 
     <!-- FAQ Section -->
     <div class="content-box">
-      <h2>Frequently Asked Questions</h2>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: #fff; margin-bottom: 0.25rem;">Is my Base64 string uploaded to any server?</h3>
-        <p>No. The decoding process is executed 100% locally inside your browser using client-side JavaScript.</p>
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How do I decode a Base64 string into an image?</h3>
+        <p>Paste your Base64 string into the text area. The decoded image preview renders automatically, and you can click "Download Image" to save the file.</p>
       </div>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: #fff; margin-bottom: 0.25rem;">What image formats can be decoded?</h3>
-        <p>Our converter supports standard web image formats including PNG, JPG, JPEG, WebP, GIF, and SVG.</p>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What image formats are supported?</h3>
+        <p>The tool decodes PNG, JPEG/JPG, WEBP, GIF, SVG, and ICO image data embedded in Base64 strings.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is my Base64 string saved on remote servers?</h3>
+        <p>No. All decoding scripts run locally in your browser session using JavaScript. Your image data remains private.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this tool free to use?</h3>
+        <p>Yes, MicroToolStack's Base64 to Image Decoder is 100% free with no usage limits or sign-up required.</p>
       </div>
     </div>
 
   </main>
 
-  <!-- Footer Placeholder -->
+  <!-- Footer Container Placeholder -->
   <div id="footer-container"></div>
 
-  <!-- Core Scripts -->
+  <!-- JavaScript Utilities & Logic -->
   <script src="/assets/js/theme.js"></script>
   <script src="/assets/js/utils.js" defer></script>
-  <script src="/assets/js/search.js" defer></script>
   <script src="/assets/js/app.js" defer></script>
 
   <script>
-    let decodedDataUrl = '';
+    document.addEventListener('DOMContentLoaded', function() {
+      const base64Input = document.getElementById('base64-input');
+      const decodedImg = document.getElementById('decoded-img');
+      const placeholderText = document.getElementById('placeholder-text');
+      const imageMeta = document.getElementById('image-meta');
+      const btnDownload = document.getElementById('btn-download');
+      const btnClear = document.getElementById('btn-clear');
 
-    function decodeBase64() {
-      let input = document.getElementById('base64Input').value.trim();
-      if (!input) {
-        alert('Please paste a Base64 string first.');
-        return;
+      function processBase64() {
+        let str = base64Input.value.trim();
+        if (!str) {
+          decodedImg.style.display = 'none';
+          placeholderText.style.display = 'block';
+          imageMeta.style.display = 'none';
+          return;
+        }
+
+        // Add Data URI prefix if missing
+        if (!str.startsWith('data:image/')) {
+          str = 'data:image/png;base64,' + str;
+        }
+
+        decodedImg.src = str;
       }
 
-      // Add data URI prefix if missing
-      if (!input.startsWith('data:image/')) {
-        input = 'data:image/png;base64,' + input;
-      }
-
-      decodedDataUrl = input;
-      const img = document.getElementById('decodedImg');
-      
-      img.onerror = function() {
-        alert('Invalid Base64 image string!');
-        document.getElementById('previewArea').style.display = 'none';
-      };
-      
-      img.onload = function() {
-        document.getElementById('previewArea').style.display = 'block';
+      decodedImg.onload = function() {
+        decodedImg.style.display = 'block';
+        placeholderText.style.display = 'none';
+        imageMeta.textContent = `Dimensions: ${decodedImg.naturalWidth} x ${decodedImg.naturalHeight} px`;
+        imageMeta.style.display = 'inline-block';
       };
 
-      img.src = decodedDataUrl;
-    }
+      decodedImg.onerror = function() {
+        decodedImg.style.display = 'none';
+        placeholderText.textContent = '❌ Invalid Base64 image string. Please check your data.';
+        placeholderText.style.display = 'block';
+        placeholderText.style.color = '#ef4444';
+        imageMeta.style.display = 'none';
+      };
 
-    function downloadDecodedImage() {
-      if (!decodedDataUrl) return;
-      const link = document.createElement('a');
-      link.download = 'decoded-image.png';
-      link.href = decodedDataUrl;
-      link.click();
-    }
+      base64Input.addEventListener('input', function() {
+        placeholderText.style.color = '#94a3b8';
+        placeholderText.textContent = '🖼️ Decoded image preview will appear here automatically...';
+        processBase64();
+      });
+
+      btnDownload.addEventListener('click', function() {
+        if (!decodedImg.src || decodedImg.style.display === 'none') {
+          alert('No valid image available to download.');
+          return;
+        }
+
+        const link = document.createElement('a');
+        link.href = decodedImg.src;
+        link.download = 'decoded-image.png';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      });
+
+      btnClear.addEventListener('click', function() {
+        base64Input.value = '';
+        decodedImg.src = '';
+        decodedImg.style.display = 'none';
+        placeholderText.style.color = '#94a3b8';
+        placeholderText.textContent = '🖼️ Decoded image preview will appear here automatically...';
+        placeholderText.style.display = 'block';
+        imageMeta.style.display = 'none';
+        base64Input.focus();
+      });
+    });
   </script>
 </body>
 </html>
