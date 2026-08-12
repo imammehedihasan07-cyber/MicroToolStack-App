@@ -22,9 +22,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Primary SEO Meta Tags -->
-  <title>Free Online Regex Tester & Regular Expression Debugger | MicroToolStack</title>
-  <meta name="description" content="Free Online Regex Tester and Debugger. Test, validate, and debug regular expressions in real time with live syntax match highlighting and flag controls.">
-  <meta name="keywords" content="regex tester, regular expression tester, online regex debugger, regex matcher, test regex online, regex pattern validator">
+  <title>Free Online Regex Tester & Debugger | MicroToolStack</title>
+  <meta name="description" content="Test and debug Regular Expressions (Regex) online in real-time. Highlights pattern matches, supports JavaScript regex flags (g, i, m, s, u), and provides a comprehensive regex cheat sheet.">
+  <meta name="keywords" content="regex tester, regex debugger, regular expression tester, online regex checker, javascript regex tool, regex match highlighter, regex cheat sheet, developer regex tool">
 
   <link rel="canonical" href="https://microtoolstack.com/tools/developer/regex-tester.html">
   <meta name="robots" content="index, follow">
@@ -32,8 +32,8 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://microtoolstack.com/tools/developer/regex-tester.html">
-  <meta property="og:title" content="Free Online Regex Tester & Regular Expression Debugger | MicroToolStack">
-  <meta property="og:description" content="Test and debug JavaScript regular expressions in real-time with highlighted match outputs and match counts.">
+  <meta property="og:title" content="Free Online Regex Tester & Debugger | MicroToolStack">
+  <meta property="og:description" content="Test, evaluate, and debug regular expressions with real-time match highlighting and flag controls. 100% free developer utility.">
   <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
@@ -41,14 +41,14 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
   <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
-  <!-- JSON-LD Schema Markup -->
+  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "SoftwareApplication",
-        "name": "Regex Tester and Regular Expression Debugger",
+        "name": "Regular Expression Tester & Debugger",
         "operatingSystem": "All",
         "applicationCategory": "DeveloperApplication",
         "offers": {
@@ -56,8 +56,45 @@
           "price": "0",
           "priceCurrency": "USD"
         },
-        "description": "An online developer utility that tests, matches, and debugs regular expressions in real-time.",
+        "description": "An interactive web developer utility that tests, matches, highlights, and debugs regular expressions (Regex) in real-time.",
         "url": "https://microtoolstack.com/tools/developer/regex-tester.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is a Regular Expression (Regex)?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A Regular Expression (Regex) is a sequence of characters that forms a search pattern used for string matching, text validation, search-and-replace, and data extraction."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What do the JavaScript Regex flags (g, i, m, s, u) mean?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "'g' stands for Global match (find all occurrences), 'i' is Case-Insensitive, 'm' is Multi-line anchor mode, 's' is Dotall (dot matches newlines), and 'u' enables Unicode support."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my test string sent to remote servers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. All regular expression testing and text highlighting execute locally inside your web browser using JavaScript RegExp engines. Your test data remains 100% private."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this Regex Tester tool completely free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, MicroToolStack's Regex Tester is 100% free with unlimited pattern evaluations and no account sign-up required."
+            }
+          }
+        ]
       }
     ]
   }
@@ -72,10 +109,19 @@
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
 
   <style>
-    .editor-input {
+    .input-group {
+      margin-bottom: 1.25rem;
+    }
+    .input-label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.5rem;
+    }
+    .form-control {
       width: 100%;
-      padding: 0.8rem 1rem;
-      font-family: monospace;
+      padding: 0.75rem 1rem;
       font-size: 1rem;
       border: 1px solid var(--border-color, #333);
       border-radius: var(--radius-md, 8px);
@@ -83,14 +129,57 @@
       color: var(--text-primary, #fff);
       outline: none;
       box-sizing: border-box;
-      margin-bottom: 1rem;
+      font-family: 'Fira Code', Consolas, Monaco, monospace;
     }
-    .editor-textarea {
+    .form-control:focus {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+
+    .regex-input-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 0.25rem 0.75rem;
+    }
+
+    .regex-input-wrapper span {
+      font-size: 1.2rem;
+      color: var(--accent-primary, #3b82f6);
+      font-weight: bold;
+      font-family: monospace;
+    }
+
+    .regex-input-field {
+      border: none !important;
+      background: transparent !important;
+      padding: 0.5rem 0 !important;
+    }
+
+    .flags-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 0.5rem;
+    }
+
+    .flag-checkbox {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      font-size: 0.85rem;
+      color: var(--text-secondary, #9ca3af);
+      cursor: pointer;
+    }
+
+    .test-area {
       width: 100%;
       min-height: 180px;
       padding: 1rem;
-      font-family: monospace;
       font-size: 0.95rem;
+      font-family: 'Fira Code', Consolas, Monaco, monospace;
       line-height: 1.6;
       border: 1px solid var(--border-color, #333);
       border-radius: var(--radius-md, 8px);
@@ -99,56 +188,44 @@
       outline: none;
       resize: vertical;
       box-sizing: border-box;
-      margin-bottom: 1.25rem;
     }
+
+    /* Highlight Output Display */
     .highlight-box {
       width: 100%;
-      min-height: 140px;
+      min-height: 120px;
       padding: 1rem;
-      font-family: monospace;
       font-size: 0.95rem;
+      font-family: 'Fira Code', Consolas, Monaco, monospace;
       line-height: 1.6;
       border: 1px solid var(--border-color, #333);
       border-radius: var(--radius-md, 8px);
-      background-color: var(--bg-card, #1e1e2e);
+      background-color: #111827;
       color: var(--text-primary, #fff);
-      box-sizing: border-box;
-      margin-bottom: 1.5rem;
-      word-break: break-all;
       white-space: pre-wrap;
+      word-break: break-all;
+      margin-top: 1rem;
     }
+
     .match-highlight {
       background-color: rgba(59, 130, 246, 0.4);
-      color: var(--text-primary, #fff);
-      border-radius: 3px;
-      padding: 2px 4px;
-      font-weight: 700;
-      border-bottom: 2px solid var(--accent-primary, #3b82f6);
+      border-bottom: 2px solid #3b82f6;
+      color: #38bdf8;
+      border-radius: 2px;
+      padding: 0 2px;
     }
-    .flags-box {
-      display: flex;
-      gap: 1rem;
-      align-items: center;
-      flex-wrap: wrap;
-      background: var(--bg-card, #1e1e2e);
+
+    .stats-badge {
+      display: inline-block;
+      font-size: 0.85rem;
+      color: var(--text-secondary, #9ca3af);
+      background: rgba(255, 255, 255, 0.05);
+      padding: 0.3rem 0.75rem;
+      border-radius: 6px;
       border: 1px solid var(--border-color, #333);
-      border-radius: 8px;
-      padding: 0.75rem 1rem;
-      margin-bottom: 1.25rem;
+      margin-bottom: 0.75rem;
     }
-    .editor-controls {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 2.5rem;
-    }
-    .btn-group {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-    }
+
     .content-box {
       background-color: var(--bg-card, #1e1e2e);
       border: 1px solid var(--border-color, #333);
@@ -161,7 +238,13 @@
       margin-bottom: 1rem;
       color: var(--text-primary, #fff);
     }
-    .content-box p, .content-box ul {
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul, .content-box table {
       color: var(--text-secondary, #9ca3af);
       font-size: 0.95rem;
       line-height: 1.6;
@@ -172,6 +255,21 @@
     }
     .content-box li {
       margin-bottom: 0.5rem;
+    }
+    .regex-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+    .regex-table th, .regex-table td {
+      border: 1px solid var(--border-color, #333);
+      padding: 0.75rem;
+      text-align: left;
+    }
+    .regex-table th {
+      background-color: rgba(255, 255, 255, 0.05);
+      color: var(--text-primary, #fff);
     }
     .related-links {
       display: grid;
@@ -211,71 +309,150 @@
 
   <!-- Main Container -->
   <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
-    <!-- Breadcrumb Navigation -->
-    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
-      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
-      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Developer Tools</a> / 
-      <span>Regex Tester</span>
-    </nav>
     
     <!-- Tool Title & Description -->
     <div style="text-align: center; margin-bottom: 2rem;">
       <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online Regex Tester & Debugger</h1>
-      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Test, validate, and debug regular expression patterns in real-time with highlighted string matches.</p>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Evaluate, test, and debug Regular Expression patterns with real-time match highlighting.</p>
     </div>
 
-    <!-- Regex Input Pattern -->
-    <label style="display:block; font-weight:600; margin-bottom: 0.4rem; color: var(--text-primary, #fff);">Regular Expression Pattern:</label>
-    <input type="text" id="regex-pattern" class="editor-input" placeholder="e.g. [a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" autofocus>
+    <!-- Regex Input Control Box -->
+    <div class="content-box" style="margin-bottom: 1.5rem;">
+      <div class="input-group">
+        <label for="regex-pattern" class="input-label">Regular Expression Pattern</label>
+        <div class="regex-input-wrapper">
+          <span>/</span>
+          <input type="text" id="regex-pattern" class="form-control regex-input-field" placeholder="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" value="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+          <span>/</span>
+        </div>
+      </div>
 
-    <!-- Flags -->
-    <div class="flags-box">
-      <span style="font-size: 0.88rem; font-weight: 600; color: var(--text-primary, #fff);">Regex Flags:</span>
-      <label style="font-size: 0.85rem; color: var(--text-primary, #fff); cursor: pointer;">
-        <input type="checkbox" id="flag-g" checked style="accent-color: var(--accent-primary, #3b82f6);"> g (Global)
-      </label>
-      <label style="font-size: 0.85rem; color: var(--text-primary, #fff); cursor: pointer;">
-        <input type="checkbox" id="flag-i" checked style="accent-color: var(--accent-primary, #3b82f6);"> i (Case Insensitive)
-      </label>
-      <label style="font-size: 0.85rem; color: var(--text-primary, #fff); cursor: pointer;">
-        <input type="checkbox" id="flag-m" style="accent-color: var(--accent-primary, #3b82f6);"> m (Multi-line)
-      </label>
+      <!-- Flags Selection -->
+      <div class="flags-options">
+        <label class="flag-checkbox"><input type="checkbox" id="flag-g" checked> <code>g</code> (Global)</label>
+        <label class="flag-checkbox"><input type="checkbox" id="flag-i" checked> <code>i</code> (Case-Insensitive)</label>
+        <label class="flag-checkbox"><input type="checkbox" id="flag-m"> <code>m</code> (Multi-line)</label>
+        <label class="flag-checkbox"><input type="checkbox" id="flag-s"> <code>s</code> (Single line / Dotall)</label>
+        <label class="flag-checkbox"><input type="checkbox" id="flag-u"> <code>u</code> (Unicode)</label>
+      </div>
     </div>
 
-    <!-- Test String Textarea -->
-    <label style="display:block; font-weight:600; margin-bottom: 0.4rem; color: var(--text-primary, #fff);">Test String Input:</label>
-    <textarea id="test-text" class="editor-textarea" placeholder="Enter string text here to test against the regular expression pattern..."></textarea>
+    <!-- Test String Area -->
+    <div class="content-box" style="margin-bottom: 2rem;">
+      <label for="test-string" class="input-label">Test String / Input Text</label>
+      <textarea id="test-string" class="test-area" placeholder="Paste sample text here to test your regular expression pattern...">Hello team! You can reach us at support@microtoolstack.com or sales.dept@company.org. Unmatched text like test@ invalid won't pass.</textarea>
 
-    <!-- Highlighted Match Results -->
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
-      <span style="font-weight:600; color: var(--text-primary, #fff);">Live Match Results:</span>
-      <span style="font-size: 0.85rem; color: #9ca3af;">Total Matches: <strong id="match-count" style="color: var(--accent-primary, #3b82f6);">0</strong></span>
-    </div>
-    <div id="match-output" class="highlight-box">Type a regex pattern and test string above to see highlighted matches.</div>
-
-    <!-- Action Buttons -->
-    <div class="editor-controls">
-      <div class="btn-group">
-        <button id="btn-sample" class="btn btn-primary" style="padding: 0.68rem 1.4rem; cursor: pointer; background: #3b82f6; border: none;">📝 Test Email Sample</button>
-        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.68rem 1.2rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear</button>
+      <!-- Highlight Match Results -->
+      <div style="margin-top: 1.5rem;">
+        <span id="match-count-badge" class="stats-badge">Matches Found: 0</span>
+        <div id="highlight-display" class="highlight-box"></div>
       </div>
     </div>
 
     <!-- SEO Article Content Box 1 -->
     <div class="content-box">
-      <h2>Why Online Regex Testing is Essential for Developers</h2>
-      <p>A <strong>Regular Expression (Regex)</strong> is a sequence of characters defining a search pattern. Developers use Regex for form validation (e.g., verifying emails or passwords), string parsing, and web scraping.</p>
+      <h2>Why Regular Expression Testing is Vital for Web Developers</h2>
+      <p>A <strong>Regular Expression (Regex)</strong> is a powerful sequence of characters defining a search pattern. Developers, data analysts, and system administrators rely on regex for form validation (e.g., validating emails, URLs, or passwords), string parsing, data extraction, and search-and-replace routines in backend databases.</p>
+      <p>However, crafting complex regular expressions without real-time testing can lead to catastrophic backtracking, missed edge cases, or invalid string processing. Our free <strong>Online Regex Tester & Debugger</strong> evaluates expressions dynamically as you type, highlighting matched sub-strings and capturing groups instantly.</p>
     </div>
 
-    <!-- Internal Linking Section -->
+    <!-- SEO Article Content Box 2 -->
     <div class="content-box">
-      <h2>Explore Related Developer Utilities</h2>
-      <p>Enhance your development workflow with our tools:</p>
+      <h2>Essential Regex Cheat Sheet & Syntax Quick Reference</h2>
+      <p>Here is a quick breakdown of common regular expression character classes and quantifiers:</p>
+
+      <table class="regex-table">
+        <thead>
+          <tr>
+            <th>Character / Symbol</th>
+            <th>Meaning & Description</th>
+            <th>Example Match</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>.</code></td>
+            <td>Matches any single character except newline</td>
+            <td><code>a.c</code> matches <code>abc</code>, <code>a1c</code></td>
+          </tr>
+          <tr>
+            <td><code>\d</code> / <code>\D</code></td>
+            <td>Matches any digit (0-9) / Matches non-digit</td>
+            <td><code>\d{3}</code> matches <code>123</code></td>
+          </tr>
+          <tr>
+            <td><code>\w</code> / <code>\W</code></td>
+            <td>Matches any word character (A-Z, a-z, 0-9, _) / Non-word</td>
+            <td><code>\w+</code> matches <code>user_1</code></td>
+          </tr>
+          <tr>
+            <td><code>[a-z]</code></td>
+            <td>Character class matching any letter in range</td>
+            <td><code>[a-c]</code> matches <code>a</code>, <code>b</code>, or <code>c</code></td>
+          </tr>
+          <tr>
+            <td><code>+</code> / <code>*</code> / <code>?</code></td>
+            <td>Matches 1+ / 0+ / 0 or 1 occurrences</td>
+            <td><code>colou?r</code> matches <code>color</code> & <code>colour</code></td>
+          </tr>
+          <tr>
+            <td><code>^</code> / <code>$</code></td>
+            <td>Start of string anchor / End of string anchor</td>
+            <td><code>^Hello</code> matches "Hello" at start</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- SEO Article Content Box 3 -->
+    <div class="content-box">
+      <h2>Features of MicroToolStack's Regex Debugger</h2>
+      <ul>
+        <li><strong>Real-Time Match Highlighting:</strong> Instantly highlights matching patterns inside the test string as you alter your regex query.</li>
+        <li><strong>Full Flag Controls:</strong> Easily toggle global (<code>g</code>), case-insensitive (<code>i</code>), multi-line (<code>m</code>), dotall (<code>s</code>), and unicode (<code>u</code>) flags.</li>
+        <li><strong>100% Client-Side Privacy:</strong> All RegExp evaluations run locally in your browser using JavaScript. No test strings or data are logged remotely.</li>
+        <li><strong>Free & Unlimited Usage:</strong> Perform unlimited pattern debugging with zero registration required.</li>
+      </ul>
+    </div>
+
+    <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
+    <div class="content-box">
+      <h2>Explore Related Developer Tools</h2>
+      <p>Discover our complementary online developer utilities:</p>
       <div class="related-links">
-        <a href="/tools/developer/html-entity-encoder-decoder.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🔒 HTML Entity Encoder</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Encode reserved HTML characters safely.</span>
+        <a href="/tools/developer/base64-encoder-decoder.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🔒 Base64 Encoder / Decoder</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Convert plain text to Base64 or decode Base64 strings.</span>
         </a>
+        <a href="/tools/developer/html-entity-encoder-decoder.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🔒 HTML Entity Encoder / Decoder</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Convert special characters to entities or decode escaped HTML.</span>
+        </a>
+        <a href="/tools/developer/password-hash-generator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🔑 Password Hash Generator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Compute SHA-256, SHA-512, and MD5 hashes securely.</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="content-box">
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What is a Regular Expression?</h3>
+        <p>A Regular Expression (Regex) is a sequence of characters that forms a search pattern used for string matching and text validation.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What does the 'g' flag do in Regex?</h3>
+        <p>The global ('g') flag tells the regex engine to search for all matching occurrences in the test string, rather than stopping after the first match.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is my test text uploaded to any server?</h3>
+        <p>No. All RegExp testing executes locally in your browser session using JavaScript. Your input text remains private.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this Regex Tester tool free?</h3>
+        <p>Yes, MicroToolStack's Regex Tester is completely free with no usage limits or sign-up required.</p>
       </div>
     </div>
 
@@ -292,28 +469,32 @@
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const regexPattern = document.getElementById('regex-pattern');
-      const testText = document.getElementById('test-text');
-      const matchOutput = document.getElementById('match-output');
-      const matchCount = document.getElementById('match-count');
+      const testString = document.getElementById('test-string');
+      const highlightDisplay = document.getElementById('highlight-display');
+      const matchCountBadge = document.getElementById('match-count-badge');
 
       const flagG = document.getElementById('flag-g');
       const flagI = document.getElementById('flag-i');
       const flagM = document.getElementById('flag-m');
-
-      const btnSample = document.getElementById('btn-sample');
-      const btnClear = document.getElementById('btn-clear');
+      const flagS = document.getElementById('flag-s');
+      const flagU = document.getElementById('flag-u');
 
       function escapeHtml(str) {
-        return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        return str
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;")
+          .replace(/'/g, "&#039;");
       }
 
-      function testRegex() {
+      function evaluateRegex() {
         const patternVal = regexPattern.value;
-        const textVal = testText.value;
+        const textVal = testString.value;
 
         if (!patternVal || !textVal) {
-          matchOutput.innerHTML = 'Type a regex pattern and test string above to see highlighted matches.';
-          matchCount.textContent = '0';
+          highlightDisplay.innerHTML = escapeHtml(textVal);
+          matchCountBadge.textContent = 'Matches Found: 0';
           return;
         }
 
@@ -321,70 +502,65 @@
         if (flagG.checked) flags += 'g';
         if (flagI.checked) flags += 'i';
         if (flagM.checked) flags += 'm';
+        if (flagS.checked) flags += 's';
+        if (flagU.checked) flags += 'u';
 
         try {
-          const re = new RegExp(patternVal, flags);
-          const matches = textVal.match(re);
+          const rx = new RegExp(patternVal, flags);
+          let matches = 0;
 
-          if (!matches) {
-            matchOutput.innerHTML = '<span style="color:#ef4444;">No matches found for the pattern.</span>';
-            matchCount.textContent = '0';
-            return;
-          }
+          if (flagG.checked) {
+            const allMatches = Array.from(textVal.matchAll(rx));
+            matches = allMatches.length;
 
-          matchCount.textContent = matches.length.toString();
+            let lastIndex = 0;
+            let highlightedText = '';
 
-          let highlighted = '';
-          let lastIndex = 0;
+            for (const m of allMatches) {
+              const matchIdx = m.index;
+              const matchStr = m[0];
 
-          if (flags.includes('g')) {
-            let match;
-            const reGlobal = new RegExp(patternVal, flags);
-            while ((match = reGlobal.exec(textVal)) !== null) {
-              if (match.index > lastIndex) {
-                highlighted += escapeHtml(textVal.substring(lastIndex, match.index));
-              }
-              highlighted += `<span class="match-highlight">${escapeHtml(match[0])}</span>`;
-              lastIndex = reGlobal.lastIndex;
-              if (match[0].length === 0) reGlobal.lastIndex++;
+              if (matchStr.length === 0) continue; // Prevent infinite loop on empty match
+
+              highlightedText += escapeHtml(textVal.substring(lastIndex, matchIdx));
+              highlightedText += `<span class="match-highlight">${escapeHtml(matchStr)}</span>`;
+              lastIndex = matchIdx + matchStr.length;
             }
-            if (lastIndex < textVal.length) {
-              highlighted += escapeHtml(textVal.substring(lastIndex));
-            }
+
+            highlightedText += escapeHtml(textVal.substring(lastIndex));
+            highlightDisplay.innerHTML = highlightedText;
+            matchCountBadge.textContent = `Matches Found: ${matches}`;
           } else {
-            const firstMatch = matches[0];
-            const idx = textVal.indexOf(firstMatch);
-            highlighted = escapeHtml(textVal.substring(0, idx)) +
-                          `<span class="match-highlight">${escapeHtml(firstMatch)}</span>` +
-                          escapeHtml(textVal.substring(idx + firstMatch.length));
+            const m = rx.exec(textVal);
+            if (m) {
+              matches = 1;
+              const matchIdx = m.index;
+              const matchStr = m[0];
+
+              const before = escapeHtml(textVal.substring(0, matchIdx));
+              const matched = `<span class="match-highlight">${escapeHtml(matchStr)}</span>`;
+              const after = escapeHtml(textVal.substring(matchIdx + matchStr.length));
+
+              highlightDisplay.innerHTML = before + matched + after;
+              matchCountBadge.textContent = 'Matches Found: 1';
+            } else {
+              highlightDisplay.innerHTML = escapeHtml(textVal);
+              matchCountBadge.textContent = 'Matches Found: 0';
+            }
           }
-
-          matchOutput.innerHTML = highlighted;
-
-        } catch (err) {
-          matchOutput.innerHTML = `<span style="color:#ef4444;">Invalid Regular Expression Syntax: ${escapeHtml(err.message)}</span>`;
-          matchCount.textContent = '0';
+        } catch (e) {
+          matchCountBadge.textContent = 'Invalid Regular Expression Syntax';
+          highlightDisplay.innerHTML = escapeHtml(textVal);
         }
       }
 
-      regexPattern.addEventListener('input', testRegex);
-      testText.addEventListener('input', testRegex);
-      flagG.addEventListener('change', testRegex);
-      flagI.addEventListener('change', testRegex);
-      flagM.addEventListener('change', testRegex);
-
-      btnSample.addEventListener('click', function() {
-        regexPattern.value = '[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}';
-        testText.value = 'Contact us at support@microtoolstack.com or sales@example.org for questions.';
-        testRegex();
+      [regexPattern, testString, flagG, flagI, flagM, flagS, flagU].forEach(el => {
+        el.addEventListener('input', evaluateRegex);
+        el.addEventListener('change', evaluateRegex);
       });
 
-      btnClear.addEventListener('click', function() {
-        regexPattern.value = '';
-        testText.value = '';
-        testRegex();
-        regexPattern.focus();
-      });
+      // Initial Evaluation
+      evaluateRegex();
     });
   </script>
 </body>
