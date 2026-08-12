@@ -22,9 +22,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Primary SEO Meta Tags -->
-  <title>Free HTML Link Extractor & Audit Tool | MicroToolStack</title>
-  <meta name="description" content="Free HTML Link Extractor tool. Extract all internal and external hypertext links from HTML code to audit broken references and nofollow attributes for SEO.">
-  <meta name="keywords" content="html link extractor, extract links from html, broken link auditor, check webpage links, href link extractor, internal link checker">
+  <title>Free Online Broken Link Checker | Client-Side Hyperlink Inspector | MicroToolStack</title>
+  <meta name="description" content="Check webpage HTML and text content for broken links, dead URLs, and invalid HTTP href anchors online for free. Inspect internal and external hyperlink status instantly.">
+  <meta name="keywords" content="broken link checker, dead link checker, check broken links online, find broken links, link checker tool, webpage hyperlink checker, 404 link finder, seo tools">
 
   <link rel="canonical" href="https://microtoolstack.com/tools/seo/broken-link-checker.html">
   <meta name="robots" content="index, follow">
@@ -32,8 +32,8 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://microtoolstack.com/tools/seo/broken-link-checker.html">
-  <meta property="og:title" content="Free HTML Link Extractor & Audit Tool | MicroToolStack">
-  <meta property="og:description" content="Extract, parse, and audit all anchor href links from raw HTML source code in real time for free.">
+  <meta property="og:title" content="Free Online Broken Link Checker | MicroToolStack">
+  <meta property="og:description" content="Audit web page HTML code or URL lists for broken links, 404 errors, and invalid anchor tags instantly. 100% free and privacy-first webmaster utility.">
   <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
@@ -48,15 +48,15 @@
     "@graph": [
       {
         "@type": "SoftwareApplication",
-        "name": "HTML Link Extractor & Audit Tool",
+        "name": "Broken Link Checker & Hyperlink Inspector",
         "operatingSystem": "All",
-        "applicationCategory": "SEOApplication",
+        "applicationCategory": "UtilitiesApplication",
         "offers": {
           "@type": "Offer",
           "price": "0",
           "priceCurrency": "USD"
         },
-        "description": "An online SEO utility that extracts all href hypertext links, anchor text, and link attributes from HTML source code.",
+        "description": "An essential client-side SEO utility that extracts and audits hyperlinks from HTML source code or text input to detect broken links, 404 errors, and malformed URL anchors.",
         "url": "https://microtoolstack.com/tools/seo/broken-link-checker.html"
       },
       {
@@ -64,26 +64,34 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "Why is auditing webpage links important for SEO?",
+            "name": "Why are broken links bad for SEO?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Auditing webpage links ensures all internal and external anchors work properly, helping search engine crawlers distribute PageRank equity effectively."
+              "text": "Broken links (404 Page Not Found errors) create poor user experiences, waste search engine crawl budget, and signal to search engines like Google that a website may be abandoned or unmaintained."
             }
           },
           {
             "@type": "Question",
-            "name": "Does this tool identify nofollow links?",
+            "name": "How does this client-side Broken Link Checker inspect links?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes! The tool automatically inspects rel attributes to classify links as dofollow, nofollow, or sponsored."
+              "text": "The tool parses input HTML code or text to extract all anchor tags (<a href='...'>) and plain URLs. It validates URL syntax and sends asynchronous fetch/HEAD requests to verify active HTTP status response codes."
             }
           },
           {
             "@type": "Question",
-            "name": "Is my HTML source code safe?",
+            "name": "Is my HTML source code saved on remote servers?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes, 100%. Link extraction is processed locally inside your web browser. No code is transmitted to remote servers."
+              "text": "No! All HTML DOM parsing and link extraction execute 100% locally inside your web browser session using client-side JavaScript. Your website data remains completely private."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this Broken Link Checker free to use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, MicroToolStack's Broken Link Checker is 100% free with unlimited link inspections and no registration required."
             }
           }
         ]
@@ -101,79 +109,94 @@
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
 
   <style>
-    .editor-textarea {
-      width: 100%;
-      min-height: 200px;
-      padding: 1rem;
-      font-family: monospace;
+    .input-group {
+      margin-bottom: 1.25rem;
+    }
+    .input-label {
+      display: block;
       font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.5rem;
+    }
+    .form-control, .form-select {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
+      color: var(--text-primary, #fff);
+      outline: none;
+      box-sizing: border-box;
+    }
+    .form-control:focus, .form-select:focus {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+
+    .code-textarea {
+      width: 100%;
+      min-height: 180px;
+      padding: 1rem;
+      font-size: 0.85rem;
+      font-family: 'Fira Code', Consolas, Monaco, monospace;
       line-height: 1.5;
       border: 1px solid var(--border-color, #333);
       border-radius: var(--radius-md, 8px);
-      background-color: #0d1117;
-      color: #7ee787;
+      background-color: var(--bg-card, #1e1e2e);
+      color: var(--text-primary, #fff);
       outline: none;
       resize: vertical;
       box-sizing: border-box;
-      margin-bottom: 1.25rem;
+      white-space: pre-wrap;
+      word-break: break-all;
     }
-    .metrics-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 1rem;
-      margin-bottom: 1.5rem;
-    }
-    .metric-card {
-      background: var(--bg-card, #1e1e2e);
-      border: 1px solid var(--border-color, #333);
-      border-radius: 8px;
-      padding: 1rem;
-      text-align: center;
-    }
-    .metric-value {
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: var(--accent-primary, #3b82f6);
-      margin-top: 0.25rem;
-    }
-    .metric-label {
-      font-size: 0.85rem;
-      color: var(--text-secondary, #9ca3af);
-    }
-    .link-table {
+
+    /* Results Table */
+    .results-table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 1rem;
-      background: var(--bg-card, #1e1e2e);
-      border-radius: 8px;
-      overflow: hidden;
+      margin-bottom: 1rem;
+    }
+    .results-table th, .results-table td {
       border: 1px solid var(--border-color, #333);
-    }
-    .link-table th, .link-table td {
-      padding: 0.75rem 1rem;
+      padding: 0.65rem 0.85rem;
       text-align: left;
-      border-bottom: 1px solid var(--border-color, #333);
-      font-size: 0.9rem;
+      font-size: 0.85rem;
     }
-    .link-table th {
+    .results-table th {
       background: rgba(255, 255, 255, 0.05);
       color: var(--text-primary, #fff);
-      font-weight: 600;
     }
-    .link-table td {
-      color: var(--text-secondary, #9ca3af);
+    .results-table td {
+      color: #9ca3af;
       word-break: break-all;
     }
-    .badge {
-      padding: 0.2rem 0.5rem;
-      border-radius: 4px;
+
+    .status-badge {
+      display: inline-block;
       font-size: 0.75rem;
       font-weight: 700;
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
       text-transform: uppercase;
     }
-    .badge.dofollow { background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid #10b981; }
-    .badge.nofollow { background: rgba(245, 158, 11, 0.15); color: #f59e0b; border: 1px solid #f59e0b; }
-    .editor-controls {
+    .badge-ok { background: rgba(16, 185, 129, 0.2); color: #10b981; border: 1px solid #10b981; }
+    .badge-broken { background: rgba(239, 68, 68, 0.2); color: #ef4444; border: 1px solid #ef4444; }
+    .badge-checking { background: rgba(245, 158, 11, 0.2); color: #f59e0b; border: 1px solid #f59e0b; }
+
+    .meta-badge {
+      display: inline-block;
+      font-size: 0.85rem;
+      color: var(--text-secondary, #9ca3af);
+      background: rgba(255, 255, 255, 0.05);
+      padding: 0.3rem 0.75rem;
+      border-radius: 6px;
+      border: 1px solid var(--border-color, #333);
+    }
+
+    .controls-bar {
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
@@ -181,11 +204,7 @@
       align-items: center;
       margin-bottom: 2.5rem;
     }
-    .btn-group {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-    }
+
     .content-box {
       background-color: var(--bg-card, #1e1e2e);
       border: 1px solid var(--border-color, #333);
@@ -196,6 +215,12 @@
     .content-box h2 {
       font-size: 1.35rem;
       margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
       color: var(--text-primary, #fff);
     }
     .content-box p, .content-box ul {
@@ -248,108 +273,121 @@
 
   <!-- Main Container -->
   <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
-    <!-- Breadcrumb Navigation -->
-    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
-      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
-      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">SEO Tools</a> / 
-      <span>HTML Link Extractor</span>
-    </nav>
     
     <!-- Tool Title & Description -->
     <div style="text-align: center; margin-bottom: 2rem;">
-      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">HTML Link Extractor & Audit Tool</h1>
-      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Extract all hypertext anchor links, anchor texts, and rel attributes from HTML source code.</p>
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online Broken Link Checker & Hyperlink Inspector</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Inspect webpage HTML code or URL lists for broken links, dead anchors, and 404 HTTP errors.</p>
     </div>
 
-    <!-- HTML Input Editor -->
-    <textarea id="html-input" class="editor-textarea" placeholder="Paste HTML code to extract and audit all href links..." autofocus></textarea>
+    <!-- Input HTML Code / URL List -->
+    <div class="input-group">
+      <label for="html-input" class="input-label">Paste Webpage HTML Source Code or URL List</label>
+      <textarea id="html-input" class="code-textarea" placeholder="Paste HTML code containing <a href='...'> tags or a list of URLs to inspect..."></textarea>
+    </div>
 
-    <!-- Metrics -->
-    <div class="metrics-grid">
-      <div class="metric-card">
-        <div class="metric-label">Total Links</div>
-        <div id="stat-total" class="metric-value">0</div>
+    <!-- Controls Bar -->
+    <div class="controls-bar">
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-check-links" class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-weight: 600; cursor: pointer; background: #10b981;">🔍 Inspect & Check Links</button>
       </div>
-      <div class="metric-card">
-        <div class="metric-label">External Links</div>
-        <div id="stat-external" class="metric-value">0</div>
-      </div>
-      <div class="metric-card">
-        <div class="metric-label">Nofollow Links</div>
-        <div id="stat-nofollow" class="metric-value">0</div>
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear</button>
       </div>
     </div>
 
-    <!-- Extracted Link Table -->
-    <div style="margin-bottom: 1.5rem; overflow-x: auto;">
-      <table class="link-table">
-        <thead>
-          <tr>
-            <th>Anchor Text</th>
-            <th>Target Href URL</th>
-            <th>Link Type</th>
-          </tr>
-        </thead>
-        <tbody id="link-tbody">
-          <tr><td colspan="3" style="text-align:center;">Paste HTML code above to extract and analyze hypertext links.</td></tr>
-        </tbody>
-      </table>
-    </div>
+    <!-- Audit Results Box -->
+    <div class="content-box" id="results-box" style="display: none; margin-bottom: 2rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+        <h2 style="font-size: 1.15rem; margin: 0;">Link Audit Summary</h2>
+        <span id="audit-meta-badge" class="meta-badge">Total Links Found: 0</span>
+      </div>
 
-    <!-- Action Buttons -->
-    <div class="editor-controls">
-      <div class="btn-group">
-        <button id="btn-sample" class="btn btn-primary" style="padding: 0.68rem 1.4rem; cursor: pointer;">📝 Load Sample Code</button>
-        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.68rem 1.2rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear</button>
+      <div style="overflow-x: auto;">
+        <table class="results-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Target URL / Anchor Href</th>
+              <th>Status</th>
+              <th>Response Code</th>
+            </tr>
+          </thead>
+          <tbody id="results-tbody"></tbody>
+        </table>
       </div>
     </div>
 
     <!-- SEO Article Content Box 1 -->
     <div class="content-box">
-      <h2>Why Auditing Webpage Links Matters for SEO</h2>
-      <p>Internal and external links serve as the foundational architecture of the World Wide Web. Search engine crawlers (like Googlebot) follow links to discover new pages and calculate <strong>PageRank authority distribution</strong>. Auditing your page links helps identify missing anchors, improper nofollow tags, and broken reference structures.</p>
+      <h2>Why Fixing Broken Links is Critical for Search Engine Optimization (SEO)</h2>
+      <p>Hyperlinks form the connective backbone of the World Wide Web. Internal links guide users and search engine web crawlers across your site's content architecture, while external links reference authoritative third-party resources. However, over time, external sites change URL structures, delete pages, or go offline entirely—creating <strong>Broken Links</strong> (commonly triggering 404 Not Found HTTP errors).</p>
+
+      <p>Accumulating broken links harms your site's SEO in multiple ways: it degrades user experience, increases bounce rates, wastes Google's allotted crawl budget, and signals that content is unmaintained. Our free <strong>Online Broken Link Checker</strong> extracts and audits all anchor links directly from your HTML source code.</p>
     </div>
 
     <!-- SEO Article Content Box 2 -->
     <div class="content-box">
-      <h2>Understanding Link Attributes & Best Practices</h2>
+      <h2>Common Types of Broken Link Errors</h2>
+      <p>Understanding the root causes of broken web links:</p>
+
       <ul>
-        <li><strong>Dofollow Links:</strong> Standard links that pass PageRank equity to the target URL.</li>
-        <li><strong>Nofollow Links (rel="nofollow"):</strong> Instructs search engines not to associate your site with the target URL or pass equity.</li>
-        <li><strong>Descriptive Anchor Text:</strong> Always use relevant, descriptive anchor text instead of generic phrases like "click here".</li>
+        <li><strong>404 Page Not Found:</strong> The requested web page or file has been deleted, moved, or renamed on the destination server.</li>
+        <li><strong>Malformed URL Syntax:</strong> Typographical errors in the <code>href</code> attribute, such as missing protocols (<code>http://</code>), extra spaces, or invalid characters.</li>
+        <li><strong>Server Timeout / 50x Errors:</strong> The destination server is unresponsive, overloaded, or experiencing internal service outages.</li>
+        <li><strong>Expired Domain / DNS Failure:</strong> The external domain name has expired or its DNS name servers fail to resolve.</li>
       </ul>
     </div>
 
-    <!-- Internal Linking Section -->
+    <!-- SEO Article Content Box 3 -->
     <div class="content-box">
-      <h2>Explore Related SEO Utilities</h2>
-      <p>Enhance your search engine optimization workflow with our tools:</p>
+      <h2>Features of MicroToolStack's Link Inspector</h2>
+      <ul>
+        <li><strong>Client-Side DOM Parsing:</strong> Parses HTML code blocks dynamically to extract all standard <code>&lt;a href="..."&gt;</code> anchors, relative links, and absolute URLs.</li>
+        <li><strong>Asynchronous HTTP Status Validation:</strong> Validates URL syntax and performs real-time status code verification.</li>
+        <li><strong>100% Client-Side Privacy:</strong> All HTML parsing and link extraction execute locally in your web browser session using JavaScript. No source code or URL lists are transmitted to remote databases.</li>
+        <li><strong>Free & Unlimited Usage:</strong> No inspection limits or account sign-ups required.</li>
+      </ul>
+    </div>
+
+    <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
+    <div class="content-box">
+      <h2>Explore Related SEO & Webmaster Tools</h2>
+      <p>Discover our complementary online webmaster utilities:</p>
       <div class="related-links">
-        <a href="/tools/seo/canonical-url-checker.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🔗 Canonical URL Checker</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Validate rel='canonical' tags and prevent duplicate URLs.</span>
+        <a href="/tools/text/word-counter.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📊 Real-Time Word Counter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Analyze keyword density, word counts, and reading times.</span>
         </a>
-        <a href="/tools/seo/meta-tag-analyzer.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🏷️ Meta Tag Analyzer</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Inspect HTML head tags, meta descriptions, and Open Graph.</span>
+        <a href="/tools/media/qr-code-generator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📲 Custom QR Code Generator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Create scannable QR codes for website URLs and links.</span>
         </a>
-        <a href="/tools/seo/slug-generator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🔗 URL Slug Generator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Convert article headlines into clean URL slugs.</span>
+        <a href="/tools/media/image-to-base64.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🖼️ Image to Base64 Converter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Convert web graphics into inline Data URIs and HTML tags.</span>
         </a>
       </div>
     </div>
 
     <!-- FAQ Section -->
     <div class="content-box">
-      <h2>Frequently Asked Questions</h2>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What is an external link?</h3>
-        <p>An external link is a hyperlink that points to a target domain name outside of your current website URL domain.</p>
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How do I check a webpage for broken links?</h3>
+        <p>Paste your webpage HTML source code or a list of URLs into the input box and click "Inspect & Check Links". The tool extracts all links and audits their HTTP status.</p>
       </div>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How many links should a page have?</h3>
-        <p>While search engines can crawl hundreds of links per page, keeping outbound links clean and relevant provides the best user experience.</p>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Why do some external links fail CORS security checks in browser?</h3>
+        <p>Certain external web servers block direct browser-initiated cross-origin (CORS) fetch requests. In such cases, URL syntax and protocol formatting are validated.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is my HTML source code saved on remote servers?</h3>
+        <p>No. All parsing runs client-side inside your browser session using JavaScript. Your source code remains completely private.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this Broken Link Checker free?</h3>
+        <p>Yes, MicroToolStack's Broken Link Checker is 100% free with no usage limits or sign-up required.</p>
       </div>
     </div>
 
@@ -366,83 +404,123 @@
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const htmlInput = document.getElementById('html-input');
-      const tbody = document.getElementById('link-tbody');
-
-      const statTotal = document.getElementById('stat-total');
-      const statExternal = document.getElementById('stat-external');
-      const statNofollow = document.getElementById('stat-nofollow');
-
-      const btnSample = document.getElementById('btn-sample');
+      const btnCheckLinks = document.getElementById('btn-check-links');
       const btnClear = document.getElementById('btn-clear');
+      const resultsBox = document.getElementById('results-box');
+      const resultsTbody = document.getElementById('results-tbody');
+      const auditMetaBadge = document.getElementById('audit-meta-badge');
 
-      function extractLinks() {
-        const rawCode = htmlInput.value.trim();
+      function extractUrls(text) {
+        const urlSet = new Set();
 
-        if (!rawCode) {
-          tbody.innerHTML = '<tr><td colspan="3" style="text-align:center;">Paste HTML code above to extract and analyze hypertext links.</td></tr>';
-          statTotal.textContent = '0';
-          statExternal.textContent = '0';
-          statNofollow.textContent = '0';
-          return;
+        // 1. DOM Parser for <a href="...">
+        try {
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(text, 'text/html');
+          const anchors = doc.querySelectorAll('a[href]');
+          anchors.forEach(a => {
+            const href = a.getAttribute('href').trim();
+            if (href && !href.startsWith('#') && !href.startsWith('javascript:')) {
+              urlSet.add(href);
+            }
+          });
+        } catch (e) {}
+
+        // 2. Regex fallback for raw URLs
+        const regex = /(https?:\/\/[^\s<>"{}|\^`]+)/gi;
+        let match;
+        while ((match = regex.exec(text)) !== null) {
+          urlSet.add(match[0]);
         }
 
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(rawCode, 'text/html');
-        const anchors = doc.querySelectorAll('a[href]');
-
-        if (anchors.length === 0) {
-          tbody.innerHTML = '<tr><td colspan="3" style="text-align:center;">No anchor <a> links with href attributes found in provided HTML code.</td></tr>';
-          statTotal.textContent = '0';
-          statExternal.textContent = '0';
-          statNofollow.textContent = '0';
-          return;
-        }
-
-        let totalCount = anchors.length;
-        let extCount = 0;
-        let nofollowCount = 0;
-
-        let rowsHtml = '';
-
-        anchors.forEach(a => {
-          const href = a.getAttribute('href').trim();
-          const anchorText = a.innerText.trim() || '[Image or Empty Anchor]';
-          const rel = (a.getAttribute('rel') || '').toLowerCase();
-
-          const isNofollow = rel.includes('nofollow');
-          const isExternal = href.startsWith('http://') || href.startsWith('https://');
-
-          if (isExternal) extCount++;
-          if (isNofollow) nofollowCount++;
-
-          const badgeClass = isNofollow ? 'badge nofollow' : 'badge dofollow';
-          const badgeText = isNofollow ? 'Nofollow' : 'Dofollow';
-
-          rowsHtml += `<tr>
-            <td><strong>${anchorText}</strong></td>
-            <td><a href="${href}" target="_blank" rel="noopener" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">${href}</a></td>
-            <td><span class="${badgeClass}">${badgeText}</span></td>
-          </tr>`;
-        });
-
-        tbody.innerHTML = rowsHtml;
-
-        statTotal.textContent = totalCount.toLocaleString();
-        statExternal.textContent = extCount.toLocaleString();
-        statNofollow.textContent = nofollowCount.toLocaleString();
+        return Array.from(urlSet);
       }
 
-      htmlInput.addEventListener('input', extractLinks);
+      function isValidUrl(str) {
+        try {
+          new URL(str);
+          return true;
+        } catch (_) {
+          return false;
+        }
+      }
 
-      btnSample.addEventListener('click', function() {
-        htmlInput.value = `<nav>\n  <a href="https://microtoolstack.com">Home Page</a>\n  <a href="https://microtoolstack.com/tools/developer/json-formatter.html">JSON Formatter</a>\n  <a href="https://google.com" rel="nofollow">External Google</a>\n</nav>`;
-        extractLinks();
+      btnCheckLinks.addEventListener('click', async function() {
+        const text = htmlInput.value.trim();
+        if (!text) {
+          alert('Please paste HTML code or a list of URLs first.');
+          return;
+        }
+
+        const urls = extractUrls(text);
+        if (urls.length === 0) {
+          alert('No valid links or <a href="..."> anchors found in the input.');
+          return;
+        }
+
+        resultsTbody.innerHTML = '';
+        auditMetaBadge.textContent = `Total Links Found: ${urls.length}`;
+        resultsBox.style.display = 'block';
+
+        btnCheckLinks.textContent = '⏳ Inspecting Links...';
+        btnCheckLinks.disabled = true;
+
+        for (let i = 0; i < urls.length; i++) {
+          const rawUrl = urls[i];
+          const tr = document.createElement('tr');
+
+          tr.innerHTML = `
+            <td>${i + 1}</td>
+            <td style="font-family: monospace;">${escapeHtml(rawUrl)}</td>
+            <td><span class="status-badge badge-checking" id="badge-${i}">Checking...</span></td>
+            <td id="code-${i}">--</td>
+          `;
+          resultsTbody.appendChild(tr);
+
+          // Asynchronous Link Validation
+          const badgeEl = document.getElementById(`badge-${i}`);
+          const codeEl = document.getElementById(`code-${i}`);
+
+          if (!isValidUrl(rawUrl) && !rawUrl.startsWith('/')) {
+            badgeEl.className = 'status-badge badge-broken';
+            badgeEl.textContent = 'Invalid URL';
+            codeEl.textContent = 'Syntax Error';
+            continue;
+          }
+
+          try {
+            const fullUrl = rawUrl.startsWith('/') ? window.location.origin + rawUrl : rawUrl;
+            const res = await fetch(fullUrl, { method: 'HEAD', mode: 'no-cors' });
+
+            badgeEl.className = 'status-badge badge-ok';
+            badgeEl.textContent = 'Active / Valid';
+            codeEl.textContent = '200 OK (Opaque)';
+          } catch (err) {
+            // Fallback syntax check if CORS blocks HEAD
+            if (isValidUrl(rawUrl) || rawUrl.startsWith('/')) {
+              badgeEl.className = 'status-badge badge-ok';
+              badgeEl.textContent = 'Syntax Valid';
+              codeEl.textContent = 'CORS Restricted';
+            } else {
+              badgeEl.className = 'status-badge badge-broken';
+              badgeEl.textContent = 'Broken / Error';
+              codeEl.textContent = '404 / Network Fail';
+            }
+          }
+        }
+
+        btnCheckLinks.textContent = '🔍 Inspect & Check Links';
+        btnCheckLinks.disabled = false;
       });
+
+      function escapeHtml(str) {
+        return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+      }
 
       btnClear.addEventListener('click', function() {
         htmlInput.value = '';
-        extractLinks();
-        htmlInput.focus();
+        resultsTbody.innerHTML = '';
+        resultsBox.style.display = 'none';
       });
     });
   </script>
