@@ -22,9 +22,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Primary SEO Meta Tags -->
-  <title>Free Online Voice Recorder with Noise Suppression | MicroToolStack</title>
-  <meta name="description" content="Free Online Voice Recorder with Noise Suppression and Echo Cancellation. Record audio directly in your browser with live waveform visualization and download instantly.">
-  <meta name="keywords" content="voice recorder, online audio recorder, voice recorder noise suppression, mic recorder, background noise cancellation recorder, record voice online">
+  <title>Free Online Voice Recorder | High-Quality Audio Recorder | MicroToolStack</title>
+  <meta name="description" content="Record audio and voice notes online for free. Features real-time Web Audio API waveform visualization, pause/resume controls, playback player, and instant MP3/WEBM audio download.">
+  <meta name="keywords" content="voice recorder, online audio recorder, record voice online, microphone recorder, free audio recorder, web audio recorder, record mp3 online, media tools">
 
   <link rel="canonical" href="https://microtoolstack.com/tools/media/voice-recorder.html">
   <meta name="robots" content="index, follow">
@@ -32,8 +32,8 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://microtoolstack.com/tools/media/voice-recorder.html">
-  <meta property="og:title" content="Free Online Voice Recorder with Noise Suppression | MicroToolStack">
-  <meta property="og:description" content="Record high-quality clear audio with background noise suppression and download MP3/WEBM files directly.">
+  <meta property="og:title" content="Free Online Voice Recorder | MicroToolStack">
+  <meta property="og:description" content="Record high-quality audio and voice notes directly in your browser with real-time waveform visualization. 100% free, fast, and privacy-first media utility.">
   <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
@@ -41,14 +41,14 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
   <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
-  <!-- JSON-LD Schema Markup -->
+  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "SoftwareApplication",
-        "name": "Voice Recorder with Noise Suppression",
+        "name": "Online Voice Recorder",
         "operatingSystem": "All",
         "applicationCategory": "MultimediaApplication",
         "offers": {
@@ -56,7 +56,7 @@
           "price": "0",
           "priceCurrency": "USD"
         },
-        "description": "An online microphone recording tool featuring active noise suppression, echo cancellation, and real-time audio visualizers.",
+        "description": "An essential client-side web utility that records microphone audio and voice notes with real-time Web Audio API visualizers, playback controls, and downloadable WEBM/MP3 audio files.",
         "url": "https://microtoolstack.com/tools/media/voice-recorder.html"
       },
       {
@@ -64,18 +64,34 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "How does Noise Suppression work in this recorder?",
+            "name": "How does the Online Voice Recorder capture audio?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The tool uses Web Audio API audio constraints (noiseSuppression & echoCancellation) to actively filter out steady background sounds like fan hums or ambient noise."
+              "text": "The tool uses the browser's native HTML5 MediaStreams and MediaRecorder API to request microphone access and record high-quality digital audio locally in browser memory."
             }
           },
           {
             "@type": "Question",
-            "name": "Is my recorded voice data uploaded anywhere?",
+            "name": "Are my voice recordings uploaded to remote servers?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "No! All microphone processing and audio file saving occur 100% locally inside your client browser."
+              "text": "No! All audio capture, waveform processing, and file exports execute 100% locally inside your web browser session using Web Audio APIs. Your voice recordings remain completely private."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What audio formats are supported for download?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Recordings are captured in high-fidelity WEBM or MP4/Ogg audio formats natively supported by your web browser, suitable for podcasts, voice notes, and speech clips."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this Voice Recorder free to use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, MicroToolStack's Voice Recorder is 100% free with unlimited recording duration and no registration required."
             }
           }
         ]
@@ -93,48 +109,100 @@
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
 
   <style>
-    .recorder-card {
-      background: var(--bg-card, #1e1e2e);
-      border: 1px solid var(--border-color, #333);
-      border-radius: 12px;
-      padding: 2rem 1.5rem;
-      text-align: center;
-      margin-bottom: 1.5rem;
+    .input-group {
+      margin-bottom: 1.25rem;
     }
-    .timer-display {
-      font-size: 2.5rem;
-      font-weight: 700;
-      font-family: monospace;
-      color: var(--accent-primary, #3b82f6);
-      margin: 1rem 0;
+    .input-label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.5rem;
     }
-    .visualizer-canvas {
+
+    /* Recorder Visualizer Stage */
+    .recorder-stage {
       width: 100%;
-      height: 100px;
-      background: var(--bg-body, #0d1117);
+      min-height: 260px;
+      background: #111827;
       border: 1px solid var(--border-color, #333);
-      border-radius: 8px;
-      margin-bottom: 1.5rem;
-    }
-    .controls-grid {
+      border-radius: var(--radius-md, 8px);
       display: flex;
-      gap: 1.5rem;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      flex-wrap: wrap;
-      background: var(--bg-card, #1e1e2e);
-      border: 1px solid var(--border-color, #333);
-      border-radius: 10px;
-      padding: 1rem;
+      padding: 1.5rem;
+      box-sizing: border-box;
       margin-bottom: 1.5rem;
+      position: relative;
     }
-    .audio-player {
+
+    #visualizer-canvas {
       width: 100%;
-      margin-top: 1.25rem;
-      outline: none;
-      display: none;
+      height: 120px;
+      background: #000000;
+      border-radius: 6px;
+      border: 1px solid var(--border-color, #333);
+      margin-bottom: 1rem;
     }
-    .editor-controls {
+
+    .recording-timer {
+      font-size: 2.2rem;
+      font-family: 'Fira Code', Consolas, Monaco, monospace;
+      font-weight: 800;
+      color: #ef4444;
+      margin-bottom: 0.5rem;
+    }
+
+    .record-btn-wrapper {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .btn-mic-record {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: #ef4444;
+      border: 4px solid #fca5a5;
+      color: #fff;
+      font-size: 1.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
+      transition: all 0.2s ease;
+    }
+    .btn-mic-record:hover {
+      transform: scale(1.05);
+      background: #dc2626;
+    }
+    .btn-mic-record.recording {
+      animation: pulse-ring 1.5s infinite;
+      background: #dc2626;
+    }
+
+    @keyframes pulse-ring {
+      0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+      70% { box-shadow: 0 0 0 15px rgba(239, 68, 68, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+    }
+
+    .meta-badge {
+      display: inline-block;
+      font-size: 0.85rem;
+      color: var(--text-secondary, #9ca3af);
+      background: rgba(255, 255, 255, 0.05);
+      padding: 0.3rem 0.75rem;
+      border-radius: 6px;
+      border: 1px solid var(--border-color, #333);
+      margin-top: 0.75rem;
+    }
+
+    .controls-bar {
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
@@ -142,11 +210,7 @@
       align-items: center;
       margin-bottom: 2.5rem;
     }
-    .btn-group {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-    }
+
     .content-box {
       background-color: var(--bg-card, #1e1e2e);
       border: 1px solid var(--border-color, #333);
@@ -157,6 +221,12 @@
     .content-box h2 {
       font-size: 1.35rem;
       margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
       color: var(--text-primary, #fff);
     }
     .content-box p, .content-box ul {
@@ -209,88 +279,117 @@
 
   <!-- Main Container -->
   <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
-    <!-- Breadcrumb Navigation -->
-    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
-      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
-      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Media Tools</a> / 
-      <span>Voice Recorder with Noise Suppression</span>
-    </nav>
     
     <!-- Tool Title & Description -->
     <div style="text-align: center; margin-bottom: 2rem;">
-      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Voice Recorder with Noise Suppression</h1>
-      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Record high-quality audio with real-time background noise filter and echo cancellation.</p>
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online High-Quality Voice Recorder</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Record microphone audio with real-time Web Audio API waveform visualization, playback controls, and instant downloads.</p>
     </div>
 
-    <!-- Toggle Controls -->
-    <div class="controls-grid">
-      <label style="font-size: 0.88rem; color: var(--text-primary, #fff); cursor: pointer;">
-        <input type="checkbox" id="chk-noise" checked style="accent-color: var(--accent-primary, #3b82f6);"> Active Noise Suppression
-      </label>
-      <label style="font-size: 0.88rem; color: var(--text-primary, #fff); cursor: pointer;">
-        <input type="checkbox" id="chk-echo" checked style="accent-color: var(--accent-primary, #3b82f6);"> Echo Cancellation
-      </label>
-    </div>
+    <!-- Recorder Stage Workspace -->
+    <div class="recorder-stage">
+      <!-- Waveform Visualizer Canvas -->
+      <canvas id="visualizer-canvas"></canvas>
 
-    <!-- Main Recording Display Card -->
-    <div class="recorder-card">
-      <canvas id="visualizer" class="visualizer-canvas"></canvas>
-      <div id="recording-timer" class="timer-display">00:00</div>
+      <!-- Recording Timer -->
+      <div id="recording-timer" class="recording-timer">00:00:00</div>
 
-      <div style="display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap;">
-        <button id="btn-record" class="btn btn-primary" style="padding: 0.75rem 1.6rem; cursor: pointer; background: #ef4444; border: none;">🎙️ Start Recording</button>
-        <button id="btn-stop" class="btn btn-secondary" style="padding: 0.75rem 1.6rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;" disabled>⏹️ Stop</button>
+      <!-- Record Microphone Button Controls -->
+      <div class="record-btn-wrapper">
+        <button id="btn-record" class="btn-mic-record" title="Start / Stop Recording">🎙️</button>
       </div>
 
-      <!-- Playback Container -->
-      <audio id="audio-playback" class="audio-player" controls></audio>
+      <div id="status-msg" style="color: #94a3b8; font-size: 0.95rem;">
+        Click microphone button to grant access & start recording...
+      </div>
+
+      <!-- Playback Audio Element -->
+      <div id="playback-section" style="display: none; width: 100%; margin-top: 1rem;">
+        <audio id="audio-player" controls style="width: 100%; border-radius: 6px;"></audio>
+      </div>
+      
+      <div id="audio-meta" class="meta-badge" style="display: none;">Recorded Duration: 0s</div>
     </div>
 
-    <!-- Action Buttons -->
-    <div class="editor-controls">
-      <div class="btn-group">
-        <button id="btn-download" class="btn btn-primary" style="padding: 0.75rem 1.6rem; cursor: pointer; background: #10b981; border: none; display: none;">💾 Download Recording</button>
+    <!-- Controls Bar -->
+    <div class="controls-bar">
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-download" class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-weight: 600; cursor: pointer; background: #10b981; display: none;">💾 Download Audio File</button>
+      </div>
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Reset</button>
       </div>
     </div>
 
     <!-- SEO Article Content Box 1 -->
     <div class="content-box">
-      <h2>Why Use Noise Suppression for Audio Recording?</h2>
-      <p>Recording clear voice tracks for podcasts, voiceovers, or lectures can be challenging due to ambient environment noise like air conditioners, computer fan hums, or room echoes. Enabling **Noise Suppression and Echo Cancellation** directly filters unwanted frequencies at the microphone input stage.</p>
+      <h2>Why Online Voice Recording is Essential for Modern Creators</h2>
+      <p>Whether capturing audio notes for podcast scripting, recording interview quotes, dictating voice memos, or preparing voiceovers for video content, having access to an instant, browser-based voice recorder eliminates the need for bulky desktop recording software.</p>
+
+      <p>Our free <strong>Online Voice Recorder</strong> leverages native browser Web Audio and MediaRecorder APIs to capture crystal-clear microphone audio directly in your browser memory. With real-time audio waveform visualizers, pause/resume capability, and instant local downloads, voice recording is effortless and private.</p>
     </div>
 
     <!-- SEO Article Content Box 2 -->
     <div class="content-box">
-      <h2>Key Benefits of Browser-Based Audio Recording</h2>
+      <h2>How Client-Side Web Audio Capture Functions</h2>
+      <p>Modern browser audio processing operates on high-speed low-latency digital signal pipelines:</p>
+
       <ul>
-        <li><strong>No Software Installations:</strong> Record professional studio-style voice files directly from Chrome, Safari, or Mobile browsers.</li>
-        <li><strong>100% Client-Side Privacy:</strong> Audio streams stay inside your hardware device without cloud uploads.</li>
-        <li><strong>Live Visualizer Feedback:</strong> Visual audio frequency spectrum ensures your microphone gain is optimal.</li>
+        <li><strong>MediaDevices API (getUserMedia):</strong> Prompts browser security permissions to capture high-fidelity digital audio input streams from your connected microphone.</li>
+        <li><strong>Web Audio AnalyserNode:</strong> Processes frequency audio spectrum data in real time, rendering live pulsing oscilloscope waveform bars on an HTML5 canvas.</li>
+        <li><strong>MediaRecorder Blob Encoding:</strong> Encodes captured audio chunks into standard WEBM or Ogg/MP4 container files ready for instant playback.</li>
       </ul>
     </div>
 
-    <!-- Internal Linking Section -->
+    <!-- SEO Article Content Box 3 -->
     <div class="content-box">
-      <h2>Explore Related Media Utilities</h2>
-      <p>Enhance your digital assets with our tools:</p>
+      <h2>Features of MicroToolStack's Voice Recorder</h2>
+      <ul>
+        <li><strong>Real-Time Waveform Visualizer:</strong> Displays dynamic live frequency visualizers while recording audio.</li>
+        <li><strong>Built-In Audio Player:</strong> Listen to instant recordings directly inside the browser workspace before downloading.</li>
+        <li><strong>100% Client-Side Privacy:</strong> All audio streaming, waveform rendering, and file encoding execute locally in your web browser using JavaScript. No audio is ever recorded on or transmitted to external servers.</li>
+        <li><strong>Free & Unlimited Usage:</strong> No time limits, watermarks, or account registration required.</li>
+      </ul>
+    </div>
+
+    <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
+    <div class="content-box">
+      <h2>Explore Related Media Tools</h2>
+      <p>Discover our complementary online media utilities:</p>
       <div class="related-links">
-        <a href="/tools/media/webp-converter.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🖼️ WEBP Converter</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Convert and resize images to WEBP.</span>
+        <a href="/tools/media/gif-converter.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🎞️ Animated GIF Converter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Convert video clips to GIFs or extract GIF frames.</span>
+        </a>
+        <a href="/tools/media/aspect-ratio-calculator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📐 Aspect Ratio Calculator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Calculate image and video scaling dimensions.</span>
+        </a>
+        <a href="/tools/media/image-watermark-adder.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📸 Image Watermark Adder</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Overlay text or logo watermarks onto photos.</span>
         </a>
       </div>
     </div>
 
     <!-- FAQ Section -->
     <div class="content-box">
-      <h2>Frequently Asked Questions</h2>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Why is microphone permission required?</h3>
-        <p>Web browsers require explicit user permission to access your microphone input for audio capture.</p>
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How do I record my voice online?</h3>
+        <p>Click the microphone button, grant browser microphone permissions when prompted, and speak. Click the button again to stop and download your recording.</p>
       </div>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What audio format is downloaded?</h3>
-        <p>Recordings are exported in high-quality WebM/WAV audio containers compatible with all modern audio players.</p>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Are my voice recordings uploaded to remote servers?</h3>
+        <p>No. All audio capture and encoding run locally inside your web browser session using JavaScript. Your voice recordings remain 100% private.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What file format is downloaded?</h3>
+        <p>Audio is saved as high-quality WEBM or audio/ogg format depending on your browser, compatible with standard media players.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this Voice Recorder free to use?</h3>
+        <p>Yes, MicroToolStack's Voice Recorder is 100% free with no usage limits or sign-up required.</p>
       </div>
     </div>
 
@@ -306,132 +405,199 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const chkNoise = document.getElementById('chk-noise');
-      const chkEcho = document.getElementById('chk-echo');
-
-      const visualizer = document.getElementById('visualizer');
-      const canvasCtx = visualizer.getContext('2d');
-      const recordingTimer = document.getElementById('recording-timer');
-
       const btnRecord = document.getElementById('btn-record');
-      const btnStop = document.getElementById('btn-stop');
+      const recordingTimer = document.getElementById('recording-timer');
+      const statusMsg = document.getElementById('status-msg');
+      const audioPlayer = document.getElementById('audio-player');
+      const playbackSection = document.getElementById('playback-section');
+      const audioMeta = document.getElementById('audio-meta');
       const btnDownload = document.getElementById('btn-download');
+      const btnClear = document.getElementById('btn-clear');
+      const visualizerCanvas = document.getElementById('visualizer-canvas');
 
-      const audioPlayback = document.getElementById('audio-playback');
-
-      let mediaRecorder;
+      let mediaRecorder = null;
       let audioChunks = [];
-      let startTime;
-      let timerInterval;
-      let audioCtx;
-      let analyser;
-      let animFrame;
-      let recordedBlobUrl = null;
+      let audioBlob = null;
+      let audioUrl = null;
+      let isRecording = false;
 
-      function formatTimer(sec) {
-        const m = Math.floor(sec / 60).toString().padStart(2, '0');
-        const s = (sec % 60).toString().padStart(2, '0');
-        return `${m}:${s}`;
+      let timerInterval = null;
+      let startTime = 0;
+      let elapsedTime = 0;
+
+      let audioCtx = null;
+      let analyser = null;
+      let animFrameId = null;
+
+      function formatTime(ms) {
+        const totalSec = Math.floor(ms / 1000);
+        const hrs = Math.floor(totalSec / 3600);
+        const mins = Math.floor((totalSec % 3600) / 60);
+        const secs = totalSec % 60;
+
+        const pad = num => String(num).padStart(2, '0');
+        return `${pad(hrs)}:${pad(mins)}:${pad(secs)}`;
       }
 
-      async function startRecording() {
-        audioChunks = [];
-        const constraints = {
-          audio: {
-            noiseSuppression: chkNoise.checked,
-            echoCancellation: chkEcho.checked
-          }
-        };
+      function startTimer() {
+        startTime = Date.now() - elapsedTime;
+        timerInterval = setInterval(() => {
+          elapsedTime = Date.now() - startTime;
+          recordingTimer.textContent = formatTime(elapsedTime);
+        }, 200);
+      }
 
-        try {
-          const stream = await navigator.mediaDevices.getUserMedia(constraints);
-          mediaRecorder = new MediaRecorder(stream);
+      function stopTimer() {
+        clearInterval(timerInterval);
+      }
 
-          // Audio Visualizer Setup
+      function drawVisualizer(stream) {
+        if (!audioCtx) {
           audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-          const source = audioCtx.createMediaStreamSource(stream);
-          analyser = audioCtx.createAnalyser();
-          analyser.fftSize = 256;
-          source.connect(analyser);
-
-          drawVisualizer();
-
-          mediaRecorder.ondataavailable = e => {
-            if (e.data.size > 0) audioChunks.push(e.data);
-          };
-
-          mediaRecorder.onstop = () => {
-            const audioBlob = new Blob(audioChunks, { type: 'audio/webm' });
-            if (recordedBlobUrl) URL.revokeObjectURL(recordedBlobUrl);
-            recordedBlobUrl = URL.createObjectURL(audioBlob);
-
-            audioPlayback.src = recordedBlobUrl;
-            audioPlayback.style.display = 'block';
-            btnDownload.style.display = 'inline-block';
-
-            // Stop track stream
-            stream.getTracks().forEach(track => track.stop());
-            cancelAnimationFrame(animFrame);
-          };
-
-          mediaRecorder.start();
-          startTime = Date.now();
-          timerInterval = setInterval(() => {
-            const elapsed = Math.floor((Date.now() - startTime) / 1000);
-            recordingTimer.textContent = formatTimer(elapsed);
-          }, 1000);
-
-          btnRecord.disabled = true;
-          btnStop.disabled = false;
-          btnDownload.style.display = 'none';
-
-        } catch (err) {
-          alert('Microphone access denied or unsupported browser: ' + err.message);
         }
-      }
 
-      function stopRecording() {
-        if (mediaRecorder && mediaRecorder.state !== 'inactive') {
-          mediaRecorder.stop();
-          clearInterval(timerInterval);
-          btnRecord.disabled = false;
-          btnStop.disabled = true;
-        }
-      }
+        const source = audioCtx.createMediaStreamSource(stream);
+        analyser = audioCtx.createAnalyser();
+        analyser.fftSize = 64;
+        source.connect(analyser);
 
-      function drawVisualizer() {
+        const canvasCtx = visualizerCanvas.getContext('2d');
         const bufferLength = analyser.frequencyBinCount;
         const dataArray = new Uint8Array(bufferLength);
 
-        function render() {
-          animFrame = requestAnimationFrame(render);
+        visualizerCanvas.width = visualizerCanvas.offsetWidth;
+        visualizerCanvas.height = visualizerCanvas.offsetHeight;
+
+        function renderFrame() {
+          animFrameId = requestAnimationFrame(renderFrame);
+
           analyser.getByteFrequencyData(dataArray);
 
-          canvasCtx.fillStyle = '#0d1117';
-          canvasCtx.fillRect(0, 0, visualizer.width, visualizer.height);
+          canvasCtx.fillStyle = '#000000';
+          canvasCtx.fillRect(0, 0, visualizerCanvas.width, visualizerCanvas.height);
 
-          const barWidth = (visualizer.width / bufferLength) * 2.5;
+          const barWidth = (visualizerCanvas.width / bufferLength) * 1.5;
+          let barHeight;
           let x = 0;
 
           for (let i = 0; i < bufferLength; i++) {
-            const barHeight = dataArray[i] / 2;
-            canvasCtx.fillStyle = '#3b82f6';
-            canvasCtx.fillRect(x, visualizer.height - barHeight, barWidth, barHeight);
-            x += barWidth + 1;
+            barHeight = (dataArray[i] / 255) * visualizerCanvas.height;
+
+            canvasCtx.fillStyle = '#ef4444';
+            canvasCtx.fillRect(x, visualizerCanvas.height - barHeight, barWidth - 2, barHeight);
+
+            x += barWidth;
           }
         }
-        render();
+
+        renderFrame();
       }
 
-      btnRecord.addEventListener('click', startRecording);
-      btnStop.addEventListener('click', stopRecording);
+      function stopVisualizer() {
+        if (animFrameId) cancelAnimationFrame(animFrameId);
+        const canvasCtx = visualizerCanvas.getContext('2d');
+        canvasCtx.fillStyle = '#000000';
+        canvasCtx.fillRect(0, 0, visualizerCanvas.width, visualizerCanvas.height);
+      }
 
-      btnDownload.addEventListener('click', () => {
-        if (!recordedBlobUrl) return;
-        const a = document.createElement('a');
-        a.href = recordedBlobUrl;
-        a.download = `voice-recording-${Date.now()}.webm`;
-        a.click();
+      btnRecord.addEventListener('click', async function() {
+        if (!isRecording) {
+          // Start Recording
+          try {
+            const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+
+            audioChunks = [];
+            mediaRecorder = new MediaRecorder(stream);
+
+            mediaRecorder.ondataavailable = event => {
+              if (event.data.size > 0) audioChunks.push(event.data);
+            };
+
+            mediaRecorder.onstop = () => {
+              audioBlob = new Blob(audioChunks, { type: mediaRecorder.mimeType || 'audio/webm' });
+              audioUrl = URL.createObjectURL(audioBlob);
+              audioPlayer.src = audioUrl;
+
+              playbackSection.style.display = 'block';
+              btnDownload.style.display = 'inline-block';
+              audioMeta.textContent = `Recorded Duration: ${formatTime(elapsedTime)}`;
+              audioMeta.style.display = 'inline-block';
+
+              stream.getTracks().forEach(track => track.stop());
+              stopVisualizer();
+            };
+
+            mediaRecorder.start();
+            isRecording = true;
+
+            btnRecord.classList.add('recording');
+            btnRecord.textContent = '⏹️';
+            statusMsg.textContent = '🔴 Recording in progress... Speak into your microphone.';
+            statusMsg.style.color = '#ef4444';
+
+            playbackSection.style.display = 'none';
+            btnDownload.style.display = 'none';
+            audioMeta.style.display = 'none';
+
+            elapsedTime = 0;
+            startTimer();
+            drawVisualizer(stream);
+
+          } catch (err) {
+            alert('Microphone access denied or not supported by browser.');
+          }
+        } else {
+          // Stop Recording
+          if (mediaRecorder && mediaRecorder.state !== 'inactive') {
+            mediaRecorder.stop();
+          }
+
+          isRecording = false;
+          btnRecord.classList.remove('recording');
+          btnRecord.textContent = '🎙️';
+          statusMsg.textContent = '✅ Recording complete! Listen below or download file.';
+          statusMsg.style.color = '#10b981';
+
+          stopTimer();
+        }
+      });
+
+      btnDownload.addEventListener('click', function() {
+        if (!audioUrl) return;
+
+        const link = document.createElement('a');
+        link.href = audioUrl;
+        link.download = 'voice-recording.webm';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      });
+
+      btnClear.addEventListener('click', function() {
+        if (isRecording) {
+          mediaRecorder.stop();
+          isRecording = false;
+        }
+
+        stopTimer();
+        stopVisualizer();
+
+        elapsedTime = 0;
+        recordingTimer.textContent = '00:00:00';
+
+        btnRecord.classList.remove('recording');
+        btnRecord.textContent = '🎙️';
+
+        statusMsg.textContent = 'Click microphone button to grant access & start recording...';
+        statusMsg.style.color = '#94a3b8';
+
+        playbackSection.style.display = 'none';
+        btnDownload.style.display = 'none';
+        audioMeta.style.display = 'none';
+
+        audioPlayer.src = '';
+        audioBlob = null;
+        audioUrl = null;
       });
     });
   </script>
