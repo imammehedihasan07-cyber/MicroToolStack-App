@@ -9,6 +9,7 @@
         gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
         gTagScript.async = true;
         document.head.appendChild(gTagScript);
+
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
@@ -21,18 +22,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Primary SEO Meta Tags -->
-  <title>Free Online GST & VAT Tax Calculator | Add or Remove Tax</title>
-  <meta name="description" content="Add or remove GST and VAT tax amounts from total prices effortlessly online. Free tax calculator with net, gross, and tax breakdown instantly.">
-  <meta name="keywords" content="gst calculator, vat calculator, add tax online, remove tax calculator, gst rate calculator, vat tax finder, tax inclusive exclusive calculator">
+  <title>Free Online VAT & GST Calculator | Inclusive & Exclusive Tax Tool | MicroToolStack</title>
+  <meta name="description" content="Calculate Value Added Tax (VAT) and Goods and Services Tax (GST) instantly with our free Online VAT/GST Calculator. Easily add tax to net amounts or remove tax from gross prices.">
+  <meta name="keywords" content="vat calculator, gst calculator, add vat, remove vat, inclusive vat calculator, exclusive gst calculator, value added tax calculator, sales tax tool">
 
-  <link rel="canonical" href="https://microtoolstack.com/tools/calculator/gst-vat-calculator.html">
+  <link rel="canonical" href="https://microtoolstack.com/tools/calculator/vat-gst-calculator.html">
   <meta name="robots" content="index, follow">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://microtoolstack.com/tools/calculator/gst-vat-calculator.html">
-  <meta property="og:title" content="Free Online GST & VAT Tax Calculator | MicroToolStack">
-  <meta property="og:description" content="Add or remove GST and VAT tax amounts from total prices effortlessly online. Free tax calculator with net, gross, and tax breakdown instantly.">
+  <meta property="og:url" content="https://microtoolstack.com/tools/calculator/vat-gst-calculator.html">
+  <meta property="og:title" content="Free Online VAT & GST Calculator | MicroToolStack">
+  <meta property="og:description" content="Calculate inclusive and exclusive VAT/GST amounts, tax portions, and net values instantly. 100% free sales tax calculator.">
   <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
@@ -40,38 +41,63 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
   <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
-  <!-- Schema -->
+  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
   <script type="application/ld+json">
-  [
-    {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "GST & VAT Tax Calculator",
-      "url": "https://microtoolstack.com/tools/calculator/gst-vat-calculator.html",
-      "applicationCategory": "FinanceApplication",
-      "operatingSystem": "All",
-      "browserRequirements": "Requires JavaScript",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      }
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What is the difference between adding and removing tax?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Adding tax (exclusive) calculates tax on top of a net price to find the total gross amount. Removing tax (inclusive) extracts the net price and tax portion from a total gross amount."
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "VAT & GST Calculator",
+        "operatingSystem": "All",
+        "applicationCategory": "FinancialApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "An essential online business accounting tool that calculates Value Added Tax (VAT) and Goods and Services Tax (GST) for inclusive and exclusive price structures.",
+        "url": "https://microtoolstack.com/tools/calculator/vat-gst-calculator.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How do you calculate exclusive VAT/GST (adding tax to a net price)?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "To add VAT/GST to a net amount, multiply the net price by the tax rate percentage (e.g., Net Amount x 0.15 for 15% VAT). Add the resulting tax amount to the net price to derive the total gross price."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do you calculate inclusive VAT/GST (extracting tax from a gross price)?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "To extract VAT/GST from a gross total price, use the formula: Tax Amount = Gross Amount - (Gross Amount / (1 + (Tax Rate / 100))). Subtracting the tax amount gives the original net price."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this VAT/GST Calculator free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, MicroToolStack's VAT/GST Calculator is 100% free with unlimited tax calculations and no account sign-up required."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my accounting or pricing data saved on your server?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. All tax algorithms execute locally inside your web browser using JavaScript. No transaction figures, prices, or rates are logged or stored."
+            }
           }
-        }
-      ]
-    }
-  ]
+        ]
+      }
+    ]
+  }
   </script>
 
   <!-- Preconnect and Fonts -->
@@ -83,27 +109,33 @@
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
 
   <style>
-    .app-card {
-      background-color: var(--bg-card, #1e1e2e);
-      border: 1px solid var(--border-color, #333);
-      border-radius: 12px;
-      padding: 2rem;
-      margin-bottom: 2.5rem;
+    .input-group {
+      margin-bottom: 1.25rem;
     }
-    .form-control {
+    .input-label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.5rem;
+    }
+    .form-control, .form-select {
       width: 100%;
-      padding: 0.75rem;
-      border-radius: 8px;
-      background: var(--bg-body, #111827);
-      border: 1px solid var(--border-color, #374151);
-      color: #fff;
-      font-size: 0.95rem;
-      box-sizing: border-box;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
+      color: var(--text-primary, #fff);
       outline: none;
+      box-sizing: border-box;
+    }
+    .form-control:focus, .form-select:focus {
+      border-color: var(--accent-primary, #3b82f6);
     }
     .stats-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
       gap: 1rem;
       margin-top: 1.5rem;
     }
@@ -111,17 +143,17 @@
       background-color: var(--bg-card, #1e1e2e);
       border: 1px solid var(--border-color, #333);
       border-radius: var(--radius-md, 8px);
-      padding: 1.25rem;
+      padding: 1rem;
       text-align: center;
     }
-    .stat-value {
-      font-size: 1.6rem;
-      font-weight: 800;
+    .stat-number {
+      font-size: 1.5rem;
+      font-weight: 700;
       color: var(--accent-primary, #3b82f6);
       margin-bottom: 0.25rem;
     }
     .stat-label {
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       color: var(--text-secondary, #9ca3af);
       font-weight: 500;
     }
@@ -135,6 +167,12 @@
     .content-box h2 {
       font-size: 1.35rem;
       margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
       color: var(--text-primary, #fff);
     }
     .content-box p, .content-box ul {
@@ -187,89 +225,129 @@
 
   <!-- Main Container -->
   <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
-    <!-- Breadcrumb Navigation -->
-    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
-      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
-      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Calculators</a> / 
-      <span>GST / VAT Calculator</span>
-    </nav>
     
-    <!-- Title Section -->
+    <!-- Tool Title & Description -->
     <div style="text-align: center; margin-bottom: 2rem;">
-      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">GST / VAT Tax Calculator</h1>
-      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Add tax to a net price or extract tax from an inclusive gross amount.</p>
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online VAT & GST Calculator</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Add or remove Value Added Tax (VAT) and Goods & Services Tax (GST) instantly.</p>
     </div>
 
-    <!-- App Card -->
-    <div class="app-card">
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
+    <!-- Calculator Input Card -->
+    <div class="content-box" style="margin-bottom: 2rem;">
+      <div class="input-group">
+        <label for="tax-operation" class="input-label">Select Tax Operation</label>
+        <select id="tax-operation" class="form-select">
+          <option value="add">Add VAT/GST (Net Price ➔ Gross Total)</option>
+          <option value="remove">Remove VAT/GST (Gross Total ➔ Net Price)</option>
+        </select>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;" class="input-group">
         <div>
-          <label style="font-weight: 600; display: block; margin-bottom: 0.5rem; color: #fff;">Amount ($):</label>
-          <input type="number" id="amount" class="form-control" value="1000">
+          <label for="amount-input" class="input-label" id="amount-label">Net Amount ($)</label>
+          <input type="number" id="amount-input" class="form-control" placeholder="e.g., 100" step="0.01" min="0">
         </div>
         <div>
-          <label style="font-weight: 600; display: block; margin-bottom: 0.5rem; color: #fff;">GST / VAT Rate (%):</label>
-          <input type="number" id="rate" class="form-control" value="15">
+          <label for="tax-rate" class="input-label">VAT / GST Rate (%)</label>
+          <input type="number" id="tax-rate" class="form-control" placeholder="e.g., 15" step="0.1" min="0" value="15">
         </div>
       </div>
 
-      <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
-        <button class="btn btn-primary" id="btn-add" style="flex: 1; padding: 0.75rem; cursor: pointer; font-weight: 600;">➕ Add Tax (Exclusive)</button>
-        <button class="btn btn-secondary" id="btn-remove" style="flex: 1; padding: 0.75rem; cursor: pointer; background: var(--bg-body, #111827); color: #fff; border: 1px solid var(--border-color, #374151); border-radius: 6px; font-weight: 600;">➖ Remove Tax (Inclusive)</button>
-      </div>
+      <button id="btn-calc-tax" class="btn btn-primary" style="width: 100%; padding: 0.85rem; font-size: 1rem; font-weight: 600; cursor: pointer;">🧾 Calculate Tax Breakdown</button>
 
-      <div class="stats-grid">
-        <div class="stat-card">
-          <div class="stat-value" id="res-net" style="color: #60a5fa;">$1,000.00</div>
-          <div class="stat-label">Net Amount</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-value" id="res-tax" style="color: #ef4444;">$150.00</div>
-          <div class="stat-label">Tax Amount</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-value" id="res-gross" style="color: #10b981;">$1,150.00</div>
-          <div class="stat-label">Gross Amount</div>
+      <!-- Results Grid -->
+      <div id="results-wrapper" style="display: none;">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number" id="res-net">$0.00</div>
+            <div class="stat-label">Net Amount (Excl. Tax)</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" id="res-tax" style="color: #f59e0b;">$0.00</div>
+            <div class="stat-label">VAT / GST Amount</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" id="res-gross" style="color: #10b981;">$0.00</div>
+            <div class="stat-label">Gross Total (Incl. Tax)</div>
+          </div>
         </div>
       </div>
     </div>
 
     <!-- SEO Article Content Box 1 -->
     <div class="content-box">
-      <h2>How to Calculate GST and VAT Online</h2>
-      <p>Value Added Tax (VAT) and Goods and Services Tax (GST) are consumption taxes levied on products and services. Whether you need to add tax to an exclusive wholesale price or extract the tax component from an inclusive retail total, our <strong>GST / VAT Calculator</strong> computes the precise breakdown instantly.</p>
+      <h2>Understanding Value Added Tax (VAT) and Goods & Services Tax (GST)</h2>
+      <p><strong>Value Added Tax (VAT)</strong> and <strong>Goods and Services Tax (GST)</strong> are consumption taxes levied on goods and services at each stage of the supply chain where value is added. Millions of businesses, accountants, and consumers manage daily sales invoicing involving both tax-exclusive (net) and tax-inclusive (gross) prices.</p>
+      <p>Our free <strong>Online VAT & GST Calculator</strong> automates consumption tax mathematics. Whether you are adding 20% UK VAT to a net invoice or extracting 15% GST from a retail receipt, this tool provides instant financial accuracy for business bookkeeping.</p>
     </div>
 
-    <!-- Internal Linking Section (SEO Best Practice) -->
+    <!-- SEO Article Content Box 2 -->
     <div class="content-box">
-      <h2>Explore Related Financial & Business Tools</h2>
-      <p>Enhance your accounting and calculations workflow with our free utilities:</p>
+      <h2>Mathematical Formulas for Exclusive and Inclusive Tax Calculations</h2>
+      <p>Calculating consumption taxes depends on whether you are starting with a net or gross price structure:</p>
+
+      <h3>1. Adding VAT/GST to a Net Price (Exclusive Tax)</h3>
+      <p>When starting with a net price ($N$) and adding tax at rate ($R\%$):</p>
+      <p>$$\text{Tax Amount} = N \times \left(\frac{R}{100}\right)$$</p>
+      <p>$$\text{Gross Total} = N + \text{Tax Amount}$$</p>
+      <p><em>Example:</em> A net item of $100 with 15% VAT yields $15 in tax, making the total gross price $115.</p>
+
+      <h3>2. Extracting VAT/GST from a Gross Price (Inclusive Tax)</h3>
+      <p>When starting with a total inclusive gross price ($G$) and finding the embedded tax component:</p>
+      <p>$$\text{Tax Amount} = G - \left(\frac{G}{1 + \frac{R}{100}}\right)$$</p>
+      <p>$$\text{Net Price} = G - \text{Tax Amount}$$</p>
+      <p><em>Example:</em> A total gross receipt of $115 with 15% inclusive VAT extracts exactly $15 in tax, leaving a net price of $100.</p>
+    </div>
+
+    <!-- SEO Article Content Box 3 -->
+    <div class="content-box">
+      <h2>Features of MicroToolStack's Sales Tax Calculator</h2>
+      <ul>
+        <li><strong>Dual-Mode Switching:</strong> Seamlessly switch between adding tax to net amounts or extracting tax from gross figures.</li>
+        <li><strong>Custom Tax Percentages:</strong> Supports standard regional rates (such as 20% UK VAT, 15% Bangladesh VAT, 10% Australia GST, or custom percentages).</li>
+        <li><strong>100% Free & Unlimited:</strong> Perform unlimited business calculations with zero registration required.</li>
+        <li><strong>Complete Browser Privacy:</strong> All calculations render locally inside your browser session using JavaScript. No private accounting numbers are saved.</li>
+      </ul>
+    </div>
+
+    <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
+    <div class="content-box">
+      <h2>Explore Related Calculators & Utilities</h2>
+      <p>Discover our complementary everyday business financial tools:</p>
       <div class="related-links">
-        <a href="/tools/calculator/loan-emi-calculator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">💳 Loan EMI Calculator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Calculate monthly loan installment payments.</span>
-        </a>
-        <a href="/tools/calculator/percentage-calculator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">📊 Percentage Calculator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Calculate percentage increases and discounts.</span>
-        </a>
         <a href="/tools/calculator/receipt-maker.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">📝 Receipt Maker</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Create professional receipts and export to PDF.</span>
+          <strong style="display:block; margin-bottom: 0.25rem;">🧾 Free Receipt Maker</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Create printable cash receipts and PDF invoices with tax.</span>
         </a>
         <a href="/tools/calculator/paypal-stripe-calculator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">💵 PayPal & Stripe Fee Calculator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Calculate exact merchant payment processing fees.</span>
+          <strong style="display:block; margin-bottom: 0.25rem;">💳 PayPal & Stripe Calculator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Calculate merchant processing fees and net invoice payouts.</span>
+        </a>
+        <a href="/tools/calculator/discount-calculator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🏷️ Sale Discount Calculator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Calculate percentage off savings and checkout tax totals.</span>
         </a>
       </div>
     </div>
 
     <!-- FAQ Section -->
     <div class="content-box">
-      <h2>Frequently Asked Questions</h2>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What is the difference between adding and removing tax?</h3>
-        <p>Adding tax (exclusive) calculates tax on top of a net price to find the total gross amount. Removing tax (inclusive) extracts the net price and tax portion from a total gross amount.</p>
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How do I remove VAT from a total price?</h3>
+        <p>Divide the total gross price by 1 + (Tax Rate / 100) to find the original net price before tax.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What is the difference between VAT and GST?</h3>
+        <p>Both VAT and GST are multi-stage consumption taxes. The primary difference lies in regional naming conventions and administrative frameworks across different countries.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is my accounting or pricing data saved on your server?</h3>
+        <p>No. All calculations run client-side inside your web browser using JavaScript. No transaction values are logged or stored.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this Tax Calculator free to use?</h3>
+        <p>Yes, MicroToolStack's VAT & GST Calculator is completely free with no usage limits or sign-up required.</p>
       </div>
     </div>
 
@@ -284,33 +362,55 @@
   <script src="/assets/js/app.js" defer></script>
 
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const amountEl = document.getElementById('amount');
-      const rateEl = document.getElementById('rate');
+    document.addEventListener('DOMContentLoaded', function() {
+      const taxOp = document.getElementById('tax-operation');
+      const amountInput = document.getElementById('amount-input');
+      const taxRateInput = document.getElementById('tax-rate');
+      const amountLabel = document.getElementById('amount-label');
+      const btnCalc = document.getElementById('btn-calc-tax');
+      const resultsWrapper = document.getElementById('results-wrapper');
 
-      function calculate(isAdding) {
-        const amt = parseFloat(amountEl.value) || 0;
-        const rate = parseFloat(rateEl.value) || 0;
+      const resNet = document.getElementById('res-net');
+      const resTax = document.getElementById('res-tax');
+      const resGross = document.getElementById('res-gross');
 
-        let net, tax, gross;
+      taxOp.addEventListener('change', function() {
+        if (taxOp.value === 'add') {
+          amountLabel.textContent = 'Net Amount ($) (Excl. Tax)';
+        } else {
+          amountLabel.textContent = 'Gross Amount ($) (Incl. Tax)';
+        }
+      });
 
-        if (isAdding) {
-          net = amt;
-          tax = amt * (rate / 100);
+      btnCalc.addEventListener('click', function() {
+        const val = parseFloat(amountInput.value);
+        const rate = parseFloat(taxRateInput.value);
+
+        if (isNaN(val) || val < 0 || isNaN(rate) || rate < 0) {
+          alert('Please enter valid positive numbers for price amount and tax rate.');
+          return;
+        }
+
+        let net = 0;
+        let tax = 0;
+        let gross = 0;
+
+        if (taxOp.value === 'add') {
+          net = val;
+          tax = net * (rate / 100);
           gross = net + tax;
         } else {
-          gross = amt;
-          net = amt / (1 + (rate / 100));
+          gross = val;
+          net = gross / (1 + (rate / 100));
           tax = gross - net;
         }
 
-        document.getElementById('res-net').textContent = `$${net.toFixed(2)}`;
-        document.getElementById('res-tax').textContent = `$${tax.toFixed(2)}`;
-        document.getElementById('res-gross').textContent = `$${gross.toFixed(2)}`;
-      }
+        resNet.textContent = '$' + net.toFixed(2);
+        resTax.textContent = '$' + tax.toFixed(2);
+        resGross.textContent = '$' + gross.toFixed(2);
 
-      document.getElementById('btn-add').addEventListener('click', () => calculate(true));
-      document.getElementById('btn-remove').addEventListener('click', () => calculate(false));
+        resultsWrapper.style.display = 'block';
+      });
     });
   </script>
 </body>
