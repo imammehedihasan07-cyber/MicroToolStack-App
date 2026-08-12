@@ -22,9 +22,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Primary SEO Meta Tags -->
-  <title>Free Online Duplicate Line Remover & Text Deduplicator | MicroToolStack</title>
-  <meta name="description" content="Free online duplicate line remover tool to instantly strip repeating lines, duplicate words, and empty lines from text lists. Fast, private, and 100% free.">
-  <meta name="keywords" content="duplicate line remover, remove duplicate lines, text deduplicator, remove repeated lines online, deduplicate list, clean duplicate text, line deduplicator">
+  <title>Free Online Duplicate Line Remover | Deduplicate Text Tool | MicroToolStack</title>
+  <meta name="description" content="Remove duplicate lines from text lists online for free. Clean, sort, and deduplicate line items instantly with case-sensitive options and whitespace trimming.">
+  <meta name="keywords" content="duplicate line remover, deduplicate text online, remove duplicate lines from list, text deduplicator, clean list tool, text tools, microtoolstack">
 
   <link rel="canonical" href="https://microtoolstack.com/tools/text/duplicate-line-remover.html">
   <meta name="robots" content="index, follow">
@@ -32,8 +32,8 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://microtoolstack.com/tools/text/duplicate-line-remover.html">
-  <meta property="og:title" content="Free Online Duplicate Line Remover & Text Deduplicator | MicroToolStack">
-  <meta property="og:description" content="Instantly remove duplicate lines and clean up multi-line text in your web browser. 100% free and private.">
+  <meta property="og:title" content="Free Online Duplicate Line Remover | MicroToolStack">
+  <meta property="og:description" content="Remove duplicate lines from text lists, clean code blocks, and deduplicate list items instantly. 100% free web utility.">
   <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
@@ -48,7 +48,7 @@
     "@graph": [
       {
         "@type": "SoftwareApplication",
-        "name": "Duplicate Line Remover & Text Deduplicator",
+        "name": "Duplicate Line Remover Tool",
         "operatingSystem": "All",
         "applicationCategory": "UtilitiesApplication",
         "offers": {
@@ -56,7 +56,7 @@
           "price": "0",
           "priceCurrency": "USD"
         },
-        "description": "An online text processing utility designed to eliminate repeated duplicate lines, preserve unique list items, and trim whitespace instantly.",
+        "description": "An essential client-side text utility that removes duplicate lines from lists, cleans whitespace, and sorts textual data instantly.",
         "url": "https://microtoolstack.com/tools/text/duplicate-line-remover.html"
       },
       {
@@ -64,26 +64,34 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "How does the Duplicate Line Remover work?",
+            "name": "How do I remove duplicate lines from a text list?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The tool scans your text list line by line, identifies duplicate entries, keeps only the first occurrence of each line, and removes all redundant duplicates."
+              "text": "Paste your list of items or lines into the text editor, configure optional settings like case sensitivity or whitespace trimming, and the tool removes duplicates instantly."
             }
           },
           {
             "@type": "Question",
-            "name": "Does the tool support case-sensitive duplicate removal?",
+            "name": "Can I keep case sensitivity when removing duplicates?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes! You can toggle case sensitivity to treat uppercase and lowercase versions of the same text as distinct lines or identical duplicates."
+              "text": "Yes! You can toggle case sensitivity so that 'Apple' and 'apple' are treated either as distinct items or as duplicates."
             }
           },
           {
             "@type": "Question",
-            "name": "Is my text data private?",
+            "name": "Is my text data saved on remote servers?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. All text processing occurs locally within your browser using JavaScript. No list data is ever transmitted to an external server."
+              "text": "No! All text processing and deduplication execute 100% locally inside your web browser session using client-side JavaScript. Your data remains completely private."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this Duplicate Line Remover free to use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, MicroToolStack's Duplicate Line Remover is 100% free with unlimited text cleaning and no registration required."
             }
           }
         ]
@@ -101,35 +109,28 @@
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
 
   <style>
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 1rem;
-      margin-bottom: 1.5rem;
+    .input-group {
+      margin-bottom: 1.25rem;
     }
-    .stat-card {
-      background-color: var(--bg-card, #1e1e2e);
-      border: 1px solid var(--border-color, #333);
-      border-radius: var(--radius-md, 8px);
-      padding: 1rem;
-      text-align: center;
+    .input-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.5rem;
     }
-    .stat-number {
-      font-size: 1.75rem;
-      font-weight: 700;
-      color: var(--accent-primary, #3b82f6);
-      margin-bottom: 0.25rem;
-    }
-    .stat-label {
-      font-size: 0.85rem;
+    .counter-info {
+      font-size: 0.8rem;
       color: var(--text-secondary, #9ca3af);
-      font-weight: 500;
+      font-weight: 400;
     }
-    .editor-textarea {
+    .form-control {
       width: 100%;
-      min-height: 220px;
+      min-height: 180px;
       padding: 1rem;
-      font-size: 1rem;
+      font-size: 0.95rem;
       line-height: 1.6;
       border: 1px solid var(--border-color, #333);
       border-radius: var(--radius-md, 8px);
@@ -138,33 +139,41 @@
       outline: none;
       resize: vertical;
       box-sizing: border-box;
-      margin-bottom: 1.25rem;
     }
-    .options-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 0.75rem;
-      margin-bottom: 1.5rem;
-      background: var(--bg-card, #1e1e2e);
-      padding: 1.25rem;
-      border-radius: var(--radius-md, 8px);
+    .form-control:focus {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+
+    /* Checkbox options bar */
+    .options-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      background: #111827;
       border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1.5rem;
+      align-items: center;
     }
-    .option-item {
+
+    .checkbox-label {
       display: flex;
       align-items: center;
       gap: 0.5rem;
+      font-size: 0.9rem;
       color: var(--text-primary, #fff);
-      font-size: 0.92rem;
       cursor: pointer;
     }
-    .option-item input[type="checkbox"] {
+
+    .checkbox-label input {
       width: 16px;
       height: 16px;
       accent-color: var(--accent-primary, #3b82f6);
       cursor: pointer;
     }
-    .editor-controls {
+
+    .controls-bar {
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
@@ -172,10 +181,7 @@
       align-items: center;
       margin-bottom: 2.5rem;
     }
-    .btn-group {
-      display: flex;
-      gap: 0.5rem;
-    }
+
     .content-box {
       background-color: var(--bg-card, #1e1e2e);
       border: 1px solid var(--border-color, #333);
@@ -186,6 +192,12 @@
     .content-box h2 {
       font-size: 1.35rem;
       margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
       color: var(--text-primary, #fff);
     }
     .content-box p, .content-box ul {
@@ -242,98 +254,114 @@
     <!-- Tool Title & Description -->
     <div style="text-align: center; margin-bottom: 2rem;">
       <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online Duplicate Line Remover</h1>
-      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Remove repeating lines from email lists, text datasets, and code files instantly.</p>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Clean, sort, and remove duplicate lines from text lists and data sets instantly in your browser.</p>
     </div>
 
-    <!-- Live Statistics Cards -->
-    <div class="stats-grid">
-      <div class="stat-card">
-        <div class="stat-number" id="stat-original">0</div>
-        <div class="stat-label">Original Lines</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number" id="stat-unique" style="color: #10b981;">0</div>
-        <div class="stat-label">Unique Lines</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number" id="stat-removed" style="color: #ef4444;">0</div>
-        <div class="stat-label">Duplicates Removed</div>
+    <!-- Text Input Editor Card -->
+    <div class="content-box" style="margin-bottom: 1rem;">
+      <div class="input-group" style="margin-bottom: 0;">
+        <div class="input-label">
+          <span>Enter or Paste Text List</span>
+          <span class="counter-info" id="line-counter">0 Lines | 0 Duplicates Removed</span>
+        </div>
+        <textarea id="text-input" class="form-control" placeholder="Paste your line items here...&#10;apple&#10;banana&#10;apple&#10;orange&#10;banana">apple
+banana
+apple
+orange
+banana
+grape
+orange</textarea>
       </div>
     </div>
 
-    <!-- Textarea Input Editor -->
-    <textarea id="text-input" class="editor-textarea" placeholder="Paste your list here to deduplicate lines..." autofocus></textarea>
-
-    <!-- Deduplication Options Grid -->
-    <div class="options-grid">
-      <label class="option-item">
-        <input type="checkbox" id="opt-case-sensitive"> Case Sensitive Matching
+    <!-- Options Bar -->
+    <div class="options-bar">
+      <label class="checkbox-label">
+        <input type="checkbox" id="chk-case" checked> Case Sensitive
       </label>
-      <label class="option-item">
-        <input type="checkbox" id="opt-trim-spaces" checked> Trim Whitespace
+      <label class="checkbox-label">
+        <input type="checkbox" id="chk-trim" checked> Trim Whitespace
       </label>
-      <label class="option-item">
-        <input type="checkbox" id="opt-remove-empty" checked> Remove Empty Lines
+      <label class="checkbox-label">
+        <input type="checkbox" id="chk-sort"> Sort Alphabetically
       </label>
     </div>
 
-    <!-- Action Buttons -->
-    <div class="editor-controls">
-      <div class="btn-group">
-        <button id="btn-dedupe" class="btn btn-primary" style="padding: 0.68rem 1.4rem; cursor: pointer;">🧹 Remove Duplicates</button>
-        <button id="btn-copy" class="btn btn-secondary" style="padding: 0.68rem 1.2rem; cursor: pointer; background: #1f2937; color: #fff; border: 1px solid #4b5563; border-radius: 6px;">📋 Copy Unique List</button>
-        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.68rem 1.2rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear</button>
+    <!-- Controls Bar -->
+    <div class="controls-bar">
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-copy" class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-weight: 600; cursor: pointer; background: #10b981;">📋 Copy Cleaned Text</button>
       </div>
-      <span id="status-msg" style="font-size: 0.85rem; color: #10b981; font-weight: 500; display: none;">Unique list copied!</span>
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-reset" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear Text</button>
+      </div>
     </div>
 
     <!-- SEO Article Content Box 1 -->
     <div class="content-box">
-      <h2>Why Use a Duplicate Line Remover?</h2>
-      <p>Working with data exported from databases, spreadsheets, or web scrapers often leaves behind thousands of redundant duplicate entries. Cleaning lists manually takes hours. Our <strong>Duplicate Line Remover</strong> tool filters through thousands of lines in milliseconds, preserving only unique entries while reporting exact deduplication metrics.</p>
+      <h2>Why Use an Online Duplicate Line Remover?</h2>
+      <p>When working with large lists of keywords, email addresses, comma-separated URLs, inventory items, or programming log files, accidental duplicate entries frequently occur. Manually reviewing thousands of rows to find and delete duplicates is tedious and prone to human error.</p>
+
+      <p>Our free <strong>Online Duplicate Line Remover</strong> processes text lists instantly inside your web browser. With customizable settings for case sensitivity, whitespace trimming, and alphabetical sorting, you can clean messy data sets in seconds.</p>
     </div>
 
     <!-- SEO Article Content Box 2 -->
     <div class="content-box">
-      <h2>Key Benefits & Uses</h2>
+      <h2>Key Features of Our Text Deduplicator</h2>
+      <p>Explore the powerful cleaning options built into our tool:</p>
+
       <ul>
-        <li><strong>Email & Lead List Cleaning:</strong> Remove duplicate contact emails before running newsletter campaigns.</li>
-        <li><strong>Keyword List Optimization:</strong> Clean SEO keyword research lists by stripping repeated search terms.</li>
-        <li><strong>Code & Dataset Refinement:</strong> Strip duplicate rows, configuration keys, or log files easily.</li>
-        <li><strong>Live Statistical Feedback:</strong> View live metrics showing original lines, unique lines remaining, and total duplicates removed.</li>
+        <li><strong>Case Sensitive Filtering:</strong> Choose whether 'Apple' and 'apple' should be treated as separate unique entries or as duplicate matches.</li>
+        <li><strong>Whitespace Trimming:</strong> Automatically strips trailing and leading spaces from lines before evaluating duplicates.</li>
+        <li><strong>Alphabetical Sorting:</strong> Optionally sort your final cleaned list in ascending alphabetical order.</li>
+        <li><strong>Live Duplicate Counter:</strong> Instantly view how many duplicate lines were successfully stripped from your text.</li>
       </ul>
+    </div>
+
+    <!-- SEO Article Content Box 3 -->
+    <div class="content-box">
+      <h2>100% Privacy & Client-Side Processing</h2>
+      <p>Unlike cloud-based converters that transmit your private data to external servers, MicroToolStack's Duplicate Line Remover executes 100% locally inside your web browser session using JavaScript. Your confidential lists, database exports, and source code remain completely private and secure.</p>
     </div>
 
     <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
     <div class="content-box">
-      <h2>Explore Related Text & Developer Tools</h2>
-      <p>Clean and format your data efficiently with our other text tools:</p>
+      <h2>Explore Related Text & SEO Utilities</h2>
+      <p>Discover our complementary online text tools:</p>
       <div class="related-links">
-        <a href="/tools/text/case-converter.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🔤 Case Converter</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Convert text to Uppercase, Lowercase, and Title Case.</span>
-        </a>
         <a href="/tools/text/word-counter.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">📝 Word Counter</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Analyze readability and word counts.</span>
+          <strong style="display:block; margin-bottom: 0.25rem;">📊 Real-Time Word Counter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Analyze character counts, reading time, and sentence stats.</span>
         </a>
-        <a href="/tools/seo/slug-generator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🔗 Slug Generator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Convert text into clean, SEO-friendly URLs.</span>
+        <a href="/tools/text/case-converter.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🔠 Online Case Converter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Transform text into UPPERCASE, lowercase, Title Case, etc.</span>
+        </a>
+        <a href="/tools/seo/keyword-density-checker.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📊 Keyword Density Checker</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Analyze word frequency percentages and key phrase densities.</span>
         </a>
       </div>
     </div>
 
     <!-- FAQ Section -->
     <div class="content-box">
-      <h2>Frequently Asked Questions</h2>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Does this tool preserve original line ordering?</h3>
-        <p>Yes, the tool preserves the original top-to-bottom sequence of your text list, keeping the first occurrence of each unique line in its exact position.</p>
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How do I remove duplicate lines from a list?</h3>
+        <p>Paste your text list into the editor box. The tool automatically removes duplicate entries in real time based on your selected options.</p>
       </div>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is there a file or row limit for deduplication?</h3>
-        <p>No, you can process thousands of lines instantly right in your browser with zero latency.</p>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Does case sensitivity affect duplicate removal?</h3>
+        <p>When Case Sensitive is enabled, 'Data' and 'data' are treated as unique items. When disabled, they are treated as duplicates.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is my text data saved on remote servers?</h3>
+        <p>No. All calculations run client-side inside your browser session using JavaScript. Your text remains 100% private.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this Duplicate Line Remover free?</h3>
+        <p>Yes, MicroToolStack's Duplicate Line Remover is 100% free with no usage limits or sign-up required.</p>
       </div>
     </div>
 
@@ -350,88 +378,69 @@
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const textInput = document.getElementById('text-input');
-      const btnDedupe = document.getElementById('btn-dedupe');
+      const lineCounter = document.getElementById('line-counter');
+      const chkCase = document.getElementById('chk-case');
+      const chkTrim = document.getElementById('chk-trim');
+      const chkSort = document.getElementById('chk-sort');
+
       const btnCopy = document.getElementById('btn-copy');
-      const btnClear = document.getElementById('btn-clear');
-      const statusMsg = document.getElementById('status-msg');
+      const btnReset = document.getElementById('btn-reset');
 
-      const optCaseSensitive = document.getElementById('opt-case-sensitive');
-      const optTrimSpaces = document.getElementById('opt-trim-spaces');
-      const optRemoveEmpty = document.getElementById('opt-remove-empty');
-
-      const statOriginal = document.getElementById('stat-original');
-      const statUnique = document.getElementById('stat-unique');
-      const statRemoved = document.getElementById('stat-removed');
-
-      function removeDuplicates() {
-        const text = textInput.value;
-        if (!text) {
-          statOriginal.textContent = '0';
-          statUnique.textContent = '0';
-          statRemoved.textContent = '0';
-          return;
-        }
-
-        let lines = text.split('\n');
+      function processText() {
+        const rawText = textInput.value;
+        const lines = rawText.split('\n');
         const originalCount = lines.length;
 
-        if (optTrimSpaces.checked) {
-          lines = lines.map(l => l.trim());
-        }
-
-        if (optRemoveEmpty.checked) {
-          lines = lines.filter(l => l.length > 0);
-        }
-
         const seen = new Set();
-        const uniqueLines = [];
+        const cleanedLines = [];
 
-        for (let line of lines) {
-          const matchKey = optCaseSensitive.checked ? line : line.toLowerCase();
-          if (!seen.has(matchKey)) {
-            seen.add(matchKey);
-            uniqueLines.push(line);
+        lines.forEach(line => {
+          let processed = line;
+          if (chkTrim.checked) {
+            processed = processed.trim();
           }
+
+          const compareKey = chkCase.checked ? processed : processed.toLowerCase();
+
+          if (processed !== '' || !chkTrim.checked) {
+            if (!seen.has(compareKey)) {
+              seen.add(compareKey);
+              cleanedLines.push(processed);
+            }
+          }
+        });
+
+        if (chkSort.checked) {
+          cleanedLines.sort((a, b) => a.localeCompare(b));
         }
 
-        const uniqueCount = uniqueLines.length;
-        const removedCount = originalCount - uniqueCount;
+        const removedCount = originalCount - cleanedLines.length;
+        lineCounter.textContent = `${cleanedLines.length} Lines | ${removedCount} Duplicates Removed`;
 
-        textInput.value = uniqueLines.join('\n');
-
-        // Update Stats
-        statOriginal.textContent = originalCount.toLocaleString();
-        statUnique.textContent = uniqueCount.toLocaleString();
-        statRemoved.textContent = removedCount.toLocaleString();
+        textInput.value = cleanedLines.join('\n');
       }
 
-      btnDedupe.addEventListener('click', removeDuplicates);
-      textInput.addEventListener('input', function() {
-        if (!textInput.value.trim()) {
-          statOriginal.textContent = '0';
-          statUnique.textContent = '0';
-          statRemoved.textContent = '0';
-        }
+      [textInput, chkCase, chkTrim, chkSort].forEach(el => {
+        el.addEventListener('input', processText);
+        el.addEventListener('change', processText);
       });
 
-      // Copy Action
       btnCopy.addEventListener('click', function() {
-        if (!textInput.value.trim()) return;
-        removeDuplicates();
-        navigator.clipboard.writeText(textInput.value).then(function() {
-          statusMsg.style.display = 'inline';
-          setTimeout(() => { statusMsg.style.display = 'none'; }, 2000);
+        if (!textInput.value) return;
+        navigator.clipboard.writeText(textInput.value).then(() => {
+          const origText = btnCopy.textContent;
+          btnCopy.textContent = '✅ Copied!';
+          setTimeout(() => { btnCopy.textContent = origText; }, 2000);
         });
       });
 
-      // Clear Action
-      btnClear.addEventListener('click', function() {
+      btnReset.addEventListener('click', function() {
         textInput.value = '';
-        statOriginal.textContent = '0';
-        statUnique.textContent = '0';
-        statRemoved.textContent = '0';
-        textInput.focus();
+        processText();
       });
+
+      // Initial run
+      processText();
     });
   </script>
 </body>
