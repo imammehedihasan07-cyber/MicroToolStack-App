@@ -22,9 +22,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Primary SEO Meta Tags -->
-  <title>Free Online Percentage Calculator | Calculate Pct, Increase & Decrease</title>
-  <meta name="description" content="Free online Percentage Calculator to calculate percentages, percentage change, increases, and fraction values easily in your browser. Fast, accurate & 100% free.">
-  <meta name="keywords" content="percentage calculator, calculate percentage online, percent of number, percentage increase calculator, percentage decrease, math calculator tool">
+  <title>Free Online Percentage Calculator | Multi-Mode Percent Math Tool | MicroToolStack</title>
+  <meta name="description" content="Calculate percentages instantly with our free Online Percentage Calculator. Easily compute percentage of a number, percentage differences, and percentage increase or decrease.">
+  <meta name="keywords" content="percentage calculator, calculate percentage, percent of a number, percentage increase calculator, percentage decrease tool, percentage difference formula, math percent tool">
 
   <link rel="canonical" href="https://microtoolstack.com/tools/calculator/percentage-calculator.html">
   <meta name="robots" content="index, follow">
@@ -33,7 +33,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://microtoolstack.com/tools/calculator/percentage-calculator.html">
   <meta property="og:title" content="Free Online Percentage Calculator | MicroToolStack">
-  <meta property="og:description" content="Calculate percentages, percentage change, increases, and fraction values easily in your browser. 100% free and private.">
+  <meta property="og:description" content="Fast, multi-mode online percentage calculator. Compute percent off, ratio percentages, and percentage changes instantly. 100% free.">
   <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
@@ -48,15 +48,15 @@
     "@graph": [
       {
         "@type": "SoftwareApplication",
-        "name": "Percentage Calculator Tool",
+        "name": "Multi-Mode Percentage Calculator",
         "operatingSystem": "All",
-        "applicationCategory": "UtilitiesApplication",
+        "applicationCategory": "EducationalApplication",
         "offers": {
           "@type": "Offer",
           "price": "0",
           "priceCurrency": "USD"
         },
-        "description": "An online math utility tool to calculate percentages, percentage proportions, and numerical increases effortlessly.",
+        "description": "An essential multi-mode percentage calculator that computes percentage values, ratios, and percentage differences or growth rates.",
         "url": "https://microtoolstack.com/tools/calculator/percentage-calculator.html"
       },
       {
@@ -64,18 +64,34 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "How do you calculate a percentage of a number?",
+            "name": "How do you calculate the percentage of a number?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "To find a percentage of a number, multiply the number by the percentage value and divide by 100 (e.g., 10% of 200 = 200 × 0.10 = 20)."
+              "text": "To calculate the percentage of a number, multiply the total number by the desired percentage rate and then divide by 100. For example, 15% of 200 = (15 x 200) / 100 = 30."
             }
           },
           {
             "@type": "Question",
-            "name": "Is this percentage calculator free to use?",
+            "name": "How do you calculate percentage increase or decrease?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes, MicroToolStack's Percentage Calculator is 100% free with instant local execution and no registration required."
+              "text": "Percentage change is calculated using the formula: Percentage Change = ((New Value - Original Value) / Original Value) x 100. A positive result indicates a percentage increase, while a negative result signifies a percentage decrease."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this Percentage Calculator free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, MicroToolStack's Percentage Calculator is 100% free with unlimited calculations and no registration required."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my math data saved on any server?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. All percentage math executes locally inside your web browser using JavaScript. No numbers or inputs are saved or tracked."
             }
           }
         ]
@@ -93,39 +109,43 @@
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
 
   <style>
-    .app-card {
-      background-color: var(--bg-card, #1e1e2e);
-      border: 1px solid var(--border-color, #333);
-      border-radius: 12px;
-      padding: 2rem;
-      margin-bottom: 2.5rem;
-    }
-    .search-input {
-      padding: 0.5rem;
-      border-radius: 6px;
-      border: 1px solid var(--border-color, #374151);
-      background: var(--bg-body, #111827);
-      color: #fff;
-      font-size: 1rem;
-      text-align: center;
-      outline: none;
-    }
-    .calc-card {
-      background: rgba(0,0,0,0.2);
-      border: 1px solid var(--border-color, #374151);
-      padding: 1.25rem;
-      border-radius: 8px;
+    .input-group {
       margin-bottom: 1.25rem;
     }
-    .calc-card h3 {
-      font-size: 1.05rem;
+    .input-label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
       color: var(--text-primary, #fff);
-      margin: 0 0 0.5rem 0;
-      line-height: 1.8;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 0.4rem;
+      margin-bottom: 0.5rem;
+    }
+    .form-control, .form-select {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
+      color: var(--text-primary, #fff);
+      outline: none;
+      box-sizing: border-box;
+    }
+    .form-control:focus, .form-select:focus {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+    .result-card {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      text-align: center;
+      margin-top: 1.5rem;
+    }
+    .calc-value {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--accent-primary, #3b82f6);
+      margin-bottom: 0.25rem;
     }
     .content-box {
       background-color: var(--bg-card, #1e1e2e);
@@ -137,6 +157,12 @@
     .content-box h2 {
       font-size: 1.35rem;
       margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
       color: var(--text-primary, #fff);
     }
     .content-box p, .content-box ul {
@@ -189,74 +215,122 @@
 
   <!-- Main Container -->
   <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
-    <!-- Breadcrumb Navigation -->
-    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
-      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
-      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Calculators</a> / 
-      <span>Percentage Calculator</span>
-    </nav>
     
-    <!-- Title Section -->
+    <!-- Tool Title & Description -->
     <div style="text-align: center; margin-bottom: 2rem;">
-      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Percentage Calculator</h1>
-      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Quickly calculate basic percentages and percentage increases or decreases.</p>
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online Percentage Calculator</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Calculate percentages, ratios, percentage increases, and percentage differences easily.</p>
     </div>
 
-    <!-- App Card -->
-    <div class="app-card">
-      <!-- Calc 1 -->
-      <div class="calc-card">
-        <h3>What is <input type="number" id="p1-percent" class="search-input" style="width: 80px;" value="10">% of <input type="number" id="p1-value" class="search-input" style="width: 120px;" value="200"> ?</h3>
-        <div style="font-size: 1.25rem; font-weight: 700; color: var(--accent-primary, #3b82f6); margin-top: 0.5rem;" id="p1-res">Result: 20</div>
+    <!-- Calculator Input Card -->
+    <div class="content-box" style="margin-bottom: 2rem;">
+      <div class="input-group">
+        <label for="calc-type" class="input-label">Select Percentage Calculation Type</label>
+        <select id="calc-type" class="form-select">
+          <option value="percent-of">What is X% of Y? (Basic Percentage)</option>
+          <option value="is-percent-of">X is what % of Y? (Ratio Percentage)</option>
+          <option value="percent-change">Percentage Increase / Decrease from X to Y</option>
+        </select>
       </div>
 
-      <!-- Calc 2 -->
-      <div class="calc-card" style="margin-bottom: 0;">
-        <h3><input type="number" id="p2-v1" class="search-input" style="width: 100px;" value="25"> is what % of <input type="number" id="p2-v2" class="search-input" style="width: 100px;" value="100"> ?</h3>
-        <div style="font-size: 1.25rem; font-weight: 700; color: var(--accent-primary, #3b82f6); margin-top: 0.5rem;" id="p2-res">Result: 25%</div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;" class="input-group">
+        <div>
+          <label for="val-x" class="input-label" id="label-x">Value X (Percentage %)</label>
+          <input type="number" id="val-x" class="form-control" placeholder="e.g., 15" step="any">
+        </div>
+        <div>
+          <label for="val-y" class="input-label" id="label-y">Value Y (Base Number)</label>
+          <input type="number" id="val-y" class="form-control" placeholder="e.g., 200" step="any">
+        </div>
+      </div>
+
+      <button id="btn-calc-percent" class="btn btn-primary" style="width: 100%; padding: 0.85rem; font-size: 1rem; font-weight: 600; cursor: pointer;">🔢 Calculate Percentage</button>
+
+      <!-- Results Card -->
+      <div id="results-wrapper" style="display: none;" class="result-card">
+        <div style="font-size: 0.9rem; color: var(--text-secondary, #9ca3af); margin-bottom: 0.25rem;" id="res-label">Calculated Result</div>
+        <div class="calc-value" id="res-val">0</div>
+        <div style="font-size: 0.85rem; color: var(--text-secondary, #9ca3af);" id="res-explanation">Formula applied: (X × Y) / 100</div>
       </div>
     </div>
 
     <!-- SEO Article Content Box 1 -->
     <div class="content-box">
-      <h2>How to Calculate Percentages Easily</h2>
-      <p>Percentages are fundamental mathematical ratios expressed as fractions of 100. Whether you are calculating retail discounts, school exam grades, tax values, or tip proportions, our free <strong>Percentage Calculator</strong> instantly computes accurate results as you type.</p>
+      <h2>Understanding Percentage Calculations in Everyday Life</h2>
+      <p>A percentage represents a fraction or ratio expressed as a fraction of 100 (from the Latin <em>per centum</em>, meaning "by the hundred"). Percentages are used daily across finance, academic grading, statistics, business profit margins, shopping discounts, and taxes.</p>
+      <p>Our free <strong>Online Percentage Calculator</strong> simplifies complex percent math by offering three versatile calculation modes in one clean interface. Whether you need to figure out sales tax, calculate test score percentages, or analyze financial growth rates, this tool delivers instant mathematical accuracy.</p>
     </div>
 
-    <!-- Internal Linking Section (SEO Best Practice) -->
+    <!-- SEO Article Content Box 2 -->
+    <div class="content-box">
+      <h2>The Core Formulas Behind Percentage Mathematics</h2>
+      <p>Mastering these fundamental formulas helps you understand how percentages are derived:</p>
+
+      <h3>1. Calculating the Percentage of a Number (What is X% of Y?)</h3>
+      <p>To find a specific percentage portion of a total number:</p>
+      <p>$$\text{Result} = \frac{X \times Y}{100}$$</p>
+      <p><em>Example:</em> Finding 20% of $150 equals $(20 \times 150) / 100 = 30$.</p>
+
+      <h3>2. Finding the Percentage Ratio (X is what % of Y?)</h3>
+      <p>To determine what percentage one number represents relative to another base number:</p>
+      <p>$$\text{Percentage (\%)} = \left(\frac{X}{Y}\right) \times 100$$</p>
+      <p><em>Example:</em> Scoring 45 marks out of 60 equals $(45 / 60) \times 100 = 75\%$.</p>
+
+      <h3>3. Calculating Percentage Increase or Decrease</h3>
+      <p>To measure the relative percentage change between an original starting value ($X$) and a new value ($Y$):</p>
+      <p>$$\text{Percentage Change (\%)} = \left(\frac{Y - X}{X}\right) \times 100$$</p>
+      <p>A positive result indicates a percentage increase, while a negative result indicates a percentage drop.</p>
+    </div>
+
+    <!-- SEO Article Content Box 3 -->
+    <div class="content-box">
+      <h2>Features of MicroToolStack's Percentage Tool</h2>
+      <ul>
+        <li><strong>Multi-Mode Capability:</strong> Seamlessly switch between basic percentages, ratios, and growth/decrease calculations.</li>
+        <li><strong>Instant Math Precision:</strong> Handles large numbers, decimals, and negative values with high precision.</li>
+        <li><strong>100% Free & Unlimited:</strong> Compute unlimited math problems without subscription fees or forced accounts.</li>
+        <li><strong>Browser Privacy Guarantee:</strong> All calculations execute locally inside your web browser. No personal mathematical data is logged remotely.</li>
+      </ul>
+    </div>
+
+    <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
     <div class="content-box">
       <h2>Explore Related Calculators & Utilities</h2>
-      <p>Enhance your daily calculations with our free math and financial tools:</p>
+      <p>Discover our complementary everyday calculator tools:</p>
       <div class="related-links">
-        <a href="/tools/calculator/loan-emi-calculator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">💳 Loan EMI Calculator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Calculate monthly loan installment payments.</span>
+        <a href="/tools/calculator/discount-calculator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🏷️ Sale Discount Calculator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Calculate percentage off savings and checkout tax totals.</span>
         </a>
-        <a href="/tools/calculator/age-calculator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">📅 Age Calculator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Calculate exact chronological age in years and months.</span>
+        <a href="/tools/calculator/cgpa-to-percentage.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🎓 CGPA to Percentage Calculator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Convert academic CGPA scores into equivalent percentage marks.</span>
         </a>
-        <a href="/tools/calculator/bmi-calculator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">⚖️ BMI Calculator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Check your Body Mass Index and weight category.</span>
-        </a>
-        <a href="/tools/developer/base64-encoder-decoder.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🔒 Base64 Encoder / Decoder</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Encode or decode text strings into Base64 format.</span>
+        <a href="/tools/text/word-counter.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📊 Real-Time Word Counter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Analyze character counts, reading time, and text metrics.</span>
         </a>
       </div>
     </div>
 
     <!-- FAQ Section -->
     <div class="content-box">
-      <h2>Frequently Asked Questions</h2>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How do you calculate a percentage of a number?</h3>
-        <p>To find a percentage of a number, multiply the number by the percentage value and divide by 100 (e.g., 10% of 200 = 200 × 0.10 = 20).</p>
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How do you calculate a percentage?</h3>
+        <p>To find X percent of Y, multiply X by Y and divide the product by 100.</p>
       </div>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this percentage calculator free to use?</h3>
-        <p>Yes, MicroToolStack's Percentage Calculator is 100% free with instant local execution and no registration required.</p>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How do you calculate percentage increase?</h3>
+        <p>Subtract the original value from the new value, divide the difference by the original value, and multiply by 100.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is my input data saved on any server?</h3>
+        <p>No. All calculations run client-side inside your web browser using JavaScript. No numerical inputs are stored or shared.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this Percentage Calculator free to use?</h3>
+        <p>Yes, MicroToolStack's Percentage Calculator is completely free with no usage limits or sign-up required.</p>
       </div>
     </div>
 
@@ -271,32 +345,77 @@
   <script src="/assets/js/app.js" defer></script>
 
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const p1Percent = document.getElementById('p1-percent');
-      const p1Value = document.getElementById('p1-value');
-      const p1Res = document.getElementById('p1-res');
+    document.addEventListener('DOMContentLoaded', function() {
+      const calcType = document.getElementById('calc-type');
+      const valX = document.getElementById('val-x');
+      const valY = document.getElementById('val-y');
+      const labelX = document.getElementById('label-x');
+      const labelY = document.getElementById('label-y');
+      const btnCalc = document.getElementById('btn-calc-percent');
+      const resultsWrapper = document.getElementById('results-wrapper');
 
-      function calc1() {
-        const pct = parseFloat(p1Percent.value) || 0;
-        const val = parseFloat(p1Value.value) || 0;
-        p1Res.textContent = `Result: ${(val * (pct / 100)).toFixed(2)}`;
-      }
+      const resLabel = document.getElementById('res-label');
+      const resVal = document.getElementById('res-val');
+      const resExplanation = document.getElementById('res-explanation');
 
-      p1Percent.addEventListener('input', calc1);
-      p1Value.addEventListener('input', calc1);
+      calcType.addEventListener('change', function() {
+        const mode = calcType.value;
+        if (mode === 'percent-of') {
+          labelX.textContent = 'Value X (Percentage %)';
+          labelY.textContent = 'Value Y (Base Number)';
+          valX.placeholder = 'e.g., 15';
+          valY.placeholder = 'e.g., 200';
+        } else if (mode === 'is-percent-of') {
+          labelX.textContent = 'Value X (Part Number)';
+          labelY.textContent = 'Value Y (Total Number)';
+          valX.placeholder = 'e.g., 45';
+          valY.placeholder = 'e.g., 60';
+        } else if (mode === 'percent-change') {
+          labelX.textContent = 'Original Value (X)';
+          labelY.textContent = 'New Value (Y)';
+          valX.placeholder = 'e.g., 100';
+          valY.placeholder = 'e.g., 150';
+        }
+      });
 
-      const p2V1 = document.getElementById('p2-v1');
-      const p2V2 = document.getElementById('p2-v2');
-      const p2Res = document.getElementById('p2-res');
+      btnCalc.addEventListener('click', function() {
+        const x = parseFloat(valX.value);
+        const y = parseFloat(valY.value);
+        const mode = calcType.value;
 
-      function calc2() {
-        const v1 = parseFloat(p2V1.value) || 0;
-        const v2 = parseFloat(p2V2.value) || 1;
-        p2Res.textContent = `Result: ${((v1 / v2) * 100).toFixed(2)}%`;
-      }
+        if (isNaN(x) || isNaN(y)) {
+          alert('Please enter valid numbers in both input fields.');
+          return;
+        }
 
-      p2V1.addEventListener('input', calc2);
-      p2V2.addEventListener('input', calc2);
+        let result = 0;
+        let explanationText = '';
+        let resultLabelText = 'Calculated Result';
+
+        if (mode === 'percent-of') {
+          result = (x * y) / 100;
+          resultLabelText = `${x}% of ${y} is`;
+          explanationText = `Formula applied: (${x} × ${y}) / 100`;
+          resVal.textContent = result.toLocaleString();
+        } else if (mode === 'is-percent-of') {
+          if (y === 0) { alert('Base number Y cannot be zero.'); return; }
+          result = (x / y) * 100;
+          resultLabelText = `${x} is what percentage of ${y}?`;
+          explanationText = `Formula applied: (${x} / ${y}) × 100`;
+          resVal.textContent = result.toFixed(2) + '%';
+        } else if (mode === 'percent-change') {
+          if (x === 0) { alert('Original value X cannot be zero for percentage change.'); return; }
+          result = ((y - x) / Math.abs(x)) * 100;
+          const status = result >= 0 ? 'Increase' : 'Decrease';
+          resultLabelText = `Percentage ${status} from ${x} to ${y}`;
+          explanationText = `Formula applied: ((${y} - ${x}) / |${x}|) × 100`;
+          resVal.textContent = (result >= 0 ? '+' : '') + result.toFixed(2) + '%';
+        }
+
+        resLabel.textContent = resultLabelText;
+        resExplanation.textContent = explanationText;
+        resultsWrapper.style.display = 'block';
+      });
     });
   </script>
 </body>
