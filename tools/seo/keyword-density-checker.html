@@ -22,9 +22,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Primary SEO Meta Tags -->
-  <title>Free Online Keyword Density Checker & Word Counter | MicroToolStack</title>
-  <meta name="description" content="Free online Keyword Density Checker tool. Analyze word frequencies, 1-word, 2-word, and 3-word phrase density to optimize article SEO and avoid keyword stuffing.">
-  <meta name="keywords" content="keyword density checker, keyword frequency analyzer, word frequency counter, check keyword density online, article keyword analyzer, seo text analysis">
+  <title>Free Online Keyword Density Checker | SEO Frequency Analyzer | MicroToolStack</title>
+  <meta name="description" content="Analyze keyword density and word frequency in your content online for free. Detect over-optimization, check 1-word, 2-word, and 3-word key phrases, and optimize content for search engines.">
+  <meta name="keywords" content="keyword density checker, keyword frequency analyzer, seo keyword counter, check keyword density, keyword stuffing detector, content optimization tool, seo tools, microtoolstack">
 
   <link rel="canonical" href="https://microtoolstack.com/tools/seo/keyword-density-checker.html">
   <meta name="robots" content="index, follow">
@@ -33,7 +33,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://microtoolstack.com/tools/seo/keyword-density-checker.html">
   <meta property="og:title" content="Free Online Keyword Density Checker | MicroToolStack">
-  <meta property="og:description" content="Instantly analyze keyword distribution, single words, and multi-word phrases to prevent keyword stuffing in your articles.">
+  <meta property="og:description" content="Analyze keyword density, word frequency, and N-gram key phrases in real time to prevent keyword stuffing. 100% free, fast, and privacy-first webmaster utility.">
   <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
@@ -48,15 +48,15 @@
     "@graph": [
       {
         "@type": "SoftwareApplication",
-        "name": "Keyword Density Checker",
+        "name": "Keyword Density Checker & Text Analyzer",
         "operatingSystem": "All",
-        "applicationCategory": "SEOApplication",
+        "applicationCategory": "UtilitiesApplication",
         "offers": {
           "@type": "Offer",
           "price": "0",
           "priceCurrency": "USD"
         },
-        "description": "An online SEO utility that analyzes word frequency and percentage density for 1-word, 2-word, and 3-word phrases in web content.",
+        "description": "An essential client-side SEO utility that analyzes article text or HTML content to calculate word frequency percentages and multi-word N-gram key phrase densities.",
         "url": "https://microtoolstack.com/tools/seo/keyword-density-checker.html"
       },
       {
@@ -64,26 +64,34 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "What is the ideal keyword density for SEO?",
+            "name": "What is keyword density in SEO?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Most SEO experts recommend maintaining a keyword density between 1% and 2%. Keeping it within this range ensures search engine crawlers recognize the topic without triggering keyword stuffing penalties."
+              "text": "Keyword density is the percentage of times a specific keyword or phrase appears within a text relative to the total word count of the document."
             }
           },
           {
             "@type": "Question",
-            "name": "Does this tool ignore common stop words?",
+            "name": "What is the ideal keyword density percentage for Google?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes! You can toggle stop words filtering to exclude non-essential words (like 'the', 'is', 'and', 'at') to focus purely on meaningful keywords."
+              "text": "There is no fixed ideal percentage, but most SEO experts recommend keeping primary keyword density between 1% and 2.5% to ensure natural readability while preventing keyword stuffing penalties."
             }
           },
           {
             "@type": "Question",
-            "name": "Is my article content secure and private?",
+            "name": "What is keyword stuffing?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes, 100%. All processing runs client-side inside your web browser. No text is ever saved or sent to external servers."
+              "text": "Keyword stuffing is the practice of excessively repeating target keywords on a webpage to manipulate search engine rankings. Modern search algorithms penalize keyword stuffing."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this Keyword Density Checker free to use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, MicroToolStack's Keyword Density Checker is 100% free with unlimited text analysis and no registration required."
             }
           }
         ]
@@ -101,94 +109,123 @@
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
 
   <style>
-    .editor-textarea {
+    .input-group {
+      margin-bottom: 1.25rem;
+    }
+    .input-label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.5rem;
+    }
+    .form-control, .form-select {
       width: 100%;
-      min-height: 220px;
-      padding: 1rem;
-      font-family: inherit;
+      padding: 0.75rem 1rem;
       font-size: 1rem;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
+      color: var(--text-primary, #fff);
+      outline: none;
+      box-sizing: border-box;
+    }
+    .form-control:focus, .form-select:focus {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+
+    .code-textarea {
+      width: 100%;
+      min-height: 180px;
+      padding: 1rem;
+      font-size: 0.95rem;
       line-height: 1.6;
       border: 1px solid var(--border-color, #333);
       border-radius: var(--radius-md, 8px);
-      background-color: #0d1117;
+      background-color: var(--bg-card, #1e1e2e);
       color: var(--text-primary, #fff);
       outline: none;
       resize: vertical;
       box-sizing: border-box;
+    }
+
+    /* Mode Tabs */
+    .tab-bar {
+      display: flex;
+      gap: 0.5rem;
       margin-bottom: 1.25rem;
     }
-    .metrics-grid {
+    .tab-btn {
+      padding: 0.5rem 1.15rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      background: var(--bg-card, #1e1e2e);
+      color: var(--text-secondary, #9ca3af);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .tab-btn.active {
+      background: var(--accent-primary, #3b82f6);
+      color: #fff;
+      border-color: var(--accent-primary, #3b82f6);
+    }
+
+    /* Metrics Summary Badges */
+    .metrics-summary-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
       gap: 1rem;
       margin-bottom: 1.5rem;
     }
+
     .metric-card {
-      background: var(--bg-card, #1e1e2e);
+      background: #111827;
       border: 1px solid var(--border-color, #333);
       border-radius: 8px;
       padding: 1rem;
       text-align: center;
     }
+
     .metric-value {
       font-size: 1.6rem;
+      font-family: 'Fira Code', Consolas, Monaco, monospace;
       font-weight: 700;
-      color: var(--accent-primary, #3b82f6);
-      margin-top: 0.25rem;
+      color: #38bdf8;
     }
+
     .metric-label {
-      font-size: 0.85rem;
-      color: var(--text-secondary, #9ca3af);
+      font-size: 0.8rem;
+      color: #9ca3af;
+      margin-top: 0.2rem;
     }
+
+    /* Density Table */
     .density-table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 1rem;
-      background: var(--bg-card, #1e1e2e);
-      border-radius: 8px;
-      overflow: hidden;
-      border: 1px solid var(--border-color, #333);
+      margin-top: 0.75rem;
+      margin-bottom: 1rem;
     }
     .density-table th, .density-table td {
-      padding: 0.75rem 1rem;
+      border: 1px solid var(--border-color, #333);
+      padding: 0.65rem 0.85rem;
       text-align: left;
-      border-bottom: 1px solid var(--border-color, #333);
+      font-size: 0.85rem;
     }
     .density-table th {
       background: rgba(255, 255, 255, 0.05);
       color: var(--text-primary, #fff);
-      font-weight: 600;
     }
     .density-table td {
-      color: var(--text-secondary, #9ca3af);
-      font-size: 0.95rem;
-    }
-    .tab-buttons {
-      display: flex;
-      gap: 0.5rem;
-      margin-bottom: 1rem;
-      background: #0d1117;
-      padding: 0.35rem;
-      border-radius: 8px;
-      border: 1px solid var(--border-color, #333);
-    }
-    .tab-btn {
-      flex: 1;
-      padding: 0.5rem 0.75rem;
-      border: none;
-      background: transparent;
       color: #9ca3af;
-      font-weight: 600;
-      font-size: 0.85rem;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: all 0.2s;
     }
-    .tab-btn.active {
-      background: var(--accent-primary, #3b82f6);
-      color: #fff;
-    }
-    .editor-controls {
+
+    .density-high { color: #ef4444; font-weight: 700; }
+    .density-opt { color: #10b981; font-weight: 600; }
+
+    .controls-bar {
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
@@ -196,11 +233,7 @@
       align-items: center;
       margin-bottom: 2.5rem;
     }
-    .btn-group {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-    }
+
     .content-box {
       background-color: var(--bg-card, #1e1e2e);
       border: 1px solid var(--border-color, #333);
@@ -211,6 +244,12 @@
     .content-box h2 {
       font-size: 1.35rem;
       margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
       color: var(--text-primary, #fff);
     }
     .content-box p, .content-box ul {
@@ -263,120 +302,142 @@
 
   <!-- Main Container -->
   <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
-    <!-- Breadcrumb Navigation -->
-    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
-      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
-      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">SEO Tools</a> / 
-      <span>Keyword Density Checker</span>
-    </nav>
     
     <!-- Tool Title & Description -->
     <div style="text-align: center; margin-bottom: 2rem;">
-      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Keyword Density Checker</h1>
-      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Analyze keyword frequency, word distribution, and phrase density to optimize search engine ranking.</p>
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online Keyword Density Checker</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Analyze word frequency percentages and key phrase densities to optimize content for search engines.</p>
     </div>
 
-    <!-- Textarea Code Input Editor -->
-    <textarea id="text-input" class="editor-textarea" placeholder="Paste your article or Web copy text here to calculate keyword density..." autofocus></textarea>
+    <!-- Text Input Card -->
+    <div class="input-group">
+      <label for="text-input" class="input-label">Paste Article Text or Webpage HTML Source</label>
+      <textarea id="text-input" class="code-textarea" placeholder="Paste your content here to analyze keyword frequency and density percentages..."></textarea>
+    </div>
 
-    <!-- Word Overview Metrics -->
-    <div class="metrics-grid">
+    <!-- Mode Selector Tabs -->
+    <div class="tab-bar">
+      <button class="tab-btn active" id="tab-1word">1-Word Terms</button>
+      <button class="tab-btn" id="tab-2words">2-Word Phrases</button>
+      <button class="tab-btn" id="tab-3words">3-Word Phrases</button>
+    </div>
+
+    <!-- Summary Metrics Grid -->
+    <div class="metrics-summary-grid">
       <div class="metric-card">
-        <div class="metric-label">Total Words</div>
         <div id="stat-words" class="metric-value">0</div>
+        <div class="metric-label">Total Words</div>
       </div>
       <div class="metric-card">
-        <div class="metric-label">Unique Words</div>
         <div id="stat-unique" class="metric-value">0</div>
+        <div class="metric-label">Unique Words</div>
       </div>
       <div class="metric-card">
-        <div class="metric-label">Characters</div>
-        <div id="stat-chars" class="metric-value">0</div>
+        <div id="stat-top-density" class="metric-value">0%</div>
+        <div class="metric-label">Top Keyword Density</div>
       </div>
     </div>
 
-    <!-- Filter Option & Tabs -->
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; flex-wrap: wrap; gap: 0.5rem;">
-      <div class="tab-buttons" style="margin-bottom:0; flex: 1; max-width: 380px;">
-        <button id="tab-1word" class="tab-btn active">1 Word</button>
-        <button id="tab-2words" class="tab-btn">2 Words Phrase</button>
-        <button id="tab-3words" class="tab-btn">3 Words Phrase</button>
+    <!-- Density Analysis Results Box -->
+    <div class="content-box" style="margin-bottom: 1.5rem;">
+      <h2 style="font-size: 1.15rem; margin-top: 0; margin-bottom: 0.5rem;">Keyword Density Frequency Breakdown</h2>
+      
+      <div style="overflow-x: auto;">
+        <table class="density-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Keyword / Key Phrase</th>
+              <th>Frequency (Count)</th>
+              <th>Density (%)</th>
+            </tr>
+          </thead>
+          <tbody id="density-tbody">
+            <tr>
+              <td colspan="4" style="text-align: center; color: #6b7280;">Paste text above to view keyword density breakdown...</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-      <label style="font-size: 0.88rem; color: var(--text-primary, #fff); cursor: pointer;">
-        <input type="checkbox" id="check-stopwords" checked style="accent-color: var(--accent-primary, #3b82f6);"> Ignore Common Stop Words
-      </label>
     </div>
 
-    <!-- Density Results Table -->
-    <div style="margin-bottom: 1.5rem; overflow-x: auto;">
-      <table class="density-table">
-        <thead>
-          <tr>
-            <th>Keyword / Phrase</th>
-            <th>Frequency Count</th>
-            <th>Density Ratio</th>
-          </tr>
-        </thead>
-        <tbody id="density-tbody">
-          <tr><td colspan="3" style="text-align:center;">Enter or paste article text above to display keyword density analysis.</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <!-- Action Buttons -->
-    <div class="editor-controls">
-      <div class="btn-group">
-        <button id="btn-sample" class="btn btn-primary" style="padding: 0.68rem 1.4rem; cursor: pointer;">📝 Load Sample Article</button>
-        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.68rem 1.2rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear</button>
+    <!-- Controls Bar -->
+    <div class="controls-bar">
+      <div></div>
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear Text</button>
       </div>
     </div>
 
     <!-- SEO Article Content Box 1 -->
     <div class="content-box">
-      <h2>Why Keyword Density Analysis is Essential for On-Page SEO</h2>
-      <p>Keyword density refers to the percentage ratio of a specific target keyword or phrase compared to the total word count of an article. Optimizing keyword density ensures search engine algorithms (such as Google and Bing) accurately understand your page topic while protecting your website against <strong>keyword stuffing penalties</strong>.</p>
+      <h2>What is Keyword Density and Why Does it Matter for SEO?</h2>
+      <p>In Search Engine Optimization (SEO), <strong>Keyword Density</strong> refers to the percentage ratio of a specific target keyword or key phrase relative to the total word count of an article. Historically, search algorithms relied heavily on keyword frequency to determine webpage topics.</p>
+
+      <p>While modern search algorithms like Google BERT and MUM prioritize topical depth and natural language context, monitoring keyword density remains critical. Maintaining a balanced keyword frequency ensures your target search terms appear sufficient times without triggering <strong>Keyword Stuffing</strong> penalties. Our free <strong>Online Keyword Density Checker</strong> calculates 1-word, 2-word, and 3-word phrase densities instantly.</p>
     </div>
 
     <!-- SEO Article Content Box 2 -->
     <div class="content-box">
-      <h2>How to Maintain Ideal On-Page Keyword Density</h2>
+      <h2>Recommended Keyword Density Ranges</h2>
+      <p>Standard SEO recommendations for maintaining natural, search-friendly content:</p>
+
       <ul>
-        <li><strong>Aim for 1% - 2% Target Ratio:</strong> Include your primary focus keyword approximately 1 to 2 times per 100 words.</li>
-        <li><strong>Use LSI & Multi-Word Phrases:</strong> Combine single keywords into 2-word and 3-word phrase variations (e.g., "Keyword Density", "Check Keyword Ratio").</li>
-        <li><strong>Distribute Naturally:</strong> Place primary keywords naturally inside title headers (H1, H2), introduction paragraphs, and meta descriptions.</li>
+        <li><strong>Primary Target Keywords:</strong> Aim for a density between 1% and 2.5% (approximately 10 to 25 occurrences per 1,000 words).</li>
+        <li><strong>Secondary & Long-Tail Phrases:</strong> Aim for 0.5% to 1% density.</li>
+        <li><strong>Over-Optimization Warning (> 3.5%):</strong> Densities exceeding 3.5% sound unnatural to human readers and risk algorithmic penalties for keyword repetition.</li>
       </ul>
     </div>
 
-    <!-- Internal Linking Section -->
+    <!-- SEO Article Content Box 3 -->
     <div class="content-box">
-      <h2>Explore Related SEO Utilities</h2>
-      <p>Enhance your search engine optimization workflow:</p>
+      <h2>Features of MicroToolStack's Keyword Density Analyzer</h2>
+      <ul>
+        <li><strong>Multi-Word N-Gram Analysis:</strong> Analyzes single words, 2-word combinations, and 3-word phrase structures.</li>
+        <li><strong>Automatic Stop-Word Filtering:</strong> Filters common stop words (e.g. "and", "the", "in", "is") to isolate meaningful SEO key phrases.</li>
+        <li><strong>100% Client-Side Privacy:</strong> All text tokenization and frequency counting execute locally in your web browser session using JavaScript. Text is never stored or sent to remote servers.</li>
+        <li><strong>Free & Unlimited Usage:</strong> No word count caps or account sign-ups required.</li>
+      </ul>
+    </div>
+
+    <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
+    <div class="content-box">
+      <h2>Explore Related SEO & Text Tools</h2>
+      <p>Discover our complementary online webmaster utilities:</p>
       <div class="related-links">
-        <a href="/tools/seo/slug-generator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🔗 URL Slug Generator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Convert article titles into clean, SEO-friendly URL slugs.</span>
+        <a href="/tools/text/word-counter.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📊 Real-Time Word Counter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Analyze character counts, reading time, and sentence stats.</span>
         </a>
-        <a href="/tools/seo/meta-title-generator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🏷️ Meta Title Generator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Create Google pixel-perfect title tags.</span>
+        <a href="/tools/seo/google-serp-preview.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🖥️ Google SERP Preview Tool</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Simulate desktop & mobile Google search result snippets.</span>
         </a>
-        <a href="/tools/text/readability-checker.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">📖 Readability Score Checker</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Test article readability with Flesch Reading Ease index.</span>
+        <a href="/tools/seo/faq-schema-generator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📄 FAQ Schema Generator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Build Google-compliant FAQPage JSON-LD scripts for SERPs.</span>
         </a>
       </div>
     </div>
 
     <!-- FAQ Section -->
     <div class="content-box">
-      <h2>Frequently Asked Questions</h2>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What is keyword stuffing?</h3>
-        <p>Keyword stuffing occurs when a target word is repeated excessively on a page (e.g., > 4% density) in an attempt to manipulate search engine rankings. Search engines penalize pages that use spammy keyword repetition.</p>
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How do I check keyword density in an article?</h3>
+        <p>Paste your article text into the input box. The tool tokenizes the text and displays a frequency breakdown table for 1-word, 2-word, and 3-word key phrases.</p>
       </div>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Why should I exclude stop words?</h3>
-        <p>Stop words like "the", "a", "and", "is", and "of" naturally occur at high frequencies in English grammar. Filtering them out allows you to analyze actual meaningful keywords.</p>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What is keyword stuffing?</h3>
+        <p>Keyword stuffing is the practice of excessively repeating target keywords to manipulate search engine rankings. It results in poor readability and potential search ranking demotions.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is my article text saved on remote servers?</h3>
+        <p>No. All calculations run client-side inside your browser session using JavaScript. Your text remains 100% private.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this Keyword Density Checker free?</h3>
+        <p>Yes, MicroToolStack's Keyword Density Checker is 100% free with no usage limits or sign-up required.</p>
       </div>
     </div>
 
@@ -393,127 +454,146 @@
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const textInput = document.getElementById('text-input');
-      const tbody = document.getElementById('density-tbody');
-      const checkStopwords = document.getElementById('check-stopwords');
+      const tab1Word = document.getElementById('tab-1word');
+      const tab2Words = document.getElementById('tab-2words');
+      const tab3Words = document.getElementById('tab-3words');
 
       const statWords = document.getElementById('stat-words');
       const statUnique = document.getElementById('stat-unique');
-      const statChars = document.getElementById('stat-chars');
-
-      const tab1word = document.getElementById('tab-1word');
-      const tab2words = document.getElementById('tab-2words');
-      const tab3words = document.getElementById('tab-3words');
-
-      const btnSample = document.getElementById('btn-sample');
+      const statTopDensity = document.getElementById('stat-top-density');
+      const densityTbody = document.getElementById('density-tbody');
       const btnClear = document.getElementById('btn-clear');
 
-      let currentNgramMode = 1;
+      let currentNgram = 1; // 1, 2, or 3
 
-      const stopWordsSet = new Set(["a","about","above","after","again","against","all","am","an","and","any","are","aren't","as","at","be","because","been","before","being","below","between","both","but","by","can't","cannot","could","couldn't","did","didn't","do","does","doesn't","doing","don't","down","during","each","few","for","from","further","had","hadn't","has","hasn't","have","haven't","having","he","he'd","he'll","he's","her","here","here's","hers","herself","him","himself","his","how","how's","i","i'd","i'll","i'm","i've","if","in","into","is","isn't","it","it's","its","itself","let's","me","more","most","mustn't","my","myself","no","nor","not","of","off","on","once","only","or","other","ought","our","ours","ourselves","out","over","own","same","shan't","she","she'd","she'll","she's","should","shouldn't","so","some","such","than","that","that's","the","their","theirs","them","themselves","then","there","there's","these","they","they'd","they'll","they're","they've","this","those","through","to","too","under","until","up","very","was","wasn't","we","we'd","we'll","we're","we've","were","weren't","what","what's","when","when's","where","where's","which","while","who","who's","whom","why","why's","with","won't","would","wouldn't","you","you'd","you'll","you're","you've","your","yours","yourself","yourselves"]);
+      const stopWords = new Set([
+        "a", "about", "above", "after", "again", "against", "all", "am", "an", "and", "any", "are", "aren't", "as", "at",
+        "be", "because", "been", "before", "being", "below", "between", "both", "but", "by", "can", "can't", "cannot",
+        "could", "couldn't", "did", "didn't", "do", "does", "doesn't", "doing", "don't", "down", "during", "each", "few",
+        "for", "from", "further", "had", "hadn't", "has", "hasn't", "have", "haven't", "having", "he", "he'd", "he'll",
+        "he's", "her", "here", "here's", "hers", "herself", "him", "himself", "his", "how", "how's", "i", "i'd", "i'll",
+        "i'm", "i've", "if", "in", "into", "is", "isn't", "it", "it's", "its", "itself", "let's", "me", "more", "most",
+        "mustn't", "my", "myself", "no", "nor", "not", "of", "off", "on", "once", "only", "or", "other", "ought", "our",
+        "ours", "ourselves", "out", "over", "own", "same", "shan't", "she", "she'd", "she'll", "she's", "should",
+        "shouldn't", "so", "some", "such", "than", "that", "that's", "the", "their", "theirs", "them", "themselves",
+        "then", "there", "there's", "these", "they", "they'd", "they'll", "they're", "they've", "this", "those",
+        "through", "to", "too", "under", "until", "up", "very", "was", "wasn't", "we", "we'd", "we'll", "we're",
+        "we've", "were", "weren't", "what", "what's", "when", "when's", "where", "where's", "which", "while", "who",
+        "who's", "whom", "why", "why's", "with", "won't", "would", "wouldn't", "you", "you'd", "you'll", "you're",
+        "you've", "your", "yours", "yourself", "yourselves"
+      ]);
 
-      function calculateDensity() {
-        const text = textInput.value.toLowerCase().trim();
+      function tokenizeText(text) {
+        // Strip HTML tags
+        const cleanText = text.replace(/<[^>]*>/g, ' ');
+        // Extract words
+        const words = cleanText.toLowerCase().match(/ [a-z0-9]+(?:'[a-z0-9]+)? /g);
+        return words || [];
+      }
 
-        if (!text) {
-          tbody.innerHTML = '<tr><td colspan="3" style="text-align:center;">Enter or paste article text above to display keyword density analysis.</td></tr>';
-          statWords.textContent = '0';
+      function analyzeDensity() {
+        const text = textInput.value;
+        const words = tokenizeText(text);
+        const totalWordCount = words.length;
+
+        statWords.textContent = totalWordCount;
+
+        if (totalWordCount === 0) {
           statUnique.textContent = '0';
-          statChars.textContent = '0';
+          statTopDensity.textContent = '0%';
+          densityTbody.innerHTML = `<tr><td colspan="4" style="text-align: center; color: #6b7280;">Paste text above to view keyword density breakdown...</td></tr>`;
           return;
         }
 
-        const rawWords = text.match(/\b[a-z0-9]+(?:'[a-z0-9]+)?\b/g) || [];
-        const totalWords = rawWords.length;
-        statWords.textContent = totalWords.toLocaleString();
-        statChars.textContent = text.length.toLocaleString();
+        const uniqueSet = new Set(words);
+        statUnique.textContent = uniqueSet.size;
 
-        if (totalWords === 0) return;
+        // Build N-grams
+        const freqMap = new Map();
 
-        const ignoreStop = checkStopwords.checked;
-
-        let nGrams = [];
-
-        if (currentNgramMode === 1) {
-          nGrams = rawWords.filter(word => {
-            if (ignoreStop && stopWordsSet.has(word)) return false;
-            return word.length > 1;
+        if (currentNgram === 1) {
+          words.forEach(w => {
+            if (!stopWords.has(w) && w.length > 2) {
+              freqMap.set(w, (freqMap.get(w) || 0) + 1);
+            }
           });
         } else {
-          for (let i = 0; i <= rawWords.length - currentNgramMode; i++) {
-            const phraseWords = rawWords.slice(i, i + currentNgramMode);
-            if (ignoreStop) {
-              if (stopWordsSet.has(phraseWords[0]) || stopWordsSet.has(phraseWords[phraseWords.length - 1])) {
-                continue;
-              }
+          for (let i = 0; i <= words.length - currentNgram; i++) {
+            const phrase = words.slice(i, i + currentNgram).join(' ');
+            // Ensure phrase doesn't consist solely of stop words
+            const phraseWords = phrase.split(' ');
+            const nonStopCount = phraseWords.filter(pw => !stopWords.has(pw)).length;
+
+            if (nonStopCount > 0) {
+              freqMap.set(phrase, (freqMap.get(phrase) || 0) + 1);
             }
-            nGrams.push(phraseWords.join(' '));
           }
         }
 
-        const uniqueSet = new Set(rawWords);
-        statUnique.textContent = uniqueSet.size.toLocaleString();
-
-        const freqMap = {};
-        nGrams.forEach(item => {
-          freqMap[item] = (freqMap[item] || 0) + 1;
-        });
-
-        const sorted = Object.entries(freqMap)
-          .sort((a, b) => b[1] - a[1])
-          .slice(0, 15);
+        const sorted = Array.from(freqMap.entries()).sort((a, b) => b[1] - a[1]);
 
         if (sorted.length === 0) {
-          tbody.innerHTML = '<tr><td colspan="3" style="text-align:center;">No keywords found for current filter settings.</td></tr>';
+          statTopDensity.textContent = '0%';
+          densityTbody.innerHTML = `<tr><td colspan="4" style="text-align: center; color: #6b7280;">No valid keywords found for selected phrase length.</td></tr>`;
           return;
         }
 
-        tbody.innerHTML = sorted.map(([keyword, count]) => {
-          const density = ((count / totalWords) * 100).toFixed(2);
-          return `<tr>
-            <td><strong>${keyword}</strong></td>
+        // Top density
+        const topCount = sorted[0][1];
+        const topPct = ((topCount / totalWordCount) * 100).toFixed(2);
+        statTopDensity.textContent = `${topPct}%`;
+
+        // Render Table Rows (Top 15)
+        densityTbody.innerHTML = '';
+        sorted.slice(0, 15).forEach(([phrase, count], idx) => {
+          const pct = ((count / totalWordCount) * 100).toFixed(2);
+          const isHigh = parseFloat(pct) > 3.5;
+
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+            <td>${idx + 1}</td>
+            <td style="font-weight: 600; color: #fff;">${escapeHtml(phrase)}</td>
             <td>${count}</td>
-            <td><span style="color: var(--accent-primary, #3b82f6); font-weight: 700;">${density}%</span></td>
-          </tr>`;
-        }).join('');
+            <td class="${isHigh ? 'density-high' : 'density-opt'}">${pct}% ${isHigh ? '(Over-optimized)' : ''}</td>
+          `;
+          densityTbody.appendChild(tr);
+        });
       }
 
-      // Tab handlers
-      tab1word.addEventListener('click', () => {
-        currentNgramMode = 1;
-        tab1word.classList.add('active');
-        tab2words.classList.remove('active');
-        tab3words.classList.remove('active');
-        calculateDensity();
+      function escapeHtml(str) {
+        return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+      }
+
+      // Tab Events
+      tab1Word.addEventListener('click', () => {
+        tab1Word.classList.add('active');
+        tab2Words.classList.remove('active');
+        tab3Words.classList.remove('active');
+        currentNgram = 1;
+        analyzeDensity();
       });
 
-      tab2words.addEventListener('click', () => {
-        currentNgramMode = 2;
-        tab2words.classList.add('active');
-        tab1word.classList.remove('active');
-        tab3words.classList.remove('active');
-        calculateDensity();
+      tab2Words.addEventListener('click', () => {
+        tab2Words.classList.add('active');
+        tab1Word.classList.remove('active');
+        tab3Words.classList.remove('active');
+        currentNgram = 2;
+        analyzeDensity();
       });
 
-      tab3words.addEventListener('click', () => {
-        currentNgramMode = 3;
-        tab3words.classList.add('active');
-        tab1word.classList.remove('active');
-        tab2words.classList.remove('active');
-        calculateDensity();
+      tab3Words.addEventListener('click', () => {
+        tab3Words.classList.add('active');
+        tab1Word.classList.remove('active');
+        tab2Words.classList.remove('active');
+        currentNgram = 3;
+        analyzeDensity();
       });
 
-      textInput.addEventListener('input', calculateDensity);
-      checkStopwords.addEventListener('change', calculateDensity);
+      textInput.addEventListener('input', analyzeDensity);
 
-      btnSample.addEventListener('click', () => {
-        textInput.value = "MicroToolStack provides free online developer and search engine optimization tools. Using a keyword density checker allows web developers and SEO content writers to analyze keyword ratios. Maintaining a clean keyword density ensures higher search engine visibility without causing keyword stuffing penalties for your blog content.";
-        calculateDensity();
-      });
-
-      btnClear.addEventListener('click', () => {
+      btnClear.addEventListener('click', function() {
         textInput.value = '';
-        calculateDensity();
-        textInput.focus();
+        analyzeDensity();
       });
     });
   </script>
