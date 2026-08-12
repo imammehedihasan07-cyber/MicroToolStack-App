@@ -1,421 +1,312 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) - Optimized Load -->
-  <script>
-    window.addEventListener('load', function() {
-      setTimeout(function() {
-        var gTagScript = document.createElement('script');
-        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
-        gTagScript.async = true;
-        document.head.appendChild(gTagScript);
-
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-F3WWR9KGB4');
-      }, 1000);
-    });
-  </script>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <!-- Primary SEO Meta Tags -->
-  <title>Free AI Caption Generator Online | Instagram, Facebook & TikTok</title>
-  <meta name="description" content="Free online AI Caption Generator to create viral social media captions, short reels descriptions, and trending hashtags for Instagram, Facebook, TikTok, and YouTube.">
-  <meta name="keywords" content="ai caption generator, instagram caption generator, social media caption builder, facebook caption tool, tiktok caption generator, viral hashtags generator">
-
-  <link rel="canonical" href="https://microtoolstack.com/tools/ai/caption-generator.html">
+  <title>Free AI Caption Generator for Instagram, TikTok & Facebook | MicroToolStack</title>
+  <meta name="description" content="Generate viral, creative, and engaging captions for Instagram photos, TikTok videos, and Facebook posts using our free AI Caption Generator. Choose tones and emojis easily.">
   <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://microtoolstack.com/tools/ai/caption-generator.html">
 
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://microtoolstack.com/tools/ai/caption-generator.html">
-  <meta property="og:title" content="Free AI Caption Generator Online | MicroToolStack">
-  <meta property="og:description" content="Generate catchy, engaging social media captions and trending hashtags in seconds. 100% free and private.">
-  <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
-
-  <!-- Favicon Icon for Google & Devices -->
+  <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
-  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
-  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "SoftwareApplication",
-        "name": "AI Caption & Hashtag Generator",
-        "operatingSystem": "All",
-        "applicationCategory": "UtilitiesApplication",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "description": "An intelligent social media caption builder that crafts post ideas, engaging descriptions, and hashtags tailored for Instagram, Facebook, and TikTok.",
-        "url": "https://microtoolstack.com/tools/ai/caption-generator.html"
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How does the AI Caption Generator work?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Simply enter your topic, select a post tone (e.g., Casual, Professional, Funny), and choose your target social platform. The tool automatically formats engaging captions with emojis and hashtags."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Which platforms are supported?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The generator supports Instagram Reels/Posts, Facebook Pages, TikTok Videos, YouTube Shorts, and LinkedIn posts."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Is this tool completely free?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes! MicroToolStack's AI Caption Generator is 100% free with no login or daily limits."
-            }
-          }
-        ]
-      }
-    ]
-  }
-  </script>
-
-  <!-- Preconnect and Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <!-- CSS Stylesheets -->
-  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/variables.css?v=10.0">
   <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
 
   <style>
-    .config-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.25rem;
+    .tool-card-box {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1.5rem;
       background: var(--bg-card, #1e1e2e);
-      padding: 1.25rem;
-      border-radius: var(--radius-md, 8px);
       border: 1px solid var(--border-color, #333);
-      margin-bottom: 1.5rem;
+      border-radius: var(--radius-md, 12px);
     }
     .form-group {
+      margin-bottom: 1.2rem;
       display: flex;
       flex-direction: column;
-      gap: 0.4rem;
-    }
-    .form-group label {
-      font-size: 0.88rem;
-      color: var(--text-primary, #fff);
-      font-weight: 600;
-    }
-    .editor-input, .editor-select {
-      width: 100%;
-      padding: 0.75rem;
-      font-size: 0.95rem;
-      border: 1px solid var(--border-color, #333);
-      border-radius: var(--radius-md, 6px);
-      background-color: var(--bg-body, #111827);
-      color: var(--text-primary, #fff);
-      outline: none;
-      box-sizing: border-box;
-    }
-    .output-box {
-      width: 100%;
-      min-height: 180px;
-      padding: 1rem;
-      font-size: 1rem;
-      line-height: 1.6;
-      border: 1px solid var(--border-color, #333);
-      border-radius: var(--radius-md, 8px);
-      background-color: var(--bg-card, #1e1e2e);
-      color: var(--text-primary, #fff);
-      outline: none;
-      resize: vertical;
-      box-sizing: border-box;
-      margin-bottom: 1.5rem;
-    }
-    .editor-controls {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 2.5rem;
-    }
-    .btn-group {
-      display: flex;
       gap: 0.5rem;
     }
-    .content-box {
-      background-color: var(--bg-card, #1e1e2e);
-      border: 1px solid var(--border-color, #333);
-      border-radius: var(--radius-md, 8px);
-      padding: 1.5rem;
-      margin-bottom: 2rem;
-    }
-    .content-box h2 {
-      font-size: 1.35rem;
-      margin-bottom: 1rem;
-      color: var(--text-primary, #fff);
-    }
-    .content-box p, .content-box ul {
-      color: var(--text-secondary, #9ca3af);
+    .form-group label {
+      font-weight: 600;
       font-size: 0.95rem;
+    }
+    .form-control {
+      width: 100%;
+      padding: 0.8rem;
+      border-radius: 8px;
+      border: 1px solid var(--border-color, #444);
+      background: var(--bg-input, #121218);
+      color: var(--text-primary, #fff);
+      font-size: 1rem;
+      outline: none;
+      box-sizing: border-box;
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .btn-action {
+      width: 100%;
+      padding: 0.9rem;
+      background: #3b82f6;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s ease;
+      margin-top: 0.5rem;
+    }
+    .btn-action:hover {
+      background: #2563eb;
+    }
+    .results-wrapper {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .caption-result-card {
+      background: var(--bg-input, #121218);
+      border: 1px solid var(--border-color, #333);
+      padding: 1.2rem;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .caption-text {
+      white-space: pre-line;
       line-height: 1.6;
     }
-    .content-box ul {
-      padding-left: 1.25rem;
+    .btn-copy {
+      padding: 0.5rem 1rem;
+      background: #10b981;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .seo-content-section {
+      max-width: 800px;
+      margin: 3.5rem auto;
+      line-height: 1.8;
+    }
+    .seo-content-section h2 {
+      margin-top: 2rem;
+      font-size: 1.5rem;
+      color: var(--text-primary, #fff);
+    }
+    .seo-content-section p {
       margin-bottom: 1rem;
     }
-    .content-box li {
-      margin-bottom: 0.5rem;
-    }
-    .related-links {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-    .related-card {
-      display: block;
-      padding: 1rem;
+    .faq-item {
       background: var(--bg-card, #1e1e2e);
       border: 1px solid var(--border-color, #333);
+      padding: 1.2rem;
       border-radius: 8px;
-      color: var(--text-primary, #fff);
-      text-decoration: none;
-      transition: border-color 0.2s;
+      margin-top: 1rem;
     }
-    .related-card:hover {
-      border-color: var(--accent-primary, #3b82f6);
+    .faq-item h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
     }
   </style>
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3023714618008515" crossorigin="anonymous"></script>
 </head>
-<body style="margin: 0; padding: 0;">
 
-  <!-- Header Section -->
-  <header class="custom-header">
-    <a href="/" class="custom-logo">
-      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
-    </a>
-    <nav class="custom-nav">
-      <a href="/#categories">Categories</a>
-      <a href="/about.html">About</a>
-      <a href="/contact.html">Contact</a>
-      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
-    </nav>
-  </header>
+<body>
 
-  <!-- Main Container -->
-  <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
-    <!-- Breadcrumb Navigation -->
-    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
-      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
-      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">AI Tools</a> / 
-      <span>AI Caption Generator</span>
-    </nav>
-    
-    <!-- Title Section -->
-    <div style="text-align: center; margin-bottom: 2rem;">
-      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">AI Social Media Caption Generator</h1>
-      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Craft engaging captions, reels descriptions, and trending hashtags for all social platforms.</p>
-    </div>
+  <!-- Dynamic Header -->
+  <div id="header-container"></div>
 
-    <!-- Generator Options Grid -->
-    <div class="config-grid">
-      <div class="form-group" style="grid-column: 1 / -1;">
-        <label>What is your post or video about?</label>
-        <input type="text" id="topic-input" class="editor-input" placeholder="e.g. Travel vlog in Sylhet, Bangladesh with motorcycle riding..." autofocus>
-      </div>
+  <main class="container">
+    <section class="hero text-center">
+      <h1>Free AI Caption Generator</h1>
+      <p>Instantly create engaging, viral, and catchy captions for Instagram posts, TikTok reels, and Facebook content.</p>
+    </section>
 
+    <!-- Interactive Tool Interface -->
+    <div class="tool-card-box">
       <div class="form-group">
-        <label>Target Platform:</label>
-        <select id="platform-select" class="editor-select">
-          <option value="instagram" selected>Instagram Post / Reels</option>
-          <option value="facebook">Facebook Page / Reel</option>
-          <option value="tiktok">TikTok Video</option>
-          <option value="youtube">YouTube Shorts</option>
-          <option value="linkedin">LinkedIn Post</option>
-        </select>
+        <label for="caption-topic">What is your post or video about?</label>
+        <input type="text" id="caption-topic" class="form-control" placeholder="e.g., Sunset view at the beach, Morning coffee routine, New outfit reel...">
       </div>
 
-      <div class="form-group">
-        <label>Caption Tone:</label>
-        <select id="tone-select" class="editor-select">
-          <option value="casual" selected>Casual & Friendly</option>
-          <option value="inspirational">Motivational & Emotional</option>
-          <option value="funny">Humorous & Witty</option>
-          <option value="professional">Professional & Business</option>
-          <option value="minimal">Short & Minimalist</option>
-        </select>
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="caption-platform">Platform:</label>
+          <select id="caption-platform" class="form-control">
+            <option value="Instagram">Instagram Post / Reel</option>
+            <option value="TikTok">TikTok Video</option>
+            <option value="Facebook">Facebook Post</option>
+            <option value="Twitter">Twitter / X</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="caption-tone">Tone of Voice:</label>
+          <select id="caption-tone" class="form-control">
+            <option value="Engaging & Viral">Engaging & Viral</option>
+            <option value="Aesthetic & Chill">Aesthetic & Chill</option>
+            <option value="Funny & Humorous">Funny & Humorous</option>
+            <option value="Motivational & Deep">Motivational & Deep</option>
+            <option value="Short & Minimalist">Short & Minimalist</option>
+          </select>
+        </div>
+      </div>
+
+      <button id="generate-caption-btn" class="btn-action">✨ Generate Captions</button>
+
+      <!-- Output Container -->
+      <div id="caption-results" class="results-wrapper" style="display: none;">
+        <!-- Generated captions will appear here dynamically -->
       </div>
     </div>
 
-    <button id="btn-generate" class="btn btn-primary" style="width: 100%; padding: 0.8rem; font-size: 1rem; font-weight: 600; cursor: pointer; margin-bottom: 1.5rem;">✨ Generate Caption & Hashtags</button>
+    <!-- AdSense Rich SEO Content with Internal Linking -->
+    <article class="seo-content-section">
+      <h2>How Captions Drive Social Media Engagement</h2>
+      <p>A striking image or reel grabs attention, but a captivating caption is what turns casual viewers into engaged followers. High-performing captions encourage user interaction, trigger comments, boost post shares, and help social media algorithms index your content effectively across Instagram, TikTok, and Facebook.</p>
+      
+      <p>Our free <strong>AI Caption Generator</strong> at <a href="https://microtoolstack.com">MicroToolStack</a> takes the stress out of content creation. By leveraging smart prompt templates, it crafts tailored captions optimized for various moods and platforms. To make your entire profile stand out, pair your post captions with a custom bio generated by our <a href="/tools/social/bio-generator.html">AI Bio Generator</a>.</p>
 
-    <!-- Output Textarea -->
-    <h3 style="font-size: 1.1rem; color: var(--text-primary, #fff); margin-bottom: 0.75rem;">📝 Generated Social Caption:</h3>
-    <textarea id="output-caption" class="output-box" placeholder="Your generated caption will appear here..."></textarea>
+      <h2>How to Generate Captions in 3 Simple Steps</h2>
+      <ol>
+        <li><strong>Enter Your Topic:</strong> Describe what your photo, video, or post is about in the input box above.</li>
+        <li><strong>Select Platform & Tone:</strong> Choose your target platform (Instagram, TikTok, Facebook) and pick a vibe (Viral, Aesthetic, Funny, or Motivational).</li>
+        <li><strong>Generate & Copy:</strong> Click <strong>Generate Captions</strong>, review the catchy variations with relevant hashtags, and click <strong>Copy</strong> to use instantly.</li>
+      </ol>
 
-    <!-- Controls -->
-    <div class="editor-controls">
-      <div class="btn-group">
-        <button id="btn-copy" class="btn btn-primary" style="padding: 0.68rem 1.4rem; cursor: pointer;">📋 Copy Caption</button>
-        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.68rem 1.2rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear</button>
-      </div>
-      <span id="status-msg" style="font-size: 0.85rem; color: #10b981; font-weight: 500; display: none;">Caption copied to clipboard!</span>
-    </div>
-
-    <!-- SEO Article Content Box 1 -->
-    <div class="content-box">
-      <h2>Why Great Captions Drive Social Media Growth</h2>
-      <p>A compelling social media caption hooks viewers within the first 3 seconds, encouraging comments, shares, and watch time. Our <strong>AI Caption Generator</strong> combines smart storytelling prompts with targeted emoji placement and viral hashtags to maximize your reach across Instagram, Facebook, and TikTok.</p>
-    </div>
-
-    <!-- SEO Article Content Box 2 -->
-    <div class="content-box">
-      <h2>Best Practices for Writing Social Captions</h2>
+      <h2>Key Features of MicroToolStack AI Caption Generator</h2>
       <ul>
-        <li><strong>Strong Opening Hook:</strong> Start with a question or exciting statement to stop users from scrolling.</li>
-        <li><strong>Call to Action (CTA):</strong> Prompt your followers to comment, like, or save the post.</li>
-        <li><strong>Strategic Emojis:</strong> Break up blocks of text with relatable emojis to boost visual appeal.</li>
-        <li><strong>Relevant Hashtags:</strong> Add a mix of popular and niche hashtags to increase discoverability.</li>
+        <li><strong>Context-Aware Templates:</strong> Generates diverse storytelling hooks, questions to boost comment replies, and call-to-actions (CTAs).</li>
+        <li><strong>Integrated Hashtags:</strong> Automatically appends trending and relevant hashtags to improve discoverability on Instagram and TikTok search pages.</li>
+        <li><strong>Multi-Mood Support:</strong> From humorous one-liners to aesthetic quotes, get options that match your personal or brand identity.</li>
+        <li><strong>100% Free & Unlimited Usage:</strong> Generate unlimited captions without registering an account or facing daily limits. Need to boost post reach even further? Combine this tool with our <a href="/tools/social/hashtag-generator.html">Hashtag Generator</a>.</li>
       </ul>
-    </div>
 
-    <!-- Internal Linking Section (SEO Best Practice) -->
-    <div class="content-box">
-      <h2>Explore Related AI & Text Tools</h2>
-      <p>Enhance your content creation workflow with our free utilities:</p>
-      <div class="related-links">
-        <a href="/tools/ai/ai-bio-generator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">✨ AI Bio Generator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Craft catchy profile bios for social media.</span>
-        </a>
-        <a href="/tools/developer/lorem-ipsum-generator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">📜 Lorem Ipsum Generator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Generate dummy placeholder text for layouts.</span>
-        </a>
-        <a href="/tools/developer/base64-encoder-decoder.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🔒 Base64 Encoder / Decoder</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Encode or decode text strings into Base64 format.</span>
-        </a>
-      </div>
-    </div>
+      <h2>Frequently Asked Questions (FAQ)</h2>
 
-    <!-- FAQ Section -->
-    <div class="content-box">
-      <h2>Frequently Asked Questions</h2>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Can I edit the generated caption before posting?</h3>
-        <p>Yes, the output text area is fully editable so you can tweak words or add personal details before copying.</p>
+      <div class="faq-item">
+        <h3>How long should an Instagram caption be?</h3>
+        <p>Short captions (1 to 3 lines) work best for funny or aesthetic reels, while longer storytelling captions (100+ words) work well for educational posts, lifestyle updates, and high-engagement carousels.</p>
       </div>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is there a limit on how many captions I can generate?</h3>
-        <p>No, MicroToolStack's AI Caption Generator is 100% free with unlimited generation attempts.</p>
-      </div>
-    </div>
 
+      <div class="faq-item">
+        <h3>Do hashtags in captions still help reach new viewers?</h3>
+        <p>Yes! Combining 3 to 7 niche-specific hashtags in your caption helps social algorithms classify your content and display it on search explore pages.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Is my typed text stored on your servers?</h3>
+        <p>No. MicroToolStack processes all client requests instantly within your browser window, ensuring complete user privacy and data protection. Have suggestions for new tools? Visit our <a href="/contact.html">Contact Page</a> to send us your feedback.</p>
+      </div>
+    </article>
   </main>
 
-  <!-- Footer Container Placeholder -->
+  <!-- Dynamic Footer -->
   <div id="footer-container"></div>
 
-  <!-- JavaScript Utilities & Logic -->
+  <!-- Core Scripts -->
   <script src="/assets/js/theme.js"></script>
   <script src="/assets/js/utils.js" defer></script>
-  <script src="/assets/js/app.js" defer></script>
 
+  <!-- Working Functional JavaScript for Caption Generator -->
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const topicInput = document.getElementById('topic-input');
-      const platformSelect = document.getElementById('platform-select');
-      const toneSelect = document.getElementById('tone-select');
-      const btnGenerate = document.getElementById('btn-generate');
-      const outputCaption = document.getElementById('output-caption');
-
-      const btnCopy = document.getElementById('btn-copy');
-      const btnClear = document.getElementById('btn-clear');
-      const statusMsg = document.getElementById('status-msg');
+    document.addEventListener('DOMContentLoaded', function () {
+      const topicInput = document.getElementById('caption-topic');
+      const platformSelect = document.getElementById('caption-platform');
+      const toneSelect = document.getElementById('caption-tone');
+      const generateBtn = document.getElementById('generate-caption-btn');
+      const resultsContainer = document.getElementById('caption-results');
 
       const templates = {
-        casual: [
-          "Every moment has a story to tell, and this one is definitely a favorite! ✨\n\nWhat do you think about this? Drop your thoughts below! 👇\n\n",
-          "Just living in the moment and enjoying the journey! 🚀\n\nSave this post if you love vibes like this! ❤️\n\n"
+        'Engaging & Viral': [
+          "🔥 {topic} is proof that good things take time. What do you think about this?\n\nDrop a comment below! 👇\n\n#{hashtag1} #{hashtag2} #ViralContent #TrendingNow",
+          "Stop scrolling! 🛑 {topic} just hit different today.\n\nSave this post for later and tag a friend who needs to see this! ✨\n\n#{hashtag1} #{hashtag2} #ExplorePage",
+          "Can we talk about {topic} for a second? 💭\n\nLet me know your honest thoughts in the comments! 👇\n\n#{hashtag1} #{hashtag2} #DailyInspiration"
         ],
-        inspirational: [
-          "Success isn't about the destination, it's about the effort you put in every single day. Keep pushing forward! 💪🔥\n\nTag someone who needs to see this today! 🙌\n\n",
-          "Dream big, stay focused, and let your work speak for itself. You've got this! ✨🌟\n\n"
+        'Aesthetic & Chill': [
+          "✨ Quiet moments with {topic}.\n\nfinding peace in the little details 🌿\n\n#{hashtag1} #{hashtag2} #AestheticVibes #Mood",
+          "soft light & {topic} 🤍\n\nsometimes less is more.\n\n#{hashtag1} #{hashtag2} #Minimalist #CozyVibes",
+          "collecting moments, not things. ☁️ {topic}\n\n#{hashtag1} #{hashtag2} #SlowLiving"
         ],
-        funny: [
-          "I told myself I’d be productive today... but then this happened! 😂🤷‍♂️\n\nWho else can relate? Tell me I'm not alone! 💬👇\n\n"
+        'Funny & Humorous': [
+          "Me: I should be productive today.\nAlso me: {topic} 🤷‍♂️😂\n\nWho else can relate? Tell me I'm not alone!\n\n#{hashtag1} #{hashtag2} #RelatableMemes #Humor",
+          "10/10 recommend {topic} for fixing all your problems (or making new ones) 😜\n\n#{hashtag1} #{hashtag2} #FunnyPost",
+          "My brain 24/7: {topic} 🧠✨\n\n#{hashtag1} #{hashtag2} #GoodVibesOnly"
         ],
-        professional: [
-          "Innovation and dedication drive real results. Excited to share our latest updates and insights with you all! 📈💼\n\nWhat are your key takeaways on this topic? Let's connect in the comments!\n\n"
+        'Motivational & Deep': [
+          "💡 {topic} taught me one valuable lesson: your only limit is your mindset.\n\nKeep growing, keep building, and never stop pushing forward. 🚀\n\n#{hashtag1} #{hashtag2} #Motivation #GrowthMindset",
+          "Every step counts when it comes to {topic}. Stay patient and trust the journey. 🌱\n\n#{hashtag1} #{hashtag2} #Inspiration #SuccessMindset"
         ],
-        minimal: [
-          "Simple moments. High vibes. ✨\n\n"
+        'Short & Minimalist': [
+          "Just {topic}. ✨\n\n#{hashtag1} #{hashtag2}",
+          "Current mood: {topic} 🌿\n\n#{hashtag1}",
+          "{topic} hits different. ⚡\n\n#{hashtag1} #{hashtag2}"
         ]
       };
 
-      const hashtags = {
-        instagram: "#ViralReels #TrendingNow #ExplorePage #ContentCreator #DailyVibes #InstaDaily #ReelsInstagram",
-        facebook: "#FacebookReels #TrendingPost #DailyInspiration #ViralContent #Explore",
-        tiktok: "#FYP #ForYouPage #TikTokViral #TrendingAudio #ViralVideo",
-        youtube: "#Shorts #YouTubeShorts #ViralShorts #TrendingShorts",
-        linkedin: "#ProfessionalGrowth #Innovation #CareerGoals #BusinessInsights #Networking"
-      };
-
-      function generateCaption() {
-        const topic = topicInput.value.trim();
-        const platform = platformSelect.value;
+      generateBtn.addEventListener('click', function () {
+        const rawTopic = topicInput.value.trim() || 'beautiful moments';
         const tone = toneSelect.value;
 
-        let selectedTemplates = templates[tone] || templates.casual;
-        let baseText = selectedTemplates[Math.floor(Math.random() * selectedTemplates.length)];
+        // Generate simple hashtags from topic
+        const cleanWords = rawTopic.replace(/[^a-zA-Z0-9 ]/g, "").split(" ").filter(w => w.length > 2);
+        const hashtag1 = cleanWords[0] ? cleanWords[0].toLowerCase() : "content";
+        const hashtag2 = cleanWords[1] ? cleanWords[1].toLowerCase() : "vibe";
 
-        let caption = "";
-        if (topic) {
-          caption = `✨ ${topic.toUpperCase()} ✨\n\n` + baseText;
-        } else {
-          caption = baseText;
-        }
+        const selectedTemplates = templates[tone] || templates['Engaging & Viral'];
+        resultsContainer.innerHTML = '';
 
-        caption += (hashtags[platform] || hashtags.instagram);
-        outputCaption.value = caption;
-      }
+        selectedTemplates.forEach((tpl) => {
+          let captionText = tpl
+            .replace(/{topic}/g, rawTopic)
+            .replace(/{hashtag1}/g, hashtag1)
+            .replace(/{hashtag2}/g, hashtag2);
 
-      btnGenerate.addEventListener('click', generateCaption);
+          const card = document.createElement('div');
+          card.className = 'caption-result-card';
 
-      // Copy Action
-      btnCopy.addEventListener('click', function() {
-        if (!outputCaption.value.trim()) return;
-        navigator.clipboard.writeText(outputCaption.value).then(function() {
-          statusMsg.style.display = 'inline';
-          setTimeout(() => { statusMsg.style.display = 'none'; }, 2000);
+          const textSpan = document.createElement('div');
+          textSpan.className = 'caption-text';
+          textSpan.innerText = captionText;
+
+          const copyBtn = document.createElement('button');
+          copyBtn.className = 'btn-copy';
+          copyBtn.innerText = '📋 Copy';
+
+          copyBtn.addEventListener('click', function () {
+            navigator.clipboard.writeText(captionText).then(() => {
+              copyBtn.innerText = '✅ Copied!';
+              setTimeout(() => copyBtn.innerText = '📋 Copy', 2000);
+            });
+          });
+
+          card.appendChild(textSpan);
+          card.appendChild(copyBtn);
+          resultsContainer.appendChild(card);
         });
-      });
 
-      // Clear Action
-      btnClear.addEventListener('click', function() {
-        topicInput.value = '';
-        outputCaption.value = '';
-        topicInput.focus();
+        resultsContainer.style.display = 'flex';
       });
     });
   </script>
+
 </body>
 </html>
