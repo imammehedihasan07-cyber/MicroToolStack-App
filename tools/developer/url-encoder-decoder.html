@@ -22,9 +22,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Primary SEO Meta Tags -->
-  <title>Free Online URL Encoder / Decoder | MicroToolStack</title>
-  <meta name="description" content="Free Online URL Encoder / Decoder. Convert unsafe characters into valid Percent-Encoded URL query parameters or decode URL strings back to plain text instantly.">
-  <meta name="keywords" content="url encoder, url decoder, encode url, decode url, percent encoding, url encode online, uri encoder">
+  <title>Free Online URL Encoder & Decoder | Percent-Encoding Tool | MicroToolStack</title>
+  <meta name="description" content="Encode URLs or decode percent-encoded query strings instantly with our free online URL Encoder and Decoder tool. Safely format special characters and parameters for web requests.">
+  <meta name="keywords" content="url encoder, url decoder, percent encoding tool, encode uricomponent, decode url online, url escape tool, web developer url tools, query string encoder">
 
   <link rel="canonical" href="https://microtoolstack.com/tools/developer/url-encoder-decoder.html">
   <meta name="robots" content="index, follow">
@@ -32,8 +32,8 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://microtoolstack.com/tools/developer/url-encoder-decoder.html">
-  <meta property="og:title" content="Free Online URL Encoder / Decoder | MicroToolStack">
-  <meta property="og:description" content="Safely encode special web characters into Percent-Encoding or decode URL query strings in real-time.">
+  <meta property="og:title" content="Free Online URL Encoder & Decoder | MicroToolStack">
+  <meta property="og:description" content="Safely encode special characters into percent-encoded URL formats or decode query strings instantly. 100% free developer utility.">
   <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
@@ -41,14 +41,14 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
   <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
-  <!-- JSON-LD Schema Markup -->
+  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "SoftwareApplication",
-        "name": "URL Encoder / Decoder",
+        "name": "URL Encoder & Decoder Utility",
         "operatingSystem": "All",
         "applicationCategory": "DeveloperApplication",
         "offers": {
@@ -56,7 +56,7 @@
           "price": "0",
           "priceCurrency": "USD"
         },
-        "description": "An online developer tool to encode special characters in URL strings or decode percent-encoded URLs.",
+        "description": "An instant browser-based web developer tool that encodes reserved URL characters into percent-encoded strings and decodes encoded query parameters back to plain text.",
         "url": "https://microtoolstack.com/tools/developer/url-encoder-decoder.html"
       },
       {
@@ -64,18 +64,34 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "What is Percent-Encoding in URLs?",
+            "name": "What is URL Encoding (Percent-Encoding)?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Percent-encoding (URL encoding) converts reserved or unprintable characters (like spaces, &, ?, =) into % followed by two hexadecimal digits so they can be safely transmitted over HTTP."
+              "text": "URL Encoding (or Percent-Encoding) is a mechanism for encoding special characters or non-ASCII symbols in a Uniform Resource Identifier (URI) by replacing them with a '%' followed by their two-digit hexadecimal value."
             }
           },
           {
             "@type": "Question",
-            "name": "Is my input text uploaded anywhere?",
+            "name": "Why do URLs need to be encoded?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "No! All URL encoding and decoding operations take place locally inside your browser instance."
+              "text": "URLs can only be transmitted over the Internet using the ASCII character set. Reserved characters like spaces, ?, &, =, and # must be encoded to prevent interpretation errors by web servers and routers."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my URL or string data uploaded to remote servers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. All encoding and decoding logic executes locally inside your web browser using JavaScript. No input data or query parameters are saved."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this tool completely free to use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, MicroToolStack's URL Encoder & Decoder is 100% free with no usage limits or sign-up required."
             }
           }
         ]
@@ -95,22 +111,24 @@
   <style>
     .editor-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.25rem;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
       margin-bottom: 1.5rem;
     }
-    @media (max-width: 768px) {
-      .editor-grid {
-        grid-template-columns: 1fr;
-      }
+    .editor-label {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.5rem;
     }
-    .editor-textarea {
+    .url-textarea {
       width: 100%;
       min-height: 250px;
       padding: 1rem;
-      font-family: monospace;
       font-size: 0.95rem;
-      line-height: 1.5;
+      font-family: 'Fira Code', Consolas, Monaco, monospace;
+      line-height: 1.6;
       border: 1px solid var(--border-color, #333);
       border-radius: var(--radius-md, 8px);
       background-color: var(--bg-card, #1e1e2e);
@@ -118,26 +136,19 @@
       outline: none;
       resize: vertical;
       box-sizing: border-box;
+      white-space: pre-wrap;
+      word-break: break-all;
     }
-    .editor-label {
-      display: block;
-      font-weight: 600;
-      color: var(--text-primary, #fff);
-      margin-bottom: 0.5rem;
-      font-size: 0.95rem;
+    .url-textarea:focus {
+      border-color: var(--accent-primary, #3b82f6);
     }
-    .editor-controls {
+    .controls-bar {
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 2.5rem;
-    }
-    .btn-group {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
     }
     .content-box {
       background-color: var(--bg-card, #1e1e2e);
@@ -151,7 +162,13 @@
       margin-bottom: 1rem;
       color: var(--text-primary, #fff);
     }
-    .content-box p, .content-box ul {
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul, .content-box table {
       color: var(--text-secondary, #9ca3af);
       font-size: 0.95rem;
       line-height: 1.6;
@@ -162,6 +179,21 @@
     }
     .content-box li {
       margin-bottom: 0.5rem;
+    }
+    .url-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+    .url-table th, .url-table td {
+      border: 1px solid var(--border-color, #333);
+      padding: 0.75rem;
+      text-align: left;
+    }
+    .url-table th {
+      background-color: rgba(255, 255, 255, 0.05);
+      color: var(--text-primary, #fff);
     }
     .related-links {
       display: grid;
@@ -200,79 +232,142 @@
   </header>
 
   <!-- Main Container -->
-  <main class="container" style="max-width: 1000px; margin: 2rem auto; padding: 0 1rem;">
-    <!-- Breadcrumb Navigation -->
-    <nav style="font-size: 0.85rem; margin-bottom: 1rem; color: var(--text-secondary, #9ca3af);">
-      <a href="/" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Home</a> / 
-      <a href="/#categories" style="color: var(--accent-primary, #3b82f6); text-decoration: none;">Developer Tools</a> / 
-      <span>URL Encoder / Decoder</span>
-    </nav>
+  <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
     
     <!-- Tool Title & Description -->
     <div style="text-align: center; margin-bottom: 2rem;">
-      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online URL Encoder / Decoder</h1>
-      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Convert special characters into valid Percent-Encoded URL syntax or decode encoded strings instantly.</p>
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online URL Encoder & Decoder</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Convert special characters into percent-encoded URL formats or decode query strings instantly.</p>
     </div>
 
-    <!-- Dual Textarea Layout -->
+    <!-- Dual Textarea Editor Grid -->
     <div class="editor-grid">
       <div>
-        <label class="editor-label">Plain Text / Raw URL Input:</label>
-        <textarea id="url-input" class="editor-textarea" placeholder="Enter text or URL here..." autofocus></textarea>
+        <label for="input-text" class="editor-label">Raw Text / Encoded URL Input</label>
+        <textarea id="input-text" class="url-textarea" placeholder="Type or paste plain text or encoded URL here...&#10;e.g., https://example.com/search?q=hello world & test=100%"></textarea>
       </div>
       <div>
-        <label class="editor-label">Encoded / Decoded Output:</label>
-        <textarea id="url-output" class="editor-textarea" placeholder="Output result will appear here..." readonly></textarea>
+        <label for="output-text" class="editor-label">Processed Output Result</label>
+        <textarea id="output-text" class="url-textarea" placeholder="Encoded URL or decoded text result will appear here..." readonly></textarea>
       </div>
     </div>
 
-    <!-- Action Buttons -->
-    <div class="editor-controls">
-      <div class="btn-group">
-        <button id="btn-encode" class="btn btn-primary" style="padding: 0.68rem 1.4rem; cursor: pointer; background: #3b82f6; border: none;">🔒 Encode URL</button>
-        <button id="btn-decode" class="btn btn-primary" style="padding: 0.68rem 1.4rem; cursor: pointer; background: #10b981; border: none;">🔓 Decode URL</button>
-        <button id="btn-copy" class="btn btn-secondary" style="padding: 0.68rem 1.2rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">📋 Copy Result</button>
-        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.68rem 1.2rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear</button>
+    <!-- Action Controls Bar -->
+    <div class="controls-bar">
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-encode" class="btn btn-primary" style="padding: 0.75rem 1.25rem; font-weight: 600; cursor: pointer;">🔒 Encode URL</button>
+        <button id="btn-decode" class="btn btn-primary" style="padding: 0.75rem 1.25rem; font-weight: 600; cursor: pointer; background: #10b981;">🔓 Decode URL</button>
       </div>
-      <span id="status-msg" style="font-size: 0.85rem; color: #10b981; font-weight: 500; display: none;">Copied to clipboard!</span>
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-copy" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">📋 Copy Output</button>
+        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear</button>
+      </div>
     </div>
 
     <!-- SEO Article Content Box 1 -->
     <div class="content-box">
-      <h2>Why URL Encoding is Essential for Web Applications</h2>
-      <p>URLs can only transmit characters using the US-ASCII character set. Non-ASCII characters, spaces, and reserved query characters (such as <code>?</code>, <code>&</code>, <code>=</code>, and <code>#</code>) must be converted into **Percent-Encoding** (e.g., Space &rarr; <code>%20</code>) to ensure web servers process web requests safely without breaking execution logic.</p>
+      <h2>Understanding URL Encoding (Percent-Encoding) in Web Architecture</h2>
+      <p>Uniform Resource Locators (URLs) sent over the Internet can only contain characters from the standard 68-character US-ASCII set. When a URL query string contains spaces, non-English scripts, or reserved characters (such as <code>?</code>, <code>&amp;</code>, <code>=</code>, and <code>#</code>), it must undergo <strong>URL Encoding</strong> (also known as <em>Percent-Encoding</em>) to prevent request errors.</p>
+      <p>Our free <strong>Online URL Encoder & Decoder</strong> translates special characters into valid <code>%XX</code> hexadecimal representations. Whether building REST API query parameters, debugging web webhooks, or fixing broken tracking URLs, this tool provides instant formatting with complete browser privacy.</p>
     </div>
 
     <!-- SEO Article Content Box 2 -->
     <div class="content-box">
-      <h2>Common Percent-Encoding Characters Reference</h2>
+      <h2>Common URL Reserved Characters Quick Reference</h2>
+      <p>Here is a breakdown of frequently encoded reserved characters and their percent-encoded equivalents:</p>
+
+      <table class="url-table">
+        <thead>
+          <tr>
+            <th>Character</th>
+            <th>Description</th>
+            <th>Percent-Encoded Code</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>Space</code></td>
+            <td>Space separator</td>
+            <td><code>%20</code> (or <code>+</code>)</td>
+          </tr>
+          <tr>
+            <td><code>&amp;</code></td>
+            <td>Query parameter separator</td>
+            <td><code>%26</code></td>
+          </tr>
+          <tr>
+            <td><code>?</code></td>
+            <td>Query string start delimiter</td>
+            <td><code>%3F</code></td>
+          </tr>
+          <tr>
+            <td><code>=</code></td>
+            <td>Key-value assignment operator</td>
+            <td><code>%3D</code></td>
+          </tr>
+          <tr>
+            <td><code>/</code></td>
+            <td>URL path segment separator</td>
+            <td><code>%2F</code></td>
+          </tr>
+          <tr>
+            <td><code>#</code></td>
+            <td>URL anchor fragment delimiter</td>
+            <td><code>%23</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- SEO Article Content Box 3 -->
+    <div class="content-box">
+      <h2>Features of MicroToolStack's URL Encoder Utility</h2>
       <ul>
-        <li><code>Space</code> &rarr; <code>%20</code></li>
-        <li><code>&</code> &rarr; <code>%26</code></li>
-        <li><code>?</code> &rarr; <code>%3F</code></li>
-        <li><code>=</code> &rarr; <code>%3D</code></li>
-        <li><code>#</code> &rarr; <code>%23</code></li>
+        <li><strong>Bidirectional Encoding & Decoding:</strong> Convert query strings to percent-encoded formats or parse <code>%20</code> escaped URLs back into readable text with one click.</li>
+        <li><strong>UTF-8 Multilingual Support:</strong> Safely handles special characters, non-English alphabets, and emojis within URLs.</li>
+        <li><strong>100% Client-Side Privacy:</strong> All URL string manipulation executes locally in your browser session using native JavaScript (<code>encodeURIComponent</code> and <code>decodeURIComponent</code>). No query parameters are logged.</li>
+        <li><strong>Free & Unlimited Usage:</strong> No file size caps, rate restrictions, or account registration required.</li>
       </ul>
     </div>
 
-    <!-- Internal Linking Section -->
+    <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
     <div class="content-box">
-      <h2>Explore Related Developer Utilities</h2>
-      <p>Enhance your development workflow with our tools:</p>
+      <h2>Explore Related Developer Tools</h2>
+      <p>Discover our complementary online developer utilities:</p>
       <div class="related-links">
+        <a href="/tools/developer/base64-encoder-decoder.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🔒 Base64 Encoder / Decoder</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Convert plain text to Base64 or decode Base64 strings.</span>
+        </a>
         <a href="/tools/developer/html-entity-encoder-decoder.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🔒 HTML Entity Encoder</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Encode reserved HTML characters safely.</span>
+          <strong style="display:block; margin-bottom: 0.25rem;">🔒 HTML Entity Encoder / Decoder</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Convert special characters to entities or decode escaped HTML.</span>
+        </a>
+        <a href="/tools/developer/password-hash-generator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🔑 Password Hash Generator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Compute SHA-256, SHA-512, and MD5 hashes securely.</span>
         </a>
       </div>
     </div>
 
     <!-- FAQ Section -->
     <div class="content-box">
-      <h2>Frequently Asked Questions</h2>
-      <div style="margin-bottom: 1rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What is the difference between encodeURI and encodeURIComponent?</h3>
-        <p><code>encodeURIComponent</code> encodes special query string characters like <code>?</code>, <code>&</code>, and <code>=</code>, making it ideal for individual URL parameter values.</p>
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What is URL Encoding?</h3>
+        <p>URL Encoding (Percent-Encoding) translates non-ASCII or reserved characters in a URL into a '%' followed by their two-digit hexadecimal representation.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What is the difference between %20 and + for spaces?</h3>
+        <p><code>%20</code> is the standard percent-encoding for spaces in URIs according to RFC 3986, while <code>+</code> is historically used for spaces within application/x-www-form-urlencoded query forms.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is my input text uploaded to any server?</h3>
+        <p>No. All calculations run client-side inside your web browser session using JavaScript. Your input text remains private.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this URL Encoder tool free?</h3>
+        <p>Yes, MicroToolStack's URL Encoder & Decoder is 100% free with no usage limits or sign-up required.</p>
       </div>
     </div>
 
@@ -288,58 +383,54 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const urlInput = document.getElementById('url-input');
-      const urlOutput = document.getElementById('url-output');
-
+      const inputText = document.getElementById('input-text');
+      const outputText = document.getElementById('output-text');
       const btnEncode = document.getElementById('btn-encode');
       const btnDecode = document.getElementById('btn-decode');
       const btnCopy = document.getElementById('btn-copy');
       const btnClear = document.getElementById('btn-clear');
-      const statusMsg = document.getElementById('status-msg');
 
-      function encodeUrl() {
-        const text = urlInput.value;
-        if (!text) {
-          urlOutput.value = '';
+      btnEncode.addEventListener('click', function() {
+        const raw = inputText.value;
+        if (!raw.trim()) {
+          outputText.value = '';
           return;
         }
         try {
-          urlOutput.value = encodeURIComponent(text);
-        } catch (err) {
-          urlOutput.value = 'Error encoding URL: ' + err.message;
+          outputText.value = encodeURIComponent(raw);
+        } catch (e) {
+          outputText.value = 'Error: Invalid string for URL encoding.';
         }
-      }
+      });
 
-      function decodeUrl() {
-        const text = urlInput.value;
-        if (!text) {
-          urlOutput.value = '';
+      btnDecode.addEventListener('click', function() {
+        const raw = inputText.value.trim();
+        if (!raw) {
+          outputText.value = '';
           return;
         }
         try {
-          urlOutput.value = decodeURIComponent(text.replace(/\+/g, ' '));
-        } catch (err) {
-          urlOutput.value = 'Error decoding URL string: ' + err.message;
+          // Replace + with space before decoding for form encoded strings
+          const prep = raw.replace(/\+/g, '%20');
+          outputText.value = decodeURIComponent(prep);
+        } catch (e) {
+          outputText.value = 'Error: Malformed percent-encoded URL string.';
         }
-      }
-
-      urlInput.addEventListener('input', encodeUrl);
-
-      btnEncode.addEventListener('click', encodeUrl);
-      btnDecode.addEventListener('click', decodeUrl);
+      });
 
       btnCopy.addEventListener('click', function() {
-        if (!urlOutput.value.trim()) return;
-        navigator.clipboard.writeText(urlOutput.value).then(() => {
-          statusMsg.style.display = 'inline';
-          setTimeout(() => { statusMsg.style.display = 'none'; }, 2000);
+        if (!outputText.value.trim()) return;
+        navigator.clipboard.writeText(outputText.value).then(() => {
+          const originalText = btnCopy.textContent;
+          btnCopy.textContent = '✅ Copied!';
+          setTimeout(() => { btnCopy.textContent = originalText; }, 2000);
         });
       });
 
       btnClear.addEventListener('click', function() {
-        urlInput.value = '';
-        urlOutput.value = '';
-        urlInput.focus();
+        inputText.value = '';
+        outputText.value = '';
+        inputText.focus();
       });
     });
   </script>
