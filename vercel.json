@@ -10,7 +10,7 @@
           "value": "microtoolstack.vercel.app"
         }
       ],
-      "destination": "https://microtoolstack.com/$1",
+      "destination": "https://www.microtoolstack.com/$1",
       "permanent": true
     }
   ],
