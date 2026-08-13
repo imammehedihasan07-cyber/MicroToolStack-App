@@ -406,23 +406,21 @@
 
         // 1. Background Base
         const theme = bgThemeSelect.value;
-        let grad;
         if (theme === 'gradient-dark') {
-          grad = ctx.createLinearGradient(0, 0, width, height);
+          const grad = ctx.createLinearGradient(0, 0, width, height);
           grad.addColorStop(0, '#1e293b');
           grad.addColorStop(1, '#0f172a');
+          ctx.fillStyle = grad;
+          ctx.fillRect(0, 0, width, height);
         } else if (theme === 'gradient-blue') {
-          grad = ctx.createLinearGradient(0, 0, width, height);
+          const grad = ctx.createLinearGradient(0, 0, width, height);
           grad.addColorStop(0, '#1d4ed8');
           grad.addColorStop(1, '#0284c7');
+          ctx.fillStyle = grad;
+          ctx.fillRect(0, 0, width, height);
         } else {
           // solid-black
           ctx.fillStyle = '#090d16';
-          ctx.fillRect(0, 0, width, height);
-        }
-
-        if (theme !== 'solid-black') {
-          ctx.fillStyle = grad;
           ctx.fillRect(0, 0, width, height);
         }
 
@@ -441,8 +439,7 @@
         ctx.font = 'bold 82px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
         ctx.textBaseline = 'middle';
 
-        const lines = text.split('
-');
+        const lines = text.split('\n');
         const lineHeight = 96;
         const totalTextHeight = lines.length * lineHeight;
         let startY = (height / 2) - (totalTextHeight / 2) + 20;
