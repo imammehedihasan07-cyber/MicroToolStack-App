@@ -1036,6 +1036,159 @@
   "category": "social-media",
   "icon": "📝",
   "isPopular": true
+  },
+  {
+    "id": "jpg-to-pdf",
+    "name": "JPG to PDF Converter",
+    "category": "pdf",
+    "url": "/tools/pdf/jpg-to-pdf.html",
+    "description": "Convert JPG, PNG, and image files to PDF online for free with custom page layout.",
+    "icon": "📁",
+    "isPopular": true,
+    "isNew": false,
+    "tags": ["jpg to pdf", "image to pdf", "png to pdf", "pdf converter", "document"]
+  },
+  {
+    "id": "pdf-delete-pages",
+    "name": "PDF Delete Pages",
+    "category": "pdf",
+    "url": "/tools/pdf/pdf-delete-pages.html",
+    "description": "Delete specific unwanted pages from PDF documents securely in your browser.",
+    "icon": "📄",
+    "isPopular": false,
+    "isNew": true,
+    "tags": ["pdf delete pages", "remove pages from pdf", "pdf editor", "delete pdf pages"]
+  },
+  {
+    "id": "pdf-metadata-remover",
+    "name": "PDF Metadata Remover",
+    "category": "pdf",
+    "url": "/tools/pdf/pdf-metadata-remover.html",
+    "description": "Strip hidden author names, timestamps, and document properties from PDF files instantly.",
+    "icon": "🛡️",
+    "isPopular": false,
+    "isNew": true,
+    "tags": ["pdf metadata", "remove author from pdf", "clear pdf properties", "privacy"]
+  },
+  {
+    "id": "pdf-page-extractor",
+    "name": "PDF Page Extractor",
+    "category": "pdf",
+    "url": "/tools/pdf/pdf-page-extractor.html",
+    "description": "Extract and save specific pages from your PDF documents securely in your browser.",
+    "icon": "📄",
+    "isPopular": false,
+    "isNew": true,
+    "tags": ["pdf page extractor", "extract pages from pdf", "split pdf", "save pdf pages"]
+  },
+  {
+    "id": "pdf-page-numbering",
+    "name": "PDF Page Numbering Tool",
+    "category": "pdf",
+    "url": "/tools/pdf/pdf-page-numbering.html",
+    "description": "Add professional page numbers and pagination to your PDF documents instantly.",
+    "icon": "📄",
+    "isPopular": false,
+    "isNew": true,
+    "tags": ["pdf page numbering", "add page numbers", "pagination", "pdf number pages"]
+  },
+  {
+    "id": "pdf-reorder-pages",
+    "name": "PDF Reorder Pages",
+    "category": "pdf",
+    "url": "/tools/pdf/pdf-reorder-pages.html",
+    "description": "Rearrange and sort the page sequence of your PDF documents securely in your browser.",
+    "icon": "📄",
+    "isPopular": false,
+    "isNew": true,
+    "tags": ["pdf reorder", "rearrange pdf pages", "sort pdf pages", "change pdf order"]
+  },
+  {
+    "id": "pdf-rotate",
+    "name": "PDF Rotate Pages",
+    "category": "pdf",
+    "url": "/tools/pdf/pdf-rotate.html",
+    "description": "Rotate PDF document pages to portrait or landscape orientation securely in your browser.",
+    "icon": "📄",
+    "isPopular": false,
+    "isNew": true,
+    "tags": ["pdf rotate", "rotate pdf pages", "change orientation", "turn pdf sideways"]
+  },
+  {
+    "id": "pdf-text-extractor",
+    "name": "PDF Text Extractor",
+    "category": "pdf",
+    "url": "/tools/pdf/pdf-text-extractor.html",
+    "description": "Extract and copy text content from PDF documents securely inside your browser.",
+    "icon": "📄",
+    "isPopular": true,
+    "isNew": false,
+    "tags": ["pdf text extractor", "extract text from pdf", "read pdf text", "copy pdf text"]
+  },
+  {
+    "id": "pdf-to-jpg",
+    "name": "PDF to JPG Converter",
+    "category": "pdf",
+    "url": "/tools/pdf/pdf-to-jpg.html",
+    "description": "Convert PDF document pages into high-resolution JPG images securely inside your browser.",
+    "icon": "📁",
+    "isPopular": true,
+    "isNew": false,
+    "tags": ["pdf to jpg", "convert pdf to image", "pdf to jpeg", "save pdf as picture"]
+  },
+  {
+    "id": "pdf-to-png",
+    "name": "PDF to PNG Converter",
+    "category": "pdf",
+    "url": "/tools/pdf/pdf-to-png.html",
+    "description": "Convert PDF document pages into high-resolution PNG images securely inside your browser.",
+    "icon": "📁",
+    "isPopular": false,
+    "isNew": true,
+    "tags": ["pdf to png", "convert pdf to png", "pdf page to image", "lossless pdf converter"]
+  },
+  {
+    "id": "pdf-unlocker",
+    "name": "PDF Unlocker",
+    "category": "pdf",
+    "url": "/tools/pdf/pdf-unlocker.html",
+    "description": "Remove security restrictions and permissions from your PDF documents securely in your browser.",
+    "icon": "🔓",
+    "isPopular": false,
+    "isNew": true,
+    "tags": ["pdf unlocker", "remove pdf password", "decrypt pdf", "unlock secure pdf"]
+  },
+  {
+    "id": "pdf-watermark",
+    "name": "PDF Watermark Tool",
+    "category": "pdf",
+    "url": "/tools/pdf/pdf-watermark.html",
+    "description": "Add professional text watermarks to your PDF documents securely inside your browser.",
+    "icon": "💧",
+    "isPopular": false,
+    "isNew": true,
+    "tags": ["pdf watermark", "add watermark to pdf", "stamp pdf", "protect pdf"]
+  },
+  {
+    "id": "pdf-word-counter",
+    "name": "PDF Word Counter",
+    "category": "pdf",
+    "url": "/tools/pdf/pdf-word-counter.html",
+    "description": "Count words, characters, and pages in your PDF documents securely inside your browser.",
+    "icon": "📊",
+    "isPopular": false,
+    "isNew": true,
+    "tags": ["pdf word counter", "count words in pdf", "pdf character count", "document stats"]
+  },
+  {
+    "id": "pdf-watermark-remover",
+    "name": "PDF Watermark Remover",
+    "category": "pdf",
+    "url": "/tools/pdf/pdf-watermark-remover.html",
+    "description": "Remove unwanted text watermarks and stamps from your PDF documents securely in your browser.",
+    "icon": "✨",
+    "isPopular": false,
+    "isNew": true,
+    "tags": ["pdf watermark remover", "remove watermark from pdf", "clear pdf stamps", "clean pdf"]
   }
-  
 ]
