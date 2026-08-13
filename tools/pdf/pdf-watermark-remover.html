@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) - Optimized Load -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var gTagScript = document.createElement('script');
+        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        gTagScript.async = true;
+        document.head.appendChild(gTagScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F3WWR9KGB4');
+      }, 1000);
+    });
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>Free Online PDF Watermark Remover | Clear Text Watermarks from PDF | MicroToolStack</title>
+  <meta name="description" content="Remove text watermarks and stamps from PDF documents online for free. Fast client-side PDF watermark cleaner utility with instant download.">
+  <meta name="keywords" content="pdf watermark remover, remove watermark from pdf online, clear pdf stamps, delete watermark from pdf, free pdf tools, microtoolstack">
+
+  <link rel="canonical" href="https://microtoolstack.com/tools/pdf/pdf-watermark-remover.html">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://microtoolstack.com/tools/pdf/pdf-watermark-remover.html">
+  <meta property="og:title" content="Free Online PDF Watermark Remover | MicroToolStack">
+  <meta property="og:description" content="Strip unwanted text watermarks and diagonal stamps from your PDF documents instantly in your browser. 100% free web utility.">
+  <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
+
+  <!-- Favicon Icon for Google & Devices -->
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
+
+  <!-- PDF-lib Library for Client-Side PDF Manipulation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+
+  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "PDF Watermark Remover Tool",
+        "operatingSystem": "All",
+        "applicationCategory": "UtilitiesApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "An essential client-side PDF utility that cleans and removes text watermarks from PDF documents securely inside your browser.",
+        "url": "https://microtoolstack.com/tools/pdf/pdf-watermark-remover.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How do I remove a watermark from a PDF?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Upload your watermarked PDF document, enter the exact text of the watermark you want to target, and click 'Remove Watermark & Download'."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are my uploaded PDF files stored on remote servers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No! All document processing and cleaning execute 100% locally inside your web browser session using client-side JavaScript. Your files remain completely private."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this PDF Watermark Remover tool free to use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, MicroToolStack's PDF Watermark Remover is 100% free with unlimited document processing and no registration required."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Preconnect and Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <style>
+    .input-group {
+      margin-bottom: 1.25rem;
+    }
+    .input-label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.5rem;
+    }
+    .form-control {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
+      color: var(--text-primary, #fff);
+      outline: none;
+      box-sizing: border-box;
+    }
+    .form-control:focus {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+    .dropzone {
+      border: 2px dashed var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+    .dropzone:hover {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+    .controls-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.5rem;
+    }
+    .content-box {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .content-box h2 {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul {
+      color: var(--text-secondary, #9ca3af);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .content-box ul {
+      padding-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .content-box li {
+      margin-bottom: 0.5rem;
+    }
+    .related-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .related-card {
+      display: block;
+      padding: 1rem;
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      color: var(--text-primary, #fff);
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .related-card:hover {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+  </style>
+</head>
+<body style="margin: 0; padding: 0;">
+
+  <!-- Header Section -->
+  <header class="custom-header">
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
+    </a>
+    <nav class="custom-nav">
+      <a href="/#categories">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
+    </nav>
+  </header>
+
+  <!-- Main Container -->
+  <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
+    
+    <!-- Tool Title & Description -->
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online PDF Watermark Remover</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Remove unwanted text watermarks and stamps from your PDF documents securely in your browser.</p>
+    </div>
+
+    <!-- Editor Card -->
+    <div class="content-box" style="margin-bottom: 1.5rem;">
+      <div class="dropzone" id="dropzone">
+        <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">✨</div>
+        <div id="file-label" style="font-weight: 600; color: #fff; margin-bottom: 0.25rem;">Drag & drop a PDF file here or browse</div>
+        <div style="font-size: 0.85rem; color: #9ca3af;">Supports PDF documents</div>
+        <input type="file" id="file-input" accept="application/pdf" style="display: none;">
+      </div>
+
+      <div class="input-group" style="margin-top: 1.5rem;">
+        <label for="watermark-keyword" class="input-label">Watermark Text to Remove</label>
+        <input type="text" id="watermark-keyword" class="form-control" placeholder="Enter exact watermark text (e.g. DRAFT, CONFIDENTIAL)..." disabled>
+        <div style="font-size: 0.8rem; color: #9ca3af; margin-top: 0.35rem;">Note: Works effectively on text-based vector watermarks and overlaid operator strings.</div>
+      </div>
+    </div>
+
+    <!-- Controls Bar -->
+    <div class="controls-bar">
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-process" class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-weight: 600; cursor: pointer; background: #10b981;" disabled>✨ Remove Watermark & Download</button>
+      </div>
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-reset" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🔄 Reset</button>
+      </div>
+    </div>
+
+    <!-- SEO Article Content Box 1 -->
+    <div class="content-box">
+      <h2>Why Use an Online PDF Watermark Remover?</h2>
+      <p>Documents containing distracting draft labels, brand stamps, or confidentiality markings often need to be cleaned before final presentation or archiving. Our free <strong>PDF Watermark Remover</strong> tool helps you clear unwanted text overlays effortlessly.</p>
+    </div>
+
+    <!-- SEO Article Content Box 2 -->
+    <div class="content-box">
+      <h2>How to Clear Watermarks from PDF Files</h2>
+      <p>Follow these quick steps:</p>
+      <ul>
+        <li><strong>Step 1:</strong> Upload your watermarked PDF document into the dropzone.</li>
+        <li><strong>Step 2:</strong> Type the exact text string of the watermark you want to target and eliminate.</li>
+        <li><strong>Step 3:</strong> Click "Remove Watermark & Download" to save your clean document.</li>
+      </ul>
+    </div>
+
+    <!-- SEO Article Content Box 3 -->
+    <div class="content-box">
+      <h2>100% Client-Side Privacy</h2>
+      <p>Your documents remain completely secure. All file cleaning processes run locally inside your web browser session using JavaScript without uploading files to remote servers.</p>
+    </div>
+
+    <!-- Internal Linking Section -->
+    <div class="content-box">
+      <h2>Explore Related PDF Tools</h2>
+      <p>Discover our complementary online utilities:</p>
+      <div class="related-links">
+        <a href="/tools/pdf/pdf-watermark.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">💧 PDF Watermark Tool</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Add custom text watermarks to PDFs.</span>
+        </a>
+        <a href="/tools/pdf/pdf-metadata-remover.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🛡️ PDF Metadata Remover</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Clear hidden author tags and properties.</span>
+        </a>
+        <a href="/tools/pdf/pdf-unlocker.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🔓 PDF Unlocker</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Remove security restrictions from PDFs.</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="content-box">
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Can it remove image-based watermarks?</h3>
+        <p>This tool targets text-based vector watermarks and character strings embedded within the PDF content streams.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Are my files safe and private?</h3>
+        <p>Yes. All processing happens entirely within your browser session using client-side JavaScript.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this tool free?</h3>
+        <p>Yes, MicroToolStack's PDF Watermark Remover is 100% free with no limits or registration required.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer Container Placeholder -->
+  <div id="footer-container"></div>
+
+  <!-- JavaScript Utilities & Logic -->
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const dropzone = document.getElementById('dropzone');
+      const fileInput = document.getElementById('file-input');
+      const fileLabel = document.getElementById('file-label');
+      const watermarkKeyword = document.getElementById('watermark-keyword');
+      const btnProcess = document.getElementById('btn-process');
+      const btnReset = document.getElementById('btn-reset');
+
+      let loadedPdfBytes = null;
+
+      dropzone.addEventListener('click', () => fileInput.click());
+
+      dropzone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropzone.style.borderColor = 'var(--accent-primary, #3b82f6)';
+      });
+
+      dropzone.addEventListener('dragleave', () => {
+        dropzone.style.borderColor = 'var(--border-color, #333)';
+      });
+
+      dropzone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropzone.style.borderColor = 'var(--border-color, #333)';
+        if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+          handleFile(e.dataTransfer.files[0]);
+        }
+      });
+
+      fileInput.addEventListener('change', (e) => {
+        if (e.target.files && e.target.files[0]) {
+          handleFile(e.target.files[0]);
+        }
+      });
+
+      async function handleFile(file) {
+        if (file.type !== 'application/pdf') {
+          alert('Please upload a valid PDF file.');
+          return;
+        }
+
+        fileLabel.textContent = `📁 ${file.name}`;
+        const reader = new FileReader();
+        reader.onload = async function(e) {
+          loadedPdfBytes = e.target.result;
+          watermarkKeyword.removeAttribute('disabled');
+          btnProcess.removeAttribute('disabled');
+        };
+        reader.readAsArrayBuffer(file);
+      }
+
+      btnProcess.addEventListener('click', async function() {
+        if (!loadedPdfBytes) return;
+
+        const keyword = watermarkKeyword.value.trim();
+        if (!keyword) {
+          alert('Please enter the watermark text to target.');
+          return;
+        }
+
+        const originalText = btnProcess.textContent;
+        btnProcess.textContent = '⏳ Removing Watermark...';
+        btnProcess.setAttribute('disabled', 'true');
+
+        try {
+          const pdfDoc = await PDFLib.PDFDocument.load(loadedPdfBytes);
+          const pages = pdfDoc.getPages();
+
+          // Client-side content stream inspection / text filtering approach where applicable
+          pages.forEach(page => {
+            const { node } = page;
+            const contents = node.normalizedContents();
+            if (contents) {
+              // Filter out text operator blocks matching the watermark keyword
+              const contentBytes = contents.asBytes();
+              let contentString = new TextDecoder().decode(contentBytes);
+              
+              if (contentString.includes(keyword)) {
+                // Remove drawing instruction chunks containing the targeted string
+                const regex = new RegExp(`\\([^)]*${keyword}[^)]*\\)\\s*Tj`, 'gi');
+                contentString = contentString.replace(regex, '');
+                
+                const newBytes = new TextEncoder().encode(contentString);
+                page.node.setContents(pdfDoc.context.flateStream(newBytes));
+              }
+            }
+          });
+
+          const modifiedPdfBytes = await pdfDoc.save();
+          const blob = new Blob([modifiedPdfBytes], { type: 'application/pdf' });
+          const link = document.createElement('a');
+          link.href = URL.createObjectURL(blob);
+          link.download = 'watermark-removed.pdf';
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+
+          btnProcess.textContent = '✅ Watermark Cleared & Downloaded!';
+          setTimeout(() => {
+            btnProcess.textContent = originalText;
+            btnProcess.removeAttribute('disabled');
+          }, 2000);
+        } catch (err) {
+          console.error(err);
+          alert('Error processing PDF watermark removal.');
+          btnProcess.textContent = originalText;
+          btnProcess.removeAttribute('disabled');
+        }
+      });
+
+      btnReset.addEventListener('click', function() {
+        loadedPdfBytes = null;
+        fileInput.value = '';
+        fileLabel.textContent = 'Drag & drop a PDF file here or browse';
+        watermarkKeyword.value = '';
+        watermarkKeyword.setAttribute('disabled', 'true');
+        btnProcess.setAttribute('disabled', 'true');
+      });
+    });
+  </script>
+</body>
+</html>
