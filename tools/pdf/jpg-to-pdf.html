@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) - Optimized Load -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var gTagScript = document.createElement('script');
+        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        gTagScript.async = true;
+        document.head.appendChild(gTagScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F3WWR9KGB4');
+      }, 1000);
+    });
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>Free Online JPG to PDF Converter | Convert Images to PDF Instantly | MicroToolStack</title>
+  <meta name="description" content="Convert JPG, PNG, and image files to PDF online for free. Fast client-side image-to-PDF converter with custom page margins and instant download.">
+  <meta name="keywords" content="jpg to pdf converter, convert image to pdf online, png to pdf, picture to pdf creator, free pdf tools, microtoolstack">
+
+  <link rel="canonical" href="https://microtoolstack.com/tools/pdf/jpg-to-pdf.html">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://microtoolstack.com/tools/pdf/jpg-to-pdf.html">
+  <meta property="og:title" content="Free Online JPG to PDF Converter | MicroToolStack">
+  <meta property="og:description" content="Convert JPG and PNG images into a clean PDF document instantly in your browser. 100% free and secure web utility.">
+  <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
+
+  <!-- Favicon Icon for Google & Devices -->
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
+
+  <!-- jsPDF Library for Client-Side PDF Generation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "JPG to PDF Converter Tool",
+        "operatingSystem": "All",
+        "applicationCategory": "UtilitiesApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "An essential client-side PDF utility that converts multiple JPG, PNG, or image files into a single structured PDF document instantly.",
+        "url": "https://microtoolstack.com/tools/pdf/jpg-to-pdf.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How do I convert JPG images to PDF?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Upload or drag-and-drop your JPG or PNG images into the converter box, arrange them in your preferred order, and click 'Convert to PDF' to download your document."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are my uploaded image files stored on remote servers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No! All file reading and PDF compilation execute 100% locally inside your web browser session using client-side JavaScript. Your images remain completely private."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this JPG to PDF tool free to use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, MicroToolStack's JPG to PDF Converter is 100% free with unlimited document conversions and no registration required."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Preconnect and Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <style>
+    .input-group {
+      margin-bottom: 1.25rem;
+    }
+    .input-label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.5rem;
+    }
+    .dropzone {
+      border: 2px dashed var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+    .dropzone:hover {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+    .preview-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .preview-thumb {
+      position: relative;
+      background: #111827;
+      border: 1px solid var(--border-color, #333);
+      border-radius: 6px;
+      overflow: hidden;
+      aspect-ratio: 1 / 1;
+    }
+    .preview-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .controls-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.5rem;
+    }
+    .content-box {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .content-box h2 {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul {
+      color: var(--text-secondary, #9ca3af);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .content-box ul {
+      padding-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .content-box li {
+      margin-bottom: 0.5rem;
+    }
+    .related-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .related-card {
+      display: block;
+      padding: 1rem;
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      color: var(--text-primary, #fff);
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .related-card:hover {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+  </style>
+</head>
+<body style="margin: 0; padding: 0;">
+
+  <!-- Header Section -->
+  <header class="custom-header">
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
+    </a>
+    <nav class="custom-nav">
+      <a href="/#categories">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
+    </nav>
+  </header>
+
+  <!-- Main Container -->
+  <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
+    
+    <!-- Tool Title & Description -->
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online JPG to PDF Converter</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Convert JPG, PNG, and image files into a single high-quality PDF document instantly.</p>
+    </div>
+
+    <!-- Converter Card -->
+    <div class="content-box" style="margin-bottom: 1.5rem;">
+      <div class="dropzone" id="dropzone">
+        <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📁</div>
+        <div style="font-weight: 600; color: #fff; margin-bottom: 0.25rem;">Drag & drop images here or browse files</div>
+        <div style="font-size: 0.85rem; color: #9ca3af;">Supports JPG, JPEG, PNG</div>
+        <input type="file" id="file-input" multiple accept="image/jpeg, image/png" style="display: none;">
+      </div>
+
+      <div class="preview-grid" id="preview-grid"></div>
+    </div>
+
+    <!-- Controls Bar -->
+    <div class="controls-bar">
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-convert" class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-weight: 600; cursor: pointer; background: #10b981;" disabled>📥 Convert & Download PDF</button>
+      </div>
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-reset" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear Images</button>
+      </div>
+    </div>
+
+    <!-- SEO Article Content Box 1 -->
+    <div class="content-box">
+      <h2>Why Use an Online JPG to PDF Converter?</h2>
+      <p>Converting images into standardized PDF documents is essential for sharing portfolios, submitting academic documents, archiving receipts, or combining multiple scanned pages into a single manageable file. PDFs maintain exact formatting across all operating systems and mobile devices.</p>
+
+      <p>Our free <strong>Online JPG to PDF Converter</strong> compiles multiple image files locally in your browser without requiring bulky desktop software or software registrations.</p>
+    </div>
+
+    <!-- SEO Article Content Box 2 -->
+    <div class="content-box">
+      <h2>How to Convert Images to PDF in Seconds</h2>
+      <p>Follow these simple steps:</p>
+
+      <ul>
+        <li><strong>Step 1:</strong> Click the upload dropzone or drag and drop your JPG/PNG image files.</li>
+        <li><strong>Step 2:</strong> Review your uploaded image thumbnails instantly in the preview grid.</li>
+        <li><strong>Step 3:</strong> Click "Convert & Download PDF" to save your generated document directly to your device.</li>
+      </ul>
+    </div>
+
+    <!-- SEO Article Content Box 3 -->
+    <div class="content-box">
+      <h2>100% Privacy & Client-Side PDF Compilation</h2>
+      <p>Unlike cloud conversion services that upload your private documents to external servers, MicroToolStack's converter executes 100% locally inside your browser session using JavaScript. Your files remain completely secure and private.</p>
+    </div>
+
+    <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
+    <div class="content-box">
+      <h2>Explore Related PDF & Developer Tools</h2>
+      <p>Discover our complementary online PDF and document utilities:</p>
+      <div class="related-links">
+        <a href="/tools/pdf/assignment-cover-page.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📄 Assignment Cover Page Generator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Create formal academic title pages and export PDF.</span>
+        </a>
+        <a href="/tools/developer/markdown-to-pdf.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📝 Markdown to PDF Converter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Transform Markdown notes into clean PDF documents.</span>
+        </a>
+        <a href="/tools/media/image-watermark-adder.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🖼️ Image Watermark Adder</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Protect image files with custom overlays.</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="content-box">
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How do I convert multiple images into a single PDF?</h3>
+        <p>Select and upload all your JPG or PNG files simultaneously in the upload box. The tool compiles them sequentially into one multi-page PDF document.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Are my uploaded images stored on remote servers?</h3>
+        <p>No. All processing runs client-side inside your browser session using JavaScript. Your files remain 100% private.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this JPG to PDF tool free?</h3>
+        <p>Yes, MicroToolStack's JPG to PDF Converter is 100% free with no usage limits or sign-up required.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What image formats are supported?</h3>
+        <p>The tool supports standard web image formats including JPG, JPEG, and PNG files.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer Container Placeholder -->
+  <div id="footer-container"></div>
+
+  <!-- JavaScript Utilities & Logic -->
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const dropzone = document.getElementById('dropzone');
+      const fileInput = document.getElementById('file-input');
+      const previewGrid = document.getElementById('preview-grid');
+      const btnConvert = document.getElementById('btn-convert');
+      const btnReset = document.getElementById('btn-reset');
+
+      let selectedFiles = [];
+
+      dropzone.addEventListener('click', () => fileInput.click());
+
+      dropzone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropzone.style.borderColor = 'var(--accent-primary, #3b82f6)';
+      });
+
+      dropzone.addEventListener('dragleave', () => {
+        dropzone.style.borderColor = 'var(--border-color, #333)';
+      });
+
+      dropzone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropzone.style.borderColor = 'var(--border-color, #333)';
+        if (e.dataTransfer.files) {
+          handleFiles(e.dataTransfer.files);
+        }
+      });
+
+      fileInput.addEventListener('change', (e) => {
+        if (e.target.files) {
+          handleFiles(e.target.files);
+        }
+      });
+
+      function handleFiles(files) {
+        for (let i = 0; i < files.length; i++) {
+          if (files[i].type.startsWith('image/')) {
+            selectedFiles.push(files[i]);
+          }
+        }
+        renderPreviews();
+      }
+
+      function renderPreviews() {
+        previewGrid.innerHTML = '';
+        if (selectedFiles.length > 0) {
+          btnConvert.removeAttribute('disabled');
+        } else {
+          btnConvert.setAttribute('disabled', 'true');
+        }
+
+        selectedFiles.forEach((file, index) => {
+          const reader = new FileReader();
+          reader.onload = function(e) {
+            const thumb = document.createElement('div');
+            thumb.className = 'preview-thumb';
+            thumb.innerHTML = `<img src="${e.target.result}" alt="Preview">`;
+            previewGrid.appendChild(thumb);
+          };
+          reader.readAsDataURL(file);
+        });
+      }
+
+      btnConvert.addEventListener('click', async function() {
+        if (selectedFiles.length === 0) return;
+
+        const originalText = btnConvert.textContent;
+        btnConvert.textContent = '⏳ Generating PDF...';
+        btnConvert.setAttribute('disabled', 'true');
+
+        try {
+          const { jsPDF } = window.jspdf;
+          const pdf = new jsPDF();
+
+          for (let i = 0; i < selectedFiles.length; i++) {
+            const file = selectedFiles[i];
+            const dataUrl = await readFileAsDataURL(file);
+
+            if (i > 0) {
+              pdf.addPage();
+            }
+
+            const imgProps = pdf.getImageProperties(dataUrl);
+            const pdfWidth = pdf.internal.pageSize.getWidth();
+            const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
+            pdf.addImage(dataUrl, 'JPEG', 0, 10, pdfWidth, pdfHeight);
+          }
+
+          pdf.save('converted-images.pdf');
+          btnConvert.textContent = '✅ PDF Downloaded!';
+          setTimeout(() => {
+            btnConvert.textContent = originalText;
+            btnConvert.removeAttribute('disabled');
+          }, 2000);
+        } catch (error) {
+          console.error(error);
+          alert('Error generating PDF. Please try again.');
+          btnConvert.textContent = originalText;
+          btnConvert.removeAttribute('disabled');
+        }
+      });
+
+      function readFileAsDataURL(file) {
+        return new Promise((resolve, reject) => {
+          const reader = new FileReader();
+          reader.onload = () => resolve(reader.result);
+          reader.onerror = reject;
+          reader.readAsDataURL(file);
+        });
+      }
+
+      btnReset.addEventListener('click', function() {
+        selectedFiles = [];
+        fileInput.value = '';
+        previewGrid.innerHTML = '';
+        btnConvert.setAttribute('disabled', 'true');
+      });
+    });
+  </script>
+</body>
+</html>
