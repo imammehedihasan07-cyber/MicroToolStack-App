@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) - Optimized Load -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var gTagScript = document.createElement('script');
+        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        gTagScript.async = true;
+        document.head.appendChild(gTagScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F3WWR9KGB4');
+      }, 1000);
+    });
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>Free Online PDF Rotate Pages | Rotate PDF Online Instantly | MicroToolStack</title>
+  <meta name="description" content="Rotate PDF pages online for free. Fast client-side PDF rotation tool supporting 90, 180, and 270 degrees orientation fixes with instant download.">
+  <meta name="keywords" content="pdf rotate, rotate pdf pages online, change pdf orientation, turn pdf sideways, free pdf tools, microtoolstack">
+
+  <link rel="canonical" href="https://microtoolstack.com/tools/pdf/pdf-rotate.html">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://microtoolstack.com/tools/pdf/pdf-rotate.html">
+  <meta property="og:title" content="Free Online PDF Rotate Pages | MicroToolStack">
+  <meta property="og:description" content="Rotate your PDF pages to portrait or landscape orientation instantly in your browser. 100% free and secure web utility.">
+  <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
+
+  <!-- Favicon Icon for Google & Devices -->
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
+
+  <!-- PDF-lib Library for Client-Side PDF Manipulation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+
+  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "PDF Rotate Tool",
+        "operatingSystem": "All",
+        "applicationCategory": "UtilitiesApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "An essential client-side PDF utility that rotates pages of PDF documents securely inside your browser.",
+        "url": "https://microtoolstack.com/tools/pdf/pdf-rotate.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How do I rotate pages in a PDF file?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Upload your PDF file, choose your preferred rotation angle (90°, 180°, or 270°), and click 'Rotate PDF & Download'."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are my uploaded PDF files stored on remote servers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No! All file processing and PDF editing execute 100% locally inside your web browser session using client-side JavaScript. Your documents remain completely private."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this PDF Rotate tool free to use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, MicroToolStack's PDF Rotate tool is 100% free with unlimited document edits and no registration required."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Preconnect and Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <style>
+    .input-group {
+      margin-bottom: 1.25rem;
+    }
+    .input-label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.5rem;
+    }
+    .form-select {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
+      color: var(--text-primary, #fff);
+      outline: none;
+      box-sizing: border-box;
+    }
+    .form-select:focus {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+    .dropzone {
+      border: 2px dashed var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+    .dropzone:hover {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+    .controls-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.5rem;
+    }
+    .content-box {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .content-box h2 {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul {
+      color: var(--text-secondary, #9ca3af);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .content-box ul {
+      padding-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .content-box li {
+      margin-bottom: 0.5rem;
+    }
+    .related-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .related-card {
+      display: block;
+      padding: 1rem;
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      color: var(--text-primary, #fff);
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .related-card:hover {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+  </style>
+</head>
+<body style="margin: 0; padding: 0;">
+
+  <!-- Header Section -->
+  <header class="custom-header">
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
+    </a>
+    <nav class="custom-nav">
+      <a href="/#categories">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
+    </nav>
+  </header>
+
+  <!-- Main Container -->
+  <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
+    
+    <!-- Tool Title & Description -->
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online PDF Rotate Pages</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Rotate PDF document pages to portrait or landscape orientation securely in your browser.</p>
+    </div>
+
+    <!-- Editor Card -->
+    <div class="content-box" style="margin-bottom: 1.5rem;">
+      <div class="dropzone" id="dropzone">
+        <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📄</div>
+        <div id="file-label" style="font-weight: 600; color: #fff; margin-bottom: 0.25rem;">Drag & drop a PDF file here or browse</div>
+        <div style="font-size: 0.85rem; color: #9ca3af;">Supports PDF documents</div>
+        <input type="file" id="file-input" accept="application/pdf" style="display: none;">
+      </div>
+
+      <div class="input-group" style="margin-top: 1.5rem;">
+        <label for="rotation-select" class="input-label">Rotation Angle</label>
+        <select id="rotation-select" class="form-select">
+          <option value="90" selected>90° Clockwise</option>
+          <option value="180">180° (Upside Down)</option>
+          <option value="270">270° Clockwise (90° Counter-Clockwise)</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Controls Bar -->
+    <div class="controls-bar">
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-process" class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-weight: 600; cursor: pointer; background: #10b981;" disabled>🔄 Rotate PDF & Download</button>
+      </div>
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-reset" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🔄 Reset</button>
+      </div>
+    </div>
+
+    <!-- SEO Article Content Box 1 -->
+    <div class="content-box">
+      <h2>Why Rotate PDF Pages?</h2>
+      <p>Scanned documents or photographs often end up sideways or upside down. Our free <strong>PDF Rotate</strong> tool allows you to instantly fix document orientations so your files read correctly on all devices.</p>
+    </div>
+
+    <!-- SEO Article Content Box 2 -->
+    <div class="content-box">
+      <h2>How to Rotate PDF Files Online</h2>
+      <p>Follow these quick steps:</p>
+      <ul>
+        <li><strong>Step 1:</strong> Upload your PDF document into the dropzone.</li>
+        <li><strong>Step 2:</strong> Choose your desired rotation angle (90°, 180°, or 270°).</li>
+        <li><strong>Step 3:</strong> Click "Rotate PDF & Download" to save your corrected document.</li>
+      </ul>
+    </div>
+
+    <!-- SEO Article Content Box 3 -->
+    <div class="content-box">
+      <h2>100% Client-Side Privacy</h2>
+      <p>Your documents remain completely secure. All rotation processing runs locally inside your web browser session using JavaScript without uploading files to remote servers.</p>
+    </div>
+
+    <!-- Internal Linking Section -->
+    <div class="content-box">
+      <h2>Explore Related PDF Tools</h2>
+      <p>Discover our complementary online utilities:</p>
+      <div class="related-links">
+        <a href="/tools/pdf/pdf-reorder-pages.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📄 PDF Reorder Pages</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Rearrange and sort page sequences.</span>
+        </a>
+        <a href="/tools/pdf/pdf-delete-pages.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📄 PDF Delete Pages</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Remove unwanted pages from PDFs.</span>
+        </a>
+        <a href="/tools/pdf/jpg-to-pdf.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📁 JPG to PDF Converter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Convert image files into structured PDFs.</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="content-box">
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Does it rotate all pages in the PDF?</h3>
+        <p>Yes, the tool rotates all pages in the uploaded document uniformly by the selected angle.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Are my files safe and private?</h3>
+        <p>Yes. All processing happens entirely within your browser session using client-side JavaScript.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this tool free?</h3>
+        <p>Yes, MicroToolStack's PDF Rotate tool is 100% free with no limits or registration required.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer Container Placeholder -->
+  <div id="footer-container"></div>
+
+  <!-- JavaScript Utilities & Logic -->
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const dropzone = document.getElementById('dropzone');
+      const fileInput = document.getElementById('file-input');
+      const fileLabel = document.getElementById('file-label');
+      const rotationSelect = document.getElementById('rotation-select');
+      const btnProcess = document.getElementById('btn-process');
+      const btnReset = document.getElementById('btn-reset');
+
+      let loadedPdfBytes = null;
+
+      dropzone.addEventListener('click', () => fileInput.click());
+
+      dropzone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropzone.style.borderColor = 'var(--accent-primary, #3b82f6)';
+      });
+
+      dropzone.addEventListener('dragleave', () => {
+        dropzone.style.borderColor = 'var(--border-color, #333)';
+      });
+
+      dropzone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropzone.style.borderColor = 'var(--border-color, #333)';
+        if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+          handleFile(e.dataTransfer.files[0]);
+        }
+      });
+
+      fileInput.addEventListener('change', (e) => {
+        if (e.target.files && e.target.files[0]) {
+          handleFile(e.target.files[0]);
+        }
+      });
+
+      async function handleFile(file) {
+        if (file.type !== 'application/pdf') {
+          alert('Please upload a valid PDF file.');
+          return;
+        }
+
+        fileLabel.textContent = `📁 ${file.name}`;
+        const reader = new FileReader();
+        reader.onload = async function(e) {
+          loadedPdfBytes = e.target.result;
+          btnProcess.removeAttribute('disabled');
+        };
+        reader.readAsArrayBuffer(file);
+      }
+
+      btnProcess.addEventListener('click', async function() {
+        if (!loadedPdfBytes) return;
+
+        const originalText = btnProcess.textContent;
+        btnProcess.textContent = '⏳ Rotating...';
+        btnProcess.setAttribute('disabled', 'true');
+
+        try {
+          const pdfDoc = await PDFLib.PDFDocument.load(loadedPdfBytes);
+          const pages = pdfDoc.getPages();
+          const angle = parseInt(rotationSelect.value, 10);
+
+          pages.forEach(page => {
+            const currentRotation = page.getRotation().angle;
+            page.setRotation(PDFLib.degrees(currentRotation + angle));
+          });
+
+          const modifiedPdfBytes = await pdfDoc.save();
+          const blob = new Blob([modifiedPdfBytes], { type: 'application/pdf' });
+          const link = document.createElement('a');
+          link.href = URL.createObjectURL(blob);
+          link.download = 'rotated-document.pdf';
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+
+          btnProcess.textContent = '✅ Rotated & Downloaded!';
+          setTimeout(() => {
+            btnProcess.textContent = originalText;
+            btnProcess.removeAttribute('disabled');
+          }, 2000);
+        } catch (err) {
+          console.error(err);
+          alert('Error rotating PDF pages.');
+          btnProcess.textContent = originalText;
+          btnProcess.removeAttribute('disabled');
+        }
+      });
+
+      btnReset.addEventListener('click', function() {
+        loadedPdfBytes = null;
+        fileInput.value = '';
+        fileLabel.textContent = 'Drag & drop a PDF file here or browse';
+        btnProcess.setAttribute('disabled', 'true');
+      });
+    });
+  </script>
+</body>
+</html>
