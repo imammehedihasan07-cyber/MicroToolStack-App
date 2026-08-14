@@ -2,7 +2,7 @@ window.ThemeManager = window.ThemeManager || {};
 
 // Set initial theme state instantly to prevent white/dark flashing
 (function() {
-    var savedTheme = localStorage.getItem('theme') || 'light';
+    var savedTheme = localStorage.getItem('theme') || 'dark';
     document.documentElement.setAttribute('data-theme', savedTheme);
     if (savedTheme === 'dark') {
         document.documentElement.classList.add('dark');
@@ -16,14 +16,18 @@ document.addEventListener('DOMContentLoaded', () => {
     renderFooter();
     initFavorites();
     initThemeToggle();
+    
+    // Initial theme apply to update static logos and icons
+    const currentTheme = localStorage.getItem('theme') || 'dark';
+    applyTheme(currentTheme);
 });
 
-// Render Header Navbar with Exact Dimensions (Fixes CLS Issue)
+// Render Header Navbar with Exact Dimensions
 function renderNavbar() {
     const headerContainer = document.getElementById('header-container');
     if (!headerContainer) return;
 
-    const currentTheme = localStorage.getItem('theme') || 'light';
+    const currentTheme = localStorage.getItem('theme') || 'dark';
     const initialLogo = currentTheme === 'light' ? '/assets/images/logo-black.png' : '/assets/images/logo-white.png';
 
     headerContainer.innerHTML = `
@@ -80,10 +84,13 @@ function initFavorites() {
     let favorites = JSON.parse(localStorage.getItem('favorite_tools') || '[]');
     let isFav = favorites.includes(currentPath);
 
+    // Check if fav button already exists to avoid duplicates
+    if (document.getElementById('fav-btn')) return;
+
     const favBtn = document.createElement('button');
     favBtn.id = 'fav-btn';
     favBtn.className = 'btn btn-secondary';
-    favBtn.style.cssText = 'font-size: 0.85rem; padding: 0.3rem 0.75rem; margin-left: 10px; border-radius: 20px; cursor: pointer;';
+    favBtn.style.cssText = 'font-size: 0.85rem; padding: 0.3rem 0.75rem; margin-left: 10px; border-radius: 20px; cursor: pointer; vertical-align: middle;';
     
     updateFavBtn(favBtn, isFav);
 
@@ -124,13 +131,10 @@ window.shareCurrentPage = function() {
 
 // Theme Toggle Event Delegation
 function initThemeToggle() {
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    applyTheme(savedTheme);
-
     document.addEventListener('click', (e) => {
         const toggleBtn = e.target.closest('#theme-toggle, .custom-theme-btn');
         if (toggleBtn) {
-            const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+            const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
             const newTheme = currentTheme === 'light' ? 'dark' : 'light';
             
             applyTheme(newTheme);
@@ -143,18 +147,22 @@ function initThemeToggle() {
 function applyTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
     
-    const logoImg = document.getElementById('app-logo') || document.querySelector('.custom-logo img');
-    const toggleBtn = document.getElementById('theme-toggle');
+    const logos = document.querySelectorAll('#app-logo, .custom-logo img');
+    const toggleBtns = document.querySelectorAll('#theme-toggle, .custom-theme-btn');
 
-    if (toggleBtn) {
-        toggleBtn.innerText = theme === 'dark' ? '☀️' : '🌙';
-    }
+    toggleBtns.forEach(btn => {
+        btn.innerText = theme === 'dark' ? '☀️' : '🌙';
+    });
 
     if (theme === 'dark') {
         document.documentElement.classList.add('dark');
-        if (logoImg) logoImg.src = '/assets/images/logo-white.png';
+        logos.forEach(logo => {
+            logo.src = '/assets/images/logo-white.png';
+        });
     } else {
         document.documentElement.classList.remove('dark');
-        if (logoImg) logoImg.src = '/assets/images/logo-black.png';
+        logos.forEach(logo => {
+            logo.src = '/assets/images/logo-black.png';
+        });
     }
 }
