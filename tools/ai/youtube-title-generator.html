@@ -116,7 +116,7 @@
       display: block;
       font-size: 0.9rem;
       font-weight: 600;
-      color: var(--text-primary, #fff);
+      color: var(--text-primary);
       margin-bottom: 0.5rem;
     }
     .form-control, .form-select {
@@ -125,10 +125,11 @@
       font-size: 1rem;
       border: 1px solid var(--border-color, #333);
       border-radius: var(--radius-md, 8px);
-      background-color: var(--bg-card, #1e1e2e);
-      color: var(--text-primary, #fff);
+      background-color: var(--bg-body, #0d1117);
+      color: var(--text-primary);
       outline: none;
       box-sizing: border-box;
+      transition: border-color 0.2s, background-color 0.2s, color 0.2s;
     }
     .form-control:focus, .form-select:focus {
       border-color: var(--accent-primary, #3b82f6);
@@ -143,18 +144,18 @@
     .output-title {
       font-size: 1.1rem;
       font-weight: 600;
-      color: var(--text-primary, #fff);
+      color: var(--text-primary);
       margin-bottom: 0.75rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
     .output-box {
-      background: rgba(0, 0, 0, 0.2);
+      background: var(--bg-body, #0d1117);
       border: 1px solid var(--border-color, #333);
       border-radius: 6px;
       padding: 1rem;
-      color: var(--text-primary, #fff);
+      color: var(--text-primary);
       font-size: 0.95rem;
       line-height: 1.6;
       white-space: pre-wrap;
@@ -170,13 +171,13 @@
     .content-box h2 {
       font-size: 1.35rem;
       margin-bottom: 1rem;
-      color: var(--text-primary, #fff);
+      color: var(--text-primary);
     }
     .content-box h3 {
       font-size: 1.1rem;
       margin-top: 1.25rem;
       margin-bottom: 0.5rem;
-      color: var(--text-primary, #fff);
+      color: var(--text-primary);
     }
     .content-box p, .content-box ul {
       color: var(--text-secondary, #9ca3af);
@@ -202,7 +203,7 @@
       background: var(--bg-card, #1e1e2e);
       border: 1px solid var(--border-color, #333);
       border-radius: 8px;
-      color: var(--text-primary, #fff);
+      color: var(--text-primary);
       text-decoration: none;
       transition: border-color 0.2s;
     }
@@ -215,8 +216,8 @@
 
   <!-- Header Section -->
   <header class="custom-header">
-    <a href="/" class="custom-logo">
-      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
+    <a href="/" class="custom-logo" style="display: flex; align-items: center;">
+      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto; display: block;">
     </a>
     <nav class="custom-nav">
       <a href="/#categories">Categories</a>
@@ -231,7 +232,7 @@
     
     <!-- Tool Title & Description -->
     <div style="text-align: center; margin-bottom: 2rem;">
-      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">AI YouTube Title, Description & Tags Generator</h1>
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary);">AI YouTube Title, Description & Tags Generator</h1>
       <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Generate high-CTR titles, SEO video descriptions, and viral tags for YouTube in one click.</p>
     </div>
 
@@ -239,7 +240,7 @@
     <div class="content-box" style="margin-bottom: 2rem;">
       <div class="input-group">
         <label for="yt-topic" class="input-label">What is your video topic or core keyword?</label>
-        <input type="text" id="yt-topic" class="form-control" placeholder="e.g., How to edit videos on CapCut, Best gaming laptop 2026, Daily vlog in Village">
+        <input type="text" id="yt-topic" class="form-control" placeholder="e.g., How to edit videos on CapCut, Best gaming laptop 2026, Daily vlog in Village" autofocus>
       </div>
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;" class="input-group">
@@ -264,7 +265,7 @@
         </div>
       </div>
 
-      <button id="btn-generate-yt" class="btn btn-primary" style="width: 100%; padding: 0.85rem; font-size: 1rem; font-weight: 600; cursor: pointer;">🎬 Generate YouTube Metadata</button>
+      <button id="btn-generate-yt" class="btn btn-primary" style="width: 100%; padding: 0.85rem; font-size: 1rem; font-weight: 600; cursor: pointer; background: var(--accent-primary, #3b82f6); border: none; border-radius: 6px;">🎬 Generate YouTube Metadata</button>
     </div>
 
     <!-- Output Section -->
@@ -332,7 +333,7 @@
       </ul>
     </div>
 
-    <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
+    <!-- Internal Linking Section -->
     <div class="content-box">
       <h2>Explore Related Creator Tools</h2>
       <p>Enhance your video and social media content creation workflow with our complementary utilities:</p>
@@ -356,19 +357,19 @@
     <div class="content-box">
       <h2>Frequently Asked Questions (FAQs)</h2>
       <div style="margin-bottom: 1.25rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How does the AI YouTube Generator work?</h3>
+        <h3 style="font-size: 1.05rem; margin-bottom: 0.25rem;">How does the AI YouTube Generator work?</h3>
         <p>Type your video subject or main keyword, select your niche and preferred title style, and the tool builds click-optimized titles, a detailed description template, and video tags instantly.</p>
       </div>
       <div style="margin-bottom: 1.25rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this tool free for monetized YouTubers?</h3>
+        <h3 style="font-size: 1.05rem; margin-bottom: 0.25rem;">Is this tool free for monetized YouTubers?</h3>
         <p>Yes, MicroToolStack's YouTube Generator is 100% free for all creators with no limits, hidden fees, or subscriptions required.</p>
       </div>
       <div style="margin-bottom: 1.25rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What is the character limit for YouTube titles and descriptions?</h3>
+        <h3 style="font-size: 1.05rem; margin-bottom: 0.25rem;">What is the character limit for YouTube titles and descriptions?</h3>
         <p>YouTube titles allow up to 100 characters (60 characters is recommended for mobile viewability), descriptions allow up to 5,000 characters, and tags allow up to 500 total characters.</p>
       </div>
       <div>
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Are my topic keywords saved on external servers?</h3>
+        <h3 style="font-size: 1.05rem; margin-bottom: 0.25rem;">Are my topic keywords saved on external servers?</h3>
         <p>No. All scripts run client-side in your web browser. Your video ideas remain completely private.</p>
       </div>
     </div>
@@ -385,6 +386,23 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
+      // Theme Toggle Fallback Handler
+      const themeBtn = document.getElementById('theme-toggle');
+      if (themeBtn) {
+        themeBtn.addEventListener('click', function() {
+          const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+          const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+          document.documentElement.setAttribute('data-theme', newTheme);
+          localStorage.setItem('theme', newTheme);
+          themeBtn.textContent = newTheme === 'dark' ? '🌙' : '☀️';
+        });
+
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        themeBtn.textContent = savedTheme === 'dark' ? '🌙' : '☀️';
+      }
+
+      // Metadata Generation Logic
       const btnGenerate = document.getElementById('btn-generate-yt');
       const ytTopic = document.getElementById('yt-topic');
       const ytCategory = document.getElementById('yt-category');
