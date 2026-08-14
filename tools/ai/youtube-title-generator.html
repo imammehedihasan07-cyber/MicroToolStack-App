@@ -36,7 +36,7 @@
   <meta property="og:description" content="Create viral YouTube titles, keyword-rich descriptions, and relevant video tags in seconds. 100% free YouTube SEO tool.">
   <meta property="og:image" content="https://www.microtoolstack.com/assets/images/og-image.png">
 
-  <!-- Favicon Icon -->
+  <!-- Favicon Icon for Google & Devices -->
   <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
   <link rel="apple-touch-icon" href="/assets/images/favicon.png">
@@ -47,19 +47,6 @@
   <!-- Preconnect and Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <!-- Instant Theme Script to Prevent Flash -->
-  <script>
-    (function() {
-      var savedTheme = localStorage.getItem('theme') || 'dark';
-      document.documentElement.setAttribute('data-theme', savedTheme);
-      if (savedTheme === 'dark') {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
-    })();
-  </script>
 
   <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
@@ -73,27 +60,26 @@
       display: block;
       font-size: 0.9rem;
       font-weight: 600;
-      color: var(--text-primary);
+      color: var(--text-primary, #ffffff);
       margin-bottom: 0.5rem;
     }
     .form-control, .form-select {
       width: 100%;
       padding: 0.75rem 1rem;
       font-size: 1rem;
-      border: 1px solid var(--border-color, #333);
+      border: 1px solid var(--border-color, #333333);
       border-radius: var(--radius-md, 8px);
-      background-color: var(--bg-body, #0d1117);
-      color: var(--text-primary);
+      background-color: var(--bg-card, #1e1e2e);
+      color: var(--text-primary, #ffffff);
       outline: none;
       box-sizing: border-box;
-      transition: border-color 0.2s, background-color 0.2s, color 0.2s;
     }
     .form-control:focus, .form-select:focus {
       border-color: var(--accent-primary, #3b82f6);
     }
     .output-card {
       background-color: var(--bg-card, #1e1e2e);
-      border: 1px solid var(--border-color, #333);
+      border: 1px solid var(--border-color, #333333);
       border-radius: var(--radius-md, 8px);
       padding: 1.25rem;
       margin-bottom: 1.5rem;
@@ -101,18 +87,18 @@
     .output-title {
       font-size: 1.1rem;
       font-weight: 600;
-      color: var(--text-primary);
+      color: var(--text-primary, #ffffff);
       margin-bottom: 0.75rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
     .output-box {
-      background: var(--bg-body, #0d1117);
-      border: 1px solid var(--border-color, #333);
+      background: rgba(0, 0, 0, 0.25);
+      border: 1px solid var(--border-color, #333333);
       border-radius: 6px;
       padding: 1rem;
-      color: var(--text-primary);
+      color: var(--text-primary, #ffffff);
       font-size: 0.95rem;
       line-height: 1.6;
       white-space: pre-wrap;
@@ -120,7 +106,7 @@
     }
     .content-box {
       background-color: var(--bg-card, #1e1e2e);
-      border: 1px solid var(--border-color, #333);
+      border: 1px solid var(--border-color, #333333);
       border-radius: var(--radius-md, 8px);
       padding: 1.5rem;
       margin-bottom: 2rem;
@@ -128,13 +114,13 @@
     .content-box h2 {
       font-size: 1.35rem;
       margin-bottom: 1rem;
-      color: var(--text-primary);
+      color: var(--text-primary, #ffffff);
     }
     .content-box h3 {
       font-size: 1.1rem;
       margin-top: 1.25rem;
       margin-bottom: 0.5rem;
-      color: var(--text-primary);
+      color: var(--text-primary, #ffffff);
     }
     .content-box p, .content-box ul {
       color: var(--text-secondary, #9ca3af);
@@ -158,9 +144,9 @@
       display: block;
       padding: 1rem;
       background: var(--bg-card, #1e1e2e);
-      border: 1px solid var(--border-color, #333);
+      border: 1px solid var(--border-color, #333333);
       border-radius: 8px;
-      color: var(--text-primary);
+      color: var(--text-primary, #ffffff);
       text-decoration: none;
       transition: border-color 0.2s;
     }
@@ -169,29 +155,27 @@
     }
   </style>
 </head>
-<body>
+<body style="margin: 0; padding: 0;">
 
-  <!-- Dynamic Header Container Managed by theme.js -->
-  <div id="header-container">
-    <header class="custom-header">
-      <a href="/" class="custom-logo">
-        <img id="app-logo" src="/assets/images/logo-white.png" alt="MicroToolStack Logo" width="160" height="38" style="height: 38px; width: auto; display: block;" onerror="this.onerror=null; this.src='/assets/images/logo-white.png';">
-      </a>
-      <nav class="custom-nav">
-        <a href="/#categories">Categories</a>
-        <a href="/about.html">About</a>
-        <a href="/contact.html">Contact</a>
-        <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">☀️</button>
-      </nav>
-    </header>
-  </div>
+  <!-- Header Section -->
+  <header class="custom-header">
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto; display: block;">
+    </a>
+    <nav class="custom-nav">
+      <a href="/#categories">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
+    </nav>
+  </header>
 
   <!-- Main Container -->
   <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
     
     <!-- Tool Title & Description -->
     <div style="text-align: center; margin-bottom: 2rem;">
-      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary);">AI YouTube Title, Description & Tags Generator</h1>
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: #ffffff !important;">AI YouTube Title, Description & Tags Generator</h1>
       <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Generate high-CTR titles, SEO video descriptions, and viral tags for YouTube in one click.</p>
     </div>
 
@@ -224,7 +208,7 @@
         </div>
       </div>
 
-      <button id="btn-generate-yt" class="btn btn-primary" style="width: 100%; padding: 0.85rem; font-size: 1rem; font-weight: 600; cursor: pointer; background: var(--accent-primary, #3b82f6); border: none; border-radius: 6px;">🎬 Generate YouTube Metadata</button>
+      <button id="btn-generate-yt" class="btn btn-primary" style="width: 100%; padding: 0.85rem; font-size: 1rem; font-weight: 600; cursor: pointer; background: #3b82f6; color: #ffffff; border: none; border-radius: 6px;">🎬 Generate YouTube Metadata</button>
     </div>
 
     <!-- Output Section -->
@@ -234,7 +218,7 @@
       <div class="output-card">
         <div class="output-title">
           <span>📌 Recommended High-CTR Titles</span>
-          <button class="btn btn-secondary btn-copy-sec" data-target="yt-titles-box" style="padding: 0.3rem 0.75rem; font-size: 0.8rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 4px;">📋 Copy Titles</button>
+          <button class="btn btn-secondary btn-copy-sec" data-target="yt-titles-box" style="padding: 0.3rem 0.75rem; font-size: 0.8rem; cursor: pointer; background: #374151; color: #ffffff; border: none; border-radius: 4px;">📋 Copy Titles</button>
         </div>
         <div class="output-box" id="yt-titles-box"></div>
       </div>
@@ -243,7 +227,7 @@
       <div class="output-card">
         <div class="output-title">
           <span>📝 SEO Optimized Video Description</span>
-          <button class="btn btn-secondary btn-copy-sec" data-target="yt-desc-box" style="padding: 0.3rem 0.75rem; font-size: 0.8rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 4px;">📋 Copy Description</button>
+          <button class="btn btn-secondary btn-copy-sec" data-target="yt-desc-box" style="padding: 0.3rem 0.75rem; font-size: 0.8rem; cursor: pointer; background: #374151; color: #ffffff; border: none; border-radius: 4px;">📋 Copy Description</button>
         </div>
         <div class="output-box" id="yt-desc-box"></div>
       </div>
@@ -252,9 +236,9 @@
       <div class="output-card">
         <div class="output-title">
           <span>🏷️ Viral Video Tags (Comma Separated)</span>
-          <button class="btn btn-secondary btn-copy-sec" data-target="yt-tags-box" style="padding: 0.3rem 0.75rem; font-size: 0.8rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 4px;">📋 Copy Tags</button>
+          <button class="btn btn-secondary btn-copy-sec" data-target="yt-tags-box" style="padding: 0.3rem 0.75rem; font-size: 0.8rem; cursor: pointer; background: #374151; color: #ffffff; border: none; border-radius: 4px;">📋 Copy Tags</button>
         </div>
-        <div class="output-box" id="yt-tags-box" style="font-family: monospace; color: var(--accent-primary, #3b82f6);"></div>
+        <div class="output-box" id="yt-tags-box" style="font-family: monospace; color: #3b82f6;"></div>
       </div>
 
     </div>
@@ -281,6 +265,17 @@
       <p>While tags have a lower weight than titles and descriptions, they help YouTube understand common misspellings, related niche concepts, and contextual categories. Combine broad channel tags with long-tail video-specific keywords for maximum search alignment.</p>
     </div>
 
+    <!-- SEO Article Content Box 3 -->
+    <div class="content-box">
+      <h2>Features of Our Free YouTube SEO Generator</h2>
+      <ul>
+        <li><strong>All-In-One SEO Suite:</strong> Generates titles, descriptions, and tag clusters simultaneously in one click.</li>
+        <li><strong>Category-Specific Tailoring:</strong> Adjusts tone and structure specifically for tech, gaming, vlogging, education, or finance channels.</li>
+        <li><strong>100% Free & Unlimited:</strong> Generate unlimited video ideas with no daily limits or forced accounts.</li>
+        <li><strong>Browser Privacy Guarantee:</strong> All processing is done locally on your device; no video concepts or inputs are saved remotely.</li>
+      </ul>
+    </div>
+
     <!-- Internal Linking Section -->
     <div class="content-box">
       <h2>Explore Related Creator Tools</h2>
@@ -289,6 +284,10 @@
         <a href="/tools/ai/caption-generator.html" class="related-card">
           <strong style="display:block; margin-bottom: 0.25rem;">✨ AI Caption Generator</strong>
           <span style="font-size: 0.85rem; color: #9ca3af;">Create catchy captions and hashtags for TikTok & Instagram.</span>
+        </a>
+        <a href="/tools/ai/hashtag-generator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">#️⃣ AI Hashtag Generator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Find high-reach hashtags for Instagram, TikTok & Shorts.</span>
         </a>
         <a href="/tools/text/word-counter.html" class="related-card">
           <strong style="display:block; margin-bottom: 0.25rem;">📊 Real-Time Word Counter</strong>
@@ -301,28 +300,31 @@
     <div class="content-box">
       <h2>Frequently Asked Questions (FAQs)</h2>
       <div style="margin-bottom: 1.25rem;">
-        <h3 style="font-size: 1.05rem; margin-bottom: 0.25rem;">How does the AI YouTube Generator work?</h3>
+        <h3 style="font-size: 1.05rem; color: #ffffff; margin-bottom: 0.25rem;">How does the AI YouTube Generator work?</h3>
         <p>Type your video subject or main keyword, select your niche and preferred title style, and the tool builds click-optimized titles, a detailed description template, and video tags instantly.</p>
       </div>
       <div style="margin-bottom: 1.25rem;">
-        <h3 style="font-size: 1.05rem; margin-bottom: 0.25rem;">Is this tool free for monetized YouTubers?</h3>
+        <h3 style="font-size: 1.05rem; color: #ffffff; margin-bottom: 0.25rem;">Is this tool free for monetized YouTubers?</h3>
         <p>Yes, MicroToolStack's YouTube Generator is 100% free for all creators with no limits, hidden fees, or subscriptions required.</p>
       </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: #ffffff; margin-bottom: 0.25rem;">What is the character limit for YouTube titles and descriptions?</h3>
+        <p>YouTube titles allow up to 100 characters (60 characters is recommended for mobile viewability), descriptions allow up to 5,000 characters, and tags allow up to 500 total characters.</p>
+      </div>
       <div>
-        <h3 style="font-size: 1.05rem; margin-bottom: 0.25rem;">Are my topic keywords saved on external servers?</h3>
+        <h3 style="font-size: 1.05rem; color: #ffffff; margin-bottom: 0.25rem;">Are my topic keywords saved on external servers?</h3>
         <p>No. All scripts run client-side in your web browser. Your video ideas remain completely private.</p>
       </div>
     </div>
 
   </main>
 
-  <!-- Dynamic Footer Container -->
+  <!-- Footer Container Placeholder -->
   <div id="footer-container"></div>
 
   <!-- JavaScript Utilities & Logic -->
   <script src="/assets/js/theme.js"></script>
   <script src="/assets/js/utils.js" defer></script>
-  <script src="/assets/js/app.js" defer></script>
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -339,7 +341,7 @@
         const rawTopic = ytTopic.value.trim() || 'Complete Guide';
         const cleanTopic = rawTopic.replace(/[^a-zA-Z0-9 ]/g, '');
 
-        // Title Generation
+        // 1. Title Generation
         const titles = [
           `1. How to ${cleanTopic} (Step-by-Step Guide for Beginners)`,
           `2. I Tried ${cleanTopic} for 30 Days... Here's What Happened!`,
@@ -348,10 +350,10 @@
           `5. ${cleanTopic} Secret Strategy Nobody Tells You!`
         ];
 
-        // Description Generation
+        // 2. Description Generation
         const description = `In this video, we dive deep into ${cleanTopic}! Whether you are a beginner or looking to improve your skills, this step-by-step tutorial covers everything you need to know about ${cleanTopic} in 2026.\n\n📌 KEY TIMESTAMPS:\n0:00 - Introduction to ${cleanTopic}\n1:30 - Essential Tips & Setup\n4:15 - Step-by-Step Breakdown\n7:45 - Common Mistakes to Avoid\n10:00 - Final Thoughts & Summary\n\n🔔 Don't forget to LIKE, SUBSCRIBE, and hit the BELL notification icon for more daily content!\n\n#${cleanTag(cleanTopic)} #Tutorial #YouTubeSEO #CreatorTips`;
 
-        // Tags Generation
+        // 3. Tags Generation
         const tags = [
           cleanTopic.toLowerCase(),
           `how to ${cleanTopic.toLowerCase()}`,
