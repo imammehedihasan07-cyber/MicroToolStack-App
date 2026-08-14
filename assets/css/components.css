@@ -53,17 +53,18 @@
   background-color: var(--bg-secondary);
 }
 
-/* Cards */
-.card {
-  background-color: var(--bg-card);
-  border: 1px solid var(--border-color);
+/* Cards (Standard Theme Adaptable) */
+.card, .app-card, .tool-card {
+  background-color: var(--bg-card) !important;
+  border: 1px solid var(--border-color) !important;
   border-radius: var(--radius-md);
   padding: 1.5rem;
+  color: var(--text-primary) !important;
   transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
-.card-interactive:hover {
-  border-color: var(--border-hover);
+.card:hover, .app-card:hover, .tool-card:hover, .card-interactive:hover {
+  border-color: var(--accent-primary) !important;
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }
@@ -197,7 +198,7 @@
 
 .coffee-btn {
   background-color: #FFDD00;
-  color: #000;
+  color: #000000 !important;
   font-weight: 600;
   font-size: 0.9rem;
   padding: 0.65rem 1.25rem;
@@ -269,12 +270,10 @@
 }
 
 /* =======================================================
-   UNIVERSAL CTA BOX & INLINE BUTTON FIX (FOR ALL BLOGS)
+   STRICT CTA BOX FIX (ONLY APPLIES INSIDE BLOG CTA BOXES)
    ======================================================= */
 .cta-box,
-[class*="cta-"],
-.blog-cta,
-div[style*="text-align: center"]:has(a[href*="/tools/"]) {
+.blog-cta {
   background-color: var(--bg-card, #1e1e2e) !important;
   border: 1px solid var(--border-color, #334155) !important;
   border-radius: 12px !important;
@@ -285,46 +284,40 @@ div[style*="text-align: center"]:has(a[href*="/tools/"]) {
 
 .cta-box h3,
 .cta-box h4,
-[class*="cta-"] h3,
-[class*="cta-"] h4 {
-  color: #3b82f6 !important;
+.blog-cta h3,
+.blog-cta h4 {
+  color: var(--accent-primary, #3b82f6) !important;
   font-size: 1.3rem !important;
   font-weight: 700 !important;
   margin-bottom: 0.5rem !important;
 }
 
-/* CTA Description Text Fix */
 .cta-box p,
-[class*="cta-"] p {
+.blog-cta p {
   font-size: 1rem !important;
   line-height: 1.6 !important;
   margin-bottom: 1.5rem !important;
 }
 
 [data-theme="light"] .cta-box p,
-[data-theme="light"] [class*="cta-"] p,
-html:not(.dark) .cta-box p {
+[data-theme="light"] .blog-cta p,
+html:not(.dark) .cta-box p,
+html:not(.dark) .blog-cta p {
   color: #334155 !important;
 }
 
 [data-theme="dark"] .cta-box p,
-[data-theme="dark"] [class*="cta-"] p,
-html.dark .cta-box p {
+[data-theme="dark"] .blog-cta p,
+html.dark .cta-box p,
+html.dark .blog-cta p {
   color: #cbd5e1 !important;
 }
 
-/* Force All CTA Links/Buttons to be High-Contrast Solid Blue with White Text */
+/* Buttons ONLY inside CTA boxes */
 .cta-box a,
 .cta-box button,
-[class*="cta-"] a,
-[class*="cta-"] button,
 .blog-cta a,
-.blog-cta button,
-a[href*="/tools/pdf/"],
-a[href*="/tools/developer/"],
-a[href*="/tools/ai/"],
-a[href*="/tools/media/"],
-a[href*="/tools/social-media/"] {
+.blog-cta button {
   background-color: #2563eb !important;
   color: #ffffff !important;
   display: inline-block !important;
@@ -340,9 +333,8 @@ a[href*="/tools/social-media/"] {
 
 .cta-box a:hover,
 .cta-box button:hover,
-[class*="cta-"] a:hover,
-[class*="cta-"] button:hover,
-a[href*="/tools/"]:hover {
+.blog-cta a:hover,
+.blog-cta button:hover {
   background-color: #1d4ed8 !important;
   color: #ffffff !important;
   transform: translateY(-2px);
