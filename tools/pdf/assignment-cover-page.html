@@ -36,12 +36,13 @@
   <meta property="og:description" content="Generate clean, academic assignment title pages for school, college, or university. Live preview and instant 1-click PDF download.">
   <meta property="og:image" content="https://www.microtoolstack.com/assets/images/og-image.png">
 
-  <!-- Favicon Icon for Google & Devices -->
+  <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
-  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
-  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3023714618008515" crossorigin="anonymous"></script>
+
+  <!-- JSON-LD Schema Markup -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -85,24 +86,12 @@
               "@type": "Answer",
               "text": "No. All details entered into the form execute 100% locally inside your web browser session using client-side JavaScript. Your personal data remains private."
             }
-          },
-          {
-            "@type": "Question",
-            "name": "Is this cover page generator completely free?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, MicroToolStack's Assignment Cover Page Generator is 100% free with unlimited PDF downloads and no account sign-up required."
-            }
           }
         ]
       }
     ]
   }
   </script>
-
-  <!-- Preconnect and Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
@@ -114,19 +103,25 @@
   <style>
     .editor-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      grid-template-columns: 1fr 1fr;
       gap: 1.5rem;
       margin-bottom: 1.5rem;
+      align-items: start;
+    }
+    @media (max-width: 850px) {
+      .editor-grid {
+        grid-template-columns: 1fr;
+      }
     }
     .input-group {
-      margin-bottom: 1rem;
+      margin-bottom: 0.85rem;
     }
     .input-label {
       display: block;
       font-size: 0.85rem;
       font-weight: 600;
       color: var(--text-primary, #fff);
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.3rem;
     }
     .form-control {
       width: 100%;
@@ -134,7 +129,7 @@
       font-size: 0.95rem;
       border: 1px solid var(--border-color, #333);
       border-radius: var(--radius-md, 8px);
-      background-color: var(--bg-card, #1e1e2e);
+      background-color: var(--bg-input, #121218);
       color: var(--text-primary, #fff);
       outline: none;
       box-sizing: border-box;
@@ -143,28 +138,29 @@
       border-color: var(--accent-primary, #3b82f6);
     }
 
-    /* Live Cover Page Preview Box (A4 Proportion) */
+    /* Compact Live Preview Stage */
     .preview-stage {
       width: 100%;
-      background: #525659;
+      background: #374151;
       border: 1px solid var(--border-color, #333);
       border-radius: var(--radius-md, 8px);
-      padding: 1.5rem;
+      padding: 1rem;
       box-sizing: border-box;
       display: flex;
       justify-content: center;
       align-items: center;
-      overflow-x: auto;
+      overflow: hidden;
     }
 
     .cover-sheet {
-      width: 210mm;
-      min-height: 297mm;
+      width: 100%;
+      max-width: 380px;
+      aspect-ratio: 1 / 1.414; /* Exact A4 Proportion */
       background: #ffffff;
       color: #111827;
-      padding: 25mm 20mm;
+      padding: 24px 20px;
       box-sizing: border-box;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
       font-family: 'Times New Roman', Times, serif;
       display: flex;
       flex-direction: column;
@@ -175,34 +171,34 @@
 
     .cover-header {
       border-bottom: 2px solid #0f172a;
-      padding-bottom: 15px;
-      margin-bottom: 30px;
+      padding-bottom: 8px;
+      margin-bottom: 15px;
     }
     .cover-institution {
-      font-size: 22px;
+      font-size: 14px;
       font-weight: bold;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 0.5px;
       color: #0f172a;
     }
     .cover-department {
-      font-size: 16px;
+      font-size: 11px;
       color: #475569;
-      margin-top: 5px;
+      margin-top: 3px;
     }
 
     .cover-body {
-      margin: 40px 0;
+      margin: 15px 0;
     }
     .cover-title {
-      font-size: 26px;
+      font-size: 16px;
       font-weight: bold;
       color: #0f172a;
-      margin-bottom: 15px;
-      line-height: 1.3;
+      margin-bottom: 6px;
+      line-height: 1.25;
     }
     .cover-subtitle {
-      font-size: 18px;
+      font-size: 12px;
       color: #334155;
       font-style: italic;
     }
@@ -210,31 +206,32 @@
     .cover-details-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 20px;
+      gap: 10px;
       text-align: left;
       border-top: 1px solid #cbd5e1;
-      padding-top: 20px;
-      margin-top: 40px;
-      font-size: 14px;
-      line-height: 1.6;
+      padding-top: 10px;
+      margin-top: 10px;
+      font-size: 10px;
+      line-height: 1.4;
     }
 
     .details-block h4 {
-      font-size: 15px;
+      font-size: 11px;
       font-weight: bold;
       text-transform: uppercase;
       color: #0f172a;
-      margin-bottom: 8px;
+      margin: 0 0 4px 0;
       border-bottom: 1px solid #0f172a;
-      padding-bottom: 2px;
+      padding-bottom: 1px;
       display: inline-block;
     }
 
     .cover-footer {
-      font-size: 13px;
+      font-size: 9px;
       color: #64748b;
       border-top: 1px solid #e2e8f0;
-      padding-top: 15px;
+      padding-top: 8px;
+      margin-top: 8px;
     }
 
     .controls-bar {
@@ -243,7 +240,7 @@
       gap: 0.75rem;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 2.5rem;
+      margin-bottom: 2rem;
     }
 
     .content-box {
@@ -251,17 +248,17 @@
       border: 1px solid var(--border-color, #333);
       border-radius: var(--radius-md, 8px);
       padding: 1.5rem;
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
     }
     .content-box h2 {
       font-size: 1.35rem;
-      margin-bottom: 1rem;
+      margin-bottom: 0.75rem;
       color: var(--text-primary, #fff);
     }
     .content-box h3 {
-      font-size: 1.1rem;
-      margin-top: 1.25rem;
-      margin-bottom: 0.5rem;
+      font-size: 1.05rem;
+      margin-top: 1rem;
+      margin-bottom: 0.35rem;
       color: var(--text-primary, #fff);
     }
     .content-box p, .content-box ul {
@@ -272,9 +269,6 @@
     .content-box ul {
       padding-left: 1.25rem;
       margin-bottom: 1rem;
-    }
-    .content-box li {
-      margin-bottom: 0.5rem;
     }
     .related-links {
       display: grid;
@@ -296,6 +290,7 @@
       border-color: var(--accent-primary, #3b82f6);
     }
 
+    /* Print styling strictly A4 */
     @media print {
       body * { visibility: hidden; }
       #printable-cover, #printable-cover * { visibility: visible; }
@@ -303,16 +298,24 @@
         position: absolute;
         left: 0;
         top: 0;
-        width: 210mm;
-        height: 297mm;
+        width: 210mm !important;
+        height: 297mm !important;
+        max-width: none !important;
         margin: 0;
-        padding: 20mm;
-        box-shadow: none;
+        padding: 25mm 20mm !important;
+        box-shadow: none !important;
       }
+      .cover-institution { font-size: 22px !important; }
+      .cover-department { font-size: 16px !important; }
+      .cover-title { font-size: 26px !important; }
+      .cover-subtitle { font-size: 18px !important; }
+      .cover-details-grid { font-size: 14px !important; }
+      .details-block h4 { font-size: 15px !important; }
+      .cover-footer { font-size: 12px !important; }
     }
   </style>
 </head>
-<body style="margin: 0; padding: 0;">
+<body>
 
   <!-- Header Section -->
   <header class="custom-header">
@@ -328,19 +331,19 @@
   </header>
 
   <!-- Main Container -->
-  <main class="container" style="max-width: 950px; margin: 2rem auto; padding: 0 1rem;">
+  <main class="container" style="max-width: 950px; margin: 1.5rem auto; padding: 0 1rem;">
     
     <!-- Tool Title & Description -->
-    <div style="text-align: center; margin-bottom: 2rem;">
-      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online Assignment Cover Page Generator</h1>
-      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Create academic title sheets for school, college, or university assignments and export as PDF.</p>
+    <div style="text-align: center; margin-bottom: 1.5rem;">
+      <h1 style="font-size: 1.85rem; margin-bottom: 0.4rem; color: var(--text-primary, #fff);">Online Assignment Cover Page Generator</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 0.95rem;">Create academic title sheets for school, college, or university assignments and export as PDF.</p>
     </div>
 
     <!-- Dual Form & Live Preview Editor Grid -->
     <div class="editor-grid">
       <!-- Input Details Form -->
       <div class="content-box" style="margin-bottom: 0;">
-        <h3 style="margin-top: 0; font-size: 1.15rem; margin-bottom: 1rem; color: var(--accent-primary, #3b82f6);">📝 Cover Page Details</h3>
+        <h3 style="margin-top: 0; font-size: 1.1rem; margin-bottom: 0.85rem; color: var(--accent-primary, #3b82f6);">📝 Cover Page Details</h3>
         
         <div class="input-group">
           <label for="inp-institution" class="input-label">University / College Name</label>
@@ -387,7 +390,7 @@
 
       <!-- Live A4 Preview Canvas -->
       <div>
-        <label class="input-label" style="font-size: 1rem; margin-bottom: 0.5rem;">📄 Live Page Preview</label>
+        <label class="input-label" style="font-size: 0.95rem; margin-bottom: 0.4rem;">📄 Live Page Preview</label>
         <div class="preview-stage">
           <div id="printable-cover" class="cover-sheet">
             <div class="cover-header">
@@ -409,7 +412,7 @@
               <div class="details-block">
                 <h4>Submitted To:</h4>
                 <div><strong>Instructor:</strong> <span id="out-instructor-name">Dr. Robert Smith</span></div>
-                <div><strong>Date:</strong> <span id="out-date">August 12, 2026</span></div>
+                <div><strong>Date:</strong> <span id="out-date">August 14, 2026</span></div>
               </div>
             </div>
 
@@ -423,11 +426,11 @@
 
     <!-- Action Controls Bar -->
     <div class="controls-bar">
-      <div style="display: flex; gap: 0.75rem; align-items: center;">
-        <button id="btn-export-pdf" class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-weight: 600; cursor: pointer; background: #10b981;">📄 Download PDF Document</button>
-        <button id="btn-print" class="btn btn-primary" style="padding: 0.75rem 1.25rem; font-weight: 600; cursor: pointer;">🖨️ Print Cover Sheet</button>
+      <div style="display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap;">
+        <button id="btn-export-pdf" class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-weight: 600; cursor: pointer; background: #10b981; border: none; border-radius: 6px; color: #fff;">📄 Download PDF Document</button>
+        <button id="btn-print" class="btn btn-primary" style="padding: 0.75rem 1.25rem; font-weight: 600; cursor: pointer; background: #3b82f6; border: none; border-radius: 6px; color: #fff;">🖨️ Print Cover Sheet</button>
       </div>
-      <div style="display: flex; gap: 0.75rem;">
+      <div>
         <button id="btn-reset" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Reset Form</button>
       </div>
     </div>
@@ -435,7 +438,7 @@
     <!-- SEO Article Content Box 1 -->
     <div class="content-box">
       <h2>Why a Professional Assignment Cover Page Matters for Students</h2>
-      <p>In academic writing, whether submitting a term paper, research essay, lab report, or university assignment, presentation is as important as content. A clean, standardized <strong>Assignment Cover Page</strong> sets a formal tone and ensures teachers and teaching assistants can record your grade accurately.</p>
+      <p>In academic writing, whether submitting a term paper, research essay, lab report, or university assignment, presentation is as important as content. A clean, standardized <strong>Assignment Cover Page</strong> sets a formal tone and ensures instructors and evaluators can record your grade accurately.</p>
       <p>Creating cover pages from scratch in desktop word processors often causes alignment issues or takes unnecessary time. Our free <strong>Online Assignment Cover Page Generator</strong> automates this process, producing printable, publication-ready PDF title sheets instantly.</p>
     </div>
 
@@ -465,7 +468,7 @@
       </ul>
     </div>
 
-    <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
+    <!-- Internal Linking Section -->
     <div class="content-box">
       <h2>Explore Related Developer & Student Tools</h2>
       <p>Discover our complementary online utilities:</p>
@@ -496,13 +499,9 @@
         <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is my student data saved on any remote server?</h3>
         <p>No. All form rendering and PDF generation run locally inside your browser session using JavaScript. Your inputs remain 100% private.</p>
       </div>
-      <div style="margin-bottom: 1.25rem;">
+      <div>
         <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Does the exported PDF contain watermarks?</h3>
         <p>No. All generated PDF cover pages are completely free of watermarks and ready for academic submission.</p>
-      </div>
-      <div>
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this tool free to use?</h3>
-        <p>Yes, MicroToolStack's Assignment Cover Page Generator is 100% free with no usage limits or sign-up required.</p>
       </div>
     </div>
 
@@ -514,7 +513,6 @@
   <!-- JavaScript Utilities & Logic -->
   <script src="/assets/js/theme.js"></script>
   <script src="/assets/js/utils.js" defer></script>
-  <script src="/assets/js/app.js" defer></script>
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -566,7 +564,7 @@
         el.addEventListener('input', updatePreview);
       });
 
-      // Export PDF using html2pdf
+      // Export PDF using html2pdf with full A4 dimensions
       btnExportPdf.addEventListener('click', function() {
         if (typeof html2pdf === 'undefined') {
           alert('PDF generation engine is initializing. Please wait a moment and try again.');
@@ -576,6 +574,20 @@
         const originalText = btnExportPdf.textContent;
         btnExportPdf.textContent = '⏳ Rendering PDF...';
 
+        // Clone and style strictly for A4 PDF export
+        const elementToPrint = printableCover.cloneNode(true);
+        elementToPrint.style.width = '210mm';
+        elementToPrint.style.minHeight = '297mm';
+        elementToPrint.style.maxWidth = 'none';
+        elementToPrint.style.padding = '25mm 20mm';
+        elementToPrint.querySelector('.cover-institution').style.fontSize = '22px';
+        elementToPrint.querySelector('.cover-department').style.fontSize = '16px';
+        elementToPrint.querySelector('.cover-title').style.fontSize = '26px';
+        elementToPrint.querySelector('.cover-subtitle').style.fontSize = '18px';
+        elementToPrint.querySelector('.cover-details-grid').style.fontSize = '14px';
+        elementToPrint.querySelector('.cover-details-grid').style.lineHeight = '1.6';
+        elementToPrint.querySelector('.cover-footer').style.fontSize = '12px';
+
         const opt = {
           margin:       0,
           filename:     'assignment-cover-page.pdf',
@@ -584,7 +596,7 @@
           jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
         };
 
-        html2pdf().set(opt).from(printableCover).save().then(() => {
+        html2pdf().set(opt).from(elementToPrint).save().then(() => {
           btnExportPdf.textContent = '✅ PDF Downloaded!';
           setTimeout(() => { btnExportPdf.textContent = originalText; }, 2000);
         }).catch(err => {
