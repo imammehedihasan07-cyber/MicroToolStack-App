@@ -36,73 +36,30 @@
   <meta property="og:description" content="Create viral YouTube titles, keyword-rich descriptions, and relevant video tags in seconds. 100% free YouTube SEO tool.">
   <meta property="og:image" content="https://www.microtoolstack.com/assets/images/og-image.png">
 
-  <!-- Favicon Icon for Google & Devices -->
+  <!-- Favicon Icon -->
   <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
   <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
-  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "SoftwareApplication",
-        "name": "AI YouTube Title, Description & Tags Generator",
-        "operatingSystem": "All",
-        "applicationCategory": "UtilitiesApplication",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "description": "A comprehensive YouTube SEO optimization tool that generates click-worthy video titles, detailed descriptions, and high-volume video tags.",
-        "url": "https://www.microtoolstack.com/tools/ai/youtube-title-generator.html"
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How does the AI YouTube Title and Description Generator work?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Enter your video topic or core keyword, select your channel category, and click Generate. The tool automatically produces multiple high-CTR title variations, a structured video description template, and viral SEO tags."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Why are video titles and descriptions important for YouTube SEO?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "YouTube is the world's second-largest search engine. High-CTR titles encourage clicks, while keyword-rich descriptions help YouTube's algorithm index and recommend your video on YouTube Search and Suggested Feeds."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Is this YouTube SEO Generator completely free?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, MicroToolStack's AI YouTube Tool is 100% free with no hidden subscriptions, daily usage caps, or account registration needed."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Are my video topics saved on remote servers?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "No. All text generation script runs locally inside your browser session. Your video ideas and generated metadata remain entirely private."
-            }
-          }
-        ]
-      }
-    ]
-  }
-  </script>
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3023714618008515" crossorigin="anonymous"></script>
 
   <!-- Preconnect and Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Instant Theme Script to Prevent Flash -->
+  <script>
+    (function() {
+      var savedTheme = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      if (savedTheme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    })();
+  </script>
 
   <!-- CSS Stylesheets -->
   <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
@@ -212,20 +169,22 @@
     }
   </style>
 </head>
-<body style="margin: 0; padding: 0;">
+<body>
 
-  <!-- Header Section -->
-  <header class="custom-header">
-    <a href="/" class="custom-logo" style="display: flex; align-items: center;">
-      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto; display: block;">
-    </a>
-    <nav class="custom-nav">
-      <a href="/#categories">Categories</a>
-      <a href="/about.html">About</a>
-      <a href="/contact.html">Contact</a>
-      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
-    </nav>
-  </header>
+  <!-- Dynamic Header Container Managed by theme.js -->
+  <div id="header-container">
+    <header class="custom-header">
+      <a href="/" class="custom-logo">
+        <img id="app-logo" src="/assets/images/logo-white.png" alt="MicroToolStack Logo" width="160" height="38" style="height: 38px; width: auto; display: block;" onerror="this.onerror=null; this.src='/assets/images/logo-white.png';">
+      </a>
+      <nav class="custom-nav">
+        <a href="/#categories">Categories</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+        <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">☀️</button>
+      </nav>
+    </header>
+  </div>
 
   <!-- Main Container -->
   <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
@@ -322,17 +281,6 @@
       <p>While tags have a lower weight than titles and descriptions, they help YouTube understand common misspellings, related niche concepts, and contextual categories. Combine broad channel tags with long-tail video-specific keywords for maximum search alignment.</p>
     </div>
 
-    <!-- SEO Article Content Box 3 -->
-    <div class="content-box">
-      <h2>Features of Our Free YouTube SEO Generator</h2>
-      <ul>
-        <li><strong>All-In-One SEO Suite:</strong> Generates titles, descriptions, and tag clusters simultaneously in one click.</li>
-        <li><strong>Category-Specific Tailoring:</strong> Adjusts tone and structure specifically for tech, gaming, vlogging, education, or finance channels.</li>
-        <li><strong>100% Free & Unlimited:</strong> Generate unlimited video ideas with no daily limits or forced accounts.</li>
-        <li><strong>Browser Privacy Guarantee:</strong> All processing is done locally on your device; no video concepts or inputs are saved remotely.</li>
-      </ul>
-    </div>
-
     <!-- Internal Linking Section -->
     <div class="content-box">
       <h2>Explore Related Creator Tools</h2>
@@ -341,10 +289,6 @@
         <a href="/tools/ai/caption-generator.html" class="related-card">
           <strong style="display:block; margin-bottom: 0.25rem;">✨ AI Caption Generator</strong>
           <span style="font-size: 0.85rem; color: #9ca3af;">Create catchy captions and hashtags for TikTok & Instagram.</span>
-        </a>
-        <a href="/tools/ai/hashtag-generator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">#️⃣ AI Hashtag Generator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Find high-reach hashtags for Instagram, TikTok & Shorts.</span>
         </a>
         <a href="/tools/text/word-counter.html" class="related-card">
           <strong style="display:block; margin-bottom: 0.25rem;">📊 Real-Time Word Counter</strong>
@@ -364,10 +308,6 @@
         <h3 style="font-size: 1.05rem; margin-bottom: 0.25rem;">Is this tool free for monetized YouTubers?</h3>
         <p>Yes, MicroToolStack's YouTube Generator is 100% free for all creators with no limits, hidden fees, or subscriptions required.</p>
       </div>
-      <div style="margin-bottom: 1.25rem;">
-        <h3 style="font-size: 1.05rem; margin-bottom: 0.25rem;">What is the character limit for YouTube titles and descriptions?</h3>
-        <p>YouTube titles allow up to 100 characters (60 characters is recommended for mobile viewability), descriptions allow up to 5,000 characters, and tags allow up to 500 total characters.</p>
-      </div>
       <div>
         <h3 style="font-size: 1.05rem; margin-bottom: 0.25rem;">Are my topic keywords saved on external servers?</h3>
         <p>No. All scripts run client-side in your web browser. Your video ideas remain completely private.</p>
@@ -376,7 +316,7 @@
 
   </main>
 
-  <!-- Footer Container Placeholder -->
+  <!-- Dynamic Footer Container -->
   <div id="footer-container"></div>
 
   <!-- JavaScript Utilities & Logic -->
@@ -386,23 +326,6 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // Theme Toggle Fallback Handler
-      const themeBtn = document.getElementById('theme-toggle');
-      if (themeBtn) {
-        themeBtn.addEventListener('click', function() {
-          const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
-          const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-          document.documentElement.setAttribute('data-theme', newTheme);
-          localStorage.setItem('theme', newTheme);
-          themeBtn.textContent = newTheme === 'dark' ? '🌙' : '☀️';
-        });
-
-        const savedTheme = localStorage.getItem('theme') || 'dark';
-        document.documentElement.setAttribute('data-theme', savedTheme);
-        themeBtn.textContent = savedTheme === 'dark' ? '🌙' : '☀️';
-      }
-
-      // Metadata Generation Logic
       const btnGenerate = document.getElementById('btn-generate-yt');
       const ytTopic = document.getElementById('yt-topic');
       const ytCategory = document.getElementById('yt-category');
@@ -416,7 +339,7 @@
         const rawTopic = ytTopic.value.trim() || 'Complete Guide';
         const cleanTopic = rawTopic.replace(/[^a-zA-Z0-9 ]/g, '');
 
-        // 1. Title Generation
+        // Title Generation
         const titles = [
           `1. How to ${cleanTopic} (Step-by-Step Guide for Beginners)`,
           `2. I Tried ${cleanTopic} for 30 Days... Here's What Happened!`,
@@ -425,10 +348,10 @@
           `5. ${cleanTopic} Secret Strategy Nobody Tells You!`
         ];
 
-        // 2. Description Generation
+        // Description Generation
         const description = `In this video, we dive deep into ${cleanTopic}! Whether you are a beginner or looking to improve your skills, this step-by-step tutorial covers everything you need to know about ${cleanTopic} in 2026.\n\n📌 KEY TIMESTAMPS:\n0:00 - Introduction to ${cleanTopic}\n1:30 - Essential Tips & Setup\n4:15 - Step-by-Step Breakdown\n7:45 - Common Mistakes to Avoid\n10:00 - Final Thoughts & Summary\n\n🔔 Don't forget to LIKE, SUBSCRIBE, and hit the BELL notification icon for more daily content!\n\n#${cleanTag(cleanTopic)} #Tutorial #YouTubeSEO #CreatorTips`;
 
-        // 3. Tags Generation
+        // Tags Generation
         const tags = [
           cleanTopic.toLowerCase(),
           `how to ${cleanTopic.toLowerCase()}`,
