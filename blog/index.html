@@ -32,14 +32,27 @@
   <meta property="og:url" content="https://microtoolstack.com/blog/">
   <meta property="og:title" content="Tech, SEO, AI & Productivity Guides Blog | MicroToolStack">
   <meta property="og:description" content="Read in-depth guides and tips on PDF editing, SEO metadata, AI productivity, and web utilities.">
+  <meta property="og:image" content="https://microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
 
+  <!-- Instant Theme Initializer -->
+  <script>
+    (function() {
+      var savedTheme = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      if (savedTheme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    })();
+  </script>
+
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="/assets/css/variables.css?v=10.0">
-  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
   <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
 
   <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3023714618008515" crossorigin="anonymous"></script>
@@ -56,12 +69,13 @@
     }
     .blog-hero h1 {
       font-size: 2.3rem;
-      color: var(--text-primary, #111827);
+      font-weight: 800;
+      color: var(--text-primary);
       margin-bottom: 0.75rem;
     }
     .blog-hero p {
       font-size: 1.1rem;
-      color: var(--text-secondary, #6b7280);
+      color: var(--text-secondary, #9ca3af);
       max-width: 700px;
       margin: 0 auto;
       line-height: 1.6;
@@ -92,7 +106,7 @@
       display: inline-block;
       padding: 0.3rem 0.75rem;
       background: rgba(59, 130, 246, 0.15);
-      color: #60a5fa;
+      color: var(--accent-primary, #3b82f6);
       border-radius: 20px;
       font-size: 0.8rem;
       font-weight: 600;
@@ -102,7 +116,7 @@
     .card-title {
       font-size: 1.25rem;
       font-weight: 700;
-      color: var(--text-primary, #ffffff);
+      color: var(--text-primary);
       margin-bottom: 0.75rem;
       line-height: 1.4;
     }
@@ -124,10 +138,20 @@
   </style>
 </head>
 
-<body>
+<body style="margin: 0; padding: 0;">
 
-  <!-- Dynamic Header -->
-  <div id="header-container"></div>
+  <!-- Header Section -->
+  <header class="custom-header">
+    <a href="/" class="custom-logo">
+      <img id="app-logo" src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto; display: block;" onerror="this.onerror=null; this.src='/assets/images/logo-white.png';">
+    </a>
+    <nav class="custom-nav">
+      <a href="/#categories">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
+    </nav>
+  </header>
 
   <main class="blog-hub-container">
     
@@ -244,7 +268,7 @@
 
   </main>
 
-  <!-- Dynamic Footer -->
+  <!-- Dynamic Footer Placeholder -->
   <div id="footer-container"></div>
 
   <!-- Core Scripts -->
