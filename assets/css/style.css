@@ -65,16 +65,16 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.75rem;
 }
 
-h1 { font-size: clamp(2rem, 5vw, 3.25rem); letter-spacing: -0.02em; }
-h2 { font-size: clamp(1.5rem, 4vw, 2.25rem); letter-spacing: -0.01em; }
-h3 { font-size: 1.25rem; }
+h1 { font-size: clamp(1.85rem, 5vw, 2.75rem); letter-spacing: -0.02em; }
+h2 { font-size: clamp(1.35rem, 4vw, 1.85rem); letter-spacing: -0.01em; }
+h3 { font-size: 1.2rem; }
 
 p {
   color: var(--text-secondary);
   margin-bottom: 1rem;
 }
 
-/* Layout Shift Prevention & Performance Boost */
+/* Performance Boost */
 .card, .app-card, .content-box {
   contain-intrinsic-size: 200px;
   content-visibility: auto;
@@ -84,7 +84,7 @@ p {
   min-height: 250px;
 }
 
-/* Optimized Theme Overrides for All Tools */
+/* Form Elements Styling */
 input,
 textarea,
 select,
@@ -94,12 +94,6 @@ select,
   background-color: var(--bg-card) !important;
   color: var(--text-primary) !important;
   border: 1px solid var(--border-color) !important;
-}
-
-input::placeholder,
-textarea::placeholder {
-  color: var(--text-muted) !important;
-  opacity: 1;
 }
 
 .config-grid,
@@ -124,43 +118,34 @@ label,
   color: var(--text-primary) !important;
 }
 
-/* Fix H1 Title and Hero Text Visibility in Light/Dark Modes */
-.hero h1,
-main h1,
-.tool-header h1,
-.container h1 {
-  color: var(--text-primary) !important;
-}
+/* =======================================================
+   ALL HEADINGS & TEXT CONTRAST (DARK & LIGHT THEMES)
+   ======================================================= */
 
-/* Force light mode text colors for titles and labels */
-[data-theme="light"] h1,
-[data-theme="light"] .hero h1,
-html:not(.dark) h1 {
-  color: #0f172a !important;
-}
-
+/* --- DARK THEME TEXT FIXES --- */
 [data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
 [data-theme="dark"] .hero h1,
-html.dark h1 {
-  color: #f8fafc !important;
+[data-theme="dark"] main h1,
+[data-theme="dark"] .container h1,
+[data-theme="dark"] .tool-header h1,
+[data-theme="dark"] .page-title,
+html.dark h1,
+html.dark h2,
+html.dark h3 {
+  color: #ffffff !important;
 }
 
-/* Fix Input Fields & Placeholder Text Contrast */
-input, textarea, select {
-  color: var(--text-primary) !important;
-  background-color: var(--bg-card) !important;
+[data-theme="dark"] p,
+[data-theme="dark"] .tool-desc,
+[data-theme="dark"] .hero p,
+[data-theme="dark"] .content-box p,
+[data-theme="dark"] .content-box li,
+html.dark p {
+  color: #94a3b8 !important;
 }
 
-/* Light Mode Placeholder */
-[data-theme="light"] input::placeholder,
-[data-theme="light"] textarea::placeholder,
-html:not(.dark) input::placeholder,
-html:not(.dark) textarea::placeholder {
-  color: #64748b !important;
-  opacity: 1 !important;
-}
-
-/* Dark Mode Placeholder */
 [data-theme="dark"] input::placeholder,
 [data-theme="dark"] textarea::placeholder,
 html.dark input::placeholder,
@@ -169,21 +154,46 @@ html.dark textarea::placeholder {
   opacity: 1 !important;
 }
 
-/* Fix Related Cards Subtitle & Secondary Text */
+/* --- LIGHT THEME TEXT FIXES --- */
+[data-theme="light"] h1,
+[data-theme="light"] h2,
+[data-theme="light"] h3,
+[data-theme="light"] .hero h1,
+[data-theme="light"] main h1,
+[data-theme="light"] .container h1,
+[data-theme="light"] .tool-header h1,
+[data-theme="light"] .page-title {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] p,
+[data-theme="light"] .tool-desc,
+[data-theme="light"] .hero p,
+[data-theme="light"] .content-box p,
+[data-theme="light"] .content-box li {
+  color: #475569 !important;
+}
+
+[data-theme="light"] input::placeholder,
+[data-theme="light"] textarea::placeholder {
+  color: #64748b !important;
+  opacity: 1 !important;
+}
+
+/* Fix Related Cards & Subtitle Text */
 .related-card span,
 .related-card p,
 .tool-card p,
-.card p,
-.content-box p {
+.card p {
   color: var(--text-secondary) !important;
 }
 
-/* Fix Form Labels in Both Modes */
+/* Fix Form Labels & Strong Text */
 label, .form-label, strong {
   color: var(--text-primary) !important;
 }
 
-/* Tab Buttons Text Visibility Fix */
+/* Tab Buttons Text Visibility */
 .tab-btn,
 .mode-btn,
 .btn-toggle,
@@ -193,69 +203,21 @@ button[class*="mode"] {
   transition: all var(--transition-fast);
 }
 
-/* Inactive Tab in Light Mode */
 [data-theme="light"] .tab-btn:not(.active),
-[data-theme="light"] .mode-btn:not(.active),
-html:not(.dark) .tab-btn:not(.active),
-html:not(.dark) .mode-btn:not(.active) {
+[data-theme="light"] .mode-btn:not(.active) {
   background-color: var(--bg-tertiary, #f1f5f9) !important;
   color: #334155 !important;
   border: 1px solid var(--border-color, #cbd5e1) !important;
 }
 
-/* Inactive Tab in Dark Mode */
 [data-theme="dark"] .tab-btn:not(.active),
-[data-theme="dark"] .mode-btn:not(.active),
-html.dark .tab-btn:not(.active),
-html.dark .mode-btn:not(.active) {
+[data-theme="dark"] .mode-btn:not(.active) {
   background-color: var(--bg-tertiary, #1e293b) !important;
   color: #cbd5e1 !important;
-  border: 1px solid var(--border-color, #333155) !important;
+  border: 1px solid var(--border-color, #334155) !important;
 }
 
-/* Selected/Active Tab Text Color */
 .tab-btn.active,
 .mode-btn.active {
   color: #ffffff !important;
-}
-
-/* =======================================================
-   CTA BOX FIX FOR BLOG & TOOLS (LIGHT & DARK MODE)
-   ======================================================= */
-.cta-box, [class*="cta-"], .blog-cta {
-  background-color: var(--bg-card, #1e1e2e) !important;
-  border: 1px solid var(--border-color, #3b82f6) !important;
-  border-radius: 12px !important;
-  padding: 2rem 1.5rem !important;
-  text-align: center !important;
-  margin: 2.5rem 0 !important;
-}
-
-.cta-box h3, .cta-box h4, [class*="cta-"] h3, [class*="cta-"] h4 {
-  color: var(--accent-primary, #3b82f6) !important;
-  font-size: 1.3rem !important;
-  font-weight: 700 !important;
-  margin-bottom: 0.5rem !important;
-}
-
-.cta-box p, [class*="cta-"] p {
-  font-size: 1rem !important;
-  line-height: 1.6 !important;
-  margin-bottom: 1.25rem !important;
-}
-
-/* Light Mode CTA Text */
-[data-theme="light"] .cta-box p,
-[data-theme="light"] [class*="cta-"] p,
-html:not(.dark) .cta-box p,
-html:not(.dark) [class*="cta-"] p {
-  color: #334155 !important;
-}
-
-/* Dark Mode CTA Text */
-[data-theme="dark"] .cta-box p,
-[data-theme="dark"] [class*="cta-"] p,
-html.dark .cta-box p,
-html.dark [class*="cta-"] p {
-  color: #cbd5e1 !important;
 }
