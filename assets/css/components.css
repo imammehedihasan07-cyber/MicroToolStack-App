@@ -1,4 +1,6 @@
-/* Reusable UI Components */
+/* =======================================================
+   Reusable UI Components & Global Styling
+   ======================================================= */
 
 /* Buttons */
 .btn {
@@ -17,13 +19,14 @@
 }
 
 .btn-primary {
-  background-color: var(--accent-primary);
-  color: #ffffff;
+  background-color: var(--accent-primary) !important;
+  color: #ffffff !important;
+  border: 1px solid transparent !important;
 }
 
 .btn-primary:hover {
-  background-color: var(--accent-primary-hover);
-  color: #ffffff;
+  background-color: var(--accent-primary-hover) !important;
+  color: #ffffff !important;
 }
 
 .btn-secondary {
@@ -109,7 +112,7 @@
   to { transform: translateY(0); opacity: 1; }
 }
 
-/* Dynamic Header Styles (Adapts with Theme) */
+/* Dynamic Header Styles */
 .custom-header {
   width: 100%;
   background-color: var(--bg-primary) !important;
@@ -263,4 +266,84 @@
 
 .search-result-item:hover {
   background-color: var(--bg-secondary);
+}
+
+/* =======================================================
+   UNIVERSAL CTA BOX & INLINE BUTTON FIX (FOR ALL BLOGS)
+   ======================================================= */
+.cta-box,
+[class*="cta-"],
+.blog-cta,
+div[style*="text-align: center"]:has(a[href*="/tools/"]) {
+  background-color: var(--bg-card, #1e1e2e) !important;
+  border: 1px solid var(--border-color, #334155) !important;
+  border-radius: 12px !important;
+  padding: 2rem 1.5rem !important;
+  text-align: center !important;
+  margin: 2.5rem 0 !important;
+}
+
+.cta-box h3,
+.cta-box h4,
+[class*="cta-"] h3,
+[class*="cta-"] h4 {
+  color: #3b82f6 !important;
+  font-size: 1.3rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 0.5rem !important;
+}
+
+/* CTA Description Text Fix */
+.cta-box p,
+[class*="cta-"] p {
+  font-size: 1rem !important;
+  line-height: 1.6 !important;
+  margin-bottom: 1.5rem !important;
+}
+
+[data-theme="light"] .cta-box p,
+[data-theme="light"] [class*="cta-"] p,
+html:not(.dark) .cta-box p {
+  color: #334155 !important;
+}
+
+[data-theme="dark"] .cta-box p,
+[data-theme="dark"] [class*="cta-"] p,
+html.dark .cta-box p {
+  color: #cbd5e1 !important;
+}
+
+/* Force All CTA Links/Buttons to be High-Contrast Solid Blue with White Text */
+.cta-box a,
+.cta-box button,
+[class*="cta-"] a,
+[class*="cta-"] button,
+.blog-cta a,
+.blog-cta button,
+a[href*="/tools/pdf/"],
+a[href*="/tools/developer/"],
+a[href*="/tools/ai/"],
+a[href*="/tools/media/"],
+a[href*="/tools/social-media/"] {
+  background-color: #2563eb !important;
+  color: #ffffff !important;
+  display: inline-block !important;
+  font-weight: 600 !important;
+  font-size: 1rem !important;
+  padding: 0.75rem 1.75rem !important;
+  border-radius: 8px !important;
+  text-decoration: none !important;
+  border: 1px solid #1d4ed8 !important;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35) !important;
+  transition: transform 0.2s ease, background-color 0.2s ease !important;
+}
+
+.cta-box a:hover,
+.cta-box button:hover,
+[class*="cta-"] a:hover,
+[class*="cta-"] button:hover,
+a[href*="/tools/"]:hover {
+  background-color: #1d4ed8 !important;
+  color: #ffffff !important;
+  transform: translateY(-2px);
 }
