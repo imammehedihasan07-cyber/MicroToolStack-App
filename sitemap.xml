@@ -139,4 +139,92 @@
     <lastmod>2026-08-06</lastmod>
     <priority>0.80</priority>
   </url>
+<!-- Blog Index -->
+  <url>
+    <loc>https://microtoolstack.com/blog/</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- 1. PDF Tools Blog -->
+  <url>
+    <loc>https://microtoolstack.com/blog/pdf-management-guide.html</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 2. SEO Tools Blog -->
+  <url>
+    <loc>https://microtoolstack.com/blog/seo-toolkit-guide.html</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 3. Developer Tools Blog -->
+  <url>
+    <loc>https://microtoolstack.com/blog/developer-utilities-guide.html</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 4. Media Tools Blog -->
+  <url>
+    <loc>https://microtoolstack.com/blog/image-media-optimization-guide.html</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 5. Social Media Tools Blog -->
+  <url>
+    <loc>https://microtoolstack.com/blog/social-media-creator-tools-guide.html</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 6. Text Tools Blog -->
+  <url>
+    <loc>https://microtoolstack.com/blog/text-tools-writing-guide.html</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 7. AI Tools Blog -->
+  <url>
+    <loc>https://microtoolstack.com/blog/ai-productivity-workflow-guide.html</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 8. Calculators Blog -->
+  <url>
+    <loc>https://microtoolstack.com/blog/everyday-online-calculators-guide.html</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 9. YouTube Tools Blog -->
+  <url>
+    <loc>https://microtoolstack.com/blog/youtube-creator-tools-growth-guide.html</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 10. Pet Care Blog -->
+  <url>
+    <loc>https://microtoolstack.com/blog/pet-care-health-calculator-guide.html</loc>
+    <lastmod>2026-08-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
 </urlset>
