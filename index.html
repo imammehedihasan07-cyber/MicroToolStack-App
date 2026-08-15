@@ -1,47 +1,299 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
+  <!-- =====================================================
+       BASIC META
+       ====================================================== -->
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Free Online PDF, SEO, Text & Developer Tools | MicroToolStack</title>
-  <meta name="description" content="Free online tools for PDF, text, SEO, developer utilities, image conversion and AI productivity. Fast, secure and privacy-friendly. No signup required.">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-<link rel="canonical" href="https://www.microtoolstack.com/" />
-  
-  <meta name="robots" content="index, follow">
+  <title>
+    Free Online PDF, SEO, Text & Developer Tools | MicroToolStack
+  </title>
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
-  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
+  <meta
+    name="description"
+    content="Free online tools for PDF, text, SEO, developer utilities, image conversion and AI productivity. Fast, secure and privacy-friendly. No signup required."
+  >
 
-  <!-- Network Hints -->
-  <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
-  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <meta
+    name="robots"
+    content="index, follow"
+  >
 
-  <!-- Standard Safe AdSense (Revenue & Core Web Vitals Friendly) -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3023714618008515" crossorigin="anonymous"></script>
+  <meta
+    name="author"
+    content="MicroToolStack"
+  >
 
-  <!-- Prevent Theme Flash -->
+  <meta
+    name="theme-color"
+    content="#111827"
+  >
+
+  <!-- Canonical -->
+  <link
+    rel="canonical"
+    href="https://www.microtoolstack.com/"
+  >
+
+
+  <!-- =====================================================
+       FAVICON
+       ====================================================== -->
+
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="512x512"
+    href="/assets/images/favicon.png"
+  >
+
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="192x192"
+    href="/assets/images/favicon.png"
+  >
+
+  <link
+    rel="apple-touch-icon"
+    href="/assets/images/favicon.png"
+  >
+
+
+  <!-- =====================================================
+       OPEN GRAPH / SOCIAL SHARING
+       ====================================================== -->
+
+  <meta
+    property="og:type"
+    content="website"
+  >
+
+  <meta
+    property="og:url"
+    content="https://www.microtoolstack.com/"
+  >
+
+  <meta
+    property="og:title"
+    content="Free Online PDF, SEO, Text & Developer Tools | MicroToolStack"
+  >
+
+  <meta
+    property="og:description"
+    content="Free, fast and privacy-friendly online tools for PDF, text, SEO, developers, images and digital productivity."
+  >
+
+  <meta
+    property="og:image"
+    content="https://www.microtoolstack.com/assets/images/og-image.png"
+  >
+
+  <meta
+    property="og:site_name"
+    content="MicroToolStack"
+  >
+
+  <meta
+    property="og:locale"
+    content="en_US"
+  >
+
+
+  <!-- =====================================================
+       TWITTER / X
+       ====================================================== -->
+
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  >
+
+  <meta
+    name="twitter:title"
+    content="Free Online PDF, SEO, Text & Developer Tools | MicroToolStack"
+  >
+
+  <meta
+    name="twitter:description"
+    content="Free, fast and privacy-friendly online tools for PDF, text, SEO, developers, images and digital productivity."
+  >
+
+  <meta
+    name="twitter:image"
+    content="https://www.microtoolstack.com/assets/images/og-image.png"
+  >
+
+
+  <!-- =====================================================
+       NETWORK HINTS
+       ====================================================== -->
+
+  <link
+    rel="dns-prefetch"
+    href="https://pagead2.googlesyndication.com"
+  >
+
+  <link
+    rel="dns-prefetch"
+    href="https://www.googletagmanager.com"
+  >
+
+
+  <!-- =====================================================
+       GOOGLE ADSENSE
+       ====================================================== -->
+
+  <script
+    async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3023714618008515"
+    crossorigin="anonymous"
+  ></script>
+
+
+  <!-- =====================================================
+       PREVENT THEME FLASH
+       ====================================================== -->
+
   <script>
     (function () {
       try {
-        var savedTheme = localStorage.getItem('theme') || 'light';
-        document.documentElement.setAttribute('data-theme', savedTheme);
-      } catch (e) {
-        document.documentElement.setAttribute('data-theme', 'light');
+        var savedTheme = localStorage.getItem('theme');
+
+        if (
+          savedTheme !== 'light' &&
+          savedTheme !== 'dark'
+        ) {
+          savedTheme = 'light';
+        }
+
+        document.documentElement.setAttribute(
+          'data-theme',
+          savedTheme
+        );
+
+      } catch (error) {
+
+        document.documentElement.setAttribute(
+          'data-theme',
+          'light'
+        );
+
       }
     })();
   </script>
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="/assets/css/variables.css?v=10.0">
-  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
-  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
 
-  <!-- Critical Homepage CSS -->
+  <!-- =====================================================
+       WEBSITE / ORGANIZATION / FAQ SCHEMA
+       ====================================================== -->
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+
+      {
+        "@type": "WebSite",
+        "@id": "https://www.microtoolstack.com/#website",
+        "url": "https://www.microtoolstack.com/",
+        "name": "MicroToolStack",
+        "description": "Free online tools for PDF, text, SEO, developers, images and digital productivity.",
+        "publisher": {
+          "@id": "https://www.microtoolstack.com/#organization"
+        }
+      },
+
+      {
+        "@type": "Organization",
+        "@id": "https://www.microtoolstack.com/#organization",
+        "name": "MicroToolStack",
+        "url": "https://www.microtoolstack.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.microtoolstack.com/assets/images/favicon.png"
+        }
+      },
+
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.microtoolstack.com/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Are MicroToolStack tools completely free to use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, every tool on MicroToolStack is 100% free to use. There are no registration requirements, premium paywalls, or hidden charges."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need to create an account to access features?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No, you do not need an account. You can use any utility instantly as soon as you visit the site."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are my uploaded files and text data secure?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Most MicroToolStack tools operate entirely on client-side JavaScript. This means supported text and files are processed locally within your web browser and are not transmitted to external servers."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which devices and operating systems are supported?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "MicroToolStack is designed to work with modern web browsers on Android, iOS, Windows, macOS and Linux devices."
+            }
+          }
+        ]
+      }
+
+    ]
+  }
+  </script>
+
+
+  <!-- =====================================================
+       CSS
+       ====================================================== -->
+
+  <link
+    rel="stylesheet"
+    href="/assets/css/variables.css?v=10.0"
+  >
+
+  <link
+    rel="stylesheet"
+    href="/assets/css/components.css?v=10.0"
+  >
+
+  <link
+    rel="stylesheet"
+    href="/assets/css/style.css?v=10.0"
+  >
+
+
+  <!-- =====================================================
+       CRITICAL HOMEPAGE CSS
+       ====================================================== -->
+
   <style>
+
     .hero {
       text-align: center;
       padding: 3rem 1rem 2rem;
@@ -77,9 +329,14 @@
       box-sizing: border-box;
     }
 
+    .search-input:focus {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+
     .grid-4 {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      grid-template-columns:
+        repeat(auto-fill, minmax(240px, 1fr));
       gap: 1.25rem;
       margin-bottom: 3.5rem;
       min-height: 250px;
@@ -133,6 +390,10 @@
       color: var(--text-secondary, #ccc);
     }
 
+    .about-card li {
+      margin-bottom: 0.5rem;
+    }
+
     .faq-section {
       margin-bottom: 4rem;
     }
@@ -145,50 +406,162 @@
       margin-bottom: 1rem;
     }
 
+    .faq-item h3 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+    }
+
+    .faq-item p {
+      margin-bottom: 0;
+      line-height: 1.7;
+      color: var(--text-secondary, #ccc);
+    }
+
     .category-tools-section {
       margin-bottom: 3rem;
+    }
+
+    .category-card {
+      cursor: pointer;
+    }
+
+    .category-count {
+      display: inline-block;
+      margin-top: auto;
+      padding-top: 0.75rem;
+      font-weight: 600;
     }
 
     [hidden] {
       display: none !important;
     }
+
+    @media (max-width: 600px) {
+
+      .hero {
+        padding-top: 2rem;
+      }
+
+      .about-card {
+        padding: 1.25rem;
+      }
+
+      .grid-4 {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
   </style>
+
 </head>
+
 
 <body>
 
- <!-- Header Section with Blog Menu -->
+
+  <!-- =====================================================
+       GLOBAL HEADER
+       ====================================================== -->
+
   <header class="custom-header">
-    <a href="/" class="custom-logo">
-      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
+
+    <a
+      href="/"
+      class="custom-logo"
+      aria-label="MicroToolStack Home"
+    >
+
+      <img
+        id="app-logo"
+        src="/assets/images/logo-white.png"
+        alt="MicroToolStack Logo"
+        width="160"
+        height="38"
+        style="height: 38px; width: auto;"
+      >
+
     </a>
-    <nav class="custom-nav">
-      <a href="/#categories">Categories</a>
-      <a href="/blog/">Blog</a>
-      <a href="/about.html">About</a>
-      <a href="/contact.html">Contact</a>
-      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
+
+
+    <nav
+      class="custom-nav"
+      aria-label="Main navigation"
+    >
+
+      <a href="/#categories">
+        Categories
+      </a>
+
+      <a href="/blog/">
+        Blog
+      </a>
+
+      <a href="/about.html">
+        About
+      </a>
+
+      <a href="/contact.html">
+        Contact
+      </a>
+
+      <button
+        id="theme-toggle"
+        class="custom-theme-btn"
+        type="button"
+        aria-label="Toggle Theme"
+      >
+        🌙
+      </button>
+
     </nav>
+
   </header>
 
-  <!-- Main Content -->
+
+  <!-- =====================================================
+       MAIN CONTENT
+       ====================================================== -->
+
   <main class="container">
 
-    <!-- Hero -->
-    <section class="hero">
+
+    <!-- ===================================================
+         HERO
+         ==================================================== -->
+
+    <section
+      class="hero"
+      aria-labelledby="homepage-title"
+    >
 
       <span class="badge badge-primary hero-badge">
         100% Free & Fast
       </span>
 
-      <h1>Essential Micro-Tools for Digital Creators</h1>
+
+      <h1 id="homepage-title">
+        Essential Micro-Tools for Digital Creators
+      </h1>
+
 
       <p>
-        Clean, private, and ultra-fast web utilities for content, SEO, code, and AI productivity.
+        Clean, private, and ultra-fast web utilities for content,
+        SEO, code, PDF, images, and AI productivity.
       </p>
 
+
       <!-- Search -->
+
       <div class="search-wrapper">
+
+        <label
+          for="home-search"
+          class="sr-only"
+        >
+          Search MicroToolStack tools
+        </label>
+
         <input
           type="text"
           id="home-search"
@@ -199,285 +572,856 @@
           spellcheck="false"
         >
 
-        <div id="search-results-dropdown"></div>
+        <div
+          id="search-results-dropdown"
+          aria-live="polite"
+        ></div>
+
       </div>
 
     </section>
 
-    <!-- Popular Tools -->
-    <section>
+
+    <!-- ===================================================
+         POPULAR TOOLS
+         ==================================================== -->
+
+    <section
+      aria-labelledby="popular-tools-title"
+    >
+
       <div class="section-title">
-        <h2>🔥 Popular Tools</h2>
+
+        <h2 id="popular-tools-title">
+          🔥 Popular Tools
+        </h2>
+
       </div>
 
-      <div class="grid-4" id="popular-tools-grid"></div>
+
+      <div
+        class="grid-4"
+        id="popular-tools-grid"
+      ></div>
+
     </section>
 
-    <!-- Categories -->
-    <section id="categories">
+
+    <!-- ===================================================
+         CATEGORIES
+         ==================================================== -->
+
+    <section
+      id="categories"
+      aria-labelledby="categories-title"
+    >
+
       <div class="section-title">
-        <h2>📂 Explore Categories</h2>
+
+        <h2 id="categories-title">
+          📂 Explore Categories
+        </h2>
+
       </div>
 
-      <div class="grid-4" id="categories-grid"></div>
+
+      <div
+        class="grid-4"
+        id="categories-grid"
+      ></div>
+
     </section>
 
-    <!-- Category Tools -->
+
+    <!-- ===================================================
+         CATEGORY FILTER RESULTS
+         ==================================================== -->
+
     <section
       id="category-tools-section"
       class="category-tools-section"
       hidden
+      aria-labelledby="category-title"
     >
+
       <div class="section-title">
-        <h2 id="category-title">Tools</h2>
+
+        <h2 id="category-title">
+          Tools
+        </h2>
+
       </div>
 
-      <div class="grid-4" id="category-tools-grid"></div>
+
+      <div
+        class="grid-4"
+        id="category-tools-grid"
+      ></div>
+
     </section>
 
-    <!-- Substantial Explanatory Content Section (AdSense & Quality Optimization) -->
+
+    <!-- ===================================================
+         ABOUT / EXPLANATORY CONTENT
+         ==================================================== -->
+
     <section class="about-section">
+
       <div class="about-card">
-        <h2>What is MicroToolStack?</h2>
+
+        <h2>
+          What is MicroToolStack?
+        </h2>
+
+
         <p>
-          <strong>MicroToolStack</strong> is a comprehensive, privacy-focused platform offering free, lightweight web utilities for content creators, software developers, SEO professionals, and digital marketers. Our mission is to provide lightning-fast, accessible web tools that eliminate the need for bloated software installations, subscription paywalls, or account registrations.
+          <strong>MicroToolStack</strong> is a comprehensive,
+          privacy-focused platform offering free, lightweight
+          web utilities for content creators, software developers,
+          SEO professionals, digital marketers, and everyday users.
+          Our mission is to provide fast and accessible online tools
+          that eliminate the need for bloated software installations,
+          unnecessary subscriptions, or account registrations.
         </p>
 
-        <h3>Free Online Tools for Everyday Tasks</h3>
+
+        <h3>
+          Free Online Tools for Everyday Tasks
+        </h3>
+
+
         <p>
-          Whether you need to format complex JSON files, convert PDF documents, generate viral social media captions, or optimize metadata for search engines, MicroToolStack provides dedicated utilities designed for seamless browser performance. Every tool is crafted with minimalism and efficiency in mind, enabling instant processing directly on your device.
+          Whether you need to count words, format text, work with
+          JSON, convert PDF documents, optimize SEO metadata,
+          process images, generate social media content, or handle
+          common developer tasks, MicroToolStack provides dedicated
+          utilities designed for convenient browser-based use.
+          Many tools process information directly on your device,
+          helping provide a fast and privacy-friendly experience.
         </p>
 
-        <h3>Why Choose MicroToolStack?</h3>
+
+        <h3>
+          Tools for Content, SEO, PDF, Images and Development
+        </h3>
+
+
+        <p>
+          MicroToolStack brings frequently needed digital utilities
+          into one simple platform. Users can find text tools,
+          SEO utilities, PDF tools, image converters, developer
+          utilities, social media helpers, and other productivity
+          tools without installing separate desktop applications.
+        </p>
+
+
+        <h3>
+          Why Choose MicroToolStack?
+        </h3>
+
+
         <ul>
-          <li><strong>100% Free & Unlimited:</strong> Access all tools instantly without subscription plans, hidden fees, or usage limits.</li>
-          <li><strong>Client-Side Privacy:</strong> Most of our micro-tools process data locally inside your browser, ensuring your files and sensitive information never leave your device.</li>
-          <li><strong>No Registration Required:</strong> Enjoy immediate access to every feature without filling out registration forms or verifying email addresses.</li>
-          <li><strong>Ultra-Fast & Responsive:</strong> Optimized for low latency, smooth animation, and modern cross-platform compatibility across desktop, mobile, and tablet devices.</li>
+
+          <li>
+            <strong>100% Free:</strong>
+            Access the available tools without subscription plans
+            or hidden usage charges.
+          </li>
+
+          <li>
+            <strong>Privacy-Friendly:</strong>
+            Many tools process text and files locally inside your
+            browser so supported data does not need to be uploaded
+            to a remote server.
+          </li>
+
+          <li>
+            <strong>No Registration Required:</strong>
+            Most utilities can be used immediately without creating
+            an account.
+          </li>
+
+          <li>
+            <strong>Fast and Lightweight:</strong>
+            The platform is designed to provide useful utilities
+            with a simple and responsive interface.
+          </li>
+
+          <li>
+            <strong>Cross-Platform:</strong>
+            MicroToolStack is designed for modern browsers on
+            desktop, tablet, and mobile devices.
+          </li>
+
         </ul>
+
       </div>
+
     </section>
 
-    <!-- Static Pre-rendered FAQ Section -->
-    <section class="faq-section">
+
+    <!-- ===================================================
+         FAQ
+         
+         IMPORTANT:
+         This FAQ intentionally remains static in HTML.
+         /data/faqs.json is NOT deleted.
+         It is kept available for future/dedicated use.
+         ==================================================== -->
+
+    <section
+      class="faq-section"
+      aria-labelledby="faq-title"
+    >
+
       <div class="section-title">
-        <h2>❓ Frequently Asked Questions</h2>
+
+        <h2 id="faq-title">
+          ❓ Frequently Asked Questions
+        </h2>
+
       </div>
+
 
       <div id="faq-container">
-        <div class="faq-item">
-          <h3>Are MicroToolStack tools completely free to use?</h3>
-          <p>Yes, every tool on MicroToolStack is 100% free to use. There are no registration requirements, premium paywalls, or hidden charges.</p>
-        </div>
+
 
         <div class="faq-item">
-          <h3>Do I need to create an account to access features?</h3>
-          <p>No, you do not need an account. You can use any utility instantly as soon as you visit the site.</p>
+
+          <h3>
+            Are MicroToolStack tools completely free to use?
+          </h3>
+
+          <p>
+            Yes, every tool on MicroToolStack is 100% free to use.
+            There are no registration requirements, premium paywalls,
+            or hidden charges.
+          </p>
+
         </div>
 
-        <div class="faq-item">
-          <h3>Are my uploaded files and text data secure?</h3>
-          <p>Yes. The majority of MicroToolStack tools operate entirely on client-side JavaScript. This means your text and files are processed locally within your web browser and are never transmitted to external servers.</p>
-        </div>
 
         <div class="faq-item">
-          <h3>Which devices and operating systems are supported?</h3>
-          <p>MicroToolStack is fully responsive and compatible with all modern web browsers on Android, iOS, Windows, macOS, and Linux.</p>
+
+          <h3>
+            Do I need to create an account to access features?
+          </h3>
+
+          <p>
+            No, you do not need an account. You can use any utility
+            instantly as soon as you visit the site.
+          </p>
+
         </div>
+
+
+        <div class="faq-item">
+
+          <h3>
+            Are my uploaded files and text data secure?
+          </h3>
+
+          <p>
+            Most MicroToolStack tools operate entirely on client-side
+            JavaScript. This means supported text and files are processed
+            locally within your web browser and are not transmitted to
+            external servers.
+          </p>
+
+        </div>
+
+
+        <div class="faq-item">
+
+          <h3>
+            Which devices and operating systems are supported?
+          </h3>
+
+          <p>
+            MicroToolStack is designed to work with modern web browsers
+            on Android, iOS, Windows, macOS, and Linux devices.
+          </p>
+
+        </div>
+
+
       </div>
+
     </section>
+
 
   </main>
 
-  <!-- Dynamic Footer Container -->
+
+  <!-- =====================================================
+       GLOBAL FOOTER
+       ====================================================== -->
+
   <div id="footer-container"></div>
 
-  <!-- Core Scripts -->
-  <script src="/assets/js/theme.js"></script>
-  <script src="/assets/js/utils.js" defer></script>
-  <script src="/assets/js/search.js" defer></script>
 
-  <!-- Optimized Analytics Smart Loader -->
+  <!-- =====================================================
+       CORE JAVASCRIPT
+       ====================================================== -->
+
+  <!-- Theme must load early -->
+  <script src="/assets/js/theme.js"></script>
+
+  <!-- Utility functions -->
+  <script
+    src="/assets/js/utils.js"
+    defer
+  ></script>
+
+  <!-- Search -->
+  <script
+    src="/assets/js/search.js"
+    defer
+  ></script>
+
+  <!-- Global application logic:
+       footer, shared layout helpers, mobile navigation,
+       copy helper, etc. -->
+  <script
+    src="/assets/js/app.js"
+    defer
+  ></script>
+
+
+  <!-- =====================================================
+       GOOGLE ANALYTICS
+       ====================================================== -->
+
   <script>
     (function () {
+
       'use strict';
 
       var analyticsLoaded = false;
 
       function loadAnalytics() {
-        if (analyticsLoaded) return;
+
+        if (analyticsLoaded) {
+          return;
+        }
+
         analyticsLoaded = true;
 
-        window.dataLayer = window.dataLayer || [];
-        window.gtag = window.gtag || function () {
-          window.dataLayer.push(arguments);
-        };
+        window.dataLayer =
+          window.dataLayer || [];
 
-        window.gtag('js', new Date());
-        window.gtag('config', 'G-F3WWR9KGB4');
+        window.gtag =
+          window.gtag ||
+          function () {
+            window.dataLayer.push(arguments);
+          };
 
-        var analyticsScript = document.createElement('script');
-        analyticsScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+
+        window.gtag(
+          'js',
+          new Date()
+        );
+
+
+        window.gtag(
+          'config',
+          'G-F3WWR9KGB4'
+        );
+
+
+        var analyticsScript =
+          document.createElement('script');
+
+        analyticsScript.src =
+          'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+
         analyticsScript.async = true;
-        document.head.appendChild(analyticsScript);
+
+        document.head.appendChild(
+          analyticsScript
+        );
+
       }
 
-      var interactionEvents = ['touchstart', 'scroll', 'keydown', 'click'];
-      interactionEvents.forEach(function (eventName) {
-        window.addEventListener(eventName, loadAnalytics, { passive: true, once: true });
-      });
 
-      window.setTimeout(loadAnalytics, 3000);
+      var interactionEvents = [
+        'touchstart',
+        'scroll',
+        'keydown',
+        'click'
+      ];
+
+
+      interactionEvents.forEach(
+        function (eventName) {
+
+          window.addEventListener(
+            eventName,
+            loadAnalytics,
+            {
+              passive: true,
+              once: true
+            }
+          );
+
+        }
+      );
+
+
+      window.setTimeout(
+        loadAnalytics,
+        3000
+      );
+
     })();
   </script>
 
-  <!-- Homepage Data Loader -->
+
+  <!-- =====================================================
+       HOMEPAGE DATA LOADER
+       
+       IMPORTANT:
+       faqs.json is intentionally NOT loaded here.
+       Static HTML FAQ is used for the homepage.
+       The file remains available in /data/faqs.json.
+       ====================================================== -->
+
   <script>
+
     (async function loadHomepageData() {
+
       try {
-        const responses = await Promise.all([
-          fetch('/data/tools.json'),
-          fetch('/data/categories.json'),
-          fetch('/data/faqs.json')
-        ]);
 
-        const toolsResponse = responses[0];
-        const categoriesResponse = responses[1];
-        const faqsResponse = responses[2];
+        const responses =
+          await Promise.all([
 
-        if (!toolsResponse.ok || !categoriesResponse.ok || !faqsResponse.ok) {
-          throw new Error('Failed to load JSON resources');
+            fetch('/data/tools.json'),
+
+            fetch('/data/categories.json')
+
+          ]);
+
+
+        const toolsResponse =
+          responses[0];
+
+        const categoriesResponse =
+          responses[1];
+
+
+        if (
+          !toolsResponse.ok ||
+          !categoriesResponse.ok
+        ) {
+
+          throw new Error(
+            'Failed to load homepage JSON resources'
+          );
+
         }
 
-        const [tools, categories, faqs] = await Promise.all([
+
+        const [
+          tools,
+          categories
+        ] = await Promise.all([
+
           toolsResponse.json(),
-          categoriesResponse.json(),
-          faqsResponse.json()
+
+          categoriesResponse.json()
+
         ]);
 
-        const cleanStr = function (str) {
-          return (str || '').toString().toLowerCase().replace(/[^a-z0-9]/g, '');
-        };
 
-        // Single Pass Category Count (O(N) Optimization)
-        const categoryCounts = Object.create(null);
-        tools.forEach(function (tool) {
-          const categoryId = cleanStr(tool.category);
-          if (categoryId) {
-            categoryCounts[categoryId] = (categoryCounts[categoryId] || 0) + 1;
-          }
-        });
+        /* -----------------------------------------------
+           NORMALIZE STRING
+           ----------------------------------------------- */
 
-        // Popular Tools Render
-        const popularGrid = document.getElementById('popular-tools-grid');
-        if (popularGrid) {
-          const popularTools = tools.filter(function (tool, index) {
-            return tool.isPopular || tool.popular || index < 12;
-          });
+        const cleanStr =
+          function (str) {
 
-          popularGrid.innerHTML = popularTools.map(function (tool) {
-            return `
-              <a href="${tool.url}" class="card card-interactive tool-card">
-                <div class="tool-card-icon">${tool.icon || '🛠️'}</div>
-                <h3>${tool.name}</h3>
-                <p>${tool.description}</p>
-              </a>
-            `;
-          }).join('');
+            return (str || '')
+              .toString()
+              .toLowerCase()
+              .replace(
+                /[^a-z0-9]/g,
+                ''
+              );
+
+          };
+
+
+        /* -----------------------------------------------
+           CATEGORY COUNTS
+           Single-pass O(N) approach
+           ----------------------------------------------- */
+
+        const categoryCounts =
+          Object.create(null);
+
+
+        if (Array.isArray(tools)) {
+
+          tools.forEach(
+            function (tool) {
+
+              const categoryId =
+                cleanStr(
+                  tool.category
+                );
+
+
+              if (categoryId) {
+
+                categoryCounts[categoryId] =
+                  (
+                    categoryCounts[categoryId] ||
+                    0
+                  ) + 1;
+
+              }
+
+            }
+          );
+
         }
 
-        // Categories Render
-        const categoriesGrid = document.getElementById('categories-grid');
-        if (categoriesGrid) {
-          categoriesGrid.innerHTML = categories.map(function (cat) {
-            const cleanCatId = cleanStr(cat.id);
-            const liveCount = categoryCounts[cleanCatId] || 0;
 
-            return `
-              <div
-                class="card card-interactive tool-card category-card"
-                data-category-id="${cat.id}"
-                data-category-name="${cat.name}"
-                role="button"
-                tabindex="0"
-              >
-                <div class="tool-card-icon">${cat.icon || '📂'}</div>
-                <h3>${cat.name}</h3>
-                <p>${cat.description || ''}</p>
-                <span class="category-count">View ${liveCount} →</span>
-              </div>
-            `;
-          }).join('');
+        /* -----------------------------------------------
+           POPULAR TOOLS
+           ----------------------------------------------- */
+
+        const popularGrid =
+          document.getElementById(
+            'popular-tools-grid'
+          );
+
+
+        if (
+          popularGrid &&
+          Array.isArray(tools)
+        ) {
+
+          const popularTools =
+            tools.filter(
+              function (
+                tool,
+                index
+              ) {
+
+                return (
+                  tool.isPopular ||
+                  tool.popular ||
+                  index < 12
+                );
+
+              }
+            );
+
+
+          popularGrid.innerHTML =
+            popularTools
+              .map(
+                function (tool) {
+
+                  return `
+                    <a
+                      href="${tool.url}"
+                      class="card card-interactive tool-card"
+                    >
+
+                      <div class="tool-card-icon">
+                        ${tool.icon || '🛠️'}
+                      </div>
+
+                      <h3>
+                        ${tool.name}
+                      </h3>
+
+                      <p>
+                        ${tool.description || ''}
+                      </p>
+
+                    </a>
+                  `;
+
+                }
+              )
+              .join('');
+
         }
 
-        // Category Filter Logic
-        window.filterCategory = function (catId, catName) {
-          const categorySection = document.getElementById('category-tools-section');
-          const categoryTitle = document.getElementById('category-title');
-          const categoryToolsGrid = document.getElementById('category-tools-grid');
 
-          const cleanCatId = cleanStr(catId);
-          const filteredTools = tools.filter(function (tool) {
-            return cleanStr(tool.category) === cleanCatId;
-          });
+        /* -----------------------------------------------
+           CATEGORIES
+           ----------------------------------------------- */
 
-          if (categoryTitle) {
-            categoryTitle.textContent = `${catName} (${filteredTools.length})`;
-          }
+        const categoriesGrid =
+          document.getElementById(
+            'categories-grid'
+          );
 
-          if (categoryToolsGrid) {
-            categoryToolsGrid.innerHTML = filteredTools.map(function (tool) {
-              return `
-                <a href="${tool.url}" class="card card-interactive tool-card">
-                  <div class="tool-card-icon">${tool.icon || '🛠️'}</div>
-                  <h3>${tool.name}</h3>
-                  <p>${tool.description}</p>
-                </a>
-              `;
-            }).join('');
-          }
 
-          if (categorySection) {
-            categorySection.removeAttribute('hidden');
-            categorySection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
-        };
+        if (
+          categoriesGrid &&
+          Array.isArray(categories)
+        ) {
 
-        // Event Delegation for Category Cards
-        const categoriesGridElement = document.getElementById('categories-grid');
+          categoriesGrid.innerHTML =
+            categories
+              .map(
+                function (cat) {
+
+                  const cleanCatId =
+                    cleanStr(
+                      cat.id
+                    );
+
+
+                  const liveCount =
+                    categoryCounts[
+                      cleanCatId
+                    ] || 0;
+
+
+                  return `
+                    <div
+                      class="card card-interactive tool-card category-card"
+                      data-category-id="${cat.id}"
+                      data-category-name="${cat.name || ''}"
+                      role="button"
+                      tabindex="0"
+                      aria-label="View ${cat.name || 'category'} tools"
+                    >
+
+                      <div class="tool-card-icon">
+                        ${cat.icon || '📂'}
+                      </div>
+
+                      <h3>
+                        ${cat.name || ''}
+                      </h3>
+
+                      <p>
+                        ${cat.description || ''}
+                      </p>
+
+                      <span class="category-count">
+                        View ${liveCount} →
+                      </span>
+
+                    </div>
+                  `;
+
+                }
+              )
+              .join('');
+
+        }
+
+
+        /* -----------------------------------------------
+           CATEGORY FILTER
+           ----------------------------------------------- */
+
+        window.filterCategory =
+          function (
+            catId,
+            catName
+          ) {
+
+            const categorySection =
+              document.getElementById(
+                'category-tools-section'
+              );
+
+
+            const categoryTitle =
+              document.getElementById(
+                'category-title'
+              );
+
+
+            const categoryToolsGrid =
+              document.getElementById(
+                'category-tools-grid'
+              );
+
+
+            const cleanCatId =
+              cleanStr(catId);
+
+
+            const filteredTools =
+              Array.isArray(tools)
+                ? tools.filter(
+                    function (tool) {
+
+                      return (
+                        cleanStr(
+                          tool.category
+                        ) === cleanCatId
+                      );
+
+                    }
+                  )
+                : [];
+
+
+            if (categoryTitle) {
+
+              categoryTitle.textContent =
+                `${catName} (${filteredTools.length})`;
+
+            }
+
+
+            if (categoryToolsGrid) {
+
+              categoryToolsGrid.innerHTML =
+                filteredTools
+                  .map(
+                    function (tool) {
+
+                      return `
+                        <a
+                          href="${tool.url}"
+                          class="card card-interactive tool-card"
+                        >
+
+                          <div class="tool-card-icon">
+                            ${tool.icon || '🛠️'}
+                          </div>
+
+                          <h3>
+                            ${tool.name}
+                          </h3>
+
+                          <p>
+                            ${tool.description || ''}
+                          </p>
+
+                        </a>
+                      `;
+
+                    }
+                  )
+                  .join('');
+
+            }
+
+
+            if (categorySection) {
+
+              categorySection.removeAttribute(
+                'hidden'
+              );
+
+
+              categorySection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+              });
+
+            }
+
+          };
+
+
+        /* -----------------------------------------------
+           CATEGORY CARD CLICK
+           ----------------------------------------------- */
+
+        const categoriesGridElement =
+          document.getElementById(
+            'categories-grid'
+          );
+
+
         if (categoriesGridElement) {
-          categoriesGridElement.addEventListener('click', function (event) {
-            const card = event.target.closest('.category-card');
-            if (!card) return;
-            window.filterCategory(card.dataset.categoryId, card.dataset.categoryName);
-          });
 
-          categoriesGridElement.addEventListener('keydown', function (event) {
-            if (event.key !== 'Enter' && event.key !== ' ') return;
-            const card = event.target.closest('.category-card');
-            if (!card) return;
-            event.preventDefault();
-            window.filterCategory(card.dataset.categoryId, card.dataset.categoryName);
-          });
+
+          categoriesGridElement.addEventListener(
+            'click',
+            function (event) {
+
+              const card =
+                event.target.closest(
+                  '.category-card'
+                );
+
+
+              if (!card) {
+                return;
+              }
+
+
+              window.filterCategory(
+                card.dataset.categoryId,
+                card.dataset.categoryName
+              );
+
+            }
+          );
+
+
+          /* ---------------------------------------------
+             KEYBOARD ACCESSIBILITY
+             --------------------------------------------- */
+
+          categoriesGridElement.addEventListener(
+            'keydown',
+            function (event) {
+
+              if (
+                event.key !== 'Enter' &&
+                event.key !== ' '
+              ) {
+
+                return;
+
+              }
+
+
+              const card =
+                event.target.closest(
+                  '.category-card'
+                );
+
+
+              if (!card) {
+                return;
+              }
+
+
+              event.preventDefault();
+
+
+              window.filterCategory(
+                card.dataset.categoryId,
+                card.dataset.categoryName
+              );
+
+            }
+          );
+
         }
 
-        // Dynamic FAQ Enhancement (retains static content if fetch is empty)
-        const faqContainer = document.getElementById('faq-container');
-        if (faqContainer && Array.isArray(faqs) && faqs.length > 0) {
-          faqContainer.innerHTML = faqs.map(function (faq) {
-            return `
-              <div class="faq-item">
-                <h3>${faq.question || faq.q}</h3>
-                <p>${faq.answer || faq.a}</p>
-              </div>
-            `;
-          }).join('');
-        }
 
       } catch (error) {
-        console.error('Failed to load homepage data:', error);
+
+        console.error(
+          'Failed to load homepage data:',
+          error
+        );
+
       }
+
     })();
+
   </script>
+
+
 </body>
+
 </html>
