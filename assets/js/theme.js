@@ -1,168 +1,390 @@
+/**
+ * MicroToolStack Theme Manager
+ * Handles:
+ * - Instant theme initialization
+ * - Dark / Light mode
+ * - localStorage persistence
+ * - Theme toggle button
+ * - Logo switching
+ */
+
 window.ThemeManager = window.ThemeManager || {};
 
-// Set initial theme state instantly to prevent white/dark flashing
-(function() {
-    var savedTheme = localStorage.getItem('theme') || 'dark';
-    document.documentElement.setAttribute('data-theme', savedTheme);
-    if (savedTheme === 'dark') {
-        document.documentElement.classList.add('dark');
-    } else {
-        document.documentElement.classList.remove('dark');
+/* =========================================================
+   1. GET SAVED THEME
+   ========================================================= */
+
+function getSavedTheme() {
+    try {
+        const savedTheme = localStorage.getItem('theme');
+
+        if (savedTheme === 'light' || savedTheme === 'dark') {
+            return savedTheme;
+        }
+    } catch (error) {
+        console.warn('Unable to read saved theme:', error);
     }
+
+    // MicroToolStack default theme
+    return 'dark';
+}
+
+
+/* =========================================================
+   2. SAVE THEME
+   ========================================================= */
+
+function saveTheme(theme) {
+    try {
+        localStorage.setItem('theme', theme);
+    } catch (error) {
+        console.warn('Unable to save theme:', error);
+    }
+}
+
+
+/* =========================================================
+   3. APPLY THEME
+   ========================================================= */
+
+function applyTheme(theme) {
+    if (theme !== 'light' && theme !== 'dark') {
+        theme = 'dark';
+    }
+
+    const root = document.documentElement;
+
+    // Set main theme attribute
+    root.setAttribute('data-theme', theme);
+
+    // Keep dark class synchronized
+    root.classList.toggle('dark', theme === 'dark');
+
+    // Update theme toggle buttons
+    const toggleButtons = document.querySelectorAll(
+        '#theme-toggle, .custom-theme-btn'
+    );
+
+    toggleButtons.forEach((button) => {
+        button.textContent = theme === 'dark' ? '☀️' : '🌙';
+
+        button.setAttribute(
+            'aria-label',
+            theme === 'dark'
+                ? 'Switch to light theme'
+                : 'Switch to dark theme'
+        );
+
+        button.setAttribute(
+            'aria-pressed',
+            theme === 'dark' ? 'true' : 'false'
+        );
+    });
+
+    // Update MicroToolStack logo
+    const logos = document.querySelectorAll(
+        '#app-logo, .custom-logo img'
+    );
+
+    const logoPath =
+        theme === 'dark'
+            ? '/assets/images/logo-white.png'
+            : '/assets/images/logo-black.png';
+
+    logos.forEach((logo) => {
+        if (logo.src !== window.location.origin + logoPath) {
+            logo.src = logoPath;
+        }
+    });
+
+    return theme;
+}
+
+
+/* =========================================================
+   4. INSTANT INITIAL THEME
+   IMPORTANT:
+   This runs immediately before page rendering
+   to reduce light/dark flash.
+   ========================================================= */
+
+(function initializeThemeImmediately() {
+    const initialTheme = getSavedTheme();
+
+    const root = document.documentElement;
+
+    root.setAttribute('data-theme', initialTheme);
+    root.classList.toggle('dark', initialTheme === 'dark');
 })();
 
-document.addEventListener('DOMContentLoaded', () => {
-    renderNavbar();
-    renderFooter();
-    initFavorites();
-    initThemeToggle();
-    
-    // Initial theme apply to update static logos and icons
-    const currentTheme = localStorage.getItem('theme') || 'dark';
-    applyTheme(currentTheme);
-});
 
-// Render Header Navbar with Exact Dimensions
-function renderNavbar() {
-    const headerContainer = document.getElementById('header-container');
-    if (!headerContainer) return;
+/* =========================================================
+   5. THEME TOGGLE
+   ========================================================= */
 
-    const currentTheme = localStorage.getItem('theme') || 'dark';
-    const initialLogo = currentTheme === 'light' ? '/assets/images/logo-black.png' : '/assets/images/logo-white.png';
+function toggleTheme() {
+    const currentTheme =
+        document.documentElement.getAttribute('data-theme') || 'dark';
 
-    headerContainer.innerHTML = `
-        <header class="custom-header">
-            <a href="/" class="custom-logo">
-                <img id="app-logo" src="${initialLogo}" alt="MicroToolStack Logo" width="160" height="38" style="height: 38px; width: auto; display: block;" onerror="this.onerror=null; this.src='/assets/images/logo-white.png';">
-            </a>
-            <nav class="custom-nav">
-                <a href="/#categories">Categories</a>
-                <a href="/about.html">About</a>
-                <a href="/contact.html">Contact</a>
-                <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">${currentTheme === 'dark' ? '☀️' : '🌙'}</button>
-            </nav>
-        </header>
-    `;
+    const newTheme =
+        currentTheme === 'dark'
+            ? 'light'
+            : 'dark';
+
+    saveTheme(newTheme);
+    applyTheme(newTheme);
+
+    // Optional custom event for other scripts
+    window.dispatchEvent(
+        new CustomEvent('microtoolstack:themechange', {
+            detail: {
+                theme: newTheme
+            }
+        })
+    );
 }
 
-// Render Footer
-function renderFooter() {
-    const footerContainer = document.getElementById('footer-container');
-    
-    const footerHTML = `
-        <footer class="custom-footer">
-            <div class="footer-actions">
-                <a href="https://www.buymeacoffee.com/microtoolstack" target="_blank" rel="noopener noreferrer" class="coffee-btn">
-                    <span>☕</span> Buy me a coffee
-                </a>
 
-                <button onclick="shareCurrentPage()" class="share-btn">
-                    <span>🔗</span> Share
-                </button>
-            </div>
+/* =========================================================
+   6. INITIALIZE THEME SYSTEM
+   ========================================================= */
 
-            <p class="footer-copy">© ${new Date().getFullYear()} MicroToolStack. All rights reserved.</p>
-        </footer>
-    `;
+function initThemeToggle() {
+    /*
+     * IMPORTANT:
+     * Only theme.js handles #theme-toggle.
+     *
+     * app.js must NOT add another theme click listener.
+     */
 
-    if (footerContainer) {
-        footerContainer.innerHTML = footerHTML;
-    } else {
-        const main = document.querySelector('main') || document.body;
-        const footerDiv = document.createElement('div');
-        footerDiv.innerHTML = footerHTML;
-        main.appendChild(footerDiv);
+    if (window.ThemeManager._themeListenerInitialized) {
+        return;
     }
+
+    document.addEventListener('click', function (event) {
+        const toggleButton = event.target.closest(
+            '#theme-toggle, .custom-theme-btn'
+        );
+
+        if (!toggleButton) {
+            return;
+        }
+
+        event.preventDefault();
+
+        toggleTheme();
+    });
+
+    window.ThemeManager._themeListenerInitialized = true;
 }
 
-// Favorite System Logic
+
+/* =========================================================
+   7. INITIAL DOM SYNC
+   ========================================================= */
+
+function syncThemeAfterDOMReady() {
+    const currentTheme = getSavedTheme();
+
+    applyTheme(currentTheme);
+}
+
+
+/* =========================================================
+   8. FAVORITES SYSTEM
+   ========================================================= */
+
 function initFavorites() {
-    const toolHeader = document.querySelector('.hero h1') || document.querySelector('h1');
-    if (!toolHeader || window.location.pathname === '/' || window.location.pathname === '/index.html') return;
+    const toolHeader =
+        document.querySelector('.hero h1') ||
+        document.querySelector('h1');
+
+    if (!toolHeader) {
+        return;
+    }
+
+    // Don't add favorite button to homepage
+    if (
+        window.location.pathname === '/' ||
+        window.location.pathname === '/index.html'
+    ) {
+        return;
+    }
 
     const currentPath = window.location.pathname;
-    let favorites = JSON.parse(localStorage.getItem('favorite_tools') || '[]');
-    let isFav = favorites.includes(currentPath);
 
-    // Check if fav button already exists to avoid duplicates
-    if (document.getElementById('fav-btn')) return;
+    let favorites = [];
 
-    const favBtn = document.createElement('button');
-    favBtn.id = 'fav-btn';
-    favBtn.className = 'btn btn-secondary';
-    favBtn.style.cssText = 'font-size: 0.85rem; padding: 0.3rem 0.75rem; margin-left: 10px; border-radius: 20px; cursor: pointer; vertical-align: middle;';
-    
-    updateFavBtn(favBtn, isFav);
+    try {
+        favorites = JSON.parse(
+            localStorage.getItem('favorite_tools') || '[]'
+        );
+    } catch (error) {
+        favorites = [];
+    }
 
-    favBtn.onclick = () => {
-        favorites = JSON.parse(localStorage.getItem('favorite_tools') || '[]');
+    let isFavorite = favorites.includes(currentPath);
+
+    // Avoid duplicate button
+    if (document.getElementById('fav-btn')) {
+        return;
+    }
+
+    const favoriteButton = document.createElement('button');
+
+    favoriteButton.id = 'fav-btn';
+    favoriteButton.className = 'btn btn-secondary';
+
+    favoriteButton.style.cssText = `
+        font-size: 0.85rem;
+        padding: 0.3rem 0.75rem;
+        margin-left: 10px;
+        border-radius: 20px;
+        cursor: pointer;
+        vertical-align: middle;
+    `;
+
+    updateFavoriteButton(
+        favoriteButton,
+        isFavorite
+    );
+
+    favoriteButton.addEventListener('click', function () {
+        try {
+            favorites = JSON.parse(
+                localStorage.getItem('favorite_tools') || '[]'
+            );
+        } catch (error) {
+            favorites = [];
+        }
+
         if (favorites.includes(currentPath)) {
-            favorites = favorites.filter(path => path !== currentPath);
-            isFav = false;
+            favorites = favorites.filter(
+                (path) => path !== currentPath
+            );
+
+            isFavorite = false;
         } else {
             favorites.push(currentPath);
-            isFav = true;
+
+            isFavorite = true;
         }
-        localStorage.setItem('favorite_tools', JSON.stringify(favorites));
-        updateFavBtn(favBtn, isFav);
-    };
 
-    toolHeader.appendChild(favBtn);
+        try {
+            localStorage.setItem(
+                'favorite_tools',
+                JSON.stringify(favorites)
+            );
+        } catch (error) {
+            console.warn(
+                'Unable to save favorite:',
+                error
+            );
+        }
+
+        updateFavoriteButton(
+            favoriteButton,
+            isFavorite
+        );
+    });
+
+    toolHeader.appendChild(favoriteButton);
 }
 
-function updateFavBtn(btn, isFav) {
-    btn.innerHTML = isFav ? '❤️ Favorited' : '🤍 Add Favorite';
-    btn.style.borderColor = isFav ? '#ef4444' : 'var(--border-color)';
-    btn.style.color = isFav ? '#ef4444' : 'var(--text-primary)';
+
+/* =========================================================
+   9. UPDATE FAVORITE BUTTON
+   ========================================================= */
+
+function updateFavoriteButton(button, isFavorite) {
+    button.innerHTML = isFavorite
+        ? '❤️ Favorited'
+        : '🤍 Add Favorite';
+
+    button.style.borderColor = isFavorite
+        ? '#ef4444'
+        : 'var(--border-color)';
+
+    button.style.color = isFavorite
+        ? '#ef4444'
+        : 'var(--text-primary)';
 }
 
-// Global Share Logic
-window.shareCurrentPage = function() {
+
+/* =========================================================
+   10. GLOBAL SHARE
+   ========================================================= */
+
+window.shareCurrentPage = function () {
+    const pageUrl = window.location.href;
+
     if (navigator.share) {
         navigator.share({
             title: document.title,
-            url: window.location.href
+            url: pageUrl
         }).catch(() => {});
+    } else if (
+        navigator.clipboard &&
+        navigator.clipboard.writeText
+    ) {
+        navigator.clipboard
+            .writeText(pageUrl)
+            .then(() => {
+                alert('Page link copied to clipboard!');
+            })
+            .catch(() => {
+                alert('Unable to copy page link.');
+            });
     } else {
-        navigator.clipboard.writeText(window.location.href);
-        alert('Page link copied to clipboard!');
+        alert('Sharing is not supported in this browser.');
     }
 };
 
-// Theme Toggle Event Delegation
-function initThemeToggle() {
-    document.addEventListener('click', (e) => {
-        const toggleBtn = e.target.closest('#theme-toggle, .custom-theme-btn');
-        if (toggleBtn) {
-            const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            
-            applyTheme(newTheme);
-            localStorage.setItem('theme', newTheme);
-        }
-    });
-}
 
-// Global Apply Theme Function (Handling Image Switch & Exact Dimension Preservation)
-function applyTheme(theme) {
-    document.documentElement.setAttribute('data-theme', theme);
-    
-    const logos = document.querySelectorAll('#app-logo, .custom-logo img');
-    const toggleBtns = document.querySelectorAll('#theme-toggle, .custom-theme-btn');
+/* =========================================================
+   11. DOM READY
+   ========================================================= */
 
-    toggleBtns.forEach(btn => {
-        btn.innerText = theme === 'dark' ? '☀️' : '🌙';
-    });
+document.addEventListener('DOMContentLoaded', function () {
 
-    if (theme === 'dark') {
-        document.documentElement.classList.add('dark');
-        logos.forEach(logo => {
-            logo.src = '/assets/images/logo-white.png';
-        });
-    } else {
-        document.documentElement.classList.remove('dark');
-        logos.forEach(logo => {
-            logo.src = '/assets/images/logo-black.png';
-        });
+    // Initialize ONE theme listener
+    initThemeToggle();
+
+    /*
+     * app.js injects the header.
+     * Therefore we apply the theme after DOM elements exist.
+     */
+    syncThemeAfterDOMReady();
+
+    // Favorites
+    initFavorites();
+});
+
+
+/* =========================================================
+   12. PUBLIC THEME MANAGER API
+   ========================================================= */
+
+window.ThemeManager.getTheme = function () {
+    return (
+        document.documentElement.getAttribute('data-theme') ||
+        getSavedTheme()
+    );
+};
+
+window.ThemeManager.setTheme = function (theme) {
+    if (theme !== 'light' && theme !== 'dark') {
+        return;
     }
-}
+
+    saveTheme(theme);
+    applyTheme(theme);
+};
+
+window.ThemeManager.toggle = function () {
+    toggleTheme();
+};
+
+window.ThemeManager.apply = function (theme) {
+    applyTheme(theme);
+};
