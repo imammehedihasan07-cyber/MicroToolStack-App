@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Core Pages -->
   <url><loc>https://www.microtoolstack.com/</loc><priority>1.0</priority></url>
-  <url><loc>https://www.microtoolstack.com/about.html</loc><priority>0.5</priority></url>
-  <url><loc>https://www.microtoolstack.com/contact.html</loc><priority>0.5</priority></url>
-  
-  <!-- Text Tools -->
+  <url><loc>https://www.microtoolstack.com/about.html</loc><priority>0.6</priority></url>
+  <url><loc>https://www.microtoolstack.com/contact.html</loc><priority>0.6</priority></url>
+  <url><loc>https://www.microtoolstack.com/privacy-policy.html</loc><priority>0.5</priority></url>
+  <url><loc>https://www.microtoolstack.com/terms.html</loc><priority>0.5</priority></url>
+
+  <!-- 1. Text Tools (8 Tools) -->
   <url><loc>https://www.microtoolstack.com/tools/text/word-counter.html</loc><priority>0.8</priority></url>
   <url><loc>https://www.microtoolstack.com/tools/text/character-counter.html</loc><priority>0.8</priority></url>
   <url><loc>https://www.microtoolstack.com/tools/text/remove-extra-spaces.html</loc><priority>0.8</priority></url>
@@ -12,219 +16,143 @@
   <url><loc>https://www.microtoolstack.com/tools/text/reverse-text.html</loc><priority>0.8</priority></url>
   <url><loc>https://www.microtoolstack.com/tools/text/text-sorter.html</loc><priority>0.8</priority></url>
   <url><loc>https://www.microtoolstack.com/tools/text/duplicate-line-remover.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/text/readability-checker.html</loc><priority>0.8</priority></url>
 
-  <!-- SEO Tools -->
+  <!-- 2. SEO Tools (16 Tools) -->
   <url><loc>https://www.microtoolstack.com/tools/seo/meta-title-generator.html</loc><priority>0.8</priority></url>
   <url><loc>https://www.microtoolstack.com/tools/seo/meta-description-generator.html</loc><priority>0.8</priority></url>
   <url><loc>https://www.microtoolstack.com/tools/seo/slug-generator.html</loc><priority>0.8</priority></url>
   <url><loc>https://www.microtoolstack.com/tools/seo/robots-txt-generator.html</loc><priority>0.8</priority></url>
   <url><loc>https://www.microtoolstack.com/tools/seo/faq-schema-generator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/seo/open-graph-preview.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/seo/ssl-checker.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/seo/keyword-density-checker.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/seo/seo-title-preview.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/seo/meta-tag-analyzer.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/seo/google-serp-preview.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/seo/open-graph-meta-tag-preview.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/seo/canonical-url-checker.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/seo/html-link-extractor.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/seo/meta-refresh-checker.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/seo/xml-sitemap-generator.html</loc><priority>0.8</priority></url>
 
-  <!-- Developer Tools -->
+  <!-- 3. Developer Tools (25 Tools) -->
   <url><loc>https://www.microtoolstack.com/tools/developer/json-formatter.html</loc><priority>0.8</priority></url>
   <url><loc>https://www.microtoolstack.com/tools/developer/uuid-generator.html</loc><priority>0.8</priority></url>
   <url><loc>https://www.microtoolstack.com/tools/developer/base64-encoder-decoder.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/developer/password-hash-generator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/developer/lorem-ipsum-generator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/developer/color-picker.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/developer/code-snippet-to-image.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/developer/json-to-csv.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/developer/glassmorphism-generator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/developer/html-minifier.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/developer/css-minifier.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/developer/js-minifier.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/developer/html-formatter.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/developer/css-formatter.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/developer/html-entity-encoder-decoder.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/developer/regex-tester.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/developer/unix-timestamp-converter.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/developer/http-status-checker.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/developer/hex-to-rgb.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/developer/rgb-to-hex.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/developer/html-to-markdown.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/developer/markdown-to-pdf.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/developer/cron-job-generator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/developer/http-status-explainer.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/developer/url-encoder-decoder.html</loc><priority>0.8</priority></url>
 
-  <!-- AI Tools -->
+  <!-- 4. Calculators (9 Tools) -->
+  <url><loc>https://www.microtoolstack.com/tools/calculator/age-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/calculator/percentage-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/calculator/gst-vat-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/calculator/emi-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/calculator/bmi-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/calculator/quotation-receipt-maker.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/calculator/paypal-stripe-fee-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/calculator/cgpa-to-percentage.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/calculator/discount-savings-calculator.html</loc><priority>0.8</priority></url>
+
+  <!-- 5. Media Tools (19 Tools) -->
+  <url><loc>https://www.microtoolstack.com/tools/media/svg-to-png.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/media/png-to-svg.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/media/image-cropper.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/media/image-rotator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/media/image-flipper.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/media/image-to-base64.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/media/base64-to-image.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/media/exif-metadata-viewer.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/media/ico-converter.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/media/webp-to-jpg.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/media/favicon-generator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/media/color-palette-extractor.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/media/qr-code-generator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/media/aspect-ratio-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/media/image-exif-data-remover.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/media/webp-converter.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/media/voice-recorder.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/media/image-watermark.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/media/gif-to-mp4.html</loc><priority>0.8</priority></url>
+
+  <!-- 6. AI Tools (5 Tools) -->
   <url><loc>https://www.microtoolstack.com/tools/ai/caption-generator.html</loc><priority>0.8</priority></url>
   <url><loc>https://www.microtoolstack.com/tools/ai/hashtag-generator.html</loc><priority>0.8</priority></url>
   <url><loc>https://www.microtoolstack.com/tools/ai/bio-generator.html</loc><priority>0.8</priority></url>
   <url><loc>https://www.microtoolstack.com/tools/ai/humanizer.html</loc><priority>0.8</priority></url>
-  <url><loc>https://www.microtoolstack.com/tools/ai/youtube-title-generator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/ai/prompt-builder.html</loc><priority>0.8</priority></url>
 
-  <!-- YouTube Tools Category & Tools -->
-  <url>
-    <loc>https://www.microtoolstack.com/tools/youtube/</loc>
-    <lastmod>2026-08-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://www.microtoolstack.com/tools/youtube/channel-id-finder.html</loc>
-    <lastmod>2026-08-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://www.microtoolstack.com/tools/youtube/thumbnail-downloader.html</loc>
-    <lastmod>2026-08-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://www.microtoolstack.com/tools/youtube/embed-generator.html</loc>
-    <lastmod>2026-08-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://www.microtoolstack.com/tools/youtube/timestamp-generator.html</loc>
-    <lastmod>2026-08-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://www.microtoolstack.com/tools/youtube/playlist-id-finder.html</loc>
-    <lastmod>2026-08-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://www.microtoolstack.com/tools/media/svg-to-png.html</loc>
-    <lastmod>2026-08-05</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://www.microtoolstack.com/tools/media/png-to-svg.html</loc>
-    <lastmod>2026-08-05</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://www.microtoolstack.com/tools/media/image-cropper.html</loc>
-    <lastmod>2026-08-05</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://www.microtoolstack.com/tools/media/image-rotator.html</loc>
-    <lastmod>2026-08-05</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://www.microtoolstack.com/tools/media/image-flipper.html</loc>
-    <lastmod>2026-08-05</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://www.microtoolstack.com/tools/media/image-to-base64.html</loc>
-    <lastmod>2026-08-05</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://www.microtoolstack.com/tools/media/base64-to-image.html</loc>
-    <lastmod>2026-08-05</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://www.microtoolstack.com/tools/media/exif-metadata-viewer.html</loc>
-    <lastmod>2026-08-05</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://www.microtoolstack.com/tools/media/favicon-generator.html</loc>
-    <lastmod>2026-08-05</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://www.microtoolstack.com/tools/media/ico-converter.html</loc>
-    <lastmod>2026-08-05</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://www.microtoolstack.com/tools/pdf/</loc>
-    <lastmod>2026-08-06</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://www.microtoolstack.com/tools/pdf/merge-pdf.html</loc>
-    <lastmod>2026-08-06</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://www.microtoolstack.com/tools/pdf/images-to-pdf.html</loc>
-    <lastmod>2026-08-06</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://www.microtoolstack.com/tools/pdf/split-pdf.html</loc>
-    <lastmod>2026-08-06</lastmod>
-    <priority>0.80</priority>
-  </url>
-<!-- Blog Index -->
-  <url>
-    <loc>https://www.microtoolstack.com/blog/</loc>
-    <lastmod>2026-08-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
+  <!-- 7. Pet Care & Calculators (3 Tools) -->
+  <url><loc>https://www.microtoolstack.com/tools/pet-care/dog-chocolate-toxicity-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/pet-care/raw-dog-food-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/pet-care/cat-age-converter.html</loc><priority>0.8</priority></url>
 
-  <!-- 1. PDF Tools Blog -->
-  <url>
-    <loc>https://www.microtoolstack.com/blog/pdf-management-guide.html</loc>
-    <lastmod>2026-08-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  <!-- 8. YouTube Tools (7 Tools) -->
+  <url><loc>https://www.microtoolstack.com/tools/youtube/youtube-title-generator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/youtube/channel-id-finder.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/youtube/thumbnail-downloader.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/youtube/embed-generator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/youtube/timestamp-generator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/youtube/playlist-id-finder.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/youtube/thumbnail-preview.html</loc><priority>0.8</priority></url>
 
-  <!-- 2. SEO Tools Blog -->
-  <url>
-    <loc>https://www.microtoolstack.com/blog/seo-toolkit-guide.html</loc>
-    <lastmod>2026-08-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  <!-- 9. PDF Tools (18 Tools) -->
+  <url><loc>https://www.microtoolstack.com/tools/pdf/merge-pdf.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/pdf/images-to-pdf.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/pdf/split-pdf.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/pdf/assignment-cover-generator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/pdf/jpg-to-pdf.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/pdf/pdf-delete-pages.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/pdf/pdf-metadata-remover.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/pdf/pdf-page-extractor.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/pdf/pdf-page-numbering.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/pdf/pdf-reorder-pages.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/pdf/pdf-rotate-pages.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/pdf/pdf-text-extractor.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/pdf/pdf-to-jpg.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/pdf/pdf-to-png.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/pdf/pdf-unlocker.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/pdf/pdf-watermark.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/pdf/pdf-word-counter.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/pdf/pdf-watermark-remover.html</loc><priority>0.8</priority></url>
 
-  <!-- 3. Developer Tools Blog -->
-  <url>
-    <loc>https://www.microtoolstack.com/blog/developer-utilities-guide.html</loc>
-    <lastmod>2026-08-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  <!-- 10. Social Media Tools (4 Tools) -->
+  <url><loc>https://www.microtoolstack.com/tools/social/linkedin-carousel-maker.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/social/linkedin-banner-creator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/social/character-limit-checker.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/social/ai-caption-generator.html</loc><priority>0.8</priority></url>
 
-  <!-- 4. Media Tools Blog -->
-  <url>
-    <loc>https://www.microtoolstack.com/blog/image-media-optimization-guide.html</loc>
-    <lastmod>2026-08-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+  <!-- Blog Hub & 10 Comprehensive Guides -->
+  <url><loc>https://www.microtoolstack.com/blog/</loc><lastmod>2026-08-15</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.microtoolstack.com/blog/pdf-management-guide.html</loc><lastmod>2026-08-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/blog/seo-toolkit-guide.html</loc><lastmod>2026-08-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/blog/developer-utilities-guide.html</loc><lastmod>2026-08-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/blog/image-media-optimization-guide.html</loc><lastmod>2026-08-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/blog/social-media-creator-tools-guide.html</loc><lastmod>2026-08-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/blog/text-tools-writing-guide.html</loc><lastmod>2026-08-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/blog/ai-productivity-workflow-guide.html</loc><lastmod>2026-08-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/blog/everyday-online-calculators-guide.html</loc><lastmod>2026-08-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/blog/youtube-creator-tools-growth-guide.html</loc><lastmod>2026-08-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/blog/pet-care-health-calculator-guide.html</loc><lastmod>2026-08-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
-  <!-- 5. Social Media Tools Blog -->
-  <url>
-    <loc>https://www.microtoolstack.com/blog/social-media-creator-tools-guide.html</loc>
-    <lastmod>2026-08-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- 6. Text Tools Blog -->
-  <url>
-    <loc>https://www.microtoolstack.com/blog/text-tools-writing-guide.html</loc>
-    <lastmod>2026-08-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- 7. AI Tools Blog -->
-  <url>
-    <loc>https://www.microtoolstack.com/blog/ai-productivity-workflow-guide.html</loc>
-    <lastmod>2026-08-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- 8. Calculators Blog -->
-  <url>
-    <loc>https://www.microtoolstack.com/blog/everyday-online-calculators-guide.html</loc>
-    <lastmod>2026-08-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- 9. YouTube Tools Blog -->
-  <url>
-    <loc>https://www.microtoolstack.com/blog/youtube-creator-tools-growth-guide.html</loc>
-    <lastmod>2026-08-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- 10. Pet Care Blog -->
-  <url>
-    <loc>https://www.microtoolstack.com/blog/pet-care-health-calculator-guide.html</loc>
-    <lastmod>2026-08-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
 </urlset>
