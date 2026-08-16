@@ -31,14 +31,15 @@
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.microtoolstack.com/tools/seo/text-sorter.html">
+  <meta property="og:url" content="https://www.microtoolstack.com/tools/text/text-sorter.html">
   <meta property="og:title" content="Free Online Text Sorter | MicroToolStack">
   <meta property="og:description" content="Sort lines of text alphabetically, reverse order, or numerically instantly in your browser. 100% free web utility.">
   <meta property="og:image" content="https://www.microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
   <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
   <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
@@ -292,7 +293,7 @@ blueberry</textarea>
     <!-- Controls Bar -->
     <div class="controls-bar">
       <div style="display: flex; gap: 0.75rem;">
-        <button id="btn-copy" class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-weight: 600; cursor: pointer; background: #10b981;">📋 Copy Sorted Text</button>
+        <button id="btn-copy" class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-weight: 600; cursor: pointer; background: #10b981; border: none; border-radius: 6px; color: #fff;">📋 Copy Sorted Text</button>
       </div>
       <div style="display: flex; gap: 0.75rem;">
         <button id="btn-reset" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear Text</button>
@@ -390,45 +391,55 @@ blueberry</textarea>
       const btnReset = document.getElementById('btn-reset');
 
       function processSorting() {
-        let text = textInput.value;
-        let lines = text.split('
-');
+        const text = textInput.value;
+        if (!text.trim()) {
+          lineCounter.textContent = '0 Lines';
+          return;
+        }
+
+        let lines = text.split(/\r?\n/);
 
         if (sortAz.checked) {
-          lines.sort((a, b) => a.localeCompare(b));
+          lines.sort(function(a, b) { return a.localeCompare(b); });
         } else if (sortZa.checked) {
-          lines.sort((a, b) => b.localeCompare(a));
+          lines.sort(function(a, b) { return b.localeCompare(a); });
         } else if (sortLen.checked) {
-          lines.sort((a, b) => a.length - b.length);
+          lines.sort(function(a, b) { return a.length - b.length; });
         } else if (sortShuffle.checked) {
           for (let i = lines.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
-            [lines[i], lines[j]] = [lines[j], lines[i]];
+            const temp = lines[i];
+            lines[i] = lines[j];
+            lines[j] = temp;
           }
         }
 
-        lineCounter.textContent = `${lines.length} Lines`;
-        textInput.value = lines.join('
-');
+        lineCounter.textContent = lines.length + ' Lines';
+        textInput.value = lines.join('\n');
       }
 
-      [textInput, sortAz, sortZa, sortLen, sortShuffle].forEach(el => {
-        el.addEventListener('input', processSorting);
+      [sortAz, sortZa, sortLen, sortShuffle].forEach(function(el) {
         el.addEventListener('change', processSorting);
+      });
+
+      textInput.addEventListener('input', function() {
+        const text = textInput.value;
+        const count = text.trim() ? text.split(/\r?\n/).length : 0;
+        lineCounter.textContent = count + ' Lines';
       });
 
       btnCopy.addEventListener('click', function() {
         if (!textInput.value) return;
-        navigator.clipboard.writeText(textInput.value).then(() => {
+        navigator.clipboard.writeText(textInput.value).then(function() {
           const origText = btnCopy.textContent;
           btnCopy.textContent = '✅ Copied!';
-          setTimeout(() => { btnCopy.textContent = origText; }, 2000);
+          setTimeout(function() { btnCopy.textContent = origText; }, 2000);
         });
       });
 
       btnReset.addEventListener('click', function() {
         textInput.value = '';
-        processSorting();
+        lineCounter.textContent = '0 Lines';
       });
 
       // Initial run
