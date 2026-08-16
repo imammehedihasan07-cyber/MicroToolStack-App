@@ -383,17 +383,14 @@ https://www.microtoolstack.com/contact.html</textarea>
       const btnDownloadXml = document.getElementById('btn-download-xml');
       const btnReset = document.getElementById('btn-reset');
 
-      function generateSitemapXml() {
-        const rawUrls = urlListInput.value.split('
-').map(u => u.trim()).filter(u => u.length > 0);
+     function generateSitemapXml() {
+        const rawUrls = urlListInput.value.split('\n').map(u => u.trim()).filter(u => u.length > 0);
         const freq = changeFreq.value;
         const prio = defaultPriority.value;
         const todayIso = new Date().toISOString().split('T')[0];
 
-        let xml = `<?xml version="1.0" encoding="UTF-8"?>
-`;
-        xml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-`;
+        let xml = `<?xml version="1.0" encoding="UTF-8"?>\n`;
+        xml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
 
         rawUrls.forEach((url, idx) => {
           let cleanUrl = url;
@@ -407,18 +404,12 @@ https://www.microtoolstack.com/contact.html</textarea>
           // First URL (homepage) gets priority 1.0 if not customized
           const currentPrio = (idx === 0) ? '1.0' : prio;
 
-          xml += `  <url>
-`;
-          xml += `    <loc>${escapedUrl}</loc>
-`;
-          xml += `    <lastmod>${todayIso}</lastmod>
-`;
-          xml += `    <changefreq>${freq}</changefreq>
-`;
-          xml += `    <priority>${currentPrio}</priority>
-`;
-          xml += `  </url>
-`;
+          xml += `  <url>\n`;
+          xml += `    <loc>${escapedUrl}</loc>\n`;
+          xml += `    <lastmod>${todayIso}</lastmod>\n`;
+          xml += `    <changefreq>${freq}</changefreq>\n`;
+          xml += `    <priority>${currentPrio}</priority>\n`;
+          xml += `  </url>\n`;
         });
 
         xml += `</urlset>`;
