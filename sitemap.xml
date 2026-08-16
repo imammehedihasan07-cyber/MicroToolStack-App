@@ -7,6 +7,7 @@
   <url><loc>https://www.microtoolstack.com/contact.html</loc><priority>0.6</priority></url>
   <url><loc>https://www.microtoolstack.com/privacy-policy.html</loc><priority>0.5</priority></url>
   <url><loc>https://www.microtoolstack.com/terms.html</loc><priority>0.5</priority></url>
+  <url><loc>https://www.microtoolstack.com/disclaimer.html</loc><priority>0.5</priority></url>
 
   <!-- 1. Text Tools (8 Tools) -->
   <url><loc>https://www.microtoolstack.com/tools/text/word-counter.html</loc><priority>0.8</priority></url>
