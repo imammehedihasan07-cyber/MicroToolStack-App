@@ -34,12 +34,12 @@
   <meta property="og:url" content="https://www.microtoolstack.com/tools/youtube/thumbnail-downloader.html">
   <meta property="og:title" content="Free Online YouTube Thumbnail Downloader | MicroToolStack">
   <meta property="og:description" content="Download HD, HQ, and 4K YouTube video thumbnail images instantly by pasting any video link. 100% free web utility.">
-  <meta property="og:image" content="https://www.microtoolstack.com/assets/images/og-image.png">
+  <meta property="og:image" content="https://www.microtoolstack.com/assets/images/og-image.jpg">
 
   <!-- Favicon Icon for Google & Devices -->
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
-  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="../../assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="../../assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="../../assets/images/favicon.png">
 
   <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
   <script type="application/ld+json">
@@ -105,8 +105,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <!-- CSS Stylesheets -->
-  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
-  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+  <link rel="stylesheet" href="../../assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="../../assets/css/components.css?v=10.0">
 
   <style>
     .input-group {
@@ -254,13 +254,13 @@
 
   <!-- Header Section -->
   <header class="custom-header">
-    <a href="/" class="custom-logo">
-      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
+    <a href="../../" class="custom-logo">
+      <img src="../../assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
     </a>
     <nav class="custom-nav">
-      <a href="/#categories">Categories</a>
-      <a href="/about.html">About</a>
-      <a href="/contact.html">Contact</a>
+      <a href="../../#categories">Categories</a>
+      <a href="../../about.html">About</a>
+      <a href="../../contact.html">Contact</a>
       <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
     </nav>
   </header>
@@ -324,7 +324,7 @@
       <h2>Features of MicroToolStack's Thumbnail Downloader</h2>
       <ul>
         <li><strong>Instant URL Parsing:</strong> Extracts video IDs from standard watch URLs (`youtube.com/watch?v=...`), short links (`youtu.be/...`), and embed codes automatically.</li>
-        <li><strong>100% Client-Side Privacy:</strong> All URL extraction and image rendering execute locally inside your browser session using JavaScript. Your searches remain completely private.</li>
+        <li><strong>100% Client-Side Privacy:</strong> All URL extraction and image rendering execute locally inside your web browser session using JavaScript. Your searches remain completely private.</li>
         <li><strong>Free & Unlimited Usage:</strong> No download limits or registration required.</li>
       </ul>
     </div>
@@ -334,15 +334,15 @@
       <h2>Explore Related YouTube & Webmaster Tools</h2>
       <p>Discover our complementary online webmaster utilities:</p>
       <div class="related-links">
-        <a href="/tools/youtube/channel-id-finder.html" class="related-card">
+        <a href="../../tools/youtube/channel-id-finder.html" class="related-card">
           <strong style="display:block; margin-bottom: 0.25rem;">🔍 YouTube Channel ID Finder</strong>
           <span style="font-size: 0.85rem; color: #9ca3af;">Retrieve unique channel IDs (UC...) from URLs.</span>
         </a>
-        <a href="/tools/youtube/embed-generator.html" class="related-card">
+        <a href="../../tools/youtube/embed-generator.html" class="related-card">
           <strong style="display:block; margin-bottom: 0.25rem;">💻 YouTube Embed Generator</strong>
           <span style="font-size: 0.85rem; color: #9ca3af;">Generate responsive video iframe embed codes.</span>
         </a>
-        <a href="/tools/seo/open-graph-generator.html" class="related-card">
+        <a href="../../tools/seo/open-graph-generator.html" class="related-card">
           <strong style="display:block; margin-bottom: 0.25rem;">🌐 Open Graph Tag Generator</strong>
           <span style="font-size: 0.85rem; color: #9ca3af;">Build Facebook and Twitter social share meta tags.</span>
         </a>
@@ -376,9 +376,9 @@
   <div id="footer-container"></div>
 
   <!-- JavaScript Utilities & Logic -->
-  <script src="/assets/js/theme.js"></script>
-  <script src="/assets/js/utils.js" defer></script>
-  <script src="/assets/js/app.js" defer></script>
+  <script src="../../assets/js/theme.js"></script>
+  <script src="../../assets/js/utils.js" defer></script>
+  <script src="../../assets/js/app.js" defer></script>
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -399,6 +399,23 @@
         return (match && match[2].length === 11) ? match[2] : 'dQw4w9WgXcQ';
       }
 
+      async function downloadImage(imgUrl, filename) {
+        try {
+          const response = await fetch(imgUrl);
+          const blob = await response.blob();
+          const blobUrl = window.URL.createObjectURL(blob);
+          const link = document.createElement('a');
+          link.href = blobUrl;
+          link.download = filename;
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+          window.URL.revokeObjectURL(blobUrl);
+        } catch (err) {
+          window.open(imgUrl, '_blank');
+        }
+      }
+
       function fetchThumbnails() {
         const val = urlInput.value.trim();
         if (!val) {
@@ -412,10 +429,10 @@
         thumbGrid.innerHTML = '';
 
         const thumbs = [
-          { name: 'Max Resolution (HD 720p)', res: '1280 x 720 px', url: `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg` },
-          { name: 'Standard Definition', res: '640 x 480 px', url: `https://img.youtube.com/vi/${videoId}/sddefault.jpg` },
-          { name: 'High Quality', res: '480 x 360 px', url: `https://img.youtube.com/vi/${videoId}/hqdefault.jpg` },
-          { name: 'Medium Quality', res: '320 x 180 px', url: `https://img.youtube.com/vi/${videoId}/mqdefault.jpg` }
+          { name: 'Max Resolution (HD 720p)', res: '1280 x 720 px', url: `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`, filename: `${videoId}-maxres.jpg` },
+          { name: 'Standard Definition', res: '640 x 480 px', url: `https://img.youtube.com/vi/${videoId}/sddefault.jpg`, filename: `${videoId}-sd.jpg` },
+          { name: 'High Quality', res: '480 x 360 px', url: `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`, filename: `${videoId}-hq.jpg` },
+          { name: 'Medium Quality', res: '320 x 180 px', url: `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`, filename: `${videoId}-mq.jpg` }
         ];
 
         thumbs.forEach(t => {
@@ -430,9 +447,14 @@
                 <div class="thumb-title">${t.name}</div>
                 <div class="thumb-res">${t.res}</div>
               </div>
-              <a href="${t.url}" target="_blank" download="youtube-thumbnail.jpg" class="btn btn-primary" style="display: block; text-align: center; padding: 0.6rem 1rem; font-size: 0.85rem; font-weight: 600; background: #3b82f6; text-decoration: none; border-radius: 6px; color: #fff;">📥 Download Image</a>
+              <button class="btn btn-primary download-btn" style="width: 100%; text-align: center; padding: 0.6rem 1rem; font-size: 0.85rem; font-weight: 600; background: #3b82f6; border: none; border-radius: 6px; color: #fff; cursor: pointer; margin-top: 1rem;">📥 Download Image</button>
             </div>
           `;
+
+          card.querySelector('.download-btn').addEventListener('click', function() {
+            downloadImage(t.url, t.filename);
+          });
+
           thumbGrid.appendChild(card);
         });
       }
