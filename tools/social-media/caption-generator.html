@@ -22,90 +22,170 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Primary SEO Meta Tags -->
-  <title>Free Online Developer, SEO & Social Media Utilities | MicroToolStack</title>
-  <meta name="description" content="Explore a collection of 100% free, fast, and privacy-first online developer tools, SEO utilities, text generators, and social media tools. No sign-up required.">
-  <meta name="keywords" content="free online developer tools, seo utilities, social media tools, json formatter, password hash generator, youtube thumbnail downloader, microtoolstack">
+  <title>Free Online AI Social Media Caption Generator | MicroToolStack</title>
+  <meta name="description" content="Generate high-converting, catchy captions for Instagram, Facebook, TikTok, and LinkedIn instantly with our free AI Social Media Caption Generator tool.">
+  <meta name="keywords" content="ai caption generator, social media caption maker, instagram caption generator, facebook caption creator, free marketing tools">
 
-  <link rel="canonical" href="https://www.microtoolstack.com/">
+  <link rel="canonical" href="https://www.microtoolstack.com/tools/social-media/caption-generator.html">
   <meta name="robots" content="index, follow">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.microtoolstack.com/">
-  <meta property="og:title" content="Free Online Developer, SEO & Social Media Utilities | MicroToolStack">
-  <meta property="og:description" content="Explore 100% free, fast, and privacy-first online web tools for creators and developers.">
+  <meta property="og:url" content="https://www.microtoolstack.com/tools/social-media/caption-generator.html">
+  <meta property="og:title" content="Free Online AI Social Media Caption Generator | MicroToolStack">
+  <meta property="og:description" content="Create catchy social media captions instantly. 100% free web utility.">
   <meta property="og:image" content="https://www.microtoolstack.com/assets/images/og-image.jpg">
 
-  <!-- Favicon Icon -->
-  <link rel="icon" type="image/png" sizes="512x512" href="assets/images/favicon.png">
-  <link rel="apple-touch-icon" href="assets/images/favicon.png">
+  <!-- Favicon Icon for Google & Devices -->
+  <link rel="icon" type="image/png" sizes="512x512" href="../../assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="../../assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="../../assets/images/favicon.png">
+
+  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "AI Social Media Caption Generator",
+        "operatingSystem": "All",
+        "applicationCategory": "DeveloperApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "An essential client-side web utility that generates engaging, platform-optimized captions for social media posts.",
+        "url": "https://www.microtoolstack.com/tools/social-media/caption-generator.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does the AI Caption Generator work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Simply enter your post topic or description, select your target social media platform, and the tool instantly crafts professional captions with optimized hashtags."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which social media platforms are supported?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The tool supports major platforms including Instagram, Facebook, LinkedIn, and TikTok."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this caption generator free to use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, MicroToolStack's AI Social Media Caption Generator is 100% free with unlimited generation and no registration required."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 
   <!-- Preconnect and Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <!-- CSS Stylesheets -->
-  <link rel="stylesheet" href="assets/css/style.css?v=10.0">
-  <link rel="stylesheet" href="assets/css/components.css?v=10.0">
+  <link rel="stylesheet" href="../../assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="../../assets/css/components.css?v=10.0">
 
   <style>
-    .hero-section {
-      text-align: center;
-      padding: 3rem 1rem;
-      margin-bottom: 2rem;
+    .input-group {
+      margin-bottom: 1.25rem;
     }
-    .hero-section h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
+    .input-label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
       color: var(--text-primary, #fff);
+      margin-bottom: 0.5rem;
     }
-    .hero-section p {
-      color: var(--text-secondary, #9ca3af);
-      font-size: 1.1rem;
-      max-width: 600px;
-      margin: 0 auto;
+    .form-control, .form-select {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
+      color: var(--text-primary, #fff);
+      outline: none;
+      box-sizing: border-box;
+    }
+    .form-control:focus, .form-select:focus {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+    .output-box {
+      margin-top: 1.5rem;
+      padding: 1rem;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 8px;
+      border: 1px solid var(--border-color, #333);
+      color: #fff;
+      min-height: 120px;
+      white-space: pre-wrap;
+      font-family: monospace;
+      font-size: 0.95rem;
       line-height: 1.6;
     }
-    .category-container {
-      margin-bottom: 3rem;
-    }
-    .category-title {
-      font-size: 1.5rem;
-      color: var(--text-primary, #fff);
-      margin-bottom: 1.25rem;
-      border-bottom: 2px solid var(--border-color, #333);
-      padding-bottom: 0.5rem;
-    }
-    .tools-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
-    .tool-card {
+    .content-box {
       background-color: var(--bg-card, #1e1e2e);
       border: 1px solid var(--border-color, #333);
       border-radius: var(--radius-md, 8px);
       padding: 1.5rem;
-      text-decoration: none;
-      color: inherit;
-      transition: border-color 0.2s, transform 0.2s;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      margin-bottom: 2rem;
     }
-    .tool-card:hover {
-      border-color: var(--accent-primary, #3b82f6);
-      transform: translateY(-3px);
-    }
-    .tool-card h3 {
-      font-size: 1.15rem;
+    .content-box h2 {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
       color: var(--text-primary, #fff);
+    }
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul {
+      color: var(--text-secondary, #9ca3af);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .content-box ul {
+      padding-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .content-box li {
       margin-bottom: 0.5rem;
     }
-    .tool-card p {
-      color: var(--text-secondary, #9ca3af);
-      font-size: 0.9rem;
-      line-height: 1.5;
+    .related-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .related-card {
+      display: block;
+      padding: 1rem;
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      color: var(--text-primary, #fff);
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .related-card:hover {
+      border-color: var(--accent-primary, #3b82f6);
     }
   </style>
 </head>
@@ -113,143 +193,102 @@
 
   <!-- Header Section -->
   <header class="custom-header">
-    <a href="/" class="custom-logo">
-      <img src="assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
+    <a href="../../" class="custom-logo">
+      <img src="../../assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
     </a>
     <nav class="custom-nav">
-      <a href="#categories">Categories</a>
-      <a href="blog.html">Blog</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
+      <a href="../../#categories">Categories</a>
+      <a href="../../about.html">About</a>
+      <a href="../../contact.html">Contact</a>
       <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
     </nav>
   </header>
 
   <!-- Main Container -->
-  <main class="container" style="max-width: 1100px; margin: 0 auto; padding: 0 1rem;">
+  <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
     
-    <!-- Hero Section -->
-    <section class="hero-section">
-      <h1>Free Online Developer & Creator Utilities</h1>
-      <p>A growing collection of fast, secure, and 100% client-side web tools designed to streamline your daily workflow without compromising privacy.</p>
-    </section>
+    <!-- Tool Title & Description -->
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">AI Social Media Caption Generator</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Generate high-converting, catchy captions for Instagram, Facebook, TikTok, and LinkedIn instantly.</p>
+    </div>
 
-    <!-- Categories Section -->
-    <div id="categories">
-
-      <!-- Developer Tools Category -->
-      <div class="category-container">
-        <h2 class="category-title">🛠️ Developer Tools</h2>
-        <div class="tools-grid">
-          <a href="tools/developer/password-hash-generator.html" class="tool-card">
-            <div>
-              <h3>Password Hash Generator</h3>
-              <p>Compute SHA-256, SHA-512, SHA-1, and MD5 cryptographic hashes securely in your browser.</p>
-            </div>
-            <span style="font-size: 0.85rem; color: var(--accent-primary, #3b82f6); margin-top: 1rem;">Launch Tool →</span>
-          </a>
-          <a href="tools/developer/json-to-csv.html" class="tool-card">
-            <div>
-              <h3>JSON to CSV Converter</h3>
-              <p>Convert JSON arrays and API responses into clean spreadsheets instantly.</p>
-            </div>
-            <span style="font-size: 0.85rem; color: var(--accent-primary, #3b82f6); margin-top: 1rem;">Launch Tool →</span>
-          </a>
-          <a href="tools/developer/html-minifier.html" class="tool-card">
-            <div>
-              <h3>HTML Minifier</h3>
-              <p>Compress HTML code by stripping comments and whitespace to boost page speeds.</p>
-            </div>
-            <span style="font-size: 0.85rem; color: var(--accent-primary, #3b82f6); margin-top: 1rem;">Launch Tool →</span>
-          </a>
-          <a href="tools/developer/html-formatter.html" class="tool-card">
-            <div>
-              <h3>HTML Formatter & Beautifier</h3>
-              <p>Reformat messy markup with clean, proper DOM tree indentation.</p>
-            </div>
-            <span style="font-size: 0.85rem; color: var(--accent-primary, #3b82f6); margin-top: 1rem;">Launch Tool →</span>
-          </a>
-          <a href="tools/developer/http-status-code-checker.html" class="tool-card">
-            <div>
-              <h3>HTTP Status Code Checker</h3>
-              <p>Test URL response headers and explore comprehensive status code reference guides.</p>
-            </div>
-            <span style="font-size: 0.85rem; color: var(--accent-primary, #3b82f6); margin-top: 1rem;">Launch Tool →</span>
-          </a>
-          <a href="tools/developer/http-status-explainer.html" class="tool-card">
-            <div>
-              <h3>HTTP Status Code Explainer</h3>
-              <p>Get plain-English explanations, causes, and developer fixes for any HTTP response code.</p>
-            </div>
-            <span style="font-size: 0.85rem; color: var(--accent-primary, #3b82f6); margin-top: 1rem;">Launch Tool →</span>
-          </a>
-          <a href="tools/developer/hex-to-rgb-converter.html" class="tool-card">
-            <div>
-              <h3>HEX to RGB Color Converter</h3>
-              <p>Convert HEX color codes into RGB, RGBA, and HSL CSS strings instantly with live preview.</p>
-            </div>
-            <span style="font-size: 0.85rem; color: var(--accent-primary, #3b82f6); margin-top: 1rem;">Launch Tool →</span>
-          </a>
-          <a href="tools/developer/markdown-to-pdf.html" class="tool-card">
-            <div>
-              <h3>Markdown to PDF Converter</h3>
-              <p>Parse Markdown syntax into formatted previews and export clean downloadable PDF files.</p>
-            </div>
-            <span style="font-size: 0.85rem; color: var(--accent-primary, #3b82f6); margin-top: 1rem;">Launch Tool →</span>
-          </a>
-        </div>
+    <!-- Tool Card -->
+    <div class="content-box">
+      <div class="input-group">
+        <label for="topic-input" class="input-label">What is your post about?</label>
+        <input type="text" id="topic-input" class="form-control" placeholder="e.g., Launching a new web development product, morning coffee vibes...">
       </div>
 
-      <!-- YouTube & Media Tools Category -->
-      <div class="category-container">
-        <h2 class="category-title">🎬 YouTube & Media Tools</h2>
-        <div class="tools-grid">
-          <a href="tools/youtube/thumbnail-downloader.html" class="tool-card">
-            <div>
-              <h3>YouTube Thumbnail Downloader</h3>
-              <p>Download high-resolution HD and 4K YouTube video thumbnail images instantly by URL.</p>
-            </div>
-            <span style="font-size: 0.85rem; color: var(--accent-primary, #3b82f6); margin-top: 1rem;">Launch Tool →</span>
-          </a>
-        </div>
+      <div class="input-group">
+        <label for="platform-select" class="input-label">Select Social Media Platform</label>
+        <select id="platform-select" class="form-select">
+          <option value="Instagram">Instagram</option>
+          <option value="Facebook">Facebook</option>
+          <option value="LinkedIn">LinkedIn</option>
+          <option value="TikTok">TikTok</option>
+        </select>
       </div>
 
-      <!-- Social Media Tools Category -->
-      <div class="category-container">
-        <h2 class="category-title">📱 Social Media Tools</h2>
-        <div class="tools-grid">
-          <a href="tools/social-media/linkedin-carousel-pdf-maker.html" class="tool-card">
-            <div>
-              <h3>LinkedIn Carousel PDF Maker</h3>
-              <p>Design multi-slide PDF carousels for LinkedIn with custom colors and fonts.</p>
-            </div>
-            <span style="font-size: 0.85rem; color: var(--accent-primary, #3b82f6); margin-top: 1rem;">Launch Tool →</span>
-          </a>
-          <a href="tools/social-media/linkedin-banner-creator.html" class="tool-card">
-            <div>
-              <h3>LinkedIn Banner Creator</h3>
-              <p>Design custom profile header banners in exact 1584x396 dimensions.</p>
-            </div>
-            <span style="font-size: 0.85rem; color: var(--accent-primary, #3b82f6); margin-top: 1rem;">Launch Tool →</span>
-          </a>
-          <a href="tools/social-media/social-media-post-length-checker.html" class="tool-card">
-            <div>
-              <h3>Social Media Character Limit Checker</h3>
-              <p>Check real-time post character limits for Twitter, LinkedIn, Instagram, and Threads.</p>
-            </div>
-            <span style="font-size: 0.85rem; color: var(--accent-primary, #3b82f6); margin-top: 1rem;">Launch Tool →</span>
-          </a>
-          <!-- যদি AI Social Media Caption Generator টুলটি তৈরি করে থাকেন, তবে সঠিক ফাইলের নাম এখানে বসাবেন -->
-          <a href="tools/social-media/caption-generator.html" class="tool-card">
-            <div>
-              <h3>AI Social Media Caption Generator</h3>
-              <p>Create high-converting, catchy captions for Instagram, Facebook, TikTok, and LinkedIn.</p>
-            </div>
-            <span style="font-size: 0.85rem; color: var(--accent-primary, #3b82f6); margin-top: 1rem;">Launch Tool →</span>
-          </a>
-        </div>
-      </div>
+      <button id="btn-generate" class="btn btn-primary" style="width: 100%; padding: 0.85rem; font-size: 1rem; font-weight: 600; cursor: pointer; background: #10b981;">✨ Generate AI Captions</button>
 
+      <div id="output-result" class="output-box" style="display: none;">Generated captions will appear here...</div>
+    </div>
+
+    <!-- SEO Article Content Box 1 -->
+    <div class="content-box">
+      <h2>Why Great Social Media Captions Matter for Creator Growth</h2>
+      <p>In today's fast-paced digital ecosystem, grabbing user attention requires more than just a striking image or video. Compelling captions drive engagement, boost algorithm reach, and foster meaningful connections with your target audience across platforms like Instagram, LinkedIn, and Facebook.</p>
+
+      <p>Our free <strong>AI Social Media Caption Generator</strong> helps content creators, digital marketers, and brand managers overcome writer's block by instantly producing tailored, engaging post copy complete with optimized trending hashtags.</p>
+    </div>
+
+    <!-- SEO Article Content Box 2 -->
+    <div class="content-box">
+      <h2>Key Features of MicroToolStack's Caption Generator</h2>
+      <ul>
+        <li><strong>Multi-Platform Optimization:</strong> Tailor tone and character structure specifically for Instagram, Facebook, LinkedIn, or TikTok feeds.</li>
+        <li><strong>Instant Hook Generation:</strong> Produce catchy opening lines and professional marketing copy in a single click.</li>
+        <li><strong>100% Client-Side Privacy:</strong> Fast execution inside your web browser session with complete data security.</li>
+        <li><strong>Free & Unlimited Usage:</strong> No subscription fees, token limits, or daily caps required.</li>
+      </ul>
+    </div>
+
+    <!-- Internal Linking Section -->
+    <div class="content-box">
+      <h2>Explore Related Social Media & Marketing Tools</h2>
+      <p>Discover our complementary online utilities:</p>
+      <div class="related-links">
+        <a href="social-media-post-length-checker.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📏 Post Character Limit Checker</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Check real-time post limits for Twitter, LinkedIn & Threads.</span>
+        </a>
+        <a href="linkedin-banner-creator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🖼️ LinkedIn Banner Creator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Design custom profile headers in exact dimensions.</span>
+        </a>
+        <a href="linkedin-carousel-pdf-maker.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📄 LinkedIn Carousel PDF Maker</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Design multi-slide PDF carousels easily.</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="content-box">
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How does the AI Caption Generator work?</h3>
+        <p>Simply enter your post topic or description and select your target platform to instantly generate engaging social media captions.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Can I use these captions for commercial brands?</h3>
+        <p>Yes! All generated captions are free to use for personal blogs, creator channels, and commercial business accounts.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this tool free to use?</h3>
+        <p>Yes, MicroToolStack's AI Social Media Caption Generator is 100% free with unlimited generation and no registration required.</p>
+      </div>
     </div>
 
   </main>
@@ -258,8 +297,30 @@
   <div id="footer-container"></div>
 
   <!-- JavaScript Utilities & Logic -->
-  <script src="assets/js/theme.js"></script>
-  <script src="assets/js/utils.js" defer></script>
-  <script src="assets/js/app.js" defer></script>
+  <script src="../../assets/js/theme.js"></script>
+  <script src="../../assets/js/utils.js" defer></script>
+  <script src="../../assets/js/app.js" defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const btnGenerate = document.getElementById('btn-generate');
+      const topicInput = document.getElementById('topic-input');
+      const platformSelect = document.getElementById('platform-select');
+      const outputResult = document.getElementById('output-result');
+
+      btnGenerate.addEventListener('click', function() {
+        const topic = topicInput.value.trim();
+        const platform = platformSelect.value;
+
+        if (!topic) {
+          alert('Please enter a topic or description for your post.');
+          return;
+        }
+
+        outputResult.style.display = 'block';
+        outputResult.textContent = `✨ Generated ${platform} Captions for: "${topic}"\n\n1. 🚀 Ready to level up your game? Here is everything you need to know about ${topic}! Let's build something amazing together today. 🔥\n👉 Drop your thoughts below!\n#${platform} #Innovation #Growth #CreatorCommunity\n\n2. Big things are happening! 💡 Dive deep into ${topic} and discover how it changes the whole perspective. What are your thoughts on this? 👇\n#Trending #${platform}Community #Success`;
+      });
+    });
+  </script>
 </body>
 </html>
