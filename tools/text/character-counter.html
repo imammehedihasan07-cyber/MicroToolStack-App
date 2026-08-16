@@ -37,8 +37,9 @@
   <meta property="og:image" content="https://www.microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
   <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
   <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
@@ -293,7 +294,7 @@
     <!-- Controls Bar -->
     <div class="controls-bar">
       <div style="display: flex; gap: 0.75rem;">
-        <button id="btn-copy" class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-weight: 600; cursor: pointer; background: #10b981;">📋 Copy Text</button>
+        <button id="btn-copy" class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-weight: 600; cursor: pointer; background: #10b981; border: none; border-radius: 6px; color: #fff;">📋 Copy Text</button>
       </div>
       <div style="display: flex; gap: 0.75rem;">
         <button id="btn-reset" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear Text</button>
@@ -409,11 +410,10 @@
         const words = text.trim() ? text.trim().split(/\s+/).length : 0;
 
         // Sentences
-        const sentences = text.trim() ? text.split(/[.!?]+/).filter(s => s.trim().length > 0).length : 0;
+        const sentences = text.trim() ? text.split(/[.!?]+/).filter(function(s) { return s.trim().length > 0; }).length : 0;
 
         // Paragraphs
-        const paragraphs = text.trim() ? text.split(/
-+/).filter(p => p.trim().length > 0).length : 0;
+        const paragraphs = text.trim() ? text.split(/\n+/).filter(function(p) { return p.trim().length > 0; }).length : 0;
 
         // Reading time (200 wpm)
         const readingMinutes = Math.ceil(words / 200);
@@ -423,17 +423,17 @@
         statWords.textContent = words;
         statSentences.textContent = sentences;
         statParagraphs.textContent = paragraphs;
-        statReading.textContent = `${readingMinutes} min`;
+        statReading.textContent = readingMinutes + ' min';
       }
 
       textInput.addEventListener('input', calculateStats);
 
       btnCopy.addEventListener('click', function() {
         if (!textInput.value) return;
-        navigator.clipboard.writeText(textInput.value).then(() => {
+        navigator.clipboard.writeText(textInput.value).then(function() {
           const origText = btnCopy.textContent;
           btnCopy.textContent = '✅ Copied!';
-          setTimeout(() => { btnCopy.textContent = origText; }, 2000);
+          setTimeout(function() { btnCopy.textContent = origText; }, 2000);
         });
       });
 
