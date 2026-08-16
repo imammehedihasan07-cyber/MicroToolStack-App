@@ -31,14 +31,15 @@
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.microtoolstack.com/tools/seo/remove-extra-spaces.html">
+  <meta property="og:url" content="https://www.microtoolstack.com/tools/text/remove-extra-spaces.html">
   <meta property="og:title" content="Free Online Remove Extra Spaces Tool | MicroToolStack">
   <meta property="og:description" content="Clean and remove extra whitespace, double spaces, and blank lines from text instantly. 100% free web utility.">
   <meta property="og:image" content="https://www.microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
   <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
   <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
@@ -264,7 +265,7 @@
           <span>Enter or Paste Messy Text</span>
           <span class="counter-info" id="char-word-counter">0 Characters | 0 Words</span>
         </div>
-        <textarea id="text-input" class="form-control" placeholder="Paste text with extra spaces, tabs, or blank lines here...">This   is   an   example    text   with   too   many     spaces,   tabs,   and   uneven   spacing.</textarea>
+        <textarea id="text-input" class="form-control" placeholder="Paste text with extra spaces, tabs, or blank lines here...">This    is    an    example     text    with    too    many     spaces,    tabs,    and    uneven    spacing.</textarea>
       </div>
     </div>
 
@@ -284,7 +285,7 @@
     <!-- Controls Bar -->
     <div class="controls-bar">
       <div style="display: flex; gap: 0.75rem;">
-        <button id="btn-copy" class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-weight: 600; cursor: pointer; background: #10b981;">📋 Copy Cleaned Text</button>
+        <button id="btn-copy" class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-weight: 600; cursor: pointer; background: #10b981; border: none; border-radius: 6px; color: #fff;">📋 Copy Cleaned Text</button>
       </div>
       <div style="display: flex; gap: 0.75rem;">
         <button id="btn-reset" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear Text</button>
@@ -381,24 +382,25 @@
 
       function processText() {
         let text = textInput.value;
+        if (!text) {
+          updateCounters();
+          return;
+        }
 
-        // 1. Collapse double spaces / tabs
+        // 1. Collapse multiple inline spaces / tabs into a single space
         if (chkDouble.checked) {
-          text = text.replace(/[ 	]+/g, ' ');
+          text = text.replace(/[ \t]+/g, ' ');
         }
 
-        // 2. Remove extra blank lines
+        // 2. Remove extra blank lines and trim each line
         if (chkLines.checked) {
-          text = text.split('
-').map(line => line.trim()).join('
-');
-          text = text.replace(/
-\s*
-/g, '
-');
+          text = text.split(/\r?\n/)
+            .map(function(line) { return line.trim(); })
+            .filter(function(line) { return line.length > 0; })
+            .join('\n');
         }
 
-        // 3. Trim edges
+        // 3. Trim leading and trailing outer whitespace
         if (chkTrim.checked) {
           text = text.trim();
         }
@@ -411,20 +413,23 @@
         const val = textInput.value;
         const charCount = val.length;
         const wordCount = val.trim() ? val.trim().split(/\s+/).length : 0;
-        charWordCounter.textContent = `${charCount} Characters | ${wordCount} Words`;
+        charWordCounter.textContent = charCount + ' Characters | ' + wordCount + ' Words';
       }
 
-      [textInput, chkDouble, chkLines, chkTrim].forEach(el => {
-        el.addEventListener('input', processText);
+      [chkDouble, chkLines, chkTrim].forEach(function(el) {
         el.addEventListener('change', processText);
+      });
+
+      textInput.addEventListener('input', function() {
+        updateCounters();
       });
 
       btnCopy.addEventListener('click', function() {
         if (!textInput.value) return;
-        navigator.clipboard.writeText(textInput.value).then(() => {
+        navigator.clipboard.writeText(textInput.value).then(function() {
           const origText = btnCopy.textContent;
           btnCopy.textContent = '✅ Copied!';
-          setTimeout(() => { btnCopy.textContent = origText; }, 2000);
+          setTimeout(function() { btnCopy.textContent = origText; }, 2000);
         });
       });
 
