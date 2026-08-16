@@ -34,7 +34,7 @@
   <meta property="og:url" content="https://www.microtoolstack.com/tools/developer/json-to-csv.html">
   <meta property="og:title" content="Free Online JSON to CSV Converter | MicroToolStack">
   <meta property="og:description" content="Convert JSON arrays and API responses into downloadable CSV spreadsheets instantly. 100% free, fast, and secure developer utility.">
-  <meta property="og:image" content="https://www.microtoolstack.com/assets/images/og-image.png">
+  <meta property="og:image" content="https://www.microtoolstack.com/assets/images/og-image.jpg">
 
   <!-- Favicon Icon for Google & Devices -->
   <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
@@ -414,15 +414,13 @@
           }
 
           // Build CSV Header
-          let csv = headerArray.map(h => escapeCSV(h)).join(',') + '
-';
+          let csv = headerArray.map(h => escapeCSV(h)).join(',') + '\n';
 
           // Build CSV Rows
           parsed.forEach(row => {
             if (typeof row === 'object' && row !== null) {
               const line = headerArray.map(header => escapeCSV(row[header]));
-              csv += line.join(',') + '
-';
+              csv += line.join(',') + '\n';
             }
           });
 
