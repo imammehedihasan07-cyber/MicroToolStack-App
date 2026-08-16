@@ -37,8 +37,9 @@
   <meta property="og:image" content="https://www.microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
   <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
   <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
@@ -290,7 +291,7 @@ orange</textarea>
     <!-- Controls Bar -->
     <div class="controls-bar">
       <div style="display: flex; gap: 0.75rem;">
-        <button id="btn-copy" class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-weight: 600; cursor: pointer; background: #10b981;">📋 Copy Cleaned Text</button>
+        <button id="btn-copy" class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-weight: 600; cursor: pointer; background: #10b981; border: none; border-radius: 6px; color: #fff;">📋 Copy Cleaned Text</button>
       </div>
       <div style="display: flex; gap: 0.75rem;">
         <button id="btn-reset" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear Text</button>
@@ -386,15 +387,20 @@ orange</textarea>
       const btnCopy = document.getElementById('btn-copy');
       const btnReset = document.getElementById('btn-reset');
 
-      function processText() {
+      function processDeduplication() {
         const rawText = textInput.value;
-        const lines = rawText.split('\n');
+        if (!rawText.trim()) {
+          lineCounter.textContent = '0 Lines | 0 Duplicates Removed';
+          return;
+        }
+
+        const lines = rawText.split(/\r?\n/);
         const originalCount = lines.length;
 
         const seen = new Set();
         const cleanedLines = [];
 
-        lines.forEach(line => {
+        lines.forEach(function(line) {
           let processed = line;
           if (chkTrim.checked) {
             processed = processed.trim();
@@ -411,36 +417,64 @@ orange</textarea>
         });
 
         if (chkSort.checked) {
-          cleanedLines.sort((a, b) => a.localeCompare(b));
+          cleanedLines.sort(function(a, b) { return a.localeCompare(b); });
         }
 
         const removedCount = originalCount - cleanedLines.length;
-        lineCounter.textContent = `${cleanedLines.length} Lines | ${removedCount} Duplicates Removed`;
-
+        lineCounter.textContent = cleanedLines.length + ' Lines | ' + removedCount + ' Duplicates Removed';
         textInput.value = cleanedLines.join('\n');
       }
 
-      [textInput, chkCase, chkTrim, chkSort].forEach(el => {
-        el.addEventListener('input', processText);
-        el.addEventListener('change', processText);
+      function updateCounterOnly() {
+        const rawText = textInput.value;
+        if (!rawText.trim()) {
+          lineCounter.textContent = '0 Lines | 0 Duplicates Removed';
+          return;
+        }
+
+        const lines = rawText.split(/\r?\n/);
+        const originalCount = lines.length;
+        const seen = new Set();
+        let uniqueCount = 0;
+
+        lines.forEach(function(line) {
+          let processed = chkTrim.checked ? line.trim() : line;
+          const compareKey = chkCase.checked ? processed : processed.toLowerCase();
+          if (processed !== '' || !chkTrim.checked) {
+            if (!seen.has(compareKey)) {
+              seen.add(compareKey);
+              uniqueCount++;
+            }
+          }
+        });
+
+        const removedCount = originalCount - uniqueCount;
+        lineCounter.textContent = uniqueCount + ' Unique Lines | ' + removedCount + ' Potential Duplicates';
+      }
+
+      textInput.addEventListener('input', updateCounterOnly);
+
+      [chkCase, chkTrim, chkSort].forEach(function(el) {
+        el.addEventListener('change', processDeduplication);
       });
 
       btnCopy.addEventListener('click', function() {
         if (!textInput.value) return;
-        navigator.clipboard.writeText(textInput.value).then(() => {
+        processDeduplication();
+        navigator.clipboard.writeText(textInput.value).then(function() {
           const origText = btnCopy.textContent;
-          btnCopy.textContent = '✅ Copied!';
-          setTimeout(() => { btnCopy.textContent = origText; }, 2000);
+          btnCopy.textContent = '✅ Cleaned & Copied!';
+          setTimeout(function() { btnCopy.textContent = origText; }, 2000);
         });
       });
 
       btnReset.addEventListener('click', function() {
         textInput.value = '';
-        processText();
+        lineCounter.textContent = '0 Lines | 0 Duplicates Removed';
       });
 
-      // Initial run
-      processText();
+      // Initial execution
+      processDeduplication();
     });
   </script>
 </body>
