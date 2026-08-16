@@ -234,6 +234,15 @@ function injectGlobalLayout() {
                             "
                         >
                             Terms
+                      </a>
+                     <a
+                         href="/disclaimer.html"
+                         style="
+                             color: inherit;
+                             text-decoration: none;
+                         "
+                        >
+                           Disclaimer
                         </a>
 
                     </div>
