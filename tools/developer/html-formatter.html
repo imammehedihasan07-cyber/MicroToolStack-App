@@ -34,7 +34,7 @@
   <meta property="og:url" content="https://www.microtoolstack.com/tools/developer/html-formatter.html">
   <meta property="og:title" content="Free Online HTML Formatter & Minifier | MicroToolStack">
   <meta property="og:description" content="Format unformatted HTML code into clean, perfectly indented DOM trees or minify code for faster web loading. 100% free developer utility.">
-  <meta property="og:image" content="https://www.microtoolstack.com/assets/images/og-image.png">
+  <meta property="og:image" content="https://www.microtoolstack.com/assets/images/og-image.jpg">
 
   <!-- Favicon Icon for Google & Devices -->
   <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
@@ -228,7 +228,7 @@
     <div class="editor-grid">
       <div>
         <label for="input-html" class="editor-label">Raw / Unformatted HTML Input</label>
-        <textarea id="input-html" class="html-textarea" placeholder="Paste unformatted or minified HTML code here...&#10;e.g., <div><h1>Title</h1><p>Hello World</p></div>"></textarea>
+        <textarea id="input-html" class="html-textarea" placeholder="Paste unformatted or minified HTML code here...&#10;e.g., &lt;div&gt;&lt;h1&gt;Title&lt;/h1&gt;&lt;p&gt;Hello World&lt;/p&gt;&lt;/div&gt;"></textarea>
       </div>
       <div>
         <label for="output-html" class="editor-label">Formatted / Minified HTML Output</label>
@@ -348,8 +348,8 @@
         // Normalize string whitespace
         let cleaned = html.replace(/>\s+</g, '><').trim();
 
-        // Split tags
-        const tokens = cleaned.split(/(</?[\w\s="'-]+>/g);
+        // Split tags safely using string escaping
+        const tokens = cleaned.split(/(<\/?[a-zA-Z0-9\s="'\-_]+>)/g);
 
         tokens.forEach(token => {
           if (!token.trim()) return;
