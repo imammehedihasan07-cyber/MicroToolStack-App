@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) - Optimized Load -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var gTagScript = document.createElement('script');
+        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        gTagScript.async = true;
+        document.head.appendChild(gTagScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F3WWR9KGB4');
+      }, 1000);
+    });
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>Free Online Image Resizer | Resize JPG, PNG, WEBP Images | MicroToolStack</title>
+  <meta name="description" content="Resize images online for free by custom pixel dimensions or percentages. Lock aspect ratio, optimize quality, and convert image formats with 100% client-side privacy.">
+  <meta name="keywords" content="image resizer, resize image online, resize png, resize jpg, resize webp, change image dimensions, scale image, free photo resizer, media tools">
+
+  <link rel="canonical" href="https://www.microtoolstack.com/tools/media/image-resizer.html">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.microtoolstack.com/tools/media/image-resizer.html">
+  <meta property="og:title" content="Free Online Image Resizer | MicroToolStack">
+  <meta property="og:description" content="Resize photos, banners, and icons with exact custom pixel dimensions and aspect ratio control. 100% free, fast, and privacy-first web utility.">
+  <meta property="og:image" content="https://www.microtoolstack.com/assets/images/og-image.png">
+
+  <!-- Favicon Icons for Google & Devices -->
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
+
+  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Online Image Resizer",
+        "operatingSystem": "All",
+        "applicationCategory": "MultimediaApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "An intuitive client-side image resizing utility to scale, crop-fit, and optimize JPG, PNG, and WEBP pictures by exact dimensions or percentage ratios.",
+        "url": "https://www.microtoolstack.com/tools/media/image-resizer.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How do I resize an image without losing quality?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Upload your picture, keep 'Lock Aspect Ratio' enabled, enter your desired target width or height, adjust the quality slider to high (90-100%), and download your optimized image."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does resizing reduce image file size?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, scaling down image dimensions significantly decreases total pixel counts and overall file size, resulting in much faster website load speeds."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are my uploaded photos sent to remote servers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No! All image rendering, canvas scaling, and file downloads process 100% locally inside your web browser session using client-side JavaScript. Your files remain completely private."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which file formats can I resize?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You can upload and resize JPG, PNG, WEBP, GIF, BMP, and SVG files, and export them into high-quality JPG, PNG, or WEBP formats."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Preconnect and Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <style>
+    .input-group {
+      margin-bottom: 1.25rem;
+    }
+    .input-label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.5rem;
+    }
+    .form-control, .form-select {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
+      color: var(--text-primary, #fff);
+      outline: none;
+      box-sizing: border-box;
+    }
+    .form-control:focus, .form-select:focus {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+
+    /* Drag and Drop Zone */
+    .drop-zone {
+      width: 100%;
+      min-height: 180px;
+      border: 2px dashed var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      padding: 1.5rem;
+      box-sizing: border-box;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .drop-zone:hover, .drop-zone.dragover {
+      border-color: var(--accent-primary, #3b82f6);
+      background-color: rgba(59, 130, 246, 0.05);
+    }
+
+    /* Image Workspace Preview Stage */
+    .stage-workspace {
+      width: 100%;
+      min-height: 260px;
+      background: #111827;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1.5rem;
+      box-sizing: border-box;
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .image-preview-wrapper {
+      max-width: 100%;
+      max-height: 340px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .image-preview-wrapper img {
+      max-width: 100%;
+      max-height: 320px;
+      height: auto;
+      border-radius: 6px;
+      object-fit: contain;
+    }
+
+    .meta-badge {
+      display: inline-block;
+      font-size: 0.85rem;
+      color: var(--text-secondary, #9ca3af);
+      background: rgba(255, 255, 255, 0.05);
+      padding: 0.35rem 0.85rem;
+      border-radius: 6px;
+      border: 1px solid var(--border-color, #333);
+      margin-top: 0.75rem;
+    }
+
+    .controls-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .checkbox-container {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      color: var(--text-primary, #fff);
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .checkbox-container input {
+      accent-color: #3b82f6;
+      width: 1.1rem;
+      height: 1.1rem;
+      cursor: pointer;
+    }
+
+    .content-box {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .content-box h2 {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul {
+      color: var(--text-secondary, #9ca3af);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .content-box ul {
+      padding-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .content-box li {
+      margin-bottom: 0.5rem;
+    }
+    .related-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .related-card {
+      display: block;
+      padding: 1rem;
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      color: var(--text-primary, #fff);
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .related-card:hover {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+  </style>
+</head>
+<body style="margin: 0; padding: 0;">
+
+  <!-- Header Section -->
+  <header class="custom-header">
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
+    </a>
+    <nav class="custom-nav">
+      <a href="/#categories">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
+    </nav>
+  </header>
+
+  <!-- Main Container -->
+  <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
+    
+    <!-- Tool Title & Description -->
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online Image Resizer & Scaler</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Resize, compress, and convert PNG, JPG, and WEBP pictures by exact dimensions or scale percentage.</p>
+    </div>
+
+    <!-- Drag and Drop Image Zone -->
+    <div class="drop-zone" id="drop-zone">
+      <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🖼️</div>
+      <div style="font-size: 1.05rem; font-weight: 600; color: #fff; margin-bottom: 0.25rem;">Drag & Drop Image Here to Resize</div>
+      <div style="font-size: 0.85rem; color: #9ca3af;">or click to browse from device (JPG, PNG, WEBP, GIF, SVG)</div>
+      <input type="file" id="file-input" accept="image/*" style="display: none;">
+    </div>
+
+    <!-- Dimension & Quality Settings Card -->
+    <div class="content-box" id="settings-card" style="display: none; margin-bottom: 1.5rem;">
+      
+      <!-- Preset Quick Buttons -->
+      <div style="margin-bottom: 1.25rem;">
+        <label class="input-label">Quick Scaling Presets</label>
+        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+          <button type="button" class="btn preset-btn" data-percent="25" style="padding: 0.4rem 0.8rem; font-size: 0.8rem; background: #374151; color: #fff; border: none; border-radius: 4px; cursor: pointer;">25%</button>
+          <button type="button" class="btn preset-btn" data-percent="50" style="padding: 0.4rem 0.8rem; font-size: 0.8rem; background: #374151; color: #fff; border: none; border-radius: 4px; cursor: pointer;">50%</button>
+          <button type="button" class="btn preset-btn" data-percent="75" style="padding: 0.4rem 0.8rem; font-size: 0.8rem; background: #374151; color: #fff; border: none; border-radius: 4px; cursor: pointer;">75%</button>
+          <button type="button" class="btn preset-btn" data-percent="100" style="padding: 0.4rem 0.8rem; font-size: 0.8rem; background: #3b82f6; color: #fff; border: none; border-radius: 4px; cursor: pointer;">Original (100%)</button>
+        </div>
+      </div>
+
+      <!-- Width & Height Dimension Controls -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem;" class="input-group">
+        <div>
+          <label for="input-width" class="input-label">Width (Pixels)</label>
+          <input type="number" id="input-width" class="form-control" placeholder="Width in px" min="1">
+        </div>
+        <div>
+          <label for="input-height" class="input-label">Height (Pixels)</label>
+          <input type="number" id="input-height" class="form-control" placeholder="Height in px" min="1">
+        </div>
+        <div style="display: flex; align-items: flex-end; padding-bottom: 0.5rem;">
+          <label class="checkbox-container">
+            <input type="checkbox" id="check-aspect-ratio" checked>
+            <span>Lock Aspect Ratio</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Format & Quality Controls -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+        <div>
+          <label for="output-format" class="input-label">Export Format</label>
+          <select id="output-format" class="form-select">
+            <option value="image/jpeg">JPG (JPEG)</option>
+            <option value="image/png">PNG (Lossless Transparency)</option>
+            <option value="image/webp" selected>WEBP (Fast & Compact)</option>
+          </select>
+        </div>
+        <div id="quality-control-wrapper">
+          <label for="quality-slider" class="input-label">Image Quality (<span id="quality-val">90</span>%)</label>
+          <input type="range" id="quality-slider" min="10" max="100" value="90" style="width: 100%; accent-color: #3b82f6;">
+        </div>
+      </div>
+    </div>
+
+    <!-- Visual Workspace Stage -->
+    <div class="stage-workspace">
+      <div id="image-preview-container" class="image-preview-wrapper"></div>
+      <div id="status-msg" style="color: #94a3b8; font-size: 0.95rem;">
+        📂 Upload an image to view interactive dimensions & resize controls...
+      </div>
+      <div id="img-meta" class="meta-badge" style="display: none;">Dimensions: 0 x 0 px</div>
+    </div>
+
+    <!-- Controls Bar -->
+    <div class="controls-bar">
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-download-image" class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-weight: 600; cursor: pointer; background: #10b981; border: none; border-radius: 6px; color: #fff;">💾 Download Resized Image</button>
+      </div>
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear</button>
+      </div>
+    </div>
+
+    <!-- Hidden Processing Canvas -->
+    <canvas id="proc-canvas" style="display: none;"></canvas>
+
+    <!-- SEO Article Content Box 1 -->
+    <div class="content-box">
+      <h2>Why Precision Image Resizing Matters for High-Performance Websites</h2>
+      <p>Delivering optimized visual assets is vital for modern web performance, core web vitals, and user engagement. High-resolution digital photographs taken on modern smartphones or cameras often exceed 4000 pixels in width and 10MB in file size. Serving uncompressed raw images dramatically slows down page speed, increases bounce rates, and consumes unnecessary mobile bandwidth.</p>
+
+      <p>By resizing images to exact layout dimensions, web developers, content creators, and social media managers ensure fast page load times and crisp rendering on screens of all sizes. MicroToolStack's <strong>Online Image Resizer</strong> allows you to scale, constrain aspect ratios, and convert formats with instantaneous client-side processing.</p>
+    </div>
+
+    <!-- SEO Article Content Box 2 -->
+    <div class="content-box">
+      <h2>Key Features of MicroToolStack's Image Resizer</h2>
+      <ul>
+        <li><strong>Custom Width and Height Scaling:</strong> Set exact target dimensions in pixels or use rapid percentage presets (25%, 50%, 75%, 100%).</li>
+        <li><strong>Constrained Aspect Ratio:</strong> Lock proportions automatically to prevent distortion, stretching, or image warping.</li>
+        <li><strong>Multi-Format Image Export:</strong> Convert and download images seamlessly to WEBP, JPG, or PNG formats.</li>
+        <li><strong>Adjustable Compression Quality:</strong> Fine-tune quality sliders to strike the ideal balance between visual clarity and lightweight file sizes.</li>
+        <li><strong>100% Client-Side Privacy:</strong> All canvas operations run strictly inside your web browser session using JavaScript. Your photos are never uploaded or stored on remote servers.</li>
+      </ul>
+    </div>
+
+    <!-- SEO Article Content Box 3 -->
+    <div class="content-box">
+      <h2>Recommended Image Dimensions for Web and Social Platforms</h2>
+      <ul>
+        <li><strong>Website Hero & Banners:</strong> 1920 x 1080 px (16:9 widescreen ratio)</li>
+        <li><strong>Blog Post Featured Images:</strong> 1200 x 630 px (Optimal for Facebook Open Graph and Twitter Cards)</li>
+        <li><strong>Instagram Square Posts:</strong> 1080 x 1080 px (1:1 square ratio)</li>
+        <li><strong>Instagram Stories & Reels:</strong> 1080 x 1920 px (9:16 vertical ratio)</li>
+        <li><strong>Website Favicons & Icons:</strong> 48 x 48 px or 192 x 192 px</li>
+      </ul>
+    </div>
+
+    <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
+    <div class="content-box">
+      <h2>Explore Related Media Tools</h2>
+      <p>Discover our complementary online media utilities:</p>
+      <div class="related-links">
+        <a href="/tools/media/png-to-svg.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📐 PNG to SVG Vector Converter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Convert PNG and JPG raster images into scalable SVG vectors.</span>
+        </a>
+        <a href="/tools/media/image-cropper.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">✂️ Interactive Image Cropper</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Crop, rotate, and scale photos into exact aspect ratios.</span>
+        </a>
+        <a href="/tools/media/ico-converter.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🌐 Image to ICO Converter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Convert PNG and JPG images into website favicons.</span>
+        </a>
+        <a href="/tools/media/image-to-base64.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🖼️ Image to Base64 Converter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Convert graphics into Base64 Data URIs & CSS strings.</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="content-box">
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How do I resize an image online?</h3>
+        <p>Drop your image into the workspace, adjust the width or height values, select your desired export format, and click "Download Resized Image".</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What is Aspect Ratio and why should I lock it?</h3>
+        <p>Aspect ratio is the proportional relationship between width and height. Locking it prevents images from appearing unnaturally stretched or squished when resizing.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Are my uploaded photos secure and private?</h3>
+        <p>Yes. All image processing executes strictly within your web browser using HTML5 Canvas and JavaScript. No image data is ever transferred to remote servers.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this Image Resizer tool free?</h3>
+        <p>Yes, MicroToolStack's Image Resizer is 100% free with unlimited conversions and no account sign-up required.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer Container Placeholder -->
+  <div id="footer-container"></div>
+
+  <!-- JavaScript Utilities & Logic -->
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const dropZone = document.getElementById('drop-zone');
+      const fileInput = document.getElementById('file-input');
+      const imagePreviewContainer = document.getElementById('image-preview-container');
+      const statusMsg = document.getElementById('status-msg');
+      const imgMeta = document.getElementById('img-meta');
+      const settingsCard = document.getElementById('settings-card');
+
+      const inputWidth = document.getElementById('input-width');
+      const inputHeight = document.getElementById('input-height');
+      const checkAspectRatio = document.getElementById('check-aspect-ratio');
+      const outputFormat = document.getElementById('output-format');
+      const qualitySlider = document.getElementById('quality-slider');
+      const qualityVal = document.getElementById('quality-val');
+      const qualityControlWrapper = document.getElementById('quality-control-wrapper');
+      const presetBtns = document.querySelectorAll('.preset-btn');
+
+      const btnDownloadImage = document.getElementById('btn-download-image');
+      const btnClear = document.getElementById('btn-clear');
+      const procCanvas = document.getElementById('proc-canvas');
+
+      let originalImage = null;
+      let originalWidth = 0;
+      let originalHeight = 0;
+      let originalAspectRatio = 1;
+      let currentFileName = 'resized-image';
+
+      dropZone.addEventListener('click', () => fileInput.click());
+
+      dropZone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropZone.classList.add('dragover');
+      });
+
+      dropZone.addEventListener('dragleave', () => dropZone.classList.remove('dragover'));
+
+      dropZone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropZone.classList.remove('dragover');
+        if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+          handleFile(e.dataTransfer.files[0]);
+        }
+      });
+
+      fileInput.addEventListener('change', (e) => {
+        if (e.target.files && e.target.files[0]) {
+          handleFile(e.target.files[0]);
+        }
+      });
+
+      function handleFile(file) {
+        if (!file.type.startsWith('image/')) {
+          alert('Please upload a valid image file (JPG, PNG, WEBP, etc.).');
+          return;
+        }
+
+        currentFileName = file.name.substring(0, file.name.lastIndexOf('.')) || 'resized-image';
+
+        const reader = new FileReader();
+        reader.onload = function(evt) {
+          const img = new Image();
+          img.onload = function() {
+            originalImage = img;
+            originalWidth = img.naturalWidth;
+            originalHeight = img.naturalHeight;
+            originalAspectRatio = originalWidth / originalHeight;
+
+            inputWidth.value = originalWidth;
+            inputHeight.value = originalHeight;
+
+            renderPreview();
+            statusMsg.style.display = 'none';
+            settingsCard.style.display = 'block';
+            updateMetaBadge();
+          };
+          img.src = evt.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+
+      // Live Width / Height Input Listeners
+      inputWidth.addEventListener('input', function() {
+        if (!originalImage) return;
+        const val = parseInt(inputWidth.value, 10);
+        if (val > 0 && checkAspectRatio.checked) {
+          inputHeight.value = Math.round(val / originalAspectRatio);
+        }
+        updateMetaBadge();
+      });
+
+      inputHeight.addEventListener('input', function() {
+        if (!originalImage) return;
+        const val = parseInt(inputHeight.value, 10);
+        if (val > 0 && checkAspectRatio.checked) {
+          inputWidth.value = Math.round(val * originalAspectRatio);
+        }
+        updateMetaBadge();
+      });
+
+      // Quick Percentage Scaling Presets
+      presetBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          if (!originalImage) return;
+          const percent = parseInt(this.dataset.percent, 10);
+          inputWidth.value = Math.round((originalWidth * percent) / 100);
+          inputHeight.value = Math.round((originalHeight * percent) / 100);
+          updateMetaBadge();
+        });
+      });
+
+      // Quality Slider Listener
+      qualitySlider.addEventListener('input', () => {
+        qualityVal.textContent = qualitySlider.value;
+      });
+
+      // Format Selection Listener
+      outputFormat.addEventListener('change', () => {
+        if (outputFormat.value === 'image/png') {
+          qualityControlWrapper.style.opacity = '0.5';
+          qualityControlWrapper.style.pointerEvents = 'none';
+        } else {
+          qualityControlWrapper.style.opacity = '1';
+          qualityControlWrapper.style.pointerEvents = 'auto';
+        }
+      });
+
+      function updateMetaBadge() {
+        const w = parseInt(inputWidth.value, 10) || 0;
+        const h = parseInt(inputHeight.value, 10) || 0;
+        imgMeta.textContent = `Target Dimensions: ${w} x ${h} px (Original: ${originalWidth} x ${originalHeight} px)`;
+        imgMeta.style.display = 'inline-block';
+      }
+
+      function renderPreview() {
+        imagePreviewContainer.innerHTML = '';
+        const previewImg = document.createElement('img');
+        previewImg.src = originalImage.src;
+        previewImg.alt = 'Uploaded Image Preview';
+        imagePreviewContainer.appendChild(previewImg);
+      }
+
+      // Download Resized Image
+      btnDownloadImage.addEventListener('click', function() {
+        if (!originalImage) {
+          alert('Please upload an image first.');
+          return;
+        }
+
+        const targetW = parseInt(inputWidth.value, 10);
+        const targetH = parseInt(inputHeight.value, 10);
+
+        if (!targetW || !targetH || targetW <= 0 || targetH <= 0) {
+          alert('Please enter valid positive width and height dimensions.');
+          return;
+        }
+
+        procCanvas.width = targetW;
+        procCanvas.height = targetH;
+
+        const ctx = procCanvas.getContext('2d');
+        ctx.clearRect(0, 0, targetW, targetH);
+
+        // Smooth image downsampling settings
+        ctx.imageSmoothingEnabled = true;
+        ctx.imageSmoothingQuality = 'high';
+
+        ctx.drawImage(originalImage, 0, 0, targetW, targetH);
+
+        const format = outputFormat.value;
+        const quality = parseInt(qualitySlider.value, 10) / 100;
+        
+        let fileExtension = 'jpg';
+        if (format === 'image/png') fileExtension = 'png';
+        if (format === 'image/webp') fileExtension = 'webp';
+
+        const dataUrl = procCanvas.toDataURL(format, quality);
+
+        const link = document.createElement('a');
+        link.href = dataUrl;
+        link.download = `${currentFileName}-${targetW}x${targetH}.${fileExtension}`;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      });
+
+      // Clear Workspace
+      btnClear.addEventListener('click', function() {
+        originalImage = null;
+        originalWidth = 0;
+        originalHeight = 0;
+        fileInput.value = '';
+        imagePreviewContainer.innerHTML = '';
+        inputWidth.value = '';
+        inputHeight.value = '';
+        statusMsg.style.display = 'block';
+        imgMeta.style.display = 'none';
+        settingsCard.style.display = 'none';
+      });
+    });
+  </script>
+</body>
+</html>
