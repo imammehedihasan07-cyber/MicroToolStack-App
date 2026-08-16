@@ -34,7 +34,7 @@
   <meta property="og:url" content="https://www.microtoolstack.com/tools/developer/html-minifier.html">
   <meta property="og:title" content="Free Fast HTML Minifier & Document Compressor | MicroToolStack">
   <meta property="og:description" content="Minify HTML documents instantly to shrink file size and speed up page rendering. 100% free, browser-based developer utility.">
-  <meta property="og:image" content="https://www.microtoolstack.com/assets/images/og-image.png">
+  <meta property="og:image" content="https://www.microtoolstack.com/assets/images/og-image.jpg">
 
   <!-- Favicon Icon for Google & Devices -->
   <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
@@ -236,7 +236,7 @@
     <div class="editor-grid">
       <div>
         <label for="input-html" class="editor-label">Uncompressed Raw HTML Input</label>
-        <textarea id="input-html" class="html-textarea" placeholder="Paste your raw, uncompressed HTML code here...&#10;e.g.,&#10;<!-- Header Section -->&#10;<div class=&quot;header&quot;>&#10;  <h1>Welcome</h1>&#10;</div>"></textarea>
+        <textarea id="input-html" class="html-textarea" placeholder="Paste your raw, uncompressed HTML code here...&#10;e.g.,&#10;&lt;!-- Header Section --&gt;&#10;&lt;div class=&quot;header&quot;&gt;&#10;  &lt;h1&gt;Welcome&lt;/h1&gt;&#10;&lt;/div&gt;"></textarea>
       </div>
       <div>
         <label for="output-html" class="editor-label">Minified Production HTML Output</label>
@@ -369,7 +369,7 @@
         const tab = '  '; // 2-spaces
 
         let cleaned = html.replace(/>\s+</g, '><').trim();
-        const tokens = cleaned.split(/(</?[\w\s="'-]+>/g);
+        const tokens = cleaned.split(/(<\/?[a-zA-Z0-9\s="'\-_]+>)/g);
 
         tokens.forEach(token => {
           if (!token.trim()) return;
