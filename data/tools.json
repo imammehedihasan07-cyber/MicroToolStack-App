@@ -1190,5 +1190,15 @@
     "isPopular": false,
     "isNew": true,
     "tags": ["pdf watermark remover", "remove watermark from pdf", "clear pdf stamps", "clean pdf"]
+  },
+  {
+    "id": "image-resizer",
+    "name": "Image Resizer",
+    "category": "media",
+    "url": "/tools/media/image-resizer.html",
+    "description": "Resize JPG, PNG, and WEBP images with custom pixel dimensions and aspect ratio control.",
+    "icon": "🖼️",
+    "isPopular": true,
+    "isNew": true
   }
 ]
