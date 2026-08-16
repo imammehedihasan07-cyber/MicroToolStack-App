@@ -95,7 +95,8 @@
   <url><loc>https://www.microtoolstack.com/tools/media/voice-recorder.html</loc><priority>0.8</priority></url>
   <url><loc>https://www.microtoolstack.com/tools/media/image-watermark.html</loc><priority>0.8</priority></url>
   <url><loc>https://www.microtoolstack.com/tools/media/gif-to-mp4.html</loc><priority>0.8</priority></url>
-
+  <url><loc>https://www.microtoolstack.com/tools/media/image-resizer.html</loc><priority>0.8</priority></url>
+  
   <!-- 6. AI Tools (5 Tools) -->
   <url><loc>https://www.microtoolstack.com/tools/ai/caption-generator.html</loc><priority>0.8</priority></url>
   <url><loc>https://www.microtoolstack.com/tools/ai/hashtag-generator.html</loc><priority>0.8</priority></url>
