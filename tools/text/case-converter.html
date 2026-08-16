@@ -31,14 +31,15 @@
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.microtoolstack.com/tools/seo/case-converter.html">
+  <meta property="og:url" content="https://www.microtoolstack.com/tools/text/case-converter.html">
   <meta property="og:title" content="Free Online Case Converter | MicroToolStack">
   <meta property="og:description" content="Transform text between UPPERCASE, lowercase, Title Case, camelCase, and snake_case instantly. 100% free web utility.">
   <meta property="og:image" content="https://www.microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
   <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
   <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
@@ -280,7 +281,7 @@
     <!-- Controls Bar -->
     <div class="controls-bar">
       <div style="display: flex; gap: 0.75rem;">
-        <button id="btn-copy" class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-weight: 600; cursor: pointer; background: #10b981;">📋 Copy Converted Text</button>
+        <button id="btn-copy" class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-weight: 600; cursor: pointer; background: #10b981; border: none; border-radius: 6px; color: #fff;">📋 Copy Converted Text</button>
       </div>
       <div style="display: flex; gap: 0.75rem;">
         <button id="btn-reset" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear Text</button>
@@ -394,35 +395,37 @@
         const val = textInput.value;
         const charCount = val.length;
         const wordCount = val.trim() ? val.trim().split(/\s+/).length : 0;
-        charWordCounter.textContent = `${charCount} Characters | ${wordCount} Words`;
+        charWordCounter.textContent = charCount + ' Characters | ' + wordCount + ' Words';
       }
 
       textInput.addEventListener('input', updateCounters);
 
       // UPPERCASE
-      btnUpper.addEventListener('click', () => {
+      btnUpper.addEventListener('click', function() {
         textInput.value = textInput.value.toUpperCase();
         updateCounters();
       });
 
       // lowercase
-      btnLower.addEventListener('click', () => {
+      btnLower.addEventListener('click', function() {
         textInput.value = textInput.value.toLowerCase();
         updateCounters();
       });
 
       // Title Case
-      btnTitle.addEventListener('click', () => {
+      btnTitle.addEventListener('click', function() {
         const words = textInput.value.toLowerCase().split(/\s+/);
-        const titled = words.map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+        const titled = words.map(function(w) {
+          return w ? w.charAt(0).toUpperCase() + w.slice(1) : '';
+        }).join(' ');
         textInput.value = titled;
         updateCounters();
       });
 
       // Sentence case
-      btnSentence.addEventListener('click', () => {
+      btnSentence.addEventListener('click', function() {
         const sentences = textInput.value.toLowerCase().split(/([.?!]\s+)/);
-        const result = sentences.map(s => {
+        const result = sentences.map(function(s) {
           if (s.length === 0) return '';
           return s.charAt(0).toUpperCase() + s.slice(1);
         }).join('');
@@ -431,7 +434,7 @@
       });
 
       // camelCase
-      btnCamel.addEventListener('click', () => {
+      btnCamel.addEventListener('click', function() {
         const words = textInput.value.trim().toLowerCase().split(/[^a-zA-Z0-9]+/);
         if (words.length === 0) return;
         let camel = words[0];
@@ -445,33 +448,35 @@
       });
 
       // snake_case
-      btnSnake.addEventListener('click', () => {
+      btnSnake.addEventListener('click', function() {
         const words = textInput.value.trim().toLowerCase().split(/[^a-zA-Z0-9]+/);
-        textInput.value = words.filter(w => w.length > 0).join('_');
+        textInput.value = words.filter(function(w) { return w.length > 0; }).join('_');
         updateCounters();
       });
 
       // kebab-case
-      btnKebab.addEventListener('click', () => {
+      btnKebab.addEventListener('click', function() {
         const words = textInput.value.trim().toLowerCase().split(/[^a-zA-Z0-9]+/);
-        textInput.value = words.filter(w => w.length > 0).join('-');
+        textInput.value = words.filter(function(w) { return w.length > 0; }).join('-');
         updateCounters();
       });
 
       // InVeRsE CaSe
-      btnInverse.addEventListener('click', () => {
+      btnInverse.addEventListener('click', function() {
         const chars = textInput.value.split('');
-        const inverted = chars.map((c, i) => i % 2 === 0 ? c.toLowerCase() : c.toUpperCase()).join('');
+        const inverted = chars.map(function(c, i) {
+          return i % 2 === 0 ? c.toLowerCase() : c.toUpperCase();
+        }).join('');
         textInput.value = inverted;
         updateCounters();
       });
 
       btnCopy.addEventListener('click', function() {
         if (!textInput.value) return;
-        navigator.clipboard.writeText(textInput.value).then(() => {
+        navigator.clipboard.writeText(textInput.value).then(function() {
           const origText = btnCopy.textContent;
           btnCopy.textContent = '✅ Copied!';
-          setTimeout(() => { btnCopy.textContent = origText; }, 2000);
+          setTimeout(function() { btnCopy.textContent = origText; }, 2000);
         });
       });
 
