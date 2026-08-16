@@ -37,8 +37,9 @@
   <meta property="og:image" content="https://www.microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
   <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
   <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
@@ -244,7 +245,7 @@
       <a href="/#categories">Categories</a>
       <a href="/about.html">About</a>
       <a href="/contact.html">Contact</a>
-      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">ЁЯМЩ</button>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
     </nav>
   </header>
 
@@ -287,10 +288,10 @@
     <!-- Controls Bar -->
     <div class="controls-bar">
       <div style="display: flex; gap: 0.75rem;">
-        <button id="btn-copy" class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-weight: 600; cursor: pointer; background: #10b981;">ЁЯУЛ Copy Text</button>
+        <button id="btn-copy" class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-weight: 600; cursor: pointer; background: #10b981; border: none; border-radius: 6px; color: #fff;">📋 Copy Text</button>
       </div>
       <div style="display: flex; gap: 0.75rem;">
-        <button id="btn-reset" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">ЁЯЧСя╕П Clear Text</button>
+        <button id="btn-reset" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear Text</button>
       </div>
     </div>
 
@@ -330,15 +331,15 @@
       <p>Discover our complementary online text tools:</p>
       <div class="related-links">
         <a href="/tools/text/word-counter.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">ЁЯУК Real-Time Word Counter</strong>
+          <strong style="display:block; margin-bottom: 0.25rem;">📊 Real-Time Word Counter</strong>
           <span style="font-size: 0.85rem; color: #9ca3af;">Analyze character counts, reading time, and sentence stats.</span>
         </a>
         <a href="/tools/text/character-counter.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">ЁЯФд Online Character Counter</strong>
+          <strong style="display:block; margin-bottom: 0.25rem;">🔠 Online Character Counter</strong>
           <span style="font-size: 0.85rem; color: #9ca3af;">Count characters, words, sentences, and paragraphs.</span>
         </a>
         <a href="/tools/seo/keyword-density-checker.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">ЁЯУК Keyword Density Checker</strong>
+          <strong style="display:block; margin-bottom: 0.25rem;">📊 Keyword Density Checker</strong>
           <span style="font-size: 0.85rem; color: #9ca3af;">Analyze word frequency percentages and key phrase densities.</span>
         </a>
       </div>
@@ -395,7 +396,7 @@
 
       function countTotalSyllables(wordsArr) {
         let count = 0;
-        wordsArr.forEach(w => {
+        wordsArr.forEach(function(w) {
           count += countSyllables(w);
         });
         return Math.max(1, count);
@@ -403,13 +404,13 @@
 
       function calculateReadability() {
         const text = textInput.value;
-        const words = text.trim() ? text.trim().match(/ [a-zA-Z0-9]+(?:'[a-zA-Z0-9]+)? /g) || [] : [];
+        const words = text.trim() ? text.match(/[a-zA-Z0-9]+(?:'[a-zA-Z0-9]+)?/g) || [] : [];
         const wordCount = words.length;
 
-        const sentences = text.trim() ? text.split(/[.!?]+/).filter(s => s.trim().length > 0).length : 0;
+        const sentences = text.trim() ? text.split(/[.!?]+/).filter(function(s) { return s.trim().length > 0; }).length : 0;
         const validSentences = Math.max(1, sentences);
 
-        charWordInfo.textContent = `${wordCount} Words | ${validSentences} Sentences`;
+        charWordInfo.textContent = wordCount + ' Words | ' + (text.trim() ? sentences : 0) + ' Sentences';
 
         if (wordCount === 0) {
           statEase.textContent = '0.0';
@@ -452,10 +453,10 @@
 
       btnCopy.addEventListener('click', function() {
         if (!textInput.value) return;
-        navigator.clipboard.writeText(textInput.value).then(() => {
+        navigator.clipboard.writeText(textInput.value).then(function() {
           const origText = btnCopy.textContent;
-          btnCopy.textContent = 'тЬЕ Copied!';
-          setTimeout(() => { btnCopy.textContent = origText; }, 2000);
+          btnCopy.textContent = '✅ Copied!';
+          setTimeout(function() { btnCopy.textContent = origText; }, 2000);
         });
       });
 
