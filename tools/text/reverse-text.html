@@ -37,8 +37,9 @@
   <meta property="og:image" content="https://www.microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
   <link rel="apple-touch-icon" href="/assets/images/favicon.png">
 
   <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
@@ -284,7 +285,7 @@
     <!-- Controls Bar -->
     <div class="controls-bar">
       <div style="display: flex; gap: 0.75rem;">
-        <button id="btn-copy" class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-weight: 600; cursor: pointer; background: #10b981;">📋 Copy Reversed Text</button>
+        <button id="btn-copy" class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-weight: 600; cursor: pointer; background: #10b981; border: none; border-radius: 6px; color: #fff;">📋 Copy Reversed Text</button>
       </div>
       <div style="display: flex; gap: 0.75rem;">
         <button id="btn-reset" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear Text</button>
@@ -379,29 +380,28 @@
       const btnCopy = document.getElementById('btn-copy');
       const btnReset = document.getElementById('btn-reset');
 
-      let originalText = textInput.value;
+      let sourceText = textInput.value;
 
       function processText() {
-        let text = textInput.value;
-
-        if (modeChars.checked) {
-          // Reverse every character
-          text = text.split('').reverse().join('');
-        } else if (modeWords.checked) {
-          // Reverse word order per line
-          text = text.split('
-').map(line => {
-            return line.split(/\s+/).reverse().join(' ');
-          }).join('
-');
-        } else if (modeLines.checked) {
-          // Reverse line order
-          text = text.split('
-').reverse().join('
-');
+        if (!sourceText) {
+          textInput.value = '';
+          updateCounters();
+          return;
         }
 
-        textInput.value = text;
+        let output = sourceText;
+
+        if (modeChars.checked) {
+          output = Array.from(sourceText).reverse().join('');
+        } else if (modeWords.checked) {
+          output = sourceText.split(/\r?\n/).map(function(line) {
+            return line.trim() ? line.split(/\s+/).reverse().join(' ') : line;
+          }).join('\n');
+        } else if (modeLines.checked) {
+          output = sourceText.split(/\r?\n/).reverse().join('\n');
+        }
+
+        textInput.value = output;
         updateCounters();
       }
 
@@ -409,33 +409,30 @@
         const val = textInput.value;
         const charCount = val.length;
         const wordCount = val.trim() ? val.trim().split(/\s+/).length : 0;
-        charWordCounter.textContent = `${charCount} Characters | ${wordCount} Words`;
+        charWordCounter.textContent = charCount + ' Characters | ' + wordCount + ' Words';
       }
 
       textInput.addEventListener('input', function() {
-        originalText = textInput.value;
+        sourceText = textInput.value;
         updateCounters();
       });
 
-      [modeChars, modeWords, modeLines].forEach(el => {
-        el.addEventListener('change', function() {
-          // Always re-apply from original or current depending on workflow; let's apply on current
-          processText();
-        });
+      [modeChars, modeWords, modeLines].forEach(function(el) {
+        el.addEventListener('change', processText);
       });
 
       btnCopy.addEventListener('click', function() {
         if (!textInput.value) return;
-        navigator.clipboard.writeText(textInput.value).then(() => {
+        navigator.clipboard.writeText(textInput.value).then(function() {
           const origText = btnCopy.textContent;
           btnCopy.textContent = '✅ Copied!';
-          setTimeout(() => { btnCopy.textContent = origText; }, 2000);
+          setTimeout(function() { btnCopy.textContent = origText; }, 2000);
         });
       });
 
       btnReset.addEventListener('click', function() {
         textInput.value = '';
-        originalText = '';
+        sourceText = '';
         updateCounters();
       });
 
