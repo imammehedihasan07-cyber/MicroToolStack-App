@@ -63,6 +63,16 @@
   <url><loc>https://www.microtoolstack.com/tools/developer/cron-job-generator.html</loc><priority>0.8</priority></url>
   <url><loc>https://www.microtoolstack.com/tools/developer/http-status-explainer.html</loc><priority>0.8</priority></url>
   <url><loc>https://www.microtoolstack.com/tools/developer/url-encoder-decoder.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/developer/jwt-decoder.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/developer/cron-generator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/developer/cron-translator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/developer/sql-formatter.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/developer/xml-formatter.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/developer/yaml-formatter.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/developer/http-status-lookup.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/developer/mime-type-lookup.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/developer/user-agent-parser.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/developer/ip-address-info.html</loc><priority>0.8</priority></url>
 
   <!-- 4. Calculators (9 Tools) -->
   <url><loc>https://www.microtoolstack.com/tools/calculator/age-calculator.html</loc><priority>0.8</priority></url>
@@ -74,6 +84,8 @@
   <url><loc>https://www.microtoolstack.com/tools/calculator/paypal-stripe-fee-calculator.html</loc><priority>0.8</priority></url>
   <url><loc>https://www.microtoolstack.com/tools/calculator/cgpa-to-percentage.html</loc><priority>0.8</priority></url>
   <url><loc>https://www.microtoolstack.com/tools/calculator/discount-savings-calculator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/calculator/currency-converter.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/calculator/roi-calculator.html</loc><priority>0.8</priority></url>
 
   <!-- 5. Media Tools (19 Tools) -->
   <url><loc>https://www.microtoolstack.com/tools/media/svg-to-png.html</loc><priority>0.8</priority></url>
