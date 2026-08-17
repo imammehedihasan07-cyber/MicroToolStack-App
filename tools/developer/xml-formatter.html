@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) - Optimized Load -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var gTagScript = document.createElement('script');
+        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        gTagScript.async = true;
+        document.head.appendChild(gTagScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F3WWR9KGB4');
+      }, 1000);
+    });
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>Free Online XML Formatter & Beautifier | MicroToolStack</title>
+  <meta name="description" content="Format, validate and beautify XML code online instantly with proper indentation using our free developer utility tool.">
+  <meta name="keywords" content="xml formatter, xml beautifier, format xml online, validate xml syntax, xml prettifier">
+
+  <link rel="canonical" href="https://www.microtoolstack.com/tools/developer/xml-formatter.html">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.microtoolstack.com/tools/developer/xml-formatter.html">
+  <meta property="og:title" content="Free Online XML Formatter | MicroToolStack">
+  <meta property="og:description" content="Beautify and format your XML code instantly. 100% free online developer tool.">
+  <meta property="og:image" content="https://www.microtoolstack.com/assets/images/og-image.png">
+
+  <!-- Favicon Icon for Google & Devices -->
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
+
+  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "XML Formatter",
+        "operatingSystem": "All",
+        "applicationCategory": "DeveloperApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "An online developer tool to format, validate, and beautify XML documents with correct indentation.",
+        "url": "https://www.microtoolstack.com/tools/developer/xml-formatter.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does this XML Formatter work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Paste your raw XML code into the input box and click Format XML to parse and organize tags with proper nested indentation."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does it validate XML syntax?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! The tool checks for structural correctness using DOM parsing and alerts you if there are parsing errors."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this tool free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, MicroToolStack's XML Formatter is 100% free with no registration required."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Preconnect and Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <style>
+    .input-group {
+      margin-bottom: 1.25rem;
+    }
+    .input-label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.5rem;
+    }
+    .form-control {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
+      color: var(--text-primary, #fff);
+      outline: none;
+      box-sizing: border-box;
+    }
+    .form-control:focus {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+    .content-box {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .content-box h2 {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul {
+      color: var(--text-secondary, #9ca3af);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .content-box ul {
+      padding-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .content-box li {
+      margin-bottom: 0.5rem;
+    }
+    .related-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .related-card {
+      display: block;
+      padding: 1rem;
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      color: var(--text-primary, #fff);
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .related-card:hover {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+  </style>
+</head>
+<body style="margin: 0; padding: 0;">
+
+  <!-- Header Section -->
+  <header class="custom-header">
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
+    </a>
+    <nav class="custom-nav">
+      <a href="/#categories">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
+    </nav>
+  </header>
+
+  <!-- Main Container -->
+  <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
+    
+    <!-- Tool Title & Description -->
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online XML Formatter</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Validate, beautify, and format XML documents with proper nesting.</p>
+    </div>
+
+    <!-- Tool Input Card -->
+    <div class="content-box" style="margin-bottom: 2rem;">
+      <div class="input-group">
+        <label for="xml-input" class="input-label">Raw XML Code</label>
+        <textarea id="xml-input" class="form-control" rows="5" placeholder="<root><item id='1'>Data</item></root>"></textarea>
+      </div>
+
+      <button id="btn-format-xml" class="btn btn-primary" style="width: 100%; padding: 0.85rem; font-size: 1rem; font-weight: 600; cursor: pointer;">✨ Format XML</button>
+
+      <!-- Results Wrapper -->
+      <div id="results-wrapper" style="display: none; margin-top: 1.5rem;">
+        <div class="input-group" style="margin-bottom: 0;">
+          <label class="input-label">Formatted XML Document</label>
+          <textarea id="xml-output" class="form-control" rows="6" readonly style="background: rgba(0,0,0,0.3); font-family: monospace;"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- SEO Article Content Box 1 -->
+    <div class="content-box">
+      <h2>Why Use an Online XML Formatter?</h2>
+      <p>Extensible Markup Language (XML) files are widely used for data exchange, configurations, and sitemaps. However, compressed or raw XML code lacking indentation is extremely difficult for developers to inspect and troubleshoot.</p>
+      <p>Our free <strong>Online XML Formatter</strong> parses your data and restructures tags with clean hierarchical indentation instantly.</p>
+    </div>
+
+    <!-- SEO Article Content Box 2 -->
+    <div class="content-box">
+      <h2>Key Benefits of XML Formatting</h2>
+      <p>Organizing markup structures properly offers major advantages:</p>
+      <h3>1. Error Detection</h3>
+      <p>Structured formatting makes it straightforward to catch unclosed tags, syntax mismatches, or missing attributes.</p>
+      <h3>2. Enhanced Readability</h3>
+      <p>Clear nesting lets developers navigate complex configurations and data feeds effortlessly.</p>
+    </div>
+
+    <!-- SEO Article Content Box 3 -->
+    <div class="content-box">
+      <h2>Features of MicroToolStack's XML Formatter</h2>
+      <ul>
+        <li><strong>Syntax Verification:</strong> Detects parsing errors automatically to ensure your markup is valid.</li>
+        <li><strong>Local Browser Processing:</strong> All operations occur securely inside your browser.</li>
+        <li><strong>Responsive Design:</strong> Clean, optimized interface for all devices.</li>
+      </ul>
+    </div>
+
+    <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
+    <div class="content-box">
+      <h2>Explore Related Developer Tools</h2>
+      <p>Try our other free coding and utility tools:</p>
+      <div class="related-links">
+        <a href="/tools/developer/yaml-formatter.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">⚙️ YAML Formatter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Validate and clean up YAML files.</span>
+        </a>
+        <a href="/tools/developer/sql-formatter.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🗄️ SQL Formatter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Beautify and format database SQL queries.</span>
+        </a>
+        <a href="/tools/developer/jwt-decoder.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🔐 JWT Decoder</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Decode JSON Web Tokens securely.</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="content-box">
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How does this XML Formatter work?</h3>
+        <p>Paste your XML string and click Format to organize tags with standard indentation.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is my data saved on servers?</h3>
+        <p>No. All parsing happens locally within your web browser environment.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this tool free?</h3>
+        <p>Yes, MicroToolStack's XML Formatter is 100% free with no registration required.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer Container Placeholder -->
+  <div id="footer-container"></div>
+
+  <!-- JavaScript Utilities & Logic -->
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const xmlInput = document.getElementById('xml-input');
+      const btnFormatXml = document.getElementById('btn-format-xml');
+      const resultsWrapper = document.getElementById('results-wrapper');
+      const xmlOutput = document.getElementById('xml-output');
+
+      btnFormatXml.addEventListener('click', function() {
+        let xml = xmlInput.value.trim();
+        if (!xml) {
+          alert('Please enter XML code.');
+          return;
+        }
+
+        try {
+          const parser = new DOMParser();
+          const xmlDoc = parser.parseFromString(xml, 'text/xml');
+          const parserError = xmlDoc.getElementsByTagName('parsererror');
+          if (parserError.length > 0) {
+            throw new Error('Invalid XML syntax.');
+          }
+
+          let formatted = '';
+          let reg = /(>)(<)(\/*)/g;
+          xml = xml.replace(reg, '$1\r\n$2$3');
+          let pad = 0;
+          xml.split('\r\n').forEach(node => {
+            let indent = 0;
+            if (node.match(/.+<\/\w[^>]*>$/)) {
+              indent = 0;
+            } else if (node.match(/^<\/\w/)) {
+              if (pad != 0) pad -= 1;
+            } else if (node.match(/^<([^?\/]|![CDATA])+>$/)) {
+              indent = 1;
+            } else {
+              indent = 0;
+            }
+            let padding = '';
+            for (let i = 0; i < pad; i++) {
+              padding += '  ';
+            }
+            formatted += padding + node + '\r\n';
+            pad += indent;
+          });
+
+          xmlOutput.value = formatted.trim();
+          resultsWrapper.style.display = 'block';
+        } catch (error) {
+          alert('Failed to format XML: ' + error.message);
+          resultsWrapper.style.display = 'none';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
