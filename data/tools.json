@@ -1200,5 +1200,105 @@
     "icon": "🖼️",
     "isPopular": true,
     "isNew": true
+  },
+  {
+    "id": "jwt-decoder",
+    "name": "JWT Decoder",
+    "category": "developer",
+    "url": "/tools/developer/jwt-decoder.html",
+    "description": "Decode JSON Web Tokens instantly and inspect header, payload, and signature.",
+    "icon": "🔐",
+    "isPopular": true,
+    "isNew": false
+  },
+  {
+    "id": "cron-generator",
+    "name": "Cron Expression Generator",
+    "category": "developer",
+    "url": "/tools/developer/cron-generator.html",
+    "description": "Generate cron syntax expressions interactively for scheduled tasks and cron jobs.",
+    "icon": "⏱️",
+    "isPopular": false,
+    "isNew": true
+  },
+  {
+    "id": "cron-translator",
+    "name": "Cron Expression Translator",
+    "category": "developer",
+    "url": "/tools/developer/cron-translator.html",
+    "description": "Translate complex cron expressions into human-readable plain English descriptions.",
+    "icon": "📝",
+    "isPopular": false,
+    "isNew": false
+  },
+  {
+    "id": "sql-formatter",
+    "name": "SQL Formatter",
+    "category": "developer",
+    "url": "/tools/developer/sql-formatter.html",
+    "description": "Beautify, format, and clean up messy database SQL queries with indentation.",
+    "icon": "🗄️",
+    "isPopular": true,
+    "isNew": false
+  },
+  {
+    "id": "xml-formatter",
+    "name": "XML Formatter",
+    "category": "developer",
+    "url": "/tools/developer/xml-formatter.html",
+    "description": "Format, validate, and beautify XML documents with proper nested indentation.",
+    "icon": "📄",
+    "isPopular": false,
+    "isNew": false
+  },
+  {
+    "id": "yaml-formatter",
+    "name": "YAML Formatter",
+    "category": "developer",
+    "url": "/tools/developer/yaml-formatter.html",
+    "description": "Validate, clean up, and format YAML configuration files securely.",
+    "icon": "⚙️",
+    "isPopular": false,
+    "isNew": false
+  },
+  {
+    "id": "http-status-lookup",
+    "name": "HTTP Status Code Lookup",
+    "category": "developer",
+    "url": "/tools/developer/http-status-lookup.html",
+    "description": "Look up HTTP response status codes, error meanings, and server definitions.",
+    "icon": "🔍",
+    "isPopular": false,
+    "isNew": false
+  },
+  {
+    "id": "mime-type-lookup",
+    "name": "MIME Type Lookup",
+    "category": "developer",
+    "url": "/tools/developer/mime-type-lookup.html",
+    "description": "Find standard internet media types and content formats by file extension.",
+    "icon": "📁",
+    "isPopular": false,
+    "isNew": false
+  },
+  {
+    "id": "user-agent-parser",
+    "name": "User-Agent Parser",
+    "category": "developer",
+    "url": "/tools/developer/user-agent-parser.html",
+    "description": "Parse browser User-Agent strings to detect operating system and device info.",
+    "icon": "💻",
+    "isPopular": false,
+    "isNew": false
+  },
+  {
+    "id": "ip-address-info",
+    "name": "IP Address Info",
+    "category": "developer",
+    "url": "/tools/developer/ip-address-info.html",
+    "description": "Check your public IP address and view network connection details instantly.",
+    "icon": "🌐",
+    "isPopular": true,
+    "isNew": false
   }
 ]
