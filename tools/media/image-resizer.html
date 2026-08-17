@@ -158,11 +158,23 @@
       background-color: rgba(59, 130, 246, 0.05);
     }
 
+    /* Fix Light Mode Text Visibility inside Drop Zone */
+    .drop-zone-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.25rem;
+    }
+    .drop-zone-desc {
+      font-size: 0.85rem;
+      color: var(--text-secondary, #9ca3af);
+    }
+
     /* Image Workspace Preview Stage */
     .stage-workspace {
       width: 100%;
       min-height: 260px;
-      background: #111827;
+      background: var(--bg-card, #1e1e2e);
       border: 1px solid var(--border-color, #333);
       border-radius: var(--radius-md, 8px);
       display: flex;
@@ -307,8 +319,8 @@
     <!-- Drag and Drop Image Zone -->
     <div class="drop-zone" id="drop-zone">
       <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🖼️</div>
-      <div style="font-size: 1.05rem; font-weight: 600; color: #fff; margin-bottom: 0.25rem;">Drag & Drop Image Here to Resize</div>
-      <div style="font-size: 0.85rem; color: #9ca3af;">or click to browse from device (JPG, PNG, WEBP, GIF, SVG)</div>
+      <div class="drop-zone-title">Drag & Drop Image Here to Resize</div>
+      <div class="drop-zone-desc">or click to browse from device (JPG, PNG, WEBP, GIF, SVG)</div>
       <input type="file" id="file-input" accept="image/*" style="display: none;">
     </div>
 
@@ -364,7 +376,7 @@
     <!-- Visual Workspace Stage -->
     <div class="stage-workspace">
       <div id="image-preview-container" class="image-preview-wrapper"></div>
-      <div id="status-msg" style="color: #94a3b8; font-size: 0.95rem;">
+      <div id="status-msg" style="color: var(--text-secondary, #94a3b8); font-size: 0.95rem;">
         📂 Upload an image to view interactive dimensions & resize controls...
       </div>
       <div id="img-meta" class="meta-badge" style="display: none;">Dimensions: 0 x 0 px</div>
@@ -422,19 +434,19 @@
       <div class="related-links">
         <a href="/tools/media/png-to-svg.html" class="related-card">
           <strong style="display:block; margin-bottom: 0.25rem;">📐 PNG to SVG Vector Converter</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Convert PNG and JPG raster images into scalable SVG vectors.</span>
+          <span style="font-size: 0.85rem; color: var(--text-secondary, #9ca3af);">Convert PNG and JPG raster images into scalable SVG vectors.</span>
         </a>
         <a href="/tools/media/image-cropper.html" class="related-card">
           <strong style="display:block; margin-bottom: 0.25rem;">✂️ Interactive Image Cropper</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Crop, rotate, and scale photos into exact aspect ratios.</span>
+          <span style="font-size: 0.85rem; color: var(--text-secondary, #9ca3af);">Crop, rotate, and scale photos into exact aspect ratios.</span>
         </a>
         <a href="/tools/media/ico-converter.html" class="related-card">
           <strong style="display:block; margin-bottom: 0.25rem;">🌐 Image to ICO Converter</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Convert PNG and JPG images into website favicons.</span>
+          <span style="font-size: 0.85rem; color: var(--text-secondary, #9ca3af);">Convert PNG and JPG images into website favicons.</span>
         </a>
         <a href="/tools/media/image-to-base64.html" class="related-card">
           <strong style="display:block; margin-bottom: 0.25rem;">🖼️ Image to Base64 Converter</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Convert graphics into Base64 Data URIs & CSS strings.</span>
+          <span style="font-size: 0.85rem; color: var(--text-secondary, #9ca3af);">Convert graphics into Base64 Data URIs & CSS strings.</span>
         </a>
       </div>
     </div>
