@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) - Optimized Load -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var gTagScript = document.createElement('script');
+        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        gTagScript.async = true;
+        document.head.appendChild(gTagScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F3WWR9KGB4');
+      }, 1000);
+    });
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>Free Online Cron Expression Generator | MicroToolStack</title>
+  <meta name="description" content="Generate cron syntax expressions easily for scheduled tasks and server cron jobs with our free online tool. Fast, accurate, and developer-friendly.">
+  <meta name="keywords" content="cron expression generator, cron syntax builder, schedule cron job online, crontab calculator">
+
+  <link rel="canonical" href="https://www.microtoolstack.com/tools/developer/cron-generator.html">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.microtoolstack.com/tools/developer/cron-generator.html">
+  <meta property="og:title" content="Free Online Cron Expression Generator | MicroToolStack">
+  <meta property="og:description" content="Build cron expressions interactively for your server tasks. 100% free online developer tool.">
+  <meta property="og:image" content="https://www.microtoolstack.com/assets/images/og-image.png">
+
+  <!-- Favicon Icon for Google & Devices -->
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
+
+  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Cron Expression Generator",
+        "operatingSystem": "All",
+        "applicationCategory": "DeveloperApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "An interactive online utility tool to build and generate cron expressions for scheduled server tasks and crontabs.",
+        "url": "https://www.microtoolstack.com/tools/developer/cron-generator.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does this Cron Generator work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Adjust the minute, hour, day of month, month, and day of week fields to instantly compile a valid cron expression string."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is a cron expression?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A cron expression is a string consisting of five or six fields separated by whitespace that represents a schedule for executing tasks."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this tool free to use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, MicroToolStack's Cron Generator is 100% free with no limits."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Preconnect and Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <style>
+    .input-group {
+      margin-bottom: 1.25rem;
+    }
+    .input-label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.5rem;
+    }
+    .form-control {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
+      color: var(--text-primary, #fff);
+      outline: none;
+      box-sizing: border-box;
+    }
+    .form-control:focus {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+    .content-box {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .content-box h2 {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul {
+      color: var(--text-secondary, #9ca3af);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .content-box ul {
+      padding-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .content-box li {
+      margin-bottom: 0.5rem;
+    }
+    .related-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .related-card {
+      display: block;
+      padding: 1rem;
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      color: var(--text-primary, #fff);
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .related-card:hover {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+  </style>
+</head>
+<body style="margin: 0; padding: 0;">
+
+  <!-- Header Section -->
+  <header class="custom-header">
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
+    </a>
+    <nav class="custom-nav">
+      <a href="/#categories">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
+    </nav>
+  </header>
+
+  <!-- Main Container -->
+  <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
+    
+    <!-- Tool Title & Description -->
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Cron Expression Generator</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Build and schedule custom cron expressions interactively.</p>
+    </div>
+
+    <!-- Tool Input Card -->
+    <div class="content-box" style="margin-bottom: 2rem;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 1rem;" class="input-group">
+        <div>
+          <label for="cron-min" class="input-label">Minute (0-59)</label>
+          <input type="text" id="cron-min" class="form-control" value="*">
+        </div>
+        <div>
+          <label for="cron-hour" class="input-label">Hour (0-23)</label>
+          <input type="text" id="cron-hour" class="form-control" value="*">
+        </div>
+        <div>
+          <label for="cron-day" class="input-label">Day (1-31)</label>
+          <input type="text" id="cron-day" class="form-control" value="*">
+        </div>
+        <div>
+          <label for="cron-month" class="input-label">Month (1-12)</label>
+          <input type="text" id="cron-month" class="form-control" value="*">
+        </div>
+        <div>
+          <label for="cron-weekday" class="input-label">Weekday (0-6)</label>
+          <input type="text" id="cron-weekday" class="form-control" value="*">
+        </div>
+      </div>
+
+      <div class="input-group" style="margin-bottom: 0;">
+        <label class="input-label">Generated Cron Expression</label>
+        <input type="text" id="cron-result" class="form-control" readonly style="font-weight: bold; color: var(--accent-primary, #3b82f6); font-size: 1.1rem; text-align: center;">
+      </div>
+    </div>
+
+    <!-- SEO Article Content Box 1 -->
+    <div class="content-box">
+      <h2>Understanding Cron Expressions and Scheduling</h2>
+      <p>A cron expression is a string comprising five fields that define a schedule for running automated tasks (cron jobs) on Unix-like operating systems. System administrators and developers use cron expressions to automate routine tasks such as backups, log rotation, and data synchronization.</p>
+      <p>Our free <strong>Cron Expression Generator</strong> lets you quickly configure your scheduled timings without needing to memorize complex cron syntax rules.</p>
+    </div>
+
+    <!-- SEO Article Content Box 2 -->
+    <div class="content-box">
+      <h2>Cron Syntax Field Order</h2>
+      <p>The standard cron format consists of five space-delimited time and date fields:</p>
+      <h3>1. Minute</h3>
+      <p>Accepts values from 0 to 59, or an asterisk (*) for every minute.</p>
+      <h3>2. Hour</h3>
+      <p>Accepts values from 0 to 23 representing the hour of the day.</p>
+      <h3>3. Day of the Month</h3>
+      <p>Accepts values from 1 to 31 indicating the target calendar day.</p>
+      <h3>4. Month</h3>
+      <p>Accepts values from 1 to 12 (or month names like JAN to DEC).</p>
+      <h3>5. Day of the Week</h3>
+      <p>Accepts values from 0 to 6 where 0 represents Sunday.</p>
+    </div>
+
+    <!-- SEO Article Content Box 3 -->
+    <div class="content-box">
+      <h2>Features of MicroToolStack's Cron Generator</h2>
+      <ul>
+        <li><strong>Real-Time Building:</strong> Watch your expression update dynamically as you type or adjust fields.</li>
+        <li><strong>Simple & Fast:</strong> Clean browser-based interface designed to eliminate configuration errors.</li>
+        <li><strong>100% Free:</strong> No limitations or account sign-ups required.</li>
+      </ul>
+    </div>
+
+    <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
+    <div class="content-box">
+      <h2>Explore Related Developer Tools</h2>
+      <p>Try our other free coding and utility tools:</p>
+      <div class="related-links">
+        <a href="/tools/developer/cron-translator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📝 Cron Translator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Translate cron expressions into human-readable text.</span>
+        </a>
+        <a href="/tools/developer/jwt-decoder.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🔐 JWT Decoder</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Decode and inspect JSON Web Tokens securely.</span>
+        </a>
+        <a href="/tools/developer/regex-tester.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🧪 Regex Tester</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Test and debug regular expressions in real-time.</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="content-box">
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How does this Cron Generator work?</h3>
+        <p>Modify any of the standard cron fields to instantly assemble a fully formatted expression string.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What does the asterisk (*) mean?</h3>
+        <p>The asterisk stands for "every" possible value for that specific time field.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this tool free?</h3>
+        <p>Yes, MicroToolStack's Cron Generator is 100% free with no registration required.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer Container Placeholder -->
+  <div id="footer-container"></div>
+
+  <!-- JavaScript Utilities & Logic -->
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const inputs = [
+        document.getElementById('cron-min'),
+        document.getElementById('cron-hour'),
+        document.getElementById('cron-day'),
+        document.getElementById('cron-month'),
+        document.getElementById('cron-weekday')
+      ];
+      const cronResult = document.getElementById('cron-result');
+
+      function updateCron() {
+        const values = inputs.map(input => input.value.trim() || '*');
+        cronResult.value = values.join(' ');
+      }
+
+      inputs.forEach(input => {
+        input.addEventListener('input', updateCron);
+      });
+
+      updateCron();
+    });
+  </script>
+</body>
+</html>
