@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) - Optimized Load -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var gTagScript = document.createElement('script');
+        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        gTagScript.async = true;
+        document.head.appendChild(gTagScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F3WWR9KGB4');
+      }, 1000);
+    });
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>Free Online SQL Formatter & Beautifier | MicroToolStack</title>
+  <meta name="description" content="Format, beautify, and clean up messy SQL queries online instantly with proper indentation using our free developer utility tool.">
+  <meta name="keywords" content="sql formatter, sql beautifier, format sql query online, SQL code prettifier">
+
+  <link rel="canonical" href="https://www.microtoolstack.com/tools/developer/sql-formatter.html">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.microtoolstack.com/tools/developer/sql-formatter.html">
+  <meta property="og:title" content="Free Online SQL Formatter | MicroToolStack">
+  <meta property="og:description" content="Beautify and format your SQL queries instantly. 100% free online developer tool.">
+  <meta property="og:image" content="https://www.microtoolstack.com/assets/images/og-image.png">
+
+  <!-- Favicon Icon for Google & Devices -->
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
+
+  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "SQL Formatter",
+        "operatingSystem": "All",
+        "applicationCategory": "DeveloperApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "An online developer tool to format, beautify, and clean up SQL queries for better readability.",
+        "url": "https://www.microtoolstack.com/tools/developer/sql-formatter.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does this SQL Formatter work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Paste your raw SQL query into the input area and click Format SQL to organize keywords with clean line breaks and indentation."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my database query stored or logged?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. All formatting logic runs locally inside your browser using client-side JavaScript for complete security."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this tool free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, MicroToolStack's SQL Formatter is 100% free with no registration required."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Preconnect and Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <style>
+    .input-group {
+      margin-bottom: 1.25rem;
+    }
+    .input-label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.5rem;
+    }
+    .form-control {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
+      color: var(--text-primary, #fff);
+      outline: none;
+      box-sizing: border-box;
+    }
+    .form-control:focus {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+    .content-box {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .content-box h2 {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul {
+      color: var(--text-secondary, #9ca3af);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .content-box ul {
+      padding-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .content-box li {
+      margin-bottom: 0.5rem;
+    }
+    .related-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .related-card {
+      display: block;
+      padding: 1rem;
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      color: var(--text-primary, #fff);
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .related-card:hover {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+  </style>
+</head>
+<body style="margin: 0; padding: 0;">
+
+  <!-- Header Section -->
+  <header class="custom-header">
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
+    </a>
+    <nav class="custom-nav">
+      <a href="/#categories">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
+    </nav>
+  </header>
+
+  <!-- Main Container -->
+  <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
+    
+    <!-- Tool Title & Description -->
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online SQL Formatter</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Beautify, format, and clean up messy database SQL queries instantly.</p>
+    </div>
+
+    <!-- Tool Input Card -->
+    <div class="content-box" style="margin-bottom: 2rem;">
+      <div class="input-group">
+        <label for="sql-input" class="input-label">Raw SQL Query</label>
+        <textarea id="sql-input" class="form-control" rows="5" placeholder="select * from users where id = 1 order by name desc;"></textarea>
+      </div>
+
+      <button id="btn-format" class="btn btn-primary" style="width: 100%; padding: 0.85rem; font-size: 1rem; font-weight: 600; cursor: pointer;">✨ Format SQL</button>
+
+      <!-- Results Wrapper -->
+      <div id="results-wrapper" style="display: none; margin-top: 1.5rem;">
+        <div class="input-group" style="margin-bottom: 0;">
+          <label class="input-label">Formatted SQL Query</label>
+          <textarea id="sql-output" class="form-control" rows="6" readonly style="background: rgba(0,0,0,0.3); font-family: monospace;"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- SEO Article Content Box 1 -->
+    <div class="content-box">
+      <h2>Why Use an Online SQL Formatter?</h2>
+      <p>Writing or debugging complex SQL queries often results in unformatted, single-line text that is extremely hard to read and maintain. Proper code formatting organizes clauses like SELECT, FROM, WHERE, and JOIN into clean, distinct blocks.</p>
+      <p>Our free <strong>Online SQL Formatter</strong> instantly restructures your database code for maximum readability and team collaboration.</p>
+    </div>
+
+    <!-- SEO Article Content Box 2 -->
+    <div class="content-box">
+      <h2>Benefits of Clean SQL Code</h2>
+      <p>Maintaining structured database queries provides several vital advantages:</p>
+      <h3>1. Easier Debugging</h3>
+      <p>Structured layout allows developers to spot logical errors, missing parameters, or incorrect join conditions quickly.</p>
+      <h3>2. Code Maintainability</h3>
+      <p>Clean indentation ensures that other team members can easily understand and update database schemas and scripts.</p>
+    </div>
+
+    <!-- SEO Article Content Box 3 -->
+    <div class="content-box">
+      <h2>Features of MicroToolStack's SQL Formatter</h2>
+      <ul>
+        <li><strong>Instant Beautifying:</strong> Automatically capitalizes keywords and adds proper line breaks.</li>
+        <li><strong>Secure Local Processing:</strong> Your database queries are processed entirely within your browser.</li>
+        <li><strong>Responsive Design:</strong> Optimized for seamless usage on both desktop workstations and mobile devices.</li>
+      </ul>
+    </div>
+
+    <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
+    <div class="content-box">
+      <h2>Explore Related Developer Tools</h2>
+      <p>Try our other free coding and utility tools:</p>
+      <div class="related-links">
+        <a href="/tools/developer/xml-formatter.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📄 XML Formatter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Format and validate XML code online.</span>
+        </a>
+        <a href="/tools/developer/yaml-formatter.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">⚙️ YAML Formatter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Validate and clean up YAML configuration files.</span>
+        </a>
+        <a href="/tools/developer/jwt-decoder.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🔐 JWT Decoder</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Decode JSON Web Tokens securely.</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="content-box">
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How does this SQL Formatter work?</h3>
+        <p>Paste your query and click Format to instantly organize keywords with standard indentation and line breaks.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Are my database queries saved?</h3>
+        <p>No. All operations run locally inside your browser memory.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this tool free?</h3>
+        <p>Yes, MicroToolStack's SQL Formatter is 100% free with no registration required.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer Container Placeholder -->
+  <div id="footer-container"></div>
+
+  <!-- JavaScript Utilities & Logic -->
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const sqlInput = document.getElementById('sql-input');
+      const btnFormat = document.getElementById('btn-format');
+      const resultsWrapper = document.getElementById('results-wrapper');
+      const sqlOutput = document.getElementById('sql-output');
+
+      btnFormat.addEventListener('click', function() {
+        let val = sqlInput.value.trim();
+        if (!val) {
+          alert('Please enter a SQL query.');
+          return;
+        }
+
+        // Basic formatting logic for standard keywords
+        val = val.replace(/\s+/g, ' ')
+                 .replace(/SELECT/gi, '\nSELECT')
+                 .replace(/FROM/gi, '\nFROM')
+                 .replace(/WHERE/gi, '\nWHERE')
+                 .replace(/AND/gi, '\n  AND')
+                 .replace(/OR/gi, '\n  OR')
+                 .replace(/LEFT JOIN/gi, '\nLEFT JOIN')
+                 .replace(/RIGHT JOIN/gi, '\nRIGHT JOIN')
+                 .replace(/INNER JOIN/gi, '\nINNER JOIN')
+                 .replace(/GROUP BY/gi, '\nGROUP BY')
+                 .replace(/ORDER BY/gi, '\nORDER BY')
+                 .replace(/LIMIT/gi, '\nLIMIT');
+
+        sqlOutput.value = val.trim();
+        resultsWrapper.style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>
