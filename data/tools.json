@@ -1300,5 +1300,25 @@
     "icon": "🌐",
     "isPopular": true,
     "isNew": false
+  },
+  {
+    "id": "currency-converter",
+    "name": "Currency Converter",
+    "category": "calculator",
+    "url": "/tools/calculator/currency-converter.html",
+    "description": "Convert world currencies instantly using live market exchange rates.",
+    "icon": "💱",
+    "isPopular": true,
+    "isNew": false
+  },
+  {
+    "id": "roi-calculator",
+    "name": "ROI Calculator",
+    "category": "calculator",
+    "url": "/tools/calculator/roi-calculator.html",
+    "description": "Measure investment profitability, net returns, and business growth percentage.",
+    "icon": "📈",
+    "isPopular": false,
+    "isNew": true
   }
 ]
