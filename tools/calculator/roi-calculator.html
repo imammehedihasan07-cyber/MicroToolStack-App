@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) - Optimized Load -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var gTagScript = document.createElement('script');
+        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        gTagScript.async = true;
+        document.head.appendChild(gTagScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F3WWR9KGB4');
+      }, 1000);
+    });
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>Free Online ROI Calculator | Calculate Return on Investment | MicroToolStack</title>
+  <meta name="description" content="Calculate your return on investment (ROI) instantly with our free Online ROI Calculator. Measure business profitability, marketing returns, and investment gains.">
+  <meta name="keywords" content="roi calculator, return on investment calculator, business profit calculator, investment return finder, marketing roi calculator">
+
+  <link rel="canonical" href="https://www.microtoolstack.com/tools/calculator/roi-calculator.html">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.microtoolstack.com/tools/calculator/roi-calculator.html">
+  <meta property="og:title" content="Free Online ROI Calculator | MicroToolStack">
+  <meta property="og:description" content="Calculate net profit and return on investment percentages instantly. 100% free and accurate financial tool.">
+  <meta property="og:image" content="https://www.microtoolstack.com/assets/images/og-image.png">
+
+  <!-- Favicon Icon for Google & Devices -->
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
+
+  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "ROI Calculator",
+        "operatingSystem": "All",
+        "applicationCategory": "UtilitiesApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "An accurate online return on investment (ROI) calculator that determines profitability and financial gains based on initial investment and final value.",
+        "url": "https://www.microtoolstack.com/tools/calculator/roi-calculator.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How do you calculate ROI?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "ROI is calculated by subtracting the initial investment from the final value to get the net profit, dividing that profit by the cost of the investment, and multiplying by 100."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What does a positive ROI mean?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A positive ROI indicates that your investment generated more money than it cost, resulting in a net profit."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this ROI Calculator free to use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, MicroToolStack's ROI Calculator is 100% free with no limits or sign-up requirements."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Preconnect and Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <style>
+    .input-group {
+      margin-bottom: 1.25rem;
+    }
+    .input-label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.5rem;
+    }
+    .form-control {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
+      color: var(--text-primary, #fff);
+      outline: none;
+      box-sizing: border-box;
+    }
+    .form-control:focus {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .stat-card {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.25rem;
+      text-align: center;
+    }
+    .stat-number {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--accent-primary, #3b82f6);
+      margin-bottom: 0.25rem;
+    }
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--text-secondary, #9ca3af);
+      font-weight: 500;
+    }
+    .content-box {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .content-box h2 {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul {
+      color: var(--text-secondary, #9ca3af);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .content-box ul {
+      padding-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .content-box li {
+      margin-bottom: 0.5rem;
+    }
+    .related-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .related-card {
+      display: block;
+      padding: 1rem;
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      color: var(--text-primary, #fff);
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .related-card:hover {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+  </style>
+</head>
+<body style="margin: 0; padding: 0;">
+
+  <!-- Header Section -->
+  <header class="custom-header">
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
+    </a>
+    <nav class="custom-nav">
+      <a href="/#categories">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
+    </nav>
+  </header>
+
+  <!-- Main Container -->
+  <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
+    
+    <!-- Tool Title & Description -->
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Online Return on Investment (ROI) Calculator</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Measure your investment profitability, net returns, and business growth percentage instantly.</p>
+    </div>
+
+    <!-- Calculator Input Card -->
+    <div class="content-box" style="margin-bottom: 2rem;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;" class="input-group">
+        <div>
+          <label for="investment-input" class="input-label">Initial Investment ($ / ৳)</label>
+          <input type="number" id="investment-input" class="form-control" placeholder="e.g. 1000" min="0" step="any">
+        </div>
+        <div>
+          <label for="return-input" class="input-label">Final Value / Total Return ($ / ৳)</label>
+          <input type="number" id="return-input" class="form-control" placeholder="e.g. 1500" min="0" step="any">
+        </div>
+      </div>
+
+      <button id="btn-calc-roi" class="btn btn-primary" style="width: 100%; padding: 0.85rem; font-size: 1rem; font-weight: 600; cursor: pointer;">📈 Calculate ROI</button>
+
+      <!-- Results Grid -->
+      <div id="results-wrapper" style="display: none;">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number" id="res-roi">0%</div>
+            <div class="stat-label">Return on Investment (ROI)</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" id="res-profit">0</div>
+            <div class="stat-label">Net Profit / Loss</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SEO Article Content Box 1 -->
+    <div class="content-box">
+      <h2>Understanding Return on Investment (ROI)</h2>
+      <p>Return on Investment (ROI) is a popular profitability metric used to evaluate the efficiency or profitability of an investment. It measures the amount of return on a particular investment relative to the investment's cost.</p>
+      <p>Our free <strong>Online ROI Calculator</strong> automates the calculation process, letting entrepreneurs, marketers, and individual investors instantly check whether a project, campaign, or asset is generating positive growth.</p>
+    </div>
+
+    <!-- SEO Article Content Box 2 -->
+    <div class="content-box">
+      <h2>Why Calculating ROI is Essential</h2>
+      <p>Evaluating your financial returns provides critical insights for decision-making:</p>
+
+      <h3>1. Performance Comparison</h3>
+      <p>ROI allows investors to compare the profitability of vastly different assets, such as real estate, stocks, or digital marketing campaigns, on an equal percentage basis.</p>
+
+      <h3>2. Budget & Resource Allocation</h3>
+      <p>Businesses can identify which operations yield the highest returns and allocate capital more efficiently to maximize overall revenue.</p>
+    </div>
+
+    <!-- SEO Article Content Box 3 -->
+    <div class="content-box">
+      <h2>Features of MicroToolStack's ROI Calculator</h2>
+      <ul>
+        <li><strong>Instant Percentage & Net Output:</strong> View both your percentage return and total net profit or loss simultaneously.</li>
+        <li><strong>100% Secure & Private:</strong> All arithmetic calculations happen locally in your browser.</li>
+        <li><strong>Responsive & Mobile Friendly:</strong> Optimized for seamless usage across all devices.</li>
+      </ul>
+    </div>
+
+    <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
+    <div class="content-box">
+      <h2>Explore Related Calculators & Utilities</h2>
+      <p>Try our other free financial and everyday calculator tools:</p>
+      <div class="related-links">
+        <a href="/tools/calculator/currency-converter.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">💱 Currency Converter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Convert world currencies using live market exchange rates.</span>
+        </a>
+        <a href="/tools/calculator/emi-calculator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🏦 Loan EMI Calculator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Calculate monthly loan EMI repayments and interest totals.</span>
+        </a>
+        <a href="/tools/text/word-counter.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📊 Real-Time Word Counter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Track character counts, sentence totals, and reading time.</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="content-box">
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How do you calculate ROI?</h3>
+        <p>ROI = (Net Profit / Cost of Investment) × 100, where Net Profit is Final Value minus Initial Investment.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What does a negative ROI mean?</h3>
+        <p>A negative ROI indicates a net loss on the investment, meaning the final value is less than the original cost.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this tool free?</h3>
+        <p>Yes, MicroToolStack's ROI Calculator is 100% free with no limits or registration required.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer Container Placeholder -->
+  <div id="footer-container"></div>
+
+  <!-- JavaScript Utilities & Logic -->
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const investmentInput = document.getElementById('investment-input');
+      const returnInput = document.getElementById('return-input');
+      const btnCalc = document.getElementById('btn-calc-roi');
+      const resultsWrapper = document.getElementById('results-wrapper');
+
+      const resRoi = document.getElementById('res-roi');
+      const resProfit = document.getElementById('res-profit');
+
+      btnCalc.addEventListener('click', function() {
+        const investment = parseFloat(investmentInput.value);
+        const totalReturn = parseFloat(returnInput.value);
+
+        if (isNaN(investment) || isNaN(totalReturn) || investment <= 0) {
+          alert('Please enter valid positive values for investment and return.');
+          return;
+        }
+
+        const netProfit = totalReturn - investment;
+        const roi = (netProfit / investment) * 100;
+
+        resRoi.textContent = roi.toFixed(2) + '%';
+        resProfit.textContent = netProfit.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        
+        // Color coding for profit/loss
+        if (netProfit >= 0) {
+          resProfit.style.color = 'var(--accent-primary, #3b82f6)';
+        } else {
+          resProfit.style.color = '#ef4444';
+        }
+
+        resultsWrapper.style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>
