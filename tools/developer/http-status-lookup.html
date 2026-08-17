@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) - Optimized Load -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var gTagScript = document.createElement('script');
+        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        gTagScript.async = true;
+        document.head.appendChild(gTagScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F3WWR9KGB4');
+      }, 1000);
+    });
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>HTTP Status Code Lookup & Meanings | MicroToolStack</title>
+  <meta name="description" content="Look up HTTP response status codes, definitions, and error meanings instantly online with our free developer reference tool.">
+  <meta name="keywords" content="http status codes, status code lookup, 200 ok, 404 not found, 500 internal server error, web status codes">
+
+  <link rel="canonical" href="https://www.microtoolstack.com/tools/developer/http-status-lookup.html">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.microtoolstack.com/tools/developer/http-status-lookup.html">
+  <meta property="og:title" content="HTTP Status Code Lookup | MicroToolStack">
+  <meta property="og:description" content="Find HTTP response status codes and descriptions instantly. 100% free developer reference tool.">
+  <meta property="og:image" content="https://www.microtoolstack.com/assets/images/og-image.png">
+
+  <!-- Favicon Icon for Google & Devices -->
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
+
+  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "HTTP Status Code Lookup",
+        "operatingSystem": "All",
+        "applicationCategory": "DeveloperApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "An online developer reference tool to look up HTTP response status codes, error meanings, and descriptions.",
+        "url": "https://www.microtoolstack.com/tools/developer/http-status-lookup.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does this HTTP Status Lookup work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Enter any 3-digit HTTP response code (e.g. 200, 404, 500) and click Lookup to view its definition and meaning."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are HTTP status code classes?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Status codes are grouped into five classes: 1xx (Informational), 2xx (Success), 3xx (Redirection), 4xx (Client Error), and 5xx (Server Error)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this tool free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, MicroToolStack's HTTP Status Code Lookup is 100% free with no registration required."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Preconnect and Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <style>
+    .input-group {
+      margin-bottom: 1.25rem;
+    }
+    .input-label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.5rem;
+    }
+    .form-control {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
+      color: var(--text-primary, #fff);
+      outline: none;
+      box-sizing: border-box;
+    }
+    .form-control:focus {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+    .content-box {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .content-box h2 {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul {
+      color: var(--text-secondary, #9ca3af);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .content-box ul {
+      padding-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .content-box li {
+      margin-bottom: 0.5rem;
+    }
+    .related-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .related-card {
+      display: block;
+      padding: 1rem;
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      color: var(--text-primary, #fff);
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .related-card:hover {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+  </style>
+</head>
+<body style="margin: 0; padding: 0;">
+
+  <!-- Header Section -->
+  <header class="custom-header">
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
+    </a>
+    <nav class="custom-nav">
+      <a href="/#categories">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
+    </nav>
+  </header>
+
+  <!-- Main Container -->
+  <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
+    
+    <!-- Tool Title & Description -->
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">HTTP Status Code Lookup</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Find definitions and meanings of web server response codes instantly.</p>
+    </div>
+
+    <!-- Tool Input Card -->
+    <div class="content-box" style="margin-bottom: 2rem;">
+      <div class="input-group">
+        <label for="status-code" class="input-label">Enter Status Code</label>
+        <input type="number" id="status-code" class="form-control" placeholder="e.g. 200, 404, 500">
+      </div>
+
+      <button id="btn-lookup" class="btn btn-primary" style="width: 100%; padding: 0.85rem; font-size: 1rem; font-weight: 600; cursor: pointer;">🔍 Lookup Status Code</button>
+
+      <!-- Results Wrapper -->
+      <div id="results-wrapper" style="display: none; margin-top: 1.5rem;">
+        <div class="input-group" style="margin-bottom: 0;">
+          <label class="input-label">Status Definition</label>
+          <div id="status-result" class="form-control" style="background: rgba(0,0,0,0.3); color: var(--accent-primary, #3b82f6); font-weight: 600;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SEO Article Content Box 1 -->
+    <div class="content-box">
+      <h2>Understanding HTTP Status Codes</h2>
+      <p>HTTP status codes are standard response codes issued by web servers in response to a browser's request. They indicate whether a specific HTTP request has been successfully completed or if an error occurred during processing.</p>
+      <p>Our free <strong>HTTP Status Code Lookup</strong> reference tool helps developers and SEO specialists quickly identify server responses and troubleshoot web application issues.</p>
+    </div>
+
+    <!-- SEO Article Content Box 2 -->
+    <div class="content-box">
+      <h2>Categories of HTTP Status Codes</h2>
+      <p>Status codes are categorized into five distinct ranges based on their prefix:</p>
+      <h3>1. 1xx (Informational)</h3>
+      <p>Indicates that the request was received and the process is continuing.</p>
+      <h3>2. 2xx (Successful)</h3>
+      <p>Indicates that the request was successfully received, understood, and accepted (e.g., 200 OK).</p>
+      <h3>3. 3xx (Redirection)</h3>
+      <p>Indicates that further action needs to be taken in order to complete the request (e.g., 301 Moved Permanently).</p>
+      <h3>4. 4xx (Client Error)</h3>
+      <p>Indicates that the request contains bad syntax or cannot be fulfilled (e.g., 404 Not Found).</p>
+      <h3>5. 5xx (Server Error)</h3>
+      <p>Indicates that the server failed to fulfill a valid request due to an internal error (e.g., 500 Internal Server Error).</p>
+    </div>
+
+    <!-- SEO Article Content Box 3 -->
+    <div class="content-box">
+      <h2>Features of MicroToolStack's Status Lookup</h2>
+      <ul>
+        <li><strong>Instant Reference:</strong> Look up common web response codes and error meanings instantly.</li>
+        <li><strong>Developer & SEO Friendly:</strong> Essential tool for auditing website errors and server headers.</li>
+        <li><strong>Responsive Design:</strong> Clean, optimized interface for all devices.</li>
+      </ul>
+    </div>
+
+    <!-- Internal Linking Section (SEO & AdSense Best Practice) -->
+    <div class="content-box">
+      <h2>Explore Related Developer Tools</h2>
+      <p>Try our other free coding and utility tools:</p>
+      <div class="related-links">
+        <a href="/tools/developer/mime-type-lookup.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📁 MIME Type Lookup</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Find MIME types by file extension.</span>
+        </a>
+        <a href="/tools/developer/user-agent-parser.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">💻 User-Agent Parser</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Parse browser user-agent strings.</span>
+        </a>
+        <a href="/tools/developer/ip-address-info.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🌐 IP Address Info</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Check public IP and network info.</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="content-box">
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How does this HTTP Status Lookup work?</h3>
+        <p>Enter any 3-digit status code to retrieve its official definition and description.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What is the difference between 404 and 500 errors?</h3>
+        <p>A 404 error means the requested page or resource could not be found on the server, whereas a 500 error indicates an unexpected internal server failure.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this tool free?</h3>
+        <p>Yes, MicroToolStack's HTTP Status Code Lookup is 100% free with no registration required.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer Container Placeholder -->
+  <div id="footer-container"></div>
+
+  <!-- JavaScript Utilities & Logic -->
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const statusCodeInput = document.getElementById('status-code');
+      const btnLookup = document.getElementById('btn-lookup');
+      const resultsWrapper = document.getElementById('results-wrapper');
+      const statusResult = document.getElementById('status-result');
+
+      const statuses = {
+        200: "200 OK - The request has succeeded.",
+        201: "201 Created - The request has been fulfilled and resulted in a new resource being created.",
+        204: "204 No Content - The server successfully processed the request, but is not returning any content.",
+        301: "301 Moved Permanently - The requested resource has been assigned a new permanent URI.",
+        302: "302 Found - The resource resides temporarily under a different URI.",
+        304: "304 Not Modified - Indicates the resource has not been modified since the version specified by the request headers.",
+        400: "400 Bad Request - The server could not understand the request due to invalid syntax.",
+        401: "401 Unauthorized - The request requires user authentication.",
+        403: "403 Forbidden - The server understood the request, but refuses to authorize it.",
+        404: "404 Not Found - The server has not found anything matching the Request-URI.",
+        408: "408 Request Timeout - The server timed out waiting for the request.",
+        429: "429 Too Many Requests - The user has sent too many requests in a given amount of time.",
+        500: "500 Internal Server Error - The server encountered an unexpected condition that prevented it from fulfilling the request.",
+        502: "502 Bad Gateway - The server, while acting as a gateway or proxy, received an invalid response from the upstream server.",
+        503: "503 Service Unavailable - The server is currently unable to handle the request due to a temporary overloading or maintenance.",
+        504: "504 Gateway Timeout - The server, while acting as a gateway or proxy, did not receive a timely response from the upstream server."
+      };
+
+      btnLookup.addEventListener('click', function() {
+        const code = statusCodeInput.value.trim();
+        if (!code) {
+          alert('Please enter an HTTP status code.');
+          return;
+        }
+
+        if (statuses[code]) {
+          statusResult.textContent = statuses[code];
+        } else {
+          statusResult.textContent = `${code} Unknown / Custom Status Code - Definition not found in standard database.`;
+        }
+
+        resultsWrapper.style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>
