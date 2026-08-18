@@ -36,6 +36,7 @@
   <url><loc>https://www.microtoolstack.com/tools/seo/html-link-extractor.html</loc><priority>0.8</priority></url>
   <url><loc>https://www.microtoolstack.com/tools/seo/meta-refresh-checker.html</loc><priority>0.8</priority></url>
   <url><loc>https://www.microtoolstack.com/tools/seo/xml-sitemap-generator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/seo/utm-campaign-analyzer.html</loc><priority>0.8</priority></url>
 
   <!-- 3. Developer Tools (25 Tools) -->
   <url><loc>https://www.microtoolstack.com/tools/developer/json-formatter.html</loc><priority>0.8</priority></url>
@@ -73,6 +74,10 @@
   <url><loc>https://www.microtoolstack.com/tools/developer/mime-type-lookup.html</loc><priority>0.8</priority></url>
   <url><loc>https://www.microtoolstack.com/tools/developer/user-agent-parser.html</loc><priority>0.8</priority></url>
   <url><loc>https://www.microtoolstack.com/tools/developer/ip-address-info.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/developer/website-screenshot.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/developer/url-shortener.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/developer/dns-lookup.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/developer/website-uptime-checker.html</loc><priority>0.8</priority></url>
 
   <!-- 4. Calculators (9 Tools) -->
   <url><loc>https://www.microtoolstack.com/tools/calculator/age-calculator.html</loc><priority>0.8</priority></url>
@@ -108,6 +113,9 @@
   <url><loc>https://www.microtoolstack.com/tools/media/image-watermark.html</loc><priority>0.8</priority></url>
   <url><loc>https://www.microtoolstack.com/tools/media/gif-to-mp4.html</loc><priority>0.8</priority></url>
   <url><loc>https://www.microtoolstack.com/tools/media/image-resizer.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/media/qr-code-scanner.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/media/barcode-generator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/media/qr-code-scanner-from-image.html</loc><priority>0.8</priority></url>
   
   <!-- 6. AI Tools (5 Tools) -->
   <url><loc>https://www.microtoolstack.com/tools/ai/caption-generator.html</loc><priority>0.8</priority></url>
