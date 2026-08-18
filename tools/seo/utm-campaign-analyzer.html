@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) - Optimized Load -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var gTagScript = document.createElement('script');
+        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        gTagScript.async = true;
+        document.head.appendChild(gTagScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F3WWR9KGB4');
+      }, 1000);
+    });
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>Free Online UTM Campaign URL Builder & Analyzer | MicroToolStack</title>
+  <meta name="description" content="Build, parse, and analyze UTM tracking parameters for Google Analytics and digital marketing campaigns. Validate tracking links instantly online for free.">
+  <meta name="keywords" content="utm campaign analyzer, utm builder online, google analytics utm parser, campaign tracking link generator, marketing url builder, microtoolstack utility">
+
+  <link rel="canonical" href="https://www.microtoolstack.com/tools/seo/utm-campaign-analyzer.html">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.microtoolstack.com/tools/seo/utm-campaign-analyzer.html">
+  <meta property="og:title" content="Free Online UTM Campaign Analyzer | MicroToolStack">
+  <meta property="og:description" content="Generate and parse UTM parameters for your marketing campaigns. Ensure accurate tracking in Google Analytics.">
+  <meta property="og:image" content="https://www.microtoolstack.com/assets/images/og-image.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3023714618008515" crossorigin="anonymous"></script>
+
+  <!-- JSON-LD Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "UTM Campaign Builder & Analyzer",
+        "operatingSystem": "All",
+        "applicationCategory": "DeveloperApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "An essential client-side web utility that builds, parses, and validates UTM campaign tracking parameters for digital marketers and SEO professionals.",
+        "url": "https://www.microtoolstack.com/tools/seo/utm-campaign-analyzer.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What are UTM parameters?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "UTM (Urchin Tracking Module) parameters are five variants of URL parameters (source, medium, campaign, term, content) used to track marketing campaigns in analytics tools like Google Analytics."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I analyze an existing UTM link?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Paste your tracked URL into the analyzer section, and the tool will instantly break down all embedded UTM parameters for easy review."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my campaign data kept private?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! All URL building and analysis run entirely inside your browser session using JavaScript. Your campaign strategy data remains 100% confidential."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <style>
+    .analyzer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+      align-items: start;
+    }
+    @media (max-width: 850px) {
+      .analyzer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .input-group {
+      margin-bottom: 0.85rem;
+    }
+    .input-label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.3rem;
+    }
+    .form-control {
+      width: 100%;
+      padding: 0.65rem 0.85rem;
+      font-size: 0.95rem;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-input, #121218);
+      color: var(--text-primary, #fff);
+      outline: none;
+      box-sizing: border-box;
+    }
+    .form-control:focus {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+    .output-box {
+      background: var(--bg-input, #121218);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1rem;
+      box-sizing: border-box;
+      min-height: 280px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .url-output {
+      word-break: break-all;
+      background: #0f172a;
+      padding: 0.85rem;
+      border-radius: 6px;
+      color: #38bdf8;
+      font-family: monospace;
+      font-size: 0.9rem;
+      max-height: 120px;
+      overflow-y: auto;
+      margin-bottom: 1rem;
+      border: 1px solid #1e293b;
+    }
+    .param-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+    }
+    .param-table th, .param-table td {
+      border: 1px solid var(--border-color, #333);
+      padding: 0.5rem;
+      text-align: left;
+    }
+    .param-table th {
+      background: #1e293b;
+      color: #fff;
+    }
+    .param-table td {
+      color: var(--text-secondary, #9ca3af);
+    }
+    .content-box {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .content-box h2 {
+      font-size: 1.35rem;
+      margin-bottom: 0.75rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box h3 {
+      font-size: 1.05rem;
+      margin-top: 1rem;
+      margin-bottom: 0.35rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul {
+      color: var(--text-secondary, #9ca3af);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .content-box ul {
+      padding-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .related-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .related-card {
+      display: block;
+      padding: 1rem;
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      color: var(--text-primary, #fff);
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .related-card:hover {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header class="custom-header">
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
+    </a>
+    <nav class="custom-nav">
+      <a href="/#categories">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
+    </nav>
+  </header>
+
+  <!-- Main Container -->
+  <main class="container" style="max-width: 950px; margin: 1.5rem auto; padding: 0 1rem;">
+    
+    <!-- Tool Title & Description -->
+    <div style="text-align: center; margin-bottom: 1.5rem;">
+      <h1 style="font-size: 1.85rem; margin-bottom: 0.4rem; color: var(--text-primary, #fff);">UTM Campaign Builder & Analyzer</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 0.95rem;">Generate clean tracked URLs and parse existing campaign parameters for Google Analytics effortlessly.</p>
+    </div>
+
+    <!-- Dual Builder / Analyzer Grid -->
+    <div class="analyzer-grid">
+      <!-- UTM Builder Form -->
+      <div class="content-box" style="margin-bottom: 0;">
+        <h3 style="margin-top: 0; font-size: 1.1rem; margin-bottom: 0.85rem; color: var(--accent-primary, #3b82f6);">⚙️ Build UTM Link</h3>
+        
+        <div class="input-group">
+          <label for="utm-url" class="input-label">Website URL <span style="color: #ef4444;">*</span></label>
+          <input type="text" id="utm-url" class="form-control" value="https://example.com/landing-page" placeholder="https://example.com">
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+          <div class="input-group">
+            <label for="utm-source" class="input-label">Campaign Source <span style="color: #ef4444;">*</span></label>
+            <input type="text" id="utm-source" class="form-control" value="facebook" placeholder="e.g. google, newsletter">
+          </div>
+          <div class="input-group">
+            <label for="utm-medium" class="input-label">Campaign Medium <span style="color: #ef4444;">*</span></label>
+            <input type="text" id="utm-medium" class="form-control" value="cpc" placeholder="e.g. cpc, banner, email">
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label for="utm-campaign" class="input-label">Campaign Name <span style="color: #ef4444;">*</span></label>
+          <input type="text" id="utm-campaign" class="form-control" value="spring_sale_2026" placeholder="e.g. spring_sale">
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+          <div class="input-group">
+            <label for="utm-term" class="input-label">Campaign Term (Optional)</label>
+            <input type="text" id="utm-term" class="form-control" placeholder="e.g. running shoes">
+          </div>
+          <div class="input-group">
+            <label for="utm-content" class="input-label">Campaign Content (Optional)</label>
+            <input type="text" id="utm-content" class="form-control" placeholder="e.g. banner_link_1">
+          </div>
+        </div>
+      </div>
+
+      <!-- Output / Analyzer Box -->
+      <div class="output-box">
+        <div>
+          <h3 style="margin-top: 0; font-size: 1.1rem; margin-bottom: 0.85rem; color: var(--accent-primary, #3b82f6);">🔗 Generated Tracked URL</h3>
+          <div id="generated-url" class="url-output">https://example.com/landing-page?utm_source=facebook&utm_medium=cpc&utm_campaign=spring_sale_2026</div>
+        </div>
+        
+        <div>
+          <button id="btn-copy-url" class="btn btn-primary" style="width: 100%; padding: 0.75rem; font-weight: 600; cursor: pointer; background: #10b981; border: none; border-radius: 6px; color: #fff;">📋 Copy Tracked URL</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Analyzer Section Below -->
+    <div class="content-box">
+      <h3 style="font-size: 1.1rem; margin-bottom: 0.85rem; color: var(--accent-primary, #3b82f6);">🔍 Analyze Existing UTM URL</h3>
+      <div class="input-group" style="margin-bottom: 1rem;">
+        <label for="analyze-input" class="input-label">Paste Any Campaign URL to Inspect Parameters</label>
+        <input type="text" id="analyze-input" class="form-control" placeholder="https://example.com/?utm_source=...&utm_medium=...">
+      </div>
+
+      <div style="overflow-x: auto;">
+        <table class="param-table">
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Key Name</th>
+              <th>Extracted Value</th>
+            </tr>
+          </thead>
+          <tbody id="analysis-tbody">
+            <tr>
+              <td>Source</td>
+              <td><code>utm_source</code></td>
+              <td id="val-source">-</td>
+            </tr>
+            <tr>
+              <td>Medium</td>
+              <td><code>utm_medium</code></td>
+              <td id="val-medium">-</td>
+            </tr>
+            <tr>
+              <td>Campaign</td>
+              <td><code>utm_campaign</code></td>
+              <td id="val-campaign">-</td>
+            </tr>
+            <tr>
+              <td>Term</td>
+              <td><code>utm_term</code></td>
+              <td id="val-term">-</td>
+            </tr>
+            <tr>
+              <td>Content</td>
+              <td><code>utm_content</code></td>
+              <td id="val-content">-</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- SEO Article Content Box 1 -->
+    <div class="content-box">
+      <h2>Why UTM Tracking is Essential for Digital Marketing</h2>
+      <p>When running digital marketing campaigns across social media, email newsletters, search ads, or partner sites, knowing exact traffic sources is vital. UTM (Urchin Tracking Module) parameters are standard tags added to URLs that allow analytics platforms like Google Analytics to report precisely which campaigns drive traffic and conversions.</p>
+      <p>Our free <strong>UTM Campaign Builder & Analyzer</strong> ensures your tracking links are formatted correctly and provides instant parameter auditing.</p>
+    </div>
+
+    <!-- SEO Article Content Box 2 -->
+    <div class="content-box">
+      <h2>Understanding the 5 UTM Parameters</h2>
+      <p>Standard campaign tracking relies on five distinct components:</p>
+
+      <h3>1. utm_source (Required)</h3>
+      <p>Identifies the advertiser, site, or publication sending traffic (e.g., <em>google, newsletter, facebook</em>).</p>
+
+      <h3>2. utm_medium (Required)</h3>
+      <p>Identifies the marketing medium or channel (e.g., <em>cpc, banner, email, social</em>).</p>
+
+      <h3>3. utm_campaign (Required)</h3>
+      <p>Identifies the specific product promotion or strategic campaign name (e.g., <em>spring_sale_2026</em>).</p>
+
+      <h3>4. utm_term & utm_content (Optional)</h3>
+      <p>Used respectively for paid keyword tracking and A/B split-testing ad variations.</p>
+    </div>
+
+    <!-- SEO Article Content Box 3 -->
+    <div class="content-box">
+      <h2>Key Features of Our UTM Utility</h2>
+      <ul>
+        <li><strong>Dual Functionality:</strong> Build new tracking links and parse existing URLs in one single dashboard.</li>
+        <li><strong>Real-Time Instant Preview:</strong> Watch your parameters append dynamically as you type.</li>
+        <li><strong>100% Client-Side Privacy:</strong> All URL calculations run locally in your browser with zero data logging.</li>
+        <li><strong>One-Click Copy:</strong> Instantly copy your finalized campaign link to your clipboard.</li>
+      </ul>
+    </div>
+
+    <!-- Internal Linking Section -->
+    <div class="content-box">
+      <h2>Explore Related Developer & SEO Tools</h2>
+      <p>Discover our complementary online utilities:</p>
+      <div class="related-links">
+        <a href="/tools/developer/url-shortener.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🔗 URL Shortener</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Shorten long tracked URLs quickly.</span>
+        </a>
+        <a href="/tools/developer/dns-lookup.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🌐 DNS Lookup Tool</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Check domain DNS records instantly.</span>
+        </a>
+        <a href="/tools/media/qr-code-scanner.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📷 QR Code Scanner</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Scan QR codes via camera.</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="content-box">
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Are UTM parameters case-sensitive?</h3>
+        <p>Yes! Google Analytics treats <code>Facebook</code> and <code>facebook</code> as two different traffic sources. Always use consistent lowercase naming conventions.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Can I use spaces in UTM parameters?</h3>
+        <p>It's best to avoid spaces. Use underscores (_) or hyphens (-) to separate words in campaign names and sources.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Does this tool store my campaign URLs?</h3>
+        <p>No. All processing happens locally in your browser session. Your marketing strategies remain completely private.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer Container Placeholder -->
+  <div id="footer-container"></div>
+
+  <!-- JavaScript Utilities & Logic -->
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js" defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const utmUrl = document.getElementById('utm-url');
+      const utmSource = document.getElementById('utm-source');
+      const utmMedium = document.getElementById('utm-medium');
+      const utmCampaign = document.getElementById('utm-campaign');
+      const utmTerm = document.getElementById('utm-term');
+      const utmContent = document.getElementById('utm-content');
+      const generatedUrl = document.getElementById('generated-url');
+      const btnCopyUrl = document.getElementById('btn-copy-url');
+
+      const analyzeInput = document.getElementById('analyze-input');
+      const valSource = document.getElementById('val-source');
+      const valMedium = document.getElementById('val-medium');
+      const valCampaign = document.getElementById('val-campaign');
+      const valTerm = document.getElementById('val-term');
+      const valContent = document.getElementById('val-content');
+
+      function buildUtmUrl() {
+        let baseUrl = utmUrl.value.trim() || 'https://example.com';
+        // Remove existing query params if any
+        if (baseUrl.includes('?')) {
+          baseUrl = baseUrl.split('?')[0];
+        }
+
+        const params = new URLSearchParams();
+        if (utmSource.value.trim()) params.append('utm_source', utmSource.value.trim());
+        if (utmMedium.value.trim()) params.append('utm_medium', utmMedium.value.trim());
+        if (utmCampaign.value.trim()) params.append('utm_campaign', utmCampaign.value.trim());
+        if (utmTerm.value.trim()) params.append('utm_term', utmTerm.value.trim());
+        if (utmContent.value.trim()) params.append('utm_content', utmContent.value.trim());
+
+        const queryString = params.toString();
+        const finalUrl = queryString ? `${baseUrl}?${queryString}` : baseUrl;
+        generatedUrl.textContent = finalUrl;
+      }
+
+      function analyzeUtmUrl() {
+        const urlString = analyzeInput.value.trim();
+        if (!urlString) {
+          valSource.textContent = '-';
+          valMedium.textContent = '-';
+          valCampaign.textContent = '-';
+          valTerm.textContent = '-';
+          valContent.textContent = '-';
+          return;
+        }
+
+        try {
+          const url = new URL(urlString.startsWith('http') ? urlString : `https://${urlString}`);
+          const params = url.searchParams;
+
+          valSource.textContent = params.get('utm_source') || 'Not found';
+          valMedium.textContent = params.get('utm_medium') || 'Not found';
+          valCampaign.textContent = params.get('utm_campaign') || 'Not found';
+          valTerm.textContent = params.get('utm_term') || 'Not found';
+          valContent.textContent = params.get('utm_content') || 'Not found';
+        } catch (e) {
+          valSource.textContent = 'Invalid URL';
+          valMedium.textContent = 'Invalid URL';
+          valCampaign.textContent = 'Invalid URL';
+          valTerm.textContent = 'Invalid URL';
+          valContent.textContent = 'Invalid URL';
+        }
+      }
+
+      [utmUrl, utmSource, utmMedium, utmCampaign, utmTerm, utmContent].forEach(el => {
+        el.addEventListener('input', buildUtmUrl);
+      });
+
+      analyzeInput.addEventListener('input', analyzeUtmUrl);
+
+      btnCopyUrl.addEventListener('click', function() {
+        navigator.clipboard.writeText(generatedUrl.textContent).then(() => {
+          const originalText = btnCopyUrl.textContent;
+          btnCopyUrl.textContent = '✅ Copied!';
+          setTimeout(() => { btnCopyUrl.textContent = originalText; }, 2000);
+        });
+      });
+
+      // Initial Build
+      buildUtmUrl();
+    });
+  </script>
+</body>
+</html>
