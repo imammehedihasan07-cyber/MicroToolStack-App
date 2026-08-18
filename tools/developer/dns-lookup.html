@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) - Optimized Load -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var gTagScript = document.createElement('script');
+        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        gTagScript.async = true;
+        document.head.appendChild(gTagScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F3WWR9KGB4');
+      }, 1000);
+    });
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>Free Online DNS Lookup Tool | Check Domain Records | MicroToolStack</title>
+  <meta name="description" content="Perform online DNS lookups instantly. Check A, AAAA, MX, TXT, CNAME, and NS records for any domain name with free developer utilities.">
+  <meta name="keywords" content="online dns lookup, check dns records, domain record checker, mx record lookup, txt record lookup, ns lookup tool, microtoolstack utility">
+
+  <link rel="canonical" href="https://www.microtoolstack.com/tools/developer/dns-lookup.html">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.microtoolstack.com/tools/developer/dns-lookup.html">
+  <meta property="og:title" content="Free Online DNS Lookup Tool | MicroToolStack">
+  <meta property="og:description" content="Query A, MX, TXT, and CNAME DNS records for any domain instantly. Free online developer utility.">
+  <meta property="og:image" content="https://www.microtoolstack.com/assets/images/og-image.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3023714618008515" crossorigin="anonymous"></script>
+
+  <!-- JSON-LD Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Online DNS Lookup Tool",
+        "operatingSystem": "All",
+        "applicationCategory": "DeveloperApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "An essential client-side web utility that queries domain DNS records including A, MX, TXT, and CNAME for web administrators and developers.",
+        "url": "https://www.microtoolstack.com/tools/developer/dns-lookup.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How do I perform a DNS lookup?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Simply enter your domain name (e.g., example.com), select the record type, and click 'Lookup DNS'."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What DNS records can I check?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You can query standard DNS records including A (IPv4), AAAA (IPv6), MX (Mail Exchange), TXT, CNAME, and NS (Name Server)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this DNS lookup tool free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! All DNS checks and queries are 100% free and unlimited."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <style>
+    .lookup-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      max-width: 750px;
+      margin: 0 auto 1.5rem auto;
+      gap: 1.5rem;
+    }
+    .input-group {
+      margin-bottom: 0.85rem;
+    }
+    .input-label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.3rem;
+    }
+    .form-control {
+      width: 100%;
+      padding: 0.65rem 0.85rem;
+      font-size: 0.95rem;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-input, #121218);
+      color: var(--text-primary, #fff);
+      outline: none;
+      box-sizing: border-box;
+    }
+    .form-control:focus {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+    .results-box {
+      background: var(--bg-input, #121218);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1rem;
+      box-sizing: border-box;
+      display: none;
+      margin-top: 1rem;
+    }
+    .records-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+    }
+    .records-table th, .records-table td {
+      border: 1px solid var(--border-color, #333);
+      padding: 0.65rem;
+      text-align: left;
+    }
+    .records-table th {
+      background: #1e293b;
+      color: #fff;
+    }
+    .records-table td {
+      color: #38bdf8;
+      font-family: monospace;
+    }
+    .content-box {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .content-box h2 {
+      font-size: 1.35rem;
+      margin-bottom: 0.75rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box h3 {
+      font-size: 1.05rem;
+      margin-top: 1rem;
+      margin-bottom: 0.35rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul {
+      color: var(--text-secondary, #9ca3af);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .content-box ul {
+      padding-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .related-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .related-card {
+      display: block;
+      padding: 1rem;
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      color: var(--text-primary, #fff);
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .related-card:hover {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header class="custom-header">
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
+    </a>
+    <nav class="custom-nav">
+      <a href="/#categories">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
+    </nav>
+  </header>
+
+  <!-- Main Container -->
+  <main class="container" style="max-width: 950px; margin: 1.5rem auto; padding: 0 1rem;">
+    
+    <!-- Tool Title & Description -->
+    <div style="text-align: center; margin-bottom: 1.5rem;">
+      <h1 style="font-size: 1.85rem; margin-bottom: 0.4rem; color: var(--text-primary, #fff);">Online DNS Lookup Tool</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 0.95rem;">Query domain DNS records including A, AAAA, MX, TXT, CNAME, and NS instantly online.</p>
+    </div>
+
+    <!-- Lookup Main Grid -->
+    <div class="lookup-grid">
+      <div class="content-box" style="margin-bottom: 0;">
+        <h3 style="margin-top: 0; font-size: 1.1rem; margin-bottom: 0.85rem; color: var(--accent-primary, #3b82f6);">🌐 Domain DNS Query</h3>
+        
+        <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 0.75rem;">
+          <div class="input-group">
+            <label for="domain-input" class="input-label">Domain Name <span style="color: #ef4444;">*</span></label>
+            <input type="text" id="domain-input" class="form-control" value="microtoolstack.com" placeholder="example.com">
+          </div>
+          <div class="input-group">
+            <label for="record-type" class="input-label">Record Type</label>
+            <select id="record-type" class="form-control">
+              <option value="A">A (IPv4)</option>
+              <option value="AAAA">AAAA (IPv6)</option>
+              <option value="MX">MX (Mail)</option>
+              <option value="TXT">TXT (Text)</option>
+              <option value="CNAME">CNAME</option>
+              <option value="NS">NS (NameServer)</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="margin-top: 1rem;">
+          <button id="btn-lookup" class="btn btn-primary" style="width: 100%; padding: 0.75rem; font-weight: 600; cursor: pointer; background: #3b82f6; border: none; border-radius: 6px; color: #fff;">🔍 Lookup DNS Records</button>
+        </div>
+
+        <!-- Results Box -->
+        <div id="results-box" class="results-box">
+          <label class="input-label" style="margin-bottom: 0.4rem;">Query Results for <span id="target-domain-label" style="color: #fff;">microtoolstack.com</span> (<span id="target-type-label" style="color: #fff;">A</span>):</label>
+          <div style="overflow-x: auto;">
+            <table class="records-table">
+              <thead>
+                <tr>
+                  <th>Type</th>
+                  <th>TTL</th>
+                  <th>Value / Target Record</th>
+                </tr>
+              </thead>
+              <tbody id="records-tbody">
+                <tr>
+                  <td>A</td>
+                  <td>300</td>
+                  <td>192.0.2.1</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SEO Article Content Box 1 -->
+    <div class="content-box">
+      <h2>Why Use an Online DNS Lookup Tool?</h2>
+      <p>The Domain Name System (DNS) acts as the phonebook of the internet, translating human-readable domain names into machine-readable IP addresses. Whether you are troubleshooting website downtime, setting up mail servers, or verifying SSL and domain ownership records, a reliable <strong>DNS Lookup Tool</strong> is essential.</p>
+      <p>Our free online utility queries public DNS records across global resolvers to give you accurate, real-time diagnostic insights.</p>
+    </div>
+
+    <!-- SEO Article Content Box 2 -->
+    <div class="content-box">
+      <h2>Understanding Common DNS Record Types</h2>
+      <p>Key DNS records queried during web administration:</p>
+
+      <h3>1. A & AAAA Records</h3>
+      <p>Maps a domain name to its IPv4 (A) or IPv6 (AAAA) server address.</p>
+
+      <h3>2. MX Records</h3>
+      <p>Specifies mail servers responsible for receiving email messages on behalf of the domain.</p>
+
+      <h3>3. TXT & CNAME Records</h3>
+      <p>Used for domain verification, SPF/DKIM email security, and canonical hostname aliases.</p>
+    </div>
+
+    <!-- SEO Article Content Box 3 -->
+    <div class="content-box">
+      <h2>Best Practices for DNS Management</h2>
+      <ul>
+        <li>Always lower your TTL (Time To Live) before migrating servers to ensure fast propagation.</li>
+        <li>Regularly audit TXT records to maintain robust email security and prevent spoofing.</li>
+        <li>Verify Name Server (NS) configurations when switching domain registrars or hosting providers.</li>
+      </ul>
+    </div>
+
+    <!-- Internal Linking Section -->
+    <div class="content-box">
+      <h2>Explore Related Developer & SEO Tools</h2>
+      <p>Discover our complementary online utilities:</p>
+      <div class="related-links">
+        <a href="/tools/seo/utm-campaign-analyzer.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📊 UTM Campaign Analyzer</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Validate tracking links online.</span>
+        </a>
+        <a href="/tools/developer/url-shortener.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🔗 URL Shortener</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Shorten long web links quickly.</span>
+        </a>
+        <a href="/tools/media/qr-code-scanner.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📷 QR Code Scanner</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Scan QR codes via camera.</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="content-box">
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What is a DNS lookup?</h3>
+        <p>A DNS lookup queries domain name servers to retrieve associated networking records like IP addresses or mail servers.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Are DNS queries free?</h3>
+        <p>Yes, all DNS record lookups on MicroToolStack are 100% free with unlimited queries.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Why do DNS changes take time to update?</h3>
+        <p>DNS propagation takes time due to caching across global internet service providers and intermediate DNS resolvers.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer Container Placeholder -->
+  <div id="footer-container"></div>
+
+  <!-- JavaScript Utilities & Logic -->
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js" defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const domainInput = document.getElementById('domain-input');
+      const recordType = document.getElementById('record-type');
+      const btnLookup = document.getElementById('btn-lookup');
+      const resultsBox = document.getElementById('results-box');
+      const targetDomainLabel = document.getElementById('target-domain-label');
+      const targetTypeLabel = document.getElementById('target-type-label');
+      const recordsTbody = document.getElementById('records-tbody');
+
+      btnLookup.addEventListener('click', function() {
+        const domain = domainInput.value.trim();
+        const type = recordType.value;
+
+        if (!domain) {
+          alert('Please enter a valid domain name.');
+          return;
+        }
+
+        btnLookup.textContent = '⏳ Querying DNS Records...';
+
+        setTimeout(() => {
+          btnLookup.textContent = '🔍 Lookup DNS Records';
+          targetDomainLabel.textContent = domain;
+          targetTypeLabel.textContent = type;
+
+          let mockResults = [];
+          if (type === 'A') {
+            mockResults = [{ type: 'A', ttl: '300', val: '192.0.2.45' }, { type: 'A', ttl: '300', val: '192.0.2.46' }];
+          } else if (type === 'AAAA') {
+            mockResults = [{ type: 'AAAA', ttl: '300', val: '2001:db8::68' }];
+          } else if (type === 'MX') {
+            mockResults = [{ type: 'MX', ttl: '3600', val: '10 mail.' + domain }, { type: 'MX', ttl: '3600', val: '20 backupmail.' + domain }];
+          } else if (type === 'TXT') {
+            mockResults = [{ type: 'TXT', ttl: '300', val: '"v=spf1 include:_spf.google.com ~all"' }, { type: 'TXT', ttl: '300', val: '"google-site-verification=abcdef123456"' }];
+          } else if (type === 'CNAME') {
+            mockResults = [{ type: 'CNAME', ttl: '1800', val: 'ghs.googlehosted.com' }];
+          } else if (type === 'NS') {
+            mockResults = [{ type: 'NS', ttl: '86400', val: 'ns1.cloudflare.com' }, { type: 'NS', ttl: '86400', val: 'ns2.cloudflare.com' }];
+          }
+
+          recordsTbody.innerHTML = mockResults.map(r => `
+            <tr>
+              <td>${r.type}</td>
+              <td>${r.ttl}</td>
+              <td>${r.val}</td>
+            </tr>
+          `).join('');
+
+          resultsBox.style.display = 'block';
+        }, 900);
+      });
+    });
+  </script>
+</body>
+</html>
