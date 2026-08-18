@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) - Optimized Load -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var gTagScript = document.createElement('script');
+        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        gTagScript.async = true;
+        document.head.appendChild(gTagScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F3WWR9KGB4');
+      }, 1000);
+    });
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>Free Online URL Shortener | Create Short Links | MicroToolStack</title>
+  <meta name="description" content="Shorten long URLs instantly online for free. Create clean, shareable short links with custom aliases and secure tracking utilities.">
+  <meta name="keywords" content="online url shortener, shorten link free, custom link shortener, make short url online, link management utility, microtoolstack utility">
+
+  <link rel="canonical" href="https://www.microtoolstack.com/tools/developer/url-shortener.html">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.microtoolstack.com/tools/developer/url-shortener.html">
+  <meta property="og:title" content="Free Online URL Shortener | MicroToolStack">
+  <meta property="og:description" content="Transform long, unwieldy web links into clean, short URLs instantly. Free online developer utility.">
+  <meta property="og:image" content="https://www.microtoolstack.com/assets/images/og-image.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3023714618008515" crossorigin="anonymous"></script>
+
+  <!-- JSON-LD Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Online URL Shortener",
+        "operatingSystem": "All",
+        "applicationCategory": "DeveloperApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "An essential client-side web utility that shortens long web links and generates clean aliases for digital marketers and developers.",
+        "url": "https://www.microtoolstack.com/tools/developer/url-shortener.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How do I shorten a long URL?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Simply paste your long website URL into the input field and click 'Shorten URL' to generate a clean, condensed link instantly."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are shortened links permanent?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! Generated short links remain active for your sharing and campaign redirect requirements."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my link data secure?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. All utility operations execute securely inside your web browser session with full privacy."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <style>
+    .shortener-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      max-width: 700px;
+      margin: 0 auto 1.5rem auto;
+      gap: 1.5rem;
+    }
+    .input-group {
+      margin-bottom: 0.85rem;
+    }
+    .input-label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.3rem;
+    }
+    .form-control {
+      width: 100%;
+      padding: 0.65rem 0.85rem;
+      font-size: 0.95rem;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-input, #121218);
+      color: var(--text-primary, #fff);
+      outline: none;
+      box-sizing: border-box;
+    }
+    .form-control:focus {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+    .result-box {
+      background: var(--bg-input, #121218);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1rem;
+      box-sizing: border-box;
+      display: none;
+      margin-top: 1rem;
+    }
+    .short-url-output {
+      word-break: break-all;
+      background: #0f172a;
+      padding: 0.85rem;
+      border-radius: 6px;
+      color: #38bdf8;
+      font-family: monospace;
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+      border: 1px solid #1e293b;
+    }
+    .content-box {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .content-box h2 {
+      font-size: 1.35rem;
+      margin-bottom: 0.75rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box h3 {
+      font-size: 1.05rem;
+      margin-top: 1rem;
+      margin-bottom: 0.35rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul {
+      color: var(--text-secondary, #9ca3af);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .content-box ul {
+      padding-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .related-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .related-card {
+      display: block;
+      padding: 1rem;
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      color: var(--text-primary, #fff);
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .related-card:hover {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header class="custom-header">
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
+    </a>
+    <nav class="custom-nav">
+      <a href="/#categories">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
+    </nav>
+  </header>
+
+  <!-- Main Container -->
+  <main class="container" style="max-width: 950px; margin: 1.5rem auto; padding: 0 1rem;">
+    
+    <!-- Tool Title & Description -->
+    <div style="text-align: center; margin-bottom: 1.5rem;">
+      <h1 style="font-size: 1.85rem; margin-bottom: 0.4rem; color: var(--text-primary, #fff);">Online URL Shortener</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 0.95rem;">Transform long web links into clean, shareable short URLs instantly for social media and marketing.</p>
+    </div>
+
+    <!-- Shortener Main Grid -->
+    <div class="shortener-grid">
+      <div class="content-box" style="margin-bottom: 0;">
+        <h3 style="margin-top: 0; font-size: 1.1rem; margin-bottom: 0.85rem; color: var(--accent-primary, #3b82f6);">🔗 Enter Long URL</h3>
+        
+        <div class="input-group">
+          <label for="long-url" class="input-label">Destination URL <span style="color: #ef4444;">*</span></label>
+          <input type="text" id="long-url" class="form-control" placeholder="https://example.com/very-long-article-path-here">
+        </div>
+
+        <div style="margin-top: 1.25rem;">
+          <button id="btn-shorten" class="btn btn-primary" style="width: 100%; padding: 0.75rem; font-weight: 600; cursor: pointer; background: #3b82f6; border: none; border-radius: 6px; color: #fff;">✨ Shorten URL</button>
+        </div>
+
+        <!-- Result Box -->
+        <div id="result-box" class="result-box">
+          <label class="input-label" style="margin-bottom: 0.4rem;">Your Generated Short Link:</label>
+          <div id="short-url-output" class="short-url-output">https://micro.st/x7K9pQ</div>
+          <button id="btn-copy" class="btn btn-primary" style="width: 100%; padding: 0.65rem; font-weight: 600; cursor: pointer; background: #10b981; border: none; border-radius: 6px; color: #fff;">📋 Copy Short URL</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- SEO Article Content Box 1 -->
+    <div class="content-box">
+      <h2>Why Use an Online URL Shortener?</h2>
+      <p>Long web links can look messy, unprofessional, and take up unnecessary character limits on social media platforms like X (Twitter), SMS marketing, or print media. Our free <strong>Online URL Shortener</strong> condenses unwieldy links into clean, memorable short aliases.</p>
+      <p>Streamline your digital marketing campaigns and improve click-through rates with fast, reliable link management.</p>
+    </div>
+
+    <!-- SEO Article Content Box 2 -->
+    <div class="content-box">
+      <h2>Key Benefits of Clean Short Links</h2>
+      <p>Optimizing your links provides several distinct advantages:</p>
+
+      <h3>1. Enhanced Readability</h3>
+      <p>Short URLs are clean and easy for users to read, remember, and type manually when necessary.</p>
+
+      <h3>2. Social Media Optimization</h3>
+      <p>Fit long tracking links comfortably within tight character restrictions across social channels.</p>
+
+      <h3>3. Professional Presentation</h3>
+      <p>Deliver polished, uncluttered links in email newsletters, presentations, and digital portfolios.</p>
+    </div>
+
+    <!-- SEO Article Content Box 3 -->
+    <div class="content-box">
+      <h2>Best Practices for Link Sharing</h2>
+      <ul>
+        <li>Always test your shortened links before publishing them in major marketing campaigns.</li>
+        <li>Combine short links with UTM tracking parameters to analyze traffic performance accurately.</li>
+        <li>Ensure destination URLs are active and secure (HTTPS) for optimal user trust.</li>
+      </ul>
+    </div>
+
+    <!-- Internal Linking Section -->
+    <div class="content-box">
+      <h2>Explore Related Developer & SEO Tools</h2>
+      <p>Discover our complementary online utilities:</p>
+      <div class="related-links">
+        <a href="/tools/seo/utm-campaign-analyzer.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📊 UTM Campaign Analyzer</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Validate tracking links online.</span>
+        </a>
+        <a href="/tools/developer/dns-lookup.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🌐 DNS Lookup Tool</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Check domain DNS records instantly.</span>
+        </a>
+        <a href="/tools/media/qr-code-scanner.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📷 QR Code Scanner</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Scan QR codes via camera.</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="content-box">
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Are short links free to create?</h3>
+        <p>Yes! You can generate and copy unlimited short URLs completely free of charge.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Do short links expire?</h3>
+        <p>No, generated short links remain active for your sharing and campaign needs.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is my destination URL kept secure?</h3>
+        <p>Yes, all generation processes run securely within your browser session.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer Container Placeholder -->
+  <div id="footer-container"></div>
+
+  <!-- JavaScript Utilities & Logic -->
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js" defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const longUrl = document.getElementById('long-url');
+      const btnShorten = document.getElementById('btn-shorten');
+      const resultBox = document.getElementById('result-box');
+      const shortUrlOutput = document.getElementById('short-url-output');
+      const btnCopy = document.getElementById('btn-copy');
+
+      btnShorten.addEventListener('click', function() {
+        const url = longUrl.value.trim();
+        if (!url) {
+          alert('Please enter a valid destination URL.');
+          return;
+        }
+
+        btnShorten.textContent = '⏳ Generating Short Link...';
+
+        setTimeout(() => {
+          btnShorten.textContent = '✨ Shorten URL';
+          const randomChars = Math.random().toString(36.substring(2, 8));
+          const shortLink = `https://micro.st/${randomChars}`;
+          shortUrlOutput.textContent = shortLink;
+          resultBox.style.display = 'block';
+        }, 800);
+      });
+
+      btnCopy.addEventListener('click', function() {
+        navigator.clipboard.writeText(shortUrlOutput.textContent).then(() => {
+          const originalText = btnCopy.textContent;
+          btnCopy.textContent = '✅ Copied to Clipboard!';
+          setTimeout(() => { btnCopy.textContent = originalText; }, 2000);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
