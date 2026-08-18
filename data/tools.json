@@ -1320,5 +1320,85 @@
     "icon": "📈",
     "isPopular": false,
     "isNew": true
+  },
+  {
+    "id": "qr-code-scanner",
+    "name": "QR Code Scanner",
+    "category": "media",
+    "url": "/tools/media/qr-code-scanner.html",
+    "description": "Scan and decode QR codes instantly using your device camera or uploaded image files.",
+    "icon": "📷",
+    "isPopular": true,
+    "isNew": true
+  },
+  {
+    "id": "barcode-generator",
+    "name": "Barcode Generator",
+    "category": "media",
+    "url": "/tools/media/barcode-generator.html",
+    "description": "Create custom barcodes in multiple formats and download as high-resolution PNG.",
+    "icon": "📊",
+    "isPopular": false,
+    "isNew": true
+  },
+  {
+    "id": "qr-code-scanner-from-image",
+    "name": "QR Code Scanner from Image",
+    "category": "media",
+    "url": "/tools/media/qr-code-scanner-from-image.html",
+    "description": "Upload screenshots or image files to decode QR codes instantly online.",
+    "icon": "🖼️",
+    "isPopular": false,
+    "isNew": true
+  },
+  {
+    "id": "utm-campaign-analyzer",
+    "name": "UTM Campaign Analyzer",
+    "category": "seo",
+    "url": "/tools/seo/utm-campaign-analyzer.html",
+    "description": "Build, parse, and analyze UTM tracking parameters for digital marketing campaigns.",
+    "icon": "📈",
+    "isPopular": true,
+    "isNew": true
+  },
+  {
+    "id": "website-screenshot",
+    "name": "Website Screenshot Tool",
+    "category": "developer",
+    "url": "/tools/developer/website-screenshot.html",
+    "description": "Capture live website screenshots and preview layouts across multiple device resolutions.",
+    "icon": "📸",
+    "isPopular": false,
+    "isNew": true
+  },
+  {
+    "id": "url-shortener",
+    "name": "URL Shortener",
+    "category": "developer",
+    "url": "/tools/developer/url-shortener.html",
+    "description": "Transform long web links into clean, shareable short URLs instantly.",
+    "icon": "🔗",
+    "isPopular": true,
+    "isNew": true
+  },
+  {
+    "id": "dns-lookup",
+    "name": "DNS Lookup Tool",
+    "category": "developer",
+    "url": "/tools/developer/dns-lookup.html",
+    "description": "Query domain DNS records including A, AAAA, MX, TXT, CNAME, and NS instantly.",
+    "icon": "🌐",
+    "isPopular": false,
+    "isNew": true
+  },
+  {
+    "id": "website-uptime-checker",
+    "name": "Website Uptime Checker",
+    "category": "developer",
+    "url": "/tools/developer/website-uptime-checker.html",
+    "description": "Test website availability, server response latency, and HTTP status codes online.",
+    "icon": "⚡",
+    "isPopular": true,
+    "isNew": true
   }
 ]
