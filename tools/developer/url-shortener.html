@@ -341,7 +341,7 @@
 
         setTimeout(() => {
           btnShorten.textContent = '✨ Shorten URL';
-          const randomChars = Math.random().toString(36.substring(2, 8));
+          const randomChars = Math.random().toString(36).substring(2, 8);
           const shortLink = `https://micro.st/${randomChars}`;
           shortUrlOutput.textContent = shortLink;
           resultBox.style.display = 'block';
