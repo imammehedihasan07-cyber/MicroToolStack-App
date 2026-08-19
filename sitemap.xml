@@ -92,7 +92,20 @@
   <url><loc>https://www.microtoolstack.com/tools/calculator/currency-converter.html</loc><priority>0.8</priority></url>
   <url><loc>https://www.microtoolstack.com/tools/calculator/roi-calculator.html</loc><priority>0.8</priority></url>
 
-  <!-- 5. Media Tools (19 Tools) -->
+  <!-- 5. QR & Barcode Tools (10 Tools) -->
+  <url><loc>https://www.microtoolstack.com/tools/qr-barcode/</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/qr-barcode/url-qr-generator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/qr-barcode/text-qr-generator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/qr-barcode/wifi-qr-generator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/qr-barcode/email-qr-generator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/qr-barcode/phone-qr-generator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/qr-barcode/vcard-qr-generator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/qr-barcode/qr-code-generator.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/qr-barcode/qr-code-scanner.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/qr-barcode/qr-code-scanner-from-image.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/tools/qr-barcode/barcode-generator.html</loc><priority>0.8</priority></url>
+
+  <!-- 6. Media Tools (15 Tools) -->
   <url><loc>https://www.microtoolstack.com/tools/media/svg-to-png.html</loc><priority>0.8</priority></url>
   <url><loc>https://www.microtoolstack.com/tools/media/png-to-svg.html</loc><priority>0.8</priority></url>
   <url><loc>https://www.microtoolstack.com/tools/media/image-cropper.html</loc><priority>0.8</priority></url>
@@ -105,7 +118,6 @@
   <url><loc>https://www.microtoolstack.com/tools/media/webp-to-jpg.html</loc><priority>0.8</priority></url>
   <url><loc>https://www.microtoolstack.com/tools/media/favicon-generator.html</loc><priority>0.8</priority></url>
   <url><loc>https://www.microtoolstack.com/tools/media/color-palette-extractor.html</loc><priority>0.8</priority></url>
-  <url><loc>https://www.microtoolstack.com/tools/media/qr-code-generator.html</loc><priority>0.8</priority></url>
   <url><loc>https://www.microtoolstack.com/tools/media/aspect-ratio-calculator.html</loc><priority>0.8</priority></url>
   <url><loc>https://www.microtoolstack.com/tools/media/image-exif-data-remover.html</loc><priority>0.8</priority></url>
   <url><loc>https://www.microtoolstack.com/tools/media/webp-converter.html</loc><priority>0.8</priority></url>
@@ -113,23 +125,20 @@
   <url><loc>https://www.microtoolstack.com/tools/media/image-watermark.html</loc><priority>0.8</priority></url>
   <url><loc>https://www.microtoolstack.com/tools/media/gif-to-mp4.html</loc><priority>0.8</priority></url>
   <url><loc>https://www.microtoolstack.com/tools/media/image-resizer.html</loc><priority>0.8</priority></url>
-  <url><loc>https://www.microtoolstack.com/tools/media/qr-code-scanner.html</loc><priority>0.8</priority></url>
-  <url><loc>https://www.microtoolstack.com/tools/media/barcode-generator.html</loc><priority>0.8</priority></url>
-  <url><loc>https://www.microtoolstack.com/tools/media/qr-code-scanner-from-image.html</loc><priority>0.8</priority></url>
   
-  <!-- 6. AI Tools (5 Tools) -->
+  <!-- 7. AI Tools (5 Tools) -->
   <url><loc>https://www.microtoolstack.com/tools/ai/caption-generator.html</loc><priority>0.8</priority></url>
   <url><loc>https://www.microtoolstack.com/tools/ai/hashtag-generator.html</loc><priority>0.8</priority></url>
   <url><loc>https://www.microtoolstack.com/tools/ai/bio-generator.html</loc><priority>0.8</priority></url>
   <url><loc>https://www.microtoolstack.com/tools/ai/humanizer.html</loc><priority>0.8</priority></url>
   <url><loc>https://www.microtoolstack.com/tools/ai/prompt-builder.html</loc><priority>0.8</priority></url>
 
-  <!-- 7. Pet Care & Calculators (3 Tools) -->
+  <!-- 8. Pet Care & Calculators (3 Tools) -->
   <url><loc>https://www.microtoolstack.com/tools/pet-care/dog-chocolate-toxicity-calculator.html</loc><priority>0.8</priority></url>
   <url><loc>https://www.microtoolstack.com/tools/pet-care/raw-dog-food-calculator.html</loc><priority>0.8</priority></url>
   <url><loc>https://www.microtoolstack.com/tools/pet-care/cat-age-converter.html</loc><priority>0.8</priority></url>
 
-  <!-- 8. YouTube Tools (7 Tools) -->
+  <!-- 9. YouTube Tools (7 Tools) -->
   <url><loc>https://www.microtoolstack.com/tools/youtube/youtube-title-generator.html</loc><priority>0.8</priority></url>
   <url><loc>https://www.microtoolstack.com/tools/youtube/channel-id-finder.html</loc><priority>0.8</priority></url>
   <url><loc>https://www.microtoolstack.com/tools/youtube/thumbnail-downloader.html</loc><priority>0.8</priority></url>
@@ -138,7 +147,7 @@
   <url><loc>https://www.microtoolstack.com/tools/youtube/playlist-id-finder.html</loc><priority>0.8</priority></url>
   <url><loc>https://www.microtoolstack.com/tools/youtube/thumbnail-preview.html</loc><priority>0.8</priority></url>
 
-  <!-- 9. PDF Tools (18 Tools) -->
+  <!-- 10. PDF Tools (18 Tools) -->
   <url><loc>https://www.microtoolstack.com/tools/pdf/merge-pdf.html</loc><priority>0.8</priority></url>
   <url><loc>https://www.microtoolstack.com/tools/pdf/images-to-pdf.html</loc><priority>0.8</priority></url>
   <url><loc>https://www.microtoolstack.com/tools/pdf/split-pdf.html</loc><priority>0.8</priority></url>
@@ -158,7 +167,7 @@
   <url><loc>https://www.microtoolstack.com/tools/pdf/pdf-word-counter.html</loc><priority>0.8</priority></url>
   <url><loc>https://www.microtoolstack.com/tools/pdf/pdf-watermark-remover.html</loc><priority>0.8</priority></url>
 
-  <!-- 10. Social Media Tools (4 Tools) -->
+  <!-- 11. Social Media Tools (4 Tools) -->
   <url><loc>https://www.microtoolstack.com/tools/social/linkedin-carousel-maker.html</loc><priority>0.8</priority></url>
   <url><loc>https://www.microtoolstack.com/tools/social/linkedin-banner-creator.html</loc><priority>0.8</priority></url>
   <url><loc>https://www.microtoolstack.com/tools/social/character-limit-checker.html</loc><priority>0.8</priority></url>
@@ -171,7 +180,7 @@
   <url><loc>https://www.microtoolstack.com/blog/developer-utilities-guide.html</loc><lastmod>2026-08-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.microtoolstack.com/blog/image-media-optimization-guide.html</loc><lastmod>2026-08-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.microtoolstack.com/blog/social-media-creator-tools-guide.html</loc><lastmod>2026-08-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.microtoolstack.com/blog/text-tools-writing-guide.html</loc><lastmod>2026-08-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.microtoolstack.com/blog/text-tools-writing-guide.html</loc><priority>0.8</priority></url>
   <url><loc>https://www.microtoolstack.com/blog/ai-productivity-workflow-guide.html</loc><lastmod>2026-08-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.microtoolstack.com/blog/everyday-online-calculators-guide.html</loc><lastmod>2026-08-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.microtoolstack.com/blog/youtube-creator-tools-growth-guide.html</loc><lastmod>2026-08-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
