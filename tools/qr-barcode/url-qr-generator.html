@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) - Optimized Load -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var gTagScript = document.createElement('script');
+        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        gTagScript.async = true;
+        document.head.appendChild(gTagScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F3WWR9KGB4');
+      }, 1000);
+    });
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>Free Online URL QR Code Generator | Create Custom QR Codes | MicroToolStack</title>
+  <meta name="description" content="Generate custom QR codes for any website URL online for free. Live preview, color customization, and instant PNG/SVG download for marketing and business.">
+  <meta name="keywords" content="url qr code generator, create qr code for website, free qr maker online, website qr code creator, link qr generator, microtoolstack utility">
+
+  <link rel="canonical" href="https://www.microtoolstack.com/tools/QR & Barcode Tools/url-qr-generator.html">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.microtoolstack.com/tools/QR & Barcode Tools/url-qr-generator.html">
+  <meta property="og:title" content="Free Online URL QR Code Generator | MicroToolStack">
+  <meta property="og:description" content="Create custom QR codes instantly for web links and URLs. Export as high-resolution PNG or SVG.">
+  <meta property="og:image" content="https://www.microtoolstack.com/assets/images/og-image.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3023714618008515" crossorigin="anonymous"></script>
+
+  <!-- JSON-LD Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "URL QR Code Generator",
+        "operatingSystem": "All",
+        "applicationCategory": "UtilitiesApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "An essential client-side web utility that generates custom QR codes for website URLs with instant image downloads.",
+        "url": "https://www.microtoolstack.com/tools/QR & Barcode Tools/url-qr-generator.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How do I create a QR code for a website URL?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Simply paste your website link into the input field, customize colors if desired, and click download to get your QR code."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I download the generated QR code as an image?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! You can instantly download your created QR code as a high-resolution PNG image ready for print or digital sharing."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my URL data secure?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. All QR code generation runs 100% locally inside your browser session using JavaScript with absolute privacy."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <!-- QRCode.js Library CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+  <style>
+    .generator-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+      align-items: start;
+    }
+    @media (max-width: 850px) {
+      .generator-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .input-group {
+      margin-bottom: 0.85rem;
+    }
+    .input-label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.3rem;
+    }
+    .form-control {
+      width: 100%;
+      padding: 0.65rem 0.85rem;
+      font-size: 0.95rem;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-input, #121218);
+      color: var(--text-primary, #fff);
+      outline: none;
+      box-sizing: border-box;
+    }
+    .form-control:focus {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+    .preview-stage {
+      width: 100%;
+      background: #ffffff;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 2rem 1rem;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 280px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+    #qrcode {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #qrcode img {
+      display: block;
+    }
+    .content-box {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .content-box h2 {
+      font-size: 1.35rem;
+      margin-bottom: 0.75rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box h3 {
+      font-size: 1.05rem;
+      margin-top: 1rem;
+      margin-bottom: 0.35rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul {
+      color: var(--text-secondary, #9ca3af);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .content-box ul {
+      padding-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .related-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .related-card {
+      display: block;
+      padding: 1rem;
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      color: var(--text-primary, #fff);
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .related-card:hover {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header class="custom-header">
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
+    </a>
+    <nav class="custom-nav">
+      <a href="/#categories">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
+    </nav>
+  </header>
+
+  <!-- Main Container -->
+  <main class="container" style="max-width: 950px; margin: 1.5rem auto; padding: 0 1rem;">
+    
+    <!-- Tool Title & Description -->
+    <div style="text-align: center; margin-bottom: 1.5rem;">
+      <h1 style="font-size: 1.85rem; margin-bottom: 0.4rem; color: var(--text-primary, #fff);">URL QR Code Generator</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 0.95rem;">Create customized QR codes for any website URL instantly and download as high-resolution PNG.</p>
+    </div>
+
+    <!-- Generator & Preview Grid -->
+    <div class="generator-grid">
+      <!-- Input Controls Form -->
+      <div class="content-box" style="margin-bottom: 0;">
+        <h3 style="margin-top: 0; font-size: 1.1rem; margin-bottom: 0.85rem; color: var(--accent-primary, #3b82f6);">⚙️ QR Code Configuration</h3>
+        
+        <div class="input-group">
+          <label for="qr-url" class="input-label">Website URL <span style="color: #ef4444;">*</span></label>
+          <input type="text" id="qr-url" class="form-control" value="https://www.microtoolstack.com" placeholder="https://example.com">
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+          <div class="input-group">
+            <label for="qr-color" class="input-label">QR Color</label>
+            <input type="color" id="qr-color" class="form-control" value="#000000" style="height: 40px; padding: 2px; cursor: pointer;">
+          </div>
+          <div class="input-group">
+            <label for="qr-bgcolor" class="input-label">Background Color</label>
+            <input type="color" id="qr-bgcolor" class="form-control" value="#ffffff" style="height: 40px; padding: 2px; cursor: pointer;">
+          </div>
+        </div>
+      </div>
+
+      <!-- Live Preview Canvas & Download -->
+      <div>
+        <label class="input-label" style="font-size: 0.95rem; margin-bottom: 0.4rem;">📱 Live QR Code Preview</label>
+        <div class="preview-stage">
+          <div id="qrcode"></div>
+        </div>
+
+        <div style="margin-top: 1rem;">
+          <button id="btn-download" class="btn btn-primary" style="width: 100%; padding: 0.75rem; font-weight: 600; cursor: pointer; background: #10b981; border: none; border-radius: 6px; color: #fff;">💾 Download QR Code PNG</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- SEO Article Content Box 1 -->
+    <div class="content-box">
+      <h2>Why Use MicroToolStack's URL QR Code Generator?</h2>
+      <p>Quick Response (QR) codes bridge the physical and digital worlds seamlessly. Whether placed on business cards, restaurant menus, product packaging, or digital flyers, a URL QR code lets users visit your website instantly with a single camera scan.</p>
+      <p>Our free <strong>URL QR Code Generator</strong> lets you create customized, publication-ready QR codes in seconds with complete client-side security.</p>
+    </div>
+
+    <!-- SEO Article Content Box 2 -->
+    <div class="content-box">
+      <h2>Key Benefits of Website QR Codes</h2>
+      <p>Optimizing your links with QR codes offers several distinct advantages:</p>
+
+      <h3>1. Instant Access</h3>
+      <p>Eliminate manual typing errors by allowing users to scan and open your web links immediately.</p>
+
+      <h3>2. Brand Customization</h3>
+      <p>Tailor your QR code foreground and background colors to match your corporate identity.</p>
+
+      <h3>3. Universal Compatibility</h3>
+      <p>Generated codes can be read effortlessly by any standard smartphone camera or QR reader app.</p>
+    </div>
+
+    <!-- SEO Article Content Box 3 -->
+    <div class="content-box">
+      <h2>Best Practices for QR Code Design</h2>
+      <ul>
+        <li>Ensure high contrast between the foreground color and background for optimal scanning accuracy.</li>
+        <li>Always test your generated QR code with multiple devices before printing on physical media.</li>
+        <li>Include complete URLs (`https://`) to ensure direct browser redirection.</li>
+      </ul>
+    </div>
+
+    <!-- Internal Linking Section -->
+    <div class="content-box">
+      <h2>Explore Related QR & Barcode Tools</h2>
+      <p>Discover our complementary online utilities:</p>
+      <div class="related-links">
+        <a href="/tools/QR & Barcode Tools/text-qr-generator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📄 Text QR Code Generator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Encode plain messages into QR codes.</span>
+        </a>
+        <a href="/tools/QR & Barcode Tools/wifi-qr-generator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📶 WiFi QR Code Generator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Connect to Wi-Fi instantly via scan.</span>
+        </a>
+        <a href="/tools/media/barcode-generator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📊 Barcode Generator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Create professional barcodes instantly.</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="content-box">
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Do website QR codes expire?</h3>
+        <p>No, standard static QR codes generated here never expire and remain active permanently.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What image format is downloaded?</h3>
+        <p>You can instantly download your created QR code as a high-resolution PNG image file.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is my data private?</h3>
+        <p>Yes, all generation processes execute locally inside your browser session with total privacy.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer Container Placeholder -->
+  <div id="footer-container"></div>
+
+  <!-- JavaScript Utilities & Logic -->
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js" defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const qrUrl = document.getElementById('qr-url');
+      const qrColor = document.getElementById('qr-color');
+      const qrBgcolor = document.getElementById('qr-bgcolor');
+      const qrcodeContainer = document.getElementById('qrcode');
+      const btnDownload = document.getElementById('btn-download');
+
+      let qrcodeObj = null;
+
+      function renderQRCode() {
+        qrcodeContainer.innerHTML = '';
+        const text = qrUrl.value.trim() || 'https://www.microtoolstack.com';
+        
+        qrcodeObj = new QRCode(qrcodeContainer, {
+          text: text,
+          width: 200,
+          height: 200,
+          colorDark: qrColor.value,
+          colorLight: qrBgcolor.value,
+          correctLevel: QRCode.CorrectLevel.H
+        });
+      }
+
+      [qrUrl, qrColor, qrBgcolor].forEach(el => {
+        el.addEventListener('input', renderQRCode);
+        el.addEventListener('change', renderQRCode);
+      });
+
+      btnDownload.addEventListener('click', function() {
+        const img = qrcodeContainer.querySelector('img');
+        const canvas = qrcodeContainer.querySelector('canvas');
+        
+        let imageUrl = '';
+        if (img && img.src) {
+          imageUrl = img.src;
+        } else if (canvas) {
+          imageUrl = canvas.toDataURL('image/png');
+        }
+
+        if, imageUrl) {
+          const link = document.createElement('a');
+          link.href = imageUrl;
+          link.download = 'url-qr-code.png';
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+        } else {
+          alert('Please wait for the QR code to render completely.');
+        }
+      });
+
+      // Initial Render
+      renderQRCode();
+    });
+  </script>
+</body>
+</html>
