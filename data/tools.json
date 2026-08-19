@@ -529,15 +529,6 @@
     "isPopular": true
   },
   {
-    "id": "qr-code-generator",
-    "name": "Custom QR Code Generator with Logo",
-    "description": "Create free high-resolution QR codes with custom colors and brand logo overlays.",
-    "category": "media",
-    "url": "/tools/media/qr-code-generator.html",
-    "icon": "📲",
-    "isPopular": true
-  },
-  {
     "id": "prompt-builder",
     "name": "ChatGPT & Midjourney Prompt Builder",
     "description": "Construct high-converting ChatGPT text and Midjourney image generation prompts instantly.",
@@ -1322,36 +1313,6 @@
     "isNew": true
   },
   {
-    "id": "qr-code-scanner",
-    "name": "QR Code Scanner",
-    "category": "media",
-    "url": "/tools/media/qr-code-scanner.html",
-    "description": "Scan and decode QR codes instantly using your device camera or uploaded image files.",
-    "icon": "📷",
-    "isPopular": true,
-    "isNew": true
-  },
-  {
-    "id": "barcode-generator",
-    "name": "Barcode Generator",
-    "category": "media",
-    "url": "/tools/media/barcode-generator.html",
-    "description": "Create custom barcodes in multiple formats and download as high-resolution PNG.",
-    "icon": "📊",
-    "isPopular": false,
-    "isNew": true
-  },
-  {
-    "id": "qr-code-scanner-from-image",
-    "name": "QR Code Scanner from Image",
-    "category": "media",
-    "url": "/tools/media/qr-code-scanner-from-image.html",
-    "description": "Upload screenshots or image files to decode QR codes instantly online.",
-    "icon": "🖼️",
-    "isPopular": false,
-    "isNew": true
-  },
-  {
     "id": "utm-campaign-analyzer",
     "name": "UTM Campaign Analyzer",
     "category": "seo",
@@ -1400,5 +1361,105 @@
     "icon": "⚡",
     "isPopular": true,
     "isNew": true
+  },
+  {
+    "id": "url-qr-generator",
+    "name": "URL QR Code Generator",
+    "category": "qr-barcode",
+    "url": "/tools/qr-barcode/url-qr-generator.html",
+    "description": "Create customized QR codes for any website URL instantly and download as high-resolution PNG.",
+    "icon": "🔗",
+    "isPopular": true,
+    "isNew": true
+  },
+  {
+    "id": "text-qr-generator",
+    "name": "Text QR Code Generator",
+    "category": "qr-barcode",
+    "url": "/tools/qr-barcode/text-qr-generator.html",
+    "description": "Encode plain text messages, notes, and information into scannable QR codes instantly.",
+    "icon": "📄",
+    "isPopular": false,
+    "isNew": true
+  },
+  {
+    "id": "wifi-qr-generator",
+    "name": "WiFi QR Code Generator",
+    "category": "qr-barcode",
+    "url": "/tools/qr-barcode/wifi-qr-generator.html",
+    "description": "Generate scannable Wi-Fi configuration QR codes so guests can join your network instantly.",
+    "icon": "📶",
+    "isPopular": true,
+    "isNew": true
+  },
+  {
+    "id": "email-qr-generator",
+    "name": "Email QR Code Generator",
+    "category": "qr-barcode",
+    "url": "/tools/qr-barcode/email-qr-generator.html",
+    "description": "Generate scannable QR codes that open pre-filled email messages with recipient, subject, and body.",
+    "icon": "📧",
+    "isPopular": false,
+    "isNew": true
+  },
+  {
+    "id": "phone-qr-generator",
+    "name": "Phone Number QR Code Generator",
+    "category": "qr-barcode",
+    "url": "/tools/qr-barcode/phone-qr-generator.html",
+    "description": "Generate scannable QR codes that prompt users to dial your phone number instantly with a single scan.",
+    "icon": "📞",
+    "isPopular": false,
+    "isNew": true
+  },
+  {
+    "id": "vcard-qr-generator",
+    "name": "vCard QR Code Generator",
+    "category": "qr-barcode",
+    "url": "/tools/qr-barcode/vcard-qr-generator.html",
+    "description": "Create digital business cards that store contact details, phone, email, and address directly into phones upon scan.",
+    "icon": "📇",
+    "isPopular": true,
+    "isNew": true
+  },
+  {
+    "id": "qr-code-generator",
+    "name": "QR Code Generator",
+    "category": "qr-barcode",
+    "url": "/tools/qr-barcode/qr-code-generator.html",
+    "description": "Create customized QR codes instantly for links, text, and data sharing.",
+    "icon": "📱",
+    "isPopular": true,
+    "isNew": false
+  },
+  {
+    "id": "qr-code-scanner",
+    "name": "QR Code Scanner",
+    "category": "qr-barcode",
+    "url": "/tools/qr-barcode/qr-code-scanner.html",
+    "description": "Scan and decode QR codes instantly using your device camera.",
+    "icon": "📷",
+    "isPopular": true,
+    "isNew": false
+  },
+  {
+    "id": "qr-code-scanner-from-image",
+    "name": "QR Code Scanner from Image",
+    "category": "qr-barcode",
+    "url": "/tools/qr-barcode/qr-code-scanner-from-image.html",
+    "description": "Upload screenshots or image files to decode QR codes instantly online.",
+    "icon": "🖼️",
+    "isPopular": false,
+    "isNew": false
+  },
+  {
+    "id": "barcode-generator",
+    "name": "Barcode Generator",
+    "category": "qr-barcode",
+    "url": "/tools/qr-barcode/barcode-generator.html",
+    "description": "Create custom barcodes in multiple formats and download as high-resolution PNG.",
+    "icon": "📊",
+    "isPopular": false,
+    "isNew": false
   }
 ]
