@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) - Optimized Load -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var gTagScript = document.createElement('script');
+        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        gTagScript.async = true;
+        document.head.appendChild(gTagScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F3WWR9KGB4');
+      }, 1000);
+    });
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>Free Online Email QR Code Generator | Create Mail QR Codes | MicroToolStack</title>
+  <meta name="description" content="Generate custom Email QR codes online for free. Allow users to scan and open pre-filled email messages with recipient address, subject, and body instantly.">
+  <meta name="keywords" content="email qr code generator, create mail qr code, mailto qr maker, scan to email tool, microtoolstack utility">
+
+  <link rel="canonical" href="https://www.microtoolstack.com/tools/qr-barcode/email-qr-generator.html">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.microtoolstack.com/tools/qr-barcode/email-qr-generator.html">
+  <meta property="og:title" content="Free Online Email QR Code Generator | MicroToolStack">
+  <meta property="og:description" content="Create scannable QR codes for email messages. Pre-fill recipient, subject, and body text effortlessly.">
+  <meta property="og:image" content="https://www.microtoolstack.com/assets/images/og-image.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3023714618008515" crossorigin="anonymous"></script>
+
+  <!-- JSON-LD Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Email QR Code Generator",
+        "operatingSystem": "All",
+        "applicationCategory": "UtilitiesApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "An essential client-side web utility that generates pre-filled email QR codes for business inquiries and marketing campaigns.",
+        "url": "https://www.microtoolstack.com/tools/qr-barcode/email-qr-generator.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How do I create an email QR code?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Enter your email address, subject line, and message body, then download the generated QR code image."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What happens when someone scans the email QR code?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Scanning the QR code automatically opens the default email app on their phone with the recipient, subject, and body pre-filled."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my email data secure?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. All processing happens 100% locally inside your browser session with absolute privacy."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <!-- QRCode.js Library CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+  <style>
+    .generator-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+      align-items: start;
+    }
+    @media (max-width: 850px) {
+      .generator-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .input-group {
+      margin-bottom: 0.85rem;
+    }
+    .input-label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.3rem;
+    }
+    .form-control {
+      width: 100%;
+      padding: 0.65rem 0.85rem;
+      font-size: 0.95rem;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-input, #121218);
+      color: var(--text-primary, #fff);
+      outline: none;
+      box-sizing: border-box;
+    }
+    .form-control:focus {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+    .preview-stage {
+      width: 100%;
+      background: #ffffff;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 2rem 1rem;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 280px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+    #qrcode {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #qrcode img {
+      display: block;
+    }
+    .content-box {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .content-box h2 {
+      font-size: 1.35rem;
+      margin-bottom: 0.75rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box h3 {
+      font-size: 1.05rem;
+      margin-top: 1rem;
+      margin-bottom: 0.35rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul {
+      color: var(--text-secondary, #9ca3af);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .content-box ul {
+      padding-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .related-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .related-card {
+      display: block;
+      padding: 1rem;
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      color: var(--text-primary, #fff);
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .related-card:hover {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header class="custom-header">
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
+    </a>
+    <nav class="custom-nav">
+      <a href="/#categories">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
+    </nav>
+  </header>
+
+  <!-- Main Container -->
+  <main class="container" style="max-width: 950px; margin: 1.5rem auto; padding: 0 1rem;">
+    
+    <!-- Tool Title & Description -->
+    <div style="text-align: center; margin-bottom: 1.5rem;">
+      <h1 style="font-size: 1.85rem; margin-bottom: 0.4rem; color: var(--text-primary, #fff);">Email QR Code Generator</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 0.95rem;">Generate scannable QR codes that open pre-filled email messages with recipient, subject, and body.</p>
+    </div>
+
+    <!-- Generator & Preview Grid -->
+    <div class="generator-grid">
+      <!-- Input Controls Form -->
+      <div class="content-box" style="margin-bottom: 0;">
+        <h3 style="margin-top: 0; font-size: 1.1rem; margin-bottom: 0.85rem; color: var(--accent-primary, #3b82f6);">⚙️ Email Details</h3>
+        
+        <div class="input-group">
+          <label for="email-to" class="input-label">Recipient Email <span style="color: #ef4444;">*</span></label>
+          <input type="email" id="email-to" class="form-control" value="support@microtoolstack.com" placeholder="name@example.com">
+        </div>
+
+        <div class="input-group">
+          <label for="email-subject" class="input-label">Subject Line</label>
+          <input type="text" id="email-subject" class="form-control" value="Inquiry regarding services" placeholder="Email subject">
+        </div>
+
+        <div class="input-group">
+          <label for="email-body" class="input-label">Message Body</label>
+          <textarea id="email-body" class="form-control" rows="3" placeholder="Write your pre-filled message here...">Hello, I would like to get in touch regarding...</textarea>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-top: 0.5rem;">
+          <div class="input-group">
+            <label for="qr-color" class="input-label">QR Color</label>
+            <input type="color" id="qr-color" class="form-control" value="#000000" style="height: 40px; padding: 2px; cursor: pointer;">
+          </div>
+          <div class="input-group">
+            <label for="qr-bgcolor" class="input-label">Background Color</label>
+            <input type="color" id="qr-bgcolor" class="form-control" value="#ffffff" style="height: 40px; padding: 2px; cursor: pointer;">
+          </div>
+        </div>
+      </div>
+
+      <!-- Live Preview Canvas & Download -->
+      <div>
+        <label class="input-label" style="font-size: 0.95rem; margin-bottom: 0.4rem;">📱 Live QR Code Preview</label>
+        <div class="preview-stage">
+          <div id="qrcode"></div>
+        </div>
+
+        <div style="margin-top: 1rem;">
+          <button id="btn-download" class="btn btn-primary" style="width: 100%; padding: 0.75rem; font-weight: 600; cursor: pointer; background: #10b981; border: none; border-radius: 6px; color: #fff;">💾 Download QR Code PNG</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- SEO Article Content Box 1 -->
+    <div class="content-box">
+      <h2>Why Use an Email QR Code Generator?</h2>
+      <p>Encouraging customer feedback, business inquiries, or support requests becomes effortless when users can send an email with a single camera scan. An email QR code automatically populates the recipient address, subject line, and body in the user's default mail app.</p>
+      <p>Our free <strong>Email QR Code Generator</strong> helps you create professional mailto QR codes securely in your browser.</p>
+    </div>
+
+    <!-- SEO Article Content Box 2 -->
+    <div class="content-box">
+      <h2>Key Benefits of Mailto QR Codes</h2>
+      <p>Streamline communication channels for your business:</p>
+
+      <h3>1. Frictionless Engagement</h3>
+      <p>Eliminate typing errors by letting users scan to compose pre-formatted emails instantly.</p>
+
+      ### 2. Custom Branding</h3>
+      <p>Tailor your QR code colors to match your print or digital design layouts.</p>
+
+      ### 3. High-Res Exporting</h3>
+      <p>Download crisp PNG files suitable for business cards, flyers, and brochures.</p>
+    </div>
+
+    <!-- SEO Article Content Box 3 -->
+    <div class="content-box">
+      <h2>Best Practices for Print Campaigns</h2>
+      <ul>
+        <li>Test your generated QR code with multiple mobile devices to ensure the mail app opens correctly.</li>
+        <li>Keep subject lines concise and professional.</li>
+        <li>Ensure high color contrast between the code pattern and background.</li>
+      </ul>
+    </div>
+
+    <!-- Internal Linking Section -->
+    <div class="content-box">
+      <h2>Explore Related QR & Barcode Tools</h2>
+      <p>Discover our complementary online utilities:</p>
+      <div class="related-links">
+        <a href="/tools/qr-barcode/url-qr-generator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🔗 URL QR Code Generator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Create QR codes for web links.</span>
+        </a>
+        <a href="/tools/qr-barcode/wifi-qr-generator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📶 WiFi QR Code Generator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Connect to Wi-Fi instantly.</span>
+        </a>
+        <a href="/tools/media/barcode-generator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📊 Barcode Generator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Create professional barcodes.</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="content-box">
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Do email QR codes expire?</h3>
+        <p>No, static mailto QR codes generated here never expire and remain active permanently.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Which email apps are supported?</h3>
+        <p>Scanning the code triggers the native default mail client on iOS and Android devices (Apple Mail, Gmail, Outlook, etc.).</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is my data private?</h3>
+        <p>Yes, all generation processes run locally inside your browser session with total privacy.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer Container Placeholder -->
+  <div id="footer-container"></div>
+
+  <!-- JavaScript Utilities & Logic -->
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js" defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const emailTo = document.getElementById('email-to');
+      const emailSubject = document.getElementById('email-subject');
+      const emailBody = document.getElementById('email-body');
+      const qrColor = document.getElementById('qr-color');
+      const qrBgcolor = document.getElementById('qr-bgcolor');
+      const qrcodeContainer = document.getElementById('qrcode');
+      const btnDownload = document.getElementById('btn-download');
+
+      let qrcodeObj = null;
+
+      function renderQRCode() {
+        qrcodeContainer.innerHTML = '';
+        const to = emailTo.value.trim() || 'support@microtoolstack.com';
+        const subject = encodeURIComponent(emailSubject.value.trim() || '');
+        const body = encodeURIComponent(emailBody.value.trim() || '');
+
+        // Mailto format: mailto:email@example.com?subject=Sub&body=Body
+        let mailtoStr = `mailto:${to}`;
+        const params = [];
+        if (subject) params.push(`subject=${subject}`);
+        if (body) params.push(`body=${body}`);
+        if (params.length > 0) {
+          mailtoStr += `?${params.join('&')}`;
+        }
+        
+        qrcodeObj = new QRCode(qrcodeContainer, {
+          text: mailtoStr,
+          width: 200,
+          height: 200,
+          colorDark: qrColor.value,
+          colorLight: qrBgcolor.value,
+          correctLevel: QRCode.CorrectLevel.H
+        });
+      }
+
+      [emailTo, emailSubject, emailBody, qrColor, qrBgcolor].forEach(el => {
+        el.addEventListener('input', renderQRCode);
+        el.addEventListener('change', renderQRCode);
+      });
+
+      btnDownload.addEventListener('click', function() {
+        const img = qrcodeContainer.querySelector('img');
+        const canvas = qrcodeContainer.querySelector('canvas');
+        
+        let imageUrl = '';
+        if (img && img.src) {
+          imageUrl = img.src;
+        } else if (canvas) {
+          imageUrl = canvas.toDataURL('image/png');
+        }
+
+        if (imageUrl) {
+          const link = document.createElement('a');
+          link.href = imageUrl;
+          link.download = 'email-qr-code.png';
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+        } else {
+          alert('Please wait for the QR code to render completely.');
+        }
+      });
+
+      // Initial Render
+      renderQRCode();
+    });
+  </script>
+</body>
+</html>
