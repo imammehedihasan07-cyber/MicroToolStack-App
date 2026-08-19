@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) - Optimized Load -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var gTagScript = document.createElement('script');
+        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        gTagScript.async = true;
+        document.head.appendChild(gTagScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F3WWR9KGB4');
+      }, 1000);
+    });
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>Free Online WiFi QR Code Generator | Connect to Wi-Fi Instantly | MicroToolStack</title>
+  <meta name="description" content="Generate custom WiFi QR codes online for free. Let guests connect to your wireless network instantly by scanning a QR code with their smartphones.">
+  <meta name="keywords" content="wifi qr code generator, create wifi qr code, wireless network qr maker, scan to connect wifi, microtoolstack utility">
+
+  <link rel="canonical" href="https://www.microtoolstack.com/tools/qr-barcode/wifi-qr-generator.html">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.microtoolstack.com/tools/qr-barcode/wifi-qr-generator.html">
+  <meta property="og:title" content="Free Online WiFi QR Code Generator | MicroToolStack">
+  <meta property="og:description" content="Create scannable QR codes for your Wi-Fi network. Allow guests to join effortlessly without typing passwords.">
+  <meta property="og:image" content="https://www.microtoolstack.com/assets/images/og-image.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3023714618008515" crossorigin="anonymous"></script>
+
+  <!-- JSON-LD Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "WiFi QR Code Generator",
+        "operatingSystem": "All",
+        "applicationCategory": "UtilitiesApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "An essential client-side web utility that generates wireless network QR codes for instant smartphone connectivity.",
+        "url": "https://www.microtoolstack.com/tools/qr-barcode/wifi-qr-generator.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How do I create a QR code for my Wi-Fi network?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Enter your network SSID (name), password, and security type (WPA/WEP), then download the generated QR code image."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Will this work on both iPhone and Android?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! Modern smartphone cameras running iOS and Android natively recognize WiFi QR codes and prompt users to join."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my Wi-Fi password secure?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. All processing happens 100% locally inside your browser session with absolute privacy."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <!-- QRCode.js Library CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+  <style>
+    .generator-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+      align-items: start;
+    }
+    @media (max-width: 850px) {
+      .generator-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .input-group {
+      margin-bottom: 0.85rem;
+    }
+    .input-label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.3rem;
+    }
+    .form-control {
+      width: 100%;
+      padding: 0.65rem 0.85rem;
+      font-size: 0.95rem;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-input, #121218);
+      color: var(--text-primary, #fff);
+      outline: none;
+      box-sizing: border-box;
+    }
+    .form-control:focus {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+    .preview-stage {
+      width: 100%;
+      background: #ffffff;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 2rem 1rem;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 280px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+    #qrcode {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #qrcode img {
+      display: block;
+    }
+    .content-box {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .content-box h2 {
+      font-size: 1.35rem;
+      margin-bottom: 0.75rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box h3 {
+      font-size: 1.05rem;
+      margin-top: 1rem;
+      margin-bottom: 0.35rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul {
+      color: var(--text-secondary, #9ca3af);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .content-box ul {
+      padding-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .related-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .related-card {
+      display: block;
+      padding: 1rem;
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      color: var(--text-primary, #fff);
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .related-card:hover {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header class="custom-header">
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
+    </a>
+    <nav class="custom-nav">
+      <a href="/#categories">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
+    </nav>
+  </header>
+
+  <!-- Main Container -->
+  <main class="container" style="max-width: 950px; margin: 1.5rem auto; padding: 0 1rem;">
+    
+    <!-- Tool Title & Description -->
+    <div style="text-align: center; margin-bottom: 1.5rem;">
+      <h1 style="font-size: 1.85rem; margin-bottom: 0.4rem; color: var(--text-primary, #fff);">WiFi QR Code Generator</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 0.95rem;">Generate scannable Wi-Fi configuration QR codes so guests can join your network instantly.</p>
+    </div>
+
+    <!-- Generator & Preview Grid -->
+    <div class="generator-grid">
+      <!-- Input Controls Form -->
+      <div class="content-box" style="margin-bottom: 0;">
+        <h3 style="margin-top: 0; font-size: 1.1rem; margin-bottom: 0.85rem; color: var(--accent-primary, #3b82f6);">⚙️ Network Configuration</h3>
+        
+        <div class="input-group">
+          <label for="wifi-ssid" class="input-label">Network Name (SSID) <span style="color: #ef4444;">*</span></label>
+          <input type="text" id="wifi-ssid" class="form-control" value="MyHomeWiFi" placeholder="Enter network name">
+        </div>
+
+        <div class="input-group">
+          <label for="wifi-pass" class="input-label">Password <span style="color: #ef4444;">*</span></label>
+          <input type="text" id="wifi-pass" class="form-control" value="secretpassword123" placeholder="Enter wireless password">
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+          <div class="input-group">
+            <label for="wifi-encryption" class="input-label">Encryption Type</label>
+            <select id="wifi-encryption" class="form-control">
+              <option value="WPA">WPA/WPA2</option>
+              <option value="WEP">WEP</option>
+              <option value="nopass">No Password</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <label for="wifi-hidden" class="input-label">Hidden SSID</label>
+            <select id="wifi-hidden" class="form-control">
+              <option value="false">False (Visible)</option>
+              <option value="true">True (Hidden)</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-top: 0.5rem;">
+          <div class="input-group">
+            <label for="qr-color" class="input-label">QR Color</label>
+            <input type="color" id="qr-color" class="form-control" value="#000000" style="height: 40px; padding: 2px; cursor: pointer;">
+          </div>
+          <div class="input-group">
+            <label for="qr-bgcolor" class="input-label">Background Color</label>
+            <input type="color" id="qr-bgcolor" class="form-control" value="#ffffff" style="height: 40px; padding: 2px; cursor: pointer;">
+          </div>
+        </div>
+      </div>
+
+      <!-- Live Preview Canvas & Download -->
+      <div>
+        <label class="input-label" style="font-size: 0.95rem; margin-bottom: 0.4rem;">📱 Live QR Code Preview</label>
+        <div class="preview-stage">
+          <div id="qrcode"></div>
+        </div>
+
+        <div style="margin-top: 1rem;">
+          <button id="btn-download" class="btn btn-primary" style="width: 100%; padding: 0.75rem; font-weight: 600; cursor: pointer; background: #10b981; border: none; border-radius: 6px; color: #fff;">💾 Download QR Code PNG</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- SEO Article Content Box 1 -->
+    <div class="content-box">
+      <h2>Why Use a WiFi QR Code Generator?</h2>
+      <p>Sharing complex Wi-Fi passwords with guests, customers, or visitors can be tedious and prone to typos. By creating a Wi-Fi QR code, guests can simply scan the code with their smartphone camera to connect to your wireless network instantly without typing a single character.</p>
+      <p>Our free <strong>WiFi QR Code Generator</strong> lets you build secure, standard-compliant network configuration codes safely in your browser.</p>
+    </div>
+
+    <!-- SEO Article Content Box 2 -->
+    <div class="content-box">
+      <h2>Key Features of Our WiFi QR Maker</h2>
+      <p>Designed for homes, cafes, offices, and hotels:</p>
+
+      <h3>1. Native Smartphone Support</h3>
+      <p>Compatible with standard iOS and Android camera apps—no third-party software required.</p>
+
+      <h3>2. Secure Encryption Settings</h3>
+      <p>Supports standard WPA/WPA2, WEP, and open networks.</p>
+
+      <h3>3. Instant High-Res Export</h3>
+      <p>Download your network badge as a clean PNG image ready for framing or printing.</p>
+    </div>
+
+    <!-- SEO Article Content Box 3 -->
+    <div class="content-box">
+      <h2>Best Practices for Wi-Fi Badges</h2>
+      <ul>
+        <li>Print your generated QR code and place it in guest rooms, reception desks, or common areas.</li>
+        <li>Double-check your network SSID capitalization and password accuracy before printing.</li>
+        <li>Ensure high contrast between the QR pattern and background for fast camera detection.</li>
+      </ul>
+    </div>
+
+    <!-- Internal Linking Section -->
+    <div class="content-box">
+      <h2>Explore Related QR & Barcode Tools</h2>
+      <p>Discover our complementary online utilities:</p>
+      <div class="related-links">
+        <a href="/tools/qr-barcode/url-qr-generator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🔗 URL QR Code Generator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Create QR codes for website links.</span>
+        </a>
+        <a href="/tools/qr-barcode/text-qr-generator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📄 Text QR Code Generator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Encode plain text messages.</span>
+        </a>
+        <a href="/tools/media/barcode-generator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📊 Barcode Generator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Create professional barcodes instantly.</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="content-box">
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Are WiFi QR codes secure?</h3>
+        <p>Yes. The password is encoded directly into a standard configuration string and processed locally in your browser.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Do I need an app to scan it?</h3>
+        <p>No, modern iPhone and Android cameras scan and parse Wi-Fi configurations natively.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Can I change colors?</h3>
+        <p>Yes, you can customize the foreground and background colors to match your branding.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer Container Placeholder -->
+  <div id="footer-container"></div>
+
+  <!-- JavaScript Utilities & Logic -->
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js" defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const wifiSsid = document.getElementById('wifi-ssid');
+      const wifiPass = document.getElementById('wifi-pass');
+      const wifiEncryption = document.getElementById('wifi-encryption');
+      const wifiHidden = document.getElementById('wifi-hidden');
+      const qrColor = document.getElementById('qr-color');
+      const qrBgcolor = document.getElementById('qr-bgcolor');
+      const qrcodeContainer = document.getElementById('qrcode');
+      const btnDownload = document.getElementById('btn-download');
+
+      let qrcodeObj = null;
+
+      function renderQRCode() {
+        qrcodeContainer.innerHTML = '';
+        const ssid = wifiSsid.value.trim() || 'MyHomeWiFi';
+        const pass = wifiPass.value.trim() || '';
+        const enc = wifiEncryption.value;
+        const hidden = wifiHidden.value;
+
+        // WiFi configuration string format: WIFI:S:<SSID>;T:<WPA|WEP|nopass>;P:<PASSWORD>;H:<true|false>;;
+        const wifiString = `WIFI:S:${ssid};T:${enc};P:${pass};H:${hidden};`;
+        
+        qrcodeObj = new QRCode(qrcodeContainer, {
+          text: wifiString,
+          width: 200,
+          height: 200,
+          colorDark: qrColor.value,
+          colorLight: qrBgcolor.value,
+          correctLevel: QRCode.CorrectLevel.H
+        });
+      }
+
+      [wifiSsid, wifiPass, wifiEncryption, wifiHidden, qrColor, qrBgcolor].forEach(el => {
+        el.addEventListener('input', renderQRCode);
+        el.addEventListener('change', renderQRCode);
+      });
+
+      btnDownload.addEventListener('click', function() {
+        const img = qrcodeContainer.querySelector('img');
+        const canvas = qrcodeContainer.querySelector('canvas');
+        
+        let imageUrl = '';
+        if (img && img.src) {
+          imageUrl = img.src;
+        } else if (canvas) {
+          imageUrl = canvas.toDataURL('image/png');
+        }
+
+        if (imageUrl) {
+          const link = document.createElement('a');
+          link.href = imageUrl;
+          link.download = 'wifi-qr-code.png';
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+        } else {
+          alert('Please wait for the QR code to render completely.');
+        }
+      });
+
+      // Initial Render
+      renderQRCode();
+    });
+  </script>
+</body>
+</html>
