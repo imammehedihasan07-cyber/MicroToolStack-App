@@ -1461,5 +1461,125 @@
     "icon": "📊",
     "isPopular": false,
     "isNew": false
+  },
+  {
+    "id": "pdf-to-word",
+    "name": "PDF to Word Converter",
+    "category": "pdf",
+    "url": "/tools/pdf/pdf-to-word.html",
+    "description": "Extract text and convert PDF documents into editable Microsoft Word format instantly.",
+    "icon": "📄",
+    "isPopular": true,
+    "isNew": true
+  },
+  {
+    "id": "pdf-to-excel",
+    "name": "PDF to Excel Converter",
+    "category": "pdf",
+    "url": "/tools/pdf/pdf-to-excel.html",
+    "description": "Extract tables and convert PDF documents into editable Microsoft Excel spreadsheets.",
+    "icon": "📊",
+    "isPopular": false,
+    "isNew": true
+  },
+  {
+    "id": "compress-pdf",
+    "name": "Compress PDF",
+    "category": "pdf",
+    "url": "/tools/pdf/compress-pdf.html",
+    "description": "Reduce PDF file size quickly while preserving high readability and document layout.",
+    "icon": "📦",
+    "isPopular": true,
+    "isNew": false
+  },
+  {
+    "id": "image-compressor",
+    "name": "Image Compressor",
+    "category": "media",
+    "url": "/tools/media/image-compressor.html",
+    "description": "Reduce JPG, PNG, and WebP image file sizes instantly without sacrificing visual quality.",
+    "icon": "🖼️",
+    "isPopular": true,
+    "isNew": true
+  },
+  {
+    "id": "heic-to-jpg",
+    "name": "HEIC to JPG Converter",
+    "category": "media",
+    "url": "/tools/media/heic-to-jpg.html",
+    "description": "Convert Apple iPhone HEIC images into universal JPG or PNG format instantly.",
+    "icon": "🍏",
+    "isPopular": false,
+    "isNew": true
+  },
+  {
+    "id": "instagram-font-generator",
+    "name": "Instagram Font Generator",
+    "category": "social-media",
+    "url": "/tools/social-media/instagram-font-generator.html",
+    "description": "Generate cool, stylish, and fancy Unicode fonts for Instagram bios, captions, and stories.",
+    "icon": "📱",
+    "isPopular": true,
+    "isNew": true
+  },
+  {
+    "id": "fancy-text-generator",
+    "name": "Fancy Text Generator",
+    "category": "social-media",
+    "url": "/tools/social-media/fancy-text-generator.html",
+    "description": "Transform ordinary words into creative artistic text styles and cool Unicode symbols.",
+    "icon": "✨",
+    "isPopular": false,
+    "isNew": true
+  },
+  {
+    "id": "ai-hook-generator",
+    "name": "AI Hook Generator",
+    "category": "ai",
+    "url": "/tools/ai/ai-hook-generator.html",
+    "description": "Create high-retention opening lines and viral hooks for TikTok, Reels, and Shorts.",
+    "icon": "⚡",
+    "isPopular": true,
+    "isNew": true
+  },
+  {
+    "id": "ai-paragraph-rewriter",
+    "name": "AI Paragraph Rewriter",
+    "category": "ai",
+    "url": "/tools/ai/ai-paragraph-rewriter.html",
+    "description": "Paraphrase, rephrase, and rewrite articles or text content instantly with clear phrasing.",
+    "icon": "🤖",
+    "isPopular": false,
+    "isNew": true
+  },
+  {
+    "id": "clickbait-title-analyzer",
+    "name": "Clickbait Title Analyzer",
+    "category": "youtube",
+    "url": "/tools/youtube/clickbait-title-analyzer.html",
+    "description": "Test your YouTube video titles and blog headlines to measure engagement and CTR potential.",
+    "icon": "🔍",
+    "isPopular": true,
+    "isNew": true
+  },
+  {
+    "id": "youtube-money-calculator",
+    "name": "YouTube Money Calculator",
+    "category": "youtube",
+    "url": "/tools/youtube/youtube-money-calculator.html",
+    "description": "Estimate potential YouTube channel revenue and video earnings based on daily views and CPM.",
+    "icon": "💵",
+    "isPopular": false,
+    "isNew": true
+  },
+  {
+    "id": "utm-campaign-builder",
+    "name": "UTM Campaign Builder",
+    "category": "seo",
+    "url": "/tools/seo/utm-campaign-builder.html",
+    "description": "Generate customized tracking URLs with UTM parameters to measure digital marketing campaigns.",
+    "icon": "🔗",
+    "isPopular": true,
+    "isNew": true
   }
 ]
