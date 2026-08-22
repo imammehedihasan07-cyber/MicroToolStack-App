@@ -22,8 +22,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Primary SEO Meta Tags -->
-  <title>Free Online Fancy Text Generator & Cool Unicode Symbols | MicroToolStack</title>
-  <meta name="description" content="Generate cool fancy text symbols, aesthetic fonts, and stylish text art online instantly. 100% free copy-paste unicode text decorator for social media posts.">
+  <title>Free Online Fancy Text Generator & 20+ Cool Unicode Symbols | MicroToolStack</title>
+  <meta name="description" content="Generate 20+ cool fancy text symbols, aesthetic fonts, and stylish text art online instantly. 100% free copy-paste unicode text decorator for social media posts.">
   <meta name="keywords" content="fancy text generator, cool text symbols, aesthetic text art, stylish text copy paste, social media utilities, microtoolstack">
 
   <link rel="canonical" href="https://www.microtoolstack.com/tools/social-media/fancy-text-generator.html">
@@ -32,8 +32,8 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.microtoolstack.com/tools/social-media/fancy-text-generator.html">
-  <meta property="og:title" content="Free Online Fancy Text Generator & Cool Unicode Symbols | MicroToolStack">
-  <meta property="og:description" content="Transform ordinary sentences into creative fancy text symbols and artistic fonts. Fast, free copy-paste utility.">
+  <meta property="og:title" content="Free Online Fancy Text Generator & 20+ Cool Unicode Symbols | MicroToolStack">
+  <meta property="og:description" content="Transform ordinary sentences into 20+ creative fancy text symbols and artistic fonts. Fast, free copy-paste utility.">
   <meta property="og:image" content="https://www.microtoolstack.com/assets/images/og-image.png">
 
   <!-- Favicon Icon for Google & Devices -->
@@ -56,7 +56,7 @@
           "price": "0",
           "priceCurrency": "USD"
         },
-        "description": "An online web utility to decorate ordinary text with cool unicode symbols, borders, and fancy artistic styles.",
+        "description": "An online web utility to decorate ordinary text with 20+ cool unicode symbols, borders, and fancy artistic styles.",
         "url": "https://www.microtoolstack.com/tools/social-media/fancy-text-generator.html"
       },
       {
@@ -67,15 +67,7 @@
             "name": "How does Fancy Text Generator work?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "It maps normal keyboard characters to special Unicode symbol alphabets, borders, and decorative glyphs instantly."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Where can I use these fancy text styles?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "You can copy and paste them directly into Facebook posts, Instagram captions, Twitter tweets, gaming usernames, and Discord chats."
+              "text": "It maps normal keyboard characters to over 20 special Unicode symbol alphabets, borders, and decorative glyphs instantly."
             }
           }
         ]
@@ -105,7 +97,7 @@
     }
     .custom-textarea {
       width: 100%;
-      min-height: 140px;
+      min-height: 130px;
       padding: 1rem;
       font-size: 1rem;
       font-family: inherit;
@@ -137,10 +129,36 @@
       align-items: center;
       gap: 1rem;
     }
+    .font-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      overflow: hidden;
+    }
+    .font-name {
+      font-size: 0.75rem;
+      color: var(--text-secondary, #9ca3af);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
     .font-text {
       font-size: 1.1rem;
       color: var(--text-primary, #fff);
       word-break: break-all;
+    }
+    .copy-btn {
+      padding: 0.4rem 0.9rem;
+      font-size: 0.85rem;
+      cursor: pointer;
+      background: #374151;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+    .copy-btn:hover {
+      background: #10b981;
     }
     .content-box {
       background-color: var(--bg-card, #1e1e2e);
@@ -166,25 +184,6 @@
     .content-box li {
       margin-bottom: 0.5rem;
     }
-    .related-links {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-    .related-card {
-      display: block;
-      padding: 1rem;
-      background: var(--bg-card, #1e1e2e);
-      border: 1px solid var(--border-color, #333);
-      border-radius: 8px;
-      color: var(--text-primary, #fff);
-      text-decoration: none;
-      transition: border-color 0.2s;
-    }
-    .related-card:hover {
-      border-color: var(--accent-primary, #3b82f6);
-    }
   </style>
 </head>
 <body style="margin: 0; padding: 0;">
@@ -208,7 +207,7 @@
     <!-- Tool Title & Description -->
     <div style="text-align: center; margin-bottom: 2rem;">
       <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Fancy Text Generator</h1>
-      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Transform ordinary words into creative artistic text styles and cool Unicode symbols instantly.</p>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Transform ordinary words into 20+ creative artistic text styles and cool Unicode symbols instantly.</p>
     </div>
 
     <!-- Input Box -->
@@ -218,70 +217,22 @@
     </div>
 
     <!-- Generated Fonts Output Container -->
-    <div class="fonts-output-grid" id="fonts-container">
-      <div class="font-card">
-        <span class="font-text"> ▂▃▅▆▇ MicroToolStack ▇▆▅▃▂ </span>
-        <button class="btn btn-secondary" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 4px;" onclick="navigator.clipboard.writeText(' ▂▃▅▆▇ MicroToolStack ▇▆▅▃▂ ')">📋 Copy</button>
-      </div>
-      <div class="font-card">
-        <span class="font-text">✨ ＭｉｃｒｏＴｏｏｌＳｔａ𝗰k ✨</span>
-        <button class="btn btn-secondary" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 4px;" onclick="navigator.clipboard.writeText('✨ ＭｉｃｒｏＴｏｏｌＳｔａｃk ✨')">📋 Copy</button>
-      </div>
-      <div class="font-card">
-        <span class="font-text">༺ 𝑀𝒾𝒸𝓇𝑜𝒯𝑜𝑜𝓁𝒮𝓉𝒶𝒸𝓀 ༻</span>
-        <button class="btn btn-secondary" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 4px;" onclick="navigator.clipboard.writeText('༺ 𝑀𝒾𝒸𝓇𝑜𝒯𝑜𝑜𝓁𝒮𝓉𝒶𝒸𝓀 ༻')">📋 Copy</button>
-      </div>
-      <div class="font-card">
-        <span class="font-text">【M】【i】【c】【r】【o】【T】【o】【o】【l】【S】【t】【a】【c】【k】</span>
-        <button class="btn btn-secondary" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 4px;" onclick="navigator.clipboard.writeText('【M】【i】【c】【r】【o】【T】【o】【o】【l】【S】【t】【a】【c】【k】')">📋 Copy</button>
-      </div>
-    </div>
+    <div class="fonts-output-grid" id="fonts-container"></div>
 
     <!-- SEO Article Content Box 1 -->
     <div class="content-box">
-      <h2>Enhance Your Posts with Fancy Text Symbols</h2>
+      <h2>Enhance Your Posts with 20+ Fancy Text Symbols</h2>
       <p>Plain text can often feel boring when you want to highlight important announcements, create engaging social media bios, or design catchy gaming handles. Adding decorative symbols and unique font glyphs makes your text instantly stand out.</p>
 
-      <p>Our free <strong>Fancy Text Generator</strong> converts your standard keyboard text into artistic symbols and decorative unicode variations with a single click copy-paste format.</p>
-    </div>
-
-    <!-- SEO Article Content Box 2 -->
-    <div class="content-box">
-      <h2>How to Use the Fancy Text Tool</h2>
-      <p>Creating decorated text is completely straightforward:</p>
-      <ul>
-        <li><strong>Step 1:</strong> Type or paste your normal text into the input text area.</li>
-        <li><strong>Step 2:</strong> Explore the variety of generated decorative styles and symbols.</li>
-        <li><strong>Step 3:</strong> Click the "Copy" button next to your favorite design and paste it anywhere you like.</li>
-      </ul>
-    </div>
-
-    <!-- Internal Linking Section -->
-    <div class="content-box">
-      <h2>Explore Related Social Media Tools</h2>
-      <p>Check out our other creative creator utilities:</p>
-      <div class="related-links">
-        <a href="/tools/social-media/instagram-font-generator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">📱 Instagram Font Generator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Create stylish aesthetic fonts.</span>
-        </a>
-        <a href="/tools/youtube/thumbnail-downloader.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🖼️ YouTube Thumbnail Downloader</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Download HD video thumbnails.</span>
-        </a>
-        <a href="/tools/ai/caption-generator.html" class="related-card">
-          <strong style="display:block; margin-bottom: 0.25rem;">🤖 AI Caption Generator</strong>
-          <span style="font-size: 0.85rem; color: #9ca3af;">Generate viral social captions.</span>
-        </a>
-      </div>
+      <p>Our free <strong>Fancy Text Generator</strong> converts your standard keyboard text into 20+ artistic symbols and decorative unicode variations with a single click copy-paste format.</p>
     </div>
 
     <!-- FAQ Section -->
     <div class="content-box">
       <h2>Frequently Asked Questions (FAQs)</h2>
       <div style="margin-bottom: 1.25rem;">
-        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How does Fancy Text Generator work?</h3>
-        <p>It maps normal keyboard characters to special Unicode symbol alphabets, borders, and decorative glyphs instantly.</p>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How many styles does the Fancy Text Generator offer?</h3>
+        <p>It provides over 20 unique decorative styles including boxed letters, bubbles, arrows, stars, squiggles, and special Unicode symbol borders.</p>
       </div>
       <div>
         <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Where can I use these fancy text styles?</h3>
@@ -298,5 +249,95 @@
   <script src="/assets/js/theme.js"></script>
   <script src="/assets/js/utils.js" defer></script>
   <script src="/assets/js/app.js" defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const textInput = document.getElementById('text-input');
+      const fontsContainer = document.getElementById('fonts-container');
+
+      function translateText(str, map) {
+        return str.split('').map(char => map[char] || char).join('');
+      }
+
+      const fancyStyles = [
+        { name: '1. Sparkle Frame', format: t => `✨ ${t} ✨` },
+        { name: '2. Aesthetic Waves', format: t => `༺ ${t} ༻` },
+        { name: '3. Boxed Letters', format: t => t.split('').map(c => c.trim() ? `【${c}】` : ' ').join('') },
+        { name: '4. Bracket Style', format: t => `『 ${t} 』` },
+        { name: '5. Star Bullets', format: t => `★彡 ${t} 彡★` },
+        { name: '6. Wing Decoration', format: t => `ʚĭɞ ${t} ʚĭɞ` },
+        { name: '7. Floral Border', format: t => `✿ ${t} ✿` },
+        { name: '8. Heart Symbols', format: t => `💖 ${t} 💖` },
+        { name: '9. Circle Tag', format: t => `(｡◕‿◕｡) ${t} (｡◕‿◕｡)` },
+        { name: '10. Cross Bullets', format: t => `† ${t} †` },
+        { 
+          name: '11. Bubble Letters', 
+          map: {'a':'ⓐ','b':'ⓑ','c':'ⓒ','d':'ⓓ','e':'ⓔ','f':'ⓕ','g':'ⓖ','h':'ⓗ','i':'ⓘ','j':'ⓙ','k':'ⓚ','l':'ⓛ','m':'ⓜ','n':'ⓝ','o':'ⓞ','p':'ⓟ','q':'ⓠ','r':'ⓡ','s':'ⓢ','t':'ⓣ','u':'ⓤ','v':'ⓥ','w':'ⓦ','x':'ⓧ','y':'ⓨ','z':'ⓩ','A':'Ⓐ','B':'Ⓑ','C':'Ⓒ','D':'Ⓓ','E':'Ⓔ','F':'Ⓕ','G':'Ⓖ','H':'Ⓗ','I':'Ⓘ','J':'Ⓙ','K':'Ⓚ','L':'Ⓛ','M':'Ⓜ','N':'Ⓝ','O':'Ⓞ','P':'Ⓟ','Q':'Ⓠ','R':'Ⓡ','S':'Ⓢ','T':'Ⓣ','U':'Ⓤ','V':'Ⓥ','W':'Ⓦ','X':'Ⓧ','Y':'Ⓨ','Z':'Ⓩ','0':'⓪','1':'①','2':'②','3':'③','4':'④','5':'⑤','6':'⑥','7':'⑦','8':'⑧','9':'⑨'} 
+        },
+        { 
+          name: '12. Gothic / Fraktur', 
+          map: {'a':'𝔞','b':'𝔟','c':'𝔠','d':'𝔡','e':'𝔢','f':'𝔣','g':'𝔤','h':'𝔥','i':'𝔦','j':'𝔧','k':'𝔨','l':'𝔩','m':'𝔪','n':'𝔫','o':'𝔬','p':'𝔭','q':'𝔮','r':'𝔯','s':'𝔰','t':'𝔱','u':'𝔲','v':'𝔳','w':'𝔴','x':'𝔵','y':'𝔶','z':'𝔷','A':'𝔄','B':'𝔅','C':'ℭ','D':'𝔇','E':'𝔈','F':'𝔉','G':'𝔊','H':'ℌ','I':'ℑ','J':'𝔍','K':'𝔎','L':'𝔏','M':'𝔐','N':'𝔑','O':'𝔒','P':'𝔓','Q':'𝔔','R':'ℜ','S':'𝔖','T':'𝔗','U':'𝔘','V':'𝔙','W':'𝔚','X':'𝔛','Y':'𝔜','Z':'ℨ'} 
+        },
+        { 
+          name: '13. Cursive Script', 
+          map: {'a':'𝒶','b':'𝒷','c':'𝒸','d':'𝒹','e':'ℯ','f':'𝒻','g':'ℊ','h':'𝒽','i':'𝒾','j':'𝒿','k':'𝓀','l':'𝓁','m':'𝓂','n':'𝓃','o':'ℴ','p':'𝓅','q':'𝓆','r':'𝓇','s':'𝓈','t':'𝓉','u':'𝓊','v':'𝓿','w':'𝓌','x':'𝓍','y':'𝓎','z':'𝓏','A':'𝒜','B':'ℬ','C':'𝒞','D':'𝒟','E':'ℰ','F':'ℱ','G':'𝒢','H':'ℋ','I':'ℐ','J':'𝒥','K':'𝒦','L':'ℒ','M':'ℳ','N':'𝒩','O':'𝒪','P':'𝒫','Q':'𝒬','R':'ℛ','S':'𝒮','T':'𝒯','U':'𝒰','V':'𝒱','W':'𝒲','X':'𝒳','Y':'𝒴','Z':'𝒵'} 
+        },
+        { 
+          name: '14. Strikethrough Fancy', 
+          map: {'a':'a̶','b':'b̶','c':'c̶','d':'d̶','e':'e̶','f':'f̶','g':'g̶','h':'h̶','i':'i̶','j':'j̶','k':'k̶','l':'l̶','m':'m̶','n':'n̶','o':'o̶','p':'p̶','q':'q̶','r':'r̶','s':'s̶','t':'t̶','u':'u̶','v':'v̶','w':'w̶','x':'x̶','y':'y̶','z':'z̶','A':'A̶','B':'B̶','C':'C̶','D':'D̶','E':'E̶','F':'F̶','G':'G̶','H':'H̶','I':'I̶','J':'J̶','K':'K̶','L':'L̶','M':'M̶','N':'N̶','O':'O̶','P':'P̶','Q':'Q̶','R':'R̶','S':'S̶','T':'T̶','U':'U̶','V':'V̶','W':'W̶','X':'X̶','Y':'Y̶','Z':'Z̶'} 
+        },
+        { 
+          name: '15. Underline Fancy', 
+          map: {'a':'a̲','b':'b̲','c':'c̲','d':'d̲','e':'e̲','f':'f̲','g':'g̲','h':'h̲','i':'i̲','j':'j̲','k':'k̲','l':'l̲','m':'m̲','n':'n̲','o':'o̲','p':'p̲','q':'q̲','r':'r̲','s':'s̲','t':'t̲','u':'u̲','v':'v̲','w':'w̲','x':'x̲','y':'y̲','z':'z̲','A':'A̲','B':'B̲','C':'C̲','D':'D̲','E':'E̲','F':'F̲','G':'G̲','H':'H̲','I':'I̲','J':'J̲','K':'K̲','L':'L̲','M':'M̲','N':'N̲','O':'O̲','P':'P̲','Q':'Q̲','R':'R̲','S':'S̲','T':'T̲','U':'U̲','V':'V̲','W':'W̲','X':'X̲','Y':'Y̲','Z':'Z̲'} 
+        },
+        { name: '16. Slash Decor', format: t => `╱${t}╲` },
+        { name: '17. Double Line Box', format: t => `═ ∘ ⟦ ${t} ⟧ ∘ ═` },
+        { name: '18. Diamond Frame', format: t => `💎 ${t} 💎` },
+        { name: '19. Arrow Decoration', format: t => `»» ${t} ««` },
+        { name: '20. Cloud Style', format: t => `☁️ ${t} ☁️` }
+      ];
+
+      function renderFancyText() {
+        const text = textInput.value || 'MicroToolStack';
+        fontsContainer.innerHTML = '';
+
+        fancyStyles.forEach(item => {
+          let converted = '';
+          if (item.format) {
+            converted = item.format(text);
+          } else if (item.map) {
+            converted = translateText(text, item.map);
+          }
+
+          const card = document.createElement('div');
+          card.className = 'font-card';
+
+          card.innerHTML = `
+            <div class="font-info">
+              <span class="font-name">${item.name}</span>
+              <span class="font-text">${converted}</span>
+            </div>
+            <button class="copy-btn">📋 Copy</button>
+          `;
+
+          const copyBtn = card.querySelector('.copy-btn');
+          copyBtn.addEventListener('click', () => {
+            navigator.clipboard.writeText(converted);
+            copyBtn.textContent = '✅ Copied!';
+            copyBtn.style.background = '#10b981';
+            setTimeout(() => {
+              copyBtn.textContent = '📋 Copy';
+              copyBtn.style.background = '#374151';
+            }, 1500);
+          });
+
+          fontsContainer.appendChild(card);
+        });
+      }
+
+      textInput.addEventListener('input', renderFancyText);
+      renderFancyText();
+    });
+  </script>
 </body>
 </html>
