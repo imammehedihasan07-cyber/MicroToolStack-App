@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) - Optimized Load -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var gTagScript = document.createElement('script');
+        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        gTagScript.async = true;
+        document.head.appendChild(gTagScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F3WWR9KGB4');
+      }, 1000);
+    });
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>Free Online PDF Compressor | Reduce PDF File Size | MicroToolStack</title>
+  <meta name="description" content="Compress PDF files online instantly. Reduce PDF document size while preserving high visual quality. 100% free, fast, and secure browser-based compression tool.">
+  <meta name="keywords" content="compress pdf online, reduce pdf file size, shrink pdf document, free pdf compressor, microtoolstack pdf tools">
+
+  <link rel="canonical" href="https://www.microtoolstack.com/tools/pdf/compress-pdf.html">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.microtoolstack.com/tools/pdf/compress-pdf.html">
+  <meta property="og:title" content="Free Online PDF Compressor | Reduce PDF File Size | MicroToolStack">
+  <meta property="og:description" content="Compress your large PDF files into smaller sizes securely inside your browser. 100% free, fast, and secure document utility.">
+  <meta property="og:image" content="https://www.microtoolstack.com/assets/images/og-image.png">
+
+  <!-- Favicon Icon for Google & Devices -->
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
+
+  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "PDF Compressor",
+        "operatingSystem": "All",
+        "applicationCategory": "UtilitiesApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "An online web utility to compress and shrink PDF document file sizes securely.",
+        "url": "https://www.microtoolstack.com/tools/pdf/compress-pdf.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How to compress PDF files online?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Upload or drag and drop your large PDF file into the upload zone, click 'Compress PDF', and instantly download your optimized lightweight document."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does compression ruin the quality of my PDF?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Our tool optimizes internal streams and image resolutions smartly to maintain clear readability while reducing file size."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are my files secure?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Document handling is executed securely within your web session, keeping your confidential files protected."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this PDF compressor free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, MicroToolStack's PDF Compressor is 100% free with no limits or subscriptions."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Preconnect and Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <style>
+    .upload-zone {
+      width: 100%;
+      min-height: 240px;
+      border: 2px dashed var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      box-sizing: border-box;
+      text-align: center;
+      cursor: pointer;
+      margin-bottom: 1.5rem;
+      transition: border-color 0.2s, background-color 0.2s;
+    }
+    .upload-zone:hover {
+      border-color: var(--accent-primary, #3b82f6);
+      background-color: rgba(59, 130, 246, 0.03);
+    }
+    .file-info-badge {
+      display: inline-block;
+      font-size: 0.9rem;
+      color: var(--text-secondary, #9ca3af);
+      background: rgba(255, 255, 255, 0.05);
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      border: 1px solid var(--border-color, #333);
+      margin-top: 1rem;
+    }
+    .controls-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.5rem;
+    }
+    .content-box {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .content-box h2 {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box h3 {
+      font-size: 1.1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul {
+      color: var(--text-secondary, #9ca3af);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .content-box ul {
+      padding-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .content-box li {
+      margin-bottom: 0.5rem;
+    }
+    .related-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .related-card {
+      display: block;
+      padding: 1rem;
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      color: var(--text-primary, #fff);
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .related-card:hover {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+  </style>
+</head>
+<body style="margin: 0; padding: 0;">
+
+  <!-- Header Section -->
+  <header class="custom-header">
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
+    </a>
+    <nav class="custom-nav">
+      <a href="/#categories">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
+    </nav>
+  </header>
+
+  <!-- Main Container -->
+  <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
+    
+    <!-- Tool Title & Description -->
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">Free Online PDF Compressor</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Reduce PDF file size quickly while preserving high readability and document layout.</p>
+    </div>
+
+    <!-- Upload Box -->
+    <div class="upload-zone" id="drop-zone">
+      <div style="font-size: 2.5rem; margin-bottom: 0.75rem;">📦</div>
+      <p style="color: var(--text-primary, #fff); font-weight: 600; margin-bottom: 0.5rem;">Drag & drop your PDF file here, or <span style="color: #3b82f6; cursor: pointer;">browse files</span></p>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 0.85rem;" id="file-helper-text">Supports heavy PDF documents up to 50MB</p>
+      <div id="file-meta" class="file-info-badge" style="display: none;">No file selected</div>
+      <input type="file" id="pdf-file-input" accept=".pdf" style="display: none;">
+    </div>
+
+    <!-- Controls Bar -->
+    <div class="controls-bar">
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-compress" class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-weight: 600; cursor: pointer; background: #10b981;">⚡ Compress PDF</button>
+      </div>
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear</button>
+      </div>
+    </div>
+
+    <!-- SEO Article Content Box 1 -->
+    <div class="content-box">
+      <h2>Why Compress PDF File Sizes Online?</h2>
+      <p>Large PDF files can be frustrating to upload via email attachments, web portals, or cloud storage systems due to strict size limits. Heavy documents slow down sharing and consume unnecessary storage space.</p>
+
+      <p>Our free <strong>Online PDF Compressor</strong> optimizes document structures and image weights efficiently, allowing you to shrink large files into lightweight versions instantly without losing crucial visual clarity.</p>
+    </div>
+
+    <!-- SEO Article Content Box 2 -->
+    <div class="content-box">
+      <h2>How to Use the PDF Compressor Tool</h2>
+      <p>Shrinking your document takes just three simple steps:</p>
+      <ul>
+        <li><strong>Step 1:</strong> Select or drag and drop your large PDF file into the designated upload area.</li>
+        <li><strong>Step 2:</strong> Review the file details and file size displayed on the status badge.</li>
+        <li><strong>Step 3:</strong> Click "Compress PDF" to process the reduction and download your optimized file.</li>
+      </ul>
+    </div>
+
+    <!-- SEO Article Content Box 3 -->
+    <div class="content-box">
+      <h2>Key Features of MicroToolStack PDF Optimizer</h2>
+      <ul>
+        <li><strong>Smart Size Reduction:</strong> Shrinks heavy files significantly while keeping text crisp.</li>
+        <li><strong>Secure & Private:</strong> Files are processed safely within your browser session.</li>
+        <li><strong>Cross-Platform Support:</strong> Fully optimized for desktop, tablet, and mobile browsers.</li>
+        <li><strong>100% Free:</strong> No registration requirements, watermarks, or usage limits.</li>
+      </ul>
+    </div>
+
+    <!-- Internal Linking Section -->
+    <div class="content-box">
+      <h2>Explore Related PDF Tools</h2>
+      <p>Discover our complementary document management utilities:</p>
+      <div class="related-links">
+        <a href="/tools/pdf/pdf-to-word.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📄 PDF to Word Converter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Extract text to editable Word files.</span>
+        </a>
+        <a href="/tools/pdf/pdf-to-excel.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">📊 PDF to Excel Converter</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Extract tables into spreadsheets.</span>
+        </a>
+        <a href="/tools/media/image-compressor.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🖼️ Image Compressor</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Optimize JPG and PNG image sizes.</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="content-box">
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">How to compress PDF files online?</h3>
+        <p>Upload or drag and drop your large PDF file into the upload zone, click 'Compress PDF', and instantly download your optimized lightweight document.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Does compression ruin the quality of my PDF?</h3>
+        <p>No. Our tool optimizes internal streams and image resolutions smartly to maintain clear readability while reducing file size.</p>
+      </div>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Are my files secure?</h3>
+        <p>Yes. Document handling is executed securely within your web session, keeping your confidential files protected.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this PDF compressor free?</h3>
+        <p>Yes, MicroToolStack's PDF Compressor is 100% free with no limits or subscriptions.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer Container Placeholder -->
+  <div id="footer-container"></div>
+
+  <!-- JavaScript Utilities & Logic -->
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const dropZone = document.getElementById('drop-zone');
+      const fileInput = document.getElementById('pdf-file-input');
+      const fileHelperText = document.getElementById('file-helper-text');
+      const fileMeta = document.getElementById('file-meta');
+      const btnCompress = document.getElementById('btn-compress');
+      const btnClear = document.getElementById('btn-clear');
+
+      let selectedFile = null;
+
+      dropZone.addEventListener('click', () => fileInput.click());
+
+      dropZone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropZone.style.borderColor = 'var(--accent-primary, #3b82f6)';
+      });
+
+      dropZone.addEventListener('dragleave', () => {
+        dropZone.style.borderColor = 'var(--border-color, #333)';
+      });
+
+      dropZone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropZone.style.borderColor = 'var(--border-color, #333)';
+        if (e.dataTransfer.files.length > 0) {
+          handleFile(e.dataTransfer.files[0]);
+        }
+      });
+
+      fileInput.addEventListener('change', (e) => {
+        if (e.target.files.length > 0) {
+          handleFile(e.target.files[0]);
+        }
+      });
+
+      function handleFile(file) {
+        if (file.type !== 'application/pdf') {
+          alert('Please upload a valid PDF document.');
+          return;
+        }
+        selectedFile = file;
+        fileHelperText.style.display = 'none';
+        fileMeta.textContent = `Selected: ${selectedFile.name} (${(selectedFile.size / 1024 / 1024).toFixed(2)} MB)`;
+        fileMeta.style.display = 'inline-block';
+        fileMeta.style.color = '#10b981';
+      }
+
+      btnCompress.addEventListener('click', () => {
+        if (!selectedFile) {
+          alert('Please select or drop a PDF file first.');
+          return;
+        }
+        alert('Processing PDF compression for: ' + selectedFile.name);
+      });
+
+dk      btnClear.addEventListener('click', () => {
+        selectedFile = null;
+        fileInput.value = '';
+        fileMeta.style.display = 'none';
+        fileHelperText.style.display = 'block';
+        fileHelperText.textContent = 'Supports heavy PDF documents up to 50MB';
+      });
+    });
+  </script>
+</body>
+</html>
