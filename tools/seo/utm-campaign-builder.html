@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) - Optimized Load -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var gTagScript = document.createElement('script');
+        gTagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-F3WWR9KGB4';
+        gTagScript.async = true;
+        document.head.appendChild(gTagScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-F3WWR9KGB4');
+      }, 1000);
+    });
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>Free Online UTM Campaign URL Builder & Tracker | MicroToolStack</title>
+  <meta name="description" content="Build customized campaign tracking URLs with UTM parameters for Google Analytics. Free online digital marketing and traffic tracking utility tool.">
+  <meta name="keywords" content="utm campaign builder, utm link generator, google analytics url builder, tracking parameter tool, digital marketing utilities, microtoolstack seo tools">
+
+  <link rel="canonical" href="https://www.microtoolstack.com/tools/seo/utm-campaign-builder.html">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.microtoolstack.com/tools/seo/utm-campaign-builder.html">
+  <meta property="og:title" content="Free Online UTM Campaign URL Builder & Tracker | MicroToolStack">
+  <meta property="og:description" content="Generate custom tracking links with UTM parameters easily. Free browser utility for digital marketers and SEO specialists.">
+  <meta property="og:image" content="https://www.microtoolstack.com/assets/images/og-image.png">
+
+  <!-- Favicon Icon for Google & Devices -->
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png">
+
+  <!-- JSON-LD Schema Markup (SoftwareApplication & FAQPage) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "UTM Campaign Builder",
+        "operatingSystem": "All",
+        "applicationCategory": "UtilitiesApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "An online web utility to generate trackable campaign URLs with custom UTM parameters for web analytics.",
+        "url": "https://www.microtoolstack.com/tools/seo/utm-campaign-builder.html"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is a UTM Campaign Builder?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It is a marketing tool that adds tracking parameters (UTM tags) to your destination URLs so you can accurately monitor traffic sources in Google Analytics."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this UTM generator free to use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, MicroToolStack's UTM Campaign Builder is 100% free with no usage limits or sign-up requirements."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Preconnect and Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=10.0">
+  <link rel="stylesheet" href="/assets/css/components.css?v=10.0">
+
+  <style>
+    .input-group {
+      margin-bottom: 1.25rem;
+    }
+    .input-label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary, #fff);
+      margin-bottom: 0.5rem;
+    }
+    .custom-input {
+      width: 100%;
+      padding: 1rem;
+      font-size: 1rem;
+      font-family: inherit;
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      background-color: var(--bg-card, #1e1e2e);
+      color: var(--text-primary, #fff);
+      outline: none;
+      box-sizing: border-box;
+    }
+    .custom-input:focus {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+    .controls-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.5rem;
+    }
+    .output-card {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      margin-bottom: 2.5rem;
+      word-break: break-all;
+    }
+    .content-box {
+      background-color: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: var(--radius-md, 8px);
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .content-box h2 {
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary, #fff);
+    }
+    .content-box p, .content-box ul {
+      color: var(--text-secondary, #9ca3af);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .content-box ul {
+      padding-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .content-box li {
+      margin-bottom: 0.5rem;
+    }
+    .related-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .related-card {
+      display: block;
+      padding: 1rem;
+      background: var(--bg-card, #1e1e2e);
+      border: 1px solid var(--border-color, #333);
+      border-radius: 8px;
+      color: var(--text-primary, #fff);
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+    .related-card:hover {
+      border-color: var(--accent-primary, #3b82f6);
+    }
+  </style>
+</head>
+<body style="margin: 0; padding: 0;">
+
+  <!-- Header Section -->
+  <header class="custom-header">
+    <a href="/" class="custom-logo">
+      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
+    </a>
+    <nav class="custom-nav">
+      <a href="/#categories">Categories</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
+    </nav>
+  </header>
+
+  <!-- Main Container -->
+  <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
+    
+    <!-- Tool Title & Description -->
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <h1 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--text-primary, #fff);">UTM Campaign Builder</h1>
+      <p style="color: var(--text-secondary, #9ca3af); font-size: 1rem;">Generate customized tracking URLs with UTM parameters to measure digital marketing campaigns effectively.</p>
+    </div>
+
+    <!-- Input 1 -->
+    <div class="input-group">
+      <label for="url-input" class="input-label">Website URL (e.g. https://www.microtoolstack.com)</label>
+      <input type="text" id="url-input" class="custom-input" value="https://www.microtoolstack.com">
+    </div>
+
+    <!-- Input 2 -->
+    <div class="input-group">
+      <label for="source-input" class="input-label">Campaign Source (utm_source - e.g. facebook, newsletter)</label>
+      <input type="text" id="source-input" class="custom-input" value="facebook">
+    </div>
+
+    <!-- Input 3 -->
+    <div class="input-group">
+      <label for="medium-input" class="input-label">Campaign Medium (utm_medium - e.g. social, banner, email)</label>
+      <input type="text" id="medium-input" class="custom-input" value="social">
+    </div>
+
+    <!-- Input 4 -->
+    <div class="input-group">
+      <label for="name-input" class="input-label">Campaign Name (utm_campaign - e.g. summer_sale)</label>
+      <input type="text" id="name-input" class="custom-input" value="launch_promo">
+    </div>
+
+    <!-- Controls Bar -->
+    <div class="controls-bar">
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-generate" class="btn btn-primary" style="padding: 0.75rem 1.5rem; font-weight: 600; cursor: pointer; background: #10b981;">🔗 Generate UTM Link</button>
+      </div>
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="btn-clear" class="btn btn-secondary" style="padding: 0.75rem 1.25rem; cursor: pointer; background: #374151; color: #fff; border: none; border-radius: 6px;">🗑️ Clear</button>
+      </div>
+    </div>
+
+    <!-- Output Box -->
+    <div class="output-card" id="output-box">
+      <p style="color: var(--text-primary, #fff); font-weight: 600; margin-bottom: 0.5rem;">Your Generated Campaign URL:</p>
+      <code style="color: #10b981; font-size: 0.95rem; word-break: break-all;" id="generated-link">https://www.microtoolstack.com/?utm_source=facebook&utm_medium=social&utm_campaign=launch_promo</code>
+    </div>
+
+    <!-- SEO Article Content Box 1 -->
+    <div class="content-box">
+      <h2>Why Use UTM Campaign Tracking URLs?</h2>
+      <p>When running digital marketing campaigns across social media, email newsletters, or partner networks, tracking exact traffic performance can be difficult. UTM parameters are small snippets of text added to URLs that feed precise data directly into Google Analytics.</p>
+
+      <p>Our free <strong>UTM Campaign Builder</strong> allows you to generate trackable links instantly, ensuring you know precisely which channels drive your highest engagements and conversions.</p>
+    </div>
+
+    <!-- SEO Article Content Box 2 -->
+    <div class="content-box">
+      <h2>How to Use the UTM Builder Tool</h2>
+      <p>Creating trackable links takes only seconds:</p>
+      <ul>
+        <li><strong>Step 1:</strong> Enter your target website landing page URL.</li>
+        <li><strong>Step 2:</strong> Specify your campaign source, medium, and campaign name.</li>
+        <li><strong>Step 3:</strong> Click "Generate UTM Link" to copy your trackable campaign URL.</li>
+      </ul>
+    </div>
+
+    <!-- Internal Linking Section -->
+    <div class="content-box">
+      <h2>Explore Related SEO & Developer Tools</h2>
+      <p>Check out our complementary marketing utilities:</p>
+      <div class="related-links">
+        <a href="/tools/seo/meta-tag-generator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🏷️ Meta Tag Generator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Create essential SEO meta tags.</span>
+        </a>
+        <a href="/tools/developer/url-encoder-decoder.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">🔒 URL Encode / Decode</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Format special web link characters.</span>
+        </a>
+        <a href="/tools/youtube/youtube-money-calculator.html" class="related-card">
+          <strong style="display:block; margin-bottom: 0.25rem;">💵 YouTube Money Calculator</strong>
+          <span style="font-size: 0.85rem; color: #9ca3af;">Estimate video revenue earnings.</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="content-box">
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <div style="margin-bottom: 1.25rem;">
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">What is a UTM Campaign Builder?</h3>
+        <p>It is a marketing tool that adds tracking parameters (UTM tags) to your destination URLs so you can accurately monitor traffic sources in Google Analytics.</p>
+      </div>
+      <div>
+        <h3 style="font-size: 1.05rem; color: var(--text-primary, #fff); margin-bottom: 0.25rem;">Is this UTM generator free to use?</h3>
+        <p>Yes, MicroToolStack's UTM Campaign Builder is 100% free with no usage limits or sign-up requirements.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer Container Placeholder -->
+  <div id="footer-container"></div>
+
+  <!-- JavaScript Utilities & Logic -->
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
+</body>
+</html>
