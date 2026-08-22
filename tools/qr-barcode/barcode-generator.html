@@ -202,18 +202,8 @@
 </head>
 <body>
 
-  <!-- Header Section -->
-  <header class="custom-header">
-    <a href="/" class="custom-logo">
-      <img src="/assets/images/logo-white.png" alt="MicroToolStack Logo" style="height: 38px; width: auto;">
-    </a>
-    <nav class="custom-nav">
-      <a href="/#categories">Categories</a>
-      <a href="/about.html">About</a>
-      <a href="/contact.html">Contact</a>
-      <button id="theme-toggle" class="custom-theme-btn" aria-label="Toggle Theme">🌙</button>
-    </nav>
-  </header>
+  <!-- Header Container Placeholder (app.js will inject header here if needed) -->
+  <div id="header-container"></div>
 
   <!-- Main Container -->
   <main class="container" style="max-width: 950px; margin: 1.5rem auto; padding: 0 1rem;">
@@ -350,6 +340,7 @@
   <!-- JavaScript Utilities & Logic -->
   <script src="/assets/js/theme.js"></script>
   <script src="/assets/js/utils.js" defer></script>
+  <script src="/assets/js/app.js" defer></script>
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
